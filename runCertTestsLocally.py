@@ -1,4 +1,3 @@
-#!/usr/bin/python
 """
     This script runs all of the CertTest cases to create a local 'gold standard'
     set of solutions.
