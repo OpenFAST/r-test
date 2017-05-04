@@ -32,6 +32,7 @@ if len(sys.argv) == 1:
         else:
             raise
     else:
+        executable = "openfast"
         print "Using openfast executable found in path"
 
 # verify that the given executable exists and can be run
@@ -67,7 +68,7 @@ os.chdir("{}".format(localDirectory))
 num = [str(i).zfill(2) for i in range(1,3)]
 for n in num:
     caseName = "Test{}".format(n)
-    command = "openfast {}.fst > {}.log".format(caseName, caseName)
+    command = "{} {}.fst > {}.log".format(executable, caseName, caseName)
     print "'{}' - running".format(command)
     return_code = subprocess.call(command, shell=True)
     print "'{}' - finished with exit code {}".format(command, return_code)
