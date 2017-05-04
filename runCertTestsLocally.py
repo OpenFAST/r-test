@@ -28,7 +28,8 @@ if len(sys.argv) == 1:
         subprocess.call("openfast", stdout=devnull)
     except OSError as e:
         if e.errno == os.errno.ENOENT:
-            exitWithError("{}: openfast".format(e))
+            exitWithError("{}: openfast\n".format(e) +
+            "Usage: python runCertTestsLocally.py openfast_executable")
         else:
             raise
     else:
@@ -65,7 +66,7 @@ shutil.copytree("inputs", "{}".format(localDirectory))
 
 # run through each case
 os.chdir("{}".format(localDirectory))
-num = [str(i).zfill(2) for i in range(1,3)]
+num = [str(i).zfill(2) for i in range(1,26)]
 for n in num:
     caseName = "Test{}".format(n)
     command = "{} {}.fst > {}.log".format(executable, caseName, caseName)
