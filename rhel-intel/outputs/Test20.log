@@ -1,0 +1,191 @@
+
+ **************************************************************************************************
+ OpenFAST (v8.17.01b-dev, 18-Jan-2017)
+
+ Copyright (C) 2017 National Renewable Energy Laboratory
+
+ This program comes with ABSOLUTELY NO WARRANTY. See the "license.txt" file distributed with this
+ software for details.
+ **************************************************************************************************
+
+  Running OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double
+  precision
+  linked with NWTC Subroutine Library (v2.11.00, 12-Nov-2016)
+
+  Heading of the OpenFAST input file:
+    FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration,
+    for use in offshore analysis
+
+  Running ElastoDyn (v1.04.00a-bjj, 26-Jul-2016).
+
+  Running AeroDyn (v15.04.01, 13-Dec-2016).
+
+  Running AirfoilInfo (v1.01.00a-bjj, 5-Apr-2016).
+
+  Running BEM (v1.03.00, 29-Oct-2016).
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 1, Blade = 1
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 2, Blade = 1
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 3, Blade = 1
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 4, Blade = 1
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 1, Blade = 2
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 2, Blade = 2
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 3, Blade = 2
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 4, Blade = 2
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 1, Blade = 3
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 2, Blade = 3
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 3, Blade = 3
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0.  BladeNode = 4, Blade = 3
+
+  Running InflowWind (v3.03.00, 26-Jul-2016).
+  Opening InflowWind input file:  ./5MW_Baseline/NRELOffshrBsline5MW_InflowWind_Steady8mps.dat
+
+  Running ServoDyn (v1.06.00a-bjj, 26-Jul-2016).
+
+  Running ServoDyn Interface for Bladed Controllers (using Intel Fortran for Linux, 14-Oct-2015).
+
+  Running HydroDyn (v2.05.00, 15-Mar-2016).
+  Generating incident wave kinematics and current time history.
+
+  Running SubDyn (v1.03.00, 11-Apr-2016).
+    Calculating Internal Modal Eigenvectors
+  Timestep: 0 of 60 seconds.
+
+ FAST_Solution0:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:Running with torque
+ and pitch control of the NREL offshore 5MW baseline wind turbine from DISCON.dll as written by J.
+ Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies.
+
+
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:BladedInterface option
+ was designed for an explicit-loose coupling scheme. Using last calculated values from DLL on all
+ subsequent calls until time is advanced. Warning will not be displayed again.
+
++                                                                                                  
++ Timestep: 1 of 60 seconds. Estimated final completion at 15:42:11.
++                                                                                                  
++ Timestep: 2 of 60 seconds. Estimated final completion at 15:23:03.
++                                                                                                  
++ Timestep: 3 of 60 seconds. Estimated final completion at 15:23:09.
++                                                                                                  
++ Timestep: 4 of 60 seconds. Estimated final completion at 15:21:23.
++                                                                                                  
++ Timestep: 5 of 60 seconds. Estimated final completion at 15:17:55.
++                                                                                                  
++ Timestep: 6 of 60 seconds. Estimated final completion at 15:17:42.
++                                                                                                  
++ Timestep: 7 of 60 seconds. Estimated final completion at 15:17:42.
++                                                                                                  
++ Timestep: 8 of 60 seconds. Estimated final completion at 15:17:48.
++                                                                                                  
++ Timestep: 9 of 60 seconds. Estimated final completion at 15:18:58.
++                                                                                                  
++ Timestep: 10 of 60 seconds. Estimated final completion at 15:22:33.
++                                                                                                  
++ Timestep: 11 of 60 seconds. Estimated final completion at 15:20:26.
++                                                                                                  
++ Timestep: 12 of 60 seconds. Estimated final completion at 15:17:45.
++                                                                                                  
++ Timestep: 13 of 60 seconds. Estimated final completion at 15:17:46.
++                                                                                                  
++ Timestep: 14 of 60 seconds. Estimated final completion at 15:17:58.
++                                                                                                  
++ Timestep: 15 of 60 seconds. Estimated final completion at 15:18:07.
++                                                                                                  
++ Timestep: 16 of 60 seconds. Estimated final completion at 15:18:26.
++                                                                                                  
++ Timestep: 17 of 60 seconds. Estimated final completion at 15:22:01.
++                                                                                                  
++ Timestep: 18 of 60 seconds. Estimated final completion at 15:19:02.
++                                                                                                  
++ Timestep: 19 of 60 seconds. Estimated final completion at 15:18:05.
++                                                                                                  
++ Timestep: 20 of 60 seconds. Estimated final completion at 15:18:17.
++                                                                                                  
++ Timestep: 21 of 60 seconds. Estimated final completion at 15:18:08.
++                                                                                                  
++ Timestep: 22 of 60 seconds. Estimated final completion at 15:17:53.
++                                                                                                  
++ Timestep: 23 of 60 seconds. Estimated final completion at 15:20:01.
++                                                                                                  
++ Timestep: 24 of 60 seconds. Estimated final completion at 15:18:10.
++                                                                                                  
++ Timestep: 25 of 60 seconds. Estimated final completion at 15:18:20.
++                                                                                                  
++ Timestep: 26 of 60 seconds. Estimated final completion at 15:18:03.
++                                                                                                  
++ Timestep: 27 of 60 seconds. Estimated final completion at 15:18:03.
++                                                                                                  
++ Timestep: 28 of 60 seconds. Estimated final completion at 15:17:58.
++                                                                                                  
++ Timestep: 29 of 60 seconds. Estimated final completion at 15:17:57.
++                                                                                                  
++ Timestep: 30 of 60 seconds. Estimated final completion at 15:18:39.
++                                                                                                  
++ Timestep: 31 of 60 seconds. Estimated final completion at 15:17:53.
++                                                                                                  
++ Timestep: 32 of 60 seconds. Estimated final completion at 15:17:55.
++                                                                                                  
++ Timestep: 33 of 60 seconds. Estimated final completion at 15:18:44.
++                                                                                                  
++ Timestep: 34 of 60 seconds. Estimated final completion at 15:20:42.
++                                                                                                  
++ Timestep: 35 of 60 seconds. Estimated final completion at 15:20:42.
++                                                                                                  
++ Timestep: 36 of 60 seconds. Estimated final completion at 15:20:37.
++                                                                                                  
++ Timestep: 37 of 60 seconds. Estimated final completion at 15:18:11.
++                                                                                                  
++ Timestep: 38 of 60 seconds. Estimated final completion at 15:18:10.
++                                                                                                  
++ Timestep: 39 of 60 seconds. Estimated final completion at 15:18:14.
++                                                                                                  
++ Timestep: 40 of 60 seconds. Estimated final completion at 15:18:20.
++                                                                                                  
++ Timestep: 41 of 60 seconds. Estimated final completion at 15:18:19.
++                                                                                                  
++ Timestep: 42 of 60 seconds. Estimated final completion at 15:18:30.
++                                                                                                  
++ Timestep: 43 of 60 seconds. Estimated final completion at 15:18:51.
++                                                                                                  
++ Timestep: 44 of 60 seconds. Estimated final completion at 15:18:23.
++                                                                                                  
++ Timestep: 45 of 60 seconds. Estimated final completion at 15:18:34.
++                                                                                                  
++ Timestep: 46 of 60 seconds. Estimated final completion at 15:18:56.
++                                                                                                  
++ Timestep: 47 of 60 seconds. Estimated final completion at 15:18:42.
++                                                                                                  
++ Timestep: 48 of 60 seconds. Estimated final completion at 15:18:55.
++                                                                                                  
++ Timestep: 49 of 60 seconds. Estimated final completion at 15:18:56.
++                                                                                                  
++ Timestep: 50 of 60 seconds. Estimated final completion at 15:18:57.
++                                                                                                  
++ Timestep: 51 of 60 seconds. Estimated final completion at 15:18:54.
++                                                                                                  
++ Timestep: 52 of 60 seconds. Estimated final completion at 15:19:11.
++                                                                                                  
++ Timestep: 53 of 60 seconds. Estimated final completion at 15:19:02.
++                                                                                                  
++ Timestep: 54 of 60 seconds. Estimated final completion at 15:19:18.
++                                                                                                  
++ Timestep: 55 of 60 seconds. Estimated final completion at 15:19:26.
++                                                                                                  
++ Timestep: 56 of 60 seconds. Estimated final completion at 15:19:19.
++                                                                                                  
++ Timestep: 57 of 60 seconds. Estimated final completion at 15:19:03.
++                                                                                                  
++ Timestep: 58 of 60 seconds. Estimated final completion at 15:19:03.
++                                                                                                  
++ Timestep: 59 of 60 seconds. Estimated final completion at 15:19:09.
++                                                                                                  
++ Timestep: 60 of 60 seconds. Estimated final completion at 15:19:12.
++                                                                                                  
+
+  Total Real Time:       23.411 minutes
+  Total CPU Time:        23.355 minutes
+  Simulation CPU Time:   22.598 minutes
+  Simulated Time:        1.0001 minutes
+  Time Ratio (Sim/CPU):  4.42566E-02
+
+  OpenFAST terminated normally.
+
