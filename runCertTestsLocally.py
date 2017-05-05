@@ -17,9 +17,17 @@ import sys
 import shutil
 import subprocess
 
-def exitWithError(error):
+def exitWithError(error, code=1):
     print error
-    sys.exit(1)
+    sys.exit(code)
+
+# if the local output directory already exists, bail for two reasons
+# 1. don't silenty overwrite previous outputs
+# 2. the python filesystem methods arent robust enough to do something like 'cp * .'
+# error code 2 at this location in meaningful to other programs, do not modify
+localDirectory = "outputs-local"
+if os.path.isdir(localDirectory):
+    exitWithError("The local output directory, {}, already exists.".format(localDirectory), 2)
 
 # if no openfast executable was given, search in path
 if len(sys.argv) == 1:
@@ -52,14 +60,6 @@ elif len(sys.argv) == 2:
 else:
     exitWithError("Invalid arguments given: {}\n".format(" ".join(sys.argv)) +
     "Usage: python runCertTestsLocally.py openfast_executable")
-
-# if the local output directory already exists, bail for two reasons
-# 1. don't silenty overwrite previous outputs
-# 2. the python filesystem methods arent robust enough to do something like 'cp * .'
-localDirectory = "outputs-local"
-if os.path.exists(localDirectory):
-    print "The local output directory, {}, already exists.".format(localDirectory)
-    sys.exit(1)
 
 # get the input files from /inputs
 shutil.copytree("inputs", "{}".format(localDirectory))
