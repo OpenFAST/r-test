@@ -26,6 +26,6 @@ for ext in ["", "_ITI", "_OC3"]:
       print("ERROR: The DISCON makefile, {}, does not exist.".format(makefile))
       sys.exit(1)
 
-    make_command = "make -f {} COMPILER={} BUILD={} &> {}.log".format(makefile, compiler, build, makefile)
+    make_command = "make -f {} COMPILER={} BUILD={} > {}.log".format(makefile, compiler, build, makefile)
     return_code = subprocess.call(make_command, shell=True)
     print("Finished running `make` command for DISCON{} with return code: {}".format(ext, return_code))
