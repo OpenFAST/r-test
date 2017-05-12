@@ -1,2 +1,0 @@
-gfortran -m64 -O2 -fbacktrace -ffree-line-length-none -x f95-cpp-input -DDOUBLE_PRECISION -fdefault-real-8 -C -DIMPLICIT_DLLEXPORT -c 5MW_Baseline/ServoData/Source//DISCON_OC3Hywind.f90 -o 5MW_Baseline/ServoData/Source//DISCON_OC3Hywind.o
-gfortran -m64 -O2 -fbacktrace -shared -I 5MW_Baseline/ServoData/Source/ -o 5MW_Baseline/ServoData/DISCON_OC3Hywind.so 5MW_Baseline/ServoData/Source//DISCON_OC3Hywind.o
