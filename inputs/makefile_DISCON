@@ -19,7 +19,7 @@ SOURCE_FILE = DISCON
 OUTPUT_NAME = DISCON
 DEST_DIR = 5MW_Baseline/ServoData
 
-ifeq($(OS), Windows_NT)
+ifeq ($(OS), Windows_NT)
   BITS = 32
 else
   BITS = 64
