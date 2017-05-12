@@ -1,1 +1,8 @@
 .DS_Store
+
+# logs
+*.log
+
+# compiled outputs
+*.so
+*.o
