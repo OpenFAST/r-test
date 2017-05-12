@@ -19,7 +19,11 @@ SOURCE_FILE = DISCON
 OUTPUT_NAME = DISCON
 DEST_DIR = 5MW_Baseline/ServoData
 
-BITS = 64
+ifeq($(OS), Windows_NT)
+  BITS = 32
+else
+  BITS = 64
+endif
 
 # Name of compiler and flags to use.
 ifeq ($(COMPILER),gnu)
