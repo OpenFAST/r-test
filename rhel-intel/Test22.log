@@ -33,12 +33,45 @@
 
   Running ServoDyn Interface for Bladed Controllers (using Intel Fortran for Linux, 14-Oct-2015).
 
- FAST_InitializeAll:SrvD_Init:BladedInterface_Init:The dynamic library
- ./5MW_Baseline/ServoData/DISCON_ITIBarge_win32.dll could not be loaded. Check that the file
- exists in the specified location and that it is compiled for 64-bit applications.
+  Running HydroDyn (v2.05.00, 15-Mar-2016).
+  Generating incident wave kinematics and current time history.
+  Reading in WAMIT output with root name "./5MW_Baseline/HydroData/Barge".
+  Computing radiation impulse response functions and wave diffraction forces.
 
-  FAST encountered an error during module initialization.
-  Simulation error level: FATAL ERROR
+ Using SS_Radiation Module, with 30 of 30 radiation states
 
-  Aborting OpenFAST.
 
+  Timestep: 0 of 60 seconds.
+
+ FAST_Solution0:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:Running with torque
+ and pitch control of the NREL offshore 5MW baseline wind turbine from DISCON.dll as written by J.
+ Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies. Includes modifications for ITI
+ Barge.
+
++                                                                                                  
++ Timestep: 10 of 60 seconds. Estimated final completion at 17:24:54.
++                                                                                                  
++ Timestep: 20 of 60 seconds. Estimated final completion at 17:24:55.
++                                                                                                  
++ Timestep: 30 of 60 seconds. Estimated final completion at 17:24:55.
++                                                                                                  
++ Timestep: 40 of 60 seconds. Estimated final completion at 17:24:55.
++                                                                                                  
++ Timestep: 50 of 60 seconds. Estimated final completion at 17:24:55.
++                                                                                                  
++ Timestep: 60 of 60 seconds. Estimated final completion at 17:24:55.
++                                                                                                  
+
+  Total Real Time:       29.943 seconds
+  Total CPU Time:        29.806 seconds
+  Simulation CPU Time:   28.405 seconds
+  Simulated Time:        60 seconds
+  Time Ratio (Sim/CPU):  2.1123
+
+  OpenFAST terminated normally.
+
+MAP++ environment properties (set externally)...
+    Gravity constant          [m/s^2]  : 9.81
+    Sea density               [kg/m^3] : 1025.00
+    Water depth               [m]      : 150.00
+    Vessel reference position [m]      : 0.00 , 0.00 , 0.00

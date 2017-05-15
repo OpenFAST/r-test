@@ -18,11 +18,13 @@
 
   Running ElastoDyn (v1.04.00a-bjj, 26-Jul-2016).
 
-  Running AeroDyn (v15.04.01, 13-Dec-2016).
+  Running AeroDyn (v15.04.02a, 10-May-2017).
 
-  Running AirfoilInfo (v1.01.00a-bjj, 5-Apr-2016).
+  Running AirfoilInfo (v1.01.01a, 10-May-2017).
 
   Running BEM (v1.03.00, 29-Oct-2016).
+
+  Running UnsteadyAero (v1.01.00a, 10-May-2017).
 
   Running InflowWind (v3.03.00, 26-Jul-2016).
   Opening InflowWind input file:  ./AOC/Test08_InflowWind.dat
@@ -39,20 +41,20 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 2
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 13:51:42.
++ Timestep: 5 of 20 seconds. Estimated final completion at 12:31:08.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 13:51:41.
++ Timestep: 10 of 20 seconds. Estimated final completion at 12:31:08.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 13:51:41.
++ Timestep: 15 of 20 seconds. Estimated final completion at 12:31:08.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 13:51:41.
++ Timestep: 20 of 20 seconds. Estimated final completion at 12:31:08.
 +                                                                                                  
 
-  Total Real Time:       20.358 seconds
-  Total CPU Time:        20.284 seconds
-  Simulation CPU Time:   20.268 seconds
+  Total Real Time:       21.302 seconds
+  Total CPU Time:        21.194 seconds
+  Simulation CPU Time:   21.177 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.98678
+  Time Ratio (Sim/CPU):  0.94443
 
   OpenFAST terminated normally.
 

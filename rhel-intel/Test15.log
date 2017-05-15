@@ -18,11 +18,13 @@
 
   Running ElastoDyn (v1.04.00a-bjj, 26-Jul-2016).
 
-  Running AeroDyn (v15.04.01, 13-Dec-2016).
+  Running AeroDyn (v15.04.02a, 10-May-2017).
 
-  Running AirfoilInfo (v1.01.00a-bjj, 5-Apr-2016).
+  Running AirfoilInfo (v1.01.01a, 10-May-2017).
 
   Running BEM (v1.03.00, 29-Oct-2016).
+
+  Running UnsteadyAero (v1.01.00a, 10-May-2017).
 
   Running InflowWind (v3.03.00, 26-Jul-2016).
   Opening InflowWind input file:  ./SWRT/Test15_InflowWind.dat
@@ -42,60 +44,60 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 2, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 2, Blade = 1
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 13:56:12.
++ Timestep: 1 of 20 seconds. Estimated final completion at 12:35:38.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 13:56:12.
++ Timestep: 2 of 20 seconds. Estimated final completion at 12:35:38.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 13:56:12.
++ Timestep: 3 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 4 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 5 of 20 seconds. Estimated final completion at 12:35:39.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 6 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 7 of 20 seconds. Estimated final completion at 12:35:39.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 13:56:14.
++ Timestep: 8 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 13:56:14.
++ Timestep: 9 of 20 seconds. Estimated final completion at 12:35:39.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 13:56:12.
++ Timestep: 10 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 11 of 20 seconds. Estimated final completion at 12:35:40.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 1
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 12 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 13 of 20 seconds. Estimated final completion at 12:35:39.
 
  FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 17,
  blade 3):Compute_UA_AirfoilCoefs:UA_CalcOutput:Mach number exceeds 0.3. Theory is invalid. This
  warning will not be repeated though the condition may persist.
 
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 13:56:12.
++ Timestep: 14 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 15 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 16 of 20 seconds. Estimated final completion at 12:35:41.
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 17 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 18 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 19 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 13:56:13.
++ Timestep: 20 of 20 seconds. Estimated final completion at 12:35:40.
 +                                                                                                  
 
-  Total Real Time:       1.9183 minutes
-  Total CPU Time:        1.9136 minutes
-  Simulation CPU Time:   1.9132 minutes
+  Total Real Time:       1.9193 minutes
+  Total CPU Time:        1.9144 minutes
+  Simulation CPU Time:   1.9141 minutes
   Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  0.17423
+  Time Ratio (Sim/CPU):  0.17415
 
   OpenFAST terminated normally.
 

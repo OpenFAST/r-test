@@ -1,5 +1,5 @@
 
-Predictions were generated on 05-May-2017 at 13:49:57 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 14-May-2017 at 12:29:22 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
  linked with  NWTC Subroutine Library (v2.11.00, 12-Nov-2016); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.03.00, 26-Jul-2016); AeroDyn14 (v14.05.01a-bjj, 25-Jul-2016); ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
 
 Description from the FAST input file: FAST Certification Test #06: AOC 15/50 with many DOFs with gen start, loss of grid, and tip-brake shutdown. Many parameters are pure fiction.
