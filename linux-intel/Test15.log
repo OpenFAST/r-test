@@ -44,60 +44,60 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 2, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 2, Blade = 1
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 12:35:38.
++ Timestep: 1 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 12:35:38.
++ Timestep: 2 of 20 seconds. Estimated final completion at 14:37:00.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 3 of 20 seconds. Estimated final completion at 14:37:00.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 4 of 20 seconds. Estimated final completion at 14:37:00.
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 12:35:39.
++ Timestep: 5 of 20 seconds. Estimated final completion at 14:37:00.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 6 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 12:35:39.
++ Timestep: 7 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 8 of 20 seconds. Estimated final completion at 14:37:00.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 12:35:39.
++ Timestep: 9 of 20 seconds. Estimated final completion at 14:37:01.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 11 of 20 seconds. Estimated final completion at 14:36:60.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 1
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 12 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 12:35:39.
++ Timestep: 13 of 20 seconds. Estimated final completion at 14:36:59.
 
  FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 17,
  blade 3):Compute_UA_AirfoilCoefs:UA_CalcOutput:Mach number exceeds 0.3. Theory is invalid. This
  warning will not be repeated though the condition may persist.
 
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 14 of 20 seconds. Estimated final completion at 14:36:59.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 15 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 12:35:41.
++ Timestep: 16 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 17 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 18 of 20 seconds. Estimated final completion at 14:36:60.
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 19 of 20 seconds. Estimated final completion at 14:36:59.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:35:40.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:36:59.
 +                                                                                                  
 
-  Total Real Time:       1.9193 minutes
-  Total CPU Time:        1.9144 minutes
-  Simulation CPU Time:   1.9141 minutes
+  Total Real Time:       1.9088 minutes
+  Total CPU Time:        1.9043 minutes
+  Simulation CPU Time:   1.9039 minutes
   Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  0.17415
+  Time Ratio (Sim/CPU):  0.17508
 
   OpenFAST terminated normally.
 

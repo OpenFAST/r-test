@@ -25,32 +25,32 @@
   Running ServoDyn (v1.06.00a-bjj, 26-Jul-2016).
   Timestep: 0 of 20 seconds.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 2 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 4 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 6 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 8 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 12 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 14 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 16 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 18 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:27:15.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:28:32.
 +                                                                                                  
 
-  Total Real Time:       8.394 seconds
-  Total CPU Time:        8.3537 seconds
-  Simulation CPU Time:   8.3407 seconds
+  Total Real Time:       8.669 seconds
+  Total CPU Time:        8.6167 seconds
+  Simulation CPU Time:   8.5947 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  2.3979
+  Time Ratio (Sim/CPU):  2.327
 
   OpenFAST terminated normally.
 

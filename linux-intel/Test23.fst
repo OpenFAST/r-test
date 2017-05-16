@@ -16,7 +16,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
           0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
-          2   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
+          1   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
 "5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
@@ -28,7 +28,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_HydroDyn.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
-"5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_FEAMooring.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
+"5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_MAP.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)

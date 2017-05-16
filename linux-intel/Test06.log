@@ -27,26 +27,26 @@
   Running ServoDyn (v1.06.00a-bjj, 26-Jul-2016).
   Timestep: 0 of 35 seconds.
 +                                                                                                  
-+ Timestep: 5 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 5 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
-+ Timestep: 10 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 10 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
-+ Timestep: 15 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 15 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
-+ Timestep: 20 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 20 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
-+ Timestep: 25 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 25 of 35 seconds. Estimated final completion at 14:30:52.
 +                                                                                                  
-+ Timestep: 30 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 30 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
-+ Timestep: 35 of 35 seconds. Estimated final completion at 12:29:33.
++ Timestep: 35 of 35 seconds. Estimated final completion at 14:30:51.
 +                                                                                                  
 
-  Total Real Time:       11.325 seconds
-  Total CPU Time:        11.287 seconds
-  Simulation CPU Time:   11.278 seconds
+  Total Real Time:       11.832 seconds
+  Total CPU Time:        11.765 seconds
+  Simulation CPU Time:   11.752 seconds
   Simulated Time:        35 seconds
-  Time Ratio (Sim/CPU):  3.1033
+  Time Ratio (Sim/CPU):  2.9782
 
   OpenFAST terminated normally.
 

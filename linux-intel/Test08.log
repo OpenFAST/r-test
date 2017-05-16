@@ -41,20 +41,20 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 2
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 12:31:08.
++ Timestep: 5 of 20 seconds. Estimated final completion at 14:32:27.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:31:08.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:32:27.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 12:31:08.
++ Timestep: 15 of 20 seconds. Estimated final completion at 14:32:27.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:31:08.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:32:27.
 +                                                                                                  
 
-  Total Real Time:       21.302 seconds
-  Total CPU Time:        21.194 seconds
-  Simulation CPU Time:   21.177 seconds
+  Total Real Time:       21.134 seconds
+  Total CPU Time:        21.076 seconds
+  Simulation CPU Time:   21.058 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.94443
+  Time Ratio (Sim/CPU):  0.94977
 
   OpenFAST terminated normally.
 

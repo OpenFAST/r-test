@@ -49,41 +49,41 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 1, Blade = 1
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 1, Blade = 3
 +                                                                                                  
-+ Timestep: 5 of 70 seconds. Estimated final completion at 12:30:45.
++ Timestep: 5 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 10 of 70 seconds. Estimated final completion at 12:30:47.
++ Timestep: 10 of 70 seconds. Estimated final completion at 14:32:06.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 5, Blade = 2
 +                                                                                                  
-+ Timestep: 15 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 15 of 70 seconds. Estimated final completion at 14:32:05.
 +                                                                                                  
-+ Timestep: 20 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 20 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 25 of 70 seconds. Estimated final completion at 12:30:45.
++ Timestep: 25 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 30 of 70 seconds. Estimated final completion at 12:30:45.
++ Timestep: 30 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 35 of 70 seconds. Estimated final completion at 12:30:45.
++ Timestep: 35 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 40 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 40 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 45 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 45 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 50 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 50 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 55 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 55 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 60 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 60 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 65 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 65 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
-+ Timestep: 70 of 70 seconds. Estimated final completion at 12:30:46.
++ Timestep: 70 of 70 seconds. Estimated final completion at 14:32:06.
 +                                                                                                  
 
-  Total Real Time:       1.2153 minutes
-  Total CPU Time:        1.2098 minutes
-  Simulation CPU Time:   1.2093 minutes
+  Total Real Time:       1.2421 minutes
+  Total CPU Time:        1.2391 minutes
+  Simulation CPU Time:   1.2385 minutes
   Simulated Time:        1.1667 minutes
-  Time Ratio (Sim/CPU):  0.96472
+  Time Ratio (Sim/CPU):  0.94197
 
   OpenFAST terminated normally.
 

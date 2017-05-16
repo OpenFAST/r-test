@@ -56,36 +56,36 @@
  Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies.
 
 +                                                                                                  
-+ Timestep: 5 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 5 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 10 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 10 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 15 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 15 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 20 of 60 seconds. Estimated final completion at 12:47:44.
++ Timestep: 20 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 25 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 25 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 30 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 30 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 35 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 35 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 40 of 60 seconds. Estimated final completion at 12:47:42.
++ Timestep: 40 of 60 seconds. Estimated final completion at 14:43:22.
 +                                                                                                  
-+ Timestep: 45 of 60 seconds. Estimated final completion at 12:47:42.
++ Timestep: 45 of 60 seconds. Estimated final completion at 14:43:23.
 +                                                                                                  
-+ Timestep: 50 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 50 of 60 seconds. Estimated final completion at 14:43:23.
 +                                                                                                  
-+ Timestep: 55 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 55 of 60 seconds. Estimated final completion at 14:43:23.
 +                                                                                                  
-+ Timestep: 60 of 60 seconds. Estimated final completion at 12:47:43.
++ Timestep: 60 of 60 seconds. Estimated final completion at 14:43:23.
 +                                                                                                  
 
-  Total Real Time:       1.2832 minutes
-  Total CPU Time:        1.2797 minutes
-  Simulation CPU Time:   1.2711 minutes
+  Total Real Time:       1.2619 minutes
+  Total CPU Time:        1.2585 minutes
+  Simulation CPU Time:   1.2501 minutes
   Simulated Time:        1 minutes
-  Time Ratio (Sim/CPU):  0.78673
+  Time Ratio (Sim/CPU):  0.79996
 
   OpenFAST terminated normally.
 

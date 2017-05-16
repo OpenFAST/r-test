@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 14-May-2017 at 13:39:55 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 16-May-2017 at 16:17:31 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
   compiled with
     NWTC Subroutine Library (v2.11.00, 12-Nov-2016)
     ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
@@ -13,8 +13,8 @@ Predictions were generated on 14-May-2017 at 13:39:55 using OpenFAST (v8.17.01b-
     HydroDyn (v2.05.00, 15-Mar-2016)
     SubDyn (unknown version, unknown date) [not called]
     ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (v1.02.01, 23-Jul-2016)
+    MAP++ (<1.20.10>, <May-16-2017>)
+    FEAMooring (unknown version, unknown date) [not called]
     MoorDyn (unknown version, unknown date) [not called]
     OrcaFlexInterface (unknown version, unknown date) [not called]
     IceFloe (unknown version, unknown date) [not called]
@@ -40,7 +40,7 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
   AeroDyn             1.250E-02              1
   ServoDyn            1.250E-02              1
   HydroDyn            1.250E-02              1
-  FEAMooring          1.250E-02              1
+  MAP++               1.250E-02              1
   FAST output files   1.250E-02              1
 
 
@@ -137,19 +137,19 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
       87  GenPwr      (kW)        ServoDyn
       88  GenTq       (kN·m)      ServoDyn
       89  Wave1Elev   (m)         HydroDyn
-      90  FairT1      (kN)        FEAMooring
-      91  AnchT1      (kN)        FEAMooring
-      92  FairT2      (kN)        FEAMooring
-      93  AnchT2      (kN)        FEAMooring
-      94  FairT3      (kN)        FEAMooring
-      95  AnchT3      (kN)        FEAMooring
-      96  FairT4      (kN)        FEAMooring
-      97  AnchT4      (kN)        FEAMooring
-      98  FairT5      (kN)        FEAMooring
-      99  AnchT5      (kN)        FEAMooring
-     100  FairT6      (kN)        FEAMooring
-     101  AnchT6      (kN)        FEAMooring
-     102  FairT7      (kN)        FEAMooring
-     103  AnchT7      (kN)        FEAMooring
-     104  FairT8      (kN)        FEAMooring
-     105  AnchT8      (kN)        FEAMooring
+      90  T[1]        [N]         MAP++
+      91  T_a[1]      [N]         MAP++
+      92  T[2]        [N]         MAP++
+      93  T_a[2]      [N]         MAP++
+      94  T[3]        [N]         MAP++
+      95  T_a[3]      [N]         MAP++
+      96  T[4]        [N]         MAP++
+      97  T_a[4]      [N]         MAP++
+      98  T[5]        [N]         MAP++
+      99  T_a[5]      [N]         MAP++
+     100  T[6]        [N]         MAP++
+     101  T_a[6]      [N]         MAP++
+     102  T[7]        [N]         MAP++
+     103  T_a[7]      [N]         MAP++
+     104  T[8]        [N]         MAP++
+     105  T_a[8]      [N]         MAP++

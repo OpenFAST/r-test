@@ -49,24 +49,24 @@
  Barge.
 
 +                                                                                                  
-+ Timestep: 10 of 60 seconds. Estimated final completion at 17:24:54.
++ Timestep: 10 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
-+ Timestep: 20 of 60 seconds. Estimated final completion at 17:24:55.
++ Timestep: 20 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
-+ Timestep: 30 of 60 seconds. Estimated final completion at 17:24:55.
++ Timestep: 30 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
-+ Timestep: 40 of 60 seconds. Estimated final completion at 17:24:55.
++ Timestep: 40 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
-+ Timestep: 50 of 60 seconds. Estimated final completion at 17:24:55.
++ Timestep: 50 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
-+ Timestep: 60 of 60 seconds. Estimated final completion at 17:24:55.
++ Timestep: 60 of 60 seconds. Estimated final completion at 16:15:45.
 +                                                                                                  
 
-  Total Real Time:       29.943 seconds
-  Total CPU Time:        29.806 seconds
-  Simulation CPU Time:   28.405 seconds
+  Total Real Time:       31.081 seconds
+  Total CPU Time:        30.651 seconds
+  Simulation CPU Time:   29.962 seconds
   Simulated Time:        60 seconds
-  Time Ratio (Sim/CPU):  2.1123
+  Time Ratio (Sim/CPU):  2.0025
 
   OpenFAST terminated normally.
 

@@ -32,52 +32,52 @@
     Torque vs RPM.xls
 
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 12:36:48.
++ Timestep: 1 of 20 seconds. Estimated final completion at 14:38:05.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 2 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 3 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 4 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 5 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 6 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 7 of 20 seconds. Estimated final completion at 14:38:05.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 8 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 9 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 11 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 12 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 13 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 14 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 15 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 16 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 17 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 18 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 19 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:36:47.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:38:06.
 +                                                                                                  
 
-  Total Real Time:       1.1154 minutes
-  Total CPU Time:        1.1126 minutes
-  Simulation CPU Time:   1.1124 minutes
+  Total Real Time:       1.1092 minutes
+  Total CPU Time:        1.1066 minutes
+  Simulation CPU Time:   1.1063 minutes
   Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  0.29965
+  Time Ratio (Sim/CPU):  0.3013
 
   OpenFAST terminated normally.
 

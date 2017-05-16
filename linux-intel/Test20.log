@@ -62,132 +62,132 @@
  subsequent calls until time is advanced. Warning will not be displayed again.
 
 +                                                                                                  
-+ Timestep: 1 of 60 seconds. Estimated final completion at 13:24:33.
++ Timestep: 1 of 60 seconds. Estimated final completion at 15:38:27.
 +                                                                                                  
-+ Timestep: 2 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 2 of 60 seconds. Estimated final completion at 15:15:28.
 +                                                                                                  
-+ Timestep: 3 of 60 seconds. Estimated final completion at 13:06:45.
++ Timestep: 3 of 60 seconds. Estimated final completion at 15:12:43.
 +                                                                                                  
-+ Timestep: 4 of 60 seconds. Estimated final completion at 13:06:50.
++ Timestep: 4 of 60 seconds. Estimated final completion at 15:10:20.
 +                                                                                                  
-+ Timestep: 5 of 60 seconds. Estimated final completion at 13:06:39.
++ Timestep: 5 of 60 seconds. Estimated final completion at 15:10:07.
 +                                                                                                  
-+ Timestep: 6 of 60 seconds. Estimated final completion at 13:06:46.
++ Timestep: 6 of 60 seconds. Estimated final completion at 15:11:06.
 +                                                                                                  
-+ Timestep: 7 of 60 seconds. Estimated final completion at 13:06:48.
++ Timestep: 7 of 60 seconds. Estimated final completion at 15:15:03.
 +                                                                                                  
-+ Timestep: 8 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 8 of 60 seconds. Estimated final completion at 15:15:00.
 +                                                                                                  
-+ Timestep: 9 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 9 of 60 seconds. Estimated final completion at 15:15:01.
 +                                                                                                  
-+ Timestep: 10 of 60 seconds. Estimated final completion at 13:06:49.
++ Timestep: 10 of 60 seconds. Estimated final completion at 15:15:02.
 +                                                                                                  
-+ Timestep: 11 of 60 seconds. Estimated final completion at 13:06:52.
++ Timestep: 11 of 60 seconds. Estimated final completion at 15:13:50.
 +                                                                                                  
-+ Timestep: 12 of 60 seconds. Estimated final completion at 13:06:37.
++ Timestep: 12 of 60 seconds. Estimated final completion at 15:10:09.
 +                                                                                                  
-+ Timestep: 13 of 60 seconds. Estimated final completion at 13:06:40.
++ Timestep: 13 of 60 seconds. Estimated final completion at 15:10:14.
 +                                                                                                  
-+ Timestep: 14 of 60 seconds. Estimated final completion at 13:06:46.
++ Timestep: 14 of 60 seconds. Estimated final completion at 15:10:24.
 +                                                                                                  
-+ Timestep: 15 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 15 of 60 seconds. Estimated final completion at 15:10:10.
 +                                                                                                  
-+ Timestep: 16 of 60 seconds. Estimated final completion at 13:06:40.
++ Timestep: 16 of 60 seconds. Estimated final completion at 15:10:09.
 +                                                                                                  
-+ Timestep: 17 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 17 of 60 seconds. Estimated final completion at 15:10:12.
 +                                                                                                  
-+ Timestep: 18 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 18 of 60 seconds. Estimated final completion at 15:10:09.
 +                                                                                                  
-+ Timestep: 19 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 19 of 60 seconds. Estimated final completion at 15:10:10.
 +                                                                                                  
-+ Timestep: 20 of 60 seconds. Estimated final completion at 13:06:46.
++ Timestep: 20 of 60 seconds. Estimated final completion at 15:10:09.
 +                                                                                                  
-+ Timestep: 21 of 60 seconds. Estimated final completion at 13:06:43.
++ Timestep: 21 of 60 seconds. Estimated final completion at 15:10:06.
 +                                                                                                  
-+ Timestep: 22 of 60 seconds. Estimated final completion at 13:06:38.
++ Timestep: 22 of 60 seconds. Estimated final completion at 15:10:03.
 +                                                                                                  
-+ Timestep: 23 of 60 seconds. Estimated final completion at 13:06:53.
++ Timestep: 23 of 60 seconds. Estimated final completion at 15:09:56.
 +                                                                                                  
-+ Timestep: 24 of 60 seconds. Estimated final completion at 13:06:27.
++ Timestep: 24 of 60 seconds. Estimated final completion at 15:10:01.
 +                                                                                                  
-+ Timestep: 25 of 60 seconds. Estimated final completion at 13:06:36.
++ Timestep: 25 of 60 seconds. Estimated final completion at 15:10:06.
 +                                                                                                  
-+ Timestep: 26 of 60 seconds. Estimated final completion at 13:06:49.
++ Timestep: 26 of 60 seconds. Estimated final completion at 15:10:07.
 +                                                                                                  
-+ Timestep: 27 of 60 seconds. Estimated final completion at 13:06:37.
++ Timestep: 27 of 60 seconds. Estimated final completion at 15:10:07.
 +                                                                                                  
-+ Timestep: 28 of 60 seconds. Estimated final completion at 13:06:38.
++ Timestep: 28 of 60 seconds. Estimated final completion at 15:10:09.
 +                                                                                                  
-+ Timestep: 29 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 29 of 60 seconds. Estimated final completion at 15:10:10.
 +                                                                                                  
-+ Timestep: 30 of 60 seconds. Estimated final completion at 13:06:35.
++ Timestep: 30 of 60 seconds. Estimated final completion at 15:32:09.
 +                                                                                                  
-+ Timestep: 31 of 60 seconds. Estimated final completion at 13:06:36.
++ Timestep: 31 of 60 seconds. Estimated final completion at 15:22:49.
 +                                                                                                  
-+ Timestep: 32 of 60 seconds. Estimated final completion at 13:06:35.
++ Timestep: 32 of 60 seconds. Estimated final completion at 15:14:27.
 +                                                                                                  
-+ Timestep: 33 of 60 seconds. Estimated final completion at 13:06:29.
++ Timestep: 33 of 60 seconds. Estimated final completion at 15:14:10.
 +                                                                                                  
-+ Timestep: 34 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 34 of 60 seconds. Estimated final completion at 15:14:10.
 +                                                                                                  
-+ Timestep: 35 of 60 seconds. Estimated final completion at 13:06:43.
++ Timestep: 35 of 60 seconds. Estimated final completion at 15:14:12.
 +                                                                                                  
-+ Timestep: 36 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 36 of 60 seconds. Estimated final completion at 15:14:10.
 +                                                                                                  
-+ Timestep: 37 of 60 seconds. Estimated final completion at 13:06:44.
++ Timestep: 37 of 60 seconds. Estimated final completion at 15:14:11.
 +                                                                                                  
-+ Timestep: 38 of 60 seconds. Estimated final completion at 13:06:48.
++ Timestep: 38 of 60 seconds. Estimated final completion at 15:14:09.
 +                                                                                                  
-+ Timestep: 39 of 60 seconds. Estimated final completion at 13:06:44.
++ Timestep: 39 of 60 seconds. Estimated final completion at 15:14:08.
 +                                                                                                  
-+ Timestep: 40 of 60 seconds. Estimated final completion at 13:06:47.
++ Timestep: 40 of 60 seconds. Estimated final completion at 15:14:08.
 +                                                                                                  
-+ Timestep: 41 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 41 of 60 seconds. Estimated final completion at 15:14:09.
 +                                                                                                  
-+ Timestep: 42 of 60 seconds. Estimated final completion at 13:06:35.
++ Timestep: 42 of 60 seconds. Estimated final completion at 15:14:10.
 +                                                                                                  
-+ Timestep: 43 of 60 seconds. Estimated final completion at 13:06:37.
++ Timestep: 43 of 60 seconds. Estimated final completion at 15:14:08.
 +                                                                                                  
-+ Timestep: 44 of 60 seconds. Estimated final completion at 13:06:38.
++ Timestep: 44 of 60 seconds. Estimated final completion at 15:14:10.
 +                                                                                                  
-+ Timestep: 45 of 60 seconds. Estimated final completion at 13:06:44.
++ Timestep: 45 of 60 seconds. Estimated final completion at 15:14:11.
 +                                                                                                  
-+ Timestep: 46 of 60 seconds. Estimated final completion at 13:06:38.
++ Timestep: 46 of 60 seconds. Estimated final completion at 15:14:17.
 +                                                                                                  
-+ Timestep: 47 of 60 seconds. Estimated final completion at 13:06:44.
++ Timestep: 47 of 60 seconds. Estimated final completion at 15:14:26.
 +                                                                                                  
-+ Timestep: 48 of 60 seconds. Estimated final completion at 13:06:44.
++ Timestep: 48 of 60 seconds. Estimated final completion at 15:13:05.
 +                                                                                                  
-+ Timestep: 49 of 60 seconds. Estimated final completion at 13:06:39.
++ Timestep: 49 of 60 seconds. Estimated final completion at 15:13:07.
 +                                                                                                  
-+ Timestep: 50 of 60 seconds. Estimated final completion at 13:06:41.
++ Timestep: 50 of 60 seconds. Estimated final completion at 15:13:06.
 +                                                                                                  
-+ Timestep: 51 of 60 seconds. Estimated final completion at 13:06:41.
++ Timestep: 51 of 60 seconds. Estimated final completion at 15:13:09.
 +                                                                                                  
-+ Timestep: 52 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 52 of 60 seconds. Estimated final completion at 15:13:13.
 +                                                                                                  
-+ Timestep: 53 of 60 seconds. Estimated final completion at 13:06:41.
++ Timestep: 53 of 60 seconds. Estimated final completion at 15:13:11.
 +                                                                                                  
-+ Timestep: 54 of 60 seconds. Estimated final completion at 13:06:39.
++ Timestep: 54 of 60 seconds. Estimated final completion at 15:13:12.
 +                                                                                                  
-+ Timestep: 55 of 60 seconds. Estimated final completion at 13:06:40.
++ Timestep: 55 of 60 seconds. Estimated final completion at 15:13:19.
 +                                                                                                  
-+ Timestep: 56 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 56 of 60 seconds. Estimated final completion at 15:13:19.
 +                                                                                                  
-+ Timestep: 57 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 57 of 60 seconds. Estimated final completion at 15:13:26.
 +                                                                                                  
-+ Timestep: 58 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 58 of 60 seconds. Estimated final completion at 15:13:19.
 +                                                                                                  
-+ Timestep: 59 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 59 of 60 seconds. Estimated final completion at 15:13:27.
 +                                                                                                  
-+ Timestep: 60 of 60 seconds. Estimated final completion at 13:06:42.
++ Timestep: 60 of 60 seconds. Estimated final completion at 15:13:27.
 +                                                                                                  
 
-  Total Real Time:       14.634 minutes
-  Total CPU Time:        14.589 minutes
-  Simulation CPU Time:   13.944 minutes
+  Total Real Time:       25.637 minutes
+  Total CPU Time:        24.705 minutes
+  Simulation CPU Time:   24.034 minutes
   Simulated Time:        1.0001 minutes
-  Time Ratio (Sim/CPU):  7.17262E-02
+  Time Ratio (Sim/CPU):  4.16126E-02
 
   OpenFAST terminated normally.
 

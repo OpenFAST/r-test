@@ -39,13 +39,13 @@
   Running ServoDyn (v1.06.00a-bjj, 26-Jul-2016).
   Timestep: 0 of 20 seconds.
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 1 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 2 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 3 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 4 of 20 seconds. Estimated final completion at 14:34:21.
 
  ***********************************************
  Running with control option using data from:
@@ -53,59 +53,59 @@
  ***********************************************
 
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 5 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 6 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 12:33:00.
++ Timestep: 7 of 20 seconds. Estimated final completion at 14:34:21.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 12:33:00.
++ Timestep: 8 of 20 seconds. Estimated final completion at 14:34:20.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 9 of 20 seconds. Estimated final completion at 14:34:20.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 2
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 11 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 1
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 3, Blade = 3
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 12 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 4, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 4, Blade = 2
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 13 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 5, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 4, Blade = 1
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 5, Blade = 1
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 14 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 6, Blade = 1
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 5, Blade = 3
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 6, Blade = 3
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 15 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 6, Blade = 2
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 16 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 7, Blade = 2
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 17 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 7, Blade = 1
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 18 of 20 seconds. Estimated final completion at 14:34:20.
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 7, Blade = 3
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 19 of 20 seconds. Estimated final completion at 14:34:20.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:33:01.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:34:20.
 +                                                                                                  
 
-  Total Real Time:       15.221 seconds
-  Total CPU Time:        15.17 seconds
-  Simulation CPU Time:   15.156 seconds
+  Total Real Time:       15.296 seconds
+  Total CPU Time:        15.253 seconds
+  Simulation CPU Time:   15.236 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  1.3196
+  Time Ratio (Sim/CPU):  1.3127
 
   OpenFAST terminated normally.
 

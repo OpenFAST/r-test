@@ -62,52 +62,52 @@
  Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies.
 
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 13:48:07.
++ Timestep: 1 of 20 seconds. Estimated final completion at 16:23:58.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 13:48:07.
++ Timestep: 2 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 13:48:07.
++ Timestep: 3 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 13:48:06.
++ Timestep: 4 of 20 seconds. Estimated final completion at 16:23:57.
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 13:48:10.
++ Timestep: 5 of 20 seconds. Estimated final completion at 16:23:57.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 13:48:09.
++ Timestep: 6 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 13:48:11.
++ Timestep: 7 of 20 seconds. Estimated final completion at 16:23:57.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 13:48:08.
++ Timestep: 8 of 20 seconds. Estimated final completion at 16:23:54.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 13:48:13.
++ Timestep: 9 of 20 seconds. Estimated final completion at 16:23:55.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 13:48:16.
++ Timestep: 10 of 20 seconds. Estimated final completion at 16:23:55.
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 13:48:14.
++ Timestep: 11 of 20 seconds. Estimated final completion at 16:23:55.
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 13:48:11.
++ Timestep: 12 of 20 seconds. Estimated final completion at 16:23:54.
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 13:48:15.
++ Timestep: 13 of 20 seconds. Estimated final completion at 16:23:55.
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 13:48:12.
++ Timestep: 14 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 13:48:14.
++ Timestep: 15 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 13:48:15.
++ Timestep: 16 of 20 seconds. Estimated final completion at 16:23:55.
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 13:48:15.
++ Timestep: 17 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 13:48:14.
++ Timestep: 18 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 13:48:13.
++ Timestep: 19 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 13:48:14.
++ Timestep: 20 of 20 seconds. Estimated final completion at 16:23:56.
 +                                                                                                  
 
-  Total Real Time:       4.9796 minutes
-  Total CPU Time:        4.963 minutes
-  Simulation CPU Time:   4.9545 minutes
+  Total Real Time:       4.9595 minutes
+  Total CPU Time:        4.9462 minutes
+  Simulation CPU Time:   4.9374 minutes
   Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  6.72787E-02
+  Time Ratio (Sim/CPU):  6.75112E-02
 
   OpenFAST terminated normally.
 

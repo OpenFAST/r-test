@@ -36,52 +36,52 @@
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 1, Blade = 2
  Warning: Turning off Unsteady Aerodynamics due to high angle-of-attack. BladeNode = 2, Blade = 2
 +                                                                                                  
-+ Timestep: 1 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 1 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 2 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 2 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 3 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 3 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 4 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 4 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 5 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 5 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 6 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 6 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 7 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 7 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 8 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 8 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 9 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 9 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 10 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 10 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 11 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 11 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 12 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 12 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 13 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 13 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 14 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 14 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 15 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 15 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 16 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 16 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 17 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 17 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 18 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 18 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 19 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 19 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
-+ Timestep: 20 of 20 seconds. Estimated final completion at 12:27:51.
++ Timestep: 20 of 20 seconds. Estimated final completion at 14:29:10.
 +                                                                                                  
 
-  Total Real Time:       19.774 seconds
-  Total CPU Time:        19.704 seconds
-  Simulation CPU Time:   19.68 seconds
+  Total Real Time:       20.645 seconds
+  Total CPU Time:        20.588 seconds
+  Simulation CPU Time:   20.56 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  1.0163
+  Time Ratio (Sim/CPU):  0.97277
 
   OpenFAST terminated normally.
 
