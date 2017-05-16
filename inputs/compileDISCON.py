@@ -9,6 +9,12 @@ def exitWithInputError():
 if len(sys.argv) != 3:
   exitWithInputError()
 
+# parse the directory of this script if used in the call
+# move into it to run make
+if os.path.sep in sys.argv[0]:
+  splitpath = sys.argv[0].split(os.path.sep)
+  os.chdir(os.path.sep.join(splitpath[0:len(splitpath)-1]))
+
 compilerInput = sys.argv[1]
 if compilerInput.lower() != "intel" and compilerInput.lower() != "gnu":
   exitWithInputError()
@@ -19,7 +25,7 @@ if buildInput.upper() != "DEBUG" and buildInput.upper() != "RELEASE":
   exitWithInputError()
 build = buildInput.upper()
 
-makebase = "makefile_DISCON"
+makebase = os.path.join("makefile_DISCON")
 for ext in ["", "_ITI", "_OC3"]:
     makefile = makebase+ext
     if not os.path.isfile(makefile):
@@ -28,4 +34,4 @@ for ext in ["", "_ITI", "_OC3"]:
 
     make_command = "make -f {} COMPILER={} BUILD={} > {}.log".format(makefile, compiler, build, makefile)
     return_code = subprocess.call(make_command, shell=True)
-    print("Finished running `make` command for DISCON{} with return code: {}".format(ext, return_code))
+    print("-- `make` for DISCON{} finished with return code: {}".format(ext, return_code))
