@@ -92,12 +92,12 @@ all: default
 default: $(DEST_DIR)/$(OUTPUT_NAME)$(SOBJ_EXT)
 
 # General rules for compliling the files.
-$(SOURCE_DIR)/$(OUTPUT_NAME)$(OBJ_EXT): $(SOURCE_DIR)/$(SOURCE_FILE).f90
+$(SOURCE_DIR)$(OUTPUT_NAME)$(OBJ_EXT): $(SOURCE_DIR)$(SOURCE_FILE).f90
 	$(FC) $(FFLAGS) -c $< -o $@
 
 # For linking
-$(DEST_DIR)/$(OUTPUT_NAME)$(SOBJ_EXT): $(SOURCE_DIR)/$(SOURCE_FILE)$(OBJ_EXT)
-	$(FC) $(LDFLAGS) -I $(SOURCE_DIR) -o $(DEST_DIR)/$(OUTPUT_NAME)$(SOBJ_EXT) $(SOURCE_DIR)/$(SOURCE_FILE)$(OBJ_EXT)
+$(DEST_DIR)/$(OUTPUT_NAME)$(SOBJ_EXT): $(SOURCE_DIR)$(SOURCE_FILE)$(OBJ_EXT)
+	$(FC) $(LDFLAGS) -I $(SOURCE_DIR) -o $(DEST_DIR)/$(OUTPUT_NAME)$(SOBJ_EXT) $(SOURCE_DIR)$(SOURCE_FILE)$(OBJ_EXT)
 
 # Cleanup afterwards.
 clean:
