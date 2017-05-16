@@ -28,7 +28,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_HydroDyn.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
-"5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_FEAMooring.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
+"5MW_Baseline/NRELOffshrBsline5MW_MIT_NREL_TLP_MAP.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
