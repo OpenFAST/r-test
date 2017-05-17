@@ -19,9 +19,7 @@ SOURCE_FILE = DISCON_OC3Hywind
 OUTPUT_NAME = DISCON_OC3Hywind
 DEST_DIR = 5MW_Baseline/ServoData
 
-ifeq ($(OS), Windows_NT)
-  BITS = 32
-else
+ifeq ($(BITS), "")
   BITS = 64
 endif
 
