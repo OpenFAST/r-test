@@ -28,8 +28,8 @@ The inputs directory is included here to provide an easy method for local testin
 ### NOTE
 The 5MW turbine cases require a compiled controller library for ServoDyn. A python script is included in `inputs` to compile the necessary controllers. Run the python script with this command:
 
-`python compileDISCON.py compiler_type[gnu,intel] arch_type[32/64]`
+`python3 compileDISCON.py compiler_type[gnu,intel] arch_type[32/64]`
 
 for example:
 
-`python compileDISCON.py gnu 64`
+`python3 compileDISCON.py gnu 64`
