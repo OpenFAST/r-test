@@ -3,7 +3,7 @@ import os
 import subprocess
 
 def exitWithInputError():
-  print("ERROR: Invalid arguments.\nUSAGE: python3 compileDISCON.py compiler_type[gnu,intel] arch_type[32/64]")
+  print("ERROR: Invalid arguments given: {}.\nUSAGE: python3 compileDISCON.py compiler_type[gnu,intel] arch_type[32/64]".format(sys.argv))
   sys.exit(1)
 
 if len(sys.argv) != 3:
