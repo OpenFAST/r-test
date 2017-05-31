@@ -4,5 +4,6 @@
 *.log
 
 # compiled outputs
+*.dll
 *.so
 *.o
