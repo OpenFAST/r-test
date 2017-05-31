@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION 2.8.12)
 project(DISCON Fortran)
 
 set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON.f90")
-file(TO_NATIVE_PATH ${SOURCE_PATH} SOURCE_PATH)
+file(TO_CMAKE_PATH ${SOURCE_PATH} SOURCE_PATH)
 
 add_library(DISCON SHARED ${SOURCE_PATH})
 set_target_properties(DISCON PROPERTIES PREFIX "" SUFFIX ".dll")
