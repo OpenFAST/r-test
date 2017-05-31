@@ -62,7 +62,7 @@ endif
 ifeq ($(OS),Windows_NT)
   # Windows
   DEL_CMD = del
-  SOBJ_EXT = .so
+  SOBJ_EXT = .dll
   INTER_DIR = $(SOURCE_DIR)
   MD_CMD = @mkdir
   OBJ_EXT = .obj

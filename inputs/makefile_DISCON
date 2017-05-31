@@ -74,7 +74,7 @@ else
 
   # Linux
   DEL_CMD = rm -f
-  SOBJ_EXT = .so
+  SOBJ_EXT = .dll
   INTER_DIR = $(SOURCE_DIR)
   MD_CMD = @mkdir -p
   OBJ_EXT = .o
