@@ -45,8 +45,10 @@ for ext in ["", "_ITI", "_OC3"]:
     sys.exit(1)
 
   os.chdir(sourcedir)
+  os.mkdir("build")
+  os.chdir("build")
 
-  cmake_command = "cmake ."
+  cmake_command = "cmake .."
   return_code = subprocess.call(cmake_command, shell=True)
   if return_code != 0:
     print("-- Finished DISCON{} with return code: {}".format(ext, return_code))
