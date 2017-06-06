@@ -107,7 +107,7 @@ False         Furling     - Read in additional model properties for furling turb
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
          21   TwrNodes    - Number of tower nodes used for analysis (-)
-"AWT_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
+"../AWT27/AWT_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
           1   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
