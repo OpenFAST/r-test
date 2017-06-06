@@ -45,8 +45,11 @@ for ext in ["", "_ITI", "_OC3"]:
     sys.exit(1)
 
   os.chdir(sourcedir)
-  os.mkdir("build")
-  os.chdir("build")
+
+  buildDir = "build"
+  if not os.path.isdir(buildDir):
+      os.mkdir(buildDir)
+  os.chdir(buildDir)
 
   cmake_command = "cmake .."
   return_code = subprocess.call(cmake_command, shell=True)
