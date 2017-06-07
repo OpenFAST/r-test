@@ -15,12 +15,12 @@
 #
 
 cmake_minimum_required(VERSION 2.8.12)
-project(DISCON_OC3 Fortran)
+project(DISCON_OC3Hywind Fortran)
 
 set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON_OC3Hywind.f90")
 file(TO_CMAKE_PATH ${SOURCE_PATH} SOURCE_PATH)
 
-add_library(DISCON_OC3 SHARED ${SOURCE_PATH})
-set_target_properties(DISCON_OC3 PROPERTIES PREFIX "" SUFFIX ".dll")
+add_library(DISCON_OC3Hywind SHARED ${SOURCE_PATH})
+set_target_properties(DISCON_OC3Hywind PROPERTIES PREFIX "" SUFFIX ".dll")
 
-install(TARGETS DISCON_OC3 DESTINATION "${CMAKE_CURRENT_LIST_DIR}/..")
+install(TARGETS DISCON_OC3Hywind DESTINATION "${CMAKE_CURRENT_LIST_DIR}/..")

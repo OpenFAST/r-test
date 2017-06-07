@@ -15,12 +15,12 @@
 #
 
 cmake_minimum_required(VERSION 2.8.12)
-project(DISCON_ITI Fortran)
+project(DISCON_ITIBarge Fortran)
 
 set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON_ITIBarge.f90")
 file(TO_CMAKE_PATH ${SOURCE_PATH} SOURCE_PATH)
 
-add_library(DISCON_ITI SHARED ${SOURCE_PATH})
-set_target_properties(DISCON_ITI PROPERTIES PREFIX "" SUFFIX ".dll")
+add_library(DISCON_ITIBarge SHARED ${SOURCE_PATH})
+set_target_properties(DISCON_ITIBarge PROPERTIES PREFIX "" SUFFIX ".dll")
 
-install(TARGETS DISCON_ITI DESTINATION "${CMAKE_CURRENT_LIST_DIR}/..")
+install(TARGETS DISCON_ITIBarge DESTINATION "${CMAKE_CURRENT_LIST_DIR}/..")
