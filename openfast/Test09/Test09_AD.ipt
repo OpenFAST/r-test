@@ -14,16 +14,16 @@ UAE Phase VI (Ames) aerodynamic parameters for FAST certification test #9.
  1.4639E-05   KinVisc      - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
       0.003   DTAero       - Time interval for aerodynamic calculations (sec)
          10   NumFoil      - Number of airfoil files (-)
-"AeroData/cylinder.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
-"AeroData/Mod_S809_129.dat"
-"AeroData/Mod_S809_185.dat"
-"AeroData/Mod_S809_242.dat"
-"AeroData/Mod_S809_298.dat"
-"AeroData/Mod_S809_354.dat"
-"AeroData/Mod_S809_410.dat"
-"AeroData/Mod_S809_600.dat"
-"AeroData/Mod_S809_800.dat"
-"AeroData/Mod_S809_Outboard.dat"
+"../UAE_VI/AeroData/cylinder.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
+"../UAE_VI/AeroData/Mod_S809_129.dat"
+"../UAE_VI/AeroData/Mod_S809_185.dat"
+"../UAE_VI/AeroData/Mod_S809_242.dat"
+"../UAE_VI/AeroData/Mod_S809_298.dat"
+"../UAE_VI/AeroData/Mod_S809_354.dat"
+"../UAE_VI/AeroData/Mod_S809_410.dat"
+"../UAE_VI/AeroData/Mod_S809_600.dat"
+"../UAE_VI/AeroData/Mod_S809_800.dat"
+"../UAE_VI/AeroData/Mod_S809_Outboard.dat"
          21   BldNodes    - Number of blade nodes used for analysis (-)
 RNodes         AeroTwst       DRNodes        Chord          NFoil          PrnElm
 5.6800000E-01  0.0000000E+00  2.7210000E-01  2.1900000E-01          1      NOPRINT 
