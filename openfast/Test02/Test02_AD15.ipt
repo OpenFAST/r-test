@@ -6,7 +6,7 @@ False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag
           1   WakeMod            - Type of wake/induction model (switch) {0=none, 1=BEMT}
           1   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model}
           0   TwrPotent          - Type tower influence on wind based on potential flow around the tower (switch) {0=none, 1=baseline potential flow, 2=potential flow with Bak correction}
-False         TwrShadow          – Calculate tower influence on wind based on downstream tower shadow? (flag)
+False         TwrShadow          - Calculate tower influence on wind based on downstream tower shadow? (flag)
 False         TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False         CavitCheck	      - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
@@ -27,7 +27,7 @@ False         TIDrag             - Include the drag term in the tangential-induc
 "Default"     IndToler           - Convergence tolerance for BEMT nonlinear solve residual equation {or "default"} (-) [used only when WakeMod=1]
         100   MaxIter            - Maximum number of iteration steps (-) [used only when WakeMod=1]
 ======  Beddoes-Leishman Unsteady Airfoil Aerodynamics Options  ===================================== [used only when AFAeroMod=2]
-          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez’s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
+          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalezï¿½s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
 True          FLookup            - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ======  Airfoil Information =========================================================================
           1   InCol_Alfa         - The column in the airfoil tables that contains the angle of attack (-)
