@@ -14,16 +14,16 @@ AWT-27CR aerodynamic parameters for FAST certification test #4.
  1.4639E-05   KinVisc      - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
       0.003   DTAero       - Time interval for aerodynamic calculations (sec)
          10   NumFoil      - Number of airfoil files (-)
-"AeroData/AWT27_05.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
-"AeroData/AWT27_15.dat"
-"AeroData/AWT27_25.dat"
-"AeroData/AWT27_35.dat"
-"AeroData/AWT27_45.dat"
-"AeroData/AWT27_55.dat"
-"AeroData/AWT27_65.dat"
-"AeroData/AWT27_75.dat"
-"AeroData/AWT27_85.dat"
-"AeroData/AWT27_95.dat"
+"../AWT27/AeroData/AWT27_05.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
+"../AWT27/AeroData/AWT27_15.dat"
+"../AWT27/AeroData/AWT27_25.dat"
+"../AWT27/AeroData/AWT27_35.dat"
+"../AWT27/AeroData/AWT27_45.dat"
+"../AWT27/AeroData/AWT27_55.dat"
+"../AWT27/AeroData/AWT27_65.dat"
+"../AWT27/AeroData/AWT27_75.dat"
+"../AWT27/AeroData/AWT27_85.dat"
+"../AWT27/AeroData/AWT27_95.dat"
          10   BldNodes    - Number of blade nodes used for analysis (-)
 RNodes         AeroTwst       DRNodes        Chord          NFoil          PrnElm
 1.8126500E+00  5.8000000E+00  1.2573000E+00  8.5900000E-01          1      NOPRINT 

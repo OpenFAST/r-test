@@ -19,13 +19,13 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
-"AWT27/Test04_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
+"Test04_ElastoDyn.dat"  EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
 "unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
 "unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"AWT27/Test04_InflowWind.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"AWT27/Test04_AD.ipt"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
-"AWT27/Test04_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
+"Test04_InflowWind.dat" InflowFile  - Name of file containing inflow wind input parameters (quoted string)
+"Test04_AD.ipt"         AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
+"Test04_ServoDyn.dat"   ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
