@@ -14,10 +14,10 @@ SWRT rotor aerodynamic parameters for FAST certification test #15.
    1.51E-05   KinVisc      - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
       0.001   DTAero       - Time interval for aerodynamic calculations (sec)
           4   NumFoil      - Number of airfoil files (-)
-"AeroData/TailPlate.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
-"AeroData/SH3052Mod_AllRe_Hanley.dat"
-"AeroData/SH3052Mod_AllRe_Elem14_Hanley.dat"
-"AeroData/SH3052Mod_AllRe_Elem15_Hanley.dat"
+"../SWRT/AeroData/TailPlate.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
+"../SWRT/AeroData/SH3052Mod_AllRe_Hanley.dat"
+"../SWRT/AeroData/SH3052Mod_AllRe_Elem14_Hanley.dat"
+"../SWRT/AeroData/SH3052Mod_AllRe_Elem15_Hanley.dat"
          15   BldNodes    - Number of blade nodes used for analysis (-)
 RNodes         AeroTwst       DRNodes        Chord          NFoil          PrnElm
 3.8960000E-01  0.0000000E+00  1.7310000E-01  2.1300000E-01          2      NOPRINT 
