@@ -36,15 +36,15 @@ True          FLookup            - Flag to indicate whether a lookup for f' will
           0   InCol_Cm           - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
           0   InCol_Cpmin        - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
           4   NumAFfiles         - Number of airfoil files used (-)
-"Airfoils/cylinder.dat"    AFNames            - Airfoil file names (NumAFfiles lines) (quoted strings)
-"Airfoils/s818_2703.dat"
-"Airfoils/s825_2103.dat"
-"Airfoils/s826_1603.dat"
+"../WP_Baseline/Airfoils/cylinder.dat"    AFNames            - Airfoil file names (NumAFfiles lines) (quoted strings)
+"../WP_Baseline/Airfoils/s818_2703.dat"
+"../WP_Baseline/Airfoils/s825_2103.dat"
+"../WP_Baseline/Airfoils/s826_1603.dat"
 ======  Rotor/Blade Properties  =====================================================================
 False         UseBlCm            - Include aerodynamic pitching moment in calculations?  (flag)
-"WP_Baseline_AeroDyn_blade.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"WP_Baseline_AeroDyn_blade.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"WP_Baseline_AeroDyn_blade.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"../WP_Baseline/WP_Baseline_AeroDyn_blade.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"../WP_Baseline/WP_Baseline_AeroDyn_blade.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"../WP_Baseline/WP_Baseline_AeroDyn_blade.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
           2   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 TwrElev        TwrDiam        TwrCd
