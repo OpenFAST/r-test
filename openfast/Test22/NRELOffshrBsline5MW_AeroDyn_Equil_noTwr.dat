@@ -14,14 +14,14 @@ NREL 5.0 MW offshore baseline aerodynamic input properties.
   1.464E-05   KinVisc      - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
 "default"     DTAero       - Time interval for aerodynamic calculations (sec)
           8   NumFoil      - Number of airfoil files (-)
-"AeroData/Cylinder1.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
-"AeroData/Cylinder2.dat"
-"AeroData/DU40_A17.dat"
-"AeroData/DU35_A17.dat"
-"AeroData/DU30_A17.dat"
-"AeroData/DU25_A17.dat"
-"AeroData/DU21_A17.dat"
-"AeroData/NACA64_A17.dat"
+"../5MW_Baseline/AeroData/Cylinder1.dat"    FoilNm      - Names of the airfoil files [NumFoil lines] (quoted strings)
+"../5MW_Baseline/AeroData/Cylinder2.dat"
+"../5MW_Baseline/AeroData/DU40_A17.dat"
+"../5MW_Baseline/AeroData/DU35_A17.dat"
+"../5MW_Baseline/AeroData/DU30_A17.dat"
+"../5MW_Baseline/AeroData/DU25_A17.dat"
+"../5MW_Baseline/AeroData/DU21_A17.dat"
+"../5MW_Baseline/AeroData/NACA64_A17.dat"
          17   BldNodes    - Number of blade nodes used for analysis (-)
 RNodes         AeroTwst       DRNodes        Chord          NFoil          PrnElm
 2.8667000E+00  1.3308000E+01  2.7333000E+00  3.5420000E+00          1      NOPRINT 
