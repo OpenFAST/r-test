@@ -17,8 +17,15 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(DISCON Fortran)
 
-set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON.f90")
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+  set(CMAKE_MACOSX_RPATH 1)
+endif()
+
+set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON.F90")
 file(TO_CMAKE_PATH ${SOURCE_PATH} SOURCE_PATH)
+
+set(CMAKE_Fortran_FLAGS "-m64 -fbacktrace -ffree-line-length-none -fdefault-real-8 -C -DDOUBLE_PRECISION -DIMPLICIT_DLLEXPORT")
+set(CMAKE_SHARE_LINKER_FLAGS "-shared")
 
 add_library(DISCON SHARED ${SOURCE_PATH})
 set_target_properties(DISCON PROPERTIES PREFIX "" SUFFIX ".dll")
