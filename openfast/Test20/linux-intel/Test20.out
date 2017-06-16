@@ -1,5 +1,5 @@
 
-Predictions were generated on 08-Jun-2017 at 13:15:15 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 08-Jun-2017 at 14:14:40 using OpenFAST (v8.17.01b-dev, 18-Jan-2017), compiled as a 64-bit application using double precision
  linked with  NWTC Subroutine Library (v2.11.02, 13-Mar-2017); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.04.00, 31-Dec-2016); AeroDyn (v15.04.02a, 10-May-2017); ServoDyn (v1.06.00a-bjj, 26-Jul-2016); HydroDyn (v2.05.00, 15-Mar-2016); SubDyn (v1.03.00, 11-Apr-2016)
 
 Description from the FAST input file: FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration, for use in offshore analysis
