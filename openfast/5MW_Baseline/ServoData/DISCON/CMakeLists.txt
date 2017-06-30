@@ -15,23 +15,32 @@
 #
 
 cmake_minimum_required(VERSION 2.8.12)
-project(DISCON Fortran)
+project(DISCON)
+enable_language(Fortran)
 
 set(SOURCE_PATH "${CMAKE_CURRENT_LIST_DIR}/DISCON.F90")
 file(TO_CMAKE_PATH ${SOURCE_PATH} SOURCE_PATH)
 
+# set the build type option
+if (NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE "Release" CACHE STRING
+    "Choose the build type: Debug Release" FORCE)
+endif (NOT CMAKE_BUILD_TYPE)
+
+# add the build flags
 set(CMAKE_Fortran_FLAGS "-m64 -fbacktrace -ffree-line-length-none -fdefault-real-8 -C -DDOUBLE_PRECISION")
 set(CMAKE_SHARE_LINKER_FLAGS "-shared")
-
-if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-  set(CMAKE_MACOSX_RPATH 1)
-endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" OR ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
   set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -DIMPLICIT_DLLEXPORT")
 endif()
 
+# supress the mac runtime path warnings
+if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+  set(CMAKE_MACOSX_RPATH 1)
+endif()
+
 add_library(DISCON SHARED ${SOURCE_PATH})
 set_target_properties(DISCON PROPERTIES PREFIX "" SUFFIX ".dll")
 
-install(TARGETS DISCON DESTINATION "${CMAKE_CURRENT_LIST_DIR}/..")
+install(TARGETS DISCON DESTINATION "${CMAKE_BINARY_DIR}/reg_tests/openfast/5MW_Baseline/ServoData")
