@@ -120,7 +120,7 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           3   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           3,          5,          7    BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"LSSGagVxa"               - Low-speed shaft strain gage angular speed (added for Simulink Test01_SIG.mdl)
+"LSSGagVxa"               - Low-speed shaft strain gage angular speed (added for Simulink AWT_YFix_WSt_SIG.mdl)
 "LSSGagPxa"               - LSS gage azimuth and teeter angles
 "TeetDefl"                - LSS gage azimuth and teeter angles
 "TipDxb2"                 - Blade 2 flapwise and edgewise tip deflections
