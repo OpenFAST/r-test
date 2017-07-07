@@ -43,4 +43,12 @@ endif()
 add_library(DISCON_OC3Hywind SHARED ${SOURCE_PATH})
 set_target_properties(DISCON_OC3Hywind PROPERTIES PREFIX "" SUFFIX ".dll")
 
-install(TARGETS DISCON_OC3Hywind DESTINATION "${CMAKE_BINARY_DIR}/reg_tests/openfast/5MW_Baseline/ServoData")
+# if this project is built standlone
+if (${CMAKE_CURRENT_LIST_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
+  set(INSTALL_DEST "${CMAKE_SOURCE_DIR}/..")
+# otherwise
+else()
+  set(INSTALL_DEST "${CMAKE_BINARY_DIR}/reg_tests/openfast/5MW_Baseline/ServoData")
+endif()
+
+install(TARGETS DISCON_OC3Hywind DESTINATION ${INSTALL_DEST})
