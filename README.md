@@ -22,6 +22,36 @@ The included turbine directories are:
 - UAE_VI - [Unsteady Aerodynamics Experiment research wind turbine](http://www.nrel.gov/docs/fy04osti/34755.pdf)
 - WP_Baseline - [WindPACT 1.5-MW baseline wind turbine](http://www.nrel.gov/docs/fy06osti/32495.pdf)
 
+The CertTest cases were recently renamed from the old style `TestNN` to more descriptive names. In general, the turbine abbreviation begins the case name followed by a concise description of the physics involved.
+
+Map of old style names to new names  
+Test01 - AWT_YFix_WSt  
+Test02 - AWT_WSt_StartUp_HighSpShutDown  
+Test03 - AWT_YFree_WSt  
+Test04 - AWT_YFree_WTurb  
+Test05 - AWT_WSt_StartUpShutDown  
+Test06 - AOC_WSt  
+Test07 - AOC_YFree_WTurb  
+Test08 - AOC_YFix_WSt  
+Test09 - UAE_YRamp_WSt  
+Test10 - UAE_Rigid_WRamp_PwrCurve  
+Test11 - WP_VSP_WTurb_PitchFail  
+Test12 - WP_VSP_ECD  
+Test13 - WP_VSP_WTurb  
+Test14 - WP_Stationary_Linear  
+Test15 - SWRT_YFree_VS_EDG01  
+Test16 - SWRT_YFree_VS_EDC01  
+Test17 - SWRT_YFree_VS_WTurb  
+Test18 - 5MW_DLL_Potential_WTurb  
+Test19 - 5MW_DLL_Potential_WTurb_WavesIrr  
+Test20 - 5MW_DLL_Potential_WSt_WavesReg  
+Test21 - 5MW_DLL_Potential_WTurb_WavesIrrFixedYawGrowth  
+Test22 - 5MW_DLL_WTurb_WavesIrr  
+Test23 - 5MW_DLL_WTurb_WavesIrr_WavesMulti  
+Test24 - 5MW_DLL_WTurb_WavesIrr  
+Test25 - 5MW_WSt_WhiteNoise_OC4  
+Test26 - 5MW_BD_DLL_Potential_WTurb  
+
 ## Baselines
 The regression test compares locally generated solutions to the baseline solutions generated on a series of machine and compiler combinations. Currently, the supported machine/compiler combinations for successful regression testing are:
 - linux-intel
