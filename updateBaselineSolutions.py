@@ -18,8 +18,12 @@
     This program copies locally generated solutions into the appropriate machine - compiler
     specific directory to update the baseline solutions.
 
-    Usage: python updateBaselineSolutions.py source_directory target_directory system_name compiler_id
-    Example: python updateBaselineSolutions.py local/solution/TestName target/solution/TestName [Darwin,Linux,Windows] [Intel,GNU]
+    Usage: python updateBaselineSolutions.py input_case_list source_solution_parent target_solution_parent system_name compiler_id
+    input_case_list - a text file listing all the cases to copy
+    source_solution_parent - the location to copy the files from. this is the parent directory of the cases; for example, `openfast/build/reg_tests/openfast`
+    target_solution_parent - the location to copy the files to. this is the parent directory of the target cases; for example, `openfast/reg_tests/r-test/openfast`
+
+    Example: python updateBaselineSolutions.py caselist.txt source/solution/parent target/solution/parent [macos,linux,windows] [intel,gnu]
 """
 
 import sys
@@ -37,27 +41,33 @@ def exitWithDirNotFound(dir):
 ##### Main
 
 ### Verify input arguments
-if len(sys.argv) != 5:
+if len(sys.argv) != 6:
     exitWithError("Invalid arguments: {}\n".format(" ".join(sys.argv)) +
-    "Usage: python updateBaselineSolutions.py local/solution/TestName target/solution/TestName [Darwin,Linux,Windows] [Intel,GNU]")
+    "Usage: python updateBaselineSolutions.py caselist.txt local/solution/parent baseline/solution/parent [macos,linux,windows] [intel,gnu]")
 
-sourceDir = sys.argv[1]
-targetDir = sys.argv[2]
-machine = sys.argv[3]
-compiler = sys.argv[4]
+with open(sys.argv[1]) as listfile:
+    content = listfile.readlines()
+casenames = [x.rstrip("\n\r").strip() for x in content if "#" not in x]
 
-destinationDir = os.path.join(targetDir, "{}-{}".format(machine, compiler))
+sourceParent = sys.argv[2]
+targetParent = sys.argv[3]
+machine = sys.argv[4]
+compiler = sys.argv[5]
 
-# verify source directory exists. if not, bail
-if not os.path.isdir(sourceDir):
-    exitWithDirNotFound(sourceDir)
+for case in casenames:
+    # verify source directory exists. if not, bail
+    if not os.path.isdir(sourceParent):
+        exitWithDirNotFound(sourceParent)
 
-# verify destination directory exists. if not, make it
-if not os.path.isdir(destinationDir):
-    os.makedirs(destinationDir)
+    # verify destination directory exists. if not, make it
+    destinationDir = os.path.join(targetParent, case, "{}-{}".format(machine, compiler))
+    if not os.path.isdir(destinationDir):
+        os.makedirs(destinationDir)
 
-sourceFiles = os.listdir(sourceDir)
-targetExtensions = [".out", ".outb", ".sum"]
-targetFiles = [s for s in sourceFiles for t in targetExtensions if t in s]
-for f in targetFiles:
-    shutil.copyfile(os.path.join(sourceDir,f), os.path.join(destinationDir,f))
+    caseDir = os.path.join(sourceParent, case)
+    sourceFiles = os.listdir(caseDir)
+    targetExtensions = [".out", ".outb", ".sum"]
+    targetFiles = [s for s in sourceFiles for t in targetExtensions if t in s]
+
+    for f in targetFiles:
+        shutil.copyfile(os.path.join(caseDir, f), os.path.join(destinationDir,f))
