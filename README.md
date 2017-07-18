@@ -33,8 +33,8 @@ Test05 - AWT_WSt_StartUpShutDown
 Test06 - AOC_WSt  
 Test07 - AOC_YFree_WTurb  
 Test08 - AOC_YFix_WSt  
-Test09 - UAE_YRamp_WSt  
-Test10 - UAE_Rigid_WRamp_PwrCurve  
+Test09 - UAE_Dnwind_YRamp_WSt  
+Test10 - UAE_Upwind_Rigid_WRamp_PwrCurve  
 Test11 - WP_VSP_WTurb_PitchFail  
 Test12 - WP_VSP_ECD  
 Test13 - WP_VSP_WTurb  
@@ -42,15 +42,15 @@ Test14 - WP_Stationary_Linear
 Test15 - SWRT_YFree_VS_EDG01  
 Test16 - SWRT_YFree_VS_EDC01  
 Test17 - SWRT_YFree_VS_WTurb  
-Test18 - 5MW_DLL_Potential_WTurb  
-Test19 - 5MW_DLL_Potential_WTurb_WavesIrr  
-Test20 - 5MW_DLL_Potential_WSt_WavesReg  
-Test21 - 5MW_DLL_Potential_WTurb_WavesIrrFixedYawGrowth  
-Test22 - 5MW_DLL_WTurb_WavesIrr  
-Test23 - 5MW_DLL_WTurb_WavesIrr_WavesMulti  
-Test24 - 5MW_DLL_WTurb_WavesIrr  
-Test25 - 5MW_WSt_WhiteNoise_OC4  
-Test26 - 5MW_BD_DLL_Potential_WTurb  
+Test18 - 5MW_Land_DLL_WTurb  
+Test19 - 5MW_OC3Mnpl_DLL_WTurb_WavesIrr  
+Test20 - 5MW_OC3Trpd_DLL_WSt_WavesReg  
+Test21 - 5MW_OC4Jckt_DLL_WTurb_WavesIrr_MGrowth  
+Test22 - 5MW_ITIBarge_DLL_WTurb_WavesIrr  
+Test23 - 5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti  
+Test24 - 5MW_OC3Spar_DLL_WTurb_WavesIrr  
+Test25 - 5MW_OC4Semi_WSt_WavesWN  
+Test26 - 5MW_Land_BD_DLL_WTurb  
 
 ## Baselines
 The regression test compares locally generated solutions to the baseline solutions generated on a series of machine and compiler combinations. Currently, the supported machine/compiler combinations for successful regression testing are:
