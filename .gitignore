@@ -1,1 +1,16 @@
 .DS_Store
+
+# logs
+*.log
+
+# cmake outputs
+CMakeCache.txt
+CMakeFiles
+*.cmake
+Makefile
+install_manifest.txt
+
+# compiled outputs
+*.dll
+*.so
+*.o
