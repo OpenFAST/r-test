@@ -4,19 +4,19 @@ AWT-27CR aerodynamic parameters for FAST certification test #2.
 False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)
 "default"     DTAero             - Time interval for aerodynamic calculations {or "default"} (s)
           1   WakeMod            - Type of wake/induction model (switch) {0=none, 1=BEMT}
-          1   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model}
+          1   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model} [must be 1 when linearizing]
           0   TwrPotent          - Type tower influence on wind based on potential flow around the tower (switch) {0=none, 1=baseline potential flow, 2=potential flow with Bak correction}
 False         TwrShadow          - Calculate tower influence on wind based on downstream tower shadow? (flag)
 False         TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
-False         CavitCheck	      - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
+False         CavitCheck	       - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
 ======  Environmental Conditions  ===================================================================
       1.225   AirDens            - Air density (kg/m^3)
  1.4639E-05   KinVisc            - Kinematic air viscosity (m^2/s)
         335   SpdSound           - Speed of sound (m/s)
-     103500   Patm		         - Atmospheric pressure (Pa)
-       1700   Pvap	            - Vapour pressure of fluid (Pa)
-         .5   FluidDepth         - Water depth above mid-hub height (MHK only, for cavitation check) (m)
+     103500   Patm		           - Atmospheric pressure (Pa) [used only when CavitCheck=True]
+       1700   Pvap	             - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
+         .5   FluidDepth         - Water depth above mid-hub height (m) [used only when CavitCheck=True]
 ======  Blade-Element/Momentum Theory Options  ====================================================== [used only when WakeMod=1]
           2   SkewMod            - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [used only when WakeMod=1]
 True          TipLoss            - Use the Prandtl tip-loss model? (flag) [used only when WakeMod=1]
