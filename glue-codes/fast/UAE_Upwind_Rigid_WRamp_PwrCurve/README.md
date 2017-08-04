@@ -1,1 +1,1 @@
-## UAE_Rigid_WRamp_PwrCurve
+## UAE_Upwind_Rigid_WRamp_PwrCurve

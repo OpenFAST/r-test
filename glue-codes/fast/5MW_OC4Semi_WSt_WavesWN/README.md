@@ -1,1 +1,1 @@
-## 5MW_WSt_WhiteNoise_OC4
+## 5MW_OC4Semi_WSt_WavesWN
