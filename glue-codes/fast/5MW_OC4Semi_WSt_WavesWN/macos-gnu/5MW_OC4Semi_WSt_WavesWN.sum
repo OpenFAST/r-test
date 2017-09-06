@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 18-Jul-2017 at 14:30:57 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 06-Sep-2017 at 12:20:04 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (unknown version, unknown date) [not called]
-    AeroDyn (v15.04.02a, 10-May-2017)
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (v2.05.00, 15-Mar-2016)
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (v1.01.02F, 8-Apr-2016)
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind
+    AeroDyn14 [not called]
+    AeroDyn
+    ServoDyn
+    HydroDyn
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a floating offshore turbine
@@ -71,30 +71,30 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
       21  RootFxc1    (kN)        ElastoDyn
       22  RootFyc1    (kN)        ElastoDyn
       23  RootFzc1    (kN)        ElastoDyn
-      24  RootMxc1    (kN·m)      ElastoDyn
-      25  RootMyc1    (kN·m)      ElastoDyn
-      26  RootMzc1    (kN·m)      ElastoDyn
-      27  RotTorq     (kN·m)      ElastoDyn
-      28  LSSGagMya   (kN·m)      ElastoDyn
-      29  LSSGagMza   (kN·m)      ElastoDyn
+      24  RootMxc1    (kN-m)      ElastoDyn
+      25  RootMyc1    (kN-m)      ElastoDyn
+      26  RootMzc1    (kN-m)      ElastoDyn
+      27  RotTorq     (kN-m)      ElastoDyn
+      28  LSSGagMya   (kN-m)      ElastoDyn
+      29  LSSGagMza   (kN-m)      ElastoDyn
       30  YawBrFxp    (kN)        ElastoDyn
       31  YawBrFyp    (kN)        ElastoDyn
       32  YawBrFzp    (kN)        ElastoDyn
-      33  YawBrMxp    (kN·m)      ElastoDyn
-      34  YawBrMyp    (kN·m)      ElastoDyn
-      35  YawBrMzp    (kN·m)      ElastoDyn
+      33  YawBrMxp    (kN-m)      ElastoDyn
+      34  YawBrMyp    (kN-m)      ElastoDyn
+      35  YawBrMzp    (kN-m)      ElastoDyn
       36  TwrBsFxt    (kN)        ElastoDyn
       37  TwrBsFyt    (kN)        ElastoDyn
       38  TwrBsFzt    (kN)        ElastoDyn
-      39  TwrBsMxt    (kN·m)      ElastoDyn
-      40  TwrBsMyt    (kN·m)      ElastoDyn
-      41  TwrBsMzt    (kN·m)      ElastoDyn
+      39  TwrBsMxt    (kN-m)      ElastoDyn
+      40  TwrBsMyt    (kN-m)      ElastoDyn
+      41  TwrBsMzt    (kN-m)      ElastoDyn
       42  RtArea      (m^2)       AeroDyn
       43  B1N3Clrnc   (m)         AeroDyn
       44  B2N3Clrnc   (m)         AeroDyn
       45  B3N3Clrnc   (m)         AeroDyn
       46  GenPwr      (kW)        ServoDyn
-      47  GenTq       (kN·m)      ServoDyn
+      47  GenTq       (kN-m)      ServoDyn
       48  Wave1Elev   (m)         HydroDyn
       49  FAIRTEN1    (N)         MoorDyn
       50  FAIRTEN2    (N)         MoorDyn

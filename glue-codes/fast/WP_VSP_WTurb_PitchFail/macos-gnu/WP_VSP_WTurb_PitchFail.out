@@ -1,11 +1,11 @@
 
-Predictions were generated on 18-Jul-2017 at 14:22:49 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
- linked with  NWTC Subroutine Library (v2.11.02, 13-Mar-2017); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.04.00, 31-Dec-2016); AeroDyn14 (v14.05.01a-bjj, 25-Jul-2016); ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
+Predictions were generated on 06-Sep-2017 at 12:11:49 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #11: WindPACT 1.5 MW Baseline with many DOFs undergoing a pitch failure.
 
 Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	RotSpeed  	BldPitch1 	OoPDefl1  	OoPDefl3  	TipALxb1  	RootMxb1  	RootMyb1  	RootMzb1  	RotThrust 	LSShftFya 	LSShftFza 	LSSTipMya 	LSSTipMza 	RotTorq   	RotPwr    	TTDspFA   	TTDspSS   	TwHt1MLxt 	TwHt1MLyt 	TwHt1MLzt 	TwHt2FLxt 	TwHt2FLyt 	TwHt2FLzt 	TwHt1RPxi 	TwHt1TPxi 	TwHt1RDxt 	TwHt1TDxt 	GenPwr    
-(s)       	(m/s)     	(m/s)     	(m/s)     	(rpm)     	(deg)     	(m)       	(m)       	(m/s^2)   	(kN·m)    	(kN·m)    	(kN·m)    	(kN)      	(kN)      	(kN)      	(kN·m)    	(kN·m)    	(kN·m)    	(kW)      	(m)       	(m)       	(kN·m)    	(kN·m)    	(kN·m)    	(kN)      	(kN)      	(kN)      	(deg)     	(m)       	(deg)     	(m)       	(kW)      
+(s)       	(m/s)     	(m/s)     	(m/s)     	(rpm)     	(deg)     	(m)       	(m)       	(m/s^2)   	(kN-m)    	(kN-m)    	(kN-m)    	(kN)      	(kN)      	(kN)      	(kN-m)    	(kN-m)    	(kN-m)    	(kW)      	(m)       	(m)       	(kN-m)    	(kN-m)    	(kN-m)    	(kN)      	(kN)      	(kN)      	(deg)     	(m)       	(deg)     	(m)       	(kW)      
     0.0000	 1.408E+01	-3.656E+00	-3.207E-01	 2.000E+01	 7.500E+00	 0.000E+00	 0.000E+00	-1.954E+00	-3.382E+00	 1.696E+01	-7.860E-16	 2.902E+01	 9.542E-02	-2.298E+02	 1.141E+01	-1.807E+01	-1.283E-13	-2.688E-13	 0.000E+00	-0.000E+00	 4.337E-01	 1.896E+02	-1.829E+01	 1.901E+01	-4.323E-02	-9.873E+02	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.400E+03
     0.0500	 1.419E+01	-3.069E+00	-6.618E-02	 1.979E+01	 7.500E+00	 1.635E-01	 1.197E-01	 9.304E+01	 1.747E+02	 2.597E+02	 7.331E+00	 5.983E+01	-2.156E+01	-2.401E+02	 6.098E+01	-2.165E+01	 6.284E+02	 1.303E+03	-4.069E-05	-2.733E-04	-1.463E+02	 1.894E+02	-8.420E+01	 1.732E+01	 1.458E+01	-1.002E+03	-1.234E-03	 6.457E-04	-1.234E-03	 6.457E-04	 1.348E+03
     0.1000	 1.399E+01	-3.026E+00	 6.324E-01	 1.979E+01	 7.500E+00	 5.559E-01	 4.039E-01	 4.550E+01	 2.532E+02	 6.374E+02	 6.058E+00	 9.365E+01	-5.397E+01	-2.549E+02	 1.324E+02	-5.045E+01	 8.456E+02	 1.752E+03	 5.205E-04	-1.247E-03	-1.917E+02	 2.304E+02	-9.723E+01	 1.626E+01	 1.953E+01	-1.025E+03	-4.591E-03	 1.970E-03	-4.591E-03	 1.970E-03	 1.356E+03

@@ -1,11 +1,11 @@
 
-Predictions were generated on 18-Jul-2017 at 14:21:27 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
- linked with  NWTC Subroutine Library (v2.11.02, 13-Mar-2017); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.04.00, 31-Dec-2016); AeroDyn (v15.04.02a, 10-May-2017); ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
+Predictions were generated on 06-Sep-2017 at 12:10:44 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #02: AWT-27CR2 with many DOFs with startup and shutdown and steady wind
 
 Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	Spn1ALxb1 	Spn1ALyb1 	Spn1ALzb1 	RotSpeed  	LSSGagVxa 	RootFxb1  	RootFyb1  	RootFxb2  	RootFyb2  	RootMIP2  	RootMOoP2 	Spn1MLxb1 	Spn1MLyb1 	RotTorq   	LSSTipMys 	LSSTipMzs 	LSSGagMya 	LSSGagMza 	HSShftTq  	HSSBrTq   	HSShftPwr 	GenTq     	GenPwr    
-(s)       	(m/s)     	(m/s)     	(m/s)     	(m/s^2)   	(m/s^2)   	(m/s^2)   	(rpm)     	(rpm)     	(kN)      	(kN)      	(kN)      	(kN)      	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kW)      	(kN·m)    	(kW)      
+(s)       	(m/s)     	(m/s)     	(m/s)     	(m/s^2)   	(m/s^2)   	(m/s^2)   	(rpm)     	(rpm)     	(kN)      	(kN)      	(kN)      	(kN)      	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kW)      	(kN-m)    	(kW)      
     5.0000	 1.200E+01	-0.000E+00	 0.000E+00	 2.550E-02	 7.206E-03	-1.377E-02	 1.801E-01	 1.801E-01	 3.281E+00	-3.194E-01	 2.893E+00	 1.314E-01	-1.026E+00	 1.533E+01	-2.003E-01	 3.857E+00	 3.527E-02	 3.532E+00	-3.300E-01	 8.023E+00	-7.467E-01	 1.567E-03	 0.000E+00	 6.650E-04	 0.000E+00	 0.000E+00
     5.0400	 1.200E+01	-0.000E+00	 0.000E+00	 2.608E-02	 8.006E-03	-8.596E-03	 1.805E-01	 1.805E-01	 3.290E+00	-3.230E-01	 2.904E+00	 1.341E-01	-1.037E+00	 1.540E+01	-1.975E-01	 3.879E+00	 3.824E-02	 3.516E+00	-3.378E-01	 8.007E+00	-7.595E-01	 1.700E-03	 0.000E+00	 7.230E-04	 0.000E+00	 0.000E+00
     5.0800	 1.200E+01	-0.000E+00	 0.000E+00	 2.528E-02	 8.533E-03	-6.379E-03	 1.810E-01	 1.810E-01	 3.298E+00	-3.266E-01	 2.914E+00	 1.369E-01	-1.050E+00	 1.546E+01	-1.946E-01	 3.895E+00	 3.845E-02	 3.500E+00	-3.443E-01	 7.991E+00	-7.709E-01	 1.709E-03	 0.000E+00	 7.290E-04	 0.000E+00	 0.000E+00

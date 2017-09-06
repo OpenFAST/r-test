@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 18-Jul-2017 at 14:21:27 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 06-Sep-2017 at 12:10:44 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (v14.05.01a-bjj, 25-Jul-2016)
-    AeroDyn (unknown version, unknown date) [not called]
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind
+    AeroDyn14
+    AeroDyn [not called]
+    ServoDyn
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
@@ -64,12 +64,12 @@ Number of correction iterations:  0
       17  YawBrRVyp   (deg/s)     ElastoDyn
       18  YawBrRAxp   (deg/s^2)   ElastoDyn
       19  YawBrRAyp   (deg/s^2)   ElastoDyn
-      20  RootMyc1    (kN·m)      ElastoDyn
-      21  RootMxc1    (kN·m)      ElastoDyn
+      20  RootMyc1    (kN-m)      ElastoDyn
+      21  RootMxc1    (kN-m)      ElastoDyn
       22  RootFxc2    (kN)        ElastoDyn
       23  RootFyc2    (kN)        ElastoDyn
-      24  Spn3MLxb1   (kN·m)      ElastoDyn
-      25  Spn3MLyb1   (kN·m)      ElastoDyn
-      26  RotTorq     (kN·m)      ElastoDyn
-      27  YawBrMzn    (kN·m)      ElastoDyn
-      28  TwrBsMzt    (kN·m)      ElastoDyn
+      24  Spn3MLxb1   (kN-m)      ElastoDyn
+      25  Spn3MLyb1   (kN-m)      ElastoDyn
+      26  RotTorq     (kN-m)      ElastoDyn
+      27  YawBrMzn    (kN-m)      ElastoDyn
+      28  TwrBsMzt    (kN-m)      ElastoDyn

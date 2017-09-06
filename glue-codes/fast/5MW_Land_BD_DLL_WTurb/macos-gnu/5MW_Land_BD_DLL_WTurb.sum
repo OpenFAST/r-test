@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 18-Jul-2017 at 14:31:03 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 06-Sep-2017 at 12:20:27 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (v2.00.00, 9-May-2017)
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (unknown version, unknown date) [not called]
-    AeroDyn (v15.04.02a, 10-May-2017)
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn
+    InflowWind
+    AeroDyn14 [not called]
+    AeroDyn
+    ServoDyn
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
@@ -58,21 +58,21 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn,
        9  TTDspFA     (m)         ElastoDyn
       10  TTDspSS     (m)         ElastoDyn
       11  TTDspTwst   (deg)       ElastoDyn
-      12  RotTorq     (kN·m)      ElastoDyn
-      13  LSSGagMya   (kN·m)      ElastoDyn
-      14  LSSGagMza   (kN·m)      ElastoDyn
+      12  RotTorq     (kN-m)      ElastoDyn
+      13  LSSGagMya   (kN-m)      ElastoDyn
+      14  LSSGagMza   (kN-m)      ElastoDyn
       15  YawBrFxp    (kN)        ElastoDyn
       16  YawBrFyp    (kN)        ElastoDyn
       17  YawBrFzp    (kN)        ElastoDyn
-      18  YawBrMxp    (kN·m)      ElastoDyn
-      19  YawBrMyp    (kN·m)      ElastoDyn
-      20  YawBrMzp    (kN·m)      ElastoDyn
+      18  YawBrMxp    (kN-m)      ElastoDyn
+      19  YawBrMyp    (kN-m)      ElastoDyn
+      20  YawBrMzp    (kN-m)      ElastoDyn
       21  TwrBsFxt    (kN)        ElastoDyn
       22  TwrBsFyt    (kN)        ElastoDyn
       23  TwrBsFzt    (kN)        ElastoDyn
-      24  TwrBsMxt    (kN·m)      ElastoDyn
-      25  TwrBsMyt    (kN·m)      ElastoDyn
-      26  TwrBsMzt    (kN·m)      ElastoDyn
+      24  TwrBsMxt    (kN-m)      ElastoDyn
+      25  TwrBsMyt    (kN-m)      ElastoDyn
+      26  TwrBsMzt    (kN-m)      ElastoDyn
       27  B1RootFxr   (N)         BeamDyn
       28  B1RootFyr   (N)         BeamDyn
       29  B1RootFzr   (N)         BeamDyn
@@ -110,4 +110,4 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn,
       61  B3TipRDyr   (-)         BeamDyn
       62  B3TipRDzr   (-)         BeamDyn
       63  GenPwr      (kW)        ServoDyn
-      64  GenTq       (kN·m)      ServoDyn
+      64  GenTq       (kN-m)      ServoDyn

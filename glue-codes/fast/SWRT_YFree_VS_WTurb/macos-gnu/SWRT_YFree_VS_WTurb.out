@@ -1,11 +1,11 @@
 
-Predictions were generated on 18-Jul-2017 at 14:24:18 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
- linked with  NWTC Subroutine Library (v2.11.02, 13-Mar-2017); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.04.00, 31-Dec-2016); AeroDyn14 (v14.05.01a-bjj, 25-Jul-2016); ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
+Predictions were generated on 06-Sep-2017 at 12:13:04 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #17: SWRT 3-bladed upwind turbine with many DOFs, variable speed control, free yaw, tail-furl, FF turbulence
 
 Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	TwrClrnc1 	TwrClrnc2 	TwrClrnc3 	LSSTipV   	TailFurl  	TailFurlV 	TailFurlA 	NacYaw    	RootFzb3  	RootMEdg3 	RootMFlp3 	LSShftFxs 	LSShftMxs 	TFrlBrM   	YawBrFzn  
-(s)       	(m/s)     	(m/s)     	(m/s)     	(m)       	(m)       	(m)       	(rpm)     	(deg)     	(deg/s)   	(deg/s^2) 	(deg)     	(kN)      	(kN·m)    	(kN·m)    	(kN)      	(kN·m)    	(kN·m)    	(kN)      
+(s)       	(m/s)     	(m/s)     	(m/s)     	(m)       	(m)       	(m)       	(rpm)     	(deg)     	(deg/s)   	(deg/s^2) 	(deg)     	(kN)      	(kN-m)    	(kN-m)    	(kN)      	(kN-m)    	(kN-m)    	(kN)      
    10.0000	 1.695E+01	-7.617E-01	-1.302E-01	 3.373E+00	 1.341E+00	 3.167E+00	 4.436E+02	 0.000E+00	 0.000E+00	 0.000E+00	 5.248E+00	 3.736E+01	-2.048E-01	 2.646E-01	 2.685E+00	 1.952E-01	 0.000E+00	-4.388E+00
    10.0080	 1.703E+01	-7.699E-01	-1.517E-01	 3.237E+00	 1.149E+00	 3.320E+00	 4.437E+02	 0.000E+00	 0.000E+00	 0.000E+00	 5.245E+00	 3.736E+01	-1.795E-01	 2.754E-01	 2.715E+00	 1.950E-01	 0.000E+00	-4.376E+00
    10.0160	 1.711E+01	-7.780E-01	-1.732E-01	 3.069E+00	 1.700E+00	 3.431E+00	 4.438E+02	 0.000E+00	 0.000E+00	 0.000E+00	 5.240E+00	 3.737E+01	-1.240E-01	 2.905E-01	 2.730E+00	 1.948E-01	 0.000E+00	-4.321E+00
