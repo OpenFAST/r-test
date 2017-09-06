@@ -14,6 +14,8 @@ install_manifest.txt
 *.dll
 *.so
 *.o
+*.exp
+*.lib
 
 # build directories
 glue-codes/fast/5MW_Baseline/ServoData/DISCON*
