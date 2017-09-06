@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 19-Jul-2017 at 10:22:24 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 30-Aug-2017 at 15:50:13 using OpenFAST, compiled as a 64-bit application using double precision at commit git commit
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (v14.05.01a-bjj, 25-Jul-2016)
-    AeroDyn (unknown version, unknown date) [not called]
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind
+    AeroDyn14
+    AeroDyn [not called]
+    ServoDyn
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
@@ -58,9 +58,9 @@ Number of correction iterations:  0
       11  TailFurlA   (deg/s^2)   ElastoDyn
       12  NacYaw      (deg)       ElastoDyn
       13  RootFzb3    (kN)        ElastoDyn
-      14  RootMEdg3   (kN·m)      ElastoDyn
-      15  RootMFlp3   (kN·m)      ElastoDyn
+      14  RootMEdg3   (kN-m)      ElastoDyn
+      15  RootMFlp3   (kN-m)      ElastoDyn
       16  LSShftFxs   (kN)        ElastoDyn
-      17  LSShftMxs   (kN·m)      ElastoDyn
-      18  TFrlBrM     (kN·m)      ElastoDyn
+      17  LSShftMxs   (kN-m)      ElastoDyn
+      18  TFrlBrM     (kN-m)      ElastoDyn
       19  YawBrFzn    (kN)        ElastoDyn

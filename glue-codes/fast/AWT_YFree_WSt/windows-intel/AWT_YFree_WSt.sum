@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 19-Jul-2017 at 10:11:34 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 30-Aug-2017 at 13:21:35 using OpenFAST, compiled as a 64-bit application using single precision at commit git commit
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (unknown version, unknown date) [not called]
-    AeroDyn (v15.04.02a, 10-May-2017)
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind
+    AeroDyn14 [not called]
+    AeroDyn
+    ServoDyn
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
@@ -55,9 +55,9 @@ Number of correction iterations:  0
        8  RotTeetA    (deg/s^2)   ElastoDyn
        9  OoPDefl2    (m)         ElastoDyn
       10  IPDefl2     (m)         ElastoDyn
-      11  RootMOoP2   (kN·m)      ElastoDyn
-      12  RootMIP2    (kN·m)      ElastoDyn
-      13  RotTorq     (kN·m)      ElastoDyn
+      11  RootMOoP2   (kN-m)      ElastoDyn
+      12  RootMIP2    (kN-m)      ElastoDyn
+      13  RotTorq     (kN-m)      ElastoDyn
       14  YawBrTDxp   (m)         ElastoDyn
       15  YawBrTDyp   (m)         ElastoDyn
       16  YawBrTAxp   (m/s^2)     ElastoDyn
@@ -65,10 +65,10 @@ Number of correction iterations:  0
       18  NacYaw      (deg)       ElastoDyn
       19  NacYawV     (deg/s)     ElastoDyn
       20  NacYawA     (deg/s^2)   ElastoDyn
-      21  LSSGagMys   (kN·m)      ElastoDyn
-      22  LSSGagMzs   (kN·m)      ElastoDyn
-      23  TwrBsMxt    (kN·m)      ElastoDyn
-      24  TwrBsMyt    (kN·m)      ElastoDyn
+      21  LSSGagMys   (kN-m)      ElastoDyn
+      22  LSSGagMzs   (kN-m)      ElastoDyn
+      23  TwrBsMxt    (kN-m)      ElastoDyn
+      24  TwrBsMyt    (kN-m)      ElastoDyn
       25  B1N3VUndx   (m/s)       AeroDyn
       26  B1N3VUndy   (m/s)       AeroDyn
       27  B1N3VUndz   (m/s)       AeroDyn

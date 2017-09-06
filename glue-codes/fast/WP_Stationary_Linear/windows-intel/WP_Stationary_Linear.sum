@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 19-Jul-2017 at 10:18:56 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 30-Aug-2017 at 13:24:05 using OpenFAST, compiled as a 64-bit application using single precision at commit git commit
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (unknown version, unknown date) [not called]
-    AeroDyn14 (unknown version, unknown date) [not called]
-    AeroDyn (unknown version, unknown date) [not called]
-    ServoDyn (unknown version, unknown date) [not called]
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind [not called]
+    AeroDyn14 [not called]
+    AeroDyn [not called]
+    ServoDyn [not called]
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
