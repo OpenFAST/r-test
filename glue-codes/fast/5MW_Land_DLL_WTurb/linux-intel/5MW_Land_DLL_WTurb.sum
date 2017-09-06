@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 19-Jul-2017 at 13:35:16 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
+Predictions were generated on 06-Sep-2017 at 12:39:01 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
   compiled with
-    NWTC Subroutine Library (v2.11.02, 13-Mar-2017)
-    ElastoDyn (v1.04.00a-bjj, 26-Jul-2016)
-    BeamDyn (unknown version, unknown date) [not called]
-    InflowWind (v3.04.00, 31-Dec-2016)
-    AeroDyn14 (unknown version, unknown date) [not called]
-    AeroDyn (v15.04.02a, 10-May-2017)
-    ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
+    NWTC Subroutine Library
+    ElastoDyn
+    BeamDyn [not called]
+    InflowWind
+    AeroDyn14 [not called]
+    AeroDyn
+    ServoDyn
+    HydroDyn [not called]
+    SubDyn [not called]
+    ExtPtfm_MCKF [not called]
+    MAP [not called]
+    FEAMooring [not called]
+    MoorDyn [not called]
+    OrcaFlexInterface [not called]
+    IceFloe [not called]
+    IceDyn [not called]
 
 
 Modeling a land-based turbine
@@ -59,28 +59,28 @@ Number of correction iterations:  0
       12  TTDspFA     (m)         ElastoDyn
       13  TTDspSS     (m)         ElastoDyn
       14  TTDspTwst   (deg)       ElastoDyn
-      15  Spn2MLxb1   (kN·m)      ElastoDyn
-      16  Spn2MLyb1   (kN·m)      ElastoDyn
+      15  Spn2MLxb1   (kN-m)      ElastoDyn
+      16  Spn2MLyb1   (kN-m)      ElastoDyn
       17  RootFxb1    (kN)        ElastoDyn
       18  RootFyb1    (kN)        ElastoDyn
       19  RootFzb1    (kN)        ElastoDyn
-      20  RootMxb1    (kN·m)      ElastoDyn
-      21  RootMyb1    (kN·m)      ElastoDyn
-      22  RootMzb1    (kN·m)      ElastoDyn
-      23  RotTorq     (kN·m)      ElastoDyn
-      24  LSSGagMya   (kN·m)      ElastoDyn
-      25  LSSGagMza   (kN·m)      ElastoDyn
+      20  RootMxb1    (kN-m)      ElastoDyn
+      21  RootMyb1    (kN-m)      ElastoDyn
+      22  RootMzb1    (kN-m)      ElastoDyn
+      23  RotTorq     (kN-m)      ElastoDyn
+      24  LSSGagMya   (kN-m)      ElastoDyn
+      25  LSSGagMza   (kN-m)      ElastoDyn
       26  YawBrFxp    (kN)        ElastoDyn
       27  YawBrFyp    (kN)        ElastoDyn
       28  YawBrFzp    (kN)        ElastoDyn
-      29  YawBrMxp    (kN·m)      ElastoDyn
-      30  YawBrMyp    (kN·m)      ElastoDyn
-      31  YawBrMzp    (kN·m)      ElastoDyn
+      29  YawBrMxp    (kN-m)      ElastoDyn
+      30  YawBrMyp    (kN-m)      ElastoDyn
+      31  YawBrMzp    (kN-m)      ElastoDyn
       32  TwrBsFxt    (kN)        ElastoDyn
       33  TwrBsFyt    (kN)        ElastoDyn
       34  TwrBsFzt    (kN)        ElastoDyn
-      35  TwrBsMxt    (kN·m)      ElastoDyn
-      36  TwrBsMyt    (kN·m)      ElastoDyn
-      37  TwrBsMzt    (kN·m)      ElastoDyn
+      35  TwrBsMxt    (kN-m)      ElastoDyn
+      36  TwrBsMyt    (kN-m)      ElastoDyn
+      37  TwrBsMzt    (kN-m)      ElastoDyn
       38  GenPwr      (kW)        ServoDyn
-      39  GenTq       (kN·m)      ServoDyn
+      39  GenTq       (kN-m)      ServoDyn

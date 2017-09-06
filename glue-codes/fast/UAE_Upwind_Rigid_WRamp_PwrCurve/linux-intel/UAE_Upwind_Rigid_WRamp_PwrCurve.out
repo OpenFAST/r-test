@@ -1,11 +1,11 @@
 
-Predictions were generated on 19-Jul-2017 at 13:25:58 using OpenFAST (v8.17.01c-dev, 12-Jun-2017), compiled as a 64-bit application using double precision
- linked with  NWTC Subroutine Library (v2.11.02, 13-Mar-2017); ElastoDyn (v1.04.00a-bjj, 26-Jul-2016); InflowWind (v3.04.00, 31-Dec-2016); AeroDyn (v15.04.02a, 10-May-2017); ServoDyn (v1.06.00a-bjj, 26-Jul-2016)
+Predictions were generated on 06-Sep-2017 at 12:37:42 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #10: UAE Phase VI (upwind) with no DOFs in a ramped wind.
 
 Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	RootFxc1  	RootFyc1  	RootFzc1  	RootFxc2  	RootFyc2  	RootFzc2  	RootMOoP1 	RootMIP1  	RootMzc1  	RotTorq   	RotThrust 	RotPwr    	LSSGagMya 	LSSGagMza 	YawBrMxp  	YawBrMyp  	RtAeroCp  	RtAeroCq  	RtAeroCt  	GenPwr    
-(s)       	(m/s)     	(m/s)     	(m/s)     	(kN)      	(kN)      	(kN)      	(kN)      	(kN)      	(kN)      	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(kN)      	(kW)      	(kN·m)    	(kN·m)    	(kN·m)    	(kN·m)    	(-)       	(-)       	(-)       	(kW)      
+(s)       	(m/s)     	(m/s)     	(m/s)     	(kN)      	(kN)      	(kN)      	(kN)      	(kN)      	(kN)      	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN)      	(kW)      	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(-)       	(-)       	(-)       	(kW)      
     5.0000	 5.000E+00	 0.000E+00	 0.000E+00	 3.518E-01	-1.458E-02	 6.857E+00	 3.518E-01	-7.755E-02	 8.058E+00	 1.072E+00	 6.599E-02	-1.651E-02	 2.796E-01	 7.035E-01	 2.105E+00	-1.703E+00	-8.924E-02	 2.796E-01	-7.476E+00	 3.403E-01	 4.493E-02	 5.685E-01	 3.407E+00
     5.1000	 5.100E+00	 0.000E+00	 0.000E+00	 3.659E-01	-4.375E-01	 6.998E+00	 3.659E-01	 3.382E-01	 7.918E+00	 1.112E+00	 7.927E-01	-1.676E-02	 3.001E-01	 7.319E-01	 2.260E+00	-1.304E+00	 1.099E+00	 3.001E-01	-7.457E+00	 3.442E-01	 4.635E-02	 5.685E-01	 3.407E+00
     5.2000	 5.200E+00	 0.000E+00	 0.000E+00	 3.803E-01	-6.508E-01	 7.387E+00	 3.803E-01	 5.442E-01	 7.528E+00	 1.153E+00	 1.161E+00	-1.702E-02	 3.215E-01	 7.607E-01	 2.421E+00	-1.995E-01	 1.693E+00	 3.215E-01	-7.437E+00	 3.478E-01	 4.777E-02	 5.683E-01	 3.407E+00
