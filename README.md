@@ -7,10 +7,16 @@ This repository serves as a container for regression test data for system level 
 
 The baseline solutions serve as "gold standards" for the regression test suite and are updated periodically as OpenFAST and its modules are improved.
 
-## modules-local/beamdyn
+## modules-local/
+This directory contains module level tests for the modules found in the source code at `openfast/modules-local`.
+
+#### beamdyn/
 These BeamDyn specific cases are configured to run with the BeamDyn driver program rather than with a glue code.
 
-## openfast
+## glue-codes/
+This directory contains system level tests for the various "glue codes" or drivers found in the source at `openfast/glue-codes`.
+
+#### fast/
 These are the system level test cases taken from the [FAST V8 CertTests](https://github.com/NWTC/FAST/tree/master/CertTest).
 Each test case directory contains the OpenFAST input file, `.fst`, and all other case specific inputs. All turbine specific inputs are linked by relative paths to their corresponding turbine data directory. See the individual test case README's for more information regarding the particular turbine model and portion of the OpenFAST system that is being tested.
 
@@ -25,32 +31,34 @@ The included turbine directories are:
 The CertTest cases were recently renamed from the old style `TestNN` to more descriptive names. In general, the turbine abbreviation begins the case name followed by a concise description of the physics involved.
 
 Map of old style names to new names  
-Test01 - AWT_YFix_WSt  
-Test02 - AWT_WSt_StartUp_HighSpShutDown  
-Test03 - AWT_YFree_WSt  
-Test04 - AWT_YFree_WTurb  
-Test05 - AWT_WSt_StartUpShutDown  
-Test06 - AOC_WSt  
-Test07 - AOC_YFree_WTurb  
-Test08 - AOC_YFix_WSt  
-Test09 - UAE_Dnwind_YRamp_WSt  
-Test10 - UAE_Upwind_Rigid_WRamp_PwrCurve  
-Test11 - WP_VSP_WTurb_PitchFail  
-Test12 - WP_VSP_ECD  
-Test13 - WP_VSP_WTurb  
-Test14 - WP_Stationary_Linear  
-Test15 - SWRT_YFree_VS_EDG01  
-Test16 - SWRT_YFree_VS_EDC01  
-Test17 - SWRT_YFree_VS_WTurb  
-Test18 - 5MW_Land_DLL_WTurb  
-Test19 - 5MW_OC3Mnpl_DLL_WTurb_WavesIrr  
-Test20 - 5MW_OC3Trpd_DLL_WSt_WavesReg  
-Test21 - 5MW_OC4Jckt_DLL_WTurb_WavesIrr_MGrowth  
-Test22 - 5MW_ITIBarge_DLL_WTurb_WavesIrr  
-Test23 - 5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti  
-Test24 - 5MW_OC3Spar_DLL_WTurb_WavesIrr  
-Test25 - 5MW_OC4Semi_WSt_WavesWN  
-Test26 - 5MW_Land_BD_DLL_WTurb  
+```
+  Test01 - AWT_YFix_WSt  
+  Test02 - AWT_WSt_StartUp_HighSpShutDown  
+  Test03 - AWT_YFree_WSt  
+  Test04 - AWT_YFree_WTurb  
+  Test05 - AWT_WSt_StartUpShutDown  
+  Test06 - AOC_WSt  
+  Test07 - AOC_YFree_WTurb  
+  Test08 - AOC_YFix_WSt  
+  Test09 - UAE_Dnwind_YRamp_WSt  
+  Test10 - UAE_Upwind_Rigid_WRamp_PwrCurve  
+  Test11 - WP_VSP_WTurb_PitchFail  
+  Test12 - WP_VSP_ECD  
+  Test13 - WP_VSP_WTurb  
+  Test14 - WP_Stationary_Linear  
+  Test15 - SWRT_YFree_VS_EDG01  
+  Test16 - SWRT_YFree_VS_EDC01  
+  Test17 - SWRT_YFree_VS_WTurb  
+  Test18 - 5MW_Land_DLL_WTurb  
+  Test19 - 5MW_OC3Mnpl_DLL_WTurb_WavesIrr  
+  Test20 - 5MW_OC3Trpd_DLL_WSt_WavesReg  
+  Test21 - 5MW_OC4Jckt_DLL_WTurb_WavesIrr_MGrowth  
+  Test22 - 5MW_ITIBarge_DLL_WTurb_WavesIrr  
+  Test23 - 5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti  
+  Test24 - 5MW_OC3Spar_DLL_WTurb_WavesIrr  
+  Test25 - 5MW_OC4Semi_WSt_WavesWN  
+  Test26 - 5MW_Land_BD_DLL_WTurb  
+```
 
 ## Baselines
 The regression test compares locally generated solutions to the baseline solutions generated on a series of machine and compiler combinations. Currently, the supported machine/compiler combinations for successful regression testing are:
@@ -74,20 +82,18 @@ Usage: `python updateBaselineSolutions.py source_directory target_directory syst
 Example: `python updateBaselineSolutions.py local/solution/TestName target/solution/TestName [Darwin,Linux,Windows] [Intel,GNU]`
 
 ### NOTE - ServoDyn external controllers for 5MW_Baseline cases
-The cases using the 5MW turbine require an external controller for ServoDyn. The source code for three external controllers are provided, but they must be compiled and installed. For Linux and Mac systems, a python script is included at `openfast/compileDISCON.py` to configure with `cmake` and compile with `make` automatically. The compile script can be called with this command:  
-`python compileDISCON.py compiler_type[gnu,intel] arch_type[32/64]`  
-for example:  
-`python compileDISCON.py gnu 64`
+The cases using the 5MW turbine require an external controller for ServoDyn. The source code for three external controllers are provided, but they must be compiled and installed. For Linux and Mac systems, a python script is included at `glue-codes/fast/compileDISCON.py` which executes `cmake` and compiles with `make` automatically. The compile script is called with no arguments:  
+`python compileDISCON.py `  
 
 On Windows systems, `cmake` can generate a Visual Studio project to compile and install the controllers. Create a `build` directory at
-- `r-test/openfast/5MW_Baseline/ServoDyn/DISCON/build`
-- `r-test/openfast/5MW_Baseline/ServoDyn/DISCON_ITI/build`
-- `r-test/openfast/5MW_Baseline/ServoDyn/DISCON_OC3/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_ITI/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_OC3/build`
 
 and run `cmake` in each one replacing your Visual Studio version and architecture in the following command:  
 `cmake -G "Visual Studio 14 2015 Win64" ..`
 
 Ultimately, three `.dll`'s should be compiled and placed in the `5MW_Baseline` parallel to the test cases that will be executed. For example, if the regression test is executed automatically with `ctest` or `manualRegressionTest.py`, all case files will be copied to `openfast/build`. In this case, these three controller libraries must exist:
-- `openfast/build/reg_tests/openfast/5MW_Baseline/ServoDyn/DISCON.dll`
-- `openfast/build/reg_tests/openfast/5MW_Baseline/ServoDyn/DISCON_ITIBarge.dll`
-- `openfast/build/reg_tests/openfast/5MW_Baseline/ServoDyn/DISCON_OC3Hywind.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_ITIBarge.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_OC3Hywind.dll`

@@ -1,0 +1,9 @@
+
+Predictions were generated on 06-Sep-2017 at 12:38:20 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+ linked with  NWTC Subroutine Library; ElastoDyn
+
+Description from the FAST input file: FAST Certification Test #14: WindPACT 1.5 MW Baseline with stationary linearization in a vacuum
+
+Time      
+(s)       
+    0.0000
