@@ -1,4 +1,3 @@
 5MW_dynamic
-5MW_static
 isotropic_rollup
 static_cantilever_beam
