@@ -1,6 +1,6 @@
 Outputs were generated using MAP++ 1.20.10.
 
-    Wednesday August 30-2017 at 13:30:55 PM
+    Saturday September 30-2017 at 13:21:13 PM
 
     Gravity constant          [m/s^2]  : 9.81
     Sea density               [kg/m^3] : 1025.00
@@ -22,9 +22,9 @@ Y  [m]    |  0.000                   0.000                  739.473             
 Z  [m]    |  -320.000               -70.000                -320.000               -70.000
 M  [kg]   |  0.000                   0.000                  0.000                  0.000
 B  [m^3]  |  0.000                   0.000                  0.000                  0.000
-FX [N]    | ( 736845.209)          (-736939.302)          (-368422.834)          ( 368469.880)
-FY [N]    | (-0.000)               ( 0.000)               ( 638127.084)          (-638208.571)
-FZ [N]    | ( 0.000)               ( 535728.001)          ( 0.000)               ( 535728.154)
+FX [N]    | ( 736845.198)          (-736939.290)          (-368422.828)          ( 368469.874)
+FY [N]    | (-0.000)               ( 0.000)               ( 638127.074)          (-638208.561)
+FZ [N]    | ( 0.000)               ( 535727.992)          ( 0.000)               ( 535728.146)
 
 
           | Node 5 Data            Node 6 Data
@@ -35,9 +35,9 @@ Y  [m]    |  -739.473               -4.503
 Z  [m]    |  -320.000               -70.000
 M  [kg]   |  0.000                   0.000
 B  [m^3]  |  0.000                   0.000
-FX [N]    | (-368422.834)          ( 368469.880)
-FY [N]    | (-638127.084)          ( 638208.571)
-FZ [N]    | ( 0.000)               ( 535728.154)
+FX [N]    | (-368422.828)          ( 368469.874)
+FY [N]    | (-638127.074)          ( 638208.561)
+FZ [N]    | ( 0.000)               ( 535728.146)
 
 
                 | Line 1
@@ -45,15 +45,15 @@ FZ [N]    | ( 0.000)               ( 535728.154)
 Material        |  Material
 Lu        [m]   |  902.200
 Lb        [m]   |  134.785
-H         [N]   |  736939.302
-V         [N]   |  535728.001
-T         [N]   |  911089.471
+H         [N]   |  736939.290
+V         [N]   |  535727.992
+T         [N]   |  911089.457
 Alpha     [deg] |  36.016
-HAnch     [N]   |  736845.209
+HAnch     [N]   |  736845.198
 VAnch     [N]   | 0.000
-TAnch     [N]   |  736845.209
+TAnch     [N]   |  736845.198
 AlphaAnch [deg] | 0.000
-L^2-Norm        |  5.240704e-013
+L^2-Norm        |  4.412236e-13
 Function Evals  |  5
 Jacobian Evals  |  4
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -64,15 +64,15 @@ Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
 Material        |  Material
 Lu        [m]   |  902.200
 Lb        [m]   |  134.785
-H         [N]   |  736939.775
-V         [N]   |  535728.154
-T         [N]   |  911089.945
+H         [N]   |  736939.764
+V         [N]   |  535728.146
+T         [N]   |  911089.931
 Alpha     [deg] |  36.016
-HAnch     [N]   |  736845.683
+HAnch     [N]   |  736845.671
 VAnch     [N]   | 0.000
-TAnch     [N]   |  736845.683
+TAnch     [N]   |  736845.671
 AlphaAnch [deg] | 0.000
-L^2-Norm        |  6.122224e-013
+L^2-Norm        |  5.08423e-13
 Function Evals  |  5
 Jacobian Evals  |  4
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -83,15 +83,15 @@ Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
 Material        |  Material
 Lu        [m]   |  902.200
 Lb        [m]   |  134.785
-H         [N]   |  736939.775
-V         [N]   |  535728.154
-T         [N]   |  911089.945
+H         [N]   |  736939.764
+V         [N]   |  535728.146
+T         [N]   |  911089.931
 Alpha     [deg] |  36.016
-HAnch     [N]   |  736845.683
+HAnch     [N]   |  736845.671
 VAnch     [N]   | 0.000
-TAnch     [N]   |  736845.683
+TAnch     [N]   |  736845.671
 AlphaAnch [deg] | 0.000
-L^2-Norm        |  6.122224e-013
+L^2-Norm        |  5.08423e-13
 Function Evals  |  5
 Jacobian Evals  |  4
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
