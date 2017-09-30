@@ -1,5 +1,5 @@
 
-Predictions were generated on 06-Sep-2017 at 12:10:44 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-582-gf300d49a
+Predictions were generated on 30-Sep-2017 at 10:29:27 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-886-g076466cd
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #07: AOC 15/50 with many DOFs with free yaw and FF turbulence. Many parameters are pure fiction.
