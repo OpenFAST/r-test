@@ -67,7 +67,7 @@ The regression test compares locally generated solutions to the baseline solutio
 - windows-intel
 
 #### macos-gnu
-These results were generated on a MacBook Pro running on macOS Sierra 10.12.4. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 6.3.0 (Homebrew GCC 6.3.0_1).
+These results were generated on a MacBook Pro running on macOS Sierra 10.12.4. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0).
 
 #### linux-intel
 These results were generated on [NREL's Peregrine HPC cluster](https://hpc.nrel.gov/users/systems/peregrine) running on Red Hat Enterprise Linux Server release 6.3 (Santiago). The OpenFAST binary was compiled with Intel's ifort compiler version 16.0.2.
