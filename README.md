@@ -82,15 +82,17 @@ Usage: `python updateBaselineSolutions.py source_directory target_directory syst
 Example: `python updateBaselineSolutions.py local/solution/TestName target/solution/TestName [Darwin,Linux,Windows] [Intel,GNU]`
 
 ### NOTE - ServoDyn external controllers for 5MW_Baseline cases
-The cases using the 5MW turbine require an external controller for ServoDyn. The source code for three external controllers are provided, but they must be compiled and installed. For Linux and Mac systems, a python script is included at `glue-codes/fast/compileDISCON.py` which executes `cmake` and compiles with `make` automatically. The compile script is called with no arguments:  
-`python compileDISCON.py `  
+The cases using the 5MW turbine require an external controller for ServoDyn. The source code for three external controllers are provided, but they must be compiled and installed.
 
-On Windows systems, `cmake` can generate a Visual Studio project to compile and install the controllers. Create a `build` directory at
+On Linux and Mac, `cmake` projects exist to compile the controllers with `make`.
+For Windows systems, `cmake` can generate a Visual Studio project to compile and install the controllers.
+
+For all system types, create `build` directories at
 - `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON/build`
 - `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_ITI/build`
 - `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_OC3/build`
 
-and run `cmake` in each one replacing your Visual Studio version and architecture in the following command:  
+and run `cmake ..` in each one. For Windows, add your Visual Studio version and architecture in the following command:  
 `cmake -G "Visual Studio 14 2015 Win64" ..`
 
 Ultimately, three `.dll`'s should be compiled and placed in the `5MW_Baseline` parallel to the test cases that will be executed. For example, if the regression test is executed automatically with `ctest` or `manualRegressionTest.py`, all case files will be copied to `openfast/build`. In this case, these three controller libraries must exist:
