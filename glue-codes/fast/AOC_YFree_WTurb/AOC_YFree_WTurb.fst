@@ -1,7 +1,7 @@
 ------- FAST v8.17.* INPUT FILE ------------------------------------------------
 FAST Certification Test #07: AOC 15/50 with many DOFs with free yaw and FF turbulence. Many parameters are pure fiction.
 ---------------------- SIMULATION CONTROL --------------------------------------
-False         Echo            - Echo input data to <RootName>.ech (flag)
+True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          70   TMax            - Total run time (s)
       0.005   DT              - Recommended module time step (s)

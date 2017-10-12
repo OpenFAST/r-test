@@ -1,7 +1,7 @@
 ------- FAST v8.17.* INPUT FILE ------------------------------------------------
 FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration, for use in offshore analysis
 ---------------------- SIMULATION CONTROL --------------------------------------
-False         Echo            - Echo input data to <RootName>.ech (flag)
+True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          60   TMax            - Total run time (s)
       0.008   DT              - Recommended module time step (s)

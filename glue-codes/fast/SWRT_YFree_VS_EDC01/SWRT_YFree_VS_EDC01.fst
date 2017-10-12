@@ -1,7 +1,7 @@
 ------- FAST v8.17.* INPUT FILE ------------------------------------------------
 FAST Certification Test #16: SWRT 3-bladed upwind turbine with many DOFs, variable speed control, free yaw, tail-furl, EDC01 event
 ---------------------- SIMULATION CONTROL --------------------------------------
-False         Echo            - Echo input data to <RootName>.ech (flag)
+True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          20   TMax            - Total run time (s)
       0.001   DT              - Recommended module time step (s)
