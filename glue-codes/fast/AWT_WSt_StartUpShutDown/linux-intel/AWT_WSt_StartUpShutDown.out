@@ -1,5 +1,5 @@
 
-Predictions were generated on 30-Sep-2017 at 12:24:37 using OpenFAST, compiled as a 64-bit application using double precision at commit v0.1.0-886-g076466cd-dirty
+Predictions were generated on 13-Oct-2017 at 17:11:40 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-dirty
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #05: AWT-27CR2 with many DOFs with startup and shutdown and FF turbulence.
