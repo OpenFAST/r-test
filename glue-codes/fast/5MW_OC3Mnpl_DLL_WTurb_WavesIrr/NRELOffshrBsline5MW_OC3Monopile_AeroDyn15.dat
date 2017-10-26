@@ -1,4 +1,4 @@
-------- AERODYN v15.03.* INPUT FILE ------------------------------------------------
+------- AERODYN v15.04.* INPUT FILE ------------------------------------------------
 NREL 5.0 MW offshore baseline aerodynamic input properties, with OC3 Monopile tower
 ======  General Options  ============================================================================
 False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)
@@ -9,13 +9,13 @@ False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag
 False         TwrShadow          - Calculate tower influence on wind based on downstream tower shadow? (flag)
 True          TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
-False         CavitCheck	       - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
+False         CavitCheck         - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
 ======  Environmental Conditions  ===================================================================
       1.225   AirDens            - Air density (kg/m^3)
   1.464E-05   KinVisc            - Kinematic air viscosity (m^2/s)
         335   SpdSound           - Speed of sound (m/s)
-     103500   Patm		           - Atmospheric pressure (Pa) [used only when CavitCheck=True]
-       1700   Pvap	             - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
+     103500   Patm               - Atmospheric pressure (Pa) [used only when CavitCheck=True]
+       1700   Pvap               - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
          .5   FluidDepth         - Water depth above mid-hub height (m) [used only when CavitCheck=True]
 ======  Blade-Element/Momentum Theory Options  ====================================================== [used only when WakeMod=1]
           2   SkewMod            - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [used only when WakeMod=1]
