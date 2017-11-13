@@ -1,4 +1,4 @@
-------- AERODYN v15.03.* INPUT FILE ------------------------------------------------
+------- AERODYN v15.04.* INPUT FILE ------------------------------------------------
 1.5 MW baseline aerodynamic parameters for FAST certification tests #11-#13.
 ======  General Options  ============================================================================
 False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)

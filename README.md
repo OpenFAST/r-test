@@ -89,14 +89,14 @@ On Linux and Mac, `cmake` projects exist to compile the controllers with `make`.
 For Windows systems, `cmake` can generate a Visual Studio project to compile and install the controllers.
 
 For all system types, create `build` directories at
-- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON/build`
-- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_ITI/build`
-- `r-test/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_OC3/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoData/DISCON/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoData/DISCON_ITI/build`
+- `r-test/glue-codes/fast/5MW_Baseline/ServoData/DISCON_OC3/build`
 
 and run `cmake ..` in each one. For Windows, add your Visual Studio version and architecture in the following command:  
 `cmake -G "Visual Studio 14 2015 Win64" ..`
 
 Ultimately, three `.dll`'s should be compiled and placed in the `5MW_Baseline` parallel to the test cases that will be executed. For example, if the regression test is executed automatically with `ctest` or `manualRegressionTest.py`, all case files will be copied to `openfast/build`. In this case, these three controller libraries must exist:
-- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON.dll`
-- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_ITIBarge.dll`
-- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoDyn/DISCON_OC3Hywind.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoData/DISCON.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoData/DISCON_ITIBarge.dll`
+- `openfast/build/reg_tests/glue-codes/fast/5MW_Baseline/ServoData/DISCON_OC3Hywind.dll`
