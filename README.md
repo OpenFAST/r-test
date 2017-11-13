@@ -67,7 +67,7 @@ The regression test compares locally generated solutions to the baseline solutio
 - windows-intel
 
 #### macos-gnu
-These results were generated on a MacBook Pro running on macOS Sierra 10.12.4. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0).
+These results were generated on a MacBook Pro running on macOS Sierra 10.12.6. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0). The math libraries in this build are found in the [Accelerate Framework](https://developer.apple.com/documentation/accelerate) installed with Xcode command line tools at version 2347.
 
 #### linux-intel
 These results were generated on [NREL's Peregrine HPC cluster](https://hpc.nrel.gov/users/systems/peregrine) running on Red Hat Enterprise Linux Server release 6.3 (Santiago).
