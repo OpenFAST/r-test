@@ -65,6 +65,8 @@ The regression test compares locally generated solutions to the baseline solutio
 - linux-intel
 - macos-gnu
 - windows-intel
+Currently, the regression test supports only double precision solutions, so all
+baseline solutions are generated with a double precision build.
 
 #### macos-gnu
 These results were generated on a MacBook Pro running on macOS Sierra 10.12.6. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0). The math libraries in this build are found in the [Accelerate Framework](https://developer.apple.com/documentation/accelerate) installed with Xcode command line tools at version 2347.
