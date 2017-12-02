@@ -1,4 +1,4 @@
-5MW_dynamic
-isotropic_rollup
-static_cantilever_beam
-curved_beam
+bd_5MW_dynamic
+bd_isotropic_rollup
+bd_static_cantilever_beam
+bd_curved_beam
