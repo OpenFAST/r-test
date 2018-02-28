@@ -47,7 +47,7 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           1   HSSBrMode    - HSS brake model {0: none, 1: simple, 3: user-defined from routine UserHSSBr, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
          13   THSSBrDp     - Time to initiate deployment of the HSS brake (s)
         0.5   HSSBrDT      - Time for HSS-brake to reach full deployment once initiated (sec) [used only when HSSBrMode=1]
-       6000   HSSBrTqF     - Fully deployed HSS-brake torque (N-m)
+       6000   HSSBrTqF     - Fully deployed HSS-brake torque (N-m) [used only when HSSBrMode!=5]
 ---------------------- NACELLE-YAW CONTROL -------------------------------------
           0   YCMode       - Yaw control mode {0: none, 3: user-defined from routine UserYawCont, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
      9999.9   TYCOn        - Time to enable active yaw control (s) [unused when YCMode=0]
