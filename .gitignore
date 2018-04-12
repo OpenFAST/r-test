@@ -18,5 +18,5 @@ install_manifest.txt
 *.lib
 
 # build directories
-glue-codes/fast/5MW_Baseline/ServoData/DISCON*/build
+glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build
 
