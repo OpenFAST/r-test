@@ -17,7 +17,7 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(OpenFAST_RegressionTest_Data Fortran)
 
-set(SERVODATA_DIR "${CMAKE_CURRENT_LIST_DIR}/glue-codes/fast/5MW_Baseline/ServoData")
+set(SERVODATA_DIR "${CMAKE_CURRENT_LIST_DIR}/glue-codes/openfast/5MW_Baseline/ServoData")
 add_subdirectory("${SERVODATA_DIR}/DISCON" "${SERVODATA_DIR}/DISCON/build")
 add_subdirectory("${SERVODATA_DIR}/DISCON_ITI" "${SERVODATA_DIR}/DISCON_ITI/build")
 add_subdirectory("${SERVODATA_DIR}/DISCON_OC3" "${SERVODATA_DIR}/DISCON_OC3/build")
