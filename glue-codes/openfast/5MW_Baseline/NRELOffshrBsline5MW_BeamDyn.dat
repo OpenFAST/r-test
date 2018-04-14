@@ -10,6 +10,7 @@ DEFAULT       n_fact         - Factorization frequency: The Jacobian is computed
 DEFAULT       DTBeam         - Time step size
 DEFAULT       NRMax          - Max number of iterations in Newton-Ralphson algorithm
 DEFAULT       stop_tol       - Tolerance for stopping criterion
+True          RotStates      - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
 1             member_total   - Total number of member (-)
 49            kp_total       - Total number of key point (-)

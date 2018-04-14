@@ -10,6 +10,7 @@ DEFAULT   n_fact         - Factorization frequency (-). DEFAULT = 5
 DEFAULT   DTBeam         - Time step size (s).
 DEFAULT   NRMax          - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
 DEFAULT   stop_tol       - Tolerance for stopping criterion (-)
+True      RotStates      - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
 1    member_total        - Total number of members (-)
 3    kp_total            - Total number of key points (-) [must be at least 3]
