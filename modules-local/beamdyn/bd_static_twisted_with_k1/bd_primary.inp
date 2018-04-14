@@ -1,0 +1,50 @@
+--------- BEAMDYN V1.01.* INPUT FILE -------------------------------------------
+twisted blade input file
+---------------------- SIMULATION CONTROL --------------------------------------
+True      Echo           - Echo input data to "<RootName>.ech" (flag)
+1         analysis_type  - 1: Static analysis; 2: Dynamic analysis (switch)
+0.0       rhoinf         - Numerical Damping Parameter for Generalized-alpha integrator
+1         quadrature     - 1: Gauss; 2: Trapezoidal (switch)
+20         refine        - Refinement factor for quadrature 2 (-). DEFAULT = 1
+DEFAULT   n_fact         - Factorization frequency (-). DEFAULT = 5
+DEFAULT   DTBeam         - Time step size (s).
+DEFAULT   NRMax          - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
+DEFAULT   stop_tol       - Tolerance for stopping criterion (-)
+---------------------- GEOMETRY PARAMETER --------------------------------------
+1    member_total        - Total number of members (-)
+11   kp_total            - Total number of key points (-) [must be at least 3]
+1    11                  - Member number; Number of key points in this member [must be at least 3]
+kp_xr   kp_yr   kp_zr   initial_twist
+(m)     (m)     (m)     (deg)
+  0.000000   0.000000   0.000000   0.000000
+  0.000000   0.000000   1.000000   9.000000
+  0.000000   0.000000   2.000000  18.000000
+  0.000000   0.000000   3.000000  27.000000
+  0.000000   0.000000   4.000000  36.000000
+  0.000000   0.000000   5.000000  45.000000
+  0.000000   0.000000   6.000000  54.000000
+  0.000000   0.000000   7.000000  63.000000
+  0.000000   0.000000   8.000000  72.000000
+  0.000000   0.000000   9.000000  81.000000
+  0.000000   0.000000  10.000000  90.000000
+---------------------- MESH PARAMETER ------------------------------------------
+7         order_elem     - Order of interpolation (basis) function (-)
+---------------------- MATERIAL PARAMETER --------------------------------------
+"beam_props.inp" BldFile - Name of file containing properties for blade (quoted string)
+---------------------- PITCH ACTUATOR PARAMETERS -------------------------------
+False     UsePitchAct    - Whether a pitch actuator should be used (flag)
+200       PitchJ         - Pitch actuator inertia (kg-m^2) [used only when UsePitchAct is true]
+2.0E+7    PitchK         - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
+5.0E+5    PitchC         - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
+---------------------- OUTPUTS -------------------------------------------------
+True      SumPrint       - Print summary data to "<RootName>.sum" (flag)
+"ES10.3E2"    OutFmt     - Format used for text tabular output, excluding the time channel.
+ 1        NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
+ 1        OutNd          - Nodes whose values will be output  (-)
+          OutList        - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx.
+"RootFxr, RootFyr, RootFzr"
+"RootMxr, RootMyr, RootMzr"
+"TipTDxr, TipTDyr, TipTDzr"
+"TipRDxr, TipRDyr, TipRDzr"
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+--------------------------------------------------------------------------------
