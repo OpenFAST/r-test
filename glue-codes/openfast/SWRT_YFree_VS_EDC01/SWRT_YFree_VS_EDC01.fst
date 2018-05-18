@@ -1,4 +1,4 @@
-------- FAST v8.17.* INPUT FILE ------------------------------------------------
+------- OpenFAST example INPUT FILE -------------------------------------------
 FAST Certification Test #16: SWRT 3-bladed upwind turbine with many DOFs, variable speed control, free yaw, tail-furl, EDC01 event
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)

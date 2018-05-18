@@ -1,4 +1,4 @@
-------- FAST v8.17.* INPUT FILE ------------------------------------------------
+------- OpenFAST example INPUT FILE -------------------------------------------
 FAST Certification Test #03: AWT-27CR2 with many DOFs with free yaw and steady wind.
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
@@ -23,9 +23,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
 "unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"AWT_YFree_WSt_InflowWind.dat" InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"AWT_YFree_WSt_AD15.ipt"       AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
-"AWT_YFree_WSt_ServoDyn.dat"   ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
+"AWT_YFree_WSt_InflowWind.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
+"AWT_YFree_WSt_AD15.ipt"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"AWT_YFree_WSt_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)

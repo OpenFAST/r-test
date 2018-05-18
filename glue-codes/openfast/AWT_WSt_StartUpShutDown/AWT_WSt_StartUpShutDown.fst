@@ -1,4 +1,4 @@
-------- FAST v8.17.* INPUT FILE ------------------------------------------------
+------- OpenFAST example INPUT FILE -------------------------------------------
 FAST Certification Test #05: AWT-27CR2 with many DOFs with startup and shutdown and FF turbulence.
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)

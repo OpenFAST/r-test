@@ -1,4 +1,4 @@
-------- FAST v8.17.* INPUT FILE ------------------------------------------------
+------- OpenFAST example INPUT FILE -------------------------------------------
 FAST Certification Test #14: WindPACT 1.5 MW Baseline with stationary linearization in a vacuum
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)

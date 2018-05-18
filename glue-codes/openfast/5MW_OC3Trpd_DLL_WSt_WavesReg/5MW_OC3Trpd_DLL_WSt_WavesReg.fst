@@ -1,4 +1,4 @@
-------- FAST v8.17.* INPUT FILE ------------------------------------------------
+------- OpenFAST example INPUT FILE -------------------------------------------
 FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration, for use in offshore analysis
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)

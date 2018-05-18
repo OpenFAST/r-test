@@ -1,33 +1,37 @@
-------- AERODYN v15.04.* INPUT FILE ------------------------------------------------
+------- AERODYN v15 for OpenFAST INPUT FILE -----------------------------------------------
 AOC aerodynamic parameters for FAST Certification Test #8.
 ======  General Options  ============================================================================
 False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)
 "DEFAULT"     DTAero             - Time interval for aerodynamic calculations {or "default"} (s)
-          1   WakeMod            - Type of wake/induction model (switch) {0=none, 1=BEMT}
-          2   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model} [must be 1 when linearizing]
+          1   WakeMod            - Type of wake/induction model (switch) {0=none, 1=BEMT, 2=DBEMT} [WakeMod cannot be 2 when linearizing]
+          2   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model} [AFAeroMod must be 1 when linearizing]
           0   TwrPotent          - Type tower influence on wind based on potential flow around the tower (switch) {0=none, 1=baseline potential flow, 2=potential flow with Bak correction}
 True          TwrShadow          - Calculate tower influence on wind based on downstream tower shadow? (flag)
 False         TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
-False         CavitCheck         - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
+False         CavitCheck         - Perform cavitation check? (flag) [AFAeroMod must be 1 when CavitCheck=true]
 ======  Environmental Conditions  ===================================================================
      0.9526   AirDens            - Air density (kg/m^3)
  1.4639E-05   KinVisc            - Kinematic air viscosity (m^2/s)
         335   SpdSound           - Speed of sound (m/s)
      103500   Patm               - Atmospheric pressure (Pa) [used only when CavitCheck=True]
-       1700   Pva                - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
-         .5   FluidDepth         - Water depth above mid-hub height (m) [used only when CavitCheck=True]
-======  Blade-Element/Momentum Theory Options  ====================================================== [used only when WakeMod=1]
-          2   SkewMod            - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [used only when WakeMod=1]
-True          TipLoss            - Use the Prandtl tip-loss model? (flag) [used only when WakeMod=1]
-False         HubLoss            - Use the Prandtl hub-loss model? (flag) [used only when WakeMod=1]
-true          TanInd             - Include tangential induction in BEMT calculations? (flag) [used only when WakeMod=1]
-False         AIDrag             - Include the drag term in the axial-induction calculation? (flag) [used only when WakeMod=1]
-False         TIDrag             - Include the drag term in the tangential-induction calculation? (flag) [used only when WakeMod=1 and TanInd=TRUE]
-"Default"     IndToler           - Convergence tolerance for BEMT nonlinear solve residual equation {or "default"} (-) [used only when WakeMod=1]
-        100   MaxIter            - Maximum number of iteration steps (-) [used only when WakeMod=1]
+       1700   Pvap               - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
+        0.5   FluidDepth         - Water depth above mid-hub height (m) [used only when CavitCheck=True]
+======  Blade-Element/Momentum Theory Options  ====================================================== [unused when WakeMod=0]
+          2   SkewMod            - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [unused when WakeMod=0]
+"default"     SkewModFactor      - Constant used in Pitt/Peters skewed wake model {or "default" is 15/32*pi} (-) [used only when SkewMod=2; unused when WakeMod=0]
+True          TipLoss            - Use the Prandtl tip-loss model? (flag) [unused when WakeMod=0]
+False         HubLoss            - Use the Prandtl hub-loss model? (flag) [unused when WakeMod=0]
+true          TanInd             - Include tangential induction in BEMT calculations? (flag) [unused when WakeMod=0]
+False         AIDrag             - Include the drag term in the axial-induction calculation? (flag) [unused when WakeMod=0]
+False         TIDrag             - Include the drag term in the tangential-induction calculation? (flag) [unused when WakeMod=0 or TanInd=FALSE]
+"Default"     IndToler           - Convergence tolerance for BEMT nonlinear solve residual equation {or "default"} (-) [unused when WakeMod=0]
+        100   MaxIter            - Maximum number of iteration steps (-) [unused when WakeMod=0]
+======  Dynamic Blade-Element/Momentum Theory Options  ============================================== [used only when WakeMod=2]
+          2   DBEMT_Mod          - Type of dynamic BEMT (DBEMT) model {1=constant tau1, 2=time-dependent tau1} (-) [used only when WakeMod=2]
+          4   tau1_const         - Time constant for DBEMT (s) [used only when WakeMod=2 and DBEMT_Mod=1]
 ======  Beddoes-Leishman Unsteady Airfoil Aerodynamics Options  ===================================== [used only when AFAeroMod=2]
-          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez�s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
+          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez's variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
 True          FLookup            - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ======  Airfoil Information =========================================================================
           1   InCol_Alfa         - The column in the airfoil tables that contains the angle of attack (-)
@@ -50,16 +54,16 @@ False         UseBlCm            - Include aerodynamic pitching moment in calcul
          10   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 TwrElev        TwrDiam        TwrCd
 (m)              (m)           (-)
-1.6000000E+01  5.9656972E-02  2.0115000E+00
-1.7000000E+01  5.9656972E-02  2.0115000E+00
-1.8000000E+01  5.9656972E-02  2.0115000E+00
-1.9000000E+01  5.9656972E-02  2.0115000E+00
-2.0000000E+01  5.9656972E-02  2.0115000E+00
-2.1000000E+01  5.9656972E-02  2.0115000E+00
-2.2000000E+01  5.9656972E-02  2.0115000E+00
-2.3000000E+01  5.9656972E-02  2.0115000E+00
-2.4000000E+01  5.9656972E-02  2.0115000E+00
-2.4400000E+01  5.9656972E-02  2.0115000E+00
+1.6000000E+01  5.9656972E-02  2.0115000E+00  
+1.7000000E+01  5.9656972E-02  2.0115000E+00  
+1.8000000E+01  5.9656972E-02  2.0115000E+00  
+1.9000000E+01  5.9656972E-02  2.0115000E+00  
+2.0000000E+01  5.9656972E-02  2.0115000E+00  
+2.1000000E+01  5.9656972E-02  2.0115000E+00  
+2.2000000E+01  5.9656972E-02  2.0115000E+00  
+2.3000000E+01  5.9656972E-02  2.0115000E+00  
+2.4000000E+01  5.9656972E-02  2.0115000E+00  
+2.4400000E+01  5.9656972E-02  2.0115000E+00  
 ======  Outputs  ====================================================================================
 True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           4   NBlOuts             - Number of blade node outputs [0 - 9] (-)
@@ -67,13 +71,13 @@ True          SumPrint            - Generate a summary file listing input option
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
           1,          2,          3,          4,          5    TwOutNd             - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtSpeed, RtSkew"
-"B1N1Theta, B1N2Theta, B1N3Theta, B1N4Theta"
-"B1N1AxInd, B1N2AxInd, B1N3AxInd, B1N4AxInd"
-"B1N1Alpha, B1N2Alpha, B1N3Alpha, B1N4Alpha"
-"B1N1Vrel , B1N2Vrel , B1N3Vrel , B1N4Vrel"
-"B1N1Cl,    B1N2Cl,    B1N3Cl,    B1N4Cl"
-"B1N1Cd,    B1N2Cd,    B1N3Cd,    B1N4Cd"
-"B1N1Cm,    B1N2Cm,    B1N3Cm,    B1N4Cm"
+"RtSpeed, RtSkew"                             
+"B1N1Theta, B1N2Theta, B1N3Theta, B1N4Theta"  
+"B1N1AxInd, B1N2AxInd, B1N3AxInd, B1N4AxInd"  
+"B1N1Alpha, B1N2Alpha, B1N3Alpha, B1N4Alpha"  
+"B1N1Vrel , B1N2Vrel , B1N3Vrel , B1N4Vrel"   
+"B1N1Cl,    B1N2Cl,    B1N3Cl,    B1N4Cl"     
+"B1N1Cd,    B1N2Cd,    B1N3Cd,    B1N4Cd"     
+"B1N1Cm,    B1N2Cm,    B1N3Cm,    B1N4Cm"     
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
