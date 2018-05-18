@@ -23,5 +23,5 @@ fclose(fid);
 
 for i= 1:length(caseNames)
     casePath = [ pathstr filesep caseNames{i} ];
-    ConvertBeamDynDriver( [casePath filesep 'bd_driver.fst'], casePath );  
+    ConvertBeamDynDriver( [casePath filesep 'bd_driver.inp'], casePath );  
 end

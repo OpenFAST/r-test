@@ -1,43 +1,43 @@
---------- BEAMDYN V1.01.* INPUT FILE -------------------------------------------
+--------- BEAMDYN with OpenFAST INPUT FILE -------------------------------------------
 curved blade input file
 ---------------------- SIMULATION CONTROL --------------------------------------
-True      Echo           - Echo input data to "<RootName>.ech" (flag)
-1         analysis_type  - 1: Static analysis; 2: Dynamic analysis (switch)
-0.0       rhoinf         - Numerical Damping Parameter for Generalized-alpha integrator
-1         quadrature     - 1: Gauss; 2: Trapezoidal (switch)
-1         refine         - Refinement factor for quadrature 2 (-). DEFAULT = 1
-DEFAULT   n_fact         - Factorization frequency (-). DEFAULT = 5
-DEFAULT   DTBeam         - Time step size (s).
-DEFAULT   NRMax          - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
-DEFAULT   stop_tol       - Tolerance for stopping criterion (-)
-True      RotStates      - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
+True          Echo            - Echo input data to "<RootName>.ech" (flag)
+False         QuasiStaticInit - Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve only]
+          0   rhoinf          - Numerical damping parameter for generalized-alpha integrator
+          1   quadrature      - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
+          1   refine          - Refinement factor for trapezoidal quadrature (-). DEFAULT = 1 [used only when quadrature=2]
+"DEFAULT"     n_fact          - Factorization frequency for the Jacobian in N-R iteration(-). DEFAULT = 5
+"DEFAULT"     DTBeam          - Time step size (s).
+"DEFAULT"     NRMax           - Max number of iterations in Newton-Raphson algorithm (-). DEFAULT = 10
+"DEFAULT"     stop_tol        - Tolerance for stopping criterion (-)
+True          RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
-1    member_total        - Total number of members (-)
-3    kp_total            - Total number of key points (-) [must be at least 3]
-1    3                   - Member number; Number of key points in this member [must be at least 3]
-kp_xr   kp_yr   kp_zr   initial_twist
-(m)     (m)     (m)     (deg)
-0.0     0.0     0.0     0.0
-7.61205 0.0     38.2683 0.0
-29.2893 0.0     70.7107 0.0
+          1   member_total    - Total number of members (-)
+          3   kp_total        - Total number of key points (-) [must be at least 3]
+1    3                        - Member number; Number of key points in this member
+   kp_xr         kp_yr         kp_zr        initial_twist
+   (m)            (m)          (m)            (deg)
+0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  
+7.6120500E+00  0.0000000E+00  3.8268300E+01  0.0000000E+00  
+2.9289300E+01  0.0000000E+00  7.0710700E+01  0.0000000E+00  
 ---------------------- MESH PARAMETER ------------------------------------------
-10        order_elem     - Order of interpolation (basis) function (-)
+         10   order_elem     - Order of interpolation (basis) function (-)
 ---------------------- MATERIAL PARAMETER --------------------------------------
-"beam_props.inp"  BldFile - Name of file containing properties for blade (quoted string)
+"beam_props.inp"    BldFile - Name of file containing properties for blade (quoted string)
 ---------------------- PITCH ACTUATOR PARAMETERS -------------------------------
-False     UsePitchAct    - Whether a pitch actuator should be used (flag)
-0         PitchJ         - Pitch actuator inertia (kg-m^2) [used only when UsePitchAct is true]
-0.0E+0    PitchK         - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
-0.0E+0    PitchC         - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
+False         UsePitchAct - Whether a pitch actuator should be used (flag)
+          0   PitchJ      - Pitch actuator inertia (kg-m^2) [used only when UsePitchAct is true]
+          0   PitchK      - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
+          0   PitchC      - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
 ---------------------- OUTPUTS -------------------------------------------------
-True      SumPrint       - Print summary data to "<RootName>.sum" (flag)
-"ES10.3E2"    OutFmt     - Format used for text tabular output, excluding the time channel.
- 1        NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
- 9        OutNd          - Nodes whose values will be output  (-)
-          OutList        - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx.
-"RootFxr, RootFyr, RootFzr"
-"RootMxr, RootMyr, RootMzr"
-"TipTDxr, TipTDyr, TipTDzr"
-"TipRDxr, TipRDyr, TipRDzr"
+True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
+"ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.
+          1   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
+          9   OutNd          - Nodes whose values will be output  (-)
+          OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
+"RootFxr, RootFyr, RootFzr"  
+"RootMxr, RootMyr, RootMzr"  
+"TipTDxr, TipTDyr, TipTDzr"  
+"TipRDxr, TipRDyr, TipRDzr"  
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
