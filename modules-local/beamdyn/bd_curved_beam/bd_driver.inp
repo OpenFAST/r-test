@@ -1,10 +1,10 @@
-------- BEAMDYN Driver with OpenFAST INPUT FILE -------------------------------------
+------- BEAMDYN Driver with OpenFAST INPUT FILE --------------------------------
 Static analysis of a curved beam
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         DynamicSolve  - Dynamic solve (false for static solve) (-)
-          0   t_initial     - Starting time of simulation (s)
-         30   t_final       - Ending time of simulation   (s)
-      0.002   dt            - Time increment size         (s)
+          0   t_initial     - Starting time of simulation (s) [used only when DynamicSolve=TRUE]
+         30   t_final       - Ending time of simulation   (s) [used only when DynamicSolve=TRUE]
+      0.002   dt            - Time increment size         (s) [used only when DynamicSolve=TRUE]
 ---------------------- GRAVITY PARAMETER --------------------------------------
           0   Gx            - Component of gravity vector along X direction (m/s^2)
           0   Gy            - Component of gravity vector along Y direction (m/s^2)
@@ -36,6 +36,8 @@ False         DynamicSolve  - Dynamic solve (false for static solve) (-)
           0   TipLoad(5)    - Component of concentrated moment vector at blade tip along Y direction (N-m)
           0   TipLoad(6)    - Component of concentrated moment vector at blade tip along Z direction (N-m)
           0   NumPointLoads - Number of point loads along blade
----Multiple Point Loads (Non-dim blade span eta(-), Fx(N),     Fy(N),        Fz(N),       Mx(N-m),      My(N-m),    Mz(N-m))
+Non-dim blade-span eta   Fx          Fy            Fz           Mx           My           Mz
+(-)                      (N)         (N)           (N)          (N-m)        (N-m)        (N-m)
 ---------------------- PRIMARY INPUT FILE --------------------------------------
 "bd_primary.inp"    InputFile - Name of the primary BeamDyn input file
+
