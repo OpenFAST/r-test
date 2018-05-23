@@ -72,8 +72,8 @@ baseline solutions are generated with a double precision build.
 These results were generated on a MacBook Pro running on macOS Sierra 10.12.6. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0). The math libraries in this build are found in the [Accelerate Framework](https://developer.apple.com/documentation/accelerate) installed with Xcode command line tools at version 2347.
 
 #### linux-intel
-These results were generated on [NREL's Peregrine HPC cluster](https://hpc.nrel.gov/users/systems/peregrine) running on Red Hat Enterprise Linux Server release 6.3 (Santiago).
-The OpenFAST binary was compiled with Intel's ifort compiler version 17.0.2 and MKL 17.0.2 on Peregrine's [Haswell compute nodes](https://hpc.nrel.gov/users/systems/peregrine).
+These results were generated on [NREL's Peregrine HPC cluster](https://hpc.nrel.gov/users/systems/peregrine) running on CentOS 7.
+The OpenFAST binary was compiled with Intel's ifort compiler version 17.0.5 and MKL 17.0.5 on Peregrine's [Haswell compute nodes](https://hpc.nrel.gov/users/systems/peregrine).
 
 #### windows-intel
 These results were generated on a Dell Latitude E7440 running Windows 7 Enterprise SP 1. The OpenFAST binary was compiled with Intel's Visual Fortran 17 update 4.
