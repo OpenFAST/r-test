@@ -52,7 +52,7 @@ if (${CMAKE_CURRENT_LIST_DIR} STREQUAL ${CMAKE_SOURCE_DIR})
   set(INSTALL_DEST "${CMAKE_SOURCE_DIR}/..")
 # otherwise
 else()
-  set(INSTALL_DEST "${CMAKE_BINARY_DIR}/reg_tests/glue-codes/fast/5MW_Baseline/ServoData")
+  set(INSTALL_DEST "${CMAKE_BINARY_DIR}/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData")
 endif()
 
 install(TARGETS DISCON_ITIBarge DESTINATION ${INSTALL_DEST})
