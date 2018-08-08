@@ -1,0 +1,10 @@
+
+Predictions were generated on 08-Aug-2018 at 14:57:39 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-185-g51ece802-dirty
+ linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn
+
+Description from the FAST input file: Fixed-free beam test case
+
+Time      	B1TipTDxr 	B1TipTDyr 	B1TipTDzr 
+(s)       	(m)       	(m)       	(m)       
+    0.0000	 0.000000000E+000	 0.000000000E+000	 0.000000000E+000
+    0.0015	 0.000000000E+000	 0.000000000E+000	 0.000000000E+000
