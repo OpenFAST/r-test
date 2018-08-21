@@ -6,10 +6,15 @@ False         QuasiStaticInit - Use quasistatic pre-conditioning with centripeta
           0   rhoinf          - Numerical damping parameter for generalized-alpha integrator
           1   quadrature      - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
           1   refine          - Refinement factor for trapezoidal quadrature (-). DEFAULT = 1 [used only when quadrature=2]
-"DEFAULT"     n_fact          - Factorization frequency for the Jacobian in N-R iteration(-). DEFAULT = 5
-"DEFAULT"     DTBeam          - Time step size (s).
-"DEFAULT"     NRMax           - Max number of iterations in Newton-Raphson algorithm (-). DEFAULT = 10
-"DEFAULT"     stop_tol        - Tolerance for stopping criterion (-)
+DEFAULT   n_fact           - Factorization frequency (-). DEFAULT = 5
+DEFAULT   DTBeam           - Time step size (s).
+DEFAULT   load_retries     - Number of factored load retries before quitting the aimulation
+DEFAULT   NRMax            - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
+DEFAULT   stop_tol         - Tolerance for stopping criterion (-)
+DEFAULT   tngt_stf_fd      - Flag to use finite differenced tangent stiffness matrix (-)
+DEFAULT   tngt_stf_comp    - Flag to compare analytical finite differenced tangent stiffness matrix  (-)
+DEFAULT   tngt_stf_pert    - perturbation size for finite differencing (-)
+DEFAULT   tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-)
 True          RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
           1   member_total    - Total number of members (-)
