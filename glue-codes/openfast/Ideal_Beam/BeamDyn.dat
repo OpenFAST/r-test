@@ -6,10 +6,15 @@ False         QuasiStaticInit - [Envision modification] Use quasistatic pre-cond
 0.0           rhoinf          - Numerical Damping Parameter for Generalized-alpha integrator
 2             quadrature      - 1: Gauss; 2: Trapezoidal
 10            refine          - Refinement factor for quadrature 2. DEFAULT = 1
-1             n_fact          - Factorization frequency: The Jacobian is computed every n_fact steps in N-R iteration. DEFAULT = 5
-DEFAULT       DTBeam          - Time step size
-DEFAULT       NRMax           - Max number of iterations in Newton-Raphson algorithm
-1.0D-5        stop_tol        - Tolerance for stopping criterion
+1             n_fact           - Factorization frequency (-). DEFAULT = 5
+DEFAULT       DTBeam           - Time step size (s).
+DEFAULT       load_retries     - Number of factored load retries before quitting the aimulation
+DEFAULT       NRMax            - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
+1.0D-5        stop_tol         - Tolerance for stopping criterion (-)
+DEFAULT       tngt_stf_fd      - Flag to use finite differenced tangent stiffness matrix (-)
+DEFAULT       tngt_stf_comp    - Flag to compare analytical finite differenced tangent stiffness matrix  (-)
+DEFAULT       tngt_stf_pert    - perturbation size for finite differencing (-)
+DEFAULT       tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-)
 True          RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
 1             member_total    - Total number of member (-)
