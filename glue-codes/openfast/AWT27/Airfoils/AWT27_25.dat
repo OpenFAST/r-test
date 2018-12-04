@@ -7,12 +7,12 @@
           1   NonDimArea        ! The non-dimensional area of the airfoil (area/chord^2) (set to 1.0 if unsure or unneeded)
           0   NumCoords         ! The number of coordinates in the airfoil shape file.  Set to zero if coordinates not included.
 ! ......... x-y coordinates are next if NumCoords > 0 .............
-          1   NumTabs           ! Number of airfoil tables in this file.  Each table must have lines for Re and Ctrl.
+          1   NumTabs           ! Number of airfoil tables in this file.
 ! ------------------------------------------------------------------------------
 ! data for table 1
 ! ------------------------------------------------------------------------------
        0.75   Re                ! Reynolds number in millions
-          0   Ctrl              ! Control setting (must be 0 for current AirfoilInfo)
+          0   UserProp          ! User property (control) setting
 True          InclUAdata        ! Is unsteady aerodynamics data included in this table? If TRUE, then include 30 UA coefficients below this line
 !........................................
      -4.273   alpha0            ! 0-lift angle of attack, depends on airfoil.
