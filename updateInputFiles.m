@@ -1,5 +1,5 @@
 %% example files in the OpenFAST glue-code regression tests:
-caseFile = './glue-codes/fast/CaseList.md';
+caseFile = './glue-codes/openfast/CaseList.md';
 [pathstr] = fileparts(caseFile);
 
 fid = fopen(caseFile);
