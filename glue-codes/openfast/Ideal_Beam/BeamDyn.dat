@@ -1,46 +1,47 @@
---------- BEAMDYN V1.01.* INPUT FILE -------------------------------------------
+--------- BEAMDYN with OpenFAST INPUT FILE -------------------------------------------
 NREL 5MW blade
 ---------------------- SIMULATION CONTROL --------------------------------------
-False         Echo            - Echo input data to "<RootName>.ech" (flag)
-False         QuasiStaticInit - [Envision modification] Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve and enFAST only]
-0.0           rhoinf          - Numerical Damping Parameter for Generalized-alpha integrator
-2             quadrature      - 1: Gauss; 2: Trapezoidal
-10            refine          - Refinement factor for quadrature 2. DEFAULT = 1
-1             n_fact           - Factorization frequency (-). DEFAULT = 5
-DEFAULT       DTBeam           - Time step size (s).
-DEFAULT       load_retries     - Number of factored load retries before quitting the aimulation
-DEFAULT       NRMax            - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
-1.0D-5        stop_tol         - Tolerance for stopping criterion (-)
-DEFAULT       tngt_stf_fd      - Flag to use finite differenced tangent stiffness matrix (-)
-DEFAULT       tngt_stf_comp    - Flag to compare analytical finite differenced tangent stiffness matrix  (-)
-DEFAULT       tngt_stf_pert    - perturbation size for finite differencing (-)
-DEFAULT       tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-)
-True          RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
+False         Echo             - Echo input data to "<RootName>.ech"? (flag)
+False         QuasiStaticInit  - Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve only]
+          0   rhoinf           - Numerical damping parameter for generalized-alpha integrator
+          2   quadrature       - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
+         10   refine           - Refinement factor for trapezoidal quadrature (-) [DEFAULT = 1; used only when quadrature=2]
+          1   n_fact           - Factorization frequency for the Jacobian in N-R iteration(-) [DEFAULT = 5]
+"DEFAULT"     DTBeam           - Time step size (s)
+"DEFAULT"     load_retries     - Number of factored load retries before quitting the aimulation [DEFAULT = 20]
+"DEFAULT"     NRMax            - Max number of iterations in Newton-Raphson algorithm (-) [DEFAULT = 10]
+"1.0D-5"      stop_tol         - Tolerance for stopping criterion (-) [DEFAULT = 1E-5]
+"DEFAULT"     tngt_stf_fd      - Use finite differenced tangent stiffness matrix? (flag)
+"DEFAULT"     tngt_stf_comp    - Compare analytical finite differenced tangent stiffness matrix? (flag)
+"DEFAULT"     tngt_stf_pert    - Perturbation size for finite differencing (-) [DEFAULT = 1E-6]
+"DEFAULT"     tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-); [DEFAULT = 0.1]
+True          RotStates        - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
-1             member_total    - Total number of member (-)
-3             kp_total        - Total number of key point (-)
-1,   3                        - Member number; Number of key points in this member
-    kp_xr      kp_yr     kp_zr    initial_twist
-    (m)         (m)       (m)      (deg)
-  0.000000   0.000000   0.000000  0
-  0.000000   0.000000   50.000000 0
-  0.000000   0.000000   100.0     0
+          1   member_total    - Total number of members (-)
+          3   kp_total        - Total number of key points (-) [must be at least 3]
+     1      3                 - Member number; Number of key points in this member
+   kp_xr         kp_yr         kp_zr        initial_twist
+   (m)            (m)          (m)            (deg)
+0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00  
+0.0000000E+00  0.0000000E+00  5.0000000E+01  0.0000000E+00  
+0.0000000E+00  0.0000000E+00  1.0000000E+02  0.0000000E+00  
 ---------------------- MESH PARAMETER ------------------------------------------
-8             order_elem      - Order of interpolation (basis) function (-)
+          8   order_elem     - Order of interpolation (basis) function (-)
 ---------------------- MATERIAL PARAMETER --------------------------------------
-"BeamDyn_Blade.dat"  BldFile  - Name of file containing properties for blade
+"BeamDyn_Blade.dat"    BldFile - Name of file containing properties for blade (quoted string)
 ---------------------- PITCH ACTUATOR PARAMETERS -------------------------------
-False         UsePitchAct     - Whether a pitch actuator should be used (flag)
-200           PitchJ          - Pitch actuator inertia (kg-m^2) [used only when UsePitchAct is true]
-2.0E+7        PitchK          - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
-5.0E+5        PitchC          - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
+False         UsePitchAct - Whether a pitch actuator should be used (flag)
+        200   PitchJ      - Pitch actuator inertia (kg-m^2) [used only when UsePitchAct is true]
+      2E+07   PitchK      - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
+     500000   PitchC      - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
 ---------------------- OUTPUTS -------------------------------------------------
-True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
-"ES17.9E3"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
-      0       NNodeOuts       - Number of nodes to output to file [0 - 9] (-)
- 5            OutNd           - Nodes whose values will be output  (-)
-              OutList         - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-TipTDxr
-TipTDyr
-TipTDzr
+True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
+"ES17.9E3"    OutFmt          - Format used for text tabular output, excluding the time channel.
+          0   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
+          5   OutNd          - Nodes whose values will be output  (-)
+          OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
+"TipTDxr"                  
+"TipTDyr"                  
+"TipTDzr"                  
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+---------------------------------------------------------------------------------------
