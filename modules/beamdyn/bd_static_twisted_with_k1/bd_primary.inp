@@ -2,7 +2,7 @@
 twisted blade input file
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo             - Echo input data to "<RootName>.ech"? (flag)
-False         QuasiStaticInit  - Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve only]
+False         QuasiStaticInit  - Use quasistatic pre-conditioning with centripetal accelerations in initialization? (flag) [dynamic solve only]
           0   rhoinf           - Numerical damping parameter for generalized-alpha integrator
           1   quadrature       - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
          20   refine           - Refinement factor for trapezoidal quadrature (-) [DEFAULT = 1; used only when quadrature=2]
