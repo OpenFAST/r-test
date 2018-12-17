@@ -71,9 +71,9 @@ endif (NOT CMAKE_BUILD_TYPE)
 
 # set the build flags
 if (${CMAKE_Fortran_COMPILER_ID} STREQUAL "GNU")
-  set_discon_gfortran()
+  set_gfortran()
 elseif(${CMAKE_Fortran_COMPILER_ID} STREQUAL "Intel")
-  set_discon_ifort()
+  set_ifort()
 endif()
 set(CMAKE_SHARE_LINKER_FLAGS "-shared")
 
