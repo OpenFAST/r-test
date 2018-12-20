@@ -1,0 +1,10 @@
+
+Predictions were generated on 20-Dec-2018 at 14:15:25 using BeamDyn
+
+
+
+
+Time	RootFxr   	RootFyr   	RootFzr   	RootMxr   	RootMyr   	RootMzr   	N1Fxl     	N1Fyl     	N1Fzl     	N1Mxl     	N1Myl     	N1Mzl     	TipTDxr   	TipTDyr   	TipTDzr   	TipRDxr   	TipRDyr   	TipRDzr   
+(s)	(N)	(N)	(N)	(N-m)	(N-m)	(N-m)	(N)	(N)	(N)	(N-m)	(N-m)	(N-m)	(m)	(m)	(m)	(-)	(-)	(-)
+       0.000000	 8.148E-09	 9.632E+08	-4.628E+09	 1.694E+10	-4.254E+07	-1.296E+08	-2.217E+08	 9.373E+08	-4.628E+09	 1.650E+10	 3.859E+09	-1.296E+08	 0.000E+00	-6.150E+01	-6.150E+01	 1.657E+00	 0.000E+00	 0.000E+00
+       0.002000	 8.915E+06	-4.464E+07	-1.529E+09	 8.163E+09	-8.331E+07	 4.391E+07	 1.895E+07	-4.139E+07	-1.529E+09	 7.963E+09	 1.798E+09	 4.391E+07	-5.936E-03	-6.117E+01	-6.051E+01	 3.572E-01	 1.174E-01	-1.897E-02
