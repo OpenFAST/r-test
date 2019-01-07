@@ -1,4 +1,6 @@
 bd_5MW_dynamic
+bd_5MW_dynamic_gravity_Az00
+bd_5MW_dynamic_gravity_Az90
 bd_curved_beam
 bd_isotropic_rollup
 bd_static_cantilever_beam

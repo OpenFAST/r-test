@@ -1,12 +1,12 @@
 
-Predictions were generated on 10-May-2018 at 13:33:47 using BeamDyn
+Predictions were generated on 20-Dec-2018 at 17:43:57 using BeamDyn
 
 
 
 
-Time        	RootFxr   	RootFyr   	RootFzr   	RootMxr   	RootMyr   	RootMzr   	N1Fxl     	N1Fyl     	N1Fzl     	N1Mxl     	N1Myl     	N1Mzl     	TipTDxr   	TipTDyr   	TipTDzr   	TipRDxr   	TipRDyr   	TipRDzr   
- (s)            	(N)       	(N)       	(N)       	(N-m)     	(N-m)     	(N-m)     	(N)       	(N)       	(N)       	(N-m)     	(N-m)     	(N-m)     	(m)       	(m)       	(m)       	(-)       	(-)       	(-)       
-       0.000000	-1.490E-27	-1.044E+04	 1.067E+03	 1.659E-09	-1.004E-11	-2.283E+01	 2.404E+03	-1.016E+04	 1.067E+03	 1.616E-09	 3.720E-10	-2.283E+01	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00
+Time	RootFxr   	RootFyr   	RootFzr   	RootMxr   	RootMyr   	RootMzr   	N1Fxl     	N1Fyl     	N1Fzl     	N1Mxl     	N1Myl     	N1Mzl     	TipTDxr   	TipTDyr   	TipTDzr   	TipRDxr   	TipRDyr   	TipRDzr   
+(s)	(N)	(N)	(N)	(N-m)	(N-m)	(N-m)	(N)	(N)	(N)	(N-m)	(N-m)	(N-m)	(m)	(m)	(m)	(-)	(-)	(-)
+       0.000000	-5.687E-27	-1.044E+04	 1.067E+03	 1.415E-09	 1.163E-11	-2.283E+01	 2.404E+03	-1.016E+04	 1.067E+03	 1.375E-09	 3.371E-10	-2.283E+01	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00
        0.002000	-2.099E+01	-1.736E+04	 2.981E+04	 2.416E+04	 1.523E+01	 9.235E+01	 3.975E+03	-1.690E+04	 2.981E+04	 2.350E+04	 5.575E+03	 9.235E+01	-2.127E-08	-2.612E-05	 1.190E-04	 3.287E-06	-1.953E-08	-1.422E-07
        0.004000	-4.683E+01	-2.867E+04	 7.264E+04	 6.794E+04	-1.355E+01	 2.712E+02	 6.553E+03	-2.791E+04	 7.264E+04	 6.612E+04	 1.562E+04	 2.712E+02	-1.094E-07	-9.689E-05	 4.729E-04	 9.790E-06	-1.120E-07	-5.209E-07
        0.006000	-7.078E+01	-4.181E+04	 1.223E+05	 1.230E+05	-1.297E+02	 4.687E+02	 9.556E+03	-4.071E+04	 1.223E+05	 1.197E+05	 2.818E+04	 4.687E+02	-3.362E-07	-1.940E-04	 1.049E-03	 1.594E-05	-4.012E-07	-9.928E-07
