@@ -83,14 +83,16 @@ False         UsePitchAct - Whether a pitch actuator should be used (flag)
 ---------------------- OUTPUTS -------------------------------------------------
 True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
 "ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.
-          2   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
-          1,          3    OutNd          - Nodes whose values will be output  (-)
+          9   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
+1, 7, 14, 21, 28, 35, 42, 46, 49    OutNd  - Nodes whose values will be output  (-)
           OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
+"N1Fxl,N2Fxl,N3Fxl,N4Fxl,N5Fxl,N6Fxl,N7Fxl,N8Fxl,N9Fxl"  
+"N1Fyl,N2Fyl,N3Fyl,N4Fyl,N5Fyl,N6Fyl,N7Fyl,N8Fyl,N9Fyl"                           
+"N1Mxl,N2Mxl,N3Mxl,N4Mxl,N5Mxl,N6Mxl,N7Mxl,N8Mxl,N9Mxl"   
+"N1Myl,N2Myl,N3Myl,N4Myl,N5Myl,N6Myl,N7Myl,N8Myl,N9Myl" 
 "RootFxr, RootFyr, RootFzr"  
 "RootMxr, RootMyr, RootMzr"  
-"N1Fxl,N1Fyl,N1Fzl"          
-"N1Mxl,N1Myl,N1Mzl"          
 "TipTDxr, TipTDyr, TipTDzr"  
-"TipRDxr, TipRDyr, TipRDzr"  
+"TipRDxr, TipRDyr, TipRDzr"        
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
