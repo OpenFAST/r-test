@@ -7,8 +7,8 @@ This repository serves as a container for regression test data for system level 
 
 The baseline solutions serve as "gold standards" for the regression test suite and are updated periodically as OpenFAST and its modules are improved.
 
-## modules-local/
-This directory contains module level tests for the modules found in the source code at `openfast/modules-local`.
+## modules/
+This directory contains module level tests for the modules found in the source code at `openfast/modules`.
 
 #### beamdyn/
 These BeamDyn specific cases are configured to run with the BeamDyn driver program rather than with a glue code.

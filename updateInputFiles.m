@@ -14,7 +14,7 @@ end
 
 
 %% example files in the OpenFAST BeamDyn regression tests:
-caseFile = './modules-local/beamdyn/CaseList.md';
+caseFile = './modules/beamdyn/CaseList.md';
 [pathstr] = fileparts(caseFile);
 
 fid = fopen(caseFile);
