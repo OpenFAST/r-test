@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 07-Aug-2018 at 15:27:29 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-184-g11683971-dirty
+Linearized model: Predictions were generated on 23-Oct-2019 at 14:35:42 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.1.0-217-g3cb7fec0-dirty
  linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn
 
 Description from the FAST input file: Free-free beam test case
@@ -16,192 +16,192 @@ Simulation information:
    Jacobians included in this file?   Yes
 
 Order of continuous states:
-   Row/Column Operating Point                                          Rotating Frame? Description
-   ---------- ---------------                                          --------------- -----------
-          1    0.000000000E+000                                               F        Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m
-          2    0.000000000E+000                                               F        Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m
-          3    0.000000000E+000                                               F        Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m
-          4    0.000000000E+000                                               F        Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad
-          5    0.000000000E+000                                               F        Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad
-          6    0.000000000E+000                                               F        Platform yaw rotation DOF (internal DOF index = DOF_Y), rad
-          7    0.000000000E+000                                               F        First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s
-          8    0.000000000E+000                                               F        First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s
-          9    0.000000000E+000                                               F        First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s
-         10    0.000000000E+000                                               F        First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s
-         11    0.000000000E+000                                               F        First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s
-         12    0.000000000E+000                                               F        First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s
+   Row/Column Operating Point                                          Rotating Frame? Derivative Order Description
+   ---------- ---------------                                          --------------- ---------------- -----------
+          1    0.000000000E+000                                               F               2         Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m
+          2    0.000000000E+000                                               F               2         Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m
+          3    0.000000000E+000                                               F               2         Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m
+          4    0.000000000E+000                                               F               2         Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad
+          5    0.000000000E+000                                               F               2         Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad
+          6    0.000000000E+000                                               F               2         Platform yaw rotation DOF (internal DOF index = DOF_Y), rad
+          7    0.000000000E+000                                               F               2         First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s
+          8    0.000000000E+000                                               F               2         First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s
+          9    0.000000000E+000                                               F               2         First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s
+         10    0.000000000E+000                                               F               2         First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s
+         11    0.000000000E+000                                               F               2         First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s
+         12    0.000000000E+000                                               F               2         First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s
 
 Order of continuous state derivatives:
-   Row/Column Operating Point                                          Rotating Frame? Description
-   ---------- ---------------                                          --------------- -----------
-          1    0.000000000E+000                                               F        First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s
-          2    0.000000000E+000                                               F        First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s
-          3    0.000000000E+000                                               F        First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s
-          4    0.000000000E+000                                               F        First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s
-          5    0.000000000E+000                                               F        First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s
-          6    0.000000000E+000                                               F        First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s
-          7    0.000000000E+000                                               F        First time derivative of First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s/s
-          8    8.911295145E-023                                               F        First time derivative of First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s/s
-          9   -1.637085050E-038                                               F        First time derivative of First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s/s
-         10   -1.161599034E-022                                               F        First time derivative of First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s/s
-         11    0.000000000E+000                                               F        First time derivative of First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s/s
-         12    0.000000000E+000                                               F        First time derivative of First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s/s
+   Row/Column Operating Point                                          Rotating Frame? Derivative Order Description
+   ---------- ---------------                                          --------------- ---------------- -----------
+          1    0.000000000E+000                                               F               2         First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s
+          2    0.000000000E+000                                               F               2         First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s
+          3    0.000000000E+000                                               F               2         First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s
+          4    0.000000000E+000                                               F               2         First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s
+          5    0.000000000E+000                                               F               2         First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s
+          6    0.000000000E+000                                               F               2         First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s
+          7    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform horizontal surge translation DOF (internal DOF index = DOF_Sg), m/s/s
+          8    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform horizontal sway translation DOF (internal DOF index = DOF_Sw), m/s/s
+          9    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform vertical heave translation DOF (internal DOF index = DOF_Hv), m/s/s
+         10    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform roll tilt rotation DOF (internal DOF index = DOF_R), rad/s/s
+         11    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform pitch tilt rotation DOF (internal DOF index = DOF_P), rad/s/s
+         12    0.000000000E+000                                               F               2         First time derivative of First time derivative of Platform yaw rotation DOF (internal DOF index = DOF_Y), rad/s/s
 
 Order of inputs:
-     Column   Operating Point                                          Rotating Frame? Description
-   ---------- ---------------                                          --------------- -----------
-          1    0.000000000E+000                                               F        Platform X force, node 1, N
-          2    0.000000000E+000                                               F        Platform Y force, node 1, N
-          3    0.000000000E+000                                               F        Platform Z force, node 1, N
-          4    0.000000000E+000                                               F        Platform X moment, node 1, Nm
-          5    0.000000000E+000                                               F        Platform Y moment, node 1, Nm
-          6    0.000000000E+000                                               F        Platform Z moment, node 1, Nm
-          7    0.000000000E+000                                               F        Tower X force, node 1, N
-          8    0.000000000E+000                                               F        Tower Y force, node 1, N
-          9    0.000000000E+000                                               F        Tower Z force, node 1, N
-         10    0.000000000E+000                                               F        Tower X moment, node 1, Nm
-         11    0.000000000E+000                                               F        Tower Y moment, node 1, Nm
-         12    0.000000000E+000                                               F        Tower Z moment, node 1, Nm
-         13    0.000000000E+000                                               F        Hub X force, node 1, N
-         14    8.911296890E-023                                               F        Hub Y force, node 1, N
-         15   -1.637085371E-038                                               F        Hub Z force, node 1, N
-         16   -1.161554478E-022                                               F        Hub X moment, node 1, Nm
-         17    0.000000000E+000                                               F        Hub Y moment, node 1, Nm
-         18    0.000000000E+000                                               F        Hub Z moment, node 1, Nm
-         19    0.000000000E+000                                               F        Nacelle X force, node 1, N
-         20    0.000000000E+000                                               F        Nacelle Y force, node 1, N
-         21    0.000000000E+000                                               F        Nacelle Z force, node 1, N
-         22    0.000000000E+000                                               F        Nacelle X moment, node 1, Nm
-         23    0.000000000E+000                                               F        Nacelle Y moment, node 1, Nm
-         24    0.000000000E+000                                               F        Nacelle Z moment, node 1, Nm
-         25    0.000000000E+000                                               T        Blade 1 pitch command, rad
-         26    0.000000000E+000                                               F        Yaw moment, Nm
-         27    0.000000000E+000                                               F        Generator torque, Nm
-         28    0.000000000E+000                                               F        Extended input: collective blade-pitch command, rad
+     Column   Operating Point                                          Rotating Frame? Derivative Order Description
+   ---------- ---------------                                          --------------- ---------------- -----------
+          1    0.000000000E+000                                               F               0         Platform X force, node 1, N
+          2    0.000000000E+000                                               F               0         Platform Y force, node 1, N
+          3    0.000000000E+000                                               F               0         Platform Z force, node 1, N
+          4    0.000000000E+000                                               F               0         Platform X moment, node 1, Nm
+          5    0.000000000E+000                                               F               0         Platform Y moment, node 1, Nm
+          6    0.000000000E+000                                               F               0         Platform Z moment, node 1, Nm
+          7    0.000000000E+000                                               F               0         Tower X force, node 1, N
+          8    0.000000000E+000                                               F               0         Tower Y force, node 1, N
+          9    0.000000000E+000                                               F               0         Tower Z force, node 1, N
+         10    0.000000000E+000                                               F               0         Tower X moment, node 1, Nm
+         11    0.000000000E+000                                               F               0         Tower Y moment, node 1, Nm
+         12    0.000000000E+000                                               F               0         Tower Z moment, node 1, Nm
+         13    0.000000000E+000                                               F               0         Hub X force, node 1, N
+         14    0.000000000E+000                                               F               0         Hub Y force, node 1, N
+         15    0.000000000E+000                                               F               0         Hub Z force, node 1, N
+         16    0.000000000E+000                                               F               0         Hub X moment, node 1, Nm
+         17    0.000000000E+000                                               F               0         Hub Y moment, node 1, Nm
+         18    0.000000000E+000                                               F               0         Hub Z moment, node 1, Nm
+         19    0.000000000E+000                                               F               0         Nacelle X force, node 1, N
+         20    0.000000000E+000                                               F               0         Nacelle Y force, node 1, N
+         21    0.000000000E+000                                               F               0         Nacelle Z force, node 1, N
+         22    0.000000000E+000                                               F               0         Nacelle X moment, node 1, Nm
+         23    0.000000000E+000                                               F               0         Nacelle Y moment, node 1, Nm
+         24    0.000000000E+000                                               F               0         Nacelle Z moment, node 1, Nm
+         25    0.000000000E+000                                               T               0         Blade 1 pitch command, rad
+         26    0.000000000E+000                                               F               0         Yaw moment, Nm
+         27    0.000000000E+000                                               F               0         Generator torque, Nm
+         28    0.000000000E+000                                               F               0         Extended input: collective blade-pitch command, rad
 
 Order of outputs:
-        Row   Operating Point                                          Rotating Frame? Description
-   ---------- ---------------                                          --------------- -----------
-          1    0.000000000E+000                                               F        Platform X translation displacement, node 1, m
-          2    0.000000000E+000                                               F        Platform Y translation displacement, node 1, m
-          3    0.000000000E+000                                               F        Platform Z translation displacement, node 1, m
-          4    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F        Platform X orientation angle, node 1, rad
-          5    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F        Platform Y orientation angle, node 1, rad
-          6    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F        Platform Z orientation angle, node 1, rad
-          7    0.000000000E+000                                               F        Platform X translation velocity, node 1, m/s
-          8    0.000000000E+000                                               F        Platform Y translation velocity, node 1, m/s
-          9    0.000000000E+000                                               F        Platform Z translation velocity, node 1, m/s
-         10    0.000000000E+000                                               F        Platform X rotation velocity, node 1, rad/s
-         11    0.000000000E+000                                               F        Platform Y rotation velocity, node 1, rad/s
-         12    0.000000000E+000                                               F        Platform Z rotation velocity, node 1, rad/s
-         13    0.000000000E+000                                               F        Platform X translation acceleration, node 1, m/s^2
-         14    8.911295145E-023                                               F        Platform Y translation acceleration, node 1, m/s^2
-         15   -1.637085050E-038                                               F        Platform Z translation acceleration, node 1, m/s^2
-         16   -1.161599034E-022                                               F        Platform X rotation acceleration, node 1, rad/s^2
-         17    0.000000000E+000                                               F        Platform Y rotation acceleration, node 1, rad/s^2
-         18    0.000000000E+000                                               F        Platform Z rotation acceleration, node 1, rad/s^2
-         19    0.000000000E+000                                               F        Tower X translation displacement, node 1, m
-         20   -0.000000000E+000                                               F        Tower Y translation displacement, node 1, m
-         21    0.000000000E+000                                               F        Tower Z translation displacement, node 1, m
-         22    0.000000000E+000                                               F        Tower X translation displacement, node 2, m
-         23   -0.000000000E+000                                               F        Tower Y translation displacement, node 2, m
-         24    0.000000000E+000                                               F        Tower Z translation displacement, node 2, m
-         25    0.000000000E+000                                               F        Tower X translation displacement, node 3, m
-         26   -0.000000000E+000                                               F        Tower Y translation displacement, node 3, m
-         27    0.000000000E+000                                               F        Tower Z translation displacement, node 3, m
-         28    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Tower X orientation angle, node 1, rad
-         29   -0.000000000E+000,  1.000000000E+000, -0.000000000E+000         F        Tower Y orientation angle, node 1, rad
-         30    0.000000000E+000, -0.000000000E+000,  1.000000000E+000         F        Tower Z orientation angle, node 1, rad
-         31    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Tower X orientation angle, node 2, rad
-         32   -0.000000000E+000,  1.000000000E+000, -0.000000000E+000         F        Tower Y orientation angle, node 2, rad
-         33    0.000000000E+000, -0.000000000E+000,  1.000000000E+000         F        Tower Z orientation angle, node 2, rad
-         34    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Tower X orientation angle, node 3, rad
-         35   -0.000000000E+000,  1.000000000E+000, -0.000000000E+000         F        Tower Y orientation angle, node 3, rad
-         36    0.000000000E+000, -0.000000000E+000,  1.000000000E+000         F        Tower Z orientation angle, node 3, rad
-         37    0.000000000E+000                                               F        Tower X translation velocity, node 1, m/s
-         38   -0.000000000E+000                                               F        Tower Y translation velocity, node 1, m/s
-         39    0.000000000E+000                                               F        Tower Z translation velocity, node 1, m/s
-         40    0.000000000E+000                                               F        Tower X translation velocity, node 2, m/s
-         41   -0.000000000E+000                                               F        Tower Y translation velocity, node 2, m/s
-         42    0.000000000E+000                                               F        Tower Z translation velocity, node 2, m/s
-         43    0.000000000E+000                                               F        Tower X translation velocity, node 3, m/s
-         44   -0.000000000E+000                                               F        Tower Y translation velocity, node 3, m/s
-         45    0.000000000E+000                                               F        Tower Z translation velocity, node 3, m/s
-         46    0.000000000E+000                                               F        Tower X rotation velocity, node 1, rad/s
-         47   -0.000000000E+000                                               F        Tower Y rotation velocity, node 1, rad/s
-         48    0.000000000E+000                                               F        Tower Z rotation velocity, node 1, rad/s
-         49    0.000000000E+000                                               F        Tower X rotation velocity, node 2, rad/s
-         50   -0.000000000E+000                                               F        Tower Y rotation velocity, node 2, rad/s
-         51    0.000000000E+000                                               F        Tower Z rotation velocity, node 2, rad/s
-         52    0.000000000E+000                                               F        Tower X rotation velocity, node 3, rad/s
-         53   -0.000000000E+000                                               F        Tower Y rotation velocity, node 3, rad/s
-         54    0.000000000E+000                                               F        Tower Z rotation velocity, node 3, rad/s
-         55    0.000000000E+000                                               F        Tower X translation acceleration, node 1, m/s^2
-         56    8.911585545E-023                                               F        Tower Y translation acceleration, node 1, m/s^2
-         57   -1.637085050E-038                                               F        Tower Z translation acceleration, node 1, m/s^2
-         58    0.000000000E+000                                               F        Tower X translation acceleration, node 2, m/s^2
-         59    8.911875945E-023                                               F        Tower Y translation acceleration, node 2, m/s^2
-         60   -1.637085050E-038                                               F        Tower Z translation acceleration, node 2, m/s^2
-         61    0.000000000E+000                                               F        Tower X translation acceleration, node 3, m/s^2
-         62    8.911295145E-023                                               F        Tower Y translation acceleration, node 3, m/s^2
-         63   -1.637085050E-038                                               F        Tower Z translation acceleration, node 3, m/s^2
-         64   -1.161599034E-022                                               F        Tower X rotation acceleration, node 1, rad/s^2
-         65   -0.000000000E+000                                               F        Tower Y rotation acceleration, node 1, rad/s^2
-         66    0.000000000E+000                                               F        Tower Z rotation acceleration, node 1, rad/s^2
-         67   -1.161599034E-022                                               F        Tower X rotation acceleration, node 2, rad/s^2
-         68   -0.000000000E+000                                               F        Tower Y rotation acceleration, node 2, rad/s^2
-         69    0.000000000E+000                                               F        Tower Z rotation acceleration, node 2, rad/s^2
-         70   -1.161599034E-022                                               F        Tower X rotation acceleration, node 3, rad/s^2
-         71   -0.000000000E+000                                               F        Tower Y rotation acceleration, node 3, rad/s^2
-         72    0.000000000E+000                                               F        Tower Z rotation acceleration, node 3, rad/s^2
-         73    0.000000000E+000                                               F        Hub X translation displacement, node 1, m
-         74    0.000000000E+000                                               F        Hub Y translation displacement, node 1, m
-         75    0.000000000E+000                                               F        Hub Z translation displacement, node 1, m
-         76    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Hub X orientation angle, node 1, rad
-         77    0.000000000E+000,  1.000000000E+000, -1.836970199E-016         F        Hub Y orientation angle, node 1, rad
-         78    0.000000000E+000,  1.836970199E-016,  1.000000000E+000         F        Hub Z orientation angle, node 1, rad
-         79    0.000000000E+000                                               F        Hub X rotation velocity, node 1, rad/s
-         80   -0.000000000E+000                                               F        Hub Y rotation velocity, node 1, rad/s
-         81    0.000000000E+000                                               F        Hub Z rotation velocity, node 1, rad/s
-         82    0.000000000E+000                                               F        Blade root 1 X translation displacement, node 1, m
-         83    0.000000000E+000                                               F        Blade root 1 Y translation displacement, node 1, m
-         84    0.000000000E+000                                               F        Blade root 1 Z translation displacement, node 1, m
-         85    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Blade root 1 X orientation angle, node 1, rad
-         86    0.000000000E+000,  1.000000000E+000, -1.836970199E-016         F        Blade root 1 Y orientation angle, node 1, rad
-         87    0.000000000E+000,  1.836970199E-016,  1.000000000E+000         F        Blade root 1 Z orientation angle, node 1, rad
-         88    0.000000000E+000                                               F        Blade root 1 X translation velocity, node 1, m/s
-         89   -0.000000000E+000                                               F        Blade root 1 Y translation velocity, node 1, m/s
-         90    0.000000000E+000                                               F        Blade root 1 Z translation velocity, node 1, m/s
-         91    0.000000000E+000                                               F        Blade root 1 X rotation velocity, node 1, rad/s
-         92   -0.000000000E+000                                               F        Blade root 1 Y rotation velocity, node 1, rad/s
-         93    0.000000000E+000                                               F        Blade root 1 Z rotation velocity, node 1, rad/s
-         94    0.000000000E+000                                               F        Blade root 1 X translation acceleration, node 1, m/s^2
-         95    8.911875945E-023                                               F        Blade root 1 Y translation acceleration, node 1, m/s^2
-         96   -1.637085050E-038                                               F        Blade root 1 Z translation acceleration, node 1, m/s^2
-         97   -1.161599034E-022                                               F        Blade root 1 X rotation acceleration, node 1, rad/s^2
-         98   -0.000000000E+000                                               F        Blade root 1 Y rotation acceleration, node 1, rad/s^2
-         99    0.000000000E+000                                               F        Blade root 1 Z rotation acceleration, node 1, rad/s^2
-        100    0.000000000E+000                                               F        Nacelle X translation displacement, node 1, m
-        101   -0.000000000E+000                                               F        Nacelle Y translation displacement, node 1, m
-        102    0.000000000E+000                                               F        Nacelle Z translation displacement, node 1, m
-        103    1.000000000E+000, -0.000000000E+000,  0.000000000E+000         F        Nacelle X orientation angle, node 1, rad
-        104   -0.000000000E+000,  1.000000000E+000, -0.000000000E+000         F        Nacelle Y orientation angle, node 1, rad
-        105    0.000000000E+000, -0.000000000E+000,  1.000000000E+000         F        Nacelle Z orientation angle, node 1, rad
-        106    0.000000000E+000                                               F        Nacelle X translation velocity, node 1, m/s
-        107   -0.000000000E+000                                               F        Nacelle Y translation velocity, node 1, m/s
-        108    0.000000000E+000                                               F        Nacelle Z translation velocity, node 1, m/s
-        109    0.000000000E+000                                               F        Nacelle X rotation velocity, node 1, rad/s
-        110   -0.000000000E+000                                               F        Nacelle Y rotation velocity, node 1, rad/s
-        111    0.000000000E+000                                               F        Nacelle Z rotation velocity, node 1, rad/s
-        112    0.000000000E+000                                               F        Nacelle X translation acceleration, node 1, m/s^2
-        113    8.911875945E-023                                               F        Nacelle Y translation acceleration, node 1, m/s^2
-        114   -1.637085050E-038                                               F        Nacelle Z translation acceleration, node 1, m/s^2
-        115   -1.161599034E-022                                               F        Nacelle X rotation acceleration, node 1, rad/s^2
-        116   -0.000000000E+000                                               F        Nacelle Y rotation acceleration, node 1, rad/s^2
-        117    0.000000000E+000                                               F        Nacelle Z rotation acceleration, node 1, rad/s^2
-        118    0.000000000E+000                                               F        Yaw, rad
-        119    0.000000000E+000                                               F        YawRate, rad/s
-        120    0.000000000E+000                                               F        HSS_Spd, rad/s
+        Row   Operating Point                                          Rotating Frame? Derivative Order Description
+   ---------- ---------------                                          --------------- ---------------- -----------
+          1    0.000000000E+000                                               F               0         Platform X translation displacement, node 1, m
+          2    0.000000000E+000                                               F               0         Platform Y translation displacement, node 1, m
+          3    0.000000000E+000                                               F               0         Platform Z translation displacement, node 1, m
+          4    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Platform X orientation angle, node 1, rad
+          5    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F               0         Platform Y orientation angle, node 1, rad
+          6    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F               0         Platform Z orientation angle, node 1, rad
+          7    0.000000000E+000                                               F               0         Platform X translation velocity, node 1, m/s
+          8    0.000000000E+000                                               F               0         Platform Y translation velocity, node 1, m/s
+          9    0.000000000E+000                                               F               0         Platform Z translation velocity, node 1, m/s
+         10    0.000000000E+000                                               F               0         Platform X rotation velocity, node 1, rad/s
+         11    0.000000000E+000                                               F               0         Platform Y rotation velocity, node 1, rad/s
+         12    0.000000000E+000                                               F               0         Platform Z rotation velocity, node 1, rad/s
+         13    0.000000000E+000                                               F               0         Platform X translation acceleration, node 1, m/s^2
+         14    0.000000000E+000                                               F               0         Platform Y translation acceleration, node 1, m/s^2
+         15    0.000000000E+000                                               F               0         Platform Z translation acceleration, node 1, m/s^2
+         16    0.000000000E+000                                               F               0         Platform X rotation acceleration, node 1, rad/s^2
+         17    0.000000000E+000                                               F               0         Platform Y rotation acceleration, node 1, rad/s^2
+         18    0.000000000E+000                                               F               0         Platform Z rotation acceleration, node 1, rad/s^2
+         19    0.000000000E+000                                               F               0         Tower X translation displacement, node 1, m
+         20    0.000000000E+000                                               F               0         Tower Y translation displacement, node 1, m
+         21    0.000000000E+000                                               F               0         Tower Z translation displacement, node 1, m
+         22    0.000000000E+000                                               F               0         Tower X translation displacement, node 2, m
+         23    0.000000000E+000                                               F               0         Tower Y translation displacement, node 2, m
+         24    0.000000000E+000                                               F               0         Tower Z translation displacement, node 2, m
+         25    0.000000000E+000                                               F               0         Tower X translation displacement, node 3, m
+         26    0.000000000E+000                                               F               0         Tower Y translation displacement, node 3, m
+         27    0.000000000E+000                                               F               0         Tower Z translation displacement, node 3, m
+         28    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Tower X orientation angle, node 1, rad
+         29    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F               0         Tower Y orientation angle, node 1, rad
+         30    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F               0         Tower Z orientation angle, node 1, rad
+         31    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Tower X orientation angle, node 2, rad
+         32    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F               0         Tower Y orientation angle, node 2, rad
+         33    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F               0         Tower Z orientation angle, node 2, rad
+         34    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Tower X orientation angle, node 3, rad
+         35    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F               0         Tower Y orientation angle, node 3, rad
+         36    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F               0         Tower Z orientation angle, node 3, rad
+         37    0.000000000E+000                                               F               0         Tower X translation velocity, node 1, m/s
+         38    0.000000000E+000                                               F               0         Tower Y translation velocity, node 1, m/s
+         39    0.000000000E+000                                               F               0         Tower Z translation velocity, node 1, m/s
+         40    0.000000000E+000                                               F               0         Tower X translation velocity, node 2, m/s
+         41    0.000000000E+000                                               F               0         Tower Y translation velocity, node 2, m/s
+         42    0.000000000E+000                                               F               0         Tower Z translation velocity, node 2, m/s
+         43    0.000000000E+000                                               F               0         Tower X translation velocity, node 3, m/s
+         44    0.000000000E+000                                               F               0         Tower Y translation velocity, node 3, m/s
+         45    0.000000000E+000                                               F               0         Tower Z translation velocity, node 3, m/s
+         46    0.000000000E+000                                               F               0         Tower X rotation velocity, node 1, rad/s
+         47    0.000000000E+000                                               F               0         Tower Y rotation velocity, node 1, rad/s
+         48    0.000000000E+000                                               F               0         Tower Z rotation velocity, node 1, rad/s
+         49    0.000000000E+000                                               F               0         Tower X rotation velocity, node 2, rad/s
+         50    0.000000000E+000                                               F               0         Tower Y rotation velocity, node 2, rad/s
+         51    0.000000000E+000                                               F               0         Tower Z rotation velocity, node 2, rad/s
+         52    0.000000000E+000                                               F               0         Tower X rotation velocity, node 3, rad/s
+         53    0.000000000E+000                                               F               0         Tower Y rotation velocity, node 3, rad/s
+         54    0.000000000E+000                                               F               0         Tower Z rotation velocity, node 3, rad/s
+         55    0.000000000E+000                                               F               0         Tower X translation acceleration, node 1, m/s^2
+         56    0.000000000E+000                                               F               0         Tower Y translation acceleration, node 1, m/s^2
+         57    0.000000000E+000                                               F               0         Tower Z translation acceleration, node 1, m/s^2
+         58    0.000000000E+000                                               F               0         Tower X translation acceleration, node 2, m/s^2
+         59    0.000000000E+000                                               F               0         Tower Y translation acceleration, node 2, m/s^2
+         60    0.000000000E+000                                               F               0         Tower Z translation acceleration, node 2, m/s^2
+         61    0.000000000E+000                                               F               0         Tower X translation acceleration, node 3, m/s^2
+         62    0.000000000E+000                                               F               0         Tower Y translation acceleration, node 3, m/s^2
+         63    0.000000000E+000                                               F               0         Tower Z translation acceleration, node 3, m/s^2
+         64    0.000000000E+000                                               F               0         Tower X rotation acceleration, node 1, rad/s^2
+         65    0.000000000E+000                                               F               0         Tower Y rotation acceleration, node 1, rad/s^2
+         66    0.000000000E+000                                               F               0         Tower Z rotation acceleration, node 1, rad/s^2
+         67    0.000000000E+000                                               F               0         Tower X rotation acceleration, node 2, rad/s^2
+         68    0.000000000E+000                                               F               0         Tower Y rotation acceleration, node 2, rad/s^2
+         69    0.000000000E+000                                               F               0         Tower Z rotation acceleration, node 2, rad/s^2
+         70    0.000000000E+000                                               F               0         Tower X rotation acceleration, node 3, rad/s^2
+         71    0.000000000E+000                                               F               0         Tower Y rotation acceleration, node 3, rad/s^2
+         72    0.000000000E+000                                               F               0         Tower Z rotation acceleration, node 3, rad/s^2
+         73    0.000000000E+000                                               F               0         Hub X translation displacement, node 1, m
+         74    0.000000000E+000                                               F               0         Hub Y translation displacement, node 1, m
+         75    0.000000000E+000                                               F               0         Hub Z translation displacement, node 1, m
+         76    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Hub X orientation angle, node 1, rad
+         77    0.000000000E+000,  1.000000000E+000, -1.836970199E-016         F               0         Hub Y orientation angle, node 1, rad
+         78    0.000000000E+000,  1.836970199E-016,  1.000000000E+000         F               0         Hub Z orientation angle, node 1, rad
+         79    0.000000000E+000                                               F               0         Hub X rotation velocity, node 1, rad/s
+         80    0.000000000E+000                                               F               0         Hub Y rotation velocity, node 1, rad/s
+         81    0.000000000E+000                                               F               0         Hub Z rotation velocity, node 1, rad/s
+         82    0.000000000E+000                                               F               0         Blade root 1 X translation displacement, node 1, m
+         83    0.000000000E+000                                               F               0         Blade root 1 Y translation displacement, node 1, m
+         84    0.000000000E+000                                               F               0         Blade root 1 Z translation displacement, node 1, m
+         85    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Blade root 1 X orientation angle, node 1, rad
+         86    0.000000000E+000,  1.000000000E+000, -1.836970199E-016         F               0         Blade root 1 Y orientation angle, node 1, rad
+         87    0.000000000E+000,  1.836970199E-016,  1.000000000E+000         F               0         Blade root 1 Z orientation angle, node 1, rad
+         88    0.000000000E+000                                               F               0         Blade root 1 X translation velocity, node 1, m/s
+         89    0.000000000E+000                                               F               0         Blade root 1 Y translation velocity, node 1, m/s
+         90    0.000000000E+000                                               F               0         Blade root 1 Z translation velocity, node 1, m/s
+         91    0.000000000E+000                                               F               0         Blade root 1 X rotation velocity, node 1, rad/s
+         92    0.000000000E+000                                               F               0         Blade root 1 Y rotation velocity, node 1, rad/s
+         93    0.000000000E+000                                               F               0         Blade root 1 Z rotation velocity, node 1, rad/s
+         94    0.000000000E+000                                               F               0         Blade root 1 X translation acceleration, node 1, m/s^2
+         95    0.000000000E+000                                               F               0         Blade root 1 Y translation acceleration, node 1, m/s^2
+         96    0.000000000E+000                                               F               0         Blade root 1 Z translation acceleration, node 1, m/s^2
+         97    0.000000000E+000                                               F               0         Blade root 1 X rotation acceleration, node 1, rad/s^2
+         98    0.000000000E+000                                               F               0         Blade root 1 Y rotation acceleration, node 1, rad/s^2
+         99    0.000000000E+000                                               F               0         Blade root 1 Z rotation acceleration, node 1, rad/s^2
+        100    0.000000000E+000                                               F               0         Nacelle X translation displacement, node 1, m
+        101    0.000000000E+000                                               F               0         Nacelle Y translation displacement, node 1, m
+        102    0.000000000E+000                                               F               0         Nacelle Z translation displacement, node 1, m
+        103    1.000000000E+000,  0.000000000E+000,  0.000000000E+000         F               0         Nacelle X orientation angle, node 1, rad
+        104    0.000000000E+000,  1.000000000E+000,  0.000000000E+000         F               0         Nacelle Y orientation angle, node 1, rad
+        105    0.000000000E+000,  0.000000000E+000,  1.000000000E+000         F               0         Nacelle Z orientation angle, node 1, rad
+        106    0.000000000E+000                                               F               0         Nacelle X translation velocity, node 1, m/s
+        107    0.000000000E+000                                               F               0         Nacelle Y translation velocity, node 1, m/s
+        108    0.000000000E+000                                               F               0         Nacelle Z translation velocity, node 1, m/s
+        109    0.000000000E+000                                               F               0         Nacelle X rotation velocity, node 1, rad/s
+        110    0.000000000E+000                                               F               0         Nacelle Y rotation velocity, node 1, rad/s
+        111    0.000000000E+000                                               F               0         Nacelle Z rotation velocity, node 1, rad/s
+        112    0.000000000E+000                                               F               0         Nacelle X translation acceleration, node 1, m/s^2
+        113    0.000000000E+000                                               F               0         Nacelle Y translation acceleration, node 1, m/s^2
+        114    0.000000000E+000                                               F               0         Nacelle Z translation acceleration, node 1, m/s^2
+        115    0.000000000E+000                                               F               0         Nacelle X rotation acceleration, node 1, rad/s^2
+        116    0.000000000E+000                                               F               0         Nacelle Y rotation acceleration, node 1, rad/s^2
+        117    0.000000000E+000                                               F               0         Nacelle Z rotation acceleration, node 1, rad/s^2
+        118    0.000000000E+000                                               F               0         Yaw, rad
+        119    0.000000000E+000                                               F               0         YawRate, rad/s
+        120    0.000000000E+000                                               F               0         HSS_Spd, rad/s
 
 
 Jacobian matrices:
@@ -213,12 +213,12 @@ dXdx: 12 x 12
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
 dXdu: 12 x 28
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -236,21 +236,21 @@ dYdx: 120 x 12
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.498478303E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -2.498478303E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -258,17 +258,17 @@ dYdx: 120 x 12
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  1.000000000E+000  0.000000000E+000 -0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.500000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -2.500000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -287,69 +287,69 @@ dYdx: 120 x 12
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.043865724E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  2.902229348E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.570091140E-033  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001 -9.181123231E-017  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.181123231E-017  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.570091140E-033  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001 -9.181123231E-017  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.181123231E-017  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  5.000000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -5.000000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  5.000000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -5.000000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -439,8 +439,8 @@ dYdu: 120 x 28
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.839960418E-016  0.000000000E+000  0.000000000E+000 -1.839960418E-016
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.001627800E+000  0.000000000E+000  0.000000000E+000 -1.001627800E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -9.184850994E-017  0.000000000E+000  0.000000000E+000 -9.184850994E-017
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.000000000E+000  0.000000000E+000  0.000000000E+000 -1.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -484,12 +484,12 @@ A: 12 x 12
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
 B: 12 x 28
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -507,21 +507,21 @@ C: 120 x 12
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.498478303E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -2.498478303E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -529,17 +529,17 @@ C: 120 x 12
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  1.000000000E+000  0.000000000E+000 -0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.500000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -2.500000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -558,69 +558,69 @@ C: 120 x 12
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  2.043865724E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  2.902229348E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -4.002308080E-054  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000 -5.683160021E-034  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.570091140E-033  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001 -9.181123231E-017  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.181123231E-017  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.570091140E-033  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001 -9.181123231E-017  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.181123231E-017  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  5.000000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -5.000000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  1.000000000E+000  0.000000000E+000 -4.996956607E-005  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.001219956E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  9.995941401E-001  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  5.000000000E-005  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000 -5.000000000E-005  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  1.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.087731848E-047  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  5.804459265E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  8.180443759E-043  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  4.452935951E-027  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
@@ -710,8 +710,8 @@ D: 120 x 28
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.839960418E-016  0.000000000E+000  0.000000000E+000 -1.839960418E-016
-    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.001627800E+000  0.000000000E+000  0.000000000E+000 -1.001627800E+000
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -9.184850994E-017  0.000000000E+000  0.000000000E+000 -9.184850994E-017
+    0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000 -1.000000000E+000  0.000000000E+000  0.000000000E+000 -1.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
     0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000  0.000000000E+000
