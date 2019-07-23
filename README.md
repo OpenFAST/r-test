@@ -63,17 +63,32 @@ Map of old style names to new names
 ## Baselines
 The regression test compares locally generated solutions to the baseline solutions generated on a series of machine and compiler combinations. Currently, the supported machine/compiler combinations for successful regression testing are:
 - linux-intel
+- linux-gnu
 - macos-gnu
 - windows-intel
 Currently, the regression test supports only double precision solutions, so all
 baseline solutions are generated with a double precision build.
 
-#### macos-gnu
-These results were generated on a MacBook Pro running on macOS Sierra 10.12.6. The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0). The math libraries in this build are found in the [Accelerate Framework](https://developer.apple.com/documentation/accelerate) installed with Xcode command line tools at version 2347.
-
 #### linux-intel
-These results were generated on [NREL's Peregrine HPC cluster](https://hpc.nrel.gov/users/systems/peregrine) running on CentOS 7.
-The OpenFAST binary was compiled with Intel's ifort compiler version 17.0.5 and MKL 17.0.5 on Peregrine's [Haswell compute nodes](https://hpc.nrel.gov/users/systems/peregrine).
+These results were generated on [NREL's Eagle HPC cluster](https://www.nrel.gov/hpc/eagle-system.html) running on CentOS 7.
+The OpenFAST binary was compiled with Intel's ifort compiler version 18.0.3 and MKL 2018.3.222 on Intel Skylake processors.
+
+#### linux-gnu
+These results were generated on a MacBook Pro running Ubuntu 18.04.
+The OpenFAST binary was compiled with gfortran installed through `apt` at version 7.4.0.
+The math libraries in this build are obtained from APT as follows:
+- BLAS
+  - Package: libblas-dev
+  - Version: 3.7.1-4ubuntu1
+- LAPACK
+  - Package: liblapack-dev
+  - Version: 3.7.1-4ubuntu1
+
+#### macos-gnu
+These results were generated on a MacBook Pro running on macOS Sierra 10.12.6.
+The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc package at gcc version 7.2.0 (Homebrew GCC 7.2.0).
+The math libraries in this build are found in the [Accelerate Framework](https://developer.apple.com/documentation/accelerate)
+installed with Xcode command line tools at version 2347.
 
 #### windows-intel
 These results were generated on a Dell Latitude E7440 running Windows 7 Enterprise SP 1. The OpenFAST binary was compiled with Intel's Visual Fortran 17 update 4.
