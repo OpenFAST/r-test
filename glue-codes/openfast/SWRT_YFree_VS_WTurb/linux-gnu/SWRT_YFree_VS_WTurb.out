@@ -1,5 +1,5 @@
 
-Predictions were generated on 22-Jun-2018 at 13:09:57 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-122-g00b9e167
+Predictions were generated on 26-Aug-2019 at 15:35:54 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.1.0-168-g83bd0ff2
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #17: SWRT 3-bladed upwind turbine with many DOFs, variable speed control, free yaw, tail-furl, FF turbulence
