@@ -1,4 +1,6 @@
+# system files
 .DS_Store
+.vscode
 
 # logs
 *.log
@@ -22,4 +24,3 @@ install_manifest.txt
 
 # build directories
 glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build
-
