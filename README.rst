@@ -121,9 +121,9 @@ installed with Xcode command line tools at version 2347.
 
 windows-intel
 -------------
-These results were generated on a Dell Latitude E7440 running Windows 7
-Enterprise SP 1. The OpenFAST binary was compiled with Intel's Visual Fortran
-17 update 4.
+These results were generated on a Dell Precision 3530 laptop running
+Windows 10. The OpenFAST binary was compiled with Intel's Fortran compiler
+and the Visual Fortran toolset with MKL 2017.
 
 Updating the baselines
 ----------------------
@@ -172,9 +172,6 @@ if the regression test is executed automatically with ``ctest`` or
 ``manualRegressionTest.py``, all case files will be copied to
 ``openfast/build``. In this case, these three controller libraries must exist:
 
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/
-  DISCON.dll``
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/
-  DISCON_ITIBarge.dll``
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/
-  DISCON_OC3Hywind.dll``
+- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON.dll``
+- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITIBarge.dll``
+- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3Hywind.dll``
