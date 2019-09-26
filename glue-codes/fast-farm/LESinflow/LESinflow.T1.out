@@ -1,8 +1,0 @@
-
-Predictions were generated on 24-Sep-2019 at 17:08:46 using OpenFAST, compiled as a 64-bit application using single precision at commit -128-NOTFOUND
- linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
-
-Description from the FAST input file: FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
-
-Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	OoPDefl1  	IPDefl1   	RotSpeed  	GenSpeed  	TTDspFA   	TTDspSS   	TTDspPtch 	RootMIP1  	RootMOoP1 	RootMzb1  	RotTorq   	LSSGagMya 	LSSGagMza 	YawBrMxp  	YawBrMyp  	YawBrMzp  	TwrBsMxt  	TwrBsMyt  	TwrBsMzt  	YawBrFxn  	RtAeroFxh 	GenPwr    	GenTq     
-(s)       	(m/s)     	(m/s)     	(m/s)     	(m)       	(m)       	(rpm)     	(rpm)     	(m)       	(m)       	(deg)     	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN)      	(N)       	(kW)      	(kN-m)    

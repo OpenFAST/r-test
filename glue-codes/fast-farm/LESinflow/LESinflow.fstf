@@ -3,7 +3,7 @@ Sample FAST.Farm input file
 --- SIMULATION CONTROL ---
 False              Echo               Echo input data to <RootName>.ech? (flag)
 FATAL              AbortLevel         Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-1000.0               TMax               Total run time (s) [>=0.0]
+90.0               TMax               Total run time (s) [>=0.0]
 False              UseSC              Use a super controller? (flag)
 1                  Mod_AmbWind        Ambient wind model (-) (switch) {1: high-fidelity precursor in VTK format, 2: InflowWind module}
 --- SUPER CONTROLLER --- [used only for UseSC=True]
@@ -11,7 +11,7 @@ False              UseSC              Use a super controller? (flag)
 --- AMBIENT WIND ---
 3.0                DT                 Time step for low -resolution wind data input files; will be used as the global FAST.Farm time step (s) [>0.0]
 0.1          DT_High            Time step for high-resolution wind data input files (s) [>0.0]
-"/projects/isda/kshaler/freestream/r-test"          WindFilePath       Path name to wind data files from precursor (string)
+"./Inflow"          WindFilePath       Path name to wind data files from precursor (string)
 False              ChkWndFiles        Check all the ambient wind files for data consistency? (flag)
 --- AMBIENT WIND: INFLOWWIND MODULE --- [used only for Mod_AmbWind=2]
 3.0                DT                 Time step for low -resolution wind data interpolation; will be used as the global FAST.Farm time step (s) [>0.0]
@@ -62,7 +62,7 @@ DEFAULT            C_Meander          Calibrated parameter for wake meandering (
 False              WrDisWind          Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
 1                  NOutDisWindXY      Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 9]
 85.0               OutDisWindZ        Z coordinates of XY planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXY] [unused for NOutDisWindXY=0]
-8                  NOutDisWindYZ      Number of YZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisYZ<n_out>.t<n>.vtk (-) [0 to 9]
+0                  NOutDisWindYZ      Number of YZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisYZ<n_out>.t<n>.vtk (-) [0 to 9]
 748.0, 1252.0, 1378.0, 1504.0, 1630.0, 1756.0, 1882.0, 2008.0   OutDisWindX        X coordinates of YZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindYZ] [unused for NOutDisWindYZ=0]
 1                  NOutDisWindXZ      Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 9]
 1000.0             OutDisWindY        Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
