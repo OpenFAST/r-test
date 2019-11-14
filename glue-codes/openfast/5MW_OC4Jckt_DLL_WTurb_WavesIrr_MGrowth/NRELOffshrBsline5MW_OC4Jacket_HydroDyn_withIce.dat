@@ -59,13 +59,6 @@ False            WvSumQTF       - Full summation-frequency  2nd-order wave kinem
              0   NewmanApp      - Mean- and slow-drift 2nd-order forces computed with Newman's approximation {0: None; [7, 8, 9, 10, 11, or 12]: WAMIT file to use} [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero. Used only when WaveDirMod=0]
              0   DiffQTF        - Full difference-frequency 2nd-order forces computed with full QTF          {0: None; [10, 11, or 12]: WAMIT file to use}          [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero]
              0   SumQTF         - Full summation -frequency 2nd-order forces computed with full QTF          {0: None; [10, 11, or 12]: WAMIT file to use}
----------------------- FLOATING PLATFORM FORCE FLAGS  -------------------------- [unused with WaveMod=6]
-True             PtfmSgF        - Platform horizontal surge translation force (flag) or DEFAULT
-True             PtfmSwF        - Platform horizontal sway translation force (flag) or DEFAULT
-True             PtfmHvF        - Platform vertical heave translation force (flag) or DEFAULT
-True             PtfmRF         - Platform roll tilt rotation force (flag) or DEFAULT
-True             PtfmPF         - Platform pitch tilt rotation force (flag) or DEFAULT
-True             PtfmYF         - Platform yaw rotation force (flag) or DEFAULT
 ---------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  --------------
              0             0             0             0             0             0   AddF0    - Additional preload (N, N-m)
              0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)
