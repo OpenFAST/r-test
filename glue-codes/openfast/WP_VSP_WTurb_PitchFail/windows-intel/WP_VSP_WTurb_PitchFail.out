@@ -1,5 +1,5 @@
 
-Predictions were generated on 05-Nov-2019 at 11:57:04 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Predictions were generated on 20-Nov-2019 at 10:13:57 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #11: WindPACT 1.5 MW Baseline with many DOFs undergoing a pitch failure.
