@@ -1,4 +1,4 @@
-------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 FAST certification Test #08: AOC 15/50 with many DOFs with fixed yaw error and steady wind. Many parameters are pure fiction.
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
