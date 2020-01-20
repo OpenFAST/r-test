@@ -1,21 +1,21 @@
 --------- BEAMDYN with OpenFAST INPUT FILE -------------------------------------------
 NREL 5MW blade primary input file
 ---------------------- SIMULATION CONTROL --------------------------------------
-TRUE          Echo            - Echo input data to "<RootName>.ech" (flag)
-False         QuasiStaticInit - Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve only]
-          0   rhoinf          - Numerical damping parameter for generalized-alpha integrator
-          2   quadrature      - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
-"DEFAULT"     refine          - Refinement factor for trapezoidal quadrature (-). DEFAULT = 1 [used only when quadrature=2]
-DEFAULT   n_fact           - Factorization frequency (-). DEFAULT = 5
-DEFAULT   DTBeam           - Time step size (s).
-DEFAULT   load_retries     - Number of factored load retries before quitting the aimulation
-DEFAULT   NRMax            - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
-DEFAULT   stop_tol         - Tolerance for stopping criterion (-)
-DEFAULT   tngt_stf_fd      - Flag to use finite differenced tangent stiffness matrix (-)
-DEFAULT   tngt_stf_comp    - Flag to compare analytical finite differenced tangent stiffness matrix  (-)
-DEFAULT   tngt_stf_pert    - perturbation size for finite differencing (-)
-DEFAULT   tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-)
-True          RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
+TRUE          Echo             - Echo input data to "<RootName>.ech"? (flag)
+False         QuasiStaticInit  - Use quasistatic pre-conditioning with centripetal accelerations in initialization? (flag) [dynamic solve only]
+          0   rhoinf           - Numerical damping parameter for generalized-alpha integrator
+          2   quadrature       - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
+"DEFAULT"     refine           - Refinement factor for trapezoidal quadrature (-) [DEFAULT = 1; used only when quadrature=2]
+"DEFAULT"     n_fact           - Factorization frequency for the Jacobian in N-R iteration(-) [DEFAULT = 5]
+"DEFAULT"     DTBeam           - Time step size (s)
+"DEFAULT"     load_retries     - Number of factored load retries before quitting the aimulation [DEFAULT = 20]
+"DEFAULT"     NRMax            - Max number of iterations in Newton-Raphson algorithm (-) [DEFAULT = 10]
+"DEFAULT"     stop_tol         - Tolerance for stopping criterion (-) [DEFAULT = 1E-5]
+"DEFAULT"     tngt_stf_fd      - Use finite differenced tangent stiffness matrix? (flag)
+"DEFAULT"     tngt_stf_comp    - Compare analytical finite differenced tangent stiffness matrix? (flag)
+"DEFAULT"     tngt_stf_pert    - Perturbation size for finite differencing (-) [DEFAULT = 1E-6]
+"DEFAULT"     tngt_stf_difftol - Maximum allowable relative difference between analytical and fd tangent stiffness (-); [DEFAULT = 0.1]
+True          RotStates        - Orient states in the rotating frame during linearization? (flag) [used only when linearizing] 
 ---------------------- GEOMETRY PARAMETER --------------------------------------
           1   member_total    - Total number of members (-)
          49   kp_total        - Total number of key points (-) [must be at least 3]
@@ -84,15 +84,15 @@ False         UsePitchAct - Whether a pitch actuator should be used (flag)
 True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
 "ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.
           9   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
-1, 7, 14, 21, 28, 35, 42, 46, 49    OutNd  - Nodes whose values will be output  (-)
+          1,          7,         14,         21,         28,         35,         42,         46,         49    OutNd          - Nodes whose values will be output  (-)
           OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
 "N1Fxl,N2Fxl,N3Fxl,N4Fxl,N5Fxl,N6Fxl,N7Fxl,N8Fxl,N9Fxl"  
-"N1Fyl,N2Fyl,N3Fyl,N4Fyl,N5Fyl,N6Fyl,N7Fyl,N8Fyl,N9Fyl"                           
-"N1Mxl,N2Mxl,N3Mxl,N4Mxl,N5Mxl,N6Mxl,N7Mxl,N8Mxl,N9Mxl"   
-"N1Myl,N2Myl,N3Myl,N4Myl,N5Myl,N6Myl,N7Myl,N8Myl,N9Myl" 
-"RootFxr, RootFyr, RootFzr"  
-"RootMxr, RootMyr, RootMzr"  
-"TipTDxr, TipTDyr, TipTDzr"  
-"TipRDxr, TipRDyr, TipRDzr"        
+"N1Fyl,N2Fyl,N3Fyl,N4Fyl,N5Fyl,N6Fyl,N7Fyl,N8Fyl,N9Fyl"  
+"N1Mxl,N2Mxl,N3Mxl,N4Mxl,N5Mxl,N6Mxl,N7Mxl,N8Mxl,N9Mxl"  
+"N1Myl,N2Myl,N3Myl,N4Myl,N5Myl,N6Myl,N7Myl,N8Myl,N9Myl"  
+"RootFxr, RootFyr, RootFzr"                              
+"RootMxr, RootMyr, RootMzr"                              
+"TipTDxr, TipTDyr, TipTDzr"                              
+"TipRDxr, TipRDyr, TipRDzr"                              
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
