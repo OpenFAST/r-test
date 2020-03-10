@@ -1,6 +1,6 @@
 Outputs were generated using MAP++ 1.20.10.
 
-    Friday December 27-2019 at 12:58:53 PM
+    Thursday March 26-2020 at 14:08:09 PM
 
     Gravity constant          [m/s^2]  : 9.81
     Sea density               [kg/m^3] : 1025.00
@@ -53,7 +53,7 @@ HAnch     [N]   |  736845.198
 VAnch     [N]   | 0.000
 TAnch     [N]   |  736845.198
 AlphaAnch [deg] | 0.000
-L^2-Norm        |  6.148556e-13
+L^2-Norm        |  4.412236e-13
 Function Evals  |  5
 Jacobian Evals  |  4
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
