@@ -28,3 +28,4 @@ SWRT_YFree_VS_WTurb
 5MW_Land_BD_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
+5MW_OC4Semi_WSt_WavesWN
