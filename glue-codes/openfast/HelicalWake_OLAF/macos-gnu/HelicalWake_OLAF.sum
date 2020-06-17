@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 15-Jun-2020 at 13:18:13 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.3.0-260-g5e3b7314-dirty
+Predictions were generated on 15-Jun-2020 at 17:41:55 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.3.0-398-gcd236789-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -23,7 +23,7 @@ Predictions were generated on 15-Jun-2020 at 13:18:13 using OpenFAST, compiled a
 
 Modeling a land-based turbine
 Description from the FAST input file: 
-  AeroElasticSE FAST driver
+  Helical wake test case for OLAF free wake vortex in AD15
 
 Interpolation order for input/output time histories: 1 (linear)
 Number of correction iterations:  0
@@ -51,39 +51,39 @@ Number of correction iterations:  0
        5  Wind2VelX   (m/s)       InflowWind
        6  Wind2VelY   (m/s)       InflowWind
        7  Wind2VelZ   (m/s)       InflowWind
-       8  Azimuth     (deg)       ElastoDyn
-       9  BldPitch1   (deg)       ElastoDyn
-      10  GenSpeed    (rpm)       ElastoDyn
-      11  IPDefl1     (m)         ElastoDyn
-      12  LSSGagMya   (kN-m)      ElastoDyn
-      13  LSSGagMza   (kN-m)      ElastoDyn
-      14  OoPDefl1    (m)         ElastoDyn
-      15  RootFxb1    (kN)        ElastoDyn
-      16  RootFyb1    (kN)        ElastoDyn
-      17  RootFzb1    (kN)        ElastoDyn
-      18  RootMxb1    (kN-m)      ElastoDyn
-      19  RootMyb1    (kN-m)      ElastoDyn
-      20  RootMzb1    (kN-m)      ElastoDyn
-      21  RotSpeed    (rpm)       ElastoDyn
-      22  RotTorq     (kN-m)      ElastoDyn
-      23  Spn2MLxb1   INVALID     ElastoDyn
-      24  Spn2MLyb1   INVALID     ElastoDyn
-      25  TTDspFA     (m)         ElastoDyn
-      26  TTDspSS     (m)         ElastoDyn
-      27  TTDspTwst   (deg)       ElastoDyn
-      28  TwrBsFxt    (kN)        ElastoDyn
-      29  TwrBsFyt    (kN)        ElastoDyn
-      30  TwrBsFzt    (kN)        ElastoDyn
-      31  TwrBsMxt    (kN-m)      ElastoDyn
-      32  TwrBsMyt    (kN-m)      ElastoDyn
-      33  TwrBsMzt    (kN-m)      ElastoDyn
-      34  TwstDefl1   (deg)       ElastoDyn
-      35  YawBrFxp    (kN)        ElastoDyn
-      36  YawBrFyp    (kN)        ElastoDyn
-      37  YawBrFzp    (kN)        ElastoDyn
-      38  YawBrMxp    (kN-m)      ElastoDyn
-      39  YawBrMyp    (kN-m)      ElastoDyn
-      40  YawBrMzp    (kN-m)      ElastoDyn
+       8  OoPDefl1    (m)         ElastoDyn
+       9  IPDefl1     (m)         ElastoDyn
+      10  TwstDefl1   (deg)       ElastoDyn
+      11  BldPitch1   (deg)       ElastoDyn
+      12  Azimuth     (deg)       ElastoDyn
+      13  RotSpeed    (rpm)       ElastoDyn
+      14  GenSpeed    (rpm)       ElastoDyn
+      15  TTDspFA     (m)         ElastoDyn
+      16  TTDspSS     (m)         ElastoDyn
+      17  TTDspTwst   (deg)       ElastoDyn
+      18  Spn2MLxb1   (kN-m)      ElastoDyn
+      19  Spn2MLyb1   (kN-m)      ElastoDyn
+      20  RootFxb1    (kN)        ElastoDyn
+      21  RootFyb1    (kN)        ElastoDyn
+      22  RootFzb1    (kN)        ElastoDyn
+      23  RootMxb1    (kN-m)      ElastoDyn
+      24  RootMyb1    (kN-m)      ElastoDyn
+      25  RootMzb1    (kN-m)      ElastoDyn
+      26  RotTorq     (kN-m)      ElastoDyn
+      27  LSSGagMya   (kN-m)      ElastoDyn
+      28  LSSGagMza   (kN-m)      ElastoDyn
+      29  YawBrFxp    (kN)        ElastoDyn
+      30  YawBrFyp    (kN)        ElastoDyn
+      31  YawBrFzp    (kN)        ElastoDyn
+      32  YawBrMxp    (kN-m)      ElastoDyn
+      33  YawBrMyp    (kN-m)      ElastoDyn
+      34  YawBrMzp    (kN-m)      ElastoDyn
+      35  TwrBsFxt    (kN)        ElastoDyn
+      36  TwrBsFyt    (kN)        ElastoDyn
+      37  TwrBsFzt    (kN)        ElastoDyn
+      38  TwrBsMxt    (kN-m)      ElastoDyn
+      39  TwrBsMyt    (kN-m)      ElastoDyn
+      40  TwrBsMzt    (kN-m)      ElastoDyn
       41  RtTSR       (-)         AeroDyn
       42  RtVAvgxh    (m/s)       AeroDyn
       43  RtVAvgyh    (m/s)       AeroDyn
