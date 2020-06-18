@@ -18,7 +18,7 @@ code at ``openfast/modules``.
 
 beamdyn/
 --------
-These BeamDyn specific cases are configured to run with the BeamDyn driver
+These BeamDyn-specific cases are configured to run with the BeamDyn driver
 program rather than with a glue code.
 
 glue-codes/
@@ -99,25 +99,25 @@ baseline solutions are generated with a double precision build.
 
 linux-intel
 -----------
-These results were generated on `NREL's Eagle HPC cluster <https://www.nrel.gov/hpc/eagle-system.html>`__
-running on CentOS 7 with Intel Skylake processors. The OpenFAST binary was
-compiled with the Intel Fortran compiler at version 18.0.3 and MKL 2018.3.222.
+These results were generated on an Ubuntu 18.04 virtual machine running on a
+MacBookPro host system with macOS Mojave 10.14.6. The OpenFAST binary was
+compiled with the Intel Fortran compiler at version 2020.0.166 and MKL 2020.0.166.
 
 linux-gnu
 ---------
-These results were generated on `NREL's Eagle HPC cluster <https://www.nrel.gov/hpc/eagle-system.html>`__
-running on CentOS 7 with Intel Skylake processors. The OpenFAST binary was
-compiled with the GNU Fortran compiler at version 7.3.0. The math libraries in
-this build are ``openblas`` at version 0.3.6.
+These results were generated on an Ubuntu 18.04 virtual machine running on a
+MacBookPro host system with macOS Mojave 10.14.6. The OpenFAST binary was
+compiled with gfortran version 7.5.0 installed through APT.
+The math libraries in this build are also installed with APT through the
+`liblapacl-dev` package.
 
 macos-gnu
 ---------
-These results were generated on a MacBook Pro running on macOS Sierra 10.12.6.
+These results were generated on a MacBook Pro running on macOS Mojave 10.14.6.
 The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc
-package at gcc version 7.2.0 (Homebrew GCC 7.2.0).
+package at gcc version 7.5.0 (Homebrew GCC 7.5.0).
 The math libraries in this build are found in the
-`Accelerate Framework <https://developer.apple.com/documentation/accelerate>`__
-installed with Xcode command line tools at version 2347.
+`Accelerate Framework <https://developer.apple.com/documentation/accelerate>`__.
 
 windows-intel
 -------------
