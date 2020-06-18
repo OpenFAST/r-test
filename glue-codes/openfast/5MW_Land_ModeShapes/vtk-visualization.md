@@ -75,5 +75,5 @@ To create animations of the mode shapes
 ## Helpful links
 - [Download ParaView](https://www.paraview.org/download/)
 - [ParaView Online Wiki](https://www.paraview.org/Wiki/ParaView) Note that this also contains a tutorial on ParaView.
-- [ParaView Python documentation]https://kitware.github.io/paraview-docs/latest/python/
+- [ParaView Python documentation](https://kitware.github.io/paraview-docs/latest/python/)
 
