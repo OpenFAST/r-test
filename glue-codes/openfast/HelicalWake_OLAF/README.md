@@ -7,15 +7,15 @@ Example of analytical results are provided in the folder `AnalyticalResults`.
 
 The following parameters are used:
 
-U0=10
-Gamma: -232.71056693325  (prescribed, constant along the span)
-R    : 100.0
-Omega: 0.6  rad/s
-Omega: 5.729577951308232 rpm
+    U0=10
+    Gamma: -232.71056693325  (prescribed, constant along the span)
+    R    : 100.0
+    Omega: 0.6  rad/s
+    Omega: 5.729577951308232 rpm
 
-a_helix = 0 but a_ll=1/3
+    a_helix = 0 but a_ll=1/3
 
-Helical Pitch l   16.6666660    
-Helical Pitch h   104.719757    
+    Helical Pitch l   16.6666660    
+    Helical Pitch h   104.719757    
 
 The twist of the blade is set to match the helical twist, from 90 deg to 9.46 deg.
