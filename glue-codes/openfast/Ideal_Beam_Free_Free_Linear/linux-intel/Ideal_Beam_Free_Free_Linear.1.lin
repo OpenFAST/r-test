@@ -8,6 +8,7 @@ Simulation information:
    Simulation time:                     0.0000 s
    Rotor Speed:                         0.0000 rad/s
    Azimuth:                             0.0000 rad
+   Wind Speed:                          0.0000 m/s
    Number of continuous states:       108
    Number of discrete states:           0
    Number of constraint states:         0
