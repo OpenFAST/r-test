@@ -1,4 +1,4 @@
-------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 FAST certification Test #10: UAE Phase VI (upwind) with no DOFs in a ramped wind.
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)

@@ -1,4 +1,4 @@
-------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 FAST certification Test #01: AWT-27CR2 with many DOFs with fixed yaw error and steady wind.
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)

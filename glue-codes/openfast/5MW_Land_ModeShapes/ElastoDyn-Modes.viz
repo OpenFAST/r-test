@@ -1,0 +1,14 @@
+------- OpenFAST MODE-SHAPE INPUT FILE -------------------------------------------
+# Options for visualizing mode shapes
+---------------------- FILE NAMES ----------------------------------------------
+"5MW_Land_ModeShapes.ModeShapeVTK" CheckpointRoot - Rootname of the checkpoint file written when OpenFAST generated the linearization files (without the ".chkp" extension)
+"EigenvectorsForModeShapeVTK.bin" MatlabFileName - Name of the mode-shape file (with eigenvectors) written by Matlab ("ModesVizName" sent to function fx_mbc3())
+---------------------- VISUALIZATION OPTIONS -----------------------------------
+15        VTKLinModes   - Number of modes to visualize (0 <= VTKLinModes <= NumModes)
+1,2       VTKModes      - List of which VTKLinModes modes will be visualized (modes will be added sequentially from the last value entered)
+40        VTKLinScale   - Mode shape visualization scaling factor (exaggerates mode shapes)
+2         VTKLinTim     - Switch to make one animation for all LinTimes together (VTKLinTim=1) or separate animations for each LinTimes (VTKLinTim=2)
+true      VTKLinTimes1  - If VTKLinTim=2, visualize modes at LinTimes(1) only? (if false, files will be generated at all LinTimes)
+0.0       VTKLinPhase   - Phase used when making one animation for all LinTimes together (used only when VTKLinTim=1)
+
+
