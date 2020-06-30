@@ -219,5 +219,8 @@ B1N9Fy
 B1N9Ft
 B1N9Fn
 B1N9Mm
+"B1N1Gam,B1N2Gam,B1N3Gam,B1N4Gam,B1N5Gam,B1N6Gam,B1N7Gam,B1N8Gam,B1N9Gam"
+"B2N1Gam,B2N2Gam,B2N3Gam,B2N4Gam,B2N5Gam,B2N6Gam,B2N7Gam,B2N8Gam,B2N9Gam"
+"B3N1Gam,B3N2Gam,B3N3Gam,B3N4Gam,B3N5Gam,B3N6Gam,B3N7Gam,B3N8Gam,B3N9Gam"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
