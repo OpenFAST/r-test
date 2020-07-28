@@ -17,7 +17,7 @@ False        Echo         - Echo the input to "<rootname>.AD.ech"?  (flag)
 0            TipMod       - Tip vortex noise model {0:none, 1: BPM}  (switch)
 True         RoundedTip   - Logical indicating rounded tip (flag) [Only used if TipMod=1]
 1.0          Alprat       - Tip lift curve slope (Default = 1.0) [Only used if TipMod=1]
-0            BluntMod     - Trailing-edge-bluntness – Vortex-shedding model {0:none, 1: BPM}  (switch)
+1            BluntMod     - Trailing-edge-bluntness – Vortex-shedding model {0:none, 1: BPM}  (switch)
 "AABlade1.dat"    AABlFile(1)   - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "AABlade1.dat"    AABlFile(2)   - Name of file containing distributed aerodynamic properties for Blade #2 (-)
 "AABlade1.dat"    AABlFile(3)   - Name of file containing distributed aerodynamic properties for Blade #3 (-)
@@ -25,7 +25,7 @@ True         RoundedTip   - Logical indicating rounded tip (flag) [Only used if 
 "AA_ObserverLocations.dat"    ObserverLocations        - Name of file containing all observer locations X Y Z (-)
 ======  Outputs  ====================================================================================
 False              AWeighting  - A-weighting Flag (flag)  
-3                 NrOutFile  - Number of Output files. 1 for Time Dependent Overall SPL, 2 for both 1 and Frequency and Time Dependent SPL as well, or 3 for both 1 and 2 and Acoustics mechanism dependent, 4 for 1-3 and the overall sound pressure levels per blade per node per observer 
+4                 NrOutFile  - Number of Output files. 1 for Time Dependent Overall SPL, 2 for both 1 and Frequency and Time Dependent SPL as well, or 3 for both 1 and 2 and Acoustics mechanism dependent, 4 for 1-3 and the overall sound pressure levels per blade per node per observer 
 "IEA_LB_RWT-AeroAcoustics_"    AAOutFile   - No Extension needed the resulting file will have .out Name of file containing
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
