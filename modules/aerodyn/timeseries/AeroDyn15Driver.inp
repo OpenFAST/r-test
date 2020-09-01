@@ -1,0 +1,22 @@
+-----  AeroDyn Driver Input File  --------------------------------------
+Time-series input to test extreme event + shutdown
+-----  Input Configuration  ----------------------------------------------------
+       False  Echo         -  Echo input parameters to "<rootname>.ech"?
+"AeroDyn15.dat"  AD_InputFile -  Name of the primary AeroDyn input file
+-----  Turbine Data  -----------------------------------------------------------
+           3  NumBlades    - Number of blades (-)
+        1.22  HubRad       - Hub radius (m)
+          90  HubHt        - Hub height (m)
+           6  Overhang     - Overhang (m)
+          -0  ShftTilt     - Shaft tilt (deg)
+          -3  Precone      - Blade precone (deg)
+-----  I/O Settings  -----------------------------------------------------------
+   "shutdown"  OutFileRoot  - Root name for any output files (use "" for .dvr rootname) (-)
+        True  TabDel       - When generating formatted output (OutForm=True), make output tab-delimited (fixed-width otherwise) (flag)
+  "ES15.8E2"  OutFmt       - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+       False  Beep         - Beep on exit (flag)
+-----  Combined-Case Analysis  -------------------------------------------------
+           1  NumCases     - Number of cases to run
+WndSpeed     ShearExp     RotSpd       Pitch        Yaw          dT           Tmax
+(m/s)        (-)          (rpm)        (deg)        (deg)        (s)          (s)
+@AeroDyn15DriverTimeseriesInput.dat         
