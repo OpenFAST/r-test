@@ -58,12 +58,12 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           2   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s)
           0   NacYawF      - Final yaw angle for override yaw maneuvers (degrees)
 ---------------------- TUNED MASS DAMPER ---------------------------------------
-False         CompNTMD     - Compute nacelle tuned mass damper {true/false} (flag)
-"unused"      NTMDfile     - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNTMD is false]
-False         CompTTMD     - Compute tower tuned mass damper {true/false} (flag)
-"unused"      TTMDfile     - Name of the file for tower tuned mass damper (quoted string) [unused when CompTTMD is false]
-False         CompBTMD     - Compute tower tuned mass damper {true/false} (flag)
-"unused"      BTMDfile     - Name of the file for blade tuned mass damper (quoted string) [unused when CompBTMD is false]
+False         CompNStC     - Compute nacelle tuned mass damper {true/false} (flag)
+"unused"      NStCfile     - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNStC is false]
+False         CompTStC     - Compute tower tuned mass damper {true/false} (flag)
+"unused"      TStCfile     - Name of the file for tower tuned mass damper (quoted string) [unused when CompTStC is false]
+False         CompBStC     - Compute tower tuned mass damper {true/false} (flag)
+"unused"      BStCfile     - Name of the file for blade tuned mass damper (quoted string) [unused when CompBStC is false]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "../5MW_Baseline/ServoData/DISCON_OC3Hywind.dll"    DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "DISCON.IN"    DLL_InFile   - Name of input file sent to the DLL (-) [used only with Bladed Interface]
