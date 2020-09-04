@@ -62,6 +62,8 @@ False         CompNTMD     - Compute nacelle tuned mass damper {true/false} (fla
 "unused"      NTMDfile     - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNTMD is false]
 False         CompTTMD     - Compute tower tuned mass damper {true/false} (flag)
 "unused"      TTMDfile     - Name of the file for tower tuned mass damper (quoted string) [unused when CompTTMD is false]
+False         CompBTMD     - Compute tower tuned mass damper {true/false} (flag)
+"unused"      BTMDfile     - Name of the file for blade tuned mass damper (quoted string) [unused when CompBTMD is false]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "../5MW_Baseline/ServoData/DISCON_OC3Hywind.dll"    DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "DISCON.IN"    DLL_InFile   - Name of input file sent to the DLL (-) [used only with Bladed Interface]
