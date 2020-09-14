@@ -1,4 +1,4 @@
-------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 FAST certification Test #11: WindPACT 1.5 MW Baseline with many DOFs undergoing a pitch failure. Model properties from "InputData1.5A08V07adm.xls" (from C. Hansen) with bugs removed.
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
@@ -143,9 +143,9 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "TwHt2FLxt"               - local tower forces
 "TwHt2FLyt"               - local tower forces
 "TwHt2FLzt"               - local tower forces
-"TwHt1RPxi"
-"TwHt1TPxi"
-"TwHt1RDxt"
-"TwHt1TDxt"
+"TwHt1RPxi"                
+"TwHt1TPxi"                
+"TwHt1RDxt"                
+"TwHt1TDxt"                
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------

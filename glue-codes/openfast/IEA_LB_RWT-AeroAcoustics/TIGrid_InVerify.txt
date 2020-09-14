@@ -1,0 +1,10 @@
+Total Grid points In Y (lateral), Starts from - radius goes to + radius+   
+2  
+Total Grid points In Z (vertical), Starts from bottom tip (hub-radius)   
+2  
+Grid spacing  In Y (lateral)  
+130  
+Grid spacing In Z (vertical)  
+130  
+    0.10 0.10
+    0.10 0.10 
