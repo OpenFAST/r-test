@@ -1,1 +1,1 @@
-timeseries
+ad_timeseries_shutdown
