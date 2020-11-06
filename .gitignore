@@ -2,9 +2,6 @@
 .DS_Store
 .vscode
 
-# logs
-*.log
-
 # cmake outputs
 CMakeCache.txt
 CMakeFiles

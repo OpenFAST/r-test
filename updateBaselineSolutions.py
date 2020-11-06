@@ -66,7 +66,7 @@ for case in casenames:
 
     caseDir = os.path.join(sourceParent, case)
     sourceFiles = os.listdir(caseDir)
-    targetExtensions = [".out", ".outb", ".sum"]
+    targetExtensions = [".out", ".outb", ".sum", ".log"]
     targetFiles = [s for s in sourceFiles for t in targetExtensions if t in s]
 
     for f in targetFiles:
