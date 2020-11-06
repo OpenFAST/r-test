@@ -1,0 +1,57 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2020 National Renewable Energy Laboratory
+ Copyright (C) 2020 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.4.0-50-g416ff436-dirty
+ Compile Info:
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64,
+  Version 19.0.8.324 Build 20200220
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Nov 06 2020
+  - Time: 13:37:52
+ Execution Info:
+  - Date: 11/06/2020
+  - Time: 14:15:42-0600
+
+ OpenFAST input file heading:
+     IEA task 37 RWT turbine -- https://github.com/IEAWindTask37/IEA-3.4-130-RWT
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ Nodal output section of AeroDyn input file not found or improperly formatted.
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
+ Running AeroAcoustics (v1.00.00, 18-Aug-2016).
+ Running InflowWind.
+  Time: 0 of 20 seconds.
++                                                                                                  
++ Time: 5 of 20 seconds.  Estimated final completion at 14:16:05.
++                                                                                                  
++ Time: 10 of 20 seconds.  Estimated final completion at 14:16:05.
++                                                                                                  
++ Time: 15 of 20 seconds.  Estimated final completion at 14:16:05.
++                                                                                                  
++ Time: 20 of 20 seconds.  Estimated final completion at 14:16:05.
++                                                                                                  
+
+  Total Real Time:       22.196 seconds
+  Total CPU Time:        22.172 seconds
+  Simulation CPU Time:   22.016 seconds
+  Simulated Time:        20 seconds
+  Time Ratio (Sim/CPU):  0.90845
+
+  OpenFAST terminated normally.
+

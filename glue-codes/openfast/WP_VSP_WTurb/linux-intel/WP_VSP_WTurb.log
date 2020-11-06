@@ -1,0 +1,141 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2020 National Renewable Energy Laboratory
+ Copyright (C) 2020 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.4.0-50-g416ff436-dirty
+ Compile Info:
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64,
+  Version 19.0.8.324 Build 20200220
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Nov 06 2020
+  - Time: 13:37:52
+ Execution Info:
+  - Date: 11/06/2020
+  - Time: 13:57:00-0600
+
+ OpenFAST input file heading:
+     FAST Certification Test #13: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and FF
+     turbulence.
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ Nodal output section of AeroDyn input file not found or improperly formatted.
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
+ Running InflowWind.
+
+    Reading a 7x7 grid (84 m wide, 42.288 m to 126.29 m above ground) with a characteristic wind
+    speed of 12 m/s.
+
+    Processed 940 time steps of 20-Hz full-field data (46.95 seconds).
+ Running ServoDyn.
+  Time: 0 of 40 seconds.
++                                                                                                  
++ Time: 1 of 40 seconds.  Estimated final completion at 13:57:36.
++                                                                                                  
++ Time: 2 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 3 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 4 of 40 seconds.  Estimated final completion at 13:57:30.
+
+ ***********************************************
+ Running with control option using data from:
+  Speed controller for ADAMS WindPACT 15A1001 model April, 2002.
+ ***********************************************
+
++                                                                                                  
++ Time: 5 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 6 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 7 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 8 of 40 seconds.  Estimated final completion at 13:57:33.
++                                                                                                  
++ Time: 9 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 10 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 11 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 12 of 40 seconds.  Estimated final completion at 13:57:32.
++                                                                                                  
++ Time: 13 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 14 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 15 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 16 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 17 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 18 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 19 of 40 seconds.  Estimated final completion at 13:57:32.
++                                                                                                  
++ Time: 20 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 21 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 22 of 40 seconds.  Estimated final completion at 13:57:30.
++                                                                                                  
++ Time: 23 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 24 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 25 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 26 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 27 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 28 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 29 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 30 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 31 of 40 seconds.  Estimated final completion at 13:57:32.
++                                                                                                  
++ Time: 32 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 33 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 34 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 35 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 36 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 37 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 38 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 39 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
++ Time: 40 of 40 seconds.  Estimated final completion at 13:57:31.
++                                                                                                  
+
+  Total Real Time:       30.526 seconds
+  Total CPU Time:        30.5 seconds
+  Simulation CPU Time:   30.422 seconds
+  Simulated Time:        40 seconds
+  Time Ratio (Sim/CPU):  1.3148
+
+  OpenFAST terminated normally.
+

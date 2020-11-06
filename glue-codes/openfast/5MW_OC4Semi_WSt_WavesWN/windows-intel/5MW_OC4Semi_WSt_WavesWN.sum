@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 05-Nov-2020 at 11:51:43 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-14-ge3b64c18
+Predictions were generated on 06-Nov-2020 at 16:25:00 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
   compiled with
     NWTC Subroutine Library
     ElastoDyn
-    BeamDyn [not called]
+    BeamDyn (unknown version, unknown date) [not called]
     InflowWind
-    AeroDyn14 [not called]
+    AeroDyn14 (unknown version, unknown date) [not called]
     AeroDyn
     ServoDyn
     HydroDyn
-    SubDyn [not called]
-    ExtPtfm_MCKF [not called]
-    MAP [not called]
-    FEAMooring [not called]
-    MoorDyn
-    OrcaFlexInterface [not called]
-    IceFloe [not called]
-    IceDyn [not called]
+    SubDyn (unknown version, unknown date) [not called]
+    ExtPtfm_MCKF (unknown version, unknown date) [not called]
+    MAP (unknown version, unknown date) [not called]
+    FEAMooring (unknown version, unknown date) [not called]
+    MoorDyn (v1.01.02F, 8-Apr-2016)
+    OrcaFlexInterface (unknown version, unknown date) [not called]
+    IceFloe (unknown version, unknown date) [not called]
+    IceDyn (unknown version, unknown date) [not called]
 
 
 Modeling a floating offshore turbine
