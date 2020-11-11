@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 06-Nov-2020 at 22:05:17 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-53-g8bfd804f
+Predictions were generated on 11-Nov-2020 at 18:57:52 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-57-g23caac2a
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -34,14 +34,14 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
   -------------------------------------------------
   Component          Time Step (s)    Subcycles (-)
   -----------------  ---------------  -------------
-  FAST (glue code)    1.250E-02
-  InflowWind          1.250E-02              1
-  ElastoDyn           1.250E-02              1
-  AeroDyn             1.250E-02              1
-  ServoDyn            1.250E-02              1
-  HydroDyn            1.250E-02              1
-  MAP++               1.250E-02              1
-  FAST output files   1.250E-02              1
+  FAST (glue code)     1.2500000E-02
+  InflowWind           1.2500000E-02         1
+  ElastoDyn            1.2500000E-02         1
+  AeroDyn              1.2500000E-02         1
+  ServoDyn             1.2500000E-02         1
+  HydroDyn             1.2500000E-02         1
+  MAP++                1.2500000E-02         1
+  FAST output files    1.2500000E-02         1
 
 
    Requested Channels in FAST Output File(s)  
@@ -141,9 +141,51 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
       91  GenPwr                (kW)                  ServoDyn
       92  GenTq                 (kN-m)                ServoDyn
       93  Wave1Elev             (m)                   HydroDyn
-      94  T[1]                  [N]                   MAP++
-      95  T_a[1]                [N]                   MAP++
-      96  T[2]                  [N]                   MAP++
-      97  T_a[2]                [N]                   MAP++
-      98  T[3]                  [N]                   MAP++
-      99  T_a[3]                [N]                   MAP++
+      94  HydroFxi              (N)                   HydroDyn
+      95  HydroFyi              (N)                   HydroDyn
+      96  HydroFzi              (N)                   HydroDyn
+      97  HydroMxi              (N-m)                 HydroDyn
+      98  HydroMyi              (N-m)                 HydroDyn
+      99  HydroMzi              (N-m)                 HydroDyn
+     100  WRPSurge              (m)                   HydroDyn
+     101  WRPSway               (m)                   HydroDyn
+     102  WRPHeave              (m)                   HydroDyn
+     103  WRPRoll               (rad)                 HydroDyn
+     104  WRPPitch              (rad)                 HydroDyn
+     105  WRPYaw                (rad)                 HydroDyn
+     106  WRPTVxi               (m/s)                 HydroDyn
+     107  WRPTVyi               (m/s)                 HydroDyn
+     108  WRPTVzi               (m/s)                 HydroDyn
+     109  WRPRVxi               (rad/s)               HydroDyn
+     110  WRPRVyi               (rad/s)               HydroDyn
+     111  WRPRVzi               (rad/s)               HydroDyn
+     112  WRPTAxi               (m/s^2)               HydroDyn
+     113  WRPTAyi               (m/s^2)               HydroDyn
+     114  WRPTAzi               (m/s^2)               HydroDyn
+     115  WRPRAxi               (rad/s^2)             HydroDyn
+     116  WRPRAyi               (rad/s^2)             HydroDyn
+     117  WRPRAzi               (rad/s^2)             HydroDyn
+     118  WavesFxi              (N)                   HydroDyn
+     119  WavesFyi              (N)                   HydroDyn
+     120  WavesFzi              (N)                   HydroDyn
+     121  WavesMxi              (N-m)                 HydroDyn
+     122  WavesMyi              (N-m)                 HydroDyn
+     123  WavesMzi              (N-m)                 HydroDyn
+     124  HdrStcFxi             (N)                   HydroDyn
+     125  HdrStcFyi             (N)                   HydroDyn
+     126  HdrStcFzi             (N)                   HydroDyn
+     127  HdrStcMxi             (N-m)                 HydroDyn
+     128  HdrStcMyi             (N-m)                 HydroDyn
+     129  HdrStcMzi             (N-m)                 HydroDyn
+     130  RdtnFxi               (N)                   HydroDyn
+     131  RdtnFyi               (N)                   HydroDyn
+     132  RdtnFzi               (N)                   HydroDyn
+     133  RdtnMxi               (N-m)                 HydroDyn
+     134  RdtnMyi               (N-m)                 HydroDyn
+     135  RdtnMzi               (N-m)                 HydroDyn
+     136  T[1]                  [N]                   MAP++
+     137  T_a[1]                [N]                   MAP++
+     138  T[2]                  [N]                   MAP++
+     139  T_a[2]                [N]                   MAP++
+     140  T[3]                  [N]                   MAP++
+     141  T_a[3]                [N]                   MAP++

@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 06-Nov-2020 at 22:06:47 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-53-g8bfd804f
+Predictions were generated on 11-Nov-2020 at 18:59:35 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-57-g23caac2a
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -34,14 +34,14 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
   -------------------------------------------------
   Component          Time Step (s)    Subcycles (-)
   -----------------  ---------------  -------------
-  FAST (glue code)    1.250E-02
-  InflowWind          1.250E-02              1
-  ElastoDyn           1.250E-02              1
-  AeroDyn             1.250E-02              1
-  ServoDyn            1.250E-02              1
-  HydroDyn            1.250E-02              1
-  MoorDyn             1.250E-02              1
-  FAST output files   5.000E-02              4^-1
+  FAST (glue code)     1.2500000E-02
+  InflowWind           1.2500000E-02         1
+  ElastoDyn            1.2500000E-02         1
+  AeroDyn              1.2500000E-02         1
+  ServoDyn             1.2500000E-02         1
+  HydroDyn             1.2500000E-02         1
+  MoorDyn              1.2500000E-02         1
+  FAST output files    1.2500000E-02         1
 
 
    Requested Channels in FAST Output File(s)  
@@ -96,9 +96,51 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
       46  GenPwr                (kW)                  ServoDyn
       47  GenTq                 (kN-m)                ServoDyn
       48  Wave1Elev             (m)                   HydroDyn
-      49  FAIRTEN1              (N)                   MoorDyn
-      50  FAIRTEN2              (N)                   MoorDyn
-      51  FAIRTEN3              (N)                   MoorDyn
-      52  ANCHTEN1              (N)                   MoorDyn
-      53  ANCHTEN2              (N)                   MoorDyn
-      54  ANCHTEN3              (N)                   MoorDyn
+      49  HydroFxi              (N)                   HydroDyn
+      50  HydroFyi              (N)                   HydroDyn
+      51  HydroFzi              (N)                   HydroDyn
+      52  HydroMxi              (N-m)                 HydroDyn
+      53  HydroMyi              (N-m)                 HydroDyn
+      54  HydroMzi              (N-m)                 HydroDyn
+      55  WRPSurge              (m)                   HydroDyn
+      56  WRPSway               (m)                   HydroDyn
+      57  WRPHeave              (m)                   HydroDyn
+      58  WRPRoll               (rad)                 HydroDyn
+      59  WRPPitch              (rad)                 HydroDyn
+      60  WRPYaw                (rad)                 HydroDyn
+      61  WRPTVxi               (m/s)                 HydroDyn
+      62  WRPTVyi               (m/s)                 HydroDyn
+      63  WRPTVzi               (m/s)                 HydroDyn
+      64  WRPRVxi               (rad/s)               HydroDyn
+      65  WRPRVyi               (rad/s)               HydroDyn
+      66  WRPRVzi               (rad/s)               HydroDyn
+      67  WRPTAxi               (m/s^2)               HydroDyn
+      68  WRPTAyi               (m/s^2)               HydroDyn
+      69  WRPTAzi               (m/s^2)               HydroDyn
+      70  WRPRAxi               (rad/s^2)             HydroDyn
+      71  WRPRAyi               (rad/s^2)             HydroDyn
+      72  WRPRAzi               (rad/s^2)             HydroDyn
+      73  WavesFxi              (N)                   HydroDyn
+      74  WavesFyi              (N)                   HydroDyn
+      75  WavesFzi              (N)                   HydroDyn
+      76  WavesMxi              (N-m)                 HydroDyn
+      77  WavesMyi              (N-m)                 HydroDyn
+      78  WavesMzi              (N-m)                 HydroDyn
+      79  HdrStcFxi             (N)                   HydroDyn
+      80  HdrStcFyi             (N)                   HydroDyn
+      81  HdrStcFzi             (N)                   HydroDyn
+      82  HdrStcMxi             (N-m)                 HydroDyn
+      83  HdrStcMyi             (N-m)                 HydroDyn
+      84  HdrStcMzi             (N-m)                 HydroDyn
+      85  RdtnFxi               (N)                   HydroDyn
+      86  RdtnFyi               (N)                   HydroDyn
+      87  RdtnFzi               (N)                   HydroDyn
+      88  RdtnMxi               (N-m)                 HydroDyn
+      89  RdtnMyi               (N-m)                 HydroDyn
+      90  RdtnMzi               (N-m)                 HydroDyn
+      91  FAIRTEN1              (N)                   MoorDyn
+      92  FAIRTEN2              (N)                   MoorDyn
+      93  FAIRTEN3              (N)                   MoorDyn
+      94  ANCHTEN1              (N)                   MoorDyn
+      95  ANCHTEN2              (N)                   MoorDyn
+      96  ANCHTEN3              (N)                   MoorDyn
