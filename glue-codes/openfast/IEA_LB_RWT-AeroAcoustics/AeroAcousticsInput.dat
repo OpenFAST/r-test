@@ -18,9 +18,6 @@ False        Echo         - Echo the input to "<rootname>.AD.ech"?  (flag)
 True         RoundedTip   - Logical indicating rounded tip (flag) [Only used if TipMod=1]
 1.0          Alprat       - Tip lift curve slope (Default = 1.0) [Only used if TipMod=1]
 1            BluntMod     - Trailing-edge-bluntness – Vortex-shedding model {0:none, 1: BPM}  (switch)
-"AABlade1.dat"    AABlFile(1)   - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"AABlade1.dat"    AABlFile(2)   - Name of file containing distributed aerodynamic properties for Blade #2 (-)
-"AABlade1.dat"    AABlFile(3)   - Name of file containing distributed aerodynamic properties for Blade #3 (-)
 ======  Observer Input  ===================================================================
 "AA_ObserverLocations.dat"    ObserverLocations        - Name of file containing all observer locations X Y Z (-)
 ======  Outputs  ====================================================================================
