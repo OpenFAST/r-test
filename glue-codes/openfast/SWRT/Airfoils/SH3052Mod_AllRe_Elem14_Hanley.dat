@@ -7,8 +7,7 @@
           1   NonDimArea        ! The non-dimensional area of the airfoil (area/chord^2) (set to 1.0 if unsure or unneeded)
           0   NumCoords         ! The number of coordinates in the airfoil shape file.  Set to zero if coordinates not included.
 ! ......... x-y coordinates are next if NumCoords > 0 .............
-!bjj: removed additional tables because this feature is apparently not yet available in AFI.
-!         3   NumTabs           ! Number of airfoil tables in this file.
+"unused"      BL_file           ! The file name including the boundary layer characteristics of the profile. Ignored if the aeroacoustic module is not called.
           1   NumTabs           ! Number of airfoil tables in this file.
 ! ------------------------------------------------------------------------------
 ! data for table 1
@@ -48,7 +47,7 @@ True          InclUAdata        ! Is unsteady aerodynamics data included in this
           0   k1_hat            ! Constant in the expression of Cc due to leading edge vortex effects.  [ignored if UAMod<>1]
 "Default"     x_cp_bar          ! Constant in the expression of \hat(x)_cp^v. [ignored if UAMod<>1, default = 0.2]
 "Default"     UACutout          ! Angle of attack above which unsteady aerodynamics are disabled (deg). [Specifying the string "Default" sets UACutout to 45 degrees]
-"DEFAULT"     filtCutOff        ! Cut-off frequency (-3 dB corner frequency) for low-pass filtering the AoA input to UA, as well as the 1st and 2nd derivatives (Hz) [default = 20]
+"DEFAULT"     filtCutOff        ! Reduced frequency cut-off for low-pass filtering the AoA input to UA, as well as the 1st and 2nd derivatives (-) [default = 0.5]
 !........................................
 ! Table of aerodynamics coefficients
          70   NumAlf            ! Number of data lines in the following table
