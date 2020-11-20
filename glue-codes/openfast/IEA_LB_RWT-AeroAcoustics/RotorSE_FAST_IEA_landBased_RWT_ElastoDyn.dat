@@ -117,7 +117,7 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           1   DecFact     - Decimation factor for tabular output {1: output every time step} (-) (currently unused)
           0   NTwGages    - Number of tower nodes that have strain gages for output [0 to 9] (-)
          10,         19,         28    TwrGagNd    - List of tower nodes that have strain gages [1 to TwrNodes] (-) [unused if NTwGages=0]
-          3   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
+          2   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           2,          3    BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "Azimuth, BldPitch1, GenSpeed, IPDefl1, LSSGagMya, LSSGagMza, OoPDefl1"  
