@@ -58,12 +58,14 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           2   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s)
           0   NacYawF      - Final yaw angle for override yaw maneuvers (degrees)
 ---------------------- TUNED MASS DAMPER ---------------------------------------
-False         CompNStC     - Compute nacelle tuned mass damper {true/false} (flag)
-"unused"      NStCfile     - Name of the file for nacelle tuned mass damper (quoted string) [unused when CompNStC is false]
-False         CompTStC     - Compute tower tuned mass damper {true/false} (flag)
-"unused"      TStCfile     - Name of the file for tower tuned mass damper (quoted string) [unused when CompTStC is false]
-False         CompBStC     - Compute tower tuned mass damper {true/false} (flag)
-"unused"      BStCfile     - Name of the file for blade tuned mass damper (quoted string) [unused when CompBStC is false]
+0             CompNStC     - Compute nacelle structural control damping {number of nacelle TMDs} (integer)
+"unused"      NStCfile     - Name of the file for nacelle structural control damping (quoted strings) [unused when CompNStC==0]
+0             CompTStC     - Compute tower structural control damping {number of nacelle TMDs} (integer)
+"unused"      TStCfile     - Name of the file for tower structural control damping (quoted strings) [unused when CompTStC==0]
+0             CompBStC     - Compute  blade structural control damping {number of nacelle tmds} (integer)
+"unused"      BStCfile     - Name of the file for blade structural control damping (quoted strings) [unused when CompBStC==0]
+0             CompPtfmStC  - Compute platform structural control damping {number of nacelle TMDs} (integer)
+"unused"      PtfmStCfile  - Name of the file for blade structural control damping (quoted strings) [unused when CompPtfmStC==0]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "../5MW_Baseline/ServoData/DISCON_OC3Hywind.dll"    DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "DISCON.IN"    DLL_InFile   - Name of input file sent to the DLL (-) [used only with Bladed Interface]
