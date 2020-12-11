@@ -1,0 +1,27 @@
+
+nTurbinesGlob: 1
+dryRun:  False
+debug: False
+simSart: init
+coupling_mode: strong
+tStart:  0.0
+tEnd:    60.0
+tMax:    60.0
+dtFAST:  0.00625
+n_substeps: 10
+n_checkpoint: 1000
+nEveryCheckPoint: 1000
+Turbine0:
+  turb_id: 0
+  FAST_input_filename: "5MW_Land_DLL_WTurb_cpp.fst"
+  restart_filename: "Turbine0"
+  turbine_base_pos:
+  - 0
+  - 0
+  - 0
+  turbine_hub_pos:
+  - 0
+  - 0
+  - 90
+  num_force_pts_blade: 0
+  num_force_pts_tower: 0
