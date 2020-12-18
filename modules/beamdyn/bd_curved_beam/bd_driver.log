@@ -1,0 +1,26 @@
+
+ **************************************************************************************************
+ BeamDyn Driver
+
+ Copyright (C) 2020 National Renewable Energy Laboratory
+ Copyright (C) 2020 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+  Running BeamDyn Driver a part of OpenFAST - -128-NOTFOUND
+  linked with NWTC Subroutine Library
+
+ Running BeamDyn.
+ Nodal outputs section of BeamDyn input file not found or improperly formatted.
+  Time: 0 of 30 seconds.
+                                                                                                  
+  Total Real Time:       0.207 seconds
+  Total CPU Time:        0.2091 seconds
+  Simulation CPU Time:   6.00990E-02 seconds
+  Simulated Time:        1.80000E-02 seconds
+  Time Ratio (Sim/CPU):  0.29951
+
+  Program terminated normally.
+

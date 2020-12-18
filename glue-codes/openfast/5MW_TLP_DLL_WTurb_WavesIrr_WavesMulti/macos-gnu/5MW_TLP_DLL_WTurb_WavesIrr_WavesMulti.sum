@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 10-Nov-2020 at 10:05:14 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-56-g6e92083d
+Predictions were generated on 20-Nov-2020 at 17:11:59 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-80-g4acc4944
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -13,7 +13,7 @@ Predictions were generated on 10-Nov-2020 at 10:05:14 using OpenFAST, compiled a
     HydroDyn
     SubDyn (unknown version, unknown date) [not called]
     ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP++ (<1.20.10>, <Nov-03-2020>)
+    MAP++ (<1.20.10>, <Nov-20-2020>)
     FEAMooring (unknown version, unknown date) [not called]
     MoorDyn (unknown version, unknown date) [not called]
     OrcaFlexInterface (unknown version, unknown date) [not called]
@@ -34,14 +34,14 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
   -------------------------------------------------
   Component          Time Step (s)    Subcycles (-)
   -----------------  ---------------  -------------
-  FAST (glue code)    1.250E-02
-  InflowWind          1.250E-02              1
-  ElastoDyn           1.250E-02              1
-  AeroDyn             1.250E-02              1
-  ServoDyn            1.250E-02              1
-  HydroDyn            1.250E-02              1
-  MAP++               1.250E-02              1
-  FAST output files   1.250E-02              1
+  FAST (glue code)     1.2500000E-02
+  InflowWind           1.2500000E-02         1
+  ElastoDyn            1.2500000E-02         1
+  AeroDyn              1.2500000E-02         1
+  ServoDyn             1.2500000E-02         1
+  HydroDyn             1.2500000E-02         1
+  MAP++                1.2500000E-02         1
+  FAST output files    1.2500000E-02         1
 
 
    Requested Channels in FAST Output File(s)  
