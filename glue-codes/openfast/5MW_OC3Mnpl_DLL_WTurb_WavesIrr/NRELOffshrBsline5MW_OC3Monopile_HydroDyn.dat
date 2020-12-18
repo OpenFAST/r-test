@@ -107,17 +107,17 @@ PropSetID    PropD         PropThck
    (-)        (m)            (m)
     1        6.00000        0.06000
 ---------------------- SIMPLE HYDRODYNAMIC COEFFICIENTS (model 1) --------------
-     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
-       (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
-       1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00 
+     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG  SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
+       (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
+       1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00 
 ---------------------- DEPTH-BASED HYDRODYNAMIC COEFFICIENTS (model 2) ---------
              0   NCoefDpth       - Number of depth-dependent coefficients (-)
-Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCa   DpthAxCaMG       DpthAxCp   DpthAxCpMG
-(m)       (-)      (-)        (-)      (-)            (-)      (-)          (-)        (-)              (-)         (-)
+Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG      DpthAxCa   DpthAxCaMG       DpthAxCp   DpthAxCpMG
+(m)       (-)      (-)        (-)      (-)            (-)      (-)          (-)        (-)             (-)        (-)              (-)         (-)
 ---------------------- MEMBER-BASED HYDRODYNAMIC COEFFICIENTS (model 3) --------
              0   NCoefMembers       - Number of member-based coefficients (-)
-MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2
-   (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)
+MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2
+   (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)
 -------------------- MEMBERS -------------------------------------------------
              1   NMembers       - Number of members (-)
 MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MDivSize   MCoefMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
@@ -132,18 +132,31 @@ FillNumM FillMList             FillFSLoc     FillDens
 MGDpth     MGThck       MGDens
 (m)        (m)         (kg/m^3)
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             0   NMOutputs      - Number of member outputs (-) [must be < 10]
+             1   NMOutputs      - Number of member outputs (-) [must be < 10]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
+   1          1          0.5
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
-             0   NJOutputs      - Number of joint outputs [Must be < 10]
-   0           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+             1   NJOutputs      - Number of joint outputs [Must be < 10]
+   1           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
-             2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
+3                OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
 "ES11.4e2"       OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 "Wave1Elev"               - Wave elevation at the WAMIT reference point (0,0)
+"HydroFxi, HydroFyi, HydroFzi"
+"HydroMxi, HydroMyi, HydroMzi"
+"M1N1FBxi, M1N1FByi, M1N1FBzi, M1N1MBxi, M1N1MByi, M1N1MBzi"
+"M1N1FDxi, M1N1FDyi, M1N1FDzi"
+"M1N1FIxi, M1N1FIyi, M1N1FIzi"
+"M1N1FMGxi, M1N1FMGyi, M1N1FMGzi, M1N1MMGxi, M1N1MMGyi, M1N1MMGzi"
+"M1N1FAGxi, M1N1FAGyi, M1N1FAGzi, M1N1MAGxi, M1N1MAGyi, M1N1MAGzi"
+"M1N1FAMxi, M1N1FAMyi, M1N1FAMzi"
+"J1FDxi, J1FDyi, J1FDzi"
+"J1FIxi, J1FIyi, J1FIzi"
+"J1FAMxi, J1FAMyi, J1FAMzi"
+"J1FBxi, J1FByi, J1FBzi, J1MBxi, J1MByi, J1MBzi"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

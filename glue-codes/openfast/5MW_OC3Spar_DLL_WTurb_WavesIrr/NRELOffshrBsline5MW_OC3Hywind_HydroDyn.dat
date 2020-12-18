@@ -67,12 +67,15 @@ FALSE            WvSumQTF       - Full summation-frequency  2nd-order wave kinem
              0   SumQTF         - Full summation -frequency 2nd-order forces computed with full QTF          {0: None; [10, 11, or 12]: WAMIT file to use}
 ---------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  -------------- [unused with PotMod=0 or 2]
              0   AddF0    - Additional preload (N, N-m) [If NBodyMod=1, one size 6*NBody x 1 vector; if NBodyMod>1, NBody size 6 x 1 vectors]
+             0  
+             0  
+             0  
+             0  
              0
+             0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)
+             0             0             0             0             0             0
              0
-             0
-             0
-             0
-             0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)                     [If NBodyMod=1, one size 6*NBody x 6*NBody matrix; if NBodyMod>1, NBody size 6 x 6 matrices]
+             0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)
              0             0             0             0             0             0
              0             0             0             0             0             0
              0             0             0             0             0             0
@@ -110,17 +113,17 @@ PropSetID    PropD         PropThck
     1        9.40000        0.00010
     2        6.50000        0.00010
 ---------------------- SIMPLE HYDRODYNAMIC COEFFICIENTS (model 1) --------------
-     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
-       (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
-       0.60        0.00        0.00        0.00        1.00        1.00        1.00        1.00        1.00        1.00 
+     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG  SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
+       (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
+       0.60        0.00        0.00        0.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00 
 ---------------------- DEPTH-BASED HYDRODYNAMIC COEFFICIENTS (model 2) ---------
              0   NCoefDpth       - Number of depth-dependent coefficients (-)
-Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCa   DpthAxCaMG       DpthAxCp   DpthAxCpMG
-(m)       (-)      (-)        (-)      (-)            (-)      (-)          (-)        (-)              (-)         (-)
+Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG      DpthAxCa   DpthAxCaMG       DpthAxCp   DpthAxCpMG
+(m)       (-)      (-)        (-)      (-)            (-)      (-)          (-)        (-)             (-)        (-)              (-)         (-)
 ---------------------- MEMBER-BASED HYDRODYNAMIC COEFFICIENTS (model 3) --------
              0   NCoefMembers       - Number of member-based coefficients (-)
-MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2
-   (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)
+MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2
+   (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)
 -------------------- MEMBERS -------------------------------------------------
              3   NMembers       - Number of members (-)
 MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MDivSize   MCoefMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
