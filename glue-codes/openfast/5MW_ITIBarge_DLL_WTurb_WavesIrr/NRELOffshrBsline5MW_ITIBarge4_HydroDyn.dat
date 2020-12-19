@@ -65,14 +65,14 @@ False            WvSumQTF       - Full summation-frequency  2nd-order wave kinem
              0   NewmanApp      - Mean- and slow-drift 2nd-order forces computed with Newman's approximation {0: None; [7, 8, 9, 10, 11, or 12]: WAMIT file to use} [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero. If NBody>1, NewmanApp/=8. Used only when WaveDirMod=0]
              0   DiffQTF        - Full difference-frequency 2nd-order forces computed with full QTF          {0: None; [10, 11, or 12]: WAMIT file to use}          [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero]
              0   SumQTF         - Full summation -frequency 2nd-order forces computed with full QTF          {0: None; [10, 11, or 12]: WAMIT file to use}
----------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  --------------
-             0     AddF0    - Additional preload (N, N-m) [If NBodyMod=1, one size 6*NBody x 1 vector; if NBodyMod>1, NBody size 6 x 1 vectors]
-             0  
-             0  
-             0  
-             0  
+---------------------- PLATFORM ADDITIONAL STIFFNESS AND DAMPING  -------------- [unused with PotMod=0 or 2]
+             0   AddF0    - Additional preload (N, N-m) [If NBodyMod=1, one size 6*NBody x 1 vector; if NBodyMod>1, NBody size 6 x 1 vectors]
              0
-             0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)
+             0
+             0
+             0
+             0
+             0             0             0             0             0             0   AddCLin  - Additional linear stiffness (N/m, N/rad, N-m/m, N-m/rad)                     [If NBodyMod=1, one size 6*NBody x 6*NBody matrix; if NBodyMod>1, NBody size 6 x 6 matrices]
              0             0             0             0             0             0
              0             0             0             0             0             0
              0             0             0             0             0             0
@@ -152,41 +152,41 @@ False            OutAll         - Output all user-specified member and joint loa
 "HydroMxi"
 "HydroMyi"
 "HydroMzi"
-"WRPSurge"
-"WRPSway"
-"WRPHeave"
-"WRPRoll"
-"WRPPitch"
-"WRPYaw"
-"WRPTVxi"
-"WRPTVyi"
-"WRPTVzi"
-"WRPRVxi"
-"WRPRVyi"
-"WRPRVzi"
-"WRPTAxi"
-"WRPTAyi"
-"WRPTAzi"
-"WRPRAxi"
-"WRPRAyi"
-"WRPRAzi"
-"WavesFxi"
-"WavesFyi"
-"WavesFzi"
-"WavesMxi"
-"WavesMyi"
-"WavesMzi"
-"HdrStcFxi"
-"HdrStcFyi"
-"HdrStcFzi"
-"HdrStcMxi"
-"HdrStcMyi"
-"HdrStcMzi"
-"RdtnFxi"
-"RdtnFyi"
-"RdtnFzi"
-"RdtnMxi"
-"RdtnMyi"
-"RdtnMzi"
+"B1Surge"
+"B1Sway"
+"B1Heave"
+"B1Roll"
+"B1Pitch"
+"B1Yaw"
+"B1TVxi"
+"B1TVyi"
+"B1TVzi"
+"B1RVxi"
+"B1RVyi"
+"B1RVzi"
+"B1TAxi"
+"B1TAyi"
+"B1TAzi"
+"B1RAxi"
+"B1RAyi"
+"B1RAzi"
+"B1WvsFxi"
+"B1WvsFyi"
+"B1WvsFzi"
+"B1WvsMxi"
+"B1WvsMyi"
+"B1WvsMzi"
+"B1HDSFxi"
+"B1HDSFyi"
+"B1HDSFzi"
+"B1HDSMxi"
+"B1HDSMyi"
+"B1HDSMzi"
+"B1RdtFxi"
+"B1RdtFyi"
+"B1RdtFzi"
+"B1RdtMxi"
+"B1RdtMyi"
+"B1RdtMzi"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
 
