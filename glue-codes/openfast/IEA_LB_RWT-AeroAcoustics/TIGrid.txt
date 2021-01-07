@@ -1,5 +1,5 @@
 Average Inflow Wind Speed
-7.0
+8.0
 Total Grid points In Y (lateral), Starts from - radius goes to + radius+   
 2  
 Total Grid points In Z (vertical), Starts from bottom tip (hub-radius)   
