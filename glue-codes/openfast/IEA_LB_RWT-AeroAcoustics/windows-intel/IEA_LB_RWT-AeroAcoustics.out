@@ -1,5 +1,5 @@
 
-Predictions were generated on 06-Nov-2020 at 16:25:29 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Predictions were generated on 11-Jan-2021 at 21:07:22 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-137-gb5d9a13c
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: IEA task 37 RWT turbine -- https://github.com/IEAWindTask37/IEA-3.4-130-RWT
