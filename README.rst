@@ -89,14 +89,14 @@ solutions generated on a series of system and compiler combinations.
 Currently, the supported system/compiler combinations for successful
 regression testing along with the toolsets use are given below.
 
-================= ======================= ======================= ==================
- System-Compiler   System Version          Compiler                Math Library
-================= ======================= ======================= ==================
- linux-intel       Ubuntu 18.04 (VM)       Intel OneAPI 2021       Intel MKL 2021
- linux-gnu         Ubuntu 18.04 (Docker)   GNU Fortran 7.5 (APT)   liblapack (APT)    
- macos-gnu         macOS 10.15.7           GNU Fortran 7.5 (Brew)  `Accelerate <https://developer.apple.com/documentation/accelerate>`_
- windows-intel     Windows 10 - 2004       Intel OneAPI 2021       Intel MKL 2021
-================= ======================= ======================= ==================
+================= ======================= ========================= ==================
+ System-Compiler   System Version          Compiler                  Math Library
+================= ======================= ========================= ==================
+ windows-intel     Windows 10 V 2004       Intel OneAPI 2021         Intel MKL 2021
+ linux-intel       Ubuntu 20.04 (WSL)      Intel OneAPI 2021         Intel MKL 2021
+ linux-gnu         Ubuntu 20.04 (WSL)      GNU Fortran 10.2 (APT)    liblapack (APT)    
+ macos-gnu         macOS 10.15.7           GNU Fortran 10.2 (Brew)   `Accelerate <https://developer.apple.com/documentation/accelerate>`_
+================= ======================= ========================= ==================
 
 The regression test only supports double precision solutions, so all
 baseline solutions are generated with a double precision build.

@@ -1,12 +1,12 @@
 
-Predictions were generated on 06-Nov-2020 at 21:58:04 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-53-g8bfd804f
+Predictions were generated on 14-Jan-2021 at 17:38:55 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-10-gb4fd3acc
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #13: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and FF turbulence.
 
 Time	Wind1VelX	Wind1VelY	Wind1VelZ	BldPitch2	IPDefl1	IPDefl2	TwstDefl1	TwstDefl2	TwstDefl3	RootMxb2	RootMyb2	RootMzb2	LSShftFys	LSShftFzs	LSSTipMys	LSSTipMzs	YawBrTDxp	YawBrTDyp	YawBrMxn	YawBrMyn	YawBrMzn	RtSkew
 (s)	(m/s)	(m/s)	(m/s)	(deg)	(m)	(m)	(deg)	(deg)	(deg)	(kN-m)	(kN-m)	(kN-m)	(kN)	(kN)	(kN-m)	(kN-m)	(m)	(m)	(kN-m)	(kN-m)	(kN-m)	(deg)
-    0.0000	 1.408E+01	-3.656E+00	-3.207E-01	 7.500E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.003E+02	 1.275E+01	 5.357E-15	 9.542E-02	-2.298E+02	 1.141E+01	-1.807E+01	 0.000E+00	-0.000E+00	-1.537E+00	-7.670E+02	-1.829E+01	 6.369E+00
+    0.0000	 1.408E+01	-3.656E+00	-3.207E-01	 7.500E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.003E+02	 1.275E+01	 6.856E-15	 9.542E-02	-2.298E+02	 1.141E+01	-1.807E+01	 0.000E+00	-0.000E+00	-1.537E+00	-7.670E+02	-1.829E+01	 6.369E+00
     0.0500	 1.419E+01	-3.069E+00	-6.618E-02	 7.500E+00	-5.436E-02	-6.973E-02	 0.000E+00	 0.000E+00	 0.000E+00	 2.990E+02	 1.709E+02	 4.655E+00	 3.010E+00	-2.404E+02	 7.929E+01	-2.350E+01	-1.784E-04	-2.553E-04	 5.595E+02	-7.391E+02	-8.777E+01	 8.086E+00
     0.1000	 1.399E+01	-3.026E+00	 6.324E-01	 7.500E+00	-1.670E-01	-2.159E-01	 0.000E+00	 0.000E+00	 0.000E+00	 4.546E+02	 4.444E+02	 3.370E+00	-1.879E-01	-2.608E+02	 1.652E+02	-5.617E+00	 4.399E-05	-1.187E-03	 7.908E+02	-7.306E+02	-7.897E+01	 1.043E+01
     0.1500	 1.362E+01	-3.464E+00	 9.863E-01	 7.500E+00	-2.608E-01	-3.379E-01	 0.000E+00	 0.000E+00	 0.000E+00	 5.296E+02	 7.687E+02	 1.762E+00	-4.059E+00	-2.798E+02	 2.038E+02	 3.724E+01	 2.277E-03	-2.842E-03	 8.054E+02	-7.463E+02	-2.085E+01	 1.194E+01
