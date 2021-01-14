@@ -1,0 +1,29 @@
+
+ **************************************************************************************************
+ AeroDyn_driver
+
+ Copyright (C) 2020 National Renewable Energy Laboratory
+ Copyright (C) 2020 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+  Running AeroDyn_driver a part of OpenFAST - v2.4.0-50-g416ff436-dirty
+  linked with NWTC Subroutine Library
+
+ Opening input file:
+ /home/rmudafor/openfast/build/reg_tests/modules/aerodyn/ad_timeseries_shutdown/ad_driver.inp
+
+  Time-series input to test extreme event + shutdown
+    Found 9001 lines of time-series data.
+ Running AeroDyn.
+ AD_UpdateStates:BEMT_UpdateStates:UpdatePhi(node 5, blade 3):BEMT_UnCoupledSolve:There is no
+ valid value of phi for these operating conditions: Vx = 0.77353, Vy = -3.6141, rlocal = 11.458,
+ theta = 0.21918, geometric phi = 2.9307. This warning will not be repeated though the condition
+ may persist. (See GeomPhi output channel.)
+ The BEM solution is being turned off due to low TSR.  (TSR = 1.9886). This warning will not be
+ repeated though the condition may persist. (See GeomPhi output channel.)
+
+  AeroDyn_driver terminated normally.
+
