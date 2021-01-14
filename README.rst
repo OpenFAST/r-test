@@ -1,55 +1,55 @@
 r-test
 ======
 
-This repository serves as a container for regression test data for system level
-and module level testing of OpenFAST. The repository contains:
+This repository serves as a container for regression test data for system-level
+and module-level testing of OpenFAST. The repository contains:
 
 - Input files for test case execution
 - Baseline solutions for various machine and compiler combinations
 - Turbine models used in the regression test cases
 
 The baseline solutions serve as "gold standards" for the regression test suite
-and are updated periodically as OpenFAST and its modules are improved.
+and are updated periodically as OpenFAST and it's modules are improved.
 
-modules/
-~~~~~~~~
-This directory contains module level tests for the modules found in the source
-code at ``openfast/modules``.
+Module tests
+~~~~~~~~~~~~
+A partion of the OpenFAST physics modules contain regression tests. These modules
+include a driver-code that runs the module in stand-alone mode rather than coupled
+through the OpenFAST glue-code.
 
-beamdyn/
---------
-These BeamDyn-specific cases are configured to run with the BeamDyn driver
-program rather than with a glue code.
+The module-level tests are found in ``r-test/modules/``.
 
-glue-codes/
-~~~~~~~~~~~
-This directory contains system level tests for the various "glue codes" or
-high-level drivers found in the source at ``openfast/glue-codes``.
+Full system tests
+~~~~~~~~~~~~~~~~~
+The majority of the existing tests are system-level tests for the OpenFAST glue-code and
+are found in ``r-test/glue-codes/``.
 
-openfast/
-~~~~~~~~~
-These are the system level test cases for OpenFAST. This collection of test
-cases was adapted from the `FAST V8 CertTests <https://github.com/NWTC/FAST/tree/master/CertTest>`__
-and new ones have been added. Each test case directory contains the OpenFAST
+The tests are realistic cases initially taken from the `GL certification process <https://www.nrel.gov/news/press/2005/357.html>`_
+and formerly known as the `FAST V8 CertTests <https://github.com/NWTC/FAST/tree/master/CertTest>`_.
+As physics models are changed or improved, we continuously update the tests cases to capture
+new features and conform to the new input file specification.
+Each test case directory contains the OpenFAST
 input file, ``.fst``, and all other case-specific inputs. All turbine-specific
 inputs are linked by relative paths to their corresponding turbine data
 directory. See the individual test case README's for more information regarding
 the particular turbine model and portion of the OpenFAST system that is being
 tested.
 
-The included turbine directories are:
+The included turbine model are listed below.
 
-- 5MW_Baseline - `NREL offshore 5-MW baseline wind turbine <http://www.nrel.gov/docs/fy09osti/38060.pdf>`__
-- AOC - `Atlantic Orient Company 15/50 wind turbine <http://www.nrel.gov/docs/legosti/old/4740.pdf>`__
-- AWT27 - Advanced Wind Turbine program blade 27
-- SWRT - `Small Wind Research Turbine <http://www.nrel.gov/docs/fy06osti/38550.pdf>`__
-- UAE_VI - `Unsteady Aerodynamics Experiment research wind turbine <http://www.nrel.gov/docs/fy04osti/34755.pdf>`__
-- WP_Baseline - `WindPACT 1.5-MW baseline wind turbine <http://www.nrel.gov/docs/fy06osti/32495.pdf>`__
+============== ========================================================================================================================
+ Turbine Name   Description and Info
+============== ========================================================================================================================
+ 5MW_Baseline   `NREL offshore 5-MW baseline wind turbine <http://www.nrel.gov/docs/fy09osti/38060.pdf>`_
+ AOC            `Atlantic Orient Company 15/50 wind turbine <http://www.nrel.gov/docs/legosti/old/4740.pdf>`_
+ AWT27          Advanced Wind Turbine program blade 27
+ SWRT           `Small Wind Research Turbine <http://www.nrel.gov/docs/fy06osti/38550.pdf>`__
+ UAE_VI         `Unsteady Aerodynamics Experiment research wind turbine <http://www.nrel.gov/docs/fy04osti/34755.pdf>`__
+ WP_Baseline    `WindPACT 1.5-MW baseline wind turbine <http://www.nrel.gov/docs/fy06osti/32495.pdf>`__
+============== ========================================================================================================================
 
-The CertTest cases have renamed from the old style of ``TestNN`` to more
-descriptive names. In general, the turbine abbreviation begins the case name
-followed by a concise description of the physics involved. A mapping of the
-legacy to current names is given below.
+For reference, a mapping of the legacy CertTest case naming scheme from ``TestNN`` to
+the current test names is given below.
 
 ======== ========================================
  Legacy   Current
@@ -85,51 +85,27 @@ legacy to current names is given below.
 Baselines
 ~~~~~~~~~
 The regression test compares locally generated solutions to the baseline
-solutions generated on a series of machine and compiler combinations.
-Currently, the supported machine/compiler combinations for successful
-regression testing are:
+solutions generated on a series of system and compiler combinations.
+Currently, the supported system/compiler combinations for successful
+regression testing along with the toolsets use are given below.
 
-- linux-intel
-- linux-gnu
-- macos-gnu
-- windows-intel
+================= ======================= ======================= ==================
+ System-Compiler   System Version          Compiler                Math Library
+================= ======================= ======================= ==================
+ linux-intel       Ubuntu 18.04 (VM)       Intel OneAPI 2021       Intel MKL 2021
+ linux-gnu         Ubuntu 18.04 (Docker)   GNU Fortran 7.5 (APT)   liblapack (APT)    
+ macos-gnu         macOS 10.15.7           GNU Fortran 7.5 (Brew)  `Accelerate <https://developer.apple.com/documentation/accelerate>`_
+ windows-intel     Windows 10 - 2004       Intel OneAPI 2021       Intel MKL 2021
+================= ======================= ======================= ==================
 
 The regression test only supports double precision solutions, so all
 baseline solutions are generated with a double precision build.
-
-linux-intel
------------
-These results were generated on an Ubuntu 18.04 virtual machine running on a
-MacBookPro host system with macOS Mojave 10.14.6. The OpenFAST binary was
-compiled with the Intel Fortran compiler at version 2020.0.166 and MKL 2020.0.166.
-
-linux-gnu
----------
-These results were generated on an Ubuntu 18.04 virtual machine running on a
-MacBookPro host system with macOS Mojave 10.14.6. The OpenFAST binary was
-compiled with gfortran version 7.5.0 installed through APT.
-The math libraries in this build are also installed with APT through the
-`liblapacl-dev` package.
-
-macos-gnu
----------
-These results were generated on a MacBook Pro running on macOS Mojave 10.14.6.
-The OpenFAST binary was compiled with gfortran installed through Homebrew's gcc
-package at gcc version 7.5.0 (Homebrew GCC 7.5.0).
-The math libraries in this build are found in the
-`Accelerate Framework <https://developer.apple.com/documentation/accelerate>`__.
-
-windows-intel
--------------
-These results were generated on a Dell Precision 3530 laptop running
-Windows 10. The OpenFAST binary was compiled with Intel's Fortran compiler
-and the Visual Fortran toolset with MKL 2017.
 
 Updating the baselines
 ----------------------
 The baseline directories can be updated with the included
 ``updateBaselineSolutions.py``. This script copies locally generated OpenFAST
-solutions into the appropriate machine - compiler baseline solution directory.
+solutions into the appropriate system - compiler baseline solution directory.
 
 Usage:
 
@@ -141,9 +117,14 @@ Example:
 
 .. code-block:: bash
 
-    python updateBaselineSolutions.py local/solution/TestName target/solution/TestName [Darwin,Linux,Windows] [Intel,GNU]
+    # Move into the r-test submodule
+    cd openfast/reg_tests/r-test
 
-NOTE: ServoDyn external controllers for 5MW_Baseline cases
+    #       updateBaselineSolutions.py  source_directory                        target_directory     system_name           compiler_id
+    #                                                                                                Darwin,Linux,Windows  Intel,GNU
+    python  updateBaselineSolutions.py  ../build/reg_tests/glue-codes/openfast  glue-codes/openfast  Linux                 GNU
+
+NOTE: External ServoDyn controllers for 5MW_Baseline cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The cases using the 5MW turbine require an external controller for ServoDyn.
 The source code for three external controllers are provided, but they must be
@@ -153,13 +134,15 @@ On Linux and Mac, `cmake` projects exist to compile the controllers with
 `make`. For Windows systems, `cmake` can generate a Visual Studio project
 to compile and install the controllers.
 
-For all system types, create `build` directories at
+For all system types, create ``build`` directories at
 
-- ``r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON/build``
-- ``r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITI/build``
-- ``r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3/build``
+.. code-block:: bash
 
-and run `cmake ..` in each one. For Windows, add your Visual Studio version and
+    r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON/build
+    r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITI/build
+    r-test/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3/build
+
+and run ``cmake ..`` in each one. For Windows, add your Visual Studio version and
 architecture in the following command:
 
 .. code-block:: bash
@@ -172,6 +155,8 @@ if the regression test is executed automatically with ``ctest`` or
 ``manualRegressionTest.py``, all case files will be copied to
 ``openfast/build``. In this case, these three controller libraries must exist:
 
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON.dll``
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITIBarge.dll``
-- ``openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3Hywind.dll``
+.. code-block:: bash
+
+    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON.dll
+    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_ITIBarge.dll
+    openfast/build/reg_tests/glue-codes/openfast/5MW_Baseline/ServoData/DISCON_OC3Hywind.dll
