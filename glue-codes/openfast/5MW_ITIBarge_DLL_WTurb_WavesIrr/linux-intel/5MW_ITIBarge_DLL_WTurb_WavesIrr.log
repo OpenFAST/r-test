@@ -2,24 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-57-g23caac2a
+ OpenFAST-v2.4.0-138-g9a6c1967
  Compile Info:
-  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64,
-  Version 19.0.8.324 Build 20200220
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+  64, Version 2021.1.2 Build 20201208_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov 11 2020
-  - Time: 10:33:54
+  - Date: Jan 12 2021
+  - Time: 13:31:16
  Execution Info:
-  - Date: 11/11/2020
-  - Time: 11:26:52-0600
+  - Date: 01/12/2021
+  - Time: 14:10:05-0600
 
  OpenFAST input file heading:
      FAST Certification Test #22: NREL 5.0 MW Baseline Wind Turbine with ITI Barge Configuration,
@@ -41,8 +41,8 @@
  Running HydroDyn.
   Generating incident wave kinematics and current time history.
   Reading in WAMIT output with root name
-  "/home/rmudafor/openfast/build/reg_tests/glue-codes/openfast/5MW_ITIBarge_DLL_WTurb_WavesIrr/../5
-  MW_Baseline/HydroData/Barge".
+  "../build/reg_tests/glue-codes/openfast/5MW_ITIBarge_DLL_WTurb_WavesIrr/../5MW_Baseline/HydroData
+  /Barge".
   Computing radiation impulse response functions and wave diffraction forces.
 
  Using SS_Radiation Module, with 30 of 30 radiation states
@@ -56,24 +56,24 @@
  modifications for ITI Barge.
 
 +                                                                                                  
-+ Time: 10 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 10 of 60 seconds.  Estimated final completion at 14:10:29.
 +                                                                                                  
-+ Time: 20 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 20 of 60 seconds.  Estimated final completion at 14:10:30.
 +                                                                                                  
-+ Time: 30 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 30 of 60 seconds.  Estimated final completion at 14:10:30.
 +                                                                                                  
-+ Time: 40 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 40 of 60 seconds.  Estimated final completion at 14:10:30.
 +                                                                                                  
-+ Time: 50 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 50 of 60 seconds.  Estimated final completion at 14:10:30.
 +                                                                                                  
-+ Time: 60 of 60 seconds.  Estimated final completion at 11:27:11.
++ Time: 60 of 60 seconds.  Estimated final completion at 14:10:30.
 +                                                                                                  
 
-  Total Real Time:       18.516 seconds
-  Total CPU Time:        18.516 seconds
-  Simulation CPU Time:   17.359 seconds
+  Total Real Time:       24.806 seconds
+  Total CPU Time:        24.781 seconds
+  Simulation CPU Time:   23.297 seconds
   Simulated Time:        60 seconds
-  Time Ratio (Sim/CPU):  3.4563
+  Time Ratio (Sim/CPU):  2.5755
 
   OpenFAST terminated normally.
 
