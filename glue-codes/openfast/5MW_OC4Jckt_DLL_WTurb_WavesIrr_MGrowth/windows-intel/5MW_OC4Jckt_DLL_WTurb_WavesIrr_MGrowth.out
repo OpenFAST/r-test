@@ -1,5 +1,5 @@
 
-Predictions were generated on 06-Nov-2020 at 16:24:06 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Predictions were generated on 11-Jan-2021 at 21:06:49 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-137-gb5d9a13c
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn; HydroDyn; SubDyn
 
 Description from the FAST input file: FAST Certification Test #21: NREL 5.0 MW Baseline Offshore Turbine with OC4 Jacket Configuration

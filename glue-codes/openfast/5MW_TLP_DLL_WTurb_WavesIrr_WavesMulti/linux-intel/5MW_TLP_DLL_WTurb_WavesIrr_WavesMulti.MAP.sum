@@ -1,6 +1,6 @@
 Outputs were generated using MAP++ 1.20.10.
 
-    Wednesday December 09-2020 at 14:21:42 PM
+    Tuesday January 12-2021 at 14:10:33 PM
 
     Gravity constant          [m/s^2]  : 9.81
     Sea density               [kg/m^3] : 1025.00
@@ -79,7 +79,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -98,7 +98,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -117,7 +117,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -136,7 +136,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -155,7 +155,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -174,7 +174,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -193,7 +193,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
@@ -212,7 +212,7 @@ HAnch     [N]   |  246.937
 VAnch     [N]   |  3680014.476
 TAnch     [N]   |  3680014.484
 AlphaAnch [deg] |  89.996
-L^2-Norm        |  1.63064e-16
+L^2-Norm        |  2.273737e-13
 Function Evals  |  6
 Jacobian Evals  |  5
 Term. criteria  |  2 : ||x_i - x_{i-1}||  <= INNER_XTOL.
