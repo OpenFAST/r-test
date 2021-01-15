@@ -7,23 +7,23 @@ MAP++ environment properties (set externally)...
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-57-g23caac2a
+ OpenFAST-v2.5.0-10-gb4fd3acc
  Compile Info:
-  - Compiler: GCC version 7.5.0
+  - Compiler: GCC version 10.2.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov 11 2020
-  - Time: 16:17:50
+  - Date: Jan 14 2021
+  - Time: 17:19:34
  Execution Info:
-  - Date: 11/11/2020
-  - Time: 18:55:51+0000
+  - Date: 01/14/2021
+  - Time: 17:40:35-0600
 
  OpenFAST input file heading:
      FAST Certification Test #22: NREL 5.0 MW Baseline Wind Turbine with ITI Barge Configuration,
@@ -45,8 +45,8 @@ MAP++ environment properties (set externally)...
  Running HydroDyn.
   Generating incident wave kinematics and current time history.
   Reading in WAMIT output with root name
-  "/openfast/build/reg_tests/glue-codes/openfast/5MW_ITIBarge_DLL_WTurb_WavesIrr/../5MW_Baseline/Hy
-  droData/Barge".
+  "/home/raf/Development/openfast/build/reg_tests/glue-codes/openfast/5MW_ITIBarge_DLL_WTurb_WavesI
+  rr/../5MW_Baseline/HydroData/Barge".
   Computing radiation impulse response functions and wave diffraction forces.
 
  Using SS_Radiation Module, with 30 of 30 radiation states
@@ -54,7 +54,7 @@ MAP++ environment properties (set externally)...
 
 
  FAST_InitializeAll:HydroDyn_Init:Waves_Init:VariousWaves_Init: The random number generator in use
- differs from the original code provided by NREL. This pRNG uses 33 seeds instead of the 2 in the
+ differs from the original code provided by NREL. This pRNG uses 8 seeds instead of the 2 in the
  HydroDyn input file.
 
   Time: 0 of 60 seconds.
@@ -64,12 +64,12 @@ MAP++ environment properties (set externally)...
  as written by J. Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies. Includes
  modifications for ITI Barge.
 
-                                                                                                   Time: 10 of 60 seconds.  Estimated final completion at 18:56:28.                                                                                                                                    Time: 20 of 60 seconds.  Estimated final completion at 18:56:29.                                                                                                                                    Time: 30 of 60 seconds.  Estimated final completion at 18:56:29.                                                                                                                                    Time: 40 of 60 seconds.  Estimated final completion at 18:56:28.                                                                                                                                    Time: 50 of 60 seconds.  Estimated final completion at 18:56:28.                                                                                                                                    Time: 60 of 60 seconds.  Estimated final completion at 18:56:29.                                                                                                                                   
-  Total Real Time:       36.781 seconds
-  Total CPU Time:        36.814 seconds
-  Simulation CPU Time:   35.938 seconds
+                                                                                                   Time: 10 of 60 seconds.  Estimated final completion at 17:41:24.                                                                                                                                    Time: 20 of 60 seconds.  Estimated final completion at 17:41:24.                                                                                                                                    Time: 30 of 60 seconds.  Estimated final completion at 17:41:25.                                                                                                                                    Time: 40 of 60 seconds.  Estimated final completion at 17:41:26.                                                                                                                                    Time: 50 of 60 seconds.  Estimated final completion at 17:41:25.                                                                                                                                    Time: 60 of 60 seconds.  Estimated final completion at 17:41:25.                                                                                                                                   
+  Total Real Time:       49.608 seconds
+  Total CPU Time:        49.344 seconds
+  Simulation CPU Time:   47.984 seconds
   Simulated Time:        60 seconds
-  Time Ratio (Sim/CPU):  1.6695
+  Time Ratio (Sim/CPU):  1.2504
 
   OpenFAST terminated normally.
 
