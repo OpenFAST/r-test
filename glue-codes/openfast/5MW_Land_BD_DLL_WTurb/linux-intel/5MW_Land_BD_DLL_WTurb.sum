@@ -1,24 +1,24 @@
 
 FAST Summary File
 
-Predictions were generated on 13-Jul-2020 at 16:55:34 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.3.0-328-g00cdab5c-dirty
+Predictions were generated on 12-Jan-2021 at 14:12:43 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-138-g9a6c1967
   compiled with
     NWTC Subroutine Library
     ElastoDyn
     BeamDyn
     InflowWind
-    AeroDyn14 [not called]
+    AeroDyn14 (unknown version, unknown date) [not called]
     AeroDyn
     ServoDyn
-    HydroDyn [not called]
-    SubDyn [not called]
-    ExtPtfm_MCKF [not called]
-    MAP [not called]
-    FEAMooring [not called]
-    MoorDyn [not called]
-    OrcaFlexInterface [not called]
-    IceFloe [not called]
-    IceDyn [not called]
+    HydroDyn (unknown version, unknown date) [not called]
+    SubDyn (unknown version, unknown date) [not called]
+    ExtPtfm_MCKF (unknown version, unknown date) [not called]
+    MAP (unknown version, unknown date) [not called]
+    FEAMooring (unknown version, unknown date) [not called]
+    MoorDyn (unknown version, unknown date) [not called]
+    OrcaFlexInterface (unknown version, unknown date) [not called]
+    IceFloe (unknown version, unknown date) [not called]
+    IceDyn (unknown version, unknown date) [not called]
 
 
 Modeling a land-based turbine

@@ -1,0 +1,70 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.4.0-138-g9a6c1967
+ Compile Info:
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+  64, Version 2021.1.2 Build 20201208_000000
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Jan 12 2021
+  - Time: 13:31:16
+ Execution Info:
+  - Date: 01/12/2021
+  - Time: 14:06:16-0600
+
+ OpenFAST input file heading:
+     FAST Certification Test #08: AOC 15/50 with many DOFs with fixed yaw error and steady wind.
+     Many parameters are pure fiction.
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ Nodal output section of AeroDyn input file not found or improperly formatted.
+ Running InflowWind.
+ Running ServoDyn.
+  Time: 0 of 20 seconds.
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (84.566 deg). (node 1,
+ blade 1)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (75.456 deg). (node 2,
+ blade 1)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (57.306 deg). (node 3,
+ blade 1)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (53.467 deg). (node 1,
+ blade 2)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (49.721 deg). (node 2,
+ blade 2)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (54.522 deg). (node 1,
+ blade 3)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (50.994 deg). (node 2,
+ blade 3)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.075 deg). (node 3,
+ blade 3)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.271 deg). (node 3,
+ blade 2)
++                                                                                                  
++ Time: 5 of 20 seconds.  Estimated final completion at 14:06:34.
++                                                                                                  
++ Time: 10 of 20 seconds.  Estimated final completion at 14:06:34.
++                                                                                                  
++ Time: 15 of 20 seconds.  Estimated final completion at 14:06:33.
++                                                                                                  
++ Time: 20 of 20 seconds.  Estimated final completion at 14:06:33.
++                                                                                                  
+
+  Total Real Time:       16.969 seconds
+  Total CPU Time:        16.969 seconds
+  Simulation CPU Time:   16.875 seconds
+  Simulated Time:        20 seconds
+  Time Ratio (Sim/CPU):  1.1852
+
+  OpenFAST terminated normally.
+

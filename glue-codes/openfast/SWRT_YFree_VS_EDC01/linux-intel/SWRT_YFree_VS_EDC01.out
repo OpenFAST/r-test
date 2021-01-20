@@ -1,11 +1,11 @@
 
-Predictions were generated on 26-Mar-2020 at 13:59:27 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-450-g6bd2e0a4-dirty
+Predictions were generated on 12-Jan-2021 at 14:07:01 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-138-g9a6c1967
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #16: SWRT 3-bladed upwind turbine with many DOFs, variable speed control, free yaw, tail-furl, EDC01 event
 
-Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	RotSpeed  	TailFurlP 	TailFurlV 	TailFurlA 	NacYawP   	RootFxc3  	RootFyc3  	RootMxc1  	RootMyc1  	RotThrust 	RotTorq   	RotPwr    	TFrlBrM   
-(s)       	(m/s)     	(m/s)     	(m/s)     	(rpm)     	(deg)     	(deg/s)   	(deg/s^2) 	(deg)     	(kN)      	(kN)      	(kN-m)    	(kN-m)    	(kN)      	(kN-m)    	(kW)      	(kN-m)    
+Time	Wind1VelX	Wind1VelY	Wind1VelZ	RotSpeed	TailFurlP	TailFurlV	TailFurlA	NacYawP	RootFxc3	RootFyc3	RootMxc1	RootMyc1	RotThrust	RotTorq	RotPwr	TFrlBrM
+(s)	(m/s)	(m/s)	(m/s)	(rpm)	(deg)	(deg/s)	(deg/s^2)	(deg)	(kN)	(kN)	(kN-m)	(kN-m)	(kN)	(kN-m)	(kW)	(kN-m)
     5.0000	 1.188E+01	 0.000E+00	 1.670E+00	 2.476E+02	 0.000E+00	 0.000E+00	 0.000E+00	-6.830E+00	 3.912E-01	-1.071E-01	 1.884E-01	 2.496E-01	 1.354E+00	 2.773E-01	 7.190E+00	 0.000E+00
     5.0080	 1.188E+01	 0.000E+00	 1.670E+00	 2.476E+02	 0.000E+00	 0.000E+00	 0.000E+00	-6.843E+00	 4.041E-01	-1.329E-01	 1.697E-01	 2.488E-01	 1.355E+00	 2.773E-01	 7.192E+00	 0.000E+00
     5.0160	 1.188E+01	 0.000E+00	 1.670E+00	 2.477E+02	 0.000E+00	 0.000E+00	 0.000E+00	-6.855E+00	 4.177E-01	-1.574E-01	 1.461E-01	 2.471E-01	 1.356E+00	 2.774E-01	 7.193E+00	 0.000E+00

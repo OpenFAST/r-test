@@ -1,5 +1,5 @@
 
-Predictions were generated on 16-Jul-2020 at 13:43:08 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-1015-g58aaa370
+Predictions were generated on 11-Jan-2021 at 21:07:04 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-137-gb5d9a13c
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: Helical wake test case for OLAF free wake vortex in AD15

@@ -1,13 +1,13 @@
-------- OpenFAST INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 Elliptical wing test case for OLAF free vortex wake in AD15
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
        1000   TMax            - Total run time (s)
-      100.0   DT              - Recommended module time step (s)
+        100   DT              - Recommended module time step (s)
           1   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
-      99999  DT_UJac          - Time between calls to get Jacobians (s)
+      99999   DT_UJac         - Time between calls to get Jacobians (s)
       1E+06   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
@@ -19,12 +19,12 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
-"Elliptic_ED.dat"   EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
-"unused"      BDBldFile(1)   - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-"unused"      BDBldFile(2)   - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-"unused"      BDBldFile(3)   - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"Elliptic_IW.dat"   InflowFile  - Name of file containing inflow wind input parameters (quoted string)
-"Elliptic_AD15_40.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
+"Elliptic_ED.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
+"unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
+"unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
+"unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
+"Elliptic_IW.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
+"Elliptic_AD15_40.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "unused"      ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)

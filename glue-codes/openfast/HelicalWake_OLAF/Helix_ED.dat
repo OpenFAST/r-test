@@ -1,4 +1,4 @@
-------- ELASTODYN v1.03.* INPUT FILE -------------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 Helical wake test case for OLAF free vortex wake in AD15
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
@@ -44,8 +44,8 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------
           3   NumBl       - Number of blades (-)
-      100.0   TipRad      - The distance from the rotor apex to the blade tip (meters)
-     0.0001   HubRad     - The distance from the rotor apex to the blade root (meters)
+        100   TipRad      - The distance from the rotor apex to the blade tip (meters)
+     0.0001   HubRad      - The distance from the rotor apex to the blade root (meters)
           0   PreCone(1)  - Blade 1 cone angle (degrees)
           0   PreCone(2)  - Blade 2 cone angle (degrees)
           0   PreCone(3)  - Blade 3 cone angle (degrees) [unused for 2 blades]
@@ -53,17 +53,17 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   UndSling    - Undersling length [distance from teeter pin to the rotor apex] (meters) [unused for 3 blades]
           0   Delta3      - Delta-3 angle for teetering rotors (degrees) [unused for 3 blades]
           0   AzimB1Up    - Azimuth value to use for I/O when blade 1 points up (degrees)
-      -10.0   OverHang    - Distance from yaw axis to rotor apex [3 blades] or teeter pin [2 blades] (meters)
-          0    ShftGagL    - Distance from rotor apex [3 blades] or teeter pin [2 blades] to shaft strain gages [positive for upwind rotors] (meters)
-          0    ShftTilt    - Rotor shaft tilt angle (degrees)
-          0    NacCMxn     - Downwind distance from the tower-top to the nacelle CM (meters)
-          0    NacCMyn     - Lateral  distance from the tower-top to the nacelle CM (meters)
-          0    NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
-          0    NcIMUxn     - Downwind distance from the tower-top to the nacelle IMU (meters)
-          0    NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
-          0    NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
-          0    Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
-      200.0    TowerHt     - Height of tower above ground level [onshore] or MSL [offshore] (meters)
+        -10   OverHang    - Distance from yaw axis to rotor apex [3 blades] or teeter pin [2 blades] (meters)
+          0   ShftGagL    - Distance from rotor apex [3 blades] or teeter pin [2 blades] to shaft strain gages [positive for upwind rotors] (meters)
+          0   ShftTilt    - Rotor shaft tilt angle (degrees)
+          0   NacCMxn     - Downwind distance from the tower-top to the nacelle CM (meters)
+          0   NacCMyn     - Lateral  distance from the tower-top to the nacelle CM (meters)
+          0   NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
+          0   NcIMUxn     - Downwind distance from the tower-top to the nacelle IMU (meters)
+          0   NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
+          0   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
+          0   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
+        200   TowerHt     - Height of tower above ground level [onshore] or MSL [offshore] (meters)
           0   TowerBsHt   - Height of tower base above ground level [onshore] or MSL [offshore] (meters)
           0   PtfmCMxt    - Downwind distance from the ground level [onshore] or MSL [offshore] to the platform CM (meters)
           0   PtfmCMyt    - Lateral distance from the ground level [onshore] or MSL [offshore] to the platform CM (meters)
@@ -85,9 +85,9 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
          17   BldNodes    - Number of blade nodes (per blade) used for analysis (-)
-"Helix_ED_blade.dat" BldFile1    - Name of file containing properties for blade 1 (quoted string)
-"Helix_ED_blade.dat" BldFile2    - Name of file containing properties for blade 2 (quoted string)
-"Helix_ED_blade.dat" BldFile3    - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
+"Helix_ED_blade.dat"    BldFile(1)  - Name of file containing properties for blade 1 (quoted string)
+"Helix_ED_blade.dat"    BldFile(2)  - Name of file containing properties for blade 2 (quoted string)
+"Helix_ED_blade.dat"    BldFile(3)  - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
 ---------------------- ROTOR-TEETER --------------------------------------------
           0   TeetMod     - Rotor-teeter spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
           0   TeetDmpP    - Rotor-teeter damper position (degrees) [used only for 2 blades and when TeetMod=1]
@@ -98,8 +98,8 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   TeetSSSp    - Rotor-teeter soft-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
           0   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
 ---------------------- DRIVETRAIN ----------------------------------------------
-      100.0   GBoxEff     - Gearbox efficiency (%)
-        1.0   GBRatio     - Gearbox ratio (-)
+        100   GBoxEff     - Gearbox efficiency (%)
+          1   GBRatio     - Gearbox ratio (-)
 8.67637E+08   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
   6.215E+06   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
@@ -107,7 +107,7 @@ False         Furling     - Read in additional model properties for furling turb
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
          20   TwrNodes    - Number of tower nodes used for analysis (-)
-"Dummy_ED_Tower.dat"   TwrFile     - Name of file containing tower properties (quoted string)
+"Dummy_ED_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
           1   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)

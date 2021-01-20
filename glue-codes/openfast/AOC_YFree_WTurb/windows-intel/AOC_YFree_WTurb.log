@@ -1,0 +1,74 @@
+
+**************************************************************************************************
+OpenFAST
+
+Copyright (C) 2021 National Renewable Energy Laboratory
+Copyright (C) 2021 Envision Energy USA LTD
+
+This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+See the "LICENSE" file distributed with this software for details.
+**************************************************************************************************
+
+OpenFAST-v2.4.0-137-gb5d9a13c
+Compile Info:
+ - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+ 64, Version 2021.1 Build 20201112_000000
+ - Architecture: 64 bit
+ - Precision: double
+ - Date: Jan 11 2021
+ - Time: 20:21:29
+Execution Info:
+ - Date: 01/11/2021
+ - Time: 20:48:56-0600
+
+OpenFAST input file heading:
+    FAST Certification Test #07: AOC 15/50 with many DOFs with free yaw and FF turbulence. Many
+    parameters are pure fiction.
+
+Running ElastoDyn.
+Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+Running AeroDyn.
+Nodal output section of AeroDyn input file not found or improperly formatted.
+Running InflowWind.
+
+   Reading a 6x6 grid (18 m wide, 16 m to 34 m above ground) with a characteristic wind speed of
+   12 m/s.
+
+   Processed 1430 time steps of 20-Hz full-field data (71.45 seconds).
+Running ServoDyn.
+ Time: 0 of 70 seconds.
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (67.571 deg). (node 2,
+blade 1)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (57.5 deg). (node 3, blade
+1)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (62.528 deg). (node 2,
+blade 2)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (52.598 deg). (node 3,
+blade 2)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (60.33 deg). (node 2,
+blade 3)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (53.342 deg). (node 3,
+blade 3)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.251 deg). (node 4,
+blade 1)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.181 deg). (node 4,
+blade 3)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.048 deg). (node 4,
+blade 2)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (170.77 deg). (node 1,
+blade 2)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (170.77 deg). (node 1,
+blade 1)
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (170.77 deg). (node 1,
+blade 3)                                                                                                   Time: 5 of 70 seconds.  Estimated final completion at 20:50:12.                                                                                                   Time: 10 of 70 seconds.  Estimated final completion at 20:50:13.
+Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.161 deg). (node 5,
+blade 2)                                                                                                   Time: 15 of 70 seconds.  Estimated final completion at 20:50:11.                                                                                                   Time: 20 of 70 seconds.  Estimated final completion at 20:50:10.                                                                                                   Time: 25 of 70 seconds.  Estimated final completion at 20:50:13.                                                                                                   Time: 30 of 70 seconds.  Estimated final completion at 20:50:09.                                                                                                   Time: 35 of 70 seconds.  Estimated final completion at 20:50:10.                                                                                                   Time: 40 of 70 seconds.  Estimated final completion at 20:50:08.                                                                                                   Time: 45 of 70 seconds.  Estimated final completion at 20:50:08.                                                                                                   Time: 50 of 70 seconds.  Estimated final completion at 20:50:05.                                                                                                   Time: 55 of 70 seconds.  Estimated final completion at 20:50:03.                                                                                                   Time: 60 of 70 seconds.  Estimated final completion at 20:50:03.                                                                                                   Time: 65 of 70 seconds.  Estimated final completion at 20:50:03.                                                                                                   Time: 70 of 70 seconds.  Estimated final completion at 20:50:03.                                                                                                  
+
+ Total Real Time:       1.1069 minutes
+ Total CPU Time:        1.1005 minutes
+ Simulation CPU Time:   1.099 minutes
+ Simulated Time:        1.1667 minutes
+ Time Ratio (Sim/CPU):  1.0616
+
+ OpenFAST terminated normally.
+

@@ -1,0 +1,53 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.5.0-10-gb4fd3acc
+ Compile Info:
+  - Compiler: GCC version 10.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Jan 14 2021
+  - Time: 17:19:34
+ Execution Info:
+  - Date: 01/14/2021
+  - Time: 17:38:19-0600
+
+ OpenFAST input file heading:
+     FAST Certification Test #03: AWT-27CR2 with many DOFs with free yaw and steady wind.
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ Nodal output section of AeroDyn input file not found or improperly formatted.
+ Running InflowWind.
+ Running ServoDyn.
+
+ FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
+ files. Assuming upflow is 0.
+
+  Time: 0 of 20 seconds.
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (66.465 deg). (node 1,
+ blade 1)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (52.101 deg). (node 2,
+ blade 1)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.13 deg). (node 1,
+ blade 2)
+ Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.102 deg). (node 2,
+ blade 2)
+                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 17:38:51.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 17:38:51.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 17:38:51.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 17:38:51.                                                                                                                                     Time: 5 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 17:38:49.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 17:38:49.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 17:38:49.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 14 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 17:38:50.                                                                                                                                   
+  Total Real Time:       30.476 seconds
+  Total CPU Time:        30.375 seconds
+  Simulation CPU Time:   30.281 seconds
+  Simulated Time:        20 seconds
+  Time Ratio (Sim/CPU):  0.66047
+
+  OpenFAST terminated normally.
+
