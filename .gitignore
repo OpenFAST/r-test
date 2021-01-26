@@ -19,5 +19,10 @@ install_manifest.txt
 # temporary matlab files
 *.asv
 
+# output to ignore
+*.err
+*.screendump
+*.sh
+
 # build directories
 glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build

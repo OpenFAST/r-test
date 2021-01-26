@@ -18,11 +18,11 @@ Node    Type      X        Y        Z       M     V      FX   FY   FZ   CdA   CA
 6      Vessel   20.434  -35.393   -14.0     0      0      0    0    0    0     0
 ---------------------- LINE PROPERTIES --------------------------------------
 3        NLines    - number of line objects
-Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Flags/Outputs
-(-)       (-)       (m)       (-)       (-)       (-)         (-)
-1         main     835.35      20        1         4           -
-2         main     835.35      20        2         5           -
-3         main     835.35      20        3         6           -
+Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
+(-)       (-)       (m)       (-)       (-)       (-)       (-)      (-)
+1         main     835.35      20        1         4         -        0
+2         main     835.35      20        2         5         -        0
+3         main     835.35      20        3         6         -        0
 ---------------------- SOLVER OPTIONS ---------------------------------------
 0.001    dtM       - time step to use in mooring integration (s)
 3.0e6    kbot      - bottom stiffness (Pa/m)
