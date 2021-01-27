@@ -80,7 +80,7 @@ False            WvSumQTF       - Full summation-frequency  2nd-order wave kinem
              0             0             0             0             0             0
              0             0             0             0             0             0   AddBLin  - Additional linear damping(N/(m/s), N/(rad/s), N-m/(m/s), N-m/(rad/s))        [If NBodyMod=1, one size 6*NBody x 6*NBody matrix; if NBodyMod>1, NBody size 6 x 6 matrices]
              0             0             0             0             0             0
-             0             0        882607             0             0             0
+             0             0             0             0             0             0
              0             0             0             0             0             0
              0             0             0             0             0             0
              0             0             0             0             0             0
