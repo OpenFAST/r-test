@@ -1,5 +1,5 @@
 HydroDyn Driver file for OC3_Tripod.  
-Compatible with HydroDyn v2.01.*
+Compatible with HydroDyn v3.00
 FALSE            Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
 9.80665          Gravity             - Gravity (m/s^2)
