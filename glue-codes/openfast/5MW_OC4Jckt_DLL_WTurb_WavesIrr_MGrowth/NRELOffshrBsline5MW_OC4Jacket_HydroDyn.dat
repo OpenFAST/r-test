@@ -313,14 +313,12 @@ MGDpth     MGThck       MGDens
   -2.00     0.100     1100
  -40.00     0.100     1100
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             2   NMOutputs      - Number of member outputs (-) [must be < 10]
+             0   NMOutputs      - Number of member outputs (-) [must be < 10]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
-  29    2   0 1
-  38    2   0 1
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
-             1   NJOutputs      - Number of joint outputs [Must be < 10]
-   11          JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+             0   NJOutputs      - Number of joint outputs [Must be < 10]
+   0           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
@@ -331,21 +329,4 @@ False            OutAll         - Output all user-specified member and joint loa
 "Wave1Elev" 
 "HydroFxi, HydroFyi, HydroFzi"
 "HydroMxi, HydroMyi, HydroMzi"              
-"M1N2FBxi, M1N2FByi,  M1N2FBzi, M1N2MBxi, M1N2MByi,  M1N2MBzi"    - Viscous drag loads at member 19, mesh node 19
-"M1N1FBxi, M1N1FByi, M1N1FBzi, M1N1MBxi, M1N1MByi, M1N1MBzi"
-"M1N1FBFxi, M1N1FBFyi, M1N1FBFzi, M1N1MBFxi, M1N1MBFyi, M1N1MBFzi"
-"M1N1FDxi, M1N1FDyi, M1N1FDzi"
-"M1N1FIxi, M1N1FIyi, M1N1FIzi"
-"M1N1FMGxi, M1N1FMGyi, M1N1FMGzi, M1N1MMGxi, M1N1MMGyi, M1N1MMGzi"
-"M1N1FAGxi, M1N1FAGyi, M1N1FAGzi, M1N1MAGxi, M1N1MAGyi, M1N1MAGzi"
-"M1N1FAMxi, M1N1FAMyi, M1N1FAMzi"
-"J1FDxi, J1FDyi, J1FDzi"
-"J1FIxi, J1FIyi, J1FIzi"
-"J1FMGxi, J1FMGyi, J1FMGzi"
-"J1FAGxi, J1FAGyi, J1FAGzi,J1MAGxi, J1MAGyi, J1MAGzi"
-"J1FAMxi, J1FAMyi, J1FAMzi"
-"J1FBxi, J1FByi, J1FBzi, J1MBxi, J1MByi, J1MBzi"
-"J1FBFxi, J1FBFyi, J1FBFzi, J1MBFxi, J1MBFyi, J1MBFzi"
-"M2N1FBxi, M2N1FByi,  M2N1FBzi, M2N1MBxi, M2N1MByi,  M2N1MBzi"    - Viscous drag loads at member 19, mesh node 19
-"M2N2FBxi, M2N2FByi,  M2N2FBzi, M2N2MBxi, M2N2MByi,  M2N2MBzi"    - Viscous drag loads at member 19, mesh node 19
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

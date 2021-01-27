@@ -132,13 +132,12 @@ FillNumM FillMList             FillFSLoc     FillDens
 MGDpth     MGThck       MGDens
 (m)        (m)         (kg/m^3)
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             1   NMOutputs      - Number of member outputs (-) [must be < 10]
+             0   NMOutputs      - Number of member outputs (-) [must be < 10]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
-   1          1          0.5
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
-             1   NJOutputs      - Number of joint outputs [Must be < 10]
-   1           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+             0   NJOutputs      - Number of joint outputs [Must be < 10]
+   0           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
@@ -149,14 +148,4 @@ False            OutAll         - Output all user-specified member and joint loa
 "Wave1Elev"               - Wave elevation at the WAMIT reference point (0,0)
 "HydroFxi, HydroFyi, HydroFzi"
 "HydroMxi, HydroMyi, HydroMzi"
-"M1N1FBxi, M1N1FByi, M1N1FBzi, M1N1MBxi, M1N1MByi, M1N1MBzi"
-"M1N1FDxi, M1N1FDyi, M1N1FDzi"
-"M1N1FIxi, M1N1FIyi, M1N1FIzi"
-"M1N1FMGxi, M1N1FMGyi, M1N1FMGzi, M1N1MMGxi, M1N1MMGyi, M1N1MMGzi"
-"M1N1FAGxi, M1N1FAGyi, M1N1FAGzi, M1N1MAGxi, M1N1MAGyi, M1N1MAGzi"
-"M1N1FAMxi, M1N1FAMyi, M1N1FAMzi"
-"J1FDxi, J1FDyi, J1FDzi"
-"J1FIxi, J1FIyi, J1FIzi"
-"J1FAMxi, J1FAMyi, J1FAMzi"
-"J1FBxi, J1FByi, J1FBzi, J1MBxi, J1MByi, J1MBzi"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

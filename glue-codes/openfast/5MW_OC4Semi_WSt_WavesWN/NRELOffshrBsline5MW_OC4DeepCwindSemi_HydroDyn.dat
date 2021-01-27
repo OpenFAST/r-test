@@ -229,16 +229,12 @@ FillNumM FillMList             FillFSLoc     FillDens
 MGDpth     MGThck       MGDens
 (m)        (m)         (kg/m^3)
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             4   NMOutputs      - Number of member outputs (-) [must be < 10]
+             0   NMOutputs      - Number of member outputs (-) [must be < 10]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
-   2          4     0 0.03846 0.26923 0.30769  ! Z = -14m, -13m, -7m, -6m  :  member runs from Z=-14 to Z = 10 meters, member has 26 elements, each 1m long
-   3          4     0 0.03846 0.26923 0.30769  ! Z = -14m, -13m, -7m, -6m
-   5          4     0 0.16667 0.83333 1.0      ! Z = -19.94, -18.95, -14.99, -14.0   : member runs from Z= -19.94 to Z = -14.0, member has 6 elements, each  0.99m long
-   6          4     0 0.16667 0.83333 1.0      ! Z = -19.94, -18.95, -14.99, -14.0   : member runs from Z= -19.94 to Z = -14.0, member has 6 elements, each  0.99m long
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
-             4   NJOutputs      - Number of joint outputs [Must be < 10]
-   3 5 42 43           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+             0   NJOutputs      - Number of joint outputs [Must be < 10]
+   0           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
@@ -247,26 +243,6 @@ False            OutAll         - Output all user-specified member and joint loa
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 "Wave1Elev"               - Wave elevation at the platform reference point (0,  0)
-"J1FBFxi, J1FBFyi, J1FBFzi, J1MBFxi, J1MBFyi, J1MBFzi" 
-"J2FBFxi, J2FBFyi, J2FBFzi, J2MBFxi, J2MBFyi, J2MBFzi" 
-"J3FBFxi, J3FBFyi, J3FBFzi, J3MBFxi, J3MBFyi, J3MBFzi" 
-"J4FBFxi, J4FBFyi, J4FBFzi, J4MBFxi, J4MBFyi, J4MBFzi" 
-"M1N1FBFxi, M1N1FBFyi, M1N1FBFzi, M1N1MBFxi, M1N1MBFyi, M1N1MBFzi" 
-"M1N2FBFxi, M1N2FBFyi, M1N2FBFzi, M1N2MBFxi, M1N2MBFyi, M1N2MBFzi"
-"M1N3FBFxi, M1N3FBFyi, M1N3FBFzi, M1N3MBFxi, M1N3MBFyi, M1N3MBFzi"
-"M1N4FBFxi, M1N4FBFyi, M1N4FBFzi, M1N4MBFxi, M1N4MBFyi, M1N4MBFzi"  
-"M2N1FBFxi, M2N1FBFyi, M2N1FBFzi, M2N1MBFxi, M2N1MBFyi, M2N1MBFzi" 
-"M2N2FBFxi, M2N2FBFyi, M2N2FBFzi, M2N2MBFxi, M2N2MBFyi, M2N2MBFzi"
-"M2N3FBFxi, M2N3FBFyi, M2N3FBFzi, M2N3MBFxi, M2N3MBFyi, M2N3MBFzi"
-"M2N4FBFxi, M2N4FBFyi, M2N4FBFzi, M2N4MBFxi, M2N4MBFyi, M2N4MBFzi"
-"M3N1FBFxi, M3N1FBFyi, M3N1FBFzi, M3N1MBFxi, M3N1MBFyi, M3N1MBFzi" 
-"M3N2FBFxi, M3N2FBFyi, M3N2FBFzi, M3N2MBFxi, M3N2MBFyi, M3N2MBFzi"
-"M3N3FBFxi, M3N3FBFyi, M3N3FBFzi, M3N3MBFxi, M3N3MBFyi, M3N3MBFzi"
-"M3N4FBFxi, M3N4FBFyi, M3N4FBFzi, M3N4MBFxi, M3N4MBFyi, M3N4MBFzi"
-"M4N1FBFxi, M4N1FBFyi, M4N1FBFzi, M4N1MBFxi, M4N1MBFyi, M4N1MBFzi" 
-"M4N2FBFxi, M4N2FBFyi, M4N2FBFzi, M4N2MBFxi, M4N2MBFyi, M4N2MBFzi"
-"M4N3FBFxi, M4N3FBFyi, M4N3FBFzi, M4N3MBFxi, M4N3MBFyi, M4N3MBFzi"
-"M4N4FBFxi, M4N4FBFyi, M4N4FBFzi, M4N4MBFxi, M4N4MBFyi, M4N4MBFzi"
 "HydroFxi"
 "HydroFyi"
 "HydroFzi"
