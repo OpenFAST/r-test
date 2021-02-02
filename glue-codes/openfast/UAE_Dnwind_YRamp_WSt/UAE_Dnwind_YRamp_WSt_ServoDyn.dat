@@ -57,6 +57,11 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
          10   TYawManS     - Time to start override yaw maneuver and end standard yaw control (s)
       3.729   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s)
         -45   NacYawF      - Final yaw angle for override yaw maneuvers (degrees)
+---------------------- AERODYNAMIC FLOW CONTROL --------------------------------
+          0   AfCmode      - Airfoil control mode {0: none, 1: cosine wave cycle, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
+          0   AfC_Mean     - Mean level for cocosine cycling or steady value (-) [used only with AfCmode==1]
+          0   AfC_Amp      - Amplitude for for cocosine cycling of flap signal (-) [used only with AfCmode==1]
+          0   AfC_Phase    - Phase relative to the blade azimuth (0 is vertical) for for cocosine cycling of flap signal (deg) [used only with AfCmode==1]
 ---------------------- STRUCTURAL CONTROL --------------------------------------
 0             NumBStC      - Number of blade structural controllers (integer)
 "unused"      BStCfiles    - Name of the files for blade structural controllers (quoted strings) [unused when NumBStC==0]
