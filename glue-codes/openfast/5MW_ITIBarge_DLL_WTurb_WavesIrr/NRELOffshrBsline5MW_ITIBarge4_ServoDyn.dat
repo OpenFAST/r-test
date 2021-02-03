@@ -57,15 +57,15 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
      9999.9   TYawManS     - Time to start override yaw maneuver and end standard yaw control (s)
           2   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s)
           0   NacYawF      - Final yaw angle for override yaw maneuvers (degrees)
----------------------- TUNED MASS DAMPER ---------------------------------------
-0             CompNStC     - Compute nacelle structural control damping {number of nacelle TMDs} (integer)
-"unused"      NStCfile     - Name of the file for nacelle structural control damping (quoted strings) [unused when CompNStC==0]
-0             CompTStC     - Compute tower structural control damping {number of nacelle TMDs} (integer)
-"unused"      TStCfile     - Name of the file for tower structural control damping (quoted strings) [unused when CompTStC==0]
-0             CompBStC     - Compute  blade structural control damping {number of nacelle tmds} (integer)
-"unused"      BStCfile     - Name of the file for blade structural control damping (quoted strings) [unused when CompBStC==0]
-0             CompPtfmStC  - Compute platform structural control damping {number of nacelle TMDs} (integer)
-"unused"      PtfmStCfile  - Name of the file for blade structural control damping (quoted strings) [unused when CompPtfmStC==0]
+---------------------- STRUCTURAL CONTROL --------------------------------------
+0             NumBStC      - Number of blade structural controllers (integer)
+"unused"      BStCfiles    - Name of the files for blade structural controllers (quoted strings) [unused when NumBStC==0]
+0             NumNStC      - Number of nacelle structural controllers (integer)
+"unused"      NStCfiles    - Name of the files for nacelle structural controllers (quoted strings) [unused when NumNStC==0]
+0             NumTStC      - Number of tower structural controllers (integer)
+"unused"      TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
+0             NumPtfmStC   - Number of platform structural controllers (integer)
+"unused"      PtfmStCfiles - Name of the files for blade structural controllers (quoted strings) [unused when NumPtfmStC==0]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "../5MW_Baseline/ServoData/DISCON_ITIBarge.dll"    DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "DISCON.IN"    DLL_InFile   - Name of input file sent to the DLL (-) [used only with Bladed Interface]

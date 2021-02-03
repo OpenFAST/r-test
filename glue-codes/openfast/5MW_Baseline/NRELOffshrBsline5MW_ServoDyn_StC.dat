@@ -3,14 +3,14 @@ Input file for tuned mass damper, module by Matt Lackner, Meghan Glade, and Semy
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo         - Echo input data to <RootName>.ech (flag)
 ---------------------- StC DEGREES OF FREEDOM ----------------------------------
-          1   StC_DOF_MODE - DOF mode (switch) {0: No StC or TLCD DOF; 1: StC_X_DOF, StC_Y_DOF, and/or StC_Z_DOF (three independent StC DOFs); 2: StC_XY_DOF (Omni-Directional StC); 3: TLCD; 4: Prescribed force/moment time series}
+          2   StC_DOF_MODE - DOF mode (switch) {0: No StC or TLCD DOF; 1: StC_X_DOF, StC_Y_DOF, and/or StC_Z_DOF (three independent StC DOFs); 2: StC_XY_DOF (Omni-Directional StC); 3: TLCD; 4: Prescribed force/moment time series}
 true          StC_X_DOF    - DOF on or off for StC X (flag) [Used only when StC_DOF_MODE=1]
 true          StC_Y_DOF    - DOF on or off for StC Y (flag) [Used only when StC_DOF_MODE=1]
 FALSE         StC_Z_DOF    - DOF on or off for StC Z (flag) [Used only when StC_DOF_MODE=1]
 ---------------------- StC LOCATION ------------------------------------------- [relative to the reference origin of component attached to]
           0   StC_P_X      - At rest X position of StC (m)
           0   StC_P_Y      - At rest Y position of StC (m)
-         55   StC_P_Z      - At rest Z position of StC (m)
+         75   StC_P_Z      - At rest Z position of StC (m)
 ---------------------- StC INITIAL CONDITIONS --------------------------------- [used only when StC_DOF_MODE=1 or 2]
           1   StC_X_DSP    - StC X initial displacement (m) [relative to at rest position]
           1   StC_Y_DSP    - StC Y initial displacement (m) [relative to at rest position]
@@ -23,15 +23,15 @@ FALSE         StC_Z_DOF    - DOF on or off for StC Z (flag) [Used only when StC_
          10   StC_Z_PSP    - Positive stop position (maximum Z mass displacement) (m) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
         -10   StC_Z_NSP    - Negative stop position (minimum Z mass displacement) (m) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
 ---------------------- StC MASS, STIFFNESS, & DAMPING ------------------------- [used only when StC_DOF_MODE=1 or 2]
-      35000   StC_X_M      - StC X mass (kg) [must equal StC_Y_M for StC_DOF_MODE = 2]
-      35000   StC_Y_M      - StC Y mass (kg) [must equal StC_X_M for StC_DOF_MODE = 2]
+      20000   StC_X_M      - StC X mass (kg) [must equal StC_Y_M for StC_DOF_MODE = 2]
+      20000   StC_Y_M      - StC Y mass (kg) [must equal StC_X_M for StC_DOF_MODE = 2]
           0   StC_Z_M      - StC Z mass (kg) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
-      70000   StC_XY_M     - StC XY mass (kg) [used only when StC_DOF_MODE=2]
-      15000   StC_X_K      - StC X stiffness (N/m)
-      15000   StC_Y_K      - StC Y stiffness (N/m)
+      20000   StC_XY_M     - StC XY mass (kg) [used only when StC_DOF_MODE=2]
+      28000   StC_X_K      - StC X stiffness (N/m)
+      28000   StC_Y_K      - StC Y stiffness (N/m)
           0   StC_Z_K      - StC Z stiffness (N/m) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
-      10000   StC_X_C      - StC X damping (N/(m/s))
-      10000   StC_Y_C      - StC Y damping (N/(m/s))
+       2800   StC_X_C      - StC X damping (N/(m/s))
+       2800   StC_Y_C      - StC Y damping (N/(m/s))
           0   StC_Z_C      - StC Z damping (N/(m/s)) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
       15000   StC_X_KS     - Stop spring X stiffness (N/m)
       15000   StC_Y_KS     - Stop spring Y stiffness (N/m)
