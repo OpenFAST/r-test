@@ -64,8 +64,8 @@ True                   GenTiStp    - Method to stop the generator {T: timed usin
 "unused"      NStCfiles    - Name of the files for nacelle structural controllers (quoted strings) [unused when NumNStC==0]
 0             NumTStC      - Number of tower structural controllers (integer)
 "unused"      TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
-0             NumPtfmStC   - Number of platform structural controllers (integer)
-"unused"      PtfmStCfiles - Name of the files for blade structural controllers (quoted strings) [unused when NumPtfmStC==0]
+0             NumSStC      - Number of substructure structural controllers (integer)
+"unused"      SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
 "/mnt/c/Material/Projects/RefTurbines/BAR/RotorSE_FAST_BAR_005a/ServoData/DISCON_BAR_BAR005a.dll" DLL_FileName - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the Bladed-DLL format (-) [used only with Bladed Interface]
 "DISCON.IN"            DLL_InFile  - Name of input file sent to the DLL (-) [used only with Bladed Interface]

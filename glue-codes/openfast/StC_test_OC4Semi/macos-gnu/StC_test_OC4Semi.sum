@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 03-Feb-2021 at 10:52:51 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-556-ge45ce3cf-dirty
+Predictions were generated on 04-Feb-2021 at 09:47:30 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-559-gdf467475-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -176,42 +176,42 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
      128  BStC1_B3_Mxl          (kN-m)                ServoDyn
      129  BStC1_B3_Myl          (kN-m)                ServoDyn
      130  BStC1_B3_Mzl          (kN-m)                ServoDyn
-     131  PtfmStC1_XQ           (m)                   ServoDyn
-     132  PtfmStC1_XQD          (m/s)                 ServoDyn
-     133  PtfmStC1_YQ           (m)                   ServoDyn
-     134  PtfmStC1_YQD          (m/s)                 ServoDyn
-     135  PtfmStC1_ZQ           (m)                   ServoDyn
-     136  PtfmStC1_ZQD          (m/s)                 ServoDyn
-     137  PtfmStC1_Fxi          (kN)                  ServoDyn
-     138  PtfmStC1_Fyi          (kN)                  ServoDyn
-     139  PtfmStC1_Fzi          (kN)                  ServoDyn
-     140  PtfmStC1_Mxi          (kN-m)                ServoDyn
-     141  PtfmStC1_Myi          (kN-m)                ServoDyn
-     142  PtfmStC1_Mzi          (kN-m)                ServoDyn
-     143  PtfmStC1_Fxl          (kN)                  ServoDyn
-     144  PtfmStC1_Fyl          (kN)                  ServoDyn
-     145  PtfmStC1_Fzl          (kN)                  ServoDyn
-     146  PtfmStC1_Mxl          (kN-m)                ServoDyn
-     147  PtfmStC1_Myl          (kN-m)                ServoDyn
-     148  PtfmStC1_Mzl          (kN-m)                ServoDyn
-     149  PtfmStC2_XQ           (m)                   ServoDyn
-     150  PtfmStC2_XQD          (m/s)                 ServoDyn
-     151  PtfmStC2_YQ           (m)                   ServoDyn
-     152  PtfmStC2_YQD          (m/s)                 ServoDyn
-     153  PtfmStC2_ZQ           (m)                   ServoDyn
-     154  PtfmStC2_ZQD          (m/s)                 ServoDyn
-     155  PtfmStC2_Fxi          (kN)                  ServoDyn
-     156  PtfmStC2_Fyi          (kN)                  ServoDyn
-     157  PtfmStC2_Fzi          (kN)                  ServoDyn
-     158  PtfmStC2_Mxi          (kN-m)                ServoDyn
-     159  PtfmStC2_Myi          (kN-m)                ServoDyn
-     160  PtfmStC2_Mzi          (kN-m)                ServoDyn
-     161  PtfmStC2_Fxl          (kN)                  ServoDyn
-     162  PtfmStC2_Fyl          (kN)                  ServoDyn
-     163  PtfmStC2_Fzl          (kN)                  ServoDyn
-     164  PtfmStC2_Mxl          (kN-m)                ServoDyn
-     165  PtfmStC2_Myl          (kN-m)                ServoDyn
-     166  PtfmStC2_Mzl          (kN-m)                ServoDyn
+     131  SStC1_XQ              (m)                   ServoDyn
+     132  SStC1_XQD             (m/s)                 ServoDyn
+     133  SStC1_YQ              (m)                   ServoDyn
+     134  SStC1_YQD             (m/s)                 ServoDyn
+     135  SStC1_ZQ              (m)                   ServoDyn
+     136  SStC1_ZQD             (m/s)                 ServoDyn
+     137  SStC1_Fxi             (kN)                  ServoDyn
+     138  SStC1_Fyi             (kN)                  ServoDyn
+     139  SStC1_Fzi             (kN)                  ServoDyn
+     140  SStC1_Mxi             (kN-m)                ServoDyn
+     141  SStC1_Myi             (kN-m)                ServoDyn
+     142  SStC1_Mzi             (kN-m)                ServoDyn
+     143  SStC1_Fxl             (kN)                  ServoDyn
+     144  SStC1_Fyl             (kN)                  ServoDyn
+     145  SStC1_Fzl             (kN)                  ServoDyn
+     146  SStC1_Mxl             (kN-m)                ServoDyn
+     147  SStC1_Myl             (kN-m)                ServoDyn
+     148  SStC1_Mzl             (kN-m)                ServoDyn
+     149  SStC2_XQ              (m)                   ServoDyn
+     150  SStC2_XQD             (m/s)                 ServoDyn
+     151  SStC2_YQ              (m)                   ServoDyn
+     152  SStC2_YQD             (m/s)                 ServoDyn
+     153  SStC2_ZQ              (m)                   ServoDyn
+     154  SStC2_ZQD             (m/s)                 ServoDyn
+     155  SStC2_Fxi             (kN)                  ServoDyn
+     156  SStC2_Fyi             (kN)                  ServoDyn
+     157  SStC2_Fzi             (kN)                  ServoDyn
+     158  SStC2_Mxi             (kN-m)                ServoDyn
+     159  SStC2_Myi             (kN-m)                ServoDyn
+     160  SStC2_Mzi             (kN-m)                ServoDyn
+     161  SStC2_Fxl             (kN)                  ServoDyn
+     162  SStC2_Fyl             (kN)                  ServoDyn
+     163  SStC2_Fzl             (kN)                  ServoDyn
+     164  SStC2_Mxl             (kN-m)                ServoDyn
+     165  SStC2_Myl             (kN-m)                ServoDyn
+     166  SStC2_Mzl             (kN-m)                ServoDyn
      167  Wave1Elev             (m)                   HydroDyn
      168  HydroFxi              (N)                   HydroDyn
      169  HydroFyi              (N)                   HydroDyn
