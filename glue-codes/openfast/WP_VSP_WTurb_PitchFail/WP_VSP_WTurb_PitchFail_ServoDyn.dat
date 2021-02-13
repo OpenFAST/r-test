@@ -95,6 +95,8 @@ false         DLL_Ramp     - Whether a linear ramp should be used between DLL_DT
           0   DLL_NumTrq   - Record 26: No. of points in torque-speed look-up table {0 = none and use the optimal mode parameters; nonzero = ignore the optimal mode PARAMETERs by setting Record 16 to 0.0} (-) [used only with Bladed Interface]
  GenSpd_TLU   GenTrq_TLU
  (rpm)          (Nm)
+---------------------- EXTENDED BLADED INTERFACE -------------------------------
+false         EXavrSWAP_Enable   - Use extended avrSWAP with Records 1000-3500 (flag) [may not be compatible with all controllers]
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint     - Print summary data to <RootName>.sum (flag) (currently unused)
           1   OutFile      - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
