@@ -78,6 +78,7 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
 "default"     DLL_DT       - Communication interval for dynamic library (s) (or "default") [used only with Bladed Interface]
 false         DLL_Ramp     - Whether a linear ramp should be used between DLL_DT time steps [introduces time shift when true] (flag) [used only with Bladed Interface]
      9999.9   BPCutoff     - Cutoff frequency for low-pass filter on blade pitch from DLL (Hz) [used only with Bladed Interface]
+false         EXavrSWAP    - Use extended avrSWAP with Records 1000-3300 (flag) [may not be compatible with all controllers]
           0   NacYaw_North - Reference yaw angle of the nacelle when the upwind end points due North (deg) [used only with Bladed Interface]
           0   Ptch_Cntrl   - Record 28: Use individual pitch control {0: collective pitch; 1: individual pitch control} (switch) [used only with Bladed Interface]
           0   Ptch_SetPnt  - Record  5: Below-rated pitch angle set-point (deg) [used only with Bladed Interface]
@@ -95,8 +96,6 @@ false         DLL_Ramp     - Whether a linear ramp should be used between DLL_DT
           0   DLL_NumTrq   - Record 26: No. of points in torque-speed look-up table {0 = none and use the optimal mode parameters; nonzero = ignore the optimal mode PARAMETERs by setting Record 16 to 0.0} (-) [used only with Bladed Interface]
  GenSpd_TLU   GenTrq_TLU
  (rpm)          (Nm)
----------------------- EXTENDED BLADED INTERFACE -------------------------------
-false         EXavrSWAP_Enable   - Use extended avrSWAP with Records 1000-3500 (flag) [may not be compatible with all controllers]
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint     - Print summary data to <RootName>.sum (flag) (currently unused)
           2   OutFile      - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
