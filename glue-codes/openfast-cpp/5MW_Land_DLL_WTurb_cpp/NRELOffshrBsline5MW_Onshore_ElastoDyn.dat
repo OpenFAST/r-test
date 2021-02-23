@@ -85,9 +85,9 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
          17   BldNodes    - Number of blade nodes (per blade) used for analysis (-)
-"../5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(1)  - Name of file containing properties for blade 1 (quoted string)
-"../5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(2)  - Name of file containing properties for blade 2 (quoted string)
-"../5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(3)  - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
+"../../openfast/5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(1)  - Name of file containing properties for blade 1 (quoted string)
+"../../openfast/5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(2)  - Name of file containing properties for blade 2 (quoted string)
+"../../openfast/5MW_Baseline/NRELOffshrBsline5MW_Blade.dat"    BldFile(3)  - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
 ---------------------- ROTOR-TEETER --------------------------------------------
           0   TeetMod     - Rotor-teeter spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
           0   TeetDmpP    - Rotor-teeter damper position (degrees) [used only for 2 blades and when TeetMod=1]

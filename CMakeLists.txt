@@ -21,5 +21,3 @@ set(SERVODATA_DIR "${CMAKE_CURRENT_LIST_DIR}/glue-codes/openfast/5MW_Baseline/Se
 add_subdirectory("${SERVODATA_DIR}/DISCON" "${SERVODATA_DIR}/DISCON/build")
 add_subdirectory("${SERVODATA_DIR}/DISCON_ITI" "${SERVODATA_DIR}/DISCON_ITI/build")
 add_subdirectory("${SERVODATA_DIR}/DISCON_OC3" "${SERVODATA_DIR}/DISCON_OC3/build")
-
-add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/glue-codes/openfast-cpp/5MW_Baseline/ServoData/DISCON" "${CMAKE_CURRENT_LIST_DIR}/glue-codes/openfast-cpp/5MW_Baseline/ServoData/DISCON/build")

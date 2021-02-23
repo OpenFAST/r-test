@@ -2,7 +2,7 @@
 nTurbinesGlob: 1
 dryRun:  False
 debug: False
-simSart: init
+simStart: init
 coupling_mode: strong
 tStart:  0.0
 tEnd:    60.0
