@@ -75,7 +75,7 @@ True               SumPrint           Print summary data to <RootName>.sum? (fla
 200.0              TStart             Time to begin tabular output (s) [>=0.0]
 1                  OutFileFmt         Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 True               TabDelim           Use tab delimiters in text tabular output file? (flag) {uses spaces if False}
-"ES10.3E2"         OutFmt             Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES20.3E2"         OutFmt             Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 20                 NOutRadii          Number of radial nodes         for wake output for an individual rotor (-) [0 to 20]
 0, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 16, 17, 18, 19, 21, 24, 28, 33, 39  OutRadii           List of radial nodes         for wake output for an individual rotor (-) [1 to NOutRadii] [unused for NOutRadii=0]
 7                  NOutDist           Number of downstream distances for wake output for an individual rotor (-) [0 to 9 ]
