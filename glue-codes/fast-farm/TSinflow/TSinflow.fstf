@@ -62,11 +62,11 @@ DEFAULT            Mod_Meander        Spatial filter model for wake meandering (
 DEFAULT            C_Meander          Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
 --- VISUALIZATION ---
 False              WrDisWind          Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
-1                  NOutDisWindXY      Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 9]
+0                  NOutDisWindXY      Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 9]
 85.0               OutDisWindZ        Z coordinates of XY planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXY] [unused for NOutDisWindXY=0]
-8                  NOutDisWindYZ      Number of YZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisYZ<n_out>.t<n>.vtk (-) [0 to 9]
+0                  NOutDisWindYZ      Number of YZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisYZ<n_out>.t<n>.vtk (-) [0 to 9]
 748.0, 1252.0, 1378.0, 1504.0, 1630.0, 1756.0, 1882.0, 2008.0   OutDisWindX        X coordinates of YZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindYZ] [unused for NOutDisWindYZ=0]
-1                  NOutDisWindXZ      Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 9]
+0                  NOutDisWindXZ      Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 9]
 0.0             OutDisWindY        Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
 --- OUTPUT ---
