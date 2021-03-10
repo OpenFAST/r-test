@@ -18,6 +18,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           2   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
+          0   CompLidar       - Compute Lidar Module (switch) {0 = Off, 1 = On}
 ---------------------- INPUT FILES ---------------------------------------------
 "NRELOffshrBsline5MW_OC4Jacket_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
 "NA"    BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
@@ -30,6 +31,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "./ExtPtfm.dat"    SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "NA"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "NA"    IceFile         - Name of file containing ice input parameters (quoted string)
+"unused"      LidarFile       - Name of file containing Lidar input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 False          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
