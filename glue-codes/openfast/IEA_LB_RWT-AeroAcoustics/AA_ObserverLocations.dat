@@ -1,0 +1,4 @@
+2    NrObsLoc - Total Number of  observer locations
+X Observer location in tower-base coordinate X horizontal  (m), Y Observer location in tower-base coordinate Y Lateral (m), Z Observer location in tower-base coordinate Z Vertical (m)    
+175.0  0.0  2.0
+0.0  175.0  2.0

@@ -1,0 +1,73 @@
+--------- AeroDyn v14.04.* INPUT FILE -------------------------------------------------------------------------
+NREL 5.0 MW offshore baseline aerodynamic input properties.
+"STEADY"     StallMod     - Dynamic stall included [BEDDOES or STEADY] (unquoted string)
+"USE_CM"      UseCm        - Use aerodynamic pitching moment model? [USE_CM or NO_CM] (unquoted string)
+"EQUIL"       InfModel     - Inflow model [DYNIN or EQUIL] (unquoted string)
+"SWIRL"       IndModel     - Induction-factor model [NONE or WAKE or SWIRL] (unquoted string)
+ 0.005   AToler       - Induction-factor tolerance (convergence criteria) (-)
+"NONE"        TLModel      - Tip-loss model (EQUIL only) [PRANDtl, GTECH, or NONE] (unquoted string)
+"NONE"        HLModel      - Hub-loss model (EQUIL only) [PRANdtl or NONE] (unquoted string)
+"NEWTOWER"    TwrShad        - INSTEAD OF:   0.0      TwrShad     - Tower-shadow velocity deficit (-)
+False         TwrPotent      - Calculate tower potential flow (flag)  INSTEAD OF  9999.9      ShadHWid    - Tower-shadow half width (m)
+False         TwrShadow      - Calculate tower shadow (flag)          INSTEAD OF  9999.9      T_Shad_Refpt- Tower-shadow reference point (m)
+"Elliptic_AD14_Tower.dat"    TwrFile        - Tower drag file name (quoted string)
+False          CalcTwrAero    - Calculate aerodynamic drag of the tower at the ElastoDyn nodes.  TwrPotent must be true.
+TRUE          UseFVW        - Use FVW or BEM False = BEM, True = FVW
+"./Elliptic_FVW.dat" FVWFilename   - Free vortex wake input file (only used if InductinoCalc=2)
+      1.225   AirDens        - Air density (kg/m^3)
+  1.464E-05   KinVisc      - Kinematic air viscosity [CURRENTLY IGNORED] (m^2/sec)
+"default"    DTAero       - Time interval for aerodynamic calculations (sec)
+       1   NumFoil      - Number of airfoil files (-)
+"Polar2PiAlpha_AD14.dat" 
+         50   BldNodes    - Number of blade nodes used for analysis (-)
+RNodes         AeroTwst       DRNodes        Chord          NFoil          PrnElm
+ 4.0020 	 19.741 	 2.004 	4.501805	 2 	PRINT
+ 6.0060 	 19.152 	 2.004 	4.51195	 3 	NOPRINT
+ 8.0100 	 18.423 	 2.004 	4.547765	 4 	NOPRINT
+ 10.014 	 17.569 	 2.004 	4.61733	 6 	NOPRINT
+ 12.018 	 16.657 	 2.004 	4.700415	 7 	NOPRINT
+ 14.022 	 15.722 	 2.004 	4.77906i 8 	NOPRINT
+ 16.026 	 14.730 	 2.004 	4.858575	 9 	NOPRINT
+ 18.030 	 13.679 	 2.004 	4.944235	 10 	NOPRINT
+ 20.034 	 12.602 	 2.004 	5.031485	 11 	PRINT
+ 22.038 	 11.535 	 2.004 	5.115800	 11 	NOPRINT
+ 24.042 	 10.512 	 2.004 	5.192645	 12 	NOPRINT
+ 26.046 	  9.568 	 2.004 	5.257480	 13 	NOPRINT
+ 28.050 	  8.736 	 2.004 	5.305775	 14 	NOPRINT
+ 30.054 	  8.056 	 2.004 	5.332510	 15 	NOPRINT
+ 32.058 	  7.530 	 2.004 	5.328835	 16 	NOPRINT
+ 34.062 	  7.102 	 2.004 	5.290320	 17 	NOPRINT
+ 36.066 	  6.723 	 2.004 	5.221465	 18 	NOPRINT
+ 38.070 	  6.383 	 2.004 	5.128065	 19 	NOPRINT
+ 40.074 	  6.073 	 2.004 	5.016040	 19 	PRINT
+ 42.078 	  5.781 	 2.004 	4.891300	 20 	NOPRINT
+ 44.082 	  5.499 	 2.004 	4.759760	 21 	NOPRINT
+ 46.086 	  5.217 	 2.004 	4.627330	 22 	NOPRINT
+ 48.090 	  4.923 	 2.004 	4.500430	 23 	NOPRINT
+ 50.094 	  4.618 	 2.004 	4.378555	 24 	NOPRINT
+ 52.098 	  4.314 	 2.004 	4.253825	 25 	NOPRINT
+ 54.102 	  4.016 	 2.004 	4.122680	 26 	NOPRINT
+ 56.106 	  3.722 	 2.004 	3.986175	 26 	NOPRINT
+ 58.110 	  3.431 	 2.004 	3.845700	 27 	NOPRINT
+ 60.114 	  3.139 	 2.004 	3.702640	 28 	PRINT
+ 62.118 	  2.844 	 2.004 	3.558395	 29 	NOPRINT
+ 64.122 	  2.545 	 2.004 	3.414355	 30 	NOPRINT
+ 66.126 	  2.237 	 2.004 	3.272110	 31 	NOPRINT
+ 68.130 	  1.926 	 2.004 	3.132225	 32 	NOPRINT
+ 70.134 	  1.618 	 2.004 	2.993670	 33 	NOPRINT
+ 72.138 	  1.314 	 2.004 	2.855455	 34 	NOPRINT
+ 74.142 	  1.008 	 2.004 	2.717055	 34 	NOPRINT
+ 76.146 	  0.693 	 2.004 	2.578005	 35 	NOPRINT
+ 78.150 	  0.366 	 2.004 	2.437830	 36 	NOPRINT
+ 80.154 	  0.019 	 2.004 	2.296060	 37 	PRINT
+ 82.158 	  -0.353	 2.004 	2.152230	 38 	NOPRINT
+ 84.162 	  -0.758	 2.004 	2.005690	 39 	NOPRINT
+ 86.166 	  -1.205	 2.004 	1.856225	 40 	NOPRINT
+ 88.170 	  -1.700	 2.004 	1.704290	 41 	NOPRINT
+ 90.174 	  -2.242	 2.004 	1.550160	 42 	NOPRINT
+ 92.178 	  -2.829	 2.004 	1.393870	 43 	NOPRINT
+ 94.182 	  -3.458	 2.004 	1.235465	 44 	NOPRINT
+ 96.186 	  -4.124	 2.004 	1.074990	 45 	NOPRINT
+ 98.190 	  -4.824	 2.004 	0.912560	 46 	NOPRINT
+ 100.194 	  -5.556	 2.004 	0.748110	 48 	NOPRINT
+ 102.198 	  -6.311	 2.004 	0.582670	 49 	PRINT
