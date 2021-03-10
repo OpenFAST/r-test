@@ -21,7 +21,7 @@ False            Echo           - Echo the input file data (flag)
              1   WaveNDir       - Number of wave directions                                           (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1; odd number only]
             90   WaveDirRange   - Range of wave directions (full range: WaveDir +/- 1/2*WaveDirRange) (degrees) [only used when WaveMod=2,3,or 4 and WaveDirMod=1]
      123456789   WaveSeed(1)    - First  random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
-    1011121314   WaveSeed(2)    - Second random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
+        RANLUX   WaveSeed(2)    - Second random seed of incident waves [-2147483648 to 2147483647] for intrinsic pRNG, or an alternative pRNG: "RanLux"    (-)       [unused when WaveMod=0, 5, or 6]
 TRUE             WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]
 ""               WvKinFile      - Root name of externally generated wave data file(s)        (quoted string)    [used only when WaveMod=5 or 6]
              1   NWaveElev      - Number of points where the incident wave elevations can be computed (-)       [maximum of 9 output locations]
@@ -143,8 +143,51 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
-"ES11.4e2"       OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
+"E15.7e2"       OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 "Wave1Elev"               - Wave elevation at the platform reference point (0,  0)
+"HydroFxi"
+"HydroFyi"
+"HydroFzi"
+"HydroMxi"
+"HydroMyi"
+"HydroMzi"
+"WRPSurge"
+"WRPSway"
+"WRPHeave"
+"WRPRoll"
+"WRPPitch"
+"WRPYaw"
+"WRPTVxi"
+"WRPTVyi"
+"WRPTVzi"
+"WRPRVxi"
+"WRPRVyi"
+"WRPRVzi"
+"WRPTAxi"
+"WRPTAyi"
+"WRPTAzi"
+"WRPRAxi"
+"WRPRAyi"
+"WRPRAzi"
+"WavesFxi"
+"WavesFyi"
+"WavesFzi"
+"WavesMxi"
+"WavesMyi"
+"WavesMzi"
+"HdrStcFxi"
+"HdrStcFyi"
+"HdrStcFzi"
+"HdrStcMxi"
+"HdrStcMyi"
+"HdrStcMzi"
+"RdtnFxi"
+"RdtnFyi"
+"RdtnFzi"
+"RdtnMxi"
+"RdtnMyi"
+"RdtnMzi"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
+

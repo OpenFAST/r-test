@@ -1,10 +1,10 @@
-------- OpenFAST INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 Helical wake test case for OLAF free wake vortex in AD15
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          70   TMax            - Total run time (s)
-       0.10   DT              - Recommended module time step (s)
+        0.1   DT              - Recommended module time step (s)
           1   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
       99999   DT_UJac         - Time between calls to get Jacobians (s)
@@ -20,12 +20,12 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   CompLidar       - Compute Lidar Module (switch) {0 = Off, 1 = On}
 ---------------------- INPUT FILES ---------------------------------------------
-"Helix_ED.dat"   EDFile       - Name of file containing ElastoDyn input parameters (quoted string)
-"unused"      BDBldFile(1)   - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-"unused"      BDBldFile(2)   - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-"unused"      BDBldFile(3)   - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"Helix_IW.dat"   InflowFile  - Name of file containing inflow wind input parameters (quoted string)
-"Helix_AD15.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
+"Helix_ED.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
+"unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
+"unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
+"unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
+"Helix_IW.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
+"Helix_AD15.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "unused"      ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
@@ -36,7 +36,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           2   SttsTime        - Amount of time between screen status messages (s)
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
- "default"    DT_Out          - Time step for tabular output (s) (or "default")
+"default"     DT_Out          - Time step for tabular output (s) (or "default")
           0   TStart          - Time to begin tabular output (s)
           0   OutFileFmt      - Format for tabular (time-marching) output file (switch) {0: uncompressed binary [<RootName>.outb], 1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}

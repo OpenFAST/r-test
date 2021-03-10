@@ -1,0 +1,36 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2020 National Renewable Energy Laboratory
+ Copyright (C) 2020 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.4.0-50-g416ff436-dirty
+ Compile Info:
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64,
+  Version 19.0.8.324 Build 20200220
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Nov 06 2020
+  - Time: 13:37:52
+ Execution Info:
+  - Date: 11/06/2020
+  - Time: 14:15:42-0600
+
+ OpenFAST input file heading:
+     Elliptical wing test case for OLAF free vortex wake in AD15
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ Nodal output section of AeroDyn input file not found or improperly formatted.
+ Running FVW.
+  - Directory:         /home/rmudafor/openfast/build/reg_tests
+  - RootName:
+  /home/rmudafor/openfast/build/reg_tests/glue-codes/openfast/EllipticalWing_OLAF/EllipticalWing_OL
+  AF.
+  - No OpenMP support
