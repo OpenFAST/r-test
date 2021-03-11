@@ -1,11 +1,11 @@
 
-Predictions were generated on 26-Mar-2020 at 12:34:23 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-450-g6bd2e0a4
+Predictions were generated on 14-Jan-2021 at 17:38:19 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-10-gb4fd3acc
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn14; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #04: AWT-27CR2 with many DOFs with free yaw and FF turbulence.
 
-Time      	Wind1VelX 	Wind1VelY 	Wind1VelZ 	Azimuth   	TeetDefl  	NacYawP   	Spn5MLxb1 	Spn5MLyb1 	RootFxc1  	RootFyc1  	RootFzc1  	RootMOoP1 	RootMIP1  	RootMzc1  	RotTorq   	YawBrMxp  	YawBrMyp  	TTDspFA   	TTDspSS   	TwrBsFxt  	TwrBsFyt  	Spn3TDxb2 	Spn4TDyb2 	Spn5TDzb2 	Spn2FLxb1 	Spn2FLyb1 	Spn2FLzb1 
-(s)       	(m/s)     	(m/s)     	(m/s)     	(deg)     	(deg)     	(deg)     	(kN-m)    	(kN-m)    	(kN)      	(kN)      	(kN)      	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(kN-m)    	(m)       	(m)       	(kN)      	(kN)      	(m)       	(m)       	(m)       	(kN)      	(kN)      	(kN)      
+Time	Wind1VelX	Wind1VelY	Wind1VelZ	Azimuth	TeetDefl	NacYawP	Spn5MLxb1	Spn5MLyb1	RootFxc1	RootFyc1	RootFzc1	RootMOoP1	RootMIP1	RootMzc1	RotTorq	YawBrMxp	YawBrMyp	TTDspFA	TTDspSS	TwrBsFxt	TwrBsFyt	Spn3TDxb2	Spn4TDyb2	Spn5TDzb2	Spn2FLxb1	Spn2FLyb1	Spn2FLzb1
+(s)	(m/s)	(m/s)	(m/s)	(deg)	(deg)	(deg)	(kN-m)	(kN-m)	(kN)	(kN)	(kN)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(m)	(m)	(kN)	(kN)	(m)	(m)	(m)	(kN)	(kN)	(kN)
    10.0050	 1.177E+01	-2.463E+00	-1.191E+00	 3.216E+02	 7.504E-01	-8.687E-01	-4.137E-02	-2.948E-01	 3.441E+00	 2.427E-01	 7.716E+01	 3.084E+01	 3.003E+00	 4.271E-03	 3.653E+01	 3.816E+01	 8.451E+01	 4.862E-02	-2.880E-04	 2.797E+01	 2.761E+00	 2.744E-02	-1.518E-02	-7.854E-04	 3.888E+00	 1.397E-01	 6.450E+01
    10.0200	 1.172E+01	-2.548E+00	-1.241E+00	 3.264E+02	 7.447E-01	-8.477E-01	-1.928E-03	-2.045E-01	 3.442E+00	-2.681E-02	 7.696E+01	 3.157E+01	 4.334E+00	-2.138E-03	 3.625E+01	 3.781E+01	 8.380E+01	 4.834E-02	-3.503E-04	 2.768E+01	 2.538E+00	 2.809E-02	-1.513E-02	-8.386E-04	 3.909E+00	-9.619E-03	 6.438E+01
    10.0350	 1.170E+01	-2.561E+00	-1.149E+00	 3.312E+02	 7.348E-01	-8.242E-01	 4.371E-02	-8.674E-02	 3.559E+00	-3.338E-01	 7.678E+01	 3.295E+01	 5.867E+00	-9.839E-03	 3.583E+01	 3.728E+01	 8.305E+01	 4.805E-02	-4.527E-04	 2.736E+01	 2.148E+00	 2.899E-02	-1.507E-02	-9.177E-04	 4.061E+00	-1.711E-01	 6.427E+01

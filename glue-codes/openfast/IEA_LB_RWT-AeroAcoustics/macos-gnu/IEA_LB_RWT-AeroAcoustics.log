@@ -2,23 +2,23 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-50-g416ff436
+ OpenFAST-v2.0.0-1617-ge9f1e05a
  Compile Info:
-  - Compiler: GCC version 7.4.0
+  - Compiler: GCC version 10.2.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov  6 2020
-  - Time: 12:35:02
+  - Date: Feb  3 2021
+  - Time: 15:48:02
  Execution Info:
-  - Date: 11/06/2020
-  - Time: 12:37:46-0700
+  - Date: 02/03/2021
+  - Time: 16:10:58-0600
 
  OpenFAST input file heading:
      IEA task 37 RWT turbine -- https://github.com/IEAWindTask37/IEA-3.4-130-RWT
@@ -26,7 +26,8 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
  Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
  Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
  Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
@@ -34,14 +35,44 @@
  Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
  Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
  Running AeroAcoustics (v1.00.00, 18-Aug-2016).
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF00_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF01_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF02_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF03_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF04_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF05_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF06_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF07_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF08_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF09_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF10_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF11_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF12_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF13_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF14_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF15_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF16_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF17_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF18_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF19_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF20_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF21_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF22_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF23_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF24_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF25_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF26_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF27_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF28_BL.txt
+ AeroAcoustics_IO: reading BL table:/Users/rmudafor/Development/openfast_forks/pietro/build/reg_tests/glue-codes/openfast/IEA_LB_RWT-AeroAcoustics/Airfoils/AF29_BL.txt
  Running InflowWind.
   Time: 0 of 20 seconds.
-                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 12:39:14.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 12:39:14.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 12:39:20.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 12:39:25.                                                                                                                                   
-  Total Real Time:       1.6281 minutes
-  Total CPU Time:        1.4088 minutes
-  Simulation CPU Time:   1.4048 minutes
-  Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  0.23728
+                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 16:11:33.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 16:11:32.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 16:11:32.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 16:11:32.                                                                                                                                   
+  Total Real Time:       33.412 seconds
+  Total CPU Time:        32.847 seconds
+  Simulation CPU Time:   32.71 seconds
+  Simulated Time:        20 seconds
+  Time Ratio (Sim/CPU):  0.61144
 
   OpenFAST terminated normally.
 
