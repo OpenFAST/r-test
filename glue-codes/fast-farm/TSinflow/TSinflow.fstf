@@ -16,13 +16,13 @@ False              ChkWndFiles        Check all the ambient wind files for data 
 --- AMBIENT WIND: INFLOWWIND MODULE --- [used only for Mod_AmbWind=2]
 3.0                DT                 Time step for low -resolution wind data interpolation; will be used as the global FAST.Farm time step (s) [>0.0]
 0.1                DT_High            Time step for high-resolution wind data interpolation (s) [>0.0]
-413                NX_Low             Number  of low -resolution spatial nodes in X direction for wind data interpolation (-) [>=2]
+313                NX_Low             Number  of low -resolution spatial nodes in X direction for wind data interpolation (-) [>=2]
 101                NY_Low             Number  of low -resolution spatial nodes in Y direction for wind data interpolation (-) [>=2]
 35                 NZ_Low             Number  of low -resolution spatial nodes in Z direction for wind data interpolation (-) [>=2]
--77.7                X0_Low             Origin  of low -resolution spatial nodes in X direction for wind data interpolation (m)
--500.0                Y0_Low             Origin  of low -resolution spatial nodes in Y direction for wind data interpolation (m)
+-183.07            X0_Low             Origin  of low -resolution spatial nodes in X direction for wind data interpolation (m)
+-500.0             Y0_Low             Origin  of low -resolution spatial nodes in Y direction for wind data interpolation (m)
 5.0                Z0_Low             Origin  of low -resolution spatial nodes in Z direction for wind data interpolation (m)
-9.71               dX_Low             Spacing of low -resolution spatial nodes in X direction for wind data interpolation (m) [>0.0]
+10.17              dX_Low             Spacing of low -resolution spatial nodes in X direction for wind data interpolation (m) [>0.0]
 10.0               dY_Low             Spacing of low -resolution spatial nodes in Y direction for wind data interpolation (m) [>0.0]
 10.0               dZ_Low             Spacing of low -resolution spatial nodes in Z direction for wind data interpolation (m) [>0.0]
 18                 NX_High            Number  of high-resolution spatial nodes in X direction for wind data interpolation (-) [>=2]
@@ -33,9 +33,9 @@ False              ChkWndFiles        Check all the ambient wind files for data 
 3                  NumTurbines        Number of wind turbines (-) [>=1]                          [last 6 columns used only for Mod_AmbWind=2]
 WT_X   WT_Y   WT_Z   WT_FASTInFile                                                               X0_High  Y0_High  Z0_High  dX_High  dY_High  dZ_High
 (m)    (m)    (m)    (string)                                                                    (m)      (m)      (m)      (m)      (m)      (m)
-5.0     0.0 0.0    "FFTest_WT1.fst"            -77.7    -80.0   5.0      10.0     10.0     10.0
-1013.0  0.0 0.0    "FFTest_WT2.fst"            932.37   -80.0   5.0      10.0     10.0     10.0
-2021.0  0.0 0.0    "FFTest_WT3.fst"           1942.44   -80.0   5.0      10.0     10.0     10.0
+5.0     0.0 0.0    "FFTest_WT1.fst"            -77.7    -80.0   5.0      10.17     10.0     10.0
+1013.0  0.0 0.0    "FFTest_WT2.fst"            932.37   -80.0   5.0      10.17     10.0     10.0
+2021.0  0.0 0.0    "FFTest_WT3.fst"           1942.44   -80.0   5.0      10.17     10.0     10.0
 --- WAKE DYNAMICS ---
 5.0                dr                 Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           Number of radii in the radial finite-difference grid (-) [>=2]
