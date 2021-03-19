@@ -1,1 +1,12 @@
 ad_timeseries_shutdown
+BAR_Baseline
+BAR_CombinedCases
+BAR_OLAF
+BAR_RNAMotion
+BAR_SineMotion
+EllipticalWingInf_OLAF
+HelicalWakeInf_OLAF
+Kite_OLAF
+MultipleHAWT
+QuadRotor_OLAF
+VerticalAxis_OLAF

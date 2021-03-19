@@ -2,7 +2,7 @@
 Time-series input to test extreme event + shutdown
 -----  Input Configuration  ----------------------------------------------------
        False  Echo         -  Echo input parameters to "<rootname>.ech"?
-"ad_primary.inp"  AD_InputFile -  Name of the primary AeroDyn input file
+"ad_primary.dat"  AD_InputFile -  Name of the primary AeroDyn input file
 -----  Turbine Data  -----------------------------------------------------------
            3  NumBlades    - Number of blades (-)
         1.22  HubRad       - Hub radius (m)
@@ -17,6 +17,6 @@ Time-series input to test extreme event + shutdown
        False  Beep         - Beep on exit (flag)
 -----  Combined-Case Analysis  -------------------------------------------------
            1  NumCases     - Number of cases to run
-WndSpeed     ShearExp     RotSpd       Pitch        Yaw          dT           Tmax
-(m/s)        (-)          (rpm)        (deg)        (deg)        (s)          (s)
+WndSpeed     ShearExp     RotSpd       Pitch        Yaw     dT      Tmax  DOF  Amplitude Frequency 
+(m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    0       1.0      0.1
 @ad_TimeseriesInput.inp
