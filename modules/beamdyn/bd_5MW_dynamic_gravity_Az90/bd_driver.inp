@@ -18,7 +18,7 @@ True          DynamicSolve  - Dynamic solve (false for static solve) (-)
 1.0000000E+00  0.0000000E+00  0.0000000E+00  
 0.0000000E+00  0.0000000E+00  1.0000000E+00  
 0.0000000E+00  -1.0000000E+00  0.0000000E+00  
-F             GlbRotBladeT0 - Reference orientation for BeamDyn calculations is aligned with initial blade root?
+T             GlbRotBladeT0 - Reference orientation for BeamDyn calculations is aligned with initial blade root?
 ---------------------- ROOT VELOCITY PARAMETER ----------------------------------
           0   RootVel(4)    - Component of angular velocity vector of the beam root about X axis (rad/s)
           0   RootVel(5)    - Component of angular velocity vector of the beam root about Y axis (rad/s)

@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-138-g9a6c1967
+ OpenFAST--128-NOTFOUND
  Compile Info:
   - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
   64, Version 2021.1.2 Build 20201208_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 12 2021
-  - Time: 13:31:16
+  - Date: Mar 08 2021
+  - Time: 13:31:36
  Execution Info:
-  - Date: 01/12/2021
-  - Time: 14:05:53-0600
+  - Date: 03/08/2021
+  - Time: 14:16:33-0600
 
  OpenFAST input file heading:
      FAST Certification Test #03: AWT-27CR2 with many DOFs with free yaw and steady wind.
@@ -27,7 +27,8 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
  Running InflowWind.
  Running ServoDyn.
 
@@ -35,61 +36,58 @@
  files. Assuming upflow is 0.
 
   Time: 0 of 20 seconds.
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (66.465 deg). (node 1,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (52.101 deg). (node 2,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.13 deg). (node 1,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.102 deg). (node 2,
- blade 2)
+
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 1,
+ blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
+ low relative velocity. This warning will not be repeated though the condition may persist.
+
 +                                                                                                  
-+ Time: 1 of 20 seconds.  Estimated final completion at 14:06:13.
++ Time: 1 of 20 seconds.  Estimated final completion at 14:17:08.
 +                                                                                                  
-+ Time: 2 of 20 seconds.  Estimated final completion at 14:06:14.
++ Time: 2 of 20 seconds.  Estimated final completion at 14:17:12.
 +                                                                                                  
-+ Time: 3 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 3 of 20 seconds.  Estimated final completion at 14:17:15.
 +                                                                                                  
-+ Time: 4 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 4 of 20 seconds.  Estimated final completion at 14:17:14.
 +                                                                                                  
-+ Time: 5 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 5 of 20 seconds.  Estimated final completion at 14:17:11.
 +                                                                                                  
-+ Time: 6 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 6 of 20 seconds.  Estimated final completion at 14:17:08.
 +                                                                                                  
-+ Time: 7 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 7 of 20 seconds.  Estimated final completion at 14:17:10.
 +                                                                                                  
-+ Time: 8 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 8 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 9 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 9 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 10 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 10 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 11 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 11 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 12 of 20 seconds.  Estimated final completion at 14:06:08.
++ Time: 12 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 13 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 13 of 20 seconds.  Estimated final completion at 14:17:10.
 +                                                                                                  
-+ Time: 14 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 14 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 15 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 15 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 16 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 16 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 17 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 17 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 18 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 18 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 19 of 20 seconds.  Estimated final completion at 14:06:10.
++ Time: 19 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
-+ Time: 20 of 20 seconds.  Estimated final completion at 14:06:09.
++ Time: 20 of 20 seconds.  Estimated final completion at 14:17:09.
 +                                                                                                  
 
-  Total Real Time:       15.991 seconds
-  Total CPU Time:        15.938 seconds
-  Simulation CPU Time:   15.812 seconds
+  Total Real Time:       36.094 seconds
+  Total CPU Time:        34.375 seconds
+  Simulation CPU Time:   34.188 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  1.2648
+  Time Ratio (Sim/CPU):  0.58501
 
   OpenFAST terminated normally.
 
