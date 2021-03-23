@@ -5,10 +5,10 @@ False            Echo         - Echo input parameters to "<rootname>.ech"?
         1        AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
        10.       TMax         - Total run time [used only when AnalysisType/=3] (s)
        0.10      DT           - Simulation time step [used only when AnalysisType/=3] (s)
-"../BAR_SineMotion/OpenFAST_BAR_00_AeroDyn15.dat" AeroFile - Name of the primary AeroDyn input file
+"OpenFAST_BAR_00_AeroDyn15.dat" AeroFile - Name of the primary AeroDyn input file
 ----- Inflow Data ---------------------------------------------------------------
-          1      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
-"../BAR_SineMotion/OpenFAST_BAR_00_InflowFile.dat" InflowFile  - Name of the InflowWind input file [used only when CompInflow=1]
+          0      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
+"unused"         InflowFile  - Name of the InflowWind input file [used only when CompInflow=1]
         8.0      HWindSpeed  - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)
         140      RefHt       - Reference height for horizontal wind speed [used only when CompInflow=0]  (m)
        0.60      PLExp       - Power law exponent   [used only when CompInflow=0 and AnalysisType=1]                        (-)
