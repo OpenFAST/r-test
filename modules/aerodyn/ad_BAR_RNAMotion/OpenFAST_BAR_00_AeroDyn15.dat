@@ -3,7 +3,7 @@ Generated with AeroElasticSE FAST driver
 ======  General Options  ============================================================================
 False                  Echo        - Echo the input to "<rootname>.AD.ech"?  (flag)
 "default"              DTAero      - Time interval for aerodynamic calculations {or "default"} (s)
-2                      WakeMod     - Type of wake/induction model (switch) {0=none, 1=BEMT, 2=DBEMT, 3=OLAF}
+1                      WakeMod     - Type of wake/induction model (switch) {0=none, 1=BEMT, 2=DBEMT, 3=OLAF}
 1                      AFAeroMod   - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model} [must be 1 when linearizing]
 0                      TwrPotent   - Type tower influence on wind based on potential flow around the tower (switch) {0=none, 1=baseline potential flow, 2=potential flow with Bak correction}
 1                      TwrShadow   - Calculate tower influence on wind based on downstream tower shadow? (flag)
@@ -20,7 +20,7 @@ False                  CompAA      Flag to compute AeroAcoustics calculation [on
  1.700000000000000e+03 Pvap        - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
  5.000000000000000e-01 FluidDepth  - Water depth above mid-hub height (m) [used only when CavitCheck=True]
 ======  Blade-Element/Momentum Theory Options  ====================================================== [used only when WakeMod=1]
-2                      SkewMod     - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [used only when WakeMod=1]
+1                      SkewMod     - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [used only when WakeMod=1]
 "default"              SkewModFactor - Constant used in Pitt/Peters skewed wake model {or "default" is 15/32*pi} (-) [used only when SkewMod=2; unused when WakeMod=0]
 True                   TipLoss     - Use the Prandtl tip-loss model? (flag) [used only when WakeMod=1]
 True                   HubLoss     - Use the Prandtl hub-loss model? (flag) [used only when WakeMod=1]
