@@ -108,9 +108,7 @@ False                   SumPrint    - Generate a summary file listing input opti
 "RtAeroFzh"
 "RtAeroMxh"
 "RtAeroMyh"
-"RtAeroMzh"
 "RtAeroPwr"
-"RtArea"
 "RtSkew"
 "RtSpeed"
 "RtTSR"
@@ -134,14 +132,10 @@ Vrel
 TnInd
 AxInd
 Phi
-Vindx
 Vindy
 Alpha
 Gam
 Fn
 Ft
-Cl
-Cd
-Cm
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------

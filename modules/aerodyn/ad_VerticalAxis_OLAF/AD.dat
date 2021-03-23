@@ -76,7 +76,6 @@ False                  SumPrint    - Generate a summary file listing input optio
 "RtAeroCp"
 "RtAeroCq"
 "RtAeroCt"
-"RtAeroFxh"
 "RtAeroFyh"
 "RtAeroFzh"
 "RtAeroMxh"
@@ -87,7 +86,6 @@ False                  SumPrint    - Generate a summary file listing input optio
 "RtSkew"
 "RtSpeed"
 "RtTSR"
-"RtVAvgxh"
 "RtVAvgyh"
 "RtVAvgzh"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
@@ -96,7 +94,6 @@ END of input file (the word "END" must appear in the first 3 columns of this las
    "All"          BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
                   OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 STVy
-STVz
 Vindx
 Vindy
 Alpha

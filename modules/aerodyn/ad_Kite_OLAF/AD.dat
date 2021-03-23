@@ -77,7 +77,6 @@ False         SumPrint            - Generate a summary file listing input option
 "RtAeroFxh"                                                                
 "RtAeroFyh"                                                                
 "RtAeroFzh"                                                                
-"RtAeroMxh"                                                                
 "RtAeroMyh"                                                                
 "RtAeroMzh"                                                                
 "RtAeroPwr"                                                                
@@ -91,9 +90,6 @@ END of input file (the word "END" must appear in the first 3 columns of this las
                   OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 Fn
 Ft
-VUndx
-VUndy
-VUndz
 STVx
 STVy
 STVz
@@ -102,6 +98,5 @@ Alpha
 Gam
 Cl
 Cd
-Cm
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------

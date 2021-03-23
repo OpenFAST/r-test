@@ -110,7 +110,6 @@ False                   SumPrint    - Generate a summary file listing input opti
 "RtAeroMyh"
 "RtAeroMzh"
 "RtAeroPwr"
-"RtArea"
 "RtSkew"
 "RtSpeed"
 "RtTSR"
