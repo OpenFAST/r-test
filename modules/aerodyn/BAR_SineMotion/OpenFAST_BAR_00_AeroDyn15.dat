@@ -124,37 +124,6 @@ END of input file (the word "END" must appear in the first 3 columns of this las
                   OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 Fx
 Fy
-Vx
-Vy
-VUndx
-VUndy
-VUndz
-VDisx
-VDisy
-VDisz
-STVx
-STVy
-STVz
-Vrel
-TnInd
-AxInd
-Theta
-Phi
-Vindx
-Vindy
 Alpha
-Gam
-Fn
-Ft
-Cl
-Cd
-Cm
-Cx
-Cy
-Cn
-Ct
-Fl
-Fd
-Mm
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------

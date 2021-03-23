@@ -35,7 +35,7 @@ False   TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 1       PartPerSegment     Number of particles per segment [only if VelocityMethod=2]
 ===============================================================================================
 --------------------------- OUTPUT OPTIONS  ---------------------------------------------------
-1       WrVTk              Outputs Visualization Toolkit (VTK) (independent of .fst option) {False: NoVTK, True: Write VTK at each time step} (flag)
+0       WrVTk              Outputs Visualization Toolkit (VTK) (independent of .fst option) {False: NoVTK, True: Write VTK at each time step} (flag)
 1       nVTKBlades         Number of blades for which VTK files are exported {0: No VTK per blade, n: VTK for blade 1 to n} (-) 
 1       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, 3: Both, "default": 1} 
 default VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1] 
