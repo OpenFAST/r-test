@@ -32,13 +32,13 @@ Time-series input to test extreme event + shutdown
 0.0             NacYaw(1)              - Yaw angle (about z_t) of the nacelle (deg)
 0.0             RotSpeed(1)            - Rotational speed of rotor in rotor coordinates (rpm)
 0.0             BldPitch(1)            - Blade 1 pitch (deg)
------ Time-dependent Analysis [used only when AnalysisType=2 and BasicHAWTFormat=True] -----
+----- Time-dependent Analysis [used only when AnalysisType=2, numTurbines=1] ------------
 "ad_TimeseriesInput.csv"  TimeAnalysisFileName - Filename containing time series (6 column: Time, HWndSpeed, PLExp, RotSpd, Pitch, Yaw). 
------  Combined-Case Analysis [used only when AnalysisType=3 and BasicHAWTFormat=True] -----
+----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
            0  NumCases     - Number of cases to run
 HWndSpeed     PLExp        RotSpd       Pitch        Yaw     dT      Tmax  DOF  Amplitude  Frequency 
 (m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)    (-)       (Hz)
------ I/O Settings ----------------------------------------------------------------------
+----- Output Settings -------------------------------------------------------------------
   "ES15.8E2"  OutFmt       - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 2                OutFileFmt  - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 0                WrVTK       - VTK visualization data output: (switch) {0=none; 1=animation}

@@ -44,13 +44,13 @@ False           HAWTprojection(1)      - True if turbine is a horizontal axis tu
 0               BldMotionType(1)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
 0               BldPitch(1_1)           - Blade 1 pitch [used only when BldMotiontype=0] (deg)
 "unused"        BldMotionFileName(1_1)  - Filename containing blade pitch motion [used only when BldMotionType=1]
------ Time-dependent Analysis [used only when AnalysisType=2 and BasicHAWTFormat=True] ------
+----- Time-dependent Analysis [used only when AnalysisType=2, numTurbines=1] ------------
 "unused"         TimeAnalysisFileName - Filename containing time series (6 column: Time, HWndSpeed, PLExp, RotSpd, Pitch, Yaw). 
------  Combined-Case Analysis [used only when AnalysisType=3 and BasicHAWTFormat=True] ------
+----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
           0  NumCases     - Number of cases to run
 HWndSpeed    PLExp       RotSpd        Pitch         Yaw     dT      Tmax  DOF  Amplitude Frequency  
 (m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)     (-)     (Hz)
------ I/O Settings ----------------------------------------------------------------------
+----- Output Settings -------------------------------------------------------------------
 "ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=animation}

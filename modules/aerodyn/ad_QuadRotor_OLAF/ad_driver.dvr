@@ -192,13 +192,13 @@ True            HAWTprojection(5)      - True if turbine is a horizontal axis tu
 0               Amplitude(5)           - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
 0               Frequency(5)           - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
 "unused"        BaseMotionFileName(5)  - Filename containing arbitrary base motion (59 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
------ Time-dependent Analysis [used only when AnalysisType=2 and BasicHAWTFormat=True] ------
+----- Time-dependent Analysis [used only when AnalysisType=2, numTurbines=1] ------------
 "unused"         TimeAnalysisFileName - Filename containing time series (6 column: Time, HWndSpeed, PLExp, RotSpd, Pitch, Yaw). 
------  Combined-Case Analysis [used only when AnalysisType=3 and BasicHAWTFormat=True] ------
+----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
           0  NumCases     - Number of cases to run
 HWndSpeed    PLExp       RotSpd        Pitch         Yaw     dT      Tmax  DOF  Amplitude Frequency  
 (m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)     (-)     (Hz)
------ I/O Settings ----------------------------------------------------------------------
+----- Output Settings -------------------------------------------------------------------
 "ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=animation}
