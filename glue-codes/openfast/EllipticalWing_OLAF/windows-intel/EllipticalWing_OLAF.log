@@ -1,0 +1,47 @@
+
+**************************************************************************************************
+OpenFAST
+
+Copyright (C) 2020 National Renewable Energy Laboratory
+Copyright (C) 2020 Envision Energy USA LTD
+
+This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+See the "LICENSE" file distributed with this software for details.
+**************************************************************************************************
+
+OpenFAST--128-NOTFOUND
+Compile Info:
+ - Compiler: Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R)
+ 64, Version 19.0.5.281 Build 20190815
+ - Architecture: 64 bit
+ - Precision: double
+ - Date: Nov 06 2020
+ - Time: 13:50:38
+Execution Info:
+ - Date: 11/06/2020
+ - Time: 16:25:26-0600
+
+OpenFAST input file heading:
+    Elliptical wing test case for OLAF free vortex wake in AD15
+
+Running ElastoDyn.
+Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+Running AeroDyn.
+Nodal output section of AeroDyn input file not found or improperly formatted.
+Running FVW.
+ - Directory:         C:\Users\rmudafor\Desktop\openfast\build\reg_tests
+ - RootName:
+ C:\Users\rmudafor\Desktop\openfast\build\reg_tests\glue-codes\openfast\EllipticalWing_OLAF\Ellipt
+ icalWing_OLAF.
+ - No OpenMP support
+Running InflowWind.
+ Time: 0 of 1000 seconds.                                                                                                   Time: 100 of 1000 seconds.  Estimated final completion at 16:25:33.                                                                                                   Time: 200 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 300 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 400 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 500 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 600 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 700 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 800 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 900 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                   Time: 1000 of 1000 seconds.  Estimated final completion at 16:25:28.                                                                                                  
+
+ Total Real Time:       1.013 seconds
+ Total CPU Time:        0.98438 seconds
+ Simulation CPU Time:   0.90625 seconds
+ Simulated Time:        1000 seconds
+ Time Ratio (Sim/CPU):  1103.4
+
+ OpenFAST terminated normally.
+

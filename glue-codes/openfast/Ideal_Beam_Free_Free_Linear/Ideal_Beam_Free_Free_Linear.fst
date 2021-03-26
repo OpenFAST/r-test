@@ -1,4 +1,4 @@
-------- OpenFAST example INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 Free-free beam test case
 ---------------------- SIMULATION CONTROL --------------------------------------
 false         Echo            - Echo input data to <RootName>.ech (flag)

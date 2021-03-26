@@ -1,4 +1,4 @@
-------- OpenFAST example INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #10: UAE Phase VI (upwind) with no DOFs in a ramped wind.
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)

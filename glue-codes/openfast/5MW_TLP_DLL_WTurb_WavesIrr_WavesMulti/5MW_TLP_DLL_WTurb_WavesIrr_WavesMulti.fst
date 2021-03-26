@@ -1,4 +1,4 @@
-------- OpenFAST example INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #23: NREL 5.0 MW Baseline Wind Turbine with MIT-NREL TLP Configuration, for use in offshore analysis
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
@@ -40,7 +40,7 @@ True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           0   TStart          - Time to begin tabular output (s)
           0   OutFileFmt      - Format for tabular (time-marching) output file (switch) {0: uncompressed binary [<RootName>.outb], 1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES15.7E2"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 False         Linearize       - Linearization analysis (flag)
 False         CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)

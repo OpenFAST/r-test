@@ -1,4 +1,4 @@
-------- OpenFAST example INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #11: WindPACT 1.5 MW Baseline with many DOFs undergoing a pitch failure.
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
