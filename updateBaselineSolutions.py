@@ -47,7 +47,11 @@ if len(sys.argv) != 6:
 
 with open(sys.argv[1]) as listfile:
     content = listfile.readlines()
+
+# allow comments with '#'
 casenames = [x.rstrip("\n\r").strip() for x in content if "#" not in x]
+# allow empty lines
+casenames = [x for x in casenames if len(x.strip()) > 0]
 
 sourceParent = sys.argv[2]
 targetParent = sys.argv[3]
@@ -66,7 +70,12 @@ for case in casenames:
 
     caseDir = os.path.join(sourceParent, case)
     sourceFiles = os.listdir(caseDir)
-    targetExtensions = [".out", ".outb", ".sum", ".log"]
+    if "linear" in case.lower():
+        targetExtensions = [".lin"]
+    else:
+        targetExtensions = [".out", ".outb", ".sum"]
+    
+    targetExtensions += [".log"]
     targetFiles = [s for s in sourceFiles for t in targetExtensions if t in s]
 
     for f in targetFiles:

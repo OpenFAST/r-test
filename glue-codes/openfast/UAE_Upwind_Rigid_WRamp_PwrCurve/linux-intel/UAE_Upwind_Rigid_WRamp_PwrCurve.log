@@ -2,24 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-50-g416ff436-dirty
+ OpenFAST-v2.4.0-138-g9a6c1967
  Compile Info:
-  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64,
-  Version 19.0.8.324 Build 20200220
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+  64, Version 2021.1.2 Build 20201208_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov 06 2020
-  - Time: 13:37:52
+  - Date: Jan 12 2021
+  - Time: 13:31:16
  Execution Info:
-  - Date: 11/06/2020
-  - Time: 13:56:37-0600
+  - Date: 01/12/2021
+  - Time: 14:06:34-0600
 
  OpenFAST input file heading:
      FAST Certification Test #10: UAE Phase VI (upwind) with no DOFs in a ramped wind.
@@ -30,66 +30,70 @@
  Nodal output section of AeroDyn input file not found or improperly formatted.
  Running InflowWind.
  Running ServoDyn.
+
+ FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
+ files. Assuming upflow is 0.
+
   Time: 0 of 25 seconds.
 +                                                                                                  
-+ Time: 1 of 25 seconds.  Estimated final completion at 13:57:01.
++ Time: 1 of 25 seconds.  Estimated final completion at 14:07:03.
 +                                                                                                  
-+ Time: 2 of 25 seconds.  Estimated final completion at 13:56:59.
++ Time: 2 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 3 of 25 seconds.  Estimated final completion at 13:57:03.
++ Time: 3 of 25 seconds.  Estimated final completion at 14:07:04.
 +                                                                                                  
-+ Time: 4 of 25 seconds.  Estimated final completion at 13:57:03.
++ Time: 4 of 25 seconds.  Estimated final completion at 14:06:60.
 +                                                                                                  
-+ Time: 5 of 25 seconds.  Estimated final completion at 13:57:02.
++ Time: 5 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 6 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 6 of 25 seconds.  Estimated final completion at 14:07:02.
 +                                                                                                  
-+ Time: 7 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 7 of 25 seconds.  Estimated final completion at 14:07:00.
 +                                                                                                  
-+ Time: 8 of 25 seconds.  Estimated final completion at 13:56:60.
++ Time: 8 of 25 seconds.  Estimated final completion at 14:06:59.
 +                                                                                                  
-+ Time: 9 of 25 seconds.  Estimated final completion at 13:56:60.
++ Time: 9 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 10 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 10 of 25 seconds.  Estimated final completion at 14:07:02.
 +                                                                                                  
-+ Time: 11 of 25 seconds.  Estimated final completion at 13:56:60.
++ Time: 11 of 25 seconds.  Estimated final completion at 14:07:00.
 +                                                                                                  
-+ Time: 12 of 25 seconds.  Estimated final completion at 13:57:02.
++ Time: 12 of 25 seconds.  Estimated final completion at 14:06:60.
 +                                                                                                  
-+ Time: 13 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 13 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 14 of 25 seconds.  Estimated final completion at 13:57:02.
++ Time: 14 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 15 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 15 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 16 of 25 seconds.  Estimated final completion at 13:56:60.
++ Time: 16 of 25 seconds.  Estimated final completion at 14:07:00.
 +                                                                                                  
-+ Time: 17 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 17 of 25 seconds.  Estimated final completion at 14:06:60.
 +                                                                                                  
-+ Time: 18 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 18 of 25 seconds.  Estimated final completion at 14:07:01.
  The BEM solution is being turned off due to low TSR.  (TSR = 1.9996). This warning will not be
  repeated though the condition may persist. (See GeomPhi output channel.)
 +                                                                                                  
-+ Time: 19 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 19 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 20 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 20 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 21 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 21 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 22 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 22 of 25 seconds.  Estimated final completion at 14:07:00.
 +                                                                                                  
-+ Time: 23 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 23 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
-+ Time: 24 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 24 of 25 seconds.  Estimated final completion at 14:07:00.
 +                                                                                                  
-+ Time: 25 of 25 seconds.  Estimated final completion at 13:57:00.
++ Time: 25 of 25 seconds.  Estimated final completion at 14:07:01.
 +                                                                                                  
 
-  Total Real Time:       23.001 seconds
-  Total CPU Time:        22.984 seconds
-  Simulation CPU Time:   22.922 seconds
+  Total Real Time:       26.429 seconds
+  Total CPU Time:        26.406 seconds
+  Simulation CPU Time:   26.312 seconds
   Simulated Time:        25 seconds
-  Time Ratio (Sim/CPU):  1.0907
+  Time Ratio (Sim/CPU):  0.95012
 
   OpenFAST terminated normally.
 

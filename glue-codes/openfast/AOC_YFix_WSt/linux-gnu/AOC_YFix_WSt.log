@@ -2,23 +2,23 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-53-g8bfd804f
+ OpenFAST-v2.5.0-607-g1dd8e752-dirty
  Compile Info:
-  - Compiler: GCC version 7.5.0
+  - Compiler: GCC version 10.2.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov  6 2020
-  - Time: 18:38:52
+  - Date: Mar  4 2021
+  - Time: 11:39:55
  Execution Info:
-  - Date: 11/06/2020
-  - Time: 21:56:57+0000
+  - Date: 03/05/2021
+  - Time: 13:43:13-0700
 
  OpenFAST input file heading:
      FAST Certification Test #08: AOC 15/50 with many DOFs with fixed yaw error and steady wind.
@@ -27,34 +27,22 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
  Running InflowWind.
  Running ServoDyn.
   Time: 0 of 20 seconds.
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (84.566 deg). (node 1,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (75.456 deg). (node 2,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (57.306 deg). (node 3,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (53.467 deg). (node 1,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (49.721 deg). (node 2,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (54.522 deg). (node 1,
- blade 3)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (50.994 deg). (node 2,
- blade 3)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.075 deg). (node 3,
- blade 3)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.271 deg). (node 3,
- blade 2)
-                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 21:57:28.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 21:57:28.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 21:57:27.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 21:57:27.                                                                                                                                   
-  Total Real Time:       29.31 seconds
-  Total CPU Time:        29.219 seconds
-  Simulation CPU Time:   29.207 seconds
+
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 1,
+ blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
+ low relative velocity. This warning will not be repeated though the condition may persist.
+
+                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 13:43:50.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                   
+  Total Real Time:       35.747 seconds
+  Total CPU Time:        34.85 seconds
+  Simulation CPU Time:   34.837 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.68477
+  Time Ratio (Sim/CPU):  0.5741
 
   OpenFAST terminated normally.
 

@@ -134,3 +134,7 @@ aoa 	 	 Ue_Vinf_SS 	 Ue_Vinf_PS 	  Dstar_SS 	 	  Dstar_PS 	 	  Delta_SS 	 	  Del
 22.93103 	 1.14923e+00 	 -1.07295e+00 	 2.84850e-01 	 4.17000e-04 	 3.44870e-01 	 5.91742e-03 	 -0.00000e+00 	 5.18000e-03 
 23.96552 	 1.16217e+00 	 -1.08394e+00 	 3.11295e-01 	 3.91000e-04 	 3.74030e-01 	 5.48792e-03 	 -0.00000e+00 	 5.34200e-03 
 25.00000 	 1.17633e+00 	 -1.09617e+00 	 3.38514e-01 	 3.72000e-04 	 4.03860e-01 	 5.17590e-03 	 -0.00000e+00 	 5.50500e-03 
+
+! Inputs to trailing edge bluntness noise model
+10          TEAngle    - Angle of the trailing edge (deg)
+0.01700E+00 TEThick    - Finite thickness of the trailing edge (deg)

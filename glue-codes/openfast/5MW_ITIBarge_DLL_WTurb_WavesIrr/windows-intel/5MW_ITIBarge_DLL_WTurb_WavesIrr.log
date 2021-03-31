@@ -2,24 +2,24 @@
 **************************************************************************************************
 OpenFAST
 
-Copyright (C) 2020 National Renewable Energy Laboratory
-Copyright (C) 2020 Envision Energy USA LTD
+Copyright (C) 2021 National Renewable Energy Laboratory
+Copyright (C) 2021 Envision Energy USA LTD
 
 This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
 See the "LICENSE" file distributed with this software for details.
 **************************************************************************************************
 
-OpenFAST-v1.0.0-1239-g23caac2a
+OpenFAST-v1.0.0-1800-g1082ba16
 Compile Info:
- - Compiler: Intel(R) Visual Fortran Intel(R) 64 Compiler for applications running on Intel(R)
- 64, Version 19.0.5.281 Build 20190815
+ - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+ 64, Version 2021.1 Build 20201112_000000
  - Architecture: 64 bit
  - Precision: double
- - Date: Nov 11 2020
- - Time: 10:10:19
+ - Date: Jan 28 2021
+ - Time: 16:01:43
 Execution Info:
- - Date: 11/11/2020
- - Time: 10:29:16-0600
+ - Date: 01/28/2021
+ - Time: 17:24:26-0600
 
 OpenFAST input file heading:
     FAST Certification Test #22: NREL 5.0 MW Baseline Wind Turbine with ITI Barge Configuration,
@@ -41,8 +41,8 @@ Using legacy Bladed DLL interface.
 Running HydroDyn.
  Generating incident wave kinematics and current time history.
  Reading in WAMIT output with root name
- "..\build\reg_tests\glue-codes\openfast\5MW_ITIBarge_DLL_WTurb_WavesIrr\../5MW_Baseline/HydroData
- /Barge".
+ "C:\Users\rmudafor\Desktop\tcf\openfast\build\reg_tests\glue-codes\openfast\5MW_ITIBarge_DLL_WTur
+ b_WavesIrr\../5MW_Baseline/HydroData/Barge".
  Computing radiation impulse response functions and wave diffraction forces.
 
 Using SS_Radiation Module, with 30 of 30 radiation states
@@ -54,13 +54,13 @@ FAST_Solution0:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:DLL_c
 ning with torque and pitch control of the NREL offshore 5MW baseline wind turbine from DISCON.dll
 as written by J. Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies. Includes
 modifications for ITI Barge.
-                                                                                                   Time: 10 of 60 seconds.  Estimated final completion at 10:29:36.                                                                                                   Time: 20 of 60 seconds.  Estimated final completion at 10:29:35.                                                                                                   Time: 30 of 60 seconds.  Estimated final completion at 10:29:36.                                                                                                   Time: 40 of 60 seconds.  Estimated final completion at 10:29:36.                                                                                                   Time: 50 of 60 seconds.  Estimated final completion at 10:29:36.                                                                                                   Time: 60 of 60 seconds.  Estimated final completion at 10:29:36.                                                                                                  
+                                                                                                   Time: 10 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                   Time: 20 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                   Time: 30 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                   Time: 40 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                   Time: 50 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                   Time: 60 of 60 seconds.  Estimated final completion at 17:24:47.                                                                                                  
 
- Total Real Time:       19.517 seconds
- Total CPU Time:        19.453 seconds
- Simulation CPU Time:   18.672 seconds
+ Total Real Time:       20.372 seconds
+ Total CPU Time:        20.344 seconds
+ Simulation CPU Time:   19.438 seconds
  Simulated Time:        60 seconds
- Time Ratio (Sim/CPU):  3.2134
+ Time Ratio (Sim/CPU):  3.0868
 
  OpenFAST terminated normally.
 
