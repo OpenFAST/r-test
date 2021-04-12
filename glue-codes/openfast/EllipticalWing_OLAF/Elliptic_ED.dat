@@ -4,8 +4,6 @@ Elliptical wing test case for OLAF free vortex wake in AD15
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "DEFAULT"     DT          - Integration time step (s)
----------------------- ENVIRONMENTAL CONDITION ---------------------------------
-    9.80665   Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 False         FlapDOF1    - First flapwise blade mode DOF (flag)
 False         FlapDOF2    - Second flapwise blade mode DOF (flag)
