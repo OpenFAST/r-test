@@ -2,10 +2,18 @@
 Vertical axis driver input file
 ----- Input Configuration ---------------------------------------------------------------
 False           Echo         - Echo input parameters to "<rootname>.ech"?
+        0       MHK          - MHK turbine type (switch) {0: not an MHK turbine, 1: fixed MHK turbine, 2: floating MHK turbine}  
         1       AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
         3.5     TMax        - Total run time [used only when AnalysisType/=3] (s)
         0.05    DT           - Simulation time step [used only when AnalysisType/=3] (s)
 "AD.dat"        AeroFile     - Name of the primary AeroDyn input file
+----- Environmental Conditions ----------------------------------------------------------
+ 1.225000000000000e+00     FldDens      - Density of working fluid (kg/m^3)
+ 1.477551020408163e-05     KinVisc      - Kinematic viscosity of working fluid (m^2/s)
+ 3.350000000000000e+02     SpdSound     - Speed of sound in air (m/s)
+ 1.035000000000000e+05     Patm         - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+ 1.700000000000000e+03     Pvap         - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+                     0     WtrDpth      - Water depth (m)
 ----- Inflow Data -----------------------------------------------------------------------
           1      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
 "IW.dat"         InflowFile   - Name of the InflowWind input file  [used only when CompInflow=1]
