@@ -2,9 +2,17 @@
 Kite driver, prescribed 8 figure 
 -----  Input Configuration  -------------------------------------------------------------
 False           Echo       - Echo input parameters to "<rootname>.ech"?
+        0       MHK        - MHK turbine type (switch) {0: not an MHK turbine, 1: fixed MHK turbine, 2: floating MHK turbine}       
         30     TMax       - Total run time (s)
         0.1     DT         - Simulation time step (s)
 "AD.dat"        AeroFile   - Name of the AeroDyn input file
+----- Environmental Conditions ----------------------------------------------------------
+1.225          FldDens      - Density of working fluid (kg/m^3)
+1.4639E-05     KinVisc      - Kinematic viscosity of working fluid (m^2/s)
+335            SpdSound     - Speed of sound in air (m/s)
+103500         Patm         - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+1700           Pvap         - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+0              WtrDpth      - Water depth (m)
 ----- Inflow Data  ----------------------------------------------------------------------
           1      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
 "IW.dat"        InflowFile - Name of the InflowWind input file
