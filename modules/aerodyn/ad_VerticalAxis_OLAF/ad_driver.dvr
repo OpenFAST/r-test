@@ -71,6 +71,6 @@ HWndSpeed    PLExp       RotSpd       Pitch        Yaw     dT      Tmax  DOF  Am
 ----- Output Settings -------------------------------------------------------------------
 "ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
-0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=animation}
+0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=init; 2=animation}
 1           VTKHubRad     - HubRadius for VTK visualization (m)
 -0.1,-0.1,-0.1,0.2,0.2,0.2    VTKNacDim     - Nacelle Dimension for VTK visualization x0,y0,z0,Lx,Ly,Lz (m)
