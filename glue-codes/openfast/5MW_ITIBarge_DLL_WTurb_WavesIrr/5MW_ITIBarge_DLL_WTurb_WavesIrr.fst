@@ -24,7 +24,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
       1.225   AirDens         - Air density (kg/m^3)
        1025   WtrDens         - Water density (kg/m^3)
   1.464E-05   KinVisc         - Kinematic viscosity of working fluid (m^2/s)
-          0   SpdSound        - Speed of sound in air (m/s)
+          0   SpdSound        - Speed of sound in working fluid (m/s)
           0   Patm            - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
           0   Pvap            - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
         150   WtrDpth         - Water depth (m)
