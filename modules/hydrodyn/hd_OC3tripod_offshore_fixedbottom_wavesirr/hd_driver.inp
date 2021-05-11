@@ -1,5 +1,5 @@
 HydroDyn Driver file for OC3_Tripod.  
-Compatible with HydroDyn v2.01.*
+Compatible with HydroDyn v3.00
 FALSE            Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
 9.80665          Gravity             - Gravity (m/s^2)
@@ -9,21 +9,14 @@ FALSE            Echo                - Echo the input file data (flag)
 FALSE              Linearize         - Flag to enable linearization
 500                NSteps            - Number of time steps in the simulations (-)
 0.025              TimeInterval      - TimeInterval for the simulation (sec)
----------------------- WAMIT INPUTS -------------------------------------------
-1                WAMITInputsMod      - Inputs model {0: all inputs are zero for every timestep, 1: steadystate inputs, 2: read inputs from a file (InputsFile)} (switch)
-""               WAMITInputsFile     - Name of the inputs file if InputsMod = 2 (quoted string)
----------------------- WAMIT STEADY STATE INPUTS  -----------------------------
-1.0   2.0  -3.0  0.0  0.0  0.0    uWAMITInSteady         - input displacements and rotations at the platform reference point (m, rads)
-0.0   0.0   0.0  0.0  0.0  0.0    uDotWAMITInSteady      - input translational and rotational velocities at the platform reference point (m/s, rads/s)
-0.0   0.0   0.0  0.0  0.0  0.0    uDotDotWAMITInSteady   - input translational and rotational acccelerations at the platform reference point (m/s^2, rads/s^2)
----------------------- MORISON INPUTS -----------------------------------------
-0                MorisonInputsMod    - Inputs model {0: all inputs are zero for every timestep, 1: steadystate inputs, 2: read inputs from a file (InputsFile)} (switch)
-" "              MorisonInputsFile   - Name of the inputs file if InputsMod = 2 (quoted string)
----------------------- MORISON STEADY STATE INPUTS  ---------------------------
-1.0   2.0   3.0   4.0   5.0   6.0    uMorisonInSteady       - input displacements and rotations for the morison elements (m, rads)
-7.0   8.0   9.0  10.0  11.0  12.0    uDotMorisonInSteady    - input translational and rotational velocities for the morison elements (m/s, rads/s)
-13.0 14.0  15.0  16.0  17.0  18.0    uDotDotMorisonInSteady - input translational and rotational acccelerations for the morison elements (m/s^2, rads/s^2)
----------------------- Waves multipoint elevation output -------------------------------                                                                                                                
+---------------------- PRP INPUTS (Platform Reference Point) ------------------
+1                PRPInputsMod        - Model for the PRP (principal reference point) inputs {0: all inputs are zero for every timestep, 1: steadystate inputs, 2: read inputs from a file (InputsFile)} (switch)
+""               PRPInputsFile       - Filename for the PRP HydroDyn input InputsMod = 2 (quoted string)
+---------------------- PRP STEADY STATE INPUTS  -------------------------------
+0.1   0.1  -0.1  0.0  0.0  0.0    uPRPInSteady         - PRP Steady-state displacements and rotations at the platform reference point (m, rads)
+0.0   0.0   0.0  0.0  0.0  0.0    uDotPRPInSteady      - PRP Steady-state translational and rotational velocities at the platform reference point (m/s, rads/s)
+0.0   0.0   0.0  0.0  0.0  0.0    uDotDotPRPInSteady   - PRP Steady-state translational and rotational accelerations at the platform reference point (m/s^2, rads/s^2)
+---------------------- Waves multipoint elevation output ----------------------                                                                                                                
 FALSE            WaveElevSeriesFlag     - T/F flag to calculate the wave elevation field (for movies)
 5.0   5.0        WaveElevDX WaveElevDY  - WaveElevSeries spacing -- WaveElevDX WaveElevDY
 3   3            WaveElevNX WaveElevNY  - WaveElevSeries points -- WaveElevNX WaveElevNY

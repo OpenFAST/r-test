@@ -1,0 +1,44 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.4.0-138-g9a6c1967
+ Compile Info:
+  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
+  64, Version 2021.1.2 Build 20201208_000000
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Jan 12 2021
+  - Time: 13:31:16
+ Execution Info:
+  - Date: 01/12/2021
+  - Time: 17:18:02-0600
+
+ OpenFAST input file heading:
+     Free-free beam test case
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running BeamDyn.
+ Nodal outputs section of BeamDyn input file not found or improperly formatted.
+  Time: 0 of 1.50000E-03 seconds.
++                                                                                                  
++ Performing linearization 1 at simulation time 0 s. (RotSpeed=0 rpm, BldPitch1=0 deg)
+
++                                                                                                  
+
+  Total Real Time:       0.458 seconds
+  Total CPU Time:        0.46875 seconds
+  Simulation CPU Time:   0.21875 seconds
+  Simulated Time:        1.50000E-03 seconds
+  Time Ratio (Sim/CPU):  6.85714E-03
+
+  OpenFAST terminated normally.
+
