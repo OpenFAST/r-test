@@ -1,0 +1,33 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.5.0-10-gb4fd3acc
+ Compile Info:
+  - Compiler: GCC version 10.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Jan 14 2021
+  - Time: 17:19:34
+ Execution Info:
+  - Date: 01/14/2021
+  - Time: 17:44:25-0600
+
+ OpenFAST input file heading:
+     FAST Certification Test #14: WindPACT 1.5 MW Baseline with stationary linearization in a
+     vacuum
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+  Time: 0 of 0 seconds.
+                                                                                                   Performing linearization 1 at simulation time 0 s. (RotSpeed=0 rpm, BldPitch1=2.6 deg)           
+
+  OpenFAST terminated normally.
+

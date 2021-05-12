@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 06-Nov-2020 at 22:01:17 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-53-g8bfd804f
+Predictions were generated on 28-Jan-2021 at 17:46:59 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-1800-g1082ba16
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -27,7 +27,7 @@ Description from the FAST input file:
 
 Interpolation order for input/output time histories: 2 (quadratic)
 Number of correction iterations:  1
-Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn, OrcaFlex, ExtPtfm_MCKF, and/or BeamDyn:   4860
+Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn, OrcaFlex, ExtPtfm_MCKF, and/or BeamDyn:   3768
 
 
    Requested Time Steps  
@@ -87,77 +87,81 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn,
       37  GenPwr                (kW)                  ServoDyn
       38  GenTq                 (kN-m)                ServoDyn
       39  Wave1Elev             (m)                   HydroDyn
-      40  M1N1Vxi               (m/s)                 HydroDyn
-      41  M1N1Vzi               (m/s)                 HydroDyn
-      42  M1N1Axi               (m/s^2)               HydroDyn
-      43  M1N1Azi               (m/s^2)               HydroDyn
-      44  M1N1FDxi              (N/m)                 HydroDyn
-      45  M1N1FDzi              (N/m)                 HydroDyn
-      46  M1N1FIxi              (N/m)                 HydroDyn
-      47  M1N1FIzi              (N/m)                 HydroDyn
-      48  M1N1FAxi              (N/m)                 HydroDyn
-      49  M1N1FAzi              (N/m)                 HydroDyn
-      50  M1N1TDxss             (m)                   SubDyn
-      51  M1N1TDyss             (m)                   SubDyn
-      52  M1N1RDxe              (rad)                 SubDyn
-      53  M1N1RDye              (rad)                 SubDyn
-      54  M1N2FKxe              (N)                   SubDyn
-      55  M1N2FKye              (N)                   SubDyn
-      56  M1N2FKze              (N)                   SubDyn
-      57  M1N2MKxe              (N*m)                 SubDyn
-      58  M1N2MKye              (N*m)                 SubDyn
-      59  M1N2MKze              (N*m)                 SubDyn
-      60  M1N1FKxe              (N)                   SubDyn
-      61  M1N1FKye              (N)                   SubDyn
-      62  M1N1FKze              (N)                   SubDyn
-      63  M1N1MKxe              (N*m)                 SubDyn
-      64  M1N1MKye              (N*m)                 SubDyn
-      65  M1N1MKze              (N*m)                 SubDyn
-      66  M2N1FKxe              (N)                   SubDyn
-      67  M2N1FKye              (N)                   SubDyn
-      68  M2N1FKze              (N)                   SubDyn
-      69  M2N1MKxe              (N*m)                 SubDyn
-      70  M2N1MKye              (N*m)                 SubDyn
-      71  M2N1MKze              (N*m)                 SubDyn
-      72  M3N1FKxe              (N)                   SubDyn
-      73  M3N1FKye              (N)                   SubDyn
-      74  M3N1FKze              (N)                   SubDyn
-      75  M3N1MKxe              (N*m)                 SubDyn
-      76  M3N1MKye              (N*m)                 SubDyn
-      77  M3N1MKze              (N*m)                 SubDyn
-      78  M4N1FKxe              (N)                   SubDyn
-      79  M4N1FKye              (N)                   SubDyn
-      80  M4N1FKze              (N)                   SubDyn
-      81  M4N1MKxe              (N*m)                 SubDyn
-      82  M4N1MKye              (N*m)                 SubDyn
-      83  M4N1MKze              (N*m)                 SubDyn
-      84  M5N1FKxe              (N)                   SubDyn
-      85  M5N1FKye              (N)                   SubDyn
-      86  M5N1FKze              (N)                   SubDyn
-      87  M5N1MKxe              (N*m)                 SubDyn
-      88  M5N1MKye              (N*m)                 SubDyn
-      89  M5N1MKze              (N*m)                 SubDyn
-      90  M6N1FKxe              (N)                   SubDyn
-      91  M6N1FKye              (N)                   SubDyn
-      92  M6N1FKze              (N)                   SubDyn
-      93  M6N1MKxe              (N*m)                 SubDyn
-      94  M6N1MKye              (N*m)                 SubDyn
-      95  M6N1MKze              (N*m)                 SubDyn
-      96  M7N1FKxe              (N)                   SubDyn
-      97  M7N1FKye              (N)                   SubDyn
-      98  M7N1FKze              (N)                   SubDyn
-      99  M7N1MKxe              (N*m)                 SubDyn
-     100  M7N1MKye              (N*m)                 SubDyn
-     101  M7N1MKze              (N*m)                 SubDyn
-     102  M8N1FKxe              (N)                   SubDyn
-     103  M8N1FKye              (N)                   SubDyn
-     104  M8N1FKze              (N)                   SubDyn
-     105  M8N1MKxe              (N*m)                 SubDyn
-     106  M8N1MKye              (N*m)                 SubDyn
-     107  M8N1MKze              (N*m)                 SubDyn
-     108  M9N1FKxe              (N)                   SubDyn
-     109  M9N1FKye              (N)                   SubDyn
-     110  M9N1FKze              (N)                   SubDyn
-     111  M9N1MKxe              (N*m)                 SubDyn
-     112  M9N1MKye              (N*m)                 SubDyn
-     113  M9N1MKze              (N*m)                 SubDyn
+      40  HydroFxi              (N)                   HydroDyn
+      41  HydroFyi              (N)                   HydroDyn
+      42  HydroFzi              (N)                   HydroDyn
+      43  HydroMxi              (N-m)                 HydroDyn
+      44  HydroMyi              (N-m)                 HydroDyn
+      45  HydroMzi              (N-m)                 HydroDyn
+      46  M1N1Vxi               (m/s)                 HydroDyn
+      47  M1N1Vzi               (m/s)                 HydroDyn
+      48  M1N1Axi               (m/s^2)               HydroDyn
+      49  M1N1Azi               (m/s^2)               HydroDyn
+      50  M1N1FDxi              (N/m)                 HydroDyn
+      51  M1N1FDzi              (N/m)                 HydroDyn
+      52  M1N1FIxi              (N/m)                 HydroDyn
+      53  M1N1FIzi              (N/m)                 HydroDyn
+      54  M1N1TDxss             (m)                   SubDyn
+      55  M1N1TDyss             (m)                   SubDyn
+      56  M1N1RDxe              (rad)                 SubDyn
+      57  M1N1RDye              (rad)                 SubDyn
+      58  M1N2FKxe              (N)                   SubDyn
+      59  M1N2FKye              (N)                   SubDyn
+      60  M1N2FKze              (N)                   SubDyn
+      61  M1N2MKxe              (N*m)                 SubDyn
+      62  M1N2MKye              (N*m)                 SubDyn
+      63  M1N2MKze              (N*m)                 SubDyn
+      64  M1N1FKxe              (N)                   SubDyn
+      65  M1N1FKye              (N)                   SubDyn
+      66  M1N1FKze              (N)                   SubDyn
+      67  M1N1MKxe              (N*m)                 SubDyn
+      68  M1N1MKye              (N*m)                 SubDyn
+      69  M1N1MKze              (N*m)                 SubDyn
+      70  M2N1FKxe              (N)                   SubDyn
+      71  M2N1FKye              (N)                   SubDyn
+      72  M2N1FKze              (N)                   SubDyn
+      73  M2N1MKxe              (N*m)                 SubDyn
+      74  M2N1MKye              (N*m)                 SubDyn
+      75  M2N1MKze              (N*m)                 SubDyn
+      76  M3N1FKxe              (N)                   SubDyn
+      77  M3N1FKye              (N)                   SubDyn
+      78  M3N1FKze              (N)                   SubDyn
+      79  M3N1MKxe              (N*m)                 SubDyn
+      80  M3N1MKye              (N*m)                 SubDyn
+      81  M3N1MKze              (N*m)                 SubDyn
+      82  M4N1FKxe              (N)                   SubDyn
+      83  M4N1FKye              (N)                   SubDyn
+      84  M4N1FKze              (N)                   SubDyn
+      85  M4N1MKxe              (N*m)                 SubDyn
+      86  M4N1MKye              (N*m)                 SubDyn
+      87  M4N1MKze              (N*m)                 SubDyn
+      88  M5N1FKxe              (N)                   SubDyn
+      89  M5N1FKye              (N)                   SubDyn
+      90  M5N1FKze              (N)                   SubDyn
+      91  M5N1MKxe              (N*m)                 SubDyn
+      92  M5N1MKye              (N*m)                 SubDyn
+      93  M5N1MKze              (N*m)                 SubDyn
+      94  M6N1FKxe              (N)                   SubDyn
+      95  M6N1FKye              (N)                   SubDyn
+      96  M6N1FKze              (N)                   SubDyn
+      97  M6N1MKxe              (N*m)                 SubDyn
+      98  M6N1MKye              (N*m)                 SubDyn
+      99  M6N1MKze              (N*m)                 SubDyn
+     100  M7N1FKxe              (N)                   SubDyn
+     101  M7N1FKye              (N)                   SubDyn
+     102  M7N1FKze              (N)                   SubDyn
+     103  M7N1MKxe              (N*m)                 SubDyn
+     104  M7N1MKye              (N*m)                 SubDyn
+     105  M7N1MKze              (N*m)                 SubDyn
+     106  M8N1FKxe              (N)                   SubDyn
+     107  M8N1FKye              (N)                   SubDyn
+     108  M8N1FKze              (N)                   SubDyn
+     109  M8N1MKxe              (N*m)                 SubDyn
+     110  M8N1MKye              (N*m)                 SubDyn
+     111  M8N1MKze              (N*m)                 SubDyn
+     112  M9N1FKxe              (N)                   SubDyn
+     113  M9N1FKye              (N)                   SubDyn
+     114  M9N1FKze              (N)                   SubDyn
+     115  M9N1MKxe              (N*m)                 SubDyn
+     116  M9N1MKye              (N*m)                 SubDyn
+     117  M9N1MKze              (N*m)                 SubDyn

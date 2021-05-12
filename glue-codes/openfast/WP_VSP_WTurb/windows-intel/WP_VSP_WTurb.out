@@ -1,5 +1,5 @@
 
-Predictions were generated on 06-Nov-2020 at 16:22:26 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Predictions were generated on 11-Jan-2021 at 20:49:18 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-137-gb5d9a13c
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #13: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and FF turbulence.

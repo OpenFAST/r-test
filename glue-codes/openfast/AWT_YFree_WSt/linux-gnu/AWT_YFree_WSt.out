@@ -1,5 +1,5 @@
 
-Predictions were generated on 06-Nov-2020 at 21:56:23 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.4.0-53-g8bfd804f
+Predictions were generated on 14-Jan-2021 at 17:38:19 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-10-gb4fd3acc
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #03: AWT-27CR2 with many DOFs with free yaw and steady wind.

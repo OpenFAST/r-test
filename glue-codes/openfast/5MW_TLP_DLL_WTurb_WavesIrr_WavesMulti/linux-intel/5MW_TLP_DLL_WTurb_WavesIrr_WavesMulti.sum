@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 09-Dec-2020 at 14:21:42 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Predictions were generated on 28-Jan-2021 at 17:05:41 using OpenFAST, compiled as a 64-bit application using double precision at commit v1.0.0-1800-g1082ba16
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -13,7 +13,7 @@ Predictions were generated on 09-Dec-2020 at 14:21:42 using OpenFAST, compiled a
     HydroDyn
     SubDyn (unknown version, unknown date) [not called]
     ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP++ (<1.20.10>, <Dec-09-2020>)
+    MAP++ (<1.20.10>, <Jan-28-2021>)
     FEAMooring (unknown version, unknown date) [not called]
     MoorDyn (unknown version, unknown date) [not called]
     OrcaFlexInterface (unknown version, unknown date) [not called]
@@ -143,42 +143,42 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn to HydroDyn:     1
       93  HydroMxi              (N-m)                 HydroDyn
       94  HydroMyi              (N-m)                 HydroDyn
       95  HydroMzi              (N-m)                 HydroDyn
-      96  WRPSurge              (m)                   HydroDyn
-      97  WRPSway               (m)                   HydroDyn
-      98  WRPHeave              (m)                   HydroDyn
-      99  WRPRoll               (rad)                 HydroDyn
-     100  WRPPitch              (rad)                 HydroDyn
-     101  WRPYaw                (rad)                 HydroDyn
-     102  WRPTVxi               (m/s)                 HydroDyn
-     103  WRPTVyi               (m/s)                 HydroDyn
-     104  WRPTVzi               (m/s)                 HydroDyn
-     105  WRPRVxi               (rad/s)               HydroDyn
-     106  WRPRVyi               (rad/s)               HydroDyn
-     107  WRPRVzi               (rad/s)               HydroDyn
-     108  WRPTAxi               (m/s^2)               HydroDyn
-     109  WRPTAyi               (m/s^2)               HydroDyn
-     110  WRPTAzi               (m/s^2)               HydroDyn
-     111  WRPRAxi               (rad/s^2)             HydroDyn
-     112  WRPRAyi               (rad/s^2)             HydroDyn
-     113  WRPRAzi               (rad/s^2)             HydroDyn
-     114  WavesFxi              (N)                   HydroDyn
-     115  WavesFyi              (N)                   HydroDyn
-     116  WavesFzi              (N)                   HydroDyn
-     117  WavesMxi              (N-m)                 HydroDyn
-     118  WavesMyi              (N-m)                 HydroDyn
-     119  WavesMzi              (N-m)                 HydroDyn
-     120  HdrStcFxi             (N)                   HydroDyn
-     121  HdrStcFyi             (N)                   HydroDyn
-     122  HdrStcFzi             (N)                   HydroDyn
-     123  HdrStcMxi             (N-m)                 HydroDyn
-     124  HdrStcMyi             (N-m)                 HydroDyn
-     125  HdrStcMzi             (N-m)                 HydroDyn
-     126  RdtnFxi               (N)                   HydroDyn
-     127  RdtnFyi               (N)                   HydroDyn
-     128  RdtnFzi               (N)                   HydroDyn
-     129  RdtnMxi               (N-m)                 HydroDyn
-     130  RdtnMyi               (N-m)                 HydroDyn
-     131  RdtnMzi               (N-m)                 HydroDyn
+      96  B1Surge               (m)                   HydroDyn
+      97  B1Sway                (m)                   HydroDyn
+      98  B1Heave               (m)                   HydroDyn
+      99  B1Roll                (rad)                 HydroDyn
+     100  B1Pitch               (rad)                 HydroDyn
+     101  B1Yaw                 (rad)                 HydroDyn
+     102  B1TVxi                (m/s)                 HydroDyn
+     103  B1TVyi                (m/s)                 HydroDyn
+     104  B1TVzi                (m/s)                 HydroDyn
+     105  B1RVxi                (rad/s)               HydroDyn
+     106  B1RVyi                (rad/s)               HydroDyn
+     107  B1RVzi                (rad/s)               HydroDyn
+     108  B1TAxi                (m/s^2)               HydroDyn
+     109  B1TAyi                (m/s^2)               HydroDyn
+     110  B1TAzi                (m/s^2)               HydroDyn
+     111  B1RAxi                (rad/s^2)             HydroDyn
+     112  B1RAyi                (rad/s^2)             HydroDyn
+     113  B1RAzi                (rad/s^2)             HydroDyn
+     114  B1WvsFxi              (N)                   HydroDyn
+     115  B1WvsFyi              (N)                   HydroDyn
+     116  B1WvsFzi              (N)                   HydroDyn
+     117  B1WvsMxi              (N-m)                 HydroDyn
+     118  B1WvsMyi              (N-m)                 HydroDyn
+     119  B1WvsMzi              (N-m)                 HydroDyn
+     120  B1HDSFxi              (N)                   HydroDyn
+     121  B1HDSFyi              (N)                   HydroDyn
+     122  B1HDSFzi              (N)                   HydroDyn
+     123  B1HDSMxi              (N-m)                 HydroDyn
+     124  B1HDSMyi              (N-m)                 HydroDyn
+     125  B1HDSMzi              (N-m)                 HydroDyn
+     126  B1RdtFxi              (N)                   HydroDyn
+     127  B1RdtFyi              (N)                   HydroDyn
+     128  B1RdtFzi              (N)                   HydroDyn
+     129  B1RdtMxi              (N-m)                 HydroDyn
+     130  B1RdtMyi              (N-m)                 HydroDyn
+     131  B1RdtMzi              (N-m)                 HydroDyn
      132  T[1]                  [N]                   MAP++
      133  T_a[1]                [N]                   MAP++
      134  T[2]                  [N]                   MAP++
