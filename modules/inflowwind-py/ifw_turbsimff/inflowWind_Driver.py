@@ -31,6 +31,7 @@ import inflowwind_library # this file handles the conversion from python to c-bo
 # Usage: the contents of this string follow the identical syntax to what is described for the inflowWind input file in the user guides and documentation
 # Please modify the string contents based on your specific use case
 # Please note that the length of each "row" MUST be EXACTLY 179 characters, or else Fortran will break
+#FIXME: slurp this from file and remove limitation of characters per line
 ifw_input_string_array = [
     '*------ InflowWind v3.01.* INPUT FILE -------------------------------------------------------------------------                                                                    ' + \
     '*Steady 15 m/s winds with no shear for IEA 15 MW Offshore Reference Turbine                                                                                                        ' + \
@@ -89,6 +90,7 @@ ifw_input_string_array = [
     '---------------------------------------------------------------------------------------                                                                                            '
 ]
 # Because this string is being passed as a pointer, it is necessary to know how long the memory block is for this variable --> this is passed to Fortran
+#FIXME: pick this up from the file that is slurped in
 ifw_input_string_length = 55
 
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -97,6 +99,7 @@ ifw_input_string_length = 55
 # Usage: Please modify the string contents based on your specific use case. Syntax follows user guides and documentation. Must have as input.
 # Please note that the length of each "row" MUST be EXACTLY 179 characters, or else Fortran will break
 # If it is needed
+#FIXME: similarly slurp this from a file
 ifw_uniform_string_array = [ 
     '! OpenFAST InflowWind uniform wind input file for 15 m/s wind.                                                                                                                     ' + \
     '! Time Wind  Wind  Vert. Horiz. Vert. LinV  Gust   Upflow                                                                                                                          ' + \
@@ -117,9 +120,11 @@ ifw_uniform_string_length = 7 # same reason as above
 
 # Call the InflowWind API
 # User must modify this path to point to the shared library
+#FIXME: generalize the path for cross platform
 library_path = "/home/nmendoza/Projects/CCT2/OpenFAST/build_test/modules/inflowwind/libifw_c_lib.so"
 ifwlib = inflowwind_library.InflowWindLibAPI(library_path)
 
+#FIXME: can we generalize this to use the same driver input file?  if not, can we make an input file for this?
 # Time inputs - user adjusts as needed/desired
 t_start             = 0                  # initial time
 ifwlib.dt           = 0.1                # time interval that it's being called at, not usedby IFW, only here for consistency with other modules
@@ -147,9 +152,11 @@ velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3
 # SUBROUTINE CALLS ========================================================================================================
 
 # IFW_INIT: Only need to call ifw_init once
+#FIXME: is the error handling sufficient here?
 ifwlib.ifw_init(ifw_input_string_array, ifw_input_string_length, ifw_uniform_string_array, ifw_uniform_string_length)  
 outputChannelValues = np.zeros(ifwlib._numChannels.value)
 
+#FIXME: is the error handling sufficient here?
 # IFW_CALCOUTPUT: Loop over ifw_calcOutput as many times as needed/desired by user
 idx = 0
 for t in time:
@@ -161,6 +168,7 @@ for t in time:
     idx = idx + 1
 
 # IFW_END: Only need to call ifw_end once
+#FIXME: if error handling results in serious error, do we need to call this next or should that be in the library?
 ifwlib.ifw_end()
 
 print("We have successfully run inflowWind!")
