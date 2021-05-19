@@ -29,7 +29,7 @@ import inflowwind_library # this file handles the conversion from python to c-bo
 
 # Files for testing IO
 primaryFile="ifw_primary.inp"           # primary IfW input file to read and pass
-uniformFile="UniformWindInput.dat"      # Uniform wind input file to read
+uniformFile="UniformWindInput.inp"      # Uniform wind input file to read
 positionFile="Points.inp"               # Nx3 position info
 velocityFile="Points.Velocity.dat"      # Resulting output file
 
