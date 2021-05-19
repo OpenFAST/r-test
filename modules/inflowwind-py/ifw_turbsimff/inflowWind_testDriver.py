@@ -54,7 +54,7 @@ ifw_input_string_array = [
     '        150   RefHt_Uni      - Reference height for horizontal wind speed                (m)', \
     '     125.88   RefLength      - Reference length for linear horizontal and vertical sheer (-)', \
     '================== Parameters for Binary TurbSim Full-Field files   [used only for WindType = 3] ==============', \
-    '"./FF_Wind_37x51_ETM_600s_16p0V0_S4.bts"      filename_bts   - name of the full field wind file to use (.bts)', \
+    '"../../../glue-codes/openfast/5MW_Baseline/Wind/90m_12mps_twr.bts"      filename_bts   - name of the full field wind file to use (.bts)', \
     '================== Parameters for Binary Bladed-style Full-Field files   [used only for WindType = 4] =========', \
     '"unused"      FilenameRoot   - Rootname of the full-field wind file to use (.wnd, .sum)', \
     'False         TowerFile      - Have tower file (.twr) (flag)', \
@@ -127,44 +127,69 @@ ifwlib.numTimeSteps = len(time)
 # User shall update the positions array for each time step for their application. 
 # Coordinates are N x 3 ([x, y, z]) in the openfast global coordinate system (aka inertial coordinates). 
 positions = np.array([
-    [0.0, 0.0, 150],
-    [0.0, 0.0, 125],
-    [0.0, 0.0, 175],
-    [0.0, 25., 150],
-    [0.0, -25., 150],
-    [0.0, 25., 175],
-    [0.0, -25., 175],
-    [0.0, 25., 125],
-    [0.0, -25., 125]
+    [0.0,  0.0, 50],
+    [0.0,  0.0, 25],
+    [0.0,  0.0, 75],
+    [0.0,  25., 50],
+    [0.0, -25., 50],
+    [0.0,  25., 75],
+    [0.0, -25., 75],
+    [0.0,  25., 25],
+    [0.0, -25., 25]
 ]) 
 ifwlib.numWindPts   = positions.shape[0]              # total number of wind points requesting velocities for at each time step. must be integer
 velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3) - also in openfast global coordinate system
 
 # SUBROUTINE CALLS ========================================================================================================
 
+# NOTE: the error handling here is handled locally since this is the only
+#       driver code.  If InflowWind is incorporated into another code, the
+#       error handling will need to be passed to the main code.  That way the
+#       main code can close other modules as necessary (otherwise you will end
+#       up with memory leaks and a bunch of garbage in the other library
+#       instances).
+
 # IFW_INIT: Only need to call ifw_init once
-#FIXME: is the error handling sufficient here?
-ifwlib.ifw_init(ifw_input_string_array, ifw_uniform_string_array)  
+try:
+    ifwlib.ifw_init(ifw_input_string_array, ifw_uniform_string_array)
+except Exception as e:
+    print("{}".format(e))
+    exit(1)
+
 outputChannelValues = np.zeros(ifwlib._numChannels.value)
 
-#FIXME: is the error handling sufficient here?
 # IFW_CALCOUTPUT: Loop over ifw_calcOutput as many times as needed/desired by user
 idx = 0
 for t in time:
-    ifwlib.ifw_calcOutput(t, positions, velocities, outputChannelValues)
+    try:
+        ifwlib.ifw_calcOutput(t, positions, velocities, outputChannelValues)
+    except Exception as e:
+        print("{}".format(e))
+        exit(1)
+    
     # velocities is the desired output from inflowWind that the user will need to store somewhere
     # Store the channel outputs
     ifwlib._channel_output_array = outputChannelValues
     ifwlib._channel_output_values[idx,:] = ifwlib._channel_output_array
     idx = idx + 1
 
-# IFW_END: Only need to call ifw_end once
-#FIXME: if error handling results in serious error, do we need to call this next or should that be in the library?
-ifwlib.ifw_end()
+# IFW_END: Only need to call ifw_end once.
+#   NOTE:   in the event of an error during the above Init or CalcOutput calls,
+#           the IfW_End routine will be called during that error handling.
+#           This works for IfW, but may not be a desirable way to handle
+#           errors in other codes (we may still want to retrieve some info
+#           from memory before clearing out everything).
+#   NOTE:   Error handling from the ifw_end call may not be entirely necessary,
+#           but we may want to know if some memory was not released properly or
+#           a file not closed correctly.
+try:
+    ifwlib.ifw_end()
+except Exception as e:
+    print("{}".format(e))
+    exit(1)
 
-print("We have successfully run inflowWind!")
-exit()
 
-# If IFW fails, need to kill driver program
-# if ifwlib.error_status != 0:
-#    return
+
+print("InflowWind completed.")
+exit(0)
+
