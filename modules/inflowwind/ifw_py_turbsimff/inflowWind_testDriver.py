@@ -18,52 +18,148 @@
 #
 #**********************************************************************************************************************************
 #
-# This is the Python driver code for InflowWind
-# Usage: This program gives an example for how the user calls the main subroutines of inflowWind, and thus is specific to the user
+# This is an example of Python driver code for InflowWind
+#
+# Usage: This program gives an example for how the user calls the main
+#        subroutines of inflowWind, and thus is specific to the user
+#
+# Basic alogrithm for using InflowWind python library
+#   1.  initialize python wrapper library
+#           set necessary library values
+#               numWindPts
+#               dt
+#               numTimeSteps
+#           set input file string arrays (from file or script)
+#   2.  initialize InflowWind Fortran library
+#           call ifw_init once to initialize IfW
+#           Handle any resulting errors
+#   3.  timestep iteration
+#           set array of positions to pass
+#           call ifw_calcoutput.  Handle any resulting errors
+#           return the resulting velocities array
+#           aggregate output channnels
+#   4. End
+#         call ifw_end to close the InflowWind library and free memory
+#         handle any resulting errors
+#
+#
 import numpy as np
 import os
 import datetime
 import sys
+
+# path to find the inflowwind_library.py from the local directory
 sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "inflowwind", "python-lib"]))
 import inflowwind_library # this file handles the conversion from python to c-bound types and should not be changed by the user
 
-# Files for testing IO
-primaryFile="ifw_primary.inp"           # primary IfW input file to read and pass
-uniformFile="UniformWindInput.inp"      # Uniform wind input file to read
-positionFile="Points.inp"               # Nx3 position info
-velocityFile="Points.Velocity.dat"      # Resulting output file
-
-
-# Locations to build directory relative to r-test directory
+###############################################################################
+# Locations to build directory relative to r-test directory.  This is specific
+# to the regession testing with openfast and will need to be updated when
+# coupled to other codes or use cases
 if sys.platform == "linux" or sys.platform == "linux2":
     library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.so"])
 elif sys.platform == "darwin":
     library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dylib"])
 elif sys.platform == "win32":
+    # Windows may have this library installed in one of two locations depending
+    # on which build system was used (CMake or VS).
     library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dll"])   # cmake install location 
     if not os.path.isfile(library_path):        # Try VS build location otherwise
         library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "libifw_c_lib.dll"]) # VS build install location
+
+
+###############################################################################
+# For testing, a set of input files is read in.  Everything in these input
+# files could in principle be hard coded into this script.  These are separated
+# out for convenience in testing.
+
+#   Primary input
+#       This is identical to what InflowWind would read from disk if we were
+#       not passing it.  When coupled to other codes, this may be passed
+#       directly from memory (i.e. during optimization with WEIS), or read as a
+#       template and edited in memory for each iteration loop.
+primary_file="ifw_primary.inp"
+
+#   Uniform wind input file
+#       This is identical to what InflowWind would read from disk if we were
+#       not passing it through the interface.  When coupled to other codes,
+#       this may be passed directly from memory (i.e. during optimization with
+#       WEIS), or potentially not even used if turbulent wind inputs are used
+#       instead (which would need to be read from disk).
+uniform_file="UniformWindInput.inp"
+
+#   Positions array
+#       When coupled to another code, an array of positions (N points of
+#       [X,Y,Z] values) would be passed from the structural code.  Since this
+#       driver is standalone, we will read in an array of points that will be
+#       passed through to InflowWind at each timestep.  This is read in from
+#       disk once at the start of this code into the positions array.  When
+#       coupled to other codes, this file would not exist.
+position_file="Points.inp"
+
+#   Velocities array
+#       When coupled into another code, an array of velocities would be
+#       returned corresponding to the positions array passed in.  For testing
+#       purposes, we will write these values to disk.  When coupled to other
+#       codes, this file would not exist.
+velocities_file="Points.Velocity.dat"
+
+
+#===============================================================================
+#   Helper class for handling the regression test output.  This is used only
+#   for the regression testing to mirror the output from the InfowWind Fortran
+#   driver.  This may also have value for debugging the interfacing to IfW.
+
+class RegressionOut():
+    """
+    This is only for testing purposes. Since we are not returning the
+    velocities to anything, we will write them to file as we go for
+    comparison in the regression test.  When coupled to another code, the
+    velocities array would be passed back to the calling code for use in
+    the aerodynamic solver.
+    """
+    def __init__(self,filename):
+        self.OutFile=open(filename,'wt')        # open output file and write header info
+        # write file header
+        t_string=datetime.datetime.now()
+        dt_string=datetime.date.today()
+        self.OutFile.write(f"## This file was generated by InflowWind_Driver on {dt_string.strftime('%b-%d-%Y')} at {t_string.strftime('%H:%M:%S')}\n")
+        self.OutFile.write(f"## This file contains the wind velocity at the {ifwlib.numWindPts} points specified in the file ")
+        self.OutFile.write(f"{filename}\n")
+        self.OutFile.write("#\n")
+        self.OutFile.write("#        T                X                Y                Z                U                V                W\n")
+        self.OutFile.write("#       (s)              (m)              (m)              (m)             (m/s)            (m/s)            (m/s)\n")
+        self.opened = True
+
+    def write(self,t,positions,velocities):
+        for p, v in zip(positions,velocities):
+            self.OutFile.write('  %14.7f   %14.7f   %14.7f   %14.7f   %14.7f   %14.7f   %14.7f\n' % (t,p[0],p[1],p[2],v[0],v[1],v[2]))
+
+    def end(self):
+        if self.opened:
+            self.OutFile.close()
+            self.opened = False
+
 
 #=============================================================================================================================
 #------------------------------------------------------- INPUT FILES ---------------------------------------------------------
 #=============================================================================================================================
 
-# Main inflowWind input file
-# Usage: the contents of this string follow the identical syntax to what is described for the inflowWind input file in the user guides and documentation
-# Please modify the string contents based on your specific use case
-ifw_input_string_array = []
-fh = open(primaryFile, "r")
+#   Main inflowWind input file
+#       For testing, we read in the file from disk and store it in an array of
+#       strings with the line endings stripped off.  This array will be have
+#       the same number of elements as there are lines in the file.
+ifw_input_string_array = []     # instantiate empty array
+fh = open(primary_file, "r")
 for line in fh:
+  # strip line ending and ending white space and add to array of strings
   ifw_input_string_array.append(line.rstrip())
 fh.close()
 
-
-#----------------------------------------------------------------------------------------------------------------------------------
-
-# Uniform wind input file - only needed for WindType = 2
-# Usage: Please modify the string contents based on your specific use case. Syntax follows user guides and documentation. Must have as input.
+#   Uniform wind input file - only needed for WindType = 2
+#       Also for testing, we read this file in from disk before the simulation.
 ifw_uniform_string_array=[]
-fh = open(uniformFile, "r")
+fh = open(uniform_file, "r")
 for line in fh:
   ifw_uniform_string_array.append(line.rstrip())
 fh.close()
@@ -73,41 +169,79 @@ fh.close()
 #----------------------------------------------------- FUNCTION CALLS --------------------------------------------------------
 #=============================================================================================================================
 
+#   Instantiate the ifwlib python object
+#       wrap this in error handling in case the library_path is incorrect
 try:
     ifwlib = inflowwind_library.InflowWindLibAPI(library_path)
 except:
     print(f"Cannot load library at {library_path}")
     exit(1)
 
-
-# Time inputs - user adjusts as needed/desired  -- set to match values in the  modules/inflowwind fortran regression test
+#   Time inputs
+#       For this test case, we are checking between 30 and 30.8 seconds.  The
+#       inflowwind python library interface must be informed about the
+#       following 2 time related information variables
+#           ifwlib.dt           -- the timestep inflowwind is called at.
+#           ifwlib.numTimeSteps -- total number of timesteps, only used to
+#                                  construct arrays to hold the output channel
+#                                  info
 t_start             = 30                 # initial time
 ifwlib.dt           = 0.1                # time interval that it's being called at, not usedby IFW, only here for consistency with other modules
-ifwlib.total_time   = 30.8               # final or total time
-time                = np.arange(t_start,ifwlib.total_time + ifwlib.dt,ifwlib.dt) # total time + increment because python doesnt include endpoint!
-ifwlib.numTimeSteps = len(time)
+final_time          = 30.8               # final time
+time                = np.arange(t_start,final_time + ifwlib.dt,ifwlib.dt) # total time + increment because python doesnt include endpoint!
+ifwlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
-# Initialize arrays
-# User shall update the positions array for each time step for their application. 
-# Coordinates are N x 3 ([x, y, z]) in the openfast global coordinate system (aka inertial coordinates). 
+#   Initialize position array 
+#       For testing, a set of points is read from the position_file and stored
+#       as a N x 3 ([x, y, z]).  These coordinates are in the openfast global
+#       coordinate system (aka inertial coordinates).  In this test case, these
+#       values are read in once at the begining, and held constant at each
+#       timestep call.  These could be hard coded as a smaller set of points
+#       for testing, but this test is designed to match an equivalent fortran
+#       driver test as a way to verify that the coupling from python through
+#       fortran and back is correct.
+#
+#           positions = np.array([  # position array originally used in develop
+#               [0.0,  0.0, 150],
+#               [0.0,  0.0, 125],
+#               [0.0,  0.0, 175],
+#               [0.0,  25., 150],
+#               [0.0, -25., 150],
+#               [0.0,  25., 175],
+#               [0.0, -25., 175],
+#               [0.0,  25., 125],
+#               [0.0, -25., 125]
+#           ])
+#
+#       When coupled to a different code, this array would be passed from the
+#       structural solver with the X,Y,Z points for location the wind velocity
+#       is needed (i.e. nodes on a rotor).  As the simulation progresses, these
+#       positions would change.  However, the number of points that wind data
+#       is requested for must be the same throughout the simulation (in other
+#       words, don't change the size of this array between calls to IfW).
 positions=[]
-fh=open(positionFile, "r")
+fh=open(position_file, "r")
 for line in fh:
     if not line.startswith('#'):
         positions.append([float(i) for i in line.split()])
 positions = np.asarray(positions)
 fh.close()
 
-# check that we read in a Nx3
+#  Check that the array is of the correct shape
 if positions.shape[1] != 3:
     print("Error in parsing the points file.  Does not contain a Nx3 set of position points")
     exit(1)
 
+#  numWindPts
 ifwlib.numWindPts   = positions.shape[0]              # total number of wind points requesting velocities for at each time step. must be integer
+
+#  Matching velocities array for the velocities reported from IfW
 velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3) - also in openfast global coordinate system
 
-# SUBROUTINE CALLS ========================================================================================================
 
+#==============================================================================
+# Basic alogrithm for using InflowWind library
+#
 # NOTE: the error handling here is handled locally since this is the only
 #       driver code.  If InflowWind is incorporated into another code, the
 #       error handling will need to be passed to the main code.  That way the
@@ -119,63 +253,64 @@ velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3
 try:
     ifwlib.ifw_init(ifw_input_string_array, ifw_uniform_string_array)
 except Exception as e:
-    print("{}".format(e))
+    print("{}".format(e))   # Exception is from inflowwind_library.py
     exit(1)
 
+#  Set the array holding the ouput channel values to zeros initially.  Output
+#  channel values will be recorded in this array by the library during the
+#  simulation.
 outputChannelValues = np.zeros(ifwlib._numChannels.value)
 
 
-# open output file
-try:
-    OutFile=open(velocityFile,'wt')
-except:
-    print(f"Could not open results file {velocityFile} for writing")
-    exit(1)
-
-# write file head
-t_string=datetime.datetime.now()
-dt_string=datetime.date.today()
-#.strftime("%b-%d-%Y at %H:%M:%S")
-n = OutFile.write(f"## This file was generated by InflowWind_Driver on {dt_string.strftime('%b-%d-%Y')} at {t_string.strftime('%H:%M:%S')}\n")
-n = OutFile.write(f"## This file contains the wind velocity at the {ifwlib.numWindPts} points specified in the file ")
-n = OutFile.write(f"{positionFile}\n")
-n = OutFile.write("#\n")
-n = OutFile.write("#        T                X                Y                Z                U                V                W\n")
-n = OutFile.write("#       (s)              (m)              (m)              (m)             (m/s)            (m/s)            (m/s)\n")
+#   Open outputfile for regession testing purposes.
+outfile = RegressionOut(velocities_file)
 
 
-# IFW_CALCOUTPUT: Loop over ifw_calcOutput as many times as needed/desired by user
-idx = 0
+#   Timestep iteration
+#       Step through all the timesteps.
+#           1.  set the positions array with node positions from the structural
+#               solver
+#           2.  call Ifw_CalcOutput_C to retreive the corresponding velocities
+#               to pass back to the calling code (or write to disk in this
+#               example).
+#
+idx = 0         # index into array for channel output info
 for t in time:
 
-    # When coupled to another code, set the positions info for this timestep
-    # here.
+    #   When coupled to another code, set the positions info for this timestep
+    #   here in the calling algorithm.  For this regression test example, the
+    #   positions are kept constant throughout the simulation.
 
     try:
         ifwlib.ifw_calcOutput(t, positions, velocities, outputChannelValues)
     except Exception as e:
         print("{}".format(e))
-        OutFile.close()
+        outfile.end()
         exit(1)
     
-    # write the Velocity data out -- this is used in comparisons for validation of the python interface
-    for p, v in zip(positions,velocities):
-        n = OutFile.write('  %14.7f   %14.7f   %14.7f   %14.7f   %14.7f   %14.7f   %14.7f\n' % (t,p[0],p[1],p[2],v[0],v[1],v[2]))
 
-    # When coupled to a different code, this is where the velocity info would
-    # be passed to other things.
+    #   When coupled to a different code, this is where the velocity info would
+    #   be passed to the aerodynamic solver.
+    #
+    #   For this regression test example, we will write this to file (in
+    #   principle this could be aggregated and written out once at the end of
+    #   the regression simulation, but for simplicity we are writting one line
+    #   at a time during the call).  The regression test will have one row for
+    #   each timestep + position array entry.
+    outfile.write(t,positions,velocities)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
-    # file OutList section
+    # file OutList section.  In OpenFAST, these are added to the output
+    # channel array for all modules and written to that output file.
     ifwlib._channel_output_array = outputChannelValues
     ifwlib._channel_output_values[idx,:] = ifwlib._channel_output_array
 
-    # Step to next timestep
-    idx = idx + 1
+
+    idx = idx + 1   # index to next timestep in output channel array
 
 
-OutFile.close()
+outfile.end()   # close the regression test example output file
 
 
 # IFW_END: Only need to call ifw_end once.
