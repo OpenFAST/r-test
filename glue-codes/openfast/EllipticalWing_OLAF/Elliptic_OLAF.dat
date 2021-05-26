@@ -40,6 +40,6 @@ False   TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 1       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, 3: Both, "default": 1} 
 default VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1] 
 0       nGridOut           Number of grid outputs
-GridName    DTOut     XStart    XEnd   nX    YStart   YEnd    nY    ZStart   ZEnd   nZ
-(-)         (s)        (m)      (m)    (-)    (m)     (m)     (-)    (m)     (m)    (-)
+GridName   TStart   TEnd      DTGrid    XStart  XEnd   nX    YStart   YEnd    nY    ZStart   ZEnd   nZ
+(-)         (s)     (s)        (s)        (m)    (m)    (-)    (m)     (m)     (-)    (m)     (m)   (-)
 ===============================================================================================
