@@ -2,6 +2,8 @@ Reproduce the Elliptical wing found in the following reference:
 
     van Garrel - 2003 - ECN-C-03-079, page 29
 
+The wake does not roll-up and extends a long distance downstream (large dt used)
+
 Setup: 
 
     Wind Span: 5.0m
