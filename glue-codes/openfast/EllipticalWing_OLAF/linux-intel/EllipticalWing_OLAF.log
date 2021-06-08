@@ -9,17 +9,18 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-138-g9a6c1967
+ OpenFAST-v2.5.0-1061-g5512f06f
  Compile Info:
   - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
-  64, Version 2021.1.2 Build 20201208_000000
+  64, Version 2021.1 Build 20201112_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 12 2021
-  - Time: 13:31:16
+  - OpenMP: No
+  - Date: Jun 07 2021
+  - Time: 13:10:12
  Execution Info:
-  - Date: 01/12/2021
-  - Time: 14:16:43-0600
+  - Date: 06/07/2021
+  - Time: 14:14:17-0500
 
  OpenFAST input file heading:
      Elliptical wing test case for OLAF free vortex wake in AD15
@@ -27,45 +28,39 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
  Running FVW.
-  - Directory:         /home/rmudafor/openfast_intelrtest/reg_tests
+  - Directory:         /home/raf/Development/openfast/build/reg_tests
   - RootName:
-  ../build/reg_tests/glue-codes/openfast/EllipticalWing_OLAF/EllipticalWing_OLAF.
+  /home/raf/Development/openfast/build/reg_tests/glue-codes/openfast/EllipticalWing_OLAF/Elliptical
+  Wing_OLAF.
   - No OpenMP support
+  - Regularization parameters:
+    BladeReg (min/max):   0.0010  0.0010
+    WakeReg (min/max) :   0.0010  0.0010
+    k = alpha delta nu:   0.0018
  Running InflowWind.
 
  FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
  files. Assuming upflow is 0.
 
-  Time: 0 of 1000 seconds.
+  Time: 0 of 500 seconds.
 +                                                                                                  
-+ Time: 100 of 1000 seconds.  Estimated final completion at 14:16:47.
++ Time: 100 of 500 seconds.  Estimated final completion at 14:14:18.
 +                                                                                                  
-+ Time: 200 of 1000 seconds.  Estimated final completion at 14:16:44.
++ Time: 200 of 500 seconds.  Estimated final completion at 14:14:18.
 +                                                                                                  
-+ Time: 300 of 1000 seconds.  Estimated final completion at 14:16:44.
++ Time: 300 of 500 seconds.  Estimated final completion at 14:14:18.
 +                                                                                                  
-+ Time: 400 of 1000 seconds.  Estimated final completion at 14:16:44.
++ Time: 400 of 500 seconds.  Estimated final completion at 14:14:18.
 +                                                                                                  
-+ Time: 500 of 1000 seconds.  Estimated final completion at 14:16:44.
-+                                                                                                  
-+ Time: 600 of 1000 seconds.  Estimated final completion at 14:16:44.
-+                                                                                                  
-+ Time: 700 of 1000 seconds.  Estimated final completion at 14:16:44.
-+                                                                                                  
-+ Time: 800 of 1000 seconds.  Estimated final completion at 14:16:44.
-+                                                                                                  
-+ Time: 900 of 1000 seconds.  Estimated final completion at 14:16:44.
-+                                                                                                  
-+ Time: 1000 of 1000 seconds.  Estimated final completion at 14:16:44.
++ Time: 500 of 500 seconds.  Estimated final completion at 14:14:18.
 +                                                                                                  
 
-  Total Real Time:       0.69 seconds
-  Total CPU Time:        0.6875 seconds
-  Simulation CPU Time:   0.5625 seconds
-  Simulated Time:        1000 seconds
-  Time Ratio (Sim/CPU):  1777.8
+  Total Real Time:       6.10000E-02 seconds
+  Total CPU Time:        6.18580E-02 seconds
+  Simulation CPU Time:   4.46600E-02 seconds
+  Simulated Time:        500 seconds
+  Time Ratio (Sim/CPU):  11196
 
   OpenFAST terminated normally.
 
