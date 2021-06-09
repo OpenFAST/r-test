@@ -62,9 +62,18 @@ elif sys.platform == "darwin":
 elif sys.platform == "win32":
     # Windows may have this library installed in one of two locations depending
     # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dll"])   # cmake install location 
-    if not os.path.isfile(library_path):        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "libifw_c_lib.dll"]) # VS build install location
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dll"])   # cmake install location
+    if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "InflowWind_c_lib_Win32.dll"]) # VS build install location
+        if not os.path.isfile(library_path):
+            print(f"Python is 32 bit and cannot find 32 bit InflowWind DLL expected at: {library_path}")
+            exit(1)
+    if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "InflowWind_c_lib_x64.dll"]) # VS build install location
+        if not os.path.isfile(library_path):
+            print(f"Python is 64 bit and cannot find 64 bit InflowWind DLL expected at: {library_path}")
+            exit(1)
+
 
 
 ###############################################################################
@@ -142,7 +151,8 @@ fh.close()
 #       wrap this in error handling in case the library_path is incorrect
 try:
     ifwlib = inflowwind_library.InflowWindLib(library_path)
-except:
+except Exception as e:
+    print("{}".format(e))
     print(f"Cannot load library at {library_path}")
     exit(1)
 
