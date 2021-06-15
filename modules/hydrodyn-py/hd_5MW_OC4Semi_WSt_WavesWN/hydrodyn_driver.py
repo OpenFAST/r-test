@@ -147,7 +147,6 @@ time                = np.arange(t_start,final_time + hdlib.dt,hdlib.dt) # total 
 hdlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
 
-
 #==============================================================================
 # Basic alogrithm for using HydroDyn library
 #
@@ -158,7 +157,11 @@ hdlib.numTimeSteps = len(time)          # only for constructing array of output 
 #       up with memory leaks and a bunch of garbage in the other library
 #       instances).
 
-
+# Set number of nodes and initial position
+#       positiion is an N x 6 array [x,y,z,Rx,Ry,Rz]
+#       -- see note in library interface about Euler angle rotations (Rx,Ry,Rz)
+hdlib.numNodes = 1
+hdlib.initNodePos = np.zeros((hdlib.numNodePts,6))
 
 # HydroDyn_Init: Only need to call hydrodyn_init once
 try:
@@ -183,9 +186,15 @@ except Exception as e:
 outputChannelValues = np.zeros(hdlib.numChannels)
 allOutputChannelValues = np.zeros( (hdlib.numTimeSteps,hdlib.numChannels+1) )
 
+#  Setup the arrays for motion and resulting forces/moments - C index order
+nodePos     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]
+nodeVel     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_dot  -- first  deriv (velocities)
+nodeAcc     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_ddot -- second deriv (accelerations)
+nodeFrcMom  = np.zeros((hdlib.numNodePts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
+
 
 #   Open outputfile for regession testing purposes.
-dbg_outfile = hydrodyn_library.DriverDbg(debugout_file)
+dbg_outfile = hydrodyn_library.DriverDbg(debugout_file,hdlib.numNodePts)
 
 
 #   Timestep iteration
@@ -198,19 +207,19 @@ dbg_outfile = hydrodyn_library.DriverDbg(debugout_file)
 #
 for i in range( 0, len(time)):
 
+    print(f"iter: {i}: {time[i]}")
+
     #   When coupled to another code, set the motion info for this timestep
     #   here in the calling algorithm.
 
     try:
-        hdlib.hydrodyn_calcOutput(time[i], outputChannelValues)
+        hdlib.hydrodyn_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
+                nodeFrcMom, outputChannelValues)
     except Exception as e:
         print("{}".format(e))
         dbg_outfile.end()
         exit(1)
  
-    #try:
-    #    hdlib.hydrodyn_updateStates(time[i], outputChannelValues)
-
     #   When coupled to a different code, this is where the Force/Moment info
     #   would be passed to the aerodynamic solver.
     #
@@ -219,7 +228,7 @@ for i in range( 0, len(time)):
     #   the regression simulation, but for simplicity we are writting one line
     #   at a time during the call).  The regression test will have one row for
     #   each timestep + position array entry.
-#    dbg_outfile.write(time[i],positions,velocities)
+    dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
@@ -228,6 +237,10 @@ for i in range( 0, len(time)):
     # example we will write to file at the end of the simulation in a single
     # shot.
     allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
+
+    #   Update the states from t to t+dt
+    #try:
+    #    hdlib.hydrodyn_updateStates(time[i], outputChannelValues)
 
 
 dbg_outfile.end()   # close the debug output file
