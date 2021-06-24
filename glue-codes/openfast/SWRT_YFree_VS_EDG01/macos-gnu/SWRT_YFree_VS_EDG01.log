@@ -2,23 +2,23 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-50-g416ff436
+ OpenFAST-v2.5.0-607-g1dd8e752
  Compile Info:
-  - Compiler: GCC version 7.4.0
+  - Compiler: GCC version 10.2.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Nov  6 2020
-  - Time: 12:35:02
+  - Date: Mar  4 2021
+  - Time: 11:41:08
  Execution Info:
-  - Date: 11/06/2020
-  - Time: 12:35:37-0700
+  - Date: 03/04/2021
+  - Time: 11:58:06-0700
 
  OpenFAST input file heading:
      FAST Certification Test #15: SWRT 3-bladed upwind turbine with many DOFs, variable speed
@@ -27,44 +27,36 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
  Running InflowWind.
  Running ServoDyn.
+
+ FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
+ files. Assuming upflow is 0.
+
   Time: 0 of 20 seconds.
 
   Using variable speed generator option.
     RPM and Torque (Nm) for SWRT rotor mod by CH Aug 9, 2004 with new test data.  See Config B
     Torque vs RPM.xls
 
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.856 deg). (node 1,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (60.194 deg). (node 1,
- blade 3)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (52.567 deg). (node 2,
- blade 3)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.078 deg). (node 1,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.038 deg). (node 2,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.197 deg). (node 2,
- blade 1)
-                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 12:39:32.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 12:39:51.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 12:39:57.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 12:41:30.                                                                                                                                     Time: 5 of 20 seconds.  Estimated final completion at 12:43:19.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 12:42:05.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 12:41:24.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 12:41:23.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 12:41:16.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 12:41:16.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 12:41:43.                                  Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.032 deg). (node 3,
- blade 2)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.089 deg). (node 3,
- blade 1)
- Warning: Turning off Unsteady Aerodynamics due to high angle of attack (45.099 deg). (node 3,
- blade 3)
-                                                                                                   Time: 12 of 20 seconds.  Estimated final completion at 12:41:38.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 12:42:19.                                 
+
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 1,
+ blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
+ low relative velocity. This warning will not be repeated though the condition may persist.
+
+                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 12:02:30.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 12:02:41.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 12:03:17.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 12:03:13.                                                                                                                                     Time: 5 of 20 seconds.  Estimated final completion at 12:03:04.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 12:02:36.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 12:02:49.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 12:02:43.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 12:02:42.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 12:02:34.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 12:02:34.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 12:02:39.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 12:02:39.                                 
  FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 17,
  blade 1):UA_CalcOutput:Mach number exceeds 0.3. Theory is invalid. This warning will not be
  repeated though the condition may persist.
 
-                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 12:41:45.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 12:41:53.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 12:41:52.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 12:41:55.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 12:41:48.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 12:42:19.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 12:42:27.                                                                                                                                   
-  Total Real Time:       6.8154 minutes
-  Total CPU Time:        5.4809 minutes
-  Simulation CPU Time:   5.4804 minutes
+                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 12:02:39.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 12:02:37.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 12:02:36.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 12:02:40.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 12:02:41.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 12:02:43.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 12:02:41.                                                                                                                                   
+  Total Real Time:       4.5788 minutes
+  Total CPU Time:        4.4541 minutes
+  Simulation CPU Time:   4.4533 minutes
   Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  6.08232E-02
+  Time Ratio (Sim/CPU):  7.48509E-02
 
   OpenFAST terminated normally.
 
