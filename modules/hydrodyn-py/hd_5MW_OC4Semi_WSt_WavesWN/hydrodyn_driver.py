@@ -105,6 +105,9 @@ debugout_file="DbgOutputs.out"
 #       the simulation.
 output_file="hd_py.out"
 
+#   For checking if our library is correctly handling correction steps, set
+#   this to > 0
+NumCorrections=2
 
 #   Input Files
 #===============================================================================
@@ -140,10 +143,10 @@ except Exception as e:
 #           hdlib.numTimeSteps -- total number of timesteps, only used to
 #                                  construct arrays to hold the output channel
 #                                  info
-t_start             = 30                 # initial time
+hdlib.t_start       = 30                 # initial time
 hdlib.dt            = 0.0125             # time interval that it's being called at
 final_time          = 30.1               # final time
-time                = np.arange(t_start,final_time + hdlib.dt,hdlib.dt) # total time + increment because python doesnt include endpoint!
+time                = np.arange(hdlib.t_start,final_time + hdlib.dt,hdlib.dt) # total time + increment because python doesnt include endpoint!
 hdlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
 
@@ -197,38 +200,79 @@ nodeFrcMom  = np.zeros((hdlib.numNodePts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resul
 dbg_outfile = hydrodyn_library.DriverDbg(debugout_file,hdlib.numNodePts)
 
 
-#   Timestep iteration
-#       Step through all the timesteps.
-#           1.  set the positions array with node positions from the structural
-#               solver
-#           2.  call Ifw_CalcOutput_C to retreive the corresponding velocities
-#               to pass back to the calling code (or write to disk in this
-#               example).
-#
-for i in range( 0, len(time)):
-
-    print(f"iter: {i}: {time[i]}")
-
-    #   When coupled to another code, set the motion info for this timestep
-    #   here in the calling algorithm.
-
-    try:
-        hdlib.hydrodyn_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
-                nodeFrcMom, outputChannelValues)
-    except Exception as e:
-        print("{}".format(e))
-        dbg_outfile.end()
-        exit(1)
+# Calculate outputs for t_initial
+i=0
+try:
+    hdlib.hydrodyn_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
+            nodeFrcMom, outputChannelValues)
+except Exception as e:
+    print("{}".format(e))
+    dbg_outfile.end()
+    exit(1)
  
-    #   When coupled to a different code, this is where the Force/Moment info
-    #   would be passed to the aerodynamic solver.
-    #
-    #   For this regression test example, we will write this to file (in
-    #   principle this could be aggregated and written out once at the end of
-    #   the regression simulation, but for simplicity we are writting one line
-    #   at a time during the call).  The regression test will have one row for
-    #   each timestep + position array entry.
-    dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
+# Write the debug output at t=t_initial
+dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
+# Save the output at t=t_initial
+allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
+
+
+#   Timestep iteration
+#       Correction loop:
+#           1.  Set inputs at t+dt using either extrapolated values (or
+#               corrected values if in a correction step) from the structural
+#               solver
+#           2.  Call UpdateStates to propogate states from t -> t+dt
+#           3.  call Ifw_CalcOutput_C to get the resulting forces at t+dt using
+#               the updated state information for t+dt.  These would be passed
+#               back to the structural solver at each step of the correction
+#               loop so that it can be used to tune the states of other modules
+#               (structural solver etc).
+#       End correction loop:
+#           4.  Once correction loop is complete, save the resulting values
+#
+#   time[i]   is at t
+#   time[i+1] is at t+dt
+for i in range( 0, len(time)-1):
+
+    #print(f"iter: {i}: {time[i]}")
+
+    for correction in range(0, NumCorrections+1):
+
+        #print(f"Correction step: {correction} for {time[i]} --> {time[i+1]}")
+
+        # If there are correction steps, the inputs would be updated using outputs
+        # from the other modules.
+
+        #   Update the states from t to t+dt (only if not beyond end of sim)
+        try:
+            hdlib.hydrodyn_updateStates(time[i], time[i+1], nodePos, nodeVel,
+                    nodeAcc, nodeFrcMom)
+        except Exception as e:
+            print("{}".format(e))
+            dbg_outfile.end()
+            exit(1)
+ 
+        # Calculate the outputs at t+dt
+        #       NOTE: new input values may be available at this point from the
+        #       structural solver, so update them here.
+        try:
+            hdlib.hydrodyn_calcOutput(time[i+1], nodePos, nodeVel, nodeAcc, 
+                    nodeFrcMom, outputChannelValues)
+        except Exception as e:
+            print("{}".format(e))
+            dbg_outfile.end()
+            exit(1)
+
+ 
+        #   When coupled to a different code, this is where the Force/Moment info
+        #   would be passed to the aerodynamic solver.
+        #
+        #   For this regression test example, we will write this to file (in
+        #   principle this could be aggregated and written out once at the end of
+        #   the regression simulation, but for simplicity we are writting one line
+        #   at a time during the call).  The regression test will have one row for
+        #   each timestep + position array entry.
+        dbg_outfile.write(time[i+1],nodePos,nodeVel,nodeAcc,nodeFrcMom)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
@@ -236,11 +280,7 @@ for i in range( 0, len(time)):
     # channel array for all modules and written to that output file.  For this
     # example we will write to file at the end of the simulation in a single
     # shot.
-    allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
-
-    #   Update the states from t to t+dt
-    #try:
-    #    hdlib.hydrodyn_updateStates(time[i], outputChannelValues)
+    allOutputChannelValues[i+1,:] = np.append(time[i+1],outputChannelValues)
 
 
 dbg_outfile.end()   # close the debug output file
@@ -269,6 +309,6 @@ OutFile.end()
 
 
 
-print("HydroDyn successful.")
+#print("HydroDyn successful.")
 exit()
 
