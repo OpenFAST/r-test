@@ -9,17 +9,18 @@ This program is licensed under Apache License Version 2.0 and comes with ABSOLUT
 See the "LICENSE" file distributed with this software for details.
 **************************************************************************************************
 
-OpenFAST-v2.4.0-137-gb5d9a13c
+OpenFAST-v2.5.0-1060-g479683ed
 Compile Info:
  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
  64, Version 2021.1 Build 20201112_000000
  - Architecture: 64 bit
  - Precision: double
- - Date: Jan 11 2021
- - Time: 20:21:29
+ - OpenMP: No
+ - Date: Jun 07 2021
+ - Time: 10:49:58
 Execution Info:
- - Date: 01/11/2021
- - Time: 21:07:21-0600
+ - Date: 06/07/2021
+ - Time: 12:53:54-0500
 
 OpenFAST input file heading:
     Elliptical wing test case for OLAF free vortex wake in AD15
@@ -27,25 +28,22 @@ OpenFAST input file heading:
 Running ElastoDyn.
 Nodal outputs section of ElastoDyn input file not found or improperly formatted.
 Running AeroDyn.
-Nodal output section of AeroDyn input file not found or improperly formatted.
 Running FVW.
  - Directory:         C:\Users\rmudafor\Desktop\openfast\build\reg_tests
  - RootName:
  C:\Users\rmudafor\Desktop\openfast\build\reg_tests\glue-codes\openfast\EllipticalWing_OLAF\Ellipt
  icalWing_OLAF.
  - No OpenMP support
+ - Regularization parameters:
+    BladeReg (min/max):   0.0010  0.0010
+    WakeReg (min/max) :   0.0010  0.0010
+    k = alpha delta nu:   0.0018
 Running InflowWind.
 
 FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
 files. Assuming upflow is 0.
 
- Time: 0 of 1000 seconds.                                                                                                   Time: 100 of 1000 seconds.  Estimated final completion at 21:07:25.                                                                                                   Time: 200 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 300 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 400 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 500 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 600 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 700 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 800 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 900 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                   Time: 1000 of 1000 seconds.  Estimated final completion at 21:07:22.                                                                                                  
-
- Total Real Time:       0.671 seconds
- Total CPU Time:        0.67188 seconds
- Simulation CPU Time:   0.5625 seconds
- Simulated Time:        1000 seconds
- Time Ratio (Sim/CPU):  1777.8
+ Time: 0 of 500 seconds.                                                                                                   Time: 100 of 500 seconds.  Estimated final completion at 12:53:55.                                                                                                   Time: 200 of 500 seconds.  Estimated final completion at 12:53:55.                                                                                                   Time: 300 of 500 seconds.  Estimated final completion at 12:53:55.                                                                                                   Time: 400 of 500 seconds.  Estimated final completion at 12:53:55.                                                                                                   Time: 500 of 500 seconds.  Estimated final completion at 12:53:55.
 
  OpenFAST terminated normally.
 

@@ -3,7 +3,7 @@ Elliptical wing test case for OLAF free vortex wake in AD15
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-       1000   TMax            - Total run time (s)
+        500   TMax            - Total run time (s)
         100   DT              - Recommended module time step (s)
           1   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
