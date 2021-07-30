@@ -107,7 +107,7 @@ output_file="hd_py.out"
 
 #   For checking if our library is correctly handling correction steps, set
 #   this to > 0
-NumCorrections=2
+NumCorrections=0
 
 #   Input Files
 #===============================================================================
@@ -123,6 +123,9 @@ for line in fh:
   hd_input_string_array.append(line.rstrip())
 fh.close()
 
+#   Time-series file
+#       Read in the time series file of motions.
+hd_timeseries = np.genfromtxt('OpenFAST_DisplacementTimeseries.dat', delimiter=",")
 
 #===============================================================================
 #   HydroDyn python interface initialization 
@@ -143,9 +146,15 @@ except Exception as e:
 #           hdlib.numTimeSteps -- total number of timesteps, only used to
 #                                  construct arrays to hold the output channel
 #                                  info
-hdlib.t_start       = 30                 # initial time
+hdlib.InterpOrder   = 1                  # order of the interpolation
+hdlib.t_start       = 0                  # initial time
 hdlib.dt            = 0.0125             # time interval that it's being called at
-final_time          = 30.1               # final time
+final_time          = 60                 # final time
+hdlib.gravity       = 9.80665  # Gravity (m/s^2)
+hdlib.defWtrDens    = 1025.0   # Water density (kg/m^3)
+hdlib.defWtrDpth    = 200.0    # Water depth (m)
+hdlib.defMSL2SWL    = 0.0      # Offset between still-water level and mean sea level (m) [positive upward]
+
 time                = np.arange(hdlib.t_start,final_time + hdlib.dt,hdlib.dt) # total time + increment because python doesnt include endpoint!
 hdlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
@@ -202,6 +211,9 @@ dbg_outfile = hydrodyn_library.DriverDbg(debugout_file,hdlib.numNodePts)
 
 # Calculate outputs for t_initial
 i=0
+nodePos[0,0:6] = hd_timeseries[i, 1: 7]     # note: python slicing stops at element before last index in range (different than fortran wich is inclusive)
+nodeVel[0,0:6] = hd_timeseries[i, 7:13]
+nodeAcc[0,0:6] = hd_timeseries[i,13:19]
 try:
     hdlib.hydrodyn_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
             nodeFrcMom, outputChannelValues)
@@ -242,6 +254,9 @@ for i in range( 0, len(time)-1):
 
         # If there are correction steps, the inputs would be updated using outputs
         # from the other modules.
+        nodePos[0,0:6] = hd_timeseries[i+1, 1: 7]
+        nodeVel[0,0:6] = hd_timeseries[i+1, 7:13]
+        nodeAcc[0,0:6] = hd_timeseries[i+1,13:19]
 
         #   Update the states from t to t+dt (only if not beyond end of sim)
         try:
@@ -255,6 +270,10 @@ for i in range( 0, len(time)-1):
         # Calculate the outputs at t+dt
         #       NOTE: new input values may be available at this point from the
         #       structural solver, so update them here.
+        nodePos[0,0:6] = hd_timeseries[i+1, 1: 7]
+        nodeVel[0,0:6] = hd_timeseries[i+1, 7:13]
+        nodeAcc[0,0:6] = hd_timeseries[i+1,13:19]
+
         try:
             hdlib.hydrodyn_calcOutput(time[i+1], nodePos, nodeVel, nodeAcc, 
                     nodeFrcMom, outputChannelValues)
