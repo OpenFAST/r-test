@@ -3,7 +3,7 @@ Vertical axis driver input file, model courtesy of Brian Polagye, Gregory Talpey
 ----- Input Configuration ---------------------------------------------------------------
 False           Echo         - Echo input parameters to "<rootname>.ech"?
         1       AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
-        1.06    TMax        - Total run time [used only when AnalysisType/=3] (s)
+        0.37    TMax        - Total run time [used only when AnalysisType/=3] (s)
         0.01    DT           - Simulation time step [used only when AnalysisType/=3] (s)
 "AD.dat"        AeroFile     - Name of the primary AeroDyn input file
 ----- Inflow Data -----------------------------------------------------------------------
