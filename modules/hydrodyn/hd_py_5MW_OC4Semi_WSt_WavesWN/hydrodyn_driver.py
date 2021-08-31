@@ -146,7 +146,7 @@ except Exception as e:
 #           hdlib.numTimeSteps -- total number of timesteps, only used to
 #                                  construct arrays to hold the output channel
 #                                  info
-hdlib.InterpOrder   = 1                  # order of the interpolation
+hdlib.InterpOrder   = 2                  # order of the interpolation
 hdlib.t_start       = 0                  # initial time
 hdlib.dt            = 0.0125             # time interval that it's being called at
 final_time          = 60                 # final time
