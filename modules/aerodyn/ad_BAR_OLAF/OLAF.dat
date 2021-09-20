@@ -35,12 +35,12 @@ True    TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 1       PartPerSegment     Number of particles per segment [only if VelocityMethod=2]
 ===============================================================================================
 --------------------------- OUTPUT OPTIONS  ---------------------------------------------------
-0       WrVTk              Outputs Visualization Toolkit (VTK) (independent of .fst option) {0: NoVTK, 1: Write VTK at VTK_fps, 2: Write VTK at init and final} (flag)
+2       WrVTk              Outputs Visualization Toolkit (VTK) (independent of .fst option) {0: NoVTK, 1: Write VTK at VTK_fps, 2: Write VTK at init and final} (flag)
 1       nVTKBlades         Number of blades for which VTK files are exported {0: No VTK per blade, n: VTK for blade 1 to n} (-) 
-1       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, "default": 1} 
-all     VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1]
-0       nGridOut           Number of grid outputs
-GridName    DTGrid    XStart    XEnd   nX    YStart   YEnd    nY    ZStart   ZEnd   nZ
-(-)         (s)        (m)      (m)    (-)    (m)     (m)     (-)    (m)     (m)    (-)
-"horiHD"    default    -80      170.   120    -120.   120.    80    210.    210.    1
+3       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, "default": 1} 
+0       VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1]
+1       nGridOut           Number of grid outputs
+GridName  GridType  TStart   TEnd    DTGrid   XStart  XEnd   nX   YStart   YEnd   nY   ZStart   ZEnd   nZ
+(-)         (-)      (s)     (s)      (s)       (m)    (m)   (-)   (m)     (m)    (-)   (m)     (m)    (-)
+"horiHD"     2       1.2     1.4     default    -80    170.  120   -120.   120.   80    210.    210.    1
 ===============================================================================================
