@@ -55,14 +55,16 @@ import inflowwind_library # this file handles the conversion from python to c-bo
 # Locations to build directory relative to r-test directory.  This is specific
 # to the regession testing with openfast and will need to be updated when
 # coupled to other codes or use cases
+
+basename = "libifw_c_binding"
 if sys.platform == "linux" or sys.platform == "linux2":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.so"])
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "inflowwind", basename + ".so"])
 elif sys.platform == "darwin":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dylib"])
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "inflowwind", basename + ".dylib"])
 elif sys.platform == "win32":
     # Windows may have this library installed in one of two locations depending
     # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libifw_c_lib.dll"])   # cmake install location
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "inflowwind", basename + ".dll"])   # cmake install location
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
         library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "InflowWind_c_lib_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
@@ -152,6 +154,7 @@ fh.close()
 try:
     ifwlib = inflowwind_library.InflowWindLib(library_path)
 except Exception as e:
+    # Do any clean up and final output
     print("{}".format(e))
     print(f"Cannot load library at {library_path}")
     exit(1)
@@ -208,8 +211,7 @@ fh.close()
 
 #  Check that the array is of the correct shape
 if positions.shape[1] != 3:
-    print("Error in parsing the points file.  Does not contain a Nx3 set of position points")
-    exit(1)
+    raise ValueError("Error in parsing the points file. Does not contain a Nx3 set of position points")
 
 #  numWindPts
 ifwlib.numWindPts   = positions.shape[0]              # total number of wind points requesting velocities for at each time step. must be integer
@@ -223,8 +225,8 @@ velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3
 #
 # NOTE: the error handling here is handled locally since this is the only
 #       driver code.  If InflowWind is incorporated into another code, the
-#       error handling will need to be passed to the main code.  That way the
-#       main code can close other modules as necessary (otherwise you will end
+#       error handling will need to be passed to the calling-code so that
+#       it can close other modules as necessary (otherwise you will end
 #       up with memory leaks and a bunch of garbage in the other library
 #       instances).
 
@@ -232,6 +234,7 @@ velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3
 try:
     ifwlib.ifw_init(ifw_input_string_array, ifw_uniform_string_array)
 except Exception as e:
+    # Do any required clean up
     print("{}".format(e))   # Exception is from inflowwind_library.py
     exit(1)
 
@@ -261,14 +264,14 @@ DbgOutfile = inflowwind_library.DebugOut(velocities_file,ifwlib.numWindPts)
 #               to pass back to the calling code (or write to disk in this
 #               example).
 #
-for i in range( 0, len(time)):
+for i, t in enumerate(time):
 
     #   When coupled to another code, set the positions info for this timestep
     #   here in the calling algorithm.  For this regression test example, the
     #   positions are kept constant throughout the simulation.
 
     try:
-        ifwlib.ifw_calcOutput(time[i], positions, velocities, outputChannelValues)
+        ifwlib.ifw_calc_output(t, positions, velocities, outputChannelValues)
     except Exception as e:
         print("{}".format(e))
         DbgOutfile.end()
@@ -283,7 +286,7 @@ for i in range( 0, len(time)):
     #   the regression simulation, but for simplicity we are writting one line
     #   at a time during the call).  The regression test will have one row for
     #   each timestep + position array entry.
-    DbgOutfile.write(time[i],positions,velocities)
+    DbgOutfile.write(t, positions, velocities)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
@@ -291,7 +294,7 @@ for i in range( 0, len(time)):
     # channel array for all modules and written to that output file.  For this
     # example we will write to file at the end of the simulation in a single
     # shot.
-    allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
+    allOutputChannelValues[i,:] = np.append(t, outputChannelValues)
 
 
 DbgOutfile.end()   # close the regression test example output file
@@ -306,11 +309,7 @@ DbgOutfile.end()   # close the regression test example output file
 #   NOTE:   Error handling from the ifw_end call may not be entirely necessary,
 #           but we may want to know if some memory was not released properly or
 #           a file not closed correctly.
-try:
-    ifwlib.ifw_end()
-except Exception as e:
-    print("{}".format(e))
-    exit(1)
+ifwlib.ifw_end()
 
 
 #   Now write the ouput channels to a file
@@ -318,8 +317,4 @@ OutFile=inflowwind_library.WriteOutChans(output_file,ifwlib.output_channel_names
 OutFile.write(allOutputChannelValues)
 OutFile.end()
 
-
-
 print("InflowWind completed.")
-exit(0)
-
