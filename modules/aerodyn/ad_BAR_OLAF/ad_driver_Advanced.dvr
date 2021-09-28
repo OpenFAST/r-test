@@ -1,0 +1,228 @@
+----- AeroDyn Driver Input File ---------------------------------------------------------
+BAR turbine driver input file, using advanced input
+----- Input Configuration ---------------------------------------------------------------
+False           Echo         - Echo input parameters to "<rootname>.ech"?
+        1       AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
+        6.0     TMax         - Total run time [used only when AnalysisType/=3] (s)
+        0.1     DT           - Simulation time step [used only when AnalysisType/=3] (s)
+"./OpenFAST_BAR_00_AeroDyn15_FVW.dat"        AeroFile - Name of the primary AeroDyn input file
+----- Inflow Data -----------------------------------------------------------------------
+          1      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
+"./OpenFAST_BAR_00_InflowFile.dat" InflowFile  - Name of the InflowWind input file [used only when CompInflow=1]
+         10      HWindSpeed  - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)
+        200      RefHt       - Reference height for horizontal wind speed [used only when CompInflow=0]     (m)
+          0      PLExp       - Power law exponent   [used only when CompInflow=0 and AnalysisType=1]                           (-)
+----- Turbine Data ----------------------------------------------------------------------
+1               NumTurbines - Number of turbines
+----- Turbine(1) Geometry----------------------------------------------------------------
+     False      BasicHAWTFormat(1) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+0,0,0           BaseOriginInit(1)      - x,y,z coordinates of base origin (m)
+0,0,0           BaseOrientationInit(1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
+True            HasTower(1)            - True if turbine has a tower (flag)
+True            HAWTprojection(1)      - True if turbine is a horizontal axis turbine (for AeroDyn projections) (flag)
+0,0,00          TwrOrigin_t(1)         - Coordinate of tower base in base coordinates [used only when HasTower is True] (m)
+0,0,137         NacOrigin_t(1)         - x,y,z coordinates of nacelle origin (and tower top) from base, in base coordinates (m)
+-6.96165,0,3.82513         HubOrigin_n(1)         - NOTE: Bar has 7m overhang, tilt of 6deg, and twr2shaft 3.09343 x,y,z coordinates of hub origin from nacelle origin, in nacelle coordinates (m)
+0,6,0          HubOrientation_n(1)    - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the hub frame from the nacelle frame (e.g. roll, tilt, yaw). The x axis needs to be aligned with the rotational speed. (deg)
+----- Turbine(1) Blades -----------------------------------------------------------------
+3               NumBlades(1)          - Number of blades for current rotor (-)
+0,0,0           BldOrigin_h(1_1)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(1_2)      - Orign of blade 2 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(1_3)      - Orign of blade 3 wrt. hub origin in hub coordinates (m)
+0  ,-4,0        BldOrientation_h(1_1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+120,-4,0        BldOrientation_h(1_2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+240,-4,0        BldOrientation_h(1_3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+3.0             BldHubRad_bl(1_1)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(1_2)     - z-offset in blade coordinates of blade 2 where radial input data start (m)
+3.0             BldHubRad_bl(1_3)     - z-offset in blade coordinates of blade 3 where radial input data start (m)
+----- Turbine(1) Base Motion [used only when AnalysisType=1] ----------------------------
+0               BaseMotionType(1)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
+1               DegreeOfFreedom(1)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
+0               Amplitude(1)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
+0               Frequency(1)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+"unused"        BaseMotionFileName(1)   - Filename containing arbitrary base motion (19 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
+0               NacMotionType(1)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
+0               NacYaw(1)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
+"unused"        NacMotionFileName(1)    - Filename containing yaw motion [used only when NacMotionType=1]
+0               RotMotionType(1)        - Type of motion prescribed for this rotor {0: constant rotation, 1: time varying rotation} (flag)
+6.0             RotSpeed(1)             - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
+"unused"        RotMotionFileName(1)    - Filename containing rotor motion [used only when RotorMotionType=1]
+0               BldMotionType(1)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
+0               BldPitch(1_1)           - Blade 1 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(1_2)           - Blade 2 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(1_3)           - Blade 3 pitch [used only when BldMotiontype=0] (deg)
+"unused"        BldMotionFileName(1_1)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(1_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(1_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+----- Turbine(2) Geometry ---------------------------------------------------------------
+     False      BasicHAWTFormat(2) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+0,0,0           BaseOriginInit(2)      - x,y,z coordinates of base origin (m)
+0,0,0           BaseOrientationInit(2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
+True            HasTower(2)            - True if turbine has a tower (flag)
+True            HAWTprojection(2)      - True if turbine is a horizontal axis turbine (for AeroDyn projections) (flag)
+0,0,00          TwrOrigin_t(2)         - Coordinate of tower base in base coordinates [used only when HasTower is True] (m)
+0,0,137         NacOrigin_t(2)         - x,y,z coordinates of nacelle origin (and tower top) from base, in base coordinates (m)
+-6.96165,0,3.82513         HubOrigin_n(2)         - NOTE: Bar has 7m overhang, tilt of 6deg, and twr2shaft 3.09343 x,y,z coordinates of hub origin from nacelle origin, in nacelle coordinates (m)
+0,6,0          HubOrientation_n(2)    - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the hub frame from the nacelle frame (e.g. roll, tilt, yaw). The x axis needs to be aligned with the rotational speed. (deg)
+----- Turbine(2) Blades -----------------------------------------------------------------
+3               NumBlades(2)          - Number of blades for current rotor (-)
+0,0,0           BldOrigin_h(2_1)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(2_2)      - Orign of blade 2 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(2_3)      - Orign of blade 3 wrt. hub origin in hub coordinates (m)
+0  ,-4,0        BldOrientation_h(2_1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+120,-4,0        BldOrientation_h(2_2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+240,-4,0        BldOrientation_h(2_3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+3.0             BldHubRad_bl(2_1)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(2_2)     - z-offset in blade coordinates of blade 2 where radial input data start (m)
+3.0             BldHubRad_bl(2_3)     - z-offset in blade coordinates of blade 3 where radial input data start (m)
+----- Turbine(2) Motion [used only when AnalysisType=1] ---------------------------------
+0               BaseMotionType(2)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
+1               DegreeOfFreedom(2)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
+0               Amplitude(2)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
+0               Frequency(2)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+"unused"        BaseMotionFileName(2)   - Filename containing arbitrary base motion (29 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
+0               NacMotionType(2)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
+0               NacYaw(2)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
+"unused"        NacMotionFileName(2)    - Filename containing yaw motion [used only when NacMotionType=1]
+0               RotMotionType(2)        - Type of motion prescribed for this rotor {0: constant rotation, 1: time varying rotation} (flag)
+6.0             RotSpeed(2)             - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
+"unused"        RotMotionFileName(2)    - Filename containing rotor motion [used only when RotorMotionType=1]
+0               BldMotionType(2)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
+0               BldPitch(2_1)           - Blade 1 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(2_2)           - Blade 2 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(2_3)           - Blade 3 pitch [used only when BldMotiontype=0] (deg)
+"unused"        BldMotionFileName(2_1)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(2_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(2_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+----- Turbine(3) Geometry ---------------------------------------------------------------
+     False      BasicHAWTFormat(3) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+0,0,0           BaseOriginInit(3)      - x,y,z coordinates of base origin (m)
+0,0,0           BaseOrientationInit(3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
+True            HasTower(3)            - True if turbine has a tower (flag)
+True            HAWTprojection(3)      - True if turbine is a horizontal axis turbine (for AeroDyn projections) (flag)
+0,0,00          TwrOrigin_t(3)         - Coordinate of tower base in base coordinates [used only when HasTower is True] (m)
+0,0,137         NacOrigin_t(3)         - x,y,z coordinates of nacelle origin (and tower top) from base, in base coordinates (m)
+-6.96165,0,3.82513         HubOrigin_n(3)         - NOTE: Bar has 7m overhang, tilt of 6deg, and twr2shaft 3.09343 x,y,z coordinates of hub origin from nacelle origin, in nacelle coordinates (m)
+0,6,0          HubOrientation_n(3)    - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the hub frame from the nacelle frame (e.g. roll, tilt, yaw). The x axis needs to be aligned with the rotational speed. (deg)
+----- Turbine(3) Blades -----------------------------------------------------------------
+3               NumBlades(3)          - Number of blades for current rotor (-)
+0,0,0           BldOrigin_h(3_1)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(3_2)      - Orign of blade 2 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(3_3)      - Orign of blade 3 wrt. hub origin in hub coordinates (m)
+0  ,-4,0        BldOrientation_h(3_1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+120,-4,0        BldOrientation_h(3_2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+240,-4,0        BldOrientation_h(3_3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+3.0             BldHubRad_bl(3_1)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(3_2)     - z-offset in blade coordinates of blade 2 where radial input data start (m)
+3.0             BldHubRad_bl(3_3)     - z-offset in blade coordinates of blade 3 where radial input data start (m)
+----- Turbine(3) Motion [used only when AnalysisType=1] ---------------------------------
+0               BaseMotionType(3)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
+1               DegreeOfFreedom(3)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
+0               Amplitude(3)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
+0               Frequency(3)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+"unused"        BaseMotionFileName(3)   - Filename containing arbitrary base motion (39 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
+0               NacMotionType(3)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
+0               NacYaw(3)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
+"unused"        NacMotionFileName(3)    - Filename containing yaw motion [used only when NacMotionType=1]
+0               RotMotionType(3)        - Type of motion prescribed for this rotor {0: constant rotation, 1: time varying rotation} (flag)
+6.0             RotSpeed(3)             - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
+"unused"        RotMotionFileName(3)    - Filename containing rotor motion [used only when RotorMotionType=1]
+0               BldMotionType(3)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
+0               BldPitch(3_1)           - Blade 1 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(3_2)           - Blade 2 pitch [used only when BldMotiontype=0] (deg)
+0               BldPitch(3_3)           - Blade 3 pitch [used only when BldMotiontype=0] (deg)
+"unused"        BldMotionFileName(3_1)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(3_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+"unused"        BldMotionFileName(3_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
+----- Turbine(4) Geometry ---------------------------------------------------------------
+     False      BasicHAWTFormat(4) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+0,0,0           BaseOriginInit(4)      - x,y,z coordinates of base origin (m)
+0,0,0           BaseOrientationInit(4) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
+True            HasTower(4)            - True if turbine has a tower (flag)
+True            HAWTprojection(4)      - True if turbine is a horizontal axis turbine (for AeroDyn projections) (flag)
+0,0,00          TwrOrigin_t(4)         - Coordinate of tower base in base coordinates [used only when HasTower is True] (m)
+0,0,137         NacOrigin_t(4)         - x,y,z coordinates of nacelle origin (and tower top) from base, in base coordinates (m)
+-6.96165,0,3.82513         HubOrigin_n(4)         - NOTE: Bar has 7m overhang, tilt of 6deg, and twr2shaft 3.09343 x,y,z coordinates of hub origin from nacelle origin, in nacelle coordinates (m)
+0,6,0          HubOrientation_n(4)    - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the hub frame from the nacelle frame (e.g. roll, tilt, yaw). The x axis needs to be aligned with the rotational speed. (deg)
+----- Turbine(4) Blades -----------------------------------------------------------------
+3               NumBlades(4)          - Number of blades for current rotor (-)
+0,0,0           BldOrigin_h(4_1)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(4_2)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(4_3)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0  ,-4,0        BldOrientation_h(4_1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+120,-4,0        BldOrientation_h(4_2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+240,-4,0        BldOrientation_h(4_3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+3.0             BldHubRad_bl(4_1)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(4_2)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(4_3)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+----- Turbine(4) Motion [used only when AnalysisType=1] ---------------------------------
+0               BaseMotionType(4)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
+1               DegreeOfFreedom(4)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
+0               Amplitude(4)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
+0               Frequency(4)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+"unused"        BaseMotionFileName(4)   - Filename containing arbitrary base motion (49 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
+0               NacMotionType(4)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
+0               NacYaw(4)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
+"unused"        NacMotionFileName(4)    - Filename containing yaw motion [used only when NacMotionType=1]
+0               RotMotionType(4)        - Type of motion prescribed for this rotor {0: constant rotation, 1: time varying rotation} (flag)
+6.0             RotSpeed(4)             - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
+"unused"        RotMotionFileName(4)    - Filename containing rotor motion [used only when RotorMotionType=1]
+0               BldMotionType(4)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
+0               BldPitch(4_1)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+0               BldPitch(4_2)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+0               BldPitch(4_3)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+"unused"        BldMotionFileName(4_1)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+"unused"        BldMotionFileName(4_2)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+"unused"        BldMotionFileName(4_3)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+----- Turbine(5) Geometry ---------------------------------------------------------------
+     False      BasicHAWTFormat(5) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+0,0,0           BaseOriginInit(5)      - x,y,z coordinates of base origin (m)
+0,0,0           BaseOrientationInit(5) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
+True            HasTower(5)            - True if turbine has a tower (flag)
+True            HAWTprojection(5)      - True if turbine is a horizontal axis turbine (for AeroDyn projections) (flag)
+0,0,00          TwrOrigin_t(5)         - Coordinate of tower base in base coordinates [used only when HasTower is True] (m)
+0,0,137         NacOrigin_t(5)         - x,y,z coordinates of nacelle origin (and tower top) from base, in base coordinates (m)
+-6.96165,0,3.82513         HubOrigin_n(5)         - NOTE: Bar has 7m overhang, tilt of 6deg, and twr2shaft 3.09343 x,y,z coordinates of hub origin from nacelle origin, in nacelle coordinates (m)
+0,6,0          HubOrientation_n(5)    - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the hub frame from the nacelle frame (e.g. roll, tilt, yaw). The x axis needs to be aligned with the rotational speed. (deg)
+----- Turbine(5) Blades -----------------------------------------------------------------
+3               NumBlades(5)          - Number of blades for current rotor (-)
+0,0,0           BldOrigin_h(5_1)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(5_2)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0,0,0           BldOrigin_h(5_3)      - Orign of blade 1 wrt. hub origin in hub coordinates (m)
+0  ,-4,0        BldOrientation_h(5_1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+120,-4,0        BldOrientation_h(5_2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+240,-4,0        BldOrientation_h(5_3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the blade frame from the hub frame such that the "z" is along span, "y" along trailing edge without pitch (azimuth, precone, pitch) (deg)
+3.0             BldHubRad_bl(5_1)     - z-offset in blade coordinates of blade 1 where radial input data start (m)
+3.0             BldHubRad_bl(5_2)     - z-offset in blade coordinates of blade 2 where radial input data start (m)
+3.0             BldHubRad_bl(5_3)     - z-offset in blade coordinates of blade 3 where radial input data start (m)
+----- Turbine(5) Motion [used only when AnalysisType=1] ---------------------------------
+0               BaseMotionType(5)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
+1               DegreeOfFreedom(5)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
+0               Amplitude(5)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
+0               Frequency(5)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+"unused"        BaseMotionFileName(5)   - Filename containing arbitrary base motion (59 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
+0               NacMotionType(5)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
+0               NacYaw(5)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
+"unused"        NacMotionFileName(5)    - Filename containing yaw motion [used only when NacMotionType=1]
+0               RotMotionType(5)        - Type of motion prescribed for this rotor {0: constant rotation, 1: time varying rotation} (flag)
+6.0             RotSpeed(5)             - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
+"unused"        RotMotionFileName(5)    - Filename containing rotor motion [used only when RotorMotionType=1]
+0               BldMotionType(5)        - Type of pitch motion prescribed for the blades {0: fixed, 1: time varying pitch} (flag)
+0               BldPitch(5_1)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+0               BldPitch(5_2)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+0               BldPitch(5_3)           - Blade 1 pitch [used only when BlMotiontype=1] (deg)
+"unused"        BldMotionFileName(5_1)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+"unused"        BldMotionFileName(5_2)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+"unused"        BldMotionFileName(5_3)  - Filename containing blade pitch motion [used only when BlMotionType=1]
+----- Time-dependent Analysis [used only when AnalysisType=2, numTurbines=1] ------------
+"unused"         TimeAnalysisFileName - Filename containing time series (6 column: Time, HWndSpeed, PLExp, RotSpd, Pitch, Yaw). 
+----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
+          0  NumCases     - Number of cases to run
+HWndSpeed    PLExp       RotSpd        Pitch         Yaw     dT      Tmax  DOF  Amplitude Frequency  
+(m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)     (-)     (Hz)
+----- Output Settings -------------------------------------------------------------------
+"ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
+0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=init; 2=animation}
+2           VTKHubRad     - HubRadius for VTK visualization (m)
+-1,-1,-1,2,2,2    VTKNacDim     - Nacelle Dimension for VTK visualization x0,y0,z0,Lx,Ly,Lz (m)
