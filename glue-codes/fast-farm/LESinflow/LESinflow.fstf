@@ -34,6 +34,10 @@ False              ChkWndFiles        Check all the ambient wind files for data 
 WT_X   WT_Y   WT_Z   WT_FASTInFile                                                               X0_High  Y0_High  Z0_High  dX_High  dY_High  dZ_High
 (m)    (m)    (m)    (string)                                                                    (m)      (m)      (m)      (m)      (m)      (m)
 1000.0  1000.0 0.0    "FFTest_WT1.fst"            -77.7    -80.0   5.0      10.0     10.0     10.0
+--- GROUND/FIXED LIDAR ---
+0                  NumLidar           Number of ground/fixed lidar units (simulated with LidarSim) (-) [>=0]
+Ldr_X  Ldr_Y  Ldr_Z  Ldr_InFile
+(m)    (m)    (m)    (string)
 --- WAKE DYNAMICS ---
 5.0                dr                 Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           Number of radii in the radial finite-difference grid (-) [>=2]
