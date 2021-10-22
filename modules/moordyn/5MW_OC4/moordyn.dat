@@ -2,22 +2,23 @@
 Mooring system for OC4-DeepCwind Semi
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-1        NTypes    - number of LineTypes
-Name     Diam      MassDen      EA    BA/-zeta  Can   Cat   Cdn   Cdt
-(-)       (m)      (kg/m)       (N)   (N-s/-)   (-)   (-)   (-)   (-)
-main     0.0766    113.35     7.536E8  -1.0     0.8   0.25  2.0   0.4
----------------------- CONNECTION PROPERTIES --------------------------------
-6       NConnects - number of connections including anchors and fairleads
+LineType         Diam     MassDen    EA      BA/-zeta   EI      Can     Cat     Cdn     Cdt
+   (-)           (m)      (kg/m)     (N)     (N-s/-)   (Nm^2)   (-)     (-)     (-)     (-)
+main           0.0766    113.35     7.536E8  -1.0       0.00     0.8   0.25     2.0   0.4
+----------------------------- BODIES ----------------------------------------------------------------------------------
+BodyID      X0   Y0   Z0   r0    p0    y0    Xcg   Ycg   Zcg     M      V        IX       IY       IZ     CdA-x,y,z Ca-x,y,z
+   (-)      (m)  (m)  (m)  (deg) (deg) (deg)  (m)   (m)   (m)   (kg)   (m^3)  (kg-m^2) (kg-m^2) (kg-m^2)   (m^2)      (-)
+1coupled    0    0    0    0     0     0     0      0     0      0      0         0       0         0        0         0
+---------------------- POINTS --------------------------------
 Node    Type      X        Y        Z       M     V      FX   FY   FZ   CdA   CA
 (-)     (-)      (m)      (m)      (m)     (kg)  (m^3)  (kN) (kN) (kN) (m^2)  (-)
 1      Fixed   418.8    725.383  -200.0     0      0      0    0    0    0     0
 2      Fixed  -837.6      0.0    -200.0     0      0      0    0    0    0     0
 3      Fixed   418.8   -725.383  -200.0     0      0      0    0    0    0     0
-4      Vessel   20.434   35.393   -14.0     0      0      0    0    0    0     0
-5      Vessel  -40.868    0.0     -14.0     0      0      0    0    0    0     0
-6      Vessel   20.434  -35.393   -14.0     0      0      0    0    0    0     0
----------------------- LINE PROPERTIES --------------------------------------
-3        NLines    - number of line objects
+4      Body1   20.434   35.393   -14.0     0      0      0    0    0    0     0
+5      Body1  -40.868    0.0     -14.0     0      0      0    0    0    0     0
+6      Body1   20.434  -35.393   -14.0     0      0      0    0    0    0     0
+---------------------- LINES --------------------------------------
 Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
 (-)       (-)       (m)       (-)       (-)       (-)       (-)      (-)
 1         main     835.35      20        1         4         -        0
@@ -35,8 +36,26 @@ Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
 FairTen1
 FairTen2
 FairTen3
-AnchTen1
-AnchTen2
-AnchTen3
+L1N10T
+L2N10T
+L3N10T
+CON4FX
+CON4FY
+CON4FZ
+CON5FX
+CON5FY
+CON5FZ
+CON6FX
+CON6FY
+CON6FZ
+L1N19PX
+L1N19PY
+L1N19PZ
+L2N19PX
+L2N19PY
+L2N19PZ
+L3N19PX
+L3N19PY
+L3N19PZ
 END
 ------------------------- need this line --------------------------------------
