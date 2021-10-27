@@ -18,4 +18,8 @@ False              Echo           - Echo the input file data (flag). In order to
 0.0   0.0   0.0   0.0   0.0   0.0   uTPInSteady     - input displacements and rotations: ([m], [rad])  
 0.0   0.0   0.0   0.0   0.0   0.0   uDotTPInSteady  - input translational and rotational velocities ([m/s], [rad/s])
 0.0   0.0   0.0   0.0   0.0   0.0   uDotTPInSteady  - input translational and rotational accelerations([m/s^2], [rad/s^2])
+---------------------- LOADS --------------------------------------------------------------------
+0    nAppliedLoads  - Number of applied loads at given nodes
+ALJointID    Fx     Fy    Fz     Mx     My     Mz   UnsteadyFile
+   (-)       (N)    (N)   (N)   (Nm)   (Nm)   (Nm)     (-)
 END of driver input file
