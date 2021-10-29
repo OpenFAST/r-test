@@ -4,7 +4,7 @@ Free wake input file for the BAR turbine
 5 IntMethod          Integration method {1: RK4, 5: Forward Euler 1st order, default: 5} (switch) 
 default  DTfvw              Time interval for wake propagation. {default: dtaero} (s)
 0.0     FreeWakeStart      Time when wake is free. (-) value = always free. {default: 0.0} (s)
-1.0     FullCircStart      Time at which full circulation is reached. {default: 0.0} (s)
+0.1     FullCircStart      Time at which full circulation is reached. {default: 0.0} (s)
 --------------------------- CIRCULATION SPECIFICATIONS ----------------------------------------
 1       CircSolvingMethod  Circulation solving method {1: Cl-Based, 2: No-Flow Through, 3: Prescribed, default: 1 }(switch)
 default CircSolvConvCrit   Convergence criteria {default: 0.001} [only if CircSolvingMethod=1] (-)
@@ -22,8 +22,8 @@ False   FWShedVorticity    Include shed vorticity in the far wake {default: Fals
 0       DiffusionMethod    Diffusion method to account for viscous effects {0: None, 1: Core Spreading, "default": 0}         
 3       RegDeterMethod     Method to determine the regularization parameters {0:  Manual, 1: Optimized, 2: Chord, 3: Span, default: 0 }          
 default RegFunction        Viscous diffusion function {0: None, 1: Rankine, 2: LambOseen, 3: Vatistas, 4: Denominator, "default": 3} (switch)
-3       WakeRegMethod      Wake regularization method {1: Constant, 2: Stretching, 3: Age, default: 1} (switch)
-2.00    WakeRegFactor      Wake regularization factor (m or -)
+1       WakeRegMethod      Wake regularization method {1: Constant, 2: Stretching, 3: Age, default: 1} (switch)
+3.00    WakeRegFactor      Wake regularization factor (m or -)
 2.00    WingRegFactor      Wing regularization factor (m or -)
 1000    CoreSpreadEddyVisc Eddy viscosity in core spreading methods, typical values 1-1000 
 ------------------- WAKE TREATMENT OPTIONS ----------------------------------------------------

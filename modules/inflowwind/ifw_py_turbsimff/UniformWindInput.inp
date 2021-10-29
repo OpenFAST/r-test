@@ -1,0 +1,8 @@
+! OpenFAST InflowWind uniform wind input file for 15 m/s wind.
+! Time Wind  Wind  Vert. Horiz. Vert. LinV  Gust   Upflow
+!      Speed Dir   Speed Shear  Shear Shear Speed  Angle
+! (sec) (m/s) (deg) (m/s) (-)    (-)   (-)  (m/s)  (deg)
+  0.0  15.0  0.0   0.0   0.0    0.0   0.0   0.0    0.0
+  0.1  15.0  0.0   0.0   0.0    0.0   0.0   0.0    0.0
+  1.0  15.0  0.0   0.0   0.0    0.0   0.0   0.0    0.0
+

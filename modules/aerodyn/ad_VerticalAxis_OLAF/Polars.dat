@@ -4,6 +4,7 @@
 ! line
 ! ------------------------------------------------------------------------------
 DEFAULT       InterpOrd     - ! Interpolation order to use for quasi-steady table lookup {1=linear; 3=cubic spline; "default"} [default=3]
+0.20          RelThickness  - ! The non-dimensional thickness of the airfoil (thickness/chord) [only used if UAMod=7] [default=0.2] (-)
 1             NonDimArea    - ! The non-dimensional area of the airfoil (area/chord^2) (set to 1.0 if unsure or unneeded)
 @"NACA_0018_Coords.txt" NumCoords     - ! The number of coordinates in the airfoil shape file. Set to zero if coordinates not included.
 "NA"          BL_file       - ! The file name including the boundary layer characteristics of the profile. Ignored if the aeroacoustic module is not called.
