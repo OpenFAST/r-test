@@ -23,8 +23,8 @@ default FWShedVorticity    Include shed vorticity in the far wake {default: fals
 0       RegDeterMethod     Method to determine the regularization parameters {0:  Manual, 1: Optimized, default: 0 }          
 2       RegFunction        Viscous diffusion function {0: None, 1: Rankine, 2: LambOseen, 3: Vatistas, 4: Denominator, "default": 3} (switch)
 1       WakeRegMethod      Wake regularization method {1: Constant, 2: Stretching, 3: Age, default: 1} (switch)
-0.0     WakeRegFactor      Wake regularization factor (m)
-0.0     WingRegFactor      Wing regularization factor (m)
+0.001   WakeRegFactor      Wake regularization factor (m)
+0.001   WingRegFactor      Wing regularization factor (m)
 100     CoreSpreadEddyVisc Eddy viscosity in core spreading methods, typical values 1-1000 
 ------------------- WAKE TREATMENT OPTIONS ---------------------------------------------------
 False   TwrShadowOnWake    Include tower flow disturbance effects on wake convection {default:false} [only if TwrPotent or TwrShadow]
@@ -39,3 +39,7 @@ False   TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 1       nVTKBlades         Number of blades for which VTK files are exported {0: No VTK per blade, n: VTK for blade 1 to n} (-) 
 1       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, 3: Both, "default": 1} 
 default VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1] 
+0       nGridOut           Number of grid outputs
+GridName  GridType  TStart   TEnd    DTGrid   XStart  XEnd   nX   YStart   YEnd   nY   ZStart   ZEnd   nZ
+(-)         (-)      (s)     (s)      (s)       (m)    (m)   (-)   (m)     (m)    (-)   (m)     (m)    (-)
+===============================================================================================

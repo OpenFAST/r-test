@@ -3,6 +3,9 @@ Compatible with HydroDyn v3.00
 FALSE            Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
 9.80665          Gravity             - Gravity (m/s^2)
+1025             WtrDens             - Water density (kg/m^3)
+200              WtrDpth             - Water depth (m)
+0                MSL2SWL             - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- HYDRODYN -----------------------------------------------
 "./NRELOffshrBsline5MW_MIT_NREL_TLP_HydroDyn.dat" HDInputFile       - Primary HydroDyn input file name (quoted string)
 "./driver"         OutRootName       - The name which prefixes all HydroDyn generated files (quoted string)

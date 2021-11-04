@@ -4,8 +4,6 @@ Elliptical wing test case for OLAF free vortex wake in AD15
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "DEFAULT"     DT          - Integration time step (s)
----------------------- ENVIRONMENTAL CONDITION ---------------------------------
-    9.80665   Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 False         FlapDOF1    - First flapwise blade mode DOF (flag)
 False         FlapDOF2    - Second flapwise blade mode DOF (flag)
@@ -43,7 +41,7 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmPitch   - Initial or fixed pitch tilt rotational displacement of platform (degrees)
           0   PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------
-          2   NumBl       - Number of blades (-)
+          1   NumBl       - Number of blades (-)
     5.00001   TipRad      - The distance from the rotor apex to the blade tip (meters)
       1E-05   HubRad      - The distance from the rotor apex to the blade root (meters)
           0   PreCone(1)  - Blade 1 cone angle (degrees)
@@ -138,6 +136,7 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "RootMxb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
 "RootMyb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
 "RootMzb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
+"RootFxb2"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 2
 "RotTorq"                 - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
 "LSSGagMya"               - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
 "LSSGagMza"               - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
