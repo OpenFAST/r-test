@@ -10,7 +10,6 @@ False                  Echo        - Echo the input to "<rootname>.AD.ech"?  (fl
 False                  TwrAero     - Calculate tower aerodynamic loads? (flag)
 False                  FrozenWake  - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False                  CavitCheck  - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
-False                  AddedMass   - Include added mass effects? (flag)
 False                  Buoyancy    - Include buoyancy effects? (flag)
 False                  CompAA      Flag to compute AeroAcoustics calculation [only used when WakeMod=1 or 2]
 "AeroAcousticsInput.dat" AA_InputFile - Aeroacoustics input file
@@ -90,152 +89,102 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCax  TwrCay  TwrCaz (used only with AddedMass=True)  TwrCb (used only with Buoyancy=True)
-(m)                    (m)                    (-)                    (-)                                 (-)     (-)     (-)                                     (-)
-0.200000000000000e+01  4.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.110000000000000e+01  6.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCax  TwrCay  TwrCaz (used only with AddedMass=True)  TwrCb (used only with Buoyancy=True)
-(m)                    (m)                    (-)                    (-)                                 (-)     (-)     (-)                                     (-)
-0.200000000000000e+01  4.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.110000000000000e+01  6.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCax  TwrCay  TwrCaz (used only with AddedMass=True)  TwrCb (used only with Buoyancy=True)
-(m)                    (m)                    (-)                    (-)                                 (-)     (-)     (-)                                     (-)
-0.200000000000000e+01  3.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCax  TwrCay  TwrCaz (used only with AddedMass=True)  TwrCb (used only with Buoyancy=True)
-(m)                    (m)                    (-)                    (-)                                 (-)     (-)     (-)                                     (-)
-0.200000000000000e+01  3.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-7                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, Buoyancy=True, or AddedMass=True]
-TwrElev                TwrDiam                TwrCd                   TwrTI (used only with TwrShadow=2)  TwrCax  TwrCay  TwrCaz (used only with AddedMass=True)  TwrCb (used only with Buoyancy=True)
-(m)                    (m)                    (-)                     (-)                                 (-)     (-)     (-)                                     (-)
-0.000000000000000e+01  12.500000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.110000000000000e+01  12.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-5.480000000000000e+01  12.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-6.850000000000000e+01  10.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-8.220000000000000e+01  8.400000000000000e+00   1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-2.000000000000000e+02  8.600000000000000e+00   1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-4.000000000000000e+02  4.000000000000000e+00   1.000000000000000e+00  0.1                                 0.0     0.0     0.0                                     0.0
-======  Hub Properties ============================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                    (-)                                 (-)
+0.200000000000000e+01  4.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  6.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                    (-)                                 (-)
+0.200000000000000e+01  4.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  6.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                    (-)                                 (-)
+0.200000000000000e+01  3.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+8                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                    (-)                                 (-)
+0.200000000000000e+01  3.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.220000000000000e+02  2.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+7                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                   TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                     (-)                                 (-)
+0.000000000000000e+01  12.500000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  12.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  12.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  10.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  8.400000000000000e+00   1.000000000000000e+00  0.1                                 0.0
+2.000000000000000e+02  8.600000000000000e+00   1.000000000000000e+00  0.1                                 0.0
+4.000000000000000e+02  4.000000000000000e+00   1.000000000000000e+00  0.1                                 0.0
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0   VolHub             - Hub volume (m^3)
-0.0   HubCax           	 - x direction added mass coefficient at hub node (-)
-0.0   HubCay             - y direction added mass coefficient at hub node (-)
-0.0   HubCaz             - z direction added mass coefficient at hub node (-)
-0.0   HubCenAx           - Hub center of added mass x direction offset (m)
 0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Hub Properties ============================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0   VolHub             - Hub volume (m^3)
-0.0   HubCax           	 - x direction added mass coefficient at hub node (-)
-0.0   HubCay             - y direction added mass coefficient at hub node (-)
-0.0   HubCaz             - z direction added mass coefficient at hub node (-)
-0.0   HubCenAx           - Hub center of added mass x direction offset (m)
 0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Hub Properties ============================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0   VolHub             - Hub volume (m^3)
-0.0   HubCax           	 - x direction added mass coefficient at hub node (-)
-0.0   HubCay             - y direction added mass coefficient at hub node (-)
-0.0   HubCaz             - z direction added mass coefficient at hub node (-)
-0.0   HubCenAx           - Hub center of added mass x direction offset (m)
 0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Hub Properties ============================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0   VolHub             - Hub volume (m^3)
-0.0   HubCax           	 - x direction added mass coefficient at hub node (-)
-0.0   HubCay             - y direction added mass coefficient at hub node (-)
-0.0   HubCaz             - z direction added mass coefficient at hub node (-)
-0.0   HubCenAx           - Hub center of added mass x direction offset (m)
 0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Hub Properties ============================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0   VolHub             - Hub volume (m^3)
-0.0   HubCax           	 - x direction added mass coefficient at hub node (-)
-0.0   HubCay             - y direction added mass coefficient at hub node (-)
-0.0   HubCaz             - z direction added mass coefficient at hub node (-)
-0.0   HubCenAx           - Hub center of added mass x direction offset (m)
 0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
-0.0   NacCax             - x direction added mass coefficient at nacelle node (-)
-0.0   NacCay             - y direction added mass coefficient at nacelle node (-)
-0.0   NacCaz             - z direction added mass coefficient at nacelle node (-)
-0.0   NacCenAx           - Nacelle center of added mass x direction offset (m)
-0.0   NacCenAy           - Nacelle center of added mass y direction offset (m)
-0.0   NacCenAz           - Nacelle center of added mass z direction offset (m)
 0.0   NacCenBx           - Nacelle center of buoyancy x direction offset (m)
 0.0   NacCenBy           - Nacelle center of buoyancy y direction offset (m)
 0.0   NacCenBz           - Nacelle center of buoyancy z direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
-0.0   NacCax             - x direction added mass coefficient at nacelle node (-)
-0.0   NacCay             - y direction added mass coefficient at nacelle node (-)
-0.0   NacCaz             - z direction added mass coefficient at nacelle node (-)
-0.0   NacCenAx           - Nacelle center of added mass x direction offset (m)
-0.0   NacCenAy           - Nacelle center of added mass y direction offset (m)
-0.0   NacCenAz           - Nacelle center of added mass z direction offset (m)
 0.0   NacCenBx           - Nacelle center of buoyancy x direction offset (m)
 0.0   NacCenBy           - Nacelle center of buoyancy y direction offset (m)
 0.0   NacCenBz           - Nacelle center of buoyancy z direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
-0.0   NacCax             - x direction added mass coefficient at nacelle node (-)
-0.0   NacCay             - y direction added mass coefficient at nacelle node (-)
-0.0   NacCaz             - z direction added mass coefficient at nacelle node (-)
-0.0   NacCenAx           - Nacelle center of added mass x direction offset (m)
-0.0   NacCenAy           - Nacelle center of added mass y direction offset (m)
-0.0   NacCenAz           - Nacelle center of added mass z direction offset (m)
 0.0   NacCenBx           - Nacelle center of buoyancy x direction offset (m)
 0.0   NacCenBy           - Nacelle center of buoyancy y direction offset (m)
 0.0   NacCenBz           - Nacelle center of buoyancy z direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
-0.0   NacCax             - x direction added mass coefficient at nacelle node (-)
-0.0   NacCay             - y direction added mass coefficient at nacelle node (-)
-0.0   NacCaz             - z direction added mass coefficient at nacelle node (-)
-0.0   NacCenAx           - Nacelle center of added mass x direction offset (m)
-0.0   NacCenAy           - Nacelle center of added mass y direction offset (m)
-0.0   NacCenAz           - Nacelle center of added mass z direction offset (m)
 0.0   NacCenBx           - Nacelle center of buoyancy x direction offset (m)
 0.0   NacCenBy           - Nacelle center of buoyancy y direction offset (m)
 0.0   NacCenBz           - Nacelle center of buoyancy z direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or AddedMass=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
-0.0   NacCax             - x direction added mass coefficient at nacelle node (-)
-0.0   NacCay             - y direction added mass coefficient at nacelle node (-)
-0.0   NacCaz             - z direction added mass coefficient at nacelle node (-)
-0.0   NacCenAx           - Nacelle center of added mass x direction offset (m)
-0.0   NacCenAy           - Nacelle center of added mass y direction offset (m)
-0.0   NacCenAz           - Nacelle center of added mass z direction offset (m)
 0.0   NacCenBx           - Nacelle center of buoyancy x direction offset (m)
 0.0   NacCenBy           - Nacelle center of buoyancy y direction offset (m)
 0.0   NacCenBz           - Nacelle center of buoyancy z direction offset (m)
