@@ -15,6 +15,7 @@ True          StC_Z_DOF    - DOF on or off for StC Z (flag) [Used only when StC_
           0   StC_X_DSP    - StC X initial displacement (m) [relative to at rest position]
           0   StC_Y_DSP    - StC Y initial displacement (m) [relative to at rest position]
           0   StC_Z_DSP    - StC Z initial displacement (m) [relative to at rest position; used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
+"gravity"     StC_Z_PreLd  - StC Z pre-load (N) {"gravity" to offset for gravity load; "none" or 0 to turn off} [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
 ---------------------- StC CONFIGURATION -------------------------------------- [used only when StC_DOF_MODE=1 or 2]
          10   StC_X_PSP    - Positive stop position (maximum X mass displacement) (m)
         -10   StC_X_NSP    - Negative stop position (minimum X mass displacement) (m)
