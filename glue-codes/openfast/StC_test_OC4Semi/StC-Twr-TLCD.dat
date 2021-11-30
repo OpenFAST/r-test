@@ -27,7 +27,7 @@ false         StC_Z_DOF    - DOF on or off for StC Z (flag) [Used only when StC_
           0   StC_X_M      - StC X mass (kg) [must equal StC_Y_M for StC_DOF_MODE = 2]
           0   StC_Y_M      - StC Y mass (kg) [must equal StC_X_M for StC_DOF_MODE = 2]
           0   StC_Z_M      - StC Z mass (kg) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
-          0   StC_XY_M     - StC Z mass (kg) [used only when StC_DOF_MODE=2]
+          0   StC_XY_M     - StC XY mass (kg) [used only when StC_DOF_MODE=2]
           0   StC_X_K      - StC X stiffness (N/m)
           0   StC_Y_K      - StC Y stiffness (N/m)
           0   StC_Z_K      - StC Z stiffness (N/m) [used only when StC_DOF_MODE=1 and StC_Z_DOF=TRUE]
