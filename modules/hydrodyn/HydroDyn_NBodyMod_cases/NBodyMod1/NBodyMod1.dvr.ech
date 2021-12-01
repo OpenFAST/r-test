@@ -1,0 +1,32 @@
+
+
+            T  Echo           - Echo the input file data
+
+   9.8066E+00  Gravity        - Gravity
+   1.0250E+03  WtrDens        - Water density
+   2.0000E+02  WtrDpth        - Water depth
+   0.0000E+00  MSL2SWL        - Offset between still-water level and mean sea level
+
+               HDInputFile    - HydroDyn input filename
+  "NBodyMod1.dat"
+               OutRootName    - HydroDyn output root filename
+  "NBodyMod1"
+            F  Linearize      - Linearize parameter
+         8000  NSteps         - Number of time steps in the HydroDyn simulation
+   1.2500E-02  TimeInterval   - Time interval for any HydroDyn inputs
+
+            1  PRPInputsMod   - Model for the PRP (principal reference point) inputs
+               PRPInputsFile  - Filename for the PRP HydroDyn inputs
+  ""
+
+               uPRPInSteady   - PRP Steady-state displacements and rotations.
+   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+               uDotPRPInStead - PRP Steady-state translational and rotational velocities.
+   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+               uDotDotPRPInSt - PRP Steady-state translational and rotational accelerations.
+   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00   0.0000E+00
+
+               WaveElevDX Wav - WaveElevSeries spacing -- WaveElevDX WaveElevDY
+   5.0000E+00   5.0000E+00
+               WaveElevNX Wav - WaveElevSeries points -- WaveElevNX WaveElevNY
+            3            3
