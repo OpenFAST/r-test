@@ -57,14 +57,16 @@ import hydrodyn_library # this file handles the conversion from python to c-boun
 # Locations to build directory relative to r-test directory.  This is specific
 # to the regession testing with openfast and will need to be updated when
 # coupled to other codes or use cases
+
+basename = "libhydrodyn_c_binding"
 if sys.platform == "linux" or sys.platform == "linux2":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libhydrodyn_c_lib.so"])
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".so"])
 elif sys.platform == "darwin":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libhydrodyn_c_lib.dylib"])
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".dylib"])
 elif sys.platform == "win32":
     # Windows may have this library installed in one of two locations depending
     # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "install", "lib", "libhydrodyn_c_lib.dll"])   # cmake install location 
+    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".dll"])   # cmake install location
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
         library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_lib_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
@@ -142,7 +144,7 @@ except Exception as e:
 
 # These will be read from the HD driver input file
 #   Time inputs
-#           hdlib.dt           -- the timestep inflowwind is called at.
+#           hdlib.dt           -- the timestep hydrodyn is called at.
 #           hdlib.numTimeSteps -- total number of timesteps, only used to
 #                                  construct arrays to hold the output channel
 #                                  info
