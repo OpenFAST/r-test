@@ -30,7 +30,7 @@ default RegFunction        Viscous diffusion function {0: None, 1: Rankine, 2: L
 True    TwrShadowOnWake    Include tower flow disturbance effects on wake convection {default:false} [only if TwrPotent or TwrShadow]
 0       ShearModel         Shear Model {0: No treatment, 1: Mirrored vorticity, default: 0}
 ------------------- SPEEDUP OPTIONS -----------------------------------------------------------
-2       VelocityMethod     Method to determine the velocity {1:Biot-Savart Segment, 2:Particle tree, default: 1}
+3       VelocityMethod     Method to determine the velocity {1:Biot-Savart Segment, 2:Particle tree, 3:Segment tree, default: 1}
 1.5     TreeBranchFactor   Branch radius fraction above which a multipole calculation is used {default: 2.0} [only if VelocityMethod=2]
 1       PartPerSegment     Number of particles per segment [only if VelocityMethod=2]
 ===============================================================================================
