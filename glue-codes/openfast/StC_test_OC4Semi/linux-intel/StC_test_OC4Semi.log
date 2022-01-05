@@ -2,24 +2,25 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v1.0.0-1879-g35ae68f3
+ OpenFAST-v3.0.0-523-ge45c57f1-dirty
  Compile Info:
   - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
-  64, Version 2021.1.2 Build 20201208_000000
+  64, Version 2021.4.0 Build 20210910_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Feb 04 2021
-  - Time: 13:19:49
+  - OpenMP: No
+  - Date: Jan 04 2022
+  - Time: 13:31:46
  Execution Info:
-  - Date: 02/05/2021
-  - Time: 11:14:20-0600
+  - Date: 01/04/2022
+  - Time: 14:57:52-0700
 
  OpenFAST input file heading:
      FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi
@@ -27,18 +28,16 @@
 
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running ServoDyn.
- Running StrucCtrl.
- Running StrucCtrl.
- Running StrucCtrl.
- Running StrucCtrl.
- Running StrucCtrl.
  Running HydroDyn.
    Setting WaveTMax to 0.0 since WaveMod = 0
-  Reading in WAMIT output with root name "./../5MW_Baseline/HydroData/marin_semi".
+  Reading in WAMIT output with root name
+  "/home/aplatt/software-development/GitHub/openfast-2-dbg/build/reg_tests/glue-codes/openfast/StC_
+  test_OC4Semi/../5MW_Baseline/HydroData/marin_semi".
   Computing radiation impulse response functions and wave diffraction forces.
  Running MoorDyn (v1.01.02F, 8-Apr-2016).
-   MD_Init: Opening MoorDyn input file:  ./NRELOffshrBsline5MW_OC4DeepCwindSemi_MoorDyn.dat
+   MD_Init: Opening MoorDyn input file:
+   /home/aplatt/software-development/GitHub/openfast-2-dbg/build/reg_tests/glue-codes/openfast/StC_
+   test_OC4Semi/NRELOffshrBsline5MW_OC4DeepCwindSemi_MoorDyn.dat
     Creating mooring system.   3 fairleads, 3 anchors, 0 connects.
     Finalizing ICs using dynamic relaxation.
 
@@ -49,13 +48,19 @@
 +   t=10  FairTen 1: 1.05614E+06, 1.06138E+06, 1.06004E+06                                         
 +   t=12  FairTen 1: 1.06365E+06, 1.05614E+06, 1.06138E+06                                         
     Fairlead tensions converged to 1% after 12 seconds.
+ Running ServoDyn.
+ Running StrucCtrl.
+ Running StrucCtrl.
+ Running StrucCtrl.
+ Running StrucCtrl.
+ Running StrucCtrl.
   Time: 0 of 90 seconds.
 +                                                                                                  
-+ Time: 1 of 90 seconds.  Estimated final completion at 11:18:05.
++ Time: 1 of 90 seconds.  Estimated final completion at 15:03:50.
 +                                                                                                  
-+ Time: 2 of 90 seconds.  Estimated final completion at 11:17:50.
++ Time: 2 of 90 seconds.  Estimated final completion at 15:03:45.
 +                                                                                                  
-+ Time: 3 of 90 seconds.  Estimated final completion at 11:17:58.
++ Time: 3 of 90 seconds.  Estimated final completion at 15:05:06.
 
  FAST_Solution:FAST_AdvanceStates:ED_ABM4:ED_CalcContStateDeriv:SetCoordSy:Small angle assumption
  violated in SUBROUTINE SmllRotTrans() due to a large blade deflection (ElastoDyn SetCoordSy). The
@@ -64,186 +69,186 @@
   Additional debugging message from SUBROUTINE SmllRotTrans(): 3.4 s
 
 +                                                                                                  
-+ Time: 4 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 4 of 90 seconds.  Estimated final completion at 15:03:40.
 +                                                                                                  
-+ Time: 5 of 90 seconds.  Estimated final completion at 11:18:12.
++ Time: 5 of 90 seconds.  Estimated final completion at 15:03:47.
 +                                                                                                  
-+ Time: 6 of 90 seconds.  Estimated final completion at 11:18:03.
++ Time: 6 of 90 seconds.  Estimated final completion at 15:03:41.
 +                                                                                                  
-+ Time: 7 of 90 seconds.  Estimated final completion at 11:17:58.
++ Time: 7 of 90 seconds.  Estimated final completion at 15:03:46.
 +                                                                                                  
-+ Time: 8 of 90 seconds.  Estimated final completion at 11:18:01.
++ Time: 8 of 90 seconds.  Estimated final completion at 15:03:53.
 +                                                                                                  
-+ Time: 9 of 90 seconds.  Estimated final completion at 11:18:04.
++ Time: 9 of 90 seconds.  Estimated final completion at 15:04:27.
 +                                                                                                  
-+ Time: 10 of 90 seconds.  Estimated final completion at 11:17:57.
++ Time: 10 of 90 seconds.  Estimated final completion at 15:04:26.
 +                                                                                                  
-+ Time: 11 of 90 seconds.  Estimated final completion at 11:17:58.
++ Time: 11 of 90 seconds.  Estimated final completion at 15:04:23.
 +                                                                                                  
-+ Time: 12 of 90 seconds.  Estimated final completion at 11:17:60.
++ Time: 12 of 90 seconds.  Estimated final completion at 15:04:37.
 +                                                                                                  
-+ Time: 13 of 90 seconds.  Estimated final completion at 11:18:01.
++ Time: 13 of 90 seconds.  Estimated final completion at 15:04:30.
 +                                                                                                  
-+ Time: 14 of 90 seconds.  Estimated final completion at 11:18:01.
++ Time: 14 of 90 seconds.  Estimated final completion at 15:04:47.
 +                                                                                                  
-+ Time: 15 of 90 seconds.  Estimated final completion at 11:17:58.
++ Time: 15 of 90 seconds.  Estimated final completion at 15:04:31.
 +                                                                                                  
-+ Time: 16 of 90 seconds.  Estimated final completion at 11:17:59.
++ Time: 16 of 90 seconds.  Estimated final completion at 15:15:60.
 +                                                                                                  
-+ Time: 17 of 90 seconds.  Estimated final completion at 11:17:57.
++ Time: 17 of 90 seconds.  Estimated final completion at 15:05:00.
 +                                                                                                  
-+ Time: 18 of 90 seconds.  Estimated final completion at 11:17:60.
++ Time: 18 of 90 seconds.  Estimated final completion at 15:04:53.
 +                                                                                                  
-+ Time: 19 of 90 seconds.  Estimated final completion at 11:17:57.
++ Time: 19 of 90 seconds.  Estimated final completion at 15:04:59.
 +                                                                                                  
-+ Time: 20 of 90 seconds.  Estimated final completion at 11:18:05.
++ Time: 20 of 90 seconds.  Estimated final completion at 15:04:41.
 +                                                                                                  
-+ Time: 21 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 21 of 90 seconds.  Estimated final completion at 15:04:43.
 +                                                                                                  
-+ Time: 22 of 90 seconds.  Estimated final completion at 11:18:04.
++ Time: 22 of 90 seconds.  Estimated final completion at 15:04:51.
 +                                                                                                  
-+ Time: 23 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 23 of 90 seconds.  Estimated final completion at 15:04:43.
 +                                                                                                  
-+ Time: 24 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 24 of 90 seconds.  Estimated final completion at 15:05:05.
 +                                                                                                  
-+ Time: 25 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 25 of 90 seconds.  Estimated final completion at 15:05:52.
 +                                                                                                  
-+ Time: 26 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 26 of 90 seconds.  Estimated final completion at 15:05:51.
 +                                                                                                  
-+ Time: 27 of 90 seconds.  Estimated final completion at 11:17:57.
++ Time: 27 of 90 seconds.  Estimated final completion at 15:04:43.
 +                                                                                                  
-+ Time: 28 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 28 of 90 seconds.  Estimated final completion at 15:04:24.
 +                                                                                                  
-+ Time: 29 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 29 of 90 seconds.  Estimated final completion at 15:04:28.
 +                                                                                                  
-+ Time: 30 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 30 of 90 seconds.  Estimated final completion at 15:04:28.
 +                                                                                                  
-+ Time: 31 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 31 of 90 seconds.  Estimated final completion at 15:05:05.
 +                                                                                                  
-+ Time: 32 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 32 of 90 seconds.  Estimated final completion at 15:05:03.
 +                                                                                                  
-+ Time: 33 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 33 of 90 seconds.  Estimated final completion at 15:04:49.
 +                                                                                                  
-+ Time: 34 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 34 of 90 seconds.  Estimated final completion at 15:04:33.
 +                                                                                                  
-+ Time: 35 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 35 of 90 seconds.  Estimated final completion at 15:04:14.
 +                                                                                                  
-+ Time: 36 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 36 of 90 seconds.  Estimated final completion at 15:04:02.
 +                                                                                                  
-+ Time: 37 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 37 of 90 seconds.  Estimated final completion at 15:04:02.
 +                                                                                                  
-+ Time: 38 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 38 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 39 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 39 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 40 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 40 of 90 seconds.  Estimated final completion at 15:04:10.
 +                                                                                                  
-+ Time: 41 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 41 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 42 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 42 of 90 seconds.  Estimated final completion at 15:04:15.
 +                                                                                                  
-+ Time: 43 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 43 of 90 seconds.  Estimated final completion at 15:04:08.
 +                                                                                                  
-+ Time: 44 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 44 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 45 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 45 of 90 seconds.  Estimated final completion at 15:04:02.
 +                                                                                                  
-+ Time: 46 of 90 seconds.  Estimated final completion at 11:17:57.
++ Time: 46 of 90 seconds.  Estimated final completion at 15:04:07.
 +                                                                                                  
-+ Time: 47 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 47 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 48 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 48 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 49 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 49 of 90 seconds.  Estimated final completion at 15:04:08.
 +                                                                                                  
-+ Time: 50 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 50 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 51 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 51 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 52 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 52 of 90 seconds.  Estimated final completion at 15:04:07.
 +                                                                                                  
-+ Time: 53 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 53 of 90 seconds.  Estimated final completion at 15:04:09.
 +                                                                                                  
-+ Time: 54 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 54 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 55 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 55 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 56 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 56 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 57 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 57 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 58 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 58 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 59 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 59 of 90 seconds.  Estimated final completion at 15:04:02.
 +                                                                                                  
-+ Time: 60 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 60 of 90 seconds.  Estimated final completion at 15:04:09.
 +                                                                                                  
-+ Time: 61 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 61 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 62 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 62 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 63 of 90 seconds.  Estimated final completion at 11:17:52.
++ Time: 63 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 64 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 64 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 65 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 65 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 66 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 66 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 67 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 67 of 90 seconds.  Estimated final completion at 15:04:06.
 +                                                                                                  
-+ Time: 68 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 68 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 69 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 69 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 70 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 70 of 90 seconds.  Estimated final completion at 15:04:05.
 +                                                                                                  
-+ Time: 71 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 71 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 72 of 90 seconds.  Estimated final completion at 11:17:53.
++ Time: 72 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 73 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 73 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 74 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 74 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 75 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 75 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 76 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 76 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 77 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 77 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 78 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 78 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 79 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 79 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 80 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 80 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 81 of 90 seconds.  Estimated final completion at 11:17:54.
++ Time: 81 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 82 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 82 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 83 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 83 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 84 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 84 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 85 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 85 of 90 seconds.  Estimated final completion at 15:04:04.
 +                                                                                                  
-+ Time: 86 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 86 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 87 of 90 seconds.  Estimated final completion at 11:17:55.
++ Time: 87 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 88 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 88 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 89 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 89 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
-+ Time: 90 of 90 seconds.  Estimated final completion at 11:17:56.
++ Time: 90 of 90 seconds.  Estimated final completion at 15:04:03.
 +                                                                                                  
 
-  Total Real Time:       3.5777 minutes
-  Total CPU Time:        3.5758 minutes
-  Simulation CPU Time:   3.3529 minutes
+  Total Real Time:       6.1763 minutes
+  Total CPU Time:        5.9111 minutes
+  Simulation CPU Time:   5.6213 minutes
   Simulated Time:        1.5 minutes
-  Time Ratio (Sim/CPU):  0.44738
+  Time Ratio (Sim/CPU):  0.26684
 
   OpenFAST terminated normally.
 
