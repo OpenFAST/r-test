@@ -1,0 +1,11 @@
+Potential control file for DeepCwind semi column 1
+-1.                 HBOT 
+ 1    1             IRAD, IDIFF
+ -30                NPER (array PER follows)
+ -0.1 0.1           PER (starting value and increment)
+ 2                  NBETA (array BETA follows)
+ 0.0  30.0          BETA (list, or starting value and increment)
+ 1                  NBODY
+deepCwind_col.gdf GDF (geometry file)
+ 14.43376 25.0 0.0 0.0        XBODY(1-4)
+ 1  1  1  1  1  1   MODE(1-6)

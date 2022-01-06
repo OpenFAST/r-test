@@ -1,0 +1,8 @@
+Force control file for a DeepCwind semi outer column centered at 0,0
+ 1    0    1    0    0    0    0    0    0   IOPTN(1-9)
+ 0.000000                                    VCG
+ 1.000000      .0000000      .0000000
+ .0000000      1.000000      .0000000
+ .0000000      .0000000      1.000000        XPRDCT
+ 0                                           NBETAH
+ 0                                           NFIELD

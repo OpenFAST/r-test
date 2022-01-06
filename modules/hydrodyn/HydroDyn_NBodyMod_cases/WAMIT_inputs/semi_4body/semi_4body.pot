@@ -1,0 +1,20 @@
+Potential control file for DeepCwind semi as 4 coupled bodies
+-1.                 HBOT 
+ 1    1             IRAD, IDIFF
+ -30                NPER (array PER follows)
+ -0.1 0.1           PER (starting value and increment)
+ 2                  NBETA (array BETA follows)
+ 0.0  30.0          BETA (list, or starting value and increment)
+ 4                         NBODY
+ deepCwind_cen.gdf    GDF(1) (geometry file)
+ 0. 0. 0. 0.              XBODY(1-4,1)
+ 1  1  1  1  1  1         MODE(1-6,1)
+ deepCwind_col.gdf       GDF(4) (geometry file)
+ 14.43376  25.0 0. 0.      XBODY(1-4,4)
+ 1  1  1  1  1  1         MODE(1-6,4)
+ deepCwind_col.gdf       GDF(2) (geometry file)
+ -28.86751 0. 0. 0.        XBODY(1-4,2)
+ 1  1  1  1  1  1         MODE(1-6,2)
+ deepCwind_col.gdf       GDF(3) (geometry file)
+ 14.43376 -25.0 0. 0.      XBODY(1-4,3)
+ 1  1  1  1  1  1         MODE(1-6,3)
