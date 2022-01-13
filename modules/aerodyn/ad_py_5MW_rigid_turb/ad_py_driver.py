@@ -152,14 +152,17 @@ if np.size(initMeshPos_ar,0) != np.size(initMeshOrient_ar,0):
     exit(1)
 # For this example, we will pull the hub position/orientation and blade root
 # information from the initMeshPos_ar/initMeshOrient_ar
-#   hub:    index 0
-#   root:   every numBladeNode starting at 1
-initHubPos    = initMeshPos_ar[   0,:]
-initHubOrient = initMeshOrient_ar[0,:]
-numBlades     = 3
-numBladeNode  = int((initMeshPos_ar.shape[0]-1)/numBlades)
-initRootPos   = np.zeros((numBlades,3))
-initRootOrient= np.zeros((numBlades,9))
+#   hub:        index 0
+#   nacelle:    set to hub for demonstration (normally at a different location)
+#   root:       every numBladeNode starting at 1
+initHubPos          = initMeshPos_ar[   0,:]
+initHubOrient       = initMeshOrient_ar[0,:]
+initNacellePos      = initMeshPos_ar[   0,:]
+initNacelleOrient   = initMeshOrient_ar[0,:]
+numBlades           = 3
+numBladeNode        = int((initMeshPos_ar.shape[0]-1)/numBlades)
+initRootPos         = np.zeros((numBlades,3))
+initRootOrient      = np.zeros((numBlades,9))
 for i in range(3):
     initRootPos[i,:]    = initMeshPos_ar[   i*numBladeNode+1,:]
     initRootOrient[i,:] = initMeshOrient_ar[i*numBladeNode+1,:]
@@ -200,6 +203,8 @@ adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean se
 time                = np.arange(adilib.t_start,final_time + adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 adilib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
+# set WrVTK
+adilib.WrVTK = 2
 
 #==============================================================================
 # Basic alogrithm for using AeroDyn+InflowWind library
@@ -212,11 +217,14 @@ adilib.numTimeSteps = len(time)          # only for constructing array of output
 #       instances).
 
 # Set hub and blade root positions/orientations
-adilib.initHubPos     = initHubPos
-adilib.initHubOrient  = initHubOrient
-adilib.numBlades = numBlades
-adilib.initRootPos    = initRootPos
-adilib.initRootOrient = initRootOrient
+adilib.initHubPos           = initHubPos
+adilib.initHubOrient        = initHubOrient
+adilib.initNacellePos       = initNacellePos
+adilib.initNacelleOrient    = initNacelleOrient
+adilib.numBlades            = numBlades
+#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AD15 for mesh mapping.
+adilib.initRootPos          = initRootPos
+adilib.initRootOrient       = initRootOrient
 
 
 # Set number of mesh nodes and initial position
