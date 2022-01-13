@@ -137,19 +137,32 @@ fh.close()
 
 #   Initial node positions
 #       Read in the initial node positions
-initNodePos_ar    = np.loadtxt(node_pos_file,    comments="#", unpack=False)
-initNodeOrient_ar = np.loadtxt(node_orient_file, comments="#", unpack=False, dtype = np.float64)
-#print("shape of initNodePos_ar   ",   initNodePos_ar.shape)
-#print("               size 0     ",   initNodePos_ar.shape[0])
-#print("               size 1     ",   initNodePos_ar.shape[1])
-#print("shape of initNodeOrient_ar",   initNodeOrient_ar.shape)
-#print("               size 0     ",   initNodeOrient_ar.shape[0])
-#print("               size 1     ",   initNodeOrient_ar.shape[1])
-#print("               type       ", type(initNodeOrient_ar))
-#print("               float      ", type(initNodeOrient_ar[0,0]))
-if np.size(initNodePos_ar,0) != np.size(initNodeOrient_ar,0):
+initMeshPos_ar    = np.loadtxt(node_pos_file,    comments="#", unpack=False)
+initMeshOrient_ar = np.loadtxt(node_orient_file, comments="#", unpack=False, dtype = np.float64)
+#print("shape of initMeshPos_ar   ",   initMeshPos_ar.shape)
+#print("               size 0     ",   initMeshPos_ar.shape[0])
+#print("               size 1     ",   initMeshPos_ar.shape[1])
+#print("shape of initMeshOrient_ar",   initMeshOrient_ar.shape)
+#print("               size 0     ",   initMeshOrient_ar.shape[0])
+#print("               size 1     ",   initMeshOrient_ar.shape[1])
+#print("               type       ", type(initMeshOrient_ar))
+#print("               float      ", type(initMeshOrient_ar[0,0]))
+if np.size(initMeshPos_ar,0) != np.size(initMeshOrient_ar,0):
     print("different number of nodes in position and orientation arrays read")
     exit(1)
+# For this example, we will pull the hub position/orientation and blade root
+# information from the initMeshPos_ar/initMeshOrient_ar
+#   hub:    index 0
+#   root:   every numBladeNode starting at 1
+initHubPos    = initMeshPos_ar[   0,:]
+initHubOrient = initMeshOrient_ar[0,:]
+numBlades     = 3
+numBladeNode  = int((initMeshPos_ar.shape[0]-1)/numBlades)
+initRootPos   = np.zeros((numBlades,3))
+initRootOrient= np.zeros((numBlades,9))
+for i in range(3):
+    initRootPos[i,:]    = initMeshPos_ar[   i*numBladeNode+1,:]
+    initRootOrient[i,:] = initMeshOrient_ar[i*numBladeNode+1,:]
 
 #===============================================================================
 #   AeroDyn python interface initialization 
@@ -183,29 +196,36 @@ adilib.defPvap       =    1700.0  # Vapour pressure of working fluid (Pa) [used 
 adilib.WtrDpth       =       0.0  # Water depth (m)
 adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
 
-
-
+# Setup some timekeeping
 time                = np.arange(adilib.t_start,final_time + adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 adilib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
 
 #==============================================================================
-# Basic alogrithm for using HydroDyn library
+# Basic alogrithm for using AeroDyn+InflowWind library
 #
 # NOTE: the error handling here is handled locally since this is the only
-#       driver code.  If HydroDyn is incorporated into another code, the
-#       error handling will need to be passed to the main code.  That way the
-#       main code can close other modules as necessary (otherwise you will end
-#       up with memory leaks and a bunch of garbage in the other library
+#       driver code.  If AeroDyn+InflowWind is incorporated into another code,
+#       the error handling will need to be passed to the main code.  That way
+#       the main code can close other modules as necessary (otherwise you will
+#       end up with memory leaks and a bunch of garbage in the other library
 #       instances).
 
-# Set number of nodes and initial position
+# Set hub and blade root positions/orientations
+adilib.initHubPos     = initHubPos
+adilib.initHubOrient  = initHubOrient
+adilib.numBlades = numBlades
+adilib.initRootPos    = initRootPos
+adilib.initRootOrient = initRootOrient
+
+
+# Set number of mesh nodes and initial position
 #       positiion   is an N x 3 array [x,y,z]
 #       orientation is a  N x 9 array [r11,r12,r13,r21,r22,r23,r31,r32,r33]
-adilib.numNodePts = np.size(initNodePos_ar,0)
-adilib.initNodePos    = initNodePos_ar
-adilib.initNodeOrient = initNodeOrient_ar
-#print("initNodeOrient float      ", type(adilib.initNodeOrient[0,0]))
+adilib.numMeshPts = np.size(initMeshPos_ar,0)
+adilib.initMeshPos    = initMeshPos_ar
+adilib.initMeshOrient = initMeshOrient_ar
+#print("initMeshOrient float      ", type(adilib.initMeshOrient[0,0]))
 
 print("Try call to aerodyn_inflow_init")
 # AeroDyn_Inflow_Init: Only need to call aerodyn_inflow_init once
@@ -234,14 +254,14 @@ outputChannelValues = np.zeros(adilib.numChannels)
 allOutputChannelValues = np.zeros( (adilib.numTimeSteps,adilib.numChannels+1) )
 
 #  Setup the arrays for motion and resulting forces/moments - C index order
-nodePos     = np.zeros((adilib.numNodePts,3))    # [x,y,z,Rx,Ry,Rz]
-nodeVel     = np.zeros((adilib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_dot  -- first  deriv (velocities)
-nodeAcc     = np.zeros((adilib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_ddot -- second deriv (accelerations)
-nodeFrcMom  = np.zeros((adilib.numNodePts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
+nodePos     = np.zeros((adilib.numMeshPts,3))    # [x,y,z,Rx,Ry,Rz]
+nodeVel     = np.zeros((adilib.numMeshPts,6))    # [x,y,z,Rx,Ry,Rz]_dot  -- first  deriv (velocities)
+nodeAcc     = np.zeros((adilib.numMeshPts,6))    # [x,y,z,Rx,Ry,Rz]_ddot -- second deriv (accelerations)
+nodeFrcMom  = np.zeros((adilib.numMeshPts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
 
 
 #   Open outputfile for regession testing purposes.
-dbg_outfile = aerodyn_inflow_library.DriverDbg(debugout_file,adilib.numNodePts)
+dbg_outfile = aerodyn_inflow_library.DriverDbg(debugout_file,adilib.numMeshPts)
 
 
 # Calculate outputs for t_initial
