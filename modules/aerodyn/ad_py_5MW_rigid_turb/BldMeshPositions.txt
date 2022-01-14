@@ -1,8 +1,6 @@
 # Initial positions of hub and blade nodes for for NREL 5MW from the 5MW_Land_DLL_WTurb case
 #
 #  [ x, y, z ] coordinates (m)
-# Hub
-                      -5.00000                       0.00000                      90.00000
 # Blade 1 -- 19 nodes
                       -4.93457                       0.00000                      91.49858
                       -4.87577                      -0.00345                      92.86401

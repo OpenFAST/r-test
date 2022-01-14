@@ -111,8 +111,10 @@ output_file="ad_py_driver.out"
 NumCorrections=0
 
 #   Node position info for testing
-node_pos_file="NodePositions.txt"
-node_orient_file="NodeOrientations.txt"
+hubroot_pos_file="HubRootPositions.txt"
+hubroot_orient_file="HubRootOrientations.txt"
+mesh_pos_file="BldMeshPositions.txt"
+mesh_orient_file="BldMeshOrientations.txt"
 
 #   Input Files
 #===============================================================================
@@ -135,10 +137,34 @@ for line in fh:
   adiIfW_input_string_array.append(line.rstrip())
 fh.close()
 
-#   Initial node positions
+
+#   Simple structural setup frim file
+#===============================================================================
+numBlades           = 3
+#   Initial hub and root locations
+#       Read in the initial positions
+#   hub:        index 0
+#   nacelle:    set to hub for demonstration (normally at a different location)
+#   root:       following numBlades entries
+initHubRootPos_ar    = np.loadtxt(hubroot_pos_file,    comments="#", unpack=False)
+initHubRootOrient_ar = np.loadtxt(hubroot_orient_file, comments="#", unpack=False, dtype = np.float64)
+#   values from file
+initHubPos          = initHubRootPos_ar[   0,:]
+initHubOrient       = initHubRootOrient_ar[0,:]
+initNacellePos      = initHubRootPos_ar[   0,:]
+initNacelleOrient   = initHubRootOrient_ar[0,:]
+initRootPos         = np.zeros((numBlades,3))
+initRootOrient      = np.zeros((numBlades,9))
+for i in range(3):
+    initRootPos[i,:]    = initHubRootPos_ar[   i+1,:]
+    initRootOrient[i,:] = initHubRootOrient_ar[i+1,:]
+
+
+
+#   Initial blade mesh positions
 #       Read in the initial node positions
-initMeshPos_ar    = np.loadtxt(node_pos_file,    comments="#", unpack=False)
-initMeshOrient_ar = np.loadtxt(node_orient_file, comments="#", unpack=False, dtype = np.float64)
+initMeshPos_ar    = np.loadtxt(mesh_pos_file,    comments="#", unpack=False)
+initMeshOrient_ar = np.loadtxt(mesh_orient_file, comments="#", unpack=False, dtype = np.float64)
 #print("shape of initMeshPos_ar   ",   initMeshPos_ar.shape)
 #print("               size 0     ",   initMeshPos_ar.shape[0])
 #print("               size 1     ",   initMeshPos_ar.shape[1])
@@ -152,20 +178,8 @@ if np.size(initMeshPos_ar,0) != np.size(initMeshOrient_ar,0):
     exit(1)
 # For this example, we will pull the hub position/orientation and blade root
 # information from the initMeshPos_ar/initMeshOrient_ar
-#   hub:        index 0
-#   nacelle:    set to hub for demonstration (normally at a different location)
-#   root:       every numBladeNode starting at 1
-initHubPos          = initMeshPos_ar[   0,:]
-initHubOrient       = initMeshOrient_ar[0,:]
-initNacellePos      = initMeshPos_ar[   0,:]
-initNacelleOrient   = initMeshOrient_ar[0,:]
-numBlades           = 3
-numBladeNode        = int((initMeshPos_ar.shape[0]-1)/numBlades)
-initRootPos         = np.zeros((numBlades,3))
-initRootOrient      = np.zeros((numBlades,9))
-for i in range(3):
-    initRootPos[i,:]    = initMeshPos_ar[   i*numBladeNode+1,:]
-    initRootOrient[i,:] = initMeshOrient_ar[i*numBladeNode+1,:]
+#   root:       every numBladeNode starting at 0
+numBladeNode        = int((initMeshPos_ar.shape[0])/numBlades)
 
 #===============================================================================
 #   AeroDyn python interface initialization 
@@ -203,8 +217,10 @@ adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean se
 time                = np.arange(adilib.t_start,final_time + adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 adilib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
-# set WrVTK
-adilib.WrVTK = 2
+# set some flags 
+adilib.storeHHvel   = False
+adilib.WrVTK        = 2
+adilib.transposeDCM = True
 
 #==============================================================================
 # Basic alogrithm for using AeroDyn+InflowWind library
