@@ -47,6 +47,7 @@
 import numpy as np
 import os
 import sys
+from visread import *
 
 # path to find the aerodyn_inflow_library.py from the local directory
 sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"]))
@@ -110,15 +111,21 @@ output_file="ad_py_driver.out"
 #   this to > 0
 NumCorrections=0
 
-#   Node position info for testing
-hubroot_pos_file="HubRootPositions.txt"
-hubroot_orient_file="HubRootOrientations.txt"
-mesh_pos_file="BldMeshPositions.txt"
-mesh_orient_file="BldMeshOrientations.txt"
+
+#===============================================================================
+#   Mesh inputs from vtk
+vtkDir="vtkRef"
+numBlades=3
+hubMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
+nacMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
+#bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_Blade"
+bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladePtLoads"
+bldRootMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
+
+
 
 #   Input Files
 #===============================================================================
-
 #   Main AeroDyn input file
 #       This file is read from disk to an array of strings with the line
 #       endings stripped off.  This array will have the same number of elements
@@ -138,48 +145,30 @@ for line in fh:
 fh.close()
 
 
-#   Simple structural setup frim file
 #===============================================================================
-numBlades           = 3
-#   Initial hub and root locations
-#       Read in the initial positions
-#   hub:        index 0
-#   nacelle:    set to hub for demonstration (normally at a different location)
-#   root:       following numBlades entries
-initHubRootPos_ar    = np.loadtxt(hubroot_pos_file,    comments="#", unpack=False)
-initHubRootOrient_ar = np.loadtxt(hubroot_orient_file, comments="#", unpack=False, dtype = np.float64)
-#   values from file
-initHubPos          = initHubRootPos_ar[   0,:]
-initHubOrient       = initHubRootOrient_ar[0,:]
-initNacellePos      = initHubRootPos_ar[   0,:]
-initNacelleOrient   = initHubRootOrient_ar[0,:]
-initRootPos         = np.zeros((numBlades,3))
-initRootOrient      = np.zeros((numBlades,9))
-for i in range(3):
-    initRootPos[i,:]    = initHubRootPos_ar[   i+1,:]
-    initRootOrient[i,:] = initHubRootOrient_ar[i+1,:]
+#   Initial hub and root locations from vtk files
+#       can add checks here that numpts==1
+initHubPos,     initHubOrient,     numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+"_Reference.vtp"]))
+initNacellePos, initNacelleOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+"_Reference.vtp"]))
 
-
+initRootPos     = np.zeros((numBlades,3),dtype="float32")
+initRootOrient  = np.zeros((numBlades,9),dtype="float64")
+for i in range(numBlades):
+    #   can add checks here that numpts==1
+    initRootPos[i,:], initRootOrient[i,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+"_Reference.vtp"]))
 
 #   Initial blade mesh positions
-#       Read in the initial node positions
-initMeshPos_ar    = np.loadtxt(mesh_pos_file,    comments="#", unpack=False)
-initMeshOrient_ar = np.loadtxt(mesh_orient_file, comments="#", unpack=False, dtype = np.float64)
-#print("shape of initMeshPos_ar   ",   initMeshPos_ar.shape)
-#print("               size 0     ",   initMeshPos_ar.shape[0])
-#print("               size 1     ",   initMeshPos_ar.shape[1])
-#print("shape of initMeshOrient_ar",   initMeshOrient_ar.shape)
-#print("               size 0     ",   initMeshOrient_ar.shape[0])
-#print("               size 1     ",   initMeshOrient_ar.shape[1])
-#print("               type       ", type(initMeshOrient_ar))
-#print("               float      ", type(initMeshOrient_ar[0,0]))
-if np.size(initMeshPos_ar,0) != np.size(initMeshOrient_ar,0):
-    print("different number of nodes in position and orientation arrays read")
-    exit(1)
-# For this example, we will pull the hub position/orientation and blade root
-# information from the initMeshPos_ar/initMeshOrient_ar
-#   root:       every numBladeNode starting at 0
-numBladeNode        = int((initMeshPos_ar.shape[0])/numBlades)
+numBladeNode = np.zeros( (numBlades), dtype=int )
+initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
+initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
+for i in range(numBlades):
+    #   can add checks here that numpts==1
+    tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
+    initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
+    initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
+    numBladeNode[i] = numpts
+
+
 
 #===============================================================================
 #   AeroDyn python interface initialization 
@@ -233,10 +222,10 @@ adilib.transposeDCM = True
 #       instances).
 
 # Set hub and blade root positions/orientations
-adilib.initHubPos           = initHubPos
-adilib.initHubOrient        = initHubOrient
-adilib.initNacellePos       = initNacellePos
-adilib.initNacelleOrient    = initNacelleOrient
+adilib.initHubPos           = initHubPos[0,:]
+adilib.initHubOrient        = initHubOrient[0,:]
+adilib.initNacellePos       = initNacellePos[0,:]
+adilib.initNacelleOrient    = initNacelleOrient[0,:]
 adilib.numBlades            = numBlades
 #adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AD15 for mesh mapping.
 adilib.initRootPos          = initRootPos
@@ -263,8 +252,8 @@ except Exception as e:
 
 
 #  To get the names and units of the output channels
-#output_channel_names = adilib.output_channel_names
-#output_channel_units = adilib.output_channel_units
+output_channel_names = adilib.output_channel_names
+output_channel_units = adilib.output_channel_units
 
 #-------------------
 #   Time steppping
@@ -285,7 +274,7 @@ nodeFrcMom  = np.zeros((adilib.numMeshPts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resu
 
 
 #   Open outputfile for regession testing purposes.
-dbg_outfile = aerodyn_inflow_library.DriverDbg(debugout_file,adilib.numMeshPts)
+dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
 
 
 # Calculate outputs for t_initial

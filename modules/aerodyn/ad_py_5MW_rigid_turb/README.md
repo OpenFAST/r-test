@@ -1,4 +1,5 @@
 Simple rigid motion test of 3 blade rotor through python interface with turbulent inflow
+Based on 5MW\_OC4Semi\_WSt\_WavesWN regression test case
 
 - Rigid rotor, root node defined only
 - Steady rotation speed
