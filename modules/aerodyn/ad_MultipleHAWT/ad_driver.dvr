@@ -74,8 +74,8 @@ True            HAWTprojection(1)      - True if turbine is a horizontal axis tu
 ----- Turbine(2) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(2)      - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 0               DegreeOfFreedom(2)     - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0.0             Amplitude(2)           - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0.0             Frequency(2)           - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0.0             Amplitude(2)           - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or deg)
+0.0             Frequency(2)           - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(2)  - Filename containing arbitrary base motion (29 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacYaw(2)       - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
 6               RotSpeed(2)     - Rotational speed of rotor in rotor coordinates [used only when RotorMotionType=0] (rpm)
