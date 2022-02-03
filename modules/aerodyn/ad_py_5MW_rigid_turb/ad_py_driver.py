@@ -116,11 +116,13 @@ NumCorrections=0
 #   Mesh inputs from vtk
 vtkDir="vtkRef"
 numBlades=3
+vtkFieldLen=5
+TimeStepsToRun=200
 hubMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
 nacMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
-#bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_Blade"
-bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladePtLoads"
 bldRootMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
+#bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_Blade"         # for struct mesh aligned with AD15 mesh
+bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"   # for struct mesh not aligned with AD15 mesh
 
 
 
@@ -148,14 +150,14 @@ fh.close()
 #===============================================================================
 #   Initial hub and root locations from vtk files
 #       can add checks here that numpts==1
-initHubPos,     initHubOrient,     numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+"_Reference.vtp"]))
-initNacellePos, initNacelleOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+"_Reference.vtp"]))
+initHubPos,     initHubOrient,     numpts = visread_positions_ref(os.path.sep.join([vtkDir, hubMeshRootName+"_Reference.vtp"]))
+initNacellePos, initNacelleOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, nacMeshRootName+"_Reference.vtp"]))
 
 initRootPos     = np.zeros((numBlades,3),dtype="float32")
 initRootOrient  = np.zeros((numBlades,9),dtype="float64")
 for i in range(numBlades):
     #   can add checks here that numpts==1
-    initRootPos[i,:], initRootOrient[i,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+"_Reference.vtp"]))
+    initRootPos[i,:], initRootOrient[i,:], numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+"_Reference.vtp"]))
 
 #   Initial blade mesh positions
 numBladeNode = np.zeros( (numBlades), dtype=int )
@@ -163,11 +165,12 @@ initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
 initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
 for i in range(numBlades):
     #   can add checks here that numpts==1
-    tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
+    tmpPos, tmpOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
     initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
     initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
     numBladeNode[i] = numpts
-
+del tmpPos
+del tmpOrient
 
 
 #===============================================================================
@@ -202,9 +205,9 @@ adilib.defPvap       =    1700.0  # Vapour pressure of working fluid (Pa) [used 
 adilib.WtrDpth       =       0.0  # Water depth (m)
 adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
 
-# Setup some timekeeping
-time                = np.arange(adilib.t_start,final_time + adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
-adilib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
+# Setup some timekeeping -- this may be smaller than what is passed to AD15
+adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
+time                = np.arange(adilib.t_start,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 
 # set some flags 
 adilib.storeHHvel   = False
@@ -233,14 +236,12 @@ adilib.initRootOrient       = initRootOrient
 
 
 # Set number of mesh nodes and initial position
-#       positiion   is an N x 3 array [x,y,z]
+#       position    is an N x 3 array [x,y,z]
 #       orientation is a  N x 9 array [r11,r12,r13,r21,r22,r23,r31,r32,r33]
 adilib.numMeshPts = np.size(initMeshPos_ar,0)
 adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
-#print("initMeshOrient float      ", type(adilib.initMeshOrient[0,0]))
 
-print("Try call to aerodyn_inflow_init")
 # AeroDyn_Inflow_Init: Only need to call aerodyn_inflow_init once
 try:
     adilib.aerodyn_inflow_init(adiAD_input_string_array,adiIfW_input_string_array)
@@ -255,6 +256,7 @@ except Exception as e:
 output_channel_names = adilib.output_channel_names
 output_channel_units = adilib.output_channel_units
 
+
 #-------------------
 #   Time steppping
 #-------------------
@@ -266,25 +268,46 @@ output_channel_units = adilib.output_channel_units
 outputChannelValues = np.zeros(adilib.numChannels)
 allOutputChannelValues = np.zeros( (adilib.numTimeSteps,adilib.numChannels+1) )
 
-#  Setup the arrays for motion and resulting forces/moments - C index order
-nodePos     = np.zeros((adilib.numMeshPts,3))    # [x,y,z,Rx,Ry,Rz]
-nodeVel     = np.zeros((adilib.numMeshPts,6))    # [x,y,z,Rx,Ry,Rz]_dot  -- first  deriv (velocities)
-nodeAcc     = np.zeros((adilib.numMeshPts,6))    # [x,y,z,Rx,Ry,Rz]_ddot -- second deriv (accelerations)
-nodeFrcMom  = np.zeros((adilib.numMeshPts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
-
-
 #   Open outputfile for regession testing purposes.
 dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
 
-
+#--------------------------------
 # Calculate outputs for t_initial
 i=0
-#nodePos[0,0:6] = adi_timeseries[i, 1: 7]     # note: python slicing stops at element before last index in range (different than fortran wich is inclusive)
-#nodeVel[0,0:6] = adi_timeseries[i, 7:13]
-#nodeAcc[0,0:6] = adi_timeseries[i,13:19]
+#   read mesh positions
+RootPos       = np.zeros((numBlades,3),dtype="float32")
+RootOrient    = np.zeros((numBlades,9),dtype="float64")
+RootVel       = np.zeros((numBlades,6),dtype="float32")
+RootAcc       = np.zeros((numBlades,6),dtype="float32")
+MeshPos_ar    = np.empty( (0,3), dtype="float32" )
+MeshOrient_ar = np.empty( (0,9), dtype="float64" )
+MeshVel_ar    = np.empty( (0,6), dtype="float32" )
+MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
+MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
+timeField=str(i).zfill(vtkFieldLen)
+HubPos,     HubOrient,     numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
+HubVel,     HubAcc                = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
+NacellePos, NacelleOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
+NacelleVel, NacelleAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
+for i in range(numBlades):
+    RootPos[i,:], RootOrient[i,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+'.'+timeField+".vtp"]))
+    RootVel[i,:], RootAcc[i,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+'.'+timeField+".vtp"]),numpts)
+for i in range(numBlades):
+    tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+'.'+timeField+".vtp"]))
+    tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+'.'+timeField+".vtp"]),numpts)
+    MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
+    MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
+    MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
+    MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
+del tmpPos
+del tmpOrient
+del tmpVel
+del tmpAcc
+
 try:
-    adilib.aerodyn_inflow_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
-            nodeFrcMom, outputChannelValues)
+    adilib.aerodyn_inflow_calcOutput(time[i],
+            HubPos, HubOrient, HubVel, HubAcc,
+            MeshFrcMom, outputChannelValues)
 except Exception as e:
     print("{}".format(e))
     dbg_outfile.end()
@@ -292,10 +315,10 @@ except Exception as e:
     print("Exit after failed call to aerodyn_inflow_calcOutput at T=0")
     exit(1)
  
-# Write the debug output at t=t_initial
-dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
-# Save the output at t=t_initial
-allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
+## Write the debug output at t=t_initial
+#dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
+## Save the output at t=t_initial
+#allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 
 
 #   Timestep iteration
@@ -321,6 +344,7 @@ for i in range( 0, len(time)-1):
     for correction in range(0, NumCorrections+1):
 
         #print(f"Correction step: {correction} for {time[i]} --> {time[i+1]}")
+        print(f"Time step: {i} at {time[i]}")
 
         # If there are correction steps, the inputs would be updated using outputs
         # from the other modules.
@@ -329,15 +353,15 @@ for i in range( 0, len(time)-1):
 #        nodeAcc[0,0:6] = adi_timeseries[i+1,13:19]
 
         #   Update the states from t to t+dt (only if not beyond end of sim)
-        try:
-            adilib.aerodyn_inflow_updateStates(time[i], time[i+1], nodePos, nodeVel,
-                    nodeAcc, nodeFrcMom)
-        except Exception as e:
-            print("{}".format(e))
-            dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to aerodyn_inflow_updateStates")
-            exit(1)
+#        try:
+#            adilib.aerodyn_inflow_updateStates(time[i], time[i+1], nodePos, nodeVel,
+#                    nodeAcc, nodeFrcMom)
+#        except Exception as e:
+#            print("{}".format(e))
+#            dbg_outfile.end()
+#            #FIXME: temporary statement here
+#            print("Exit after failed call to aerodyn_inflow_updateStates")
+#            exit(1)
  
         # Calculate the outputs at t+dt
         #       NOTE: new input values may be available at this point from the
@@ -346,15 +370,15 @@ for i in range( 0, len(time)-1):
 #        nodeVel[0,0:6] = adi_timeseries[i+1, 7:13]
 #        nodeAcc[0,0:6] = adi_timeseries[i+1,13:19]
 
-        try:
-            adilib.aerodyn_inflow_calcOutput(time[i+1], nodePos, nodeVel, nodeAcc, 
-                    nodeFrcMom, outputChannelValues)
-        except Exception as e:
-            print("{}".format(e))
-            dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to aerodyn_inflow_calcOutput")
-            exit(1)
+#        try:
+#            adilib.aerodyn_inflow_calcOutput(time[i+1], nodePos, nodeVel, nodeAcc, 
+#                    nodeFrcMom, outputChannelValues)
+#        except Exception as e:
+#            print("{}".format(e))
+#            dbg_outfile.end()
+#            #FIXME: temporary statement here
+#            print("Exit after failed call to aerodyn_inflow_calcOutput")
+#            exit(1)
 
  
         #   When coupled to a different code, this is where the Force/Moment info
@@ -365,7 +389,7 @@ for i in range( 0, len(time)-1):
         #   the regression simulation, but for simplicity we are writting one line
         #   at a time during the call).  The regression test will have one row for
         #   each timestep + position array entry.
-        dbg_outfile.write(time[i+1],nodePos,nodeVel,nodeAcc,nodeFrcMom)
+#        dbg_outfile.write(time[i+1],nodePos,nodeVel,nodeAcc,nodeFrcMom)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
@@ -373,7 +397,7 @@ for i in range( 0, len(time)-1):
     # channel array for all modules and written to that output file.  For this
     # example we will write to file at the end of the simulation in a single
     # shot.
-    allOutputChannelValues[i+1,:] = np.append(time[i+1],outputChannelValues)
+#    allOutputChannelValues[i+1,:] = np.append(time[i+1],outputChannelValues)
 
 
 dbg_outfile.end()   # close the debug output file
@@ -398,7 +422,7 @@ except Exception as e:
 
 
 #   Now write the ouput channels to a file
-OutFile=aerodyn_inflow_library.WriteOutChans(output_file,adilib.output_channel_names,adilib.output_channel_units)
+OutFile=adi.WriteOutChans(output_file,adilib.output_channel_names,adilib.output_channel_units)
 OutFile.write(allOutputChannelValues)
 OutFile.end()
 
