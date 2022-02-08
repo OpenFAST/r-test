@@ -285,10 +285,10 @@ MeshVel_ar    = np.empty( (0,6), dtype="float32" )
 MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
 MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
 timeField=str(i).zfill(vtkFieldLen)
-HubPos,     HubOrient,     numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
-HubVel,     HubAcc                = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
-NacellePos, NacelleOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
-NacelleVel, NacelleAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
+HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
+HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
+NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
+NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
 for i in range(numBlades):
     RootPos[i,:], RootOrient[i,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+'.'+timeField+".vtp"]))
     RootVel[i,:], RootAcc[i,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+'.'+timeField+".vtp"]),numpts)
@@ -307,7 +307,11 @@ del tmpAcc
 try:
     adilib.aerodyn_inflow_calcOutput(time[i],
             HubPos, HubOrient, HubVel, HubAcc,
-            MeshFrcMom, outputChannelValues)
+            NacPos, NacOrient, NacVel, NacAcc,
+            RootPos, RootOrient, RootVel, RootAcc,
+            MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar,
+            MeshFrcMom,
+            outputChannelValues)
 except Exception as e:
     print("{}".format(e))
     dbg_outfile.end()
