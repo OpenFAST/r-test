@@ -39,3 +39,5 @@ WP_Stationary_Linear
 5MW_OC4Semi_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
+
+MHK_RM1_Fixed
