@@ -31,6 +31,7 @@ Time-series input to test extreme event + shutdown
            6    Overhang(1)     - Overhang (m)
           -0    ShftTilt(1)     - Shaft tilt (deg)
           -3    Precone(1)      - Blade precone (deg)
+         2.4    Twr2Shft(1)     - Vertical distance from the tower-top to the rotor shaft (meters)
 ----- Turbine(1) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(1)      - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 0               DegreeOfFreedom(1)     - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
