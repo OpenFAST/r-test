@@ -1,0 +1,11 @@
+------- AeroDisk driver v1.0 INPUT FILE ----------------------------------------------------------------------
+Example test case to run simple case
+--------------------------------------------------------------------------------------------------------------
+      True                       Echo           - Echo input data to <RootName>.ech (flag)
+--------------------------------------------------------------------------------------------------------------
+"adsk_primary.inp"               ADskIptFile    - AeroDisk input file
+"adsk_primary"                   OutRootName    - RootName for output files
+0.0                              TStart         - Start time (currently unused)
+"DEFAULT"                        DT             - Time step (DEFAULT to use the smallest DT value from input series below)
+"DEFAULT"                        NumTimeSteps   - Number of timesteps (DEFAULT to run to end of time in input series below)
+"InputDispFile.dat"              InputDispFile  - Input displacement file to use ("NONE" or "" to skip) 
