@@ -172,6 +172,51 @@ for i in range(numBlades):
 del tmpPos
 del tmpOrient
 
+#===============================================================================
+#   Helper functions
+#===============================================================================
+def SetMotionHub(N_Step):
+    timeField=str(N_Step).zfill(vtkFieldLen)
+    HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
+    HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
+    return (HubPos, HubOrient, HubVel, HubAcc)
+
+def SetMotionNac(N_Step):
+    timeField=str(N_Step).zfill(vtkFieldLen)
+    NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
+    NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
+    return (NacPos, NacOrient, NacVel, NacAcc)
+
+def SetMotionRoot(N_Step):
+    timeField=str(N_Step).zfill(vtkFieldLen)
+    RootPos       = np.zeros((numBlades,3),dtype="float32")
+    RootOrient    = np.zeros((numBlades,9),dtype="float64")
+    RootVel       = np.zeros((numBlades,6),dtype="float32")
+    RootAcc       = np.zeros((numBlades,6),dtype="float32")
+    for k in range(numBlades):
+        RootPos[k,:], RootOrient[k,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
+        RootVel[k,:], RootAcc[k,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
+    return (RootPos, RootOrient, RootVel, RootAcc)
+
+def SetMotionBlMesh(N_Step):
+    timeField=str(N_Step).zfill(vtkFieldLen)
+    MeshPos_ar    = np.empty( (0,3), dtype="float32" )
+    MeshOrient_ar = np.empty( (0,9), dtype="float64" )
+    MeshVel_ar    = np.empty( (0,6), dtype="float32" )
+    MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
+    MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
+    for k in range(numBlades):
+        tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
+        tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
+        MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
+        MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
+        MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
+        MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
+    del tmpPos
+    del tmpOrient
+    del tmpVel
+    del tmpAcc
+    return (MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom)
 
 #===============================================================================
 #   AeroDyn python interface initialization 
@@ -274,35 +319,11 @@ dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
 #--------------------------------
 # Calculate outputs for t_initial
 i=0
-#   read mesh positions
-RootPos       = np.zeros((numBlades,3),dtype="float32")
-RootOrient    = np.zeros((numBlades,9),dtype="float64")
-RootVel       = np.zeros((numBlades,6),dtype="float32")
-RootAcc       = np.zeros((numBlades,6),dtype="float32")
-MeshPos_ar    = np.empty( (0,3), dtype="float32" )
-MeshOrient_ar = np.empty( (0,9), dtype="float64" )
-MeshVel_ar    = np.empty( (0,6), dtype="float32" )
-MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
-MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
-timeField=str(i).zfill(vtkFieldLen)
-HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
-HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
-NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
-NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
-for k in range(numBlades):
-    RootPos[k,:], RootOrient[k,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-    RootVel[k,:], RootAcc[k,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-for k in range(numBlades):
-    tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-    tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-    MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
-    MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
-    MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
-    MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
-del tmpPos
-del tmpOrient
-del tmpVel
-del tmpAcc
+#   read position/motion from vtk
+HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
+NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
+RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
+MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
 try:
     adilib.aerodyn_inflow_calcOutput(time[i],
@@ -352,78 +373,35 @@ for i in range( 0, len(time)-1):
 
         # If there are correction steps, the inputs would be updated using outputs
         # from the other modules.
-        #RootPos       = np.zeros((numBlades,3),dtype="float32")
-        #RootOrient    = np.zeros((numBlades,9),dtype="float64")
-        #RootVel       = np.zeros((numBlades,6),dtype="float32")
-        #RootAcc       = np.zeros((numBlades,6),dtype="float32")
-        #MeshPos_ar    = np.empty( (0,3), dtype="float32" )
-        #MeshOrient_ar = np.empty( (0,9), dtype="float64" )
-        #MeshVel_ar    = np.empty( (0,6), dtype="float32" )
-        #MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
-        #MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
-        #timeField=str(i).zfill(vtkFieldLen)
-        #HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
-        #HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
-        #NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
-        #NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
-        #for k in range(numBlades):
-        #    RootPos[k,:], RootOrient[k,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-        #    RootVel[k,:], RootAcc[k,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-        #for k in range(numBlades):
-        #    tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-        #    tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-        #    MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
-        #    MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
-        #    MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
-        #    MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
-        #del tmpPos
-        #del tmpOrient
-        #del tmpVel
-        #del tmpAcc
+        #   read position/motion from vtk
+        HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
+        NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
+        RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
+        MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
 
         #   Update the states from t to t+dt (only if not beyond end of sim)
-#        try:
-#            adilib.aerodyn_inflow_updateStates(time[i], time[i+1], nodePos, nodeVel,
-#                    nodeAcc, nodeFrcMom)
-#        except Exception as e:
-#            print("{}".format(e))
-#            dbg_outfile.end()
-#            #FIXME: temporary statement here
-#            print("Exit after failed call to aerodyn_inflow_updateStates")
-#            exit(1)
+        try:
+            adilib.aerodyn_inflow_updateStates(time[i], time[i+1],
+                   HubPos, HubOrient, HubVel, HubAcc,
+                   NacPos, NacOrient, NacVel, NacAcc,
+                   RootPos, RootOrient, RootVel, RootAcc,
+                   MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
+        except Exception as e:
+            print("{}".format(e))
+            dbg_outfile.end()
+            #FIXME: temporary statement here
+            print("Exit after failed call to aerodyn_inflow_updateStates")
+            exit(1)
  
         # Calculate the outputs at t+dt
         #       NOTE: new input values may be available at this point from the
         #       structural solver, so update them here.
-        RootPos       = np.zeros((numBlades,3),dtype="float32")
-        RootOrient    = np.zeros((numBlades,9),dtype="float64")
-        RootVel       = np.zeros((numBlades,6),dtype="float32")
-        RootAcc       = np.zeros((numBlades,6),dtype="float32")
-        MeshPos_ar    = np.empty( (0,3), dtype="float32" )
-        MeshOrient_ar = np.empty( (0,9), dtype="float64" )
-        MeshVel_ar    = np.empty( (0,6), dtype="float32" )
-        MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
-        MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
-        timeField=str(i).zfill(vtkFieldLen)
-        HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
-        HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
-        NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
-        NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
-        for k in range(numBlades):
-            RootPos[k,:], RootOrient[k,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-            RootVel[k,:], RootAcc[k,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-        for k in range(numBlades):
-            tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-            tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-            MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
-            MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
-            MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
-            MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
-        del tmpPos
-        del tmpOrient
-        del tmpVel
-        del tmpAcc
+        #   read position/motion from vtk
+        HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
+        NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
+        RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
+        MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
         try:
             adilib.aerodyn_inflow_calcOutput(time[i],
