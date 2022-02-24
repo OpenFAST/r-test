@@ -325,6 +325,7 @@ NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
 RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
 MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
+print(f"Time step: {i} at {time[i]}")
 try:
     adilib.aerodyn_inflow_calcOutput(time[i],
             HubPos, HubOrient, HubVel, HubAcc,
@@ -360,16 +361,13 @@ allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 #       End correction loop:
 #           4.  Once correction loop is complete, save the resulting values
 #
-#   time[i]   is at t
-#   time[i+1] is at t+dt
-for i in range( 0, len(time)-1):
-
-    #print(f"iter: {i}: {time[i]}")
+#   time[i-1] is at t
+#   time[i]   is at t+dt
+for i in range( 1, len(time)):
 
     for correction in range(0, NumCorrections+1):
 
-        #print(f"Correction step: {correction} for {time[i]} --> {time[i+1]}")
-        print(f"Time step: {i} at {time[i]}")
+        #print(f"Correction step: {correction} for {time[i-1]} --> {time[i]}")
 
         # If there are correction steps, the inputs would be updated using outputs
         # from the other modules.
@@ -382,7 +380,7 @@ for i in range( 0, len(time)-1):
 
         #   Update the states from t to t+dt (only if not beyond end of sim)
         try:
-            adilib.aerodyn_inflow_updateStates(time[i], time[i+1],
+            adilib.aerodyn_inflow_updateStates(time[i-1], time[i],
                    HubPos, HubOrient, HubVel, HubAcc,
                    NacPos, NacOrient, NacVel, NacAcc,
                    RootPos, RootOrient, RootVel, RootAcc,
@@ -395,6 +393,7 @@ for i in range( 0, len(time)-1):
             exit(1)
  
         # Calculate the outputs at t+dt
+        print(f"Time step: {i} at {time[i]}")
         #       NOTE: new input values may be available at this point from the
         #       structural solver, so update them here.
         #   read position/motion from vtk
@@ -435,7 +434,7 @@ for i in range( 0, len(time)-1):
     # channel array for all modules and written to that output file.  For this
     # example we will write to file at the end of the simulation in a single
     # shot.
-    allOutputChannelValues[i+1,:] = np.append(time[i+1],outputChannelValues)
+    allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 
 
 dbg_outfile.end()   # close the debug output file
