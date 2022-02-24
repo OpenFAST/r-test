@@ -58,20 +58,19 @@ True          UseBlCm            - Include aerodynamic pitching moment in calcul
 "../../../glue-codes/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../../../glue-codes/openfast/5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-         12   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
+         11   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
 TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)
 (m)              (m)           (-)            (-)
-0.0000000E+00  6.0000000E+00  1.0000000E+00  1.0000000E-01
-8.5261000E+00  5.7870000E+00  1.0000000E+00  1.0000000E-01
-1.7053000E+01  5.5740000E+00  1.0000000E+00  1.0000000E-01
-2.5579000E+01  5.3610000E+00  1.0000000E+00  1.0000000E-01
-3.4105000E+01  5.1480000E+00  1.0000000E+00  1.0000000E-01
-4.2633000E+01  4.9350000E+00  1.0000000E+00  1.0000000E-01
-5.1158000E+01  4.7220000E+00  1.0000000E+00  1.0000000E-01
-5.9685000E+01  4.5090000E+00  1.0000000E+00  1.0000000E-01
-6.8211000E+01  4.2960000E+00  1.0000000E+00  1.0000000E-01
-7.6738000E+01  4.0830000E+00  1.0000000E+00  1.0000000E-01
-8.5268000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01
+1.0000000E+01  6.5000000E+00  1.0000000E+00  1.0000000E-01
+1.7760000E+01  6.2400000E+00  1.0000000E+00  1.0000000E-01
+2.5520000E+01  5.9700000E+00  1.0000000E+00  1.0000000E-01
+3.3280000E+01  5.7100000E+00  1.0000000E+00  1.0000000E-01
+4.1040000E+01  5.4500000E+00  1.0000000E+00  1.0000000E-01
+4.8800000E+01  5.1800000E+00  1.0000000E+00  1.0000000E-01
+5.6560000E+01  4.9200000E+00  1.0000000E+00  1.0000000E-01
+6.4320000E+01  4.6600000E+00  1.0000000E+00  1.0000000E-01
+7.2080000E+01  4.4000000E+00  1.0000000E+00  1.0000000E-01
+7.9840000E+01  4.1300000E+00  1.0000000E+00  1.0000000E-01
 8.7600000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01
 ======  Outputs  ====================================================================================
 True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
@@ -85,3 +84,60 @@ True          SumPrint            - Generate a summary file listing input option
 "RtAeroCq"                 
 "RtTSR"                    
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+---------------------- NODE OUTPUTS --------------------------------------------
+          3   BldNd_BladesOut  - Blades to output
+         99   BldNd_BlOutNd   - Blade nodes on each blade (currently unused)
+              OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx, AeroDyn_Nodes tab for a listing of available output channels, (-)
+"VUndx"     - x-component of undisturbed wind velocity at each node
+"VUndy"     - y-component of undisturbed wind velocity at each node
+"VUndz"     - z-component of undisturbed wind velocity at each node
+"VDisx"     - x-component of disturbed wind velocity at each node
+"VDisy"     - y-component of disturbed wind velocity at each node
+"VDisz"     - z-component of disturbed wind velocity at each node
+"STVx"      - x-component of structural translational velocity at each node
+"STVy"      - y-component of structural translational velocity at each node
+"STVz"      - z-component of structural translational velocity at each node
+"VRel"      - Relvative wind speed at each node
+"DynP"      - Dynamic pressure at each node
+"Re"        - Reynolds number (in millions) at each node
+"M"         - Mach number at each node
+"Vindx"     - Axial induced wind velocity at each node
+"Vindy"     - Tangential induced wind velocity at each node
+"AxInd"     - Axial induction factor at each node
+"TnInd"     - Tangential induction factor at each node
+"Alpha"     - Angle of attack at each node
+"Theta"     - Pitch+Twist angle at each node
+"Phi"       - Inflow angle at each node
+"Curve"     - Curvature angle at each node
+"Cl"        - Lift force coefficient at each node
+"Cd"        - Drag force coefficient at each node
+"Cm"        - Pitching moment coefficient at each node
+"Cx"        - Normal force (to plane) coefficient at each node
+"Cy"        - Tangential force (to plane) coefficient at each node
+"Cn"        - Normal force (to chord) coefficient at each node
+"Ct"        - Tangential force (to chord) coefficient at each node
+"Fl"        - Lift force per unit length at each node
+"Fd"        - Drag force per unit length at each node
+"Mm"        - Pitching moment per unit length at each node
+"Fx"        - Normal force (to plane) per unit length at each node
+"Fy"        - Tangential force (to plane) per unit length at each node
+"Fn"        - Normal force (to chord) per unit length at each node
+"Ft"        - Tangential force (to chord) per unit length at each node
+"Clrnc"     - Tower clearance at each node (based on the absolute distance to the nearest point in the tower from blade node B#N# minus the local tower radius, in the deflected configuration); please note that this clearance is only approximate because the calculation assumes that the blade is a line with no volume (however, the calculation does use the local tower radius); when blade node B#N# is above the tower top (or below the tower base), the absolute distance to the tower top (or base) minus the local tower radius, in the deflected configuration, is output
+"Vx"        - Local axial velocity
+"Vy"        - Local tangential velocity
+"GeomPhi"   - Geometric phi? If phi was solved using normal BEMT equations, GeomPhi = 1; otherwise, if it was solved geometrically, GeomPhi = 0.
+"Chi"       - Skew angle (used in skewed wake correction) -- not available for OLAF
+"UA_Flag"   - Flag indicating if UA is turned on for this node. -- not available for OLAF
+"CpMin"     - Pressure coefficient
+"SgCav"     - Cavitation number
+"SigCr"     - Critical cavitation number
+"Gam"       - Gamma -- circulation on blade
+"Cl_Static" - Static portion of lift force coefficient at each node, without  unsteady effects -- not available for BEMT/DBEMT
+"Cd_Static" - Static portion of drag force coefficient at each node, without unsteady effects -- not available for BEMT/DBEMT
+"Cm_Static" - Static portion of pitching moment coefficient at each node, without unsteady effects -- not available for BEMT/DBEMT
+"Uin"       - Axial induced velocity in rotating hub coordinates. Axial aligned with hub axis.     rotor plane polar hub rotating coordinates
+"Uit"       - Tangential induced velocity in rotating hub coordinates. Tangential to the rotation plane. Perpendicular to blade aziumth.     rotor plane polar hub rotating coordinates
+"Uir"       - Radial induced velocity in rotating hub coordinates. Radial outwards in rotation plane. Aligned with blade azimuth.     rotor plane polar hub rotating coordinates
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+---------------------------------------------------------------------------------------
