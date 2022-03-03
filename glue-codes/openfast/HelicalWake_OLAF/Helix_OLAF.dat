@@ -30,7 +30,7 @@ False   FWShedVorticity    Include shed vorticity in the far wake {default: fals
 False   TwrShadowOnWake    Include tower flow disturbance effects on wake convection {default:false} [only if TwrPotent or TwrShadow]
 0       ShearModel         Shear Model {0: No treatment, 1: Mirrored vorticity, default: 0}
 ------------------- SPEEDUP OPTIONS -----------------------------------------------------------
-1       VelocityMethod     Method to determine the velocity {1:Biot-Savart Segment, 2:Particle tree, default: 1}
+1       VelocityMethod     Method to determine the velocity {1:Biot-Savart Segment, 2:Particle tree, 3:Segment tree, default: 1}
 1.5     TreeBranchFactor   Branch radius fraction above which a multipole calculation is used {default: 2.0} [only if VelocityMethod=2]
 1       PartPerSegment     Number of particles per segment [only if VelocityMethod=2]
 ===============================================================================================
@@ -39,4 +39,7 @@ False   TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 3       nVTKBlades         Number of blades for which VTK files are exported {0: No VTK per blade, n: VTK for blade 1 to n} (-) 
 3       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, 3: Both, "default": 1} 
 1       VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all OLAF timesteps} [used only if WrVTK=1] 
+0       nGridOut           Number of grid outputs
+GridName  GridType  TStart   TEnd    DTGrid   XStart  XEnd   nX   YStart   YEnd   nY   ZStart   ZEnd   nZ
+(-)         (-)      (s)     (s)      (s)       (m)    (m)   (-)   (m)     (m)    (-)   (m)     (m)    (-)
 ------------------------------------------------------------------------------------------------

@@ -4,8 +4,6 @@ Rigid "turbine" configuration for fixed-free beam modeled in BeamDyn
 f             Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "DEFAULT"     DT          - Integration time step (s)
----------------------- ENVIRONMENTAL CONDITION ---------------------------------
-          0   Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 F             FlapDOF1    - First flapwise blade mode DOF (flag)
 F             FlapDOF2    - Second flapwise blade mode DOF (flag)
