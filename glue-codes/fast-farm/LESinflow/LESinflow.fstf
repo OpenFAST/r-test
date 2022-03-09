@@ -71,6 +71,7 @@ False              WrDisWind          Write low- and high-resolution disturbed w
 0                  NOutDisWindXZ      Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 9]
 1000.0             OutDisWindY        Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
+False              WrLdrVis           Write Farm level Lidar visualization info (lidar position, lidar measurement points and values) as VTK [unused when NumLidar==0]
 --- OUTPUT ---
 True               SumPrint           Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          Amount of time between creating checkpoint files for potential restart (s) [>0.0]
