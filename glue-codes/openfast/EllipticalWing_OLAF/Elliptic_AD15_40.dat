@@ -13,12 +13,11 @@ False         CavitCheck         - Perform cavitation check? (flag) [AFAeroMod m
 False         CompAA             - Flag to compute AeroAcoustics calculation [used only when WakeMod = 1 or 2]
 "unused"      AA_InputFile       - AeroAcoustics input file [used only when CompAA=true]
 ======  Environmental Conditions  ===================================================================
-      1.225   AirDens            - Air density (kg/m^3)
- 1.4639E-05   KinVisc            - Kinematic air viscosity (m^2/s)
-        335   SpdSound           - Speed of sound (m/s)
-     103500   Patm               - Atmospheric pressure (Pa) [used only when CavitCheck=True]
-       1700   Pvap               - Vapour pressure of fluid (Pa) [used only when CavitCheck=True]
-        0.5   FluidDepth         - Water depth above mid-hub height (m) [used only when CavitCheck=True]
+"default"     AirDens            - Air density (kg/m^3)
+"default"     KinVisc            - Kinematic viscosity of working fluid (m^2/s)
+"default"     SpdSound           - Speed of sound in working fluid (m/s)
+"default"     Patm               - Atmospheric pressure (Pa) [used only when CavitCheck=True]
+"default"     Pvap               - Vapour pressure of working fluid (Pa) [used only when CavitCheck=True]
 ======  Blade-Element/Momentum Theory Options  ====================================================== [unused when WakeMod=0 or 3]
           2   SkewMod            - Type of skewed-wake correction model (switch) {1=uncoupled, 2=Pitt/Peters, 3=coupled} [unused when WakeMod=0 or 3]
 "default"     SkewModFactor      - Constant used in Pitt/Peters skewed wake model {or "default" is 15/32*pi} (-) [used only when SkewMod=2; unused when WakeMod=0 or 3]
@@ -44,9 +43,8 @@ True          FLookup            - Flag to indicate whether a lookup for f' will
           3   InCol_Cd           - The column in the airfoil tables that contains the drag coefficient (-)
           4   InCol_Cm           - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
           0   InCol_Cpmin        - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
-          2   NumAFfiles         - Number of airfoil files used (-)
+          1   NumAFfiles         - Number of airfoil files used (-)
 "Polar2PiAlpha_AD15.dat"    AFNames            - Airfoil file names (NumAFfiles lines) (quoted strings)
-"Polar0Lift_AD15.dat"
 ======  Rotor/Blade Properties  =====================================================================
 True          UseBlCm            - Include aerodynamic pitching moment in calculations?  (flag)
 "Elliptic_AD15_blade_40_cos.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
@@ -64,12 +62,12 @@ TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)
 1.1667000E+02  6.6700000E+00  1.0000000E+00  1.0000000E-01
 1.4000000E+02  6.0000000E+00  1.0000000E+00  1.0000000E-01
 ======  Outputs  ====================================================================================
-True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
-          9   NBlOuts             - Number of blade node outputs [0 - 9] (-)
-          1,          5,         10,         15,         20,         25,         30,         35,         40    BlOutNd             - Blade nodes whose values will be output  (-)
+False         SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
+          0   NBlOuts             - Number of blade node outputs [0 - 9] (-)
+          1   BlOutNd             - Blade nodes whose values will be output  (-)
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
-          1,          2,          6    TwOutNd             - Tower nodes whose values will be output  (-)
-                   OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+          1   TwOutNd             - Tower nodes whose values will be output  (-)
+              OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "RtTSR"                                                                    
 "RtVAvgxh"                                                                 
 "RtVAvgyh"                                                                 
@@ -85,144 +83,19 @@ True          SumPrint            - Generate a summary file listing input option
 "RtAeroCp"                                                                 
 "RtAeroCq"                                                                 
 "RtAeroCt"                                                                 
-"B1N9Clrnc,"                                                              B1N9Clrnc, B1N9Clrnc
-"B1N1Alpha"                                                               Angle of attack at Blade 3, Node 8
-"B1N1Cl"                                                                   
-"B1N1Cd"                                                                   
-"B1N1Cm"                                                                   
-"B1N1Fl"                                                                   
-"B1N1Fd"                                                                   
-"B1N1Fn"                                                                   
-"B1N1Ft"                                                                   
-"B1N1Vrel"                                                                 
-"B1N1AxInd"                                                                
-"B1N1Fx"                                                                   
-"B1N1Fy"                                                                   
-"B1N1Ft"                                                                   
-"B1N1Fn"                                                                   
-"B1N1Mm"                                                                   
-"B1N2Alpha"                                                               Angle of attack at Blade 3, Node 8
-"B1N2Cl"                                                                   
-"B1N2Cd"                                                                   
-"B1N2Cm"                                                                   
-"B1N2Fl"                                                                   
-"B1N2Fd"                                                                   
-"B1N2Fn"                                                                   
-"B1N2Ft"                                                                   
-"B1N2Vrel"                                                                 
-"B1N2AxInd"                                                                
-"B1N2Fx"                                                                   
-"B1N2Fy"                                                                   
-"B1N2Ft"                                                                   
-"B1N2Fn"                                                                   
-"B1N2Mm"                                                                   
-"B1N3Alpha"                                                                
-"B1N3Cl"                                                                   
-"B1N3Cd"                                                                   
-"B1N3Cm"                                                                   
-"B1N3Fl"                                                                   
-"B1N3Fd"                                                                   
-"B1N3Fn"                                                                   
-"B1N3Ft"                                                                   
-"B1N3Vrel"                                                                 
-"B1N3AxInd"                                                                
-"B1N3Fx"                                                                   
-"B1N3Fy"                                                                   
-"B1N3Ft"                                                                   
-"B1N3Fn"                                                                   
-"B1N3Mm"                                                                   
-"B1N4Alpha"                                                                
-"B1N4Cl"                                                                   
-"B1N4Cd"                                                                   
-"B1N4Cm"                                                                   
-"B1N4Fl"                                                                   
-"B1N4Fd"                                                                   
-"B1N4Fn"                                                                   
-"B1N4Ft"                                                                   
-"B1N4Vrel"                                                                 
-"B1N4AxInd"                                                                
-"B1N4Fx"                                                                   
-"B1N4Fy"                                                                   
-"B1N4Ft"                                                                   
-"B1N4Fn"                                                                   
-"B1N4Mm"                                                                   
-"B1N5Alpha"                                                                
-"B1N5Cl"                                                                   
-"B1N5Cd"                                                                   
-"B1N5Cm"                                                                   
-"B1N5Fl"                                                                   
-"B1N5Fd"                                                                   
-"B1N5Fn"                                                                   
-"B1N5Ft"                                                                   
-"B1N5Vrel"                                                                 
-"B1N5AxInd"                                                                
-"B1N5Fx"                                                                   
-"B1N5Fy"                                                                   
-"B1N5Ft"                                                                   
-"B1N5Fn"                                                                   
-"B1N5Mm"                                                                   
-"B1N6Alpha"                                                                
-"B1N6Cl"                                                                   
-"B1N6Cd"                                                                   
-"B1N6Cm"                                                                   
-"B1N6Fl"                                                                   
-"B1N6Fd"                                                                   
-"B1N6Fn"                                                                   
-"B1N6Ft"                                                                   
-"B1N6Vrel"                                                                 
-"B1N6AxInd"                                                                
-"B1N6Fx"                                                                   
-"B1N6Fy"                                                                   
-"B1N6Ft"                                                                   
-"B1N6Fn"                                                                   
-"B1N6Mm"                                                                   
-"B1N7Alpha"                                                                
-"B1N7Cl"                                                                   
-"B1N7Cd"                                                                   
-"B1N7Cm"                                                                   
-"B1N7Fl"                                                                   
-"B1N7Fd"                                                                   
-"B1N7Fn"                                                                   
-"B1N7Ft"                                                                   
-"B1N7Vrel"                                                                 
-"B1N7AxInd"                                                                
-"B1N7Fx"                                                                   
-"B1N7Fy"                                                                   
-"B1N7Ft"                                                                   
-"B1N7Fn"                                                                   
-"B1N7Mm"                                                                   
-"B1N8Alpha"                                                                
-"B1N8Cl"                                                                   
-"B1N8Cd"                                                                   
-"B1N8Cm"                                                                   
-"B1N8Fl"                                                                   
-"B1N8Fd"                                                                   
-"B1N8Fn"                                                                   
-"B1N8Ft"                                                                   
-"B1N8Vrel"                                                                 
-"B1N8AxInd"                                                                
-"B1N8Fx"                                                                   
-"B1N8Fy"                                                                   
-"B1N8Ft"                                                                   
-"B1N8Fn"                                                                   
-"B1N8Mm"                                                                   
-"B1N9Alpha"                                                                
-"B1N9Cl"                                                                   
-"B1N9Cd"                                                                   
-"B1N9Cm"                                                                   
-"B1N9Fl"                                                                   
-"B1N9Fd"                                                                   
-"B1N9Fn"                                                                   
-"B1N9Ft"                                                                   
-"B1N9Vrel"                                                                 
-"B1N9AxInd"                                                                
-"B1N9Fx"                                                                   
-"B1N9Fy"                                                                   
-"B1N9Ft"                                                                   
-"B1N9Fn"                                                                   
-"B1N9Mm"                                                                   
-"B1N1Gam,B1N2Gam,B1N3Gam,B1N4Gam,B1N5Gam,B1N6Gam,B1N7Gam,B1N8Gam,B1N9Gam"  
-"B2N1Gam,B2N2Gam,B2N3Gam,B2N4Gam,B2N5Gam,B2N6Gam,B2N7Gam,B2N8Gam,B2N9Gam"  
-"B3N1Gam,B3N2Gam,B3N3Gam,B3N4Gam,B3N5Gam,B3N6Gam,B3N7Gam,B3N8Gam,B3N9Gam"  
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+====== Outputs for all blade stations (same ending as above for B1N1.... =========================== [optional section]
+   1              BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+   "All"          BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+Phi
+Gam
+Fn
+Ft
+Cl
+Cd
+Cm
+Cn
+Ct
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------

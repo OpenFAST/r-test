@@ -4,8 +4,6 @@ FAST certification Test #16: FAST model of a SWRT 3-bladed upwind turbine.  Note
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
       0.001   DT          - Integration time step (s)
----------------------- ENVIRONMENTAL CONDITION ---------------------------------
-       9.81   Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True          FlapDOF1    - First flapwise blade mode DOF (flag)
 True          FlapDOF2    - Second flapwise blade mode DOF (flag)
