@@ -2,7 +2,7 @@
 Mooring system for OC4-DeepCwind Semi
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-Name     Diam      MassDen      EA           BA/-zeta  EI  Cd    Ca   CdAx   CaAx 
+Name     Diam      MassDen      EA    BA/-zeta  EI    Cd   Ca   CdAx  CaAx 
 (-)       (m)      (kg/m)       (N)   (N-s/-)    ()   (-)  (-)   (-)  (-) 
 main     0.0766    113.35     7.536E8  -1.0      0    2.0  0.8   0.4  0.25
 ---------------------- POINTS --------------------------------                                           
