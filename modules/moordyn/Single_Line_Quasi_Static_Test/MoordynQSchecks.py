@@ -23,6 +23,10 @@ from errorPlotting import exportCaseSummary
 import MattLib as ml   # module in same folder
 from moorpy.MoorProps import getLineProps
 
+### This code is under development, intended to help with setting up and analyzing MoorDyn checks
+### needs to be updated for most recent MoorPy version and made more user friendly 
+
+
 def get_change(current, previous):
   if current == previous:
       return 0
@@ -191,8 +195,8 @@ def numSegs_MD_MD_test(depth, anchorR, diameter, LineLength, typeName, executabl
             print('Fail Check ', md_call[0][i], ' by {:2.2f} %, MD1 = {:8.2f}, MD2 = {:8.2f}'.format(diff, np.mean(md_vals1), np.mean(md_vals2)))
 
 def bridle_line_MP_MD_test(depth, anchorR, diameter, LineLength, typeName, executable, folder, tolerance, execute = True):
-    '''Create a single line arrangement in MoorPy with fixed end points, run with MoorDyn driver, and compare tensions/positions
-
+    '''IN PROGRESS Create a single line arrangement in MoorPy with fixed end points, run with MoorDyn driver, and compare tensions/positions
+    
     Parameters
     ----------
     depth: water depth
