@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 16-Mar-2022 at 14:32:11 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.1.0-54-g49ec5ead-dirty
+Linearized model: Predictions were generated on 16-Mar-2022 at 20:10:04 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.1.0-55-gaeae69fe
  linked with  NWTC Subroutine Library; ElastoDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi configuration, for use in offshore analysis
@@ -46,7 +46,7 @@ Order of inputs:
           1    0.000E+00                                 T               0         ED Blade 1 pitch command, rad
           2    0.000E+00                                 T               0         ED Blade 2 pitch command, rad
           3    0.000E+00                                 T               0         ED Blade 3 pitch command, rad
-          4   -0.000E+00                                 F               0         ED Yaw moment, Nm
+          4    0.000E+00                                 F               0         ED Yaw moment, Nm
           5    7.126E+00                                 F               0         ED Generator torque, Nm
           6    0.000E+00                                 F               0         ED Extended input: collective blade-pitch command, rad
 
@@ -70,7 +70,7 @@ Order of outputs:
          15    0.000E+00                                 F               0         ED PtfmRoll, (deg)
          16    0.000E+00                                 F               0         ED PtfmPitch, (deg)
          17    0.000E+00                                 F               0         ED PtfmYaw, (deg)
-         18   -1.072E-12                                 F               0         ED YawBrMzp, (kN-m)
+         18   -1.284E-12                                 F               0         ED YawBrMzp, (kN-m)
          19    0.000E+00                                 F               0         ED TTDspFA, (m)
 
 
@@ -112,7 +112,7 @@ C: 19 x 8
     0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00
     0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  5.730E+01  0.000E+00
     0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00
-    0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00 -1.329E-12  4.848E+04
+    0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  2.321E-12  4.848E+04
     0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00 -1.420E-14  0.000E+00
 D: 19 x 6
     0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00  0.000E+00
