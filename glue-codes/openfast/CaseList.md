@@ -30,6 +30,8 @@ SWRT_YFree_VS_WTurb
 5MW_OC4Jckt_ExtPtfm
 5MW_Land_BD_DLL_WTurb
 
+StC_test_OC4Semi
+
 IEA_LB_RWT-AeroAcoustics
 HelicalWake_OLAF
 EllipticalWing_OLAF
@@ -39,5 +41,7 @@ WP_Stationary_Linear
 5MW_OC4Semi_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
+StC_test_OC4Semi_Linear_Nac
+StC_test_OC4Semi_Linear_Tow
 
 MHK_RM1_Fixed
