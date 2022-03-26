@@ -118,10 +118,8 @@ False                   SumPrint - Generate a summary file listing input options
 "B2FldPwr"                       - Total blade root 2 aerodynamic/hydrodynamic power
 "B1N3SigCr"                      - Critical cavitation number blade 1 node 3
 "B2N5SigCr"                      - Critical cavitation number blade 2 node 5
-"B3N9SigCr"                      - Critical cavitation number blade 3 node 9
 "B1N2SgCav"                      - Cavitation number blade 1 node 2
 "B2N6SgCav"                      - Cavitation number blade 2 node 6
-"B3N8SgCav"                      - Cavitation number blade 3 node 8
 "RtFldFxh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in x direction)
 "RtFldFyh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in y direction)
 "RtFldFzg"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in global z direction)
