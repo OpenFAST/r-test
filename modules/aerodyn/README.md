@@ -11,6 +11,7 @@ Features:
  - multiple rotors
  - rotors with no blades and tower only
  - motions: sinusoidal motion of the base, general motion of the base, general motion for yaw, rotor speed and pitch
+ -fixed MHK
 
 
 BEM test cases ("realistic"):
@@ -23,6 +24,7 @@ BEM test cases (feature testing):
  - BAR\_CombinedCases:  BAR rotor, combined case analysis type
  - BAR\_SineMotion: BAR rotor, regular analysis type, sine motion of the base 
  - BAR\_RNAMotion: BAR rotor, regular analysis type, advanced rotor inputs, genereral motion of yaw/pitch and rotor speed, unrealistic case
+ - MHK\_RM1\_Fixed: MHK RM1 rotor, regular analysis type, basic rotor inputs, no base motion, buoyancy and cavitation on
 
 
 OLAF test cases ("realistic"):
