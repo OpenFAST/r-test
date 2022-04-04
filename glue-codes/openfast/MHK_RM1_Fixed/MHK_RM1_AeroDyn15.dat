@@ -93,43 +93,18 @@ False                   SumPrint - Generate a summary file listing input options
                         OutList  - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels.
 "TwN1Fbx"                        - x-component of buoyant force per unit length at Tw node 1
 "TwN3Fby"                        - y-component of buoyant force per unit length at Tw node 3
-"TwN4Fbz"                        - z-component of buoyant force per unit length at Tw node 6
-"TwN6Mbx"                        - x-component of buoyant moment per unit length at Tw node 9
-"TwN5Mby"                        - y-component of buoyant moment per unit length at Tw node 8
+"TwN4Fbz"                        - z-component of buoyant force per unit length at Tw node 4
+"TwN6Mbx"                        - x-component of buoyant moment per unit length at Tw node 6
+"TwN5Mby"                        - y-component of buoyant moment per unit length at Tw node 5
 "TwN2Mbz"                        - z-component of buoyant moment per unit length at Tw node 2
-"B1N5Fbn"                        - Buoyant force normal to chord per unit length at blade 1 node 5
 "B2N4Fbn"                        - Buoyant force normal to chord per unit length at blade 2 node 4
-"B1N7Fbt"                        - Buoyant force tangential to chord per unit length at blade 1 node 2
-"B2N1Fbt"                        - Buoyant force tangential to chord per unit length at blade 2 node 1
-"B1N3Fbs"                        - Buoyant spanwise force per unit length at blade 1 node 3
+"B1N7Fbt"                        - Buoyant force tangential to chord per unit length at blade 1 node 7
 "B2N8Fbs"                        - Buoyant spanwise force per unit length at blade 2 node 8
-"B1N2Mbn"                        - Buoyant moment normal to chord per unit length at blade 1 node 1
-"B2N5Mbn"                        - Buoyant moment normal to chord per unit length at blade 2 node 5
-"B1N9Mbt"                        - Buoyant moment tangential to chord per unit length at blade 1 node 9
+"B1N2Mbn"                        - Buoyant moment normal to chord per unit length at blade 1 node 2
 "B2N3Mbt"                        - Buoyant moment tangential to chord per unit length at blade 2 node 3
 "B1N6Mbs"                        - Buoyant spanwise moment per unit length at blade 1 node 6
-"B2N4Mbs"                        - Buoyant spanwise moment per unit length at blade 2 node 4
-"B2FldFx"                        - x-component of total blade 2 root aerodynamic/hydrodynamic force
-"B1FldFy"                        - y-component of total blade 1 root aerodynamic/hydrodynamic force
-"B1FldFz"                        - z-component of total blade 1 root aerodynamic/hydrodynamic force
-"B2FldMx"                        - x-component of total blade 2 root aerodynamic/hydrodynamic moment
-"B2FldMy"                        - y-component of total blade 2 root aerodynamic/hydrodynamic moment
-"B1FldMz"                        - z-component of total blade 1 root aerodynamic/hydrodynamic moment
-"B2FldPwr"                       - Total blade root 2 aerodynamic/hydrodynamic power
-"B1N3SigCr"                      - Critical cavitation number blade 1 node 3
-"B2N5SigCr"                      - Critical cavitation number blade 2 node 5
-"B1N2SgCav"                      - Cavitation number blade 1 node 2
-"B2N6SgCav"                      - Cavitation number blade 2 node 6
-"RtFldFxh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in x direction)
-"RtFldFyh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in y direction)
-"RtFldFzg"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in global z direction)
-"RtFldMxh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in x direction)
-"RtFldMyg"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in global y direction)
-"RtFldMzh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in z direction)
-"RtFldPwr"                       - Rotor aerodynamic/hydrodynamic power
-"RtFldCp"                        - Rotor aerodynamic/hydrodynamic power coefficient
-"RtFldCq"                        - Rotor aerodynamic/hydrodynamic torque coefficient
-"RtFldCt"                        - Rotor aerodynamic/hydrodynamic thrust coefficient
+"B1FldFz"                        - Total blade aerodynamic/hydrodynamic load for blade 1 (force in z-direction)
+"B2FldMx"                        - Total blade aerodynamic/hydrodynamic load for blade 2 (moment in x-direction)
 "HbFbx"                          - x-component of buoyant force at hub node
 "HbFby"                          - y-component of buoyant force at hub node
 "HbFbz"                          - z-component of buoyant force at hub node
@@ -142,5 +117,15 @@ False                   SumPrint - Generate a summary file listing input options
 "NcMbx"                          - x-component of buoyant moment at nacelle node
 "NcMby"                          - y-component of buoyant moment at nacelle node
 "NcMbz"                          - z-component of buoyant moment at nacelle node
+"RtFldFxh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in x direction)
+"RtFldFyh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in y direction)
+"RtFldFzg"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (force in global z direction)
+"RtFldMxh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in x direction)
+"RtFldMyg"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in global y direction)
+"RtFldMzh"                       - Total rotor aerodynamic/hydrodynamic and buoyant load (moment in z direction)
+"B1N3SigCr"                      - Critical cavitation number blade 1 node 3
+"B2N5SigCr"                      - Critical cavitation number blade 2 node 5
+"B1N2SgCav"                      - Cavitation number blade 1 node 2
+"B2N6SgCav"                      - Cavitation number blade 2 node 6
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 -----------------------------------------------------------------------------------------------------

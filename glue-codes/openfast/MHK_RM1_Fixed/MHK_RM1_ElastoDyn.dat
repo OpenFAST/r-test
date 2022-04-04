@@ -118,17 +118,5 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           0   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           0   BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"OoPDefl1"                - Blade 1 out-of-plane tip deflection (relative to the undeflected position)
-"IPDefl2"                 - Blade 2 in-plane tip deflection (relative to the pitch axis)
-"TipDzb2"                 - Blade 2 axial tip deflection (relative to the pitch axis)
-"NcIMUTVys"               - Nacelle inertial measurement unit translational velocity (absolute)
-"NcIMURVxs"               - Nacelle inertial measurement unit angular (rotational) velocity (absolute)
-"TwrTpTDzi"               - Tower-top / yaw bearing axial (translational) deflection (relative to the undeflected position) including all platform motions
-"RootMzc1"                - Blade 1 pitching moment at the blade root
-"RootFxb2"                - Blade 2 flapwise shear force at the blade root
-"RootMyb1"                - Blade 1 flapwise moment (i.e., the moment caused by flapwise forces) at the blade root
-"LSSTipMys"               - Nonrotating low-speed shaft bending moment at the shaft tip (teeter pin for 2-blader, apex of rotation for 3-blader)
-"YawBrFzn"                - Tower-top / yaw bearing axial force
-"TwrBsFzt"                - Tower base axial force
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 --------------------------------------------------------------------------------
