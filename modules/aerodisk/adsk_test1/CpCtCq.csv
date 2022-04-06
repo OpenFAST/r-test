@@ -1,3 +1,4 @@
+# 5MW, generated from ROSCO via CCBlade.
 TSR,  RtSpd ,   VRel,  Skew ,   Pitch ,  C_Fx  ,   C_Fy   ,  C_Fz   ,  C_Mx   ,  C_My  ,   C_Mz
 (-),  (rpm) ,   (m/s)  ,  (deg) ,   (deg) ,  (-)  ,   (-)   ,  (-)   ,  (-)   ,  (-)  ,   (-)
     3.0000,    1.0000,    2.1991,    0.0000,   -1.0000,    0.0916,    0.0000,    0.0000,    0.0916,    0.0000,    0.0000
