@@ -1,5 +1,5 @@
-HydroDyn Driver file for OC3_Tripod.  
-Compatible with HydroDyn v3.00
+HydroDyn Driver file for OC4 Semi 
+Compatible with HydroDyn v4.00
 FALSE            Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
 9.80665          Gravity             - Gravity (m/s^2)
@@ -8,6 +8,7 @@ FALSE            Echo                - Echo the input file data (flag)
 0                MSL2SWL             - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- HYDRODYN -----------------------------------------------
 "./NRELOffshrBsline5MW_OC4DeepCwindSemi_HydroDyn.dat" HDInputFile       - Primary HydroDyn input file name (quoted string)
+"./NRELOffshrBsline5MW_OC4DeepCwindSemi_SeaState.dat" SeaStateInputFile       - Primary SeaState input file name (quoted string)
 "./driver"         OutRootName       - The name which prefixes all HydroDyn generated files (quoted string)
 FALSE              Linearize         - Flag to enable linearization
 4801               NSteps            - Number of time steps in the simulations (-)
@@ -19,8 +20,4 @@ FALSE              Linearize         - Flag to enable linearization
 1.0   2.0  -3.0  0.0  0.0  0.0    uPRPInSteady         - PRP Steady-state displacements and rotations at the platform reference point (m, rads)
 0.0   0.0   0.0  0.0  0.0  0.0    uDotPRPInSteady      - PRP Steady-state translational and rotational velocities at the platform reference point (m/s, rads/s)
 0.0   0.0   0.0  0.0  0.0  0.0    uDotDotPRPInSteady   - PRP Steady-state translational and rotational accelerations at the platform reference point (m/s^2, rads/s^2)
----------------------- Waves multipoint elevation output ----------------------                                                                                                                
-FALSE            WaveElevSeriesFlag     - T/F flag to calculate the wave elevation field (for movies)
-5.0   5.0        WaveElevDX WaveElevDY  - WaveElevSeries spacing -- WaveElevDX WaveElevDY
-3   3            WaveElevNX WaveElevNY  - WaveElevSeries points -- WaveElevNX WaveElevNY
 END of driver input file
