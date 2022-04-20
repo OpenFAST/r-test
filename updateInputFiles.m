@@ -61,4 +61,13 @@ if fid > 0
     end
 end
 
+%% example files in the OpenFAST HydroDyn regression tests:
+pathstr = './modules/hydrodyn/';
+caseNames = GetSubDirsFirstLevelOnly(pathstr)
+
+for i= 2:length(caseNames)
+    casePath = [ pathstr filesep caseNames{i} ];
+    ConvertHydroDynDriver( [casePath filesep 'hd_driver.inp'], casePath );  
+end
+
 
