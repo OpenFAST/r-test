@@ -1,4 +1,4 @@
-------- SeaState v1.00.* Input File --------------------------------------------
+------- SeaState Input File ----------------------------------------------------
 NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the ITI Barge with 4m draft.
 False            Echo           - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
@@ -6,9 +6,9 @@ False            Echo           - Echo the input file data (flag)
 "default"        WtrDpth        - Water depth (meters) relative to MSL
 "default"        MSL2SWL        - Offset between still-water level and mean sea level (meters) [positive upward; unused when WaveMod = 6; must be zero if PotMod=1 or 2]
 ---------------------- SPATIAL DISCRETIZATION ---------------------------------------------------
-          30.0   X_HalfWidth    – Half-width of the domain in the X direction (m) [>0, NOTE: X[nX] = nX*dX, where nX = {-NX+1,-NX+2,…,NX-1} and dX = X_HalfWidth/(NX-1)]
-          30.0   Y_HalfWidth    – Half-width of the domain in the Y direction (m) [>0, NOTE: Y[nY] = nY*dY, where nY = {-NY+1,-NY+2,…,NY-1} and dY = Y_HalfWidth/(NY-1)]
-          25.0   Z_Depth        – Depth of the domain the Z direction (m) relative to SWL [0 < Z_Depth <= WtrDpth+MSL2SWL; "default": Z_Depth = WtrDpth+MSL2SWL; Z[nZ] = ( COS( nZ*dthetaZ ) – 1 )*Z_Depth, where nZ = {0,1,…NZ-1} and dthetaZ = pi/( 2*(NZ-1) )]
+            30   X_HalfWidth    – Half-width of the domain in the X direction (m) [>0, NOTE: X[nX] = nX*dX, where nX = {-NX+1,-NX+2,…,NX-1} and dX = X_HalfWidth/(NX-1)]
+            30   Y_HalfWidth    – Half-width of the domain in the Y direction (m) [>0, NOTE: Y[nY] = nY*dY, where nY = {-NY+1,-NY+2,…,NY-1} and dY = Y_HalfWidth/(NY-1)]
+            25   Z_Depth        – Depth of the domain the Z direction (m) relative to SWL [0 < Z_Depth <= WtrDpth+MSL2SWL; "default": Z_Depth = WtrDpth+MSL2SWL; Z[nZ] = ( COS( nZ*dthetaZ ) – 1 )*Z_Depth, where nZ = {0,1,…NZ-1} and dthetaZ = pi/( 2*(NZ-1) )]
             10   NX             – Number of nodes in half of the X-direction domain (-) [>=2]
             10   NY             – Number of nodes in half of the Y-direction domain (-) [>=2]
             10   NZ             – Number of nodes in the Z direction (-) [>=2]
@@ -28,7 +28,7 @@ False            Echo           - Echo the input file data (flag)
              1   WaveNDir       - Number of wave directions                                           (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1; odd number only]
             90   WaveDirRange   - Range of wave directions (full range: WaveDir +/- 1/2*WaveDirRange) (degrees) [only used when WaveMod=2,3,or 4 and WaveDirMod=1]
      123456789   WaveSeed(1)    - First  random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
-"RANLUX"         WaveSeed(2)    - Second random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
+"RANLUX"         WaveSeed(2)    - Second random seed of incident waves [-2147483648 to 2147483647] for intrinsic pRNG, or an alternative pRNG: "RanLux" (-)       [unused when WaveMod=0, 5, or 6]
 TRUE             WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]
 ""               WvKinFile      - Root name of externally generated wave data file(s)        (quoted string)    [used only when WaveMod=5 or 6]
 ---------------------- 2ND-ORDER WAVES ----------------------------------------- [unused with WaveMod=0 or 6]
@@ -56,9 +56,9 @@ True             SeaStSum       - Output a summary file [flag]
              0   WaveElevxi     - List of xi-coordinates for points where the incident wave elevations can be output (meters) [NWaveElev points, separated by commas or white space; usused if NWaveElev = 0]
              0   WaveElevyi     - List of yi-coordinates for points where the incident wave elevations can be output (meters) [NWaveElev points, separated by commas or white space; usused if NWaveElev = 0]
              0   NWaveKin       - Number of points where the wave kinematics can be output (-)       [maximum of 9 output locations]
- 14.43376, -18.47520  WaveKinxi - List of xi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
- 25.00000,  -6.00000  WaveKinyi - List of yi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
--14.00000, -17.00000  WaveKinzi - List of zi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+      14.43376,      -18.4752    WaveKinxi - List of xi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+            25,            -6    WaveKinyi - List of yi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+           -14,           -17    WaveKinzi - List of zi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
-Wave1Elev                 - Wave elevation at the platform reference point (  0,  0)
+"Wave1Elev"               - Wave elevation at the platform reference point (  0,  0)
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
