@@ -1,0 +1,14 @@
+------- SED driver INPUT FILE --------------------------------------------------------------------------------
+Example test case to run simple case
+--------------------------------------------------------------------------------------------------------------
+      True                       Echo           - Echo input data to <RootName>.ech (flag)
+--------------------------------------------------------------------------------------------------------------
+"sed_primary.inp"                SEDiptFile     - SED input file
+"adsk_primary"                   OutRootName    - RootName for output files
+----- Case Analysis ------------------------------------------------------------------------------------------
+0.0                              TStart         - Start time (currently unused)
+"DEFAULT"                        DT             - Time step (DEFAULT to use the smallest DT value from input series below)
+"DEFAULT"                        NumTimeSteps   - Number of timesteps (DEFAULT to run to end of time in input series below)
+Time      AerTrq      HSSBrTrqC   GenTrq      BlPitchCom  Yaw         YawRate
+(s)       (N-m)       (N-m)       (N-m)       (deg)       (deg)       (deg/s)
+@DummyTest.csv
