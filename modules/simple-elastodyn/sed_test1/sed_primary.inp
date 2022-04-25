@@ -2,7 +2,7 @@
 Test case input file for SED (not representative of any model)
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
-          3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
+          3   IntMethod   - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "default"     DT          - Integration time step (s)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True          GenDOF      - Generator DOF (flag)
@@ -26,7 +26,7 @@ True          GenDOF      - Generator DOF (flag)
     534.116   GenIner     - Generator inertia about HSS (kg m^2)
 ---------------------- DRIVETRAIN ----------------------------------------------
         100   GBoxEff     - Gearbox efficiency (%)
-         97   GBRatio     - Gearbox ratio (-)
+         97   GBoxRatio   - Gearbox ratio (-)
 ---------------------- OUTPUT --------------------------------------------------
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "Azimuth"                 - Blades azimuth angle                        (deg)
