@@ -41,3 +41,44 @@ end
 %     ConvertBeamDynDriver( [casePath filesep 'bd_driver.inp'], casePath );  
 % end
 
+%%
+
+pathstr = './modules/hydrodyn/';
+
+NewPath = pathstr;
+goldStandard = 'windows-intel';
+
+caseNames = GetSubDirsFirstLevelOnly(pathstr);
+HDexe= '..\..\build\bin\HydroDynDriver_x64.exe';
+
+for i= 1 %1:length(caseNames)
+    casePath = [ pathstr filesep caseNames{i} ];
+    
+    if strcmpi(caseNames{i},'HydroDyn_NBodyMod_cases')
+        caseNamesSub = GetSubDirsFirstLevelOnly(casePath);
+        for j=1:length(caseNamesSub)
+            casePathSub = [ casePath filesep caseNamesSub{j} ];
+        
+            oldRoot = fullfile(casePathSub, goldStandard);
+        
+            status = system([HDexe ' ' casePathSub filesep caseNamesSub{j} '.dvr']);
+            if status ~= 0
+                disp(['case failed: ' casePathSub])
+            else
+                PlotFASToutput(strcat({oldRoot,casePathSub},filesep, {[caseNamesSub{j} '.out'], [caseNamesSub{j} 'SEA.out']}),{oldRoot,casePathSub},2);
+            end
+        end
+    else
+        oldRoot = fullfile(casePath, goldStandard);
+    
+        status = system([HDexe ' ' casePath filesep 'hd_driver.inp']);
+        if status ~= 0
+            disp(['case failed: ' casePath])
+        else
+            PlotFASToutput(strcat({oldRoot,casePath},filesep, {'driver.HD.out','driver.SeaSt.out'}),{oldRoot,casePath},2);
+        end
+    end
+
+end
+
+% executeHydrodynRegressionCase.py -p=true -v=true %caseName%  HDexe C:\Users\bonnie.jonkman\Documents\Data\Software\Code\openfast\ C:\Users\bonnie.jonkman\Documents\Data\Software\Code\openfast\build\reg_tests\modules\hydrodyn\ 1e-5 Windows Intel
