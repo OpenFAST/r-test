@@ -107,12 +107,12 @@ PropSetID    PropD         PropThck
    (-)        (m)            (m)
     1       45.13520        0.00010
 ---------------------- SIMPLE HYDRODYNAMIC COEFFICIENTS (model 1) --------------
-     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCa  SimplAxCaMG  SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
+     SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG
        (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)
        1.00        1.00        0.00        0.00        1.00        1.00        1.00        1.00        1.00        1.00        0.00        0.00 
 ---------------------- DEPTH-BASED HYDRODYNAMIC COEFFICIENTS (model 2) ---------
              0   NCoefDpth       - Number of depth-dependent coefficients (-)
-Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCa   DpthAxCaMG    DpthAxCa   DpthAxCaMG       DpthAxCp   DpthAxCpMG
+Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa    DpthAxCaMG      DpthAxCp   DpthAxCpMG
 (m)       (-)      (-)        (-)      (-)            (-)      (-)          (-)        (-)           (-)        (-)              (-)         (-)
 ---------------------- MEMBER-BASED HYDRODYNAMIC COEFFICIENTS (model 3) --------
              0   NCoefMembers       - Number of member-based coefficients (-)
