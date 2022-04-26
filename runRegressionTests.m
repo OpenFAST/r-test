@@ -1,5 +1,6 @@
-pathToNewFiles = '..\..\build\reg_tests';
-OpenFASTexe = '..\..\build\bin\openfast_Win32.exe';
+% pathToNewFiles = '..\..\build\reg_tests';
+pathToNewFiles = '.\';
+OpenFASTexe = '..\..\build\bin\openfast_x64.exe';
 goldStandard = 'windows-intel';
 
 

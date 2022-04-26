@@ -30,7 +30,7 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
           0   TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
           0   Azimuth     - Initial azimuth angle for blade 1 (degrees)
-5.7295779513  RotSpeed    - Initial or fixed rotor speed (rpm)
+    5.72958   RotSpeed    - Initial or fixed rotor speed (rpm)
           0   NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
           0   TTDspFA     - Initial fore-aft tower-top displacement (meters)
           0   TTDspSS     - Initial side-to-side tower-top displacement (meters)
@@ -98,8 +98,8 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
 ---------------------- DRIVETRAIN ----------------------------------------------
         100   GBoxEff     - Gearbox efficiency (%)
           1   GBRatio     - Gearbox ratio (-)
-8.67637E+08   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
-  6.215E+06   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
+  867637000   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
+    6215000   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
 False         Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]

@@ -98,8 +98,8 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
 ---------------------- DRIVETRAIN ----------------------------------------------
         100   GBoxEff     - Gearbox efficiency (%)
           1   GBRatio     - Gearbox ratio (-)
-8.67637E+08   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
-  6.215E+06   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
+  867637000   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
+    6215000   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
 False         Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]

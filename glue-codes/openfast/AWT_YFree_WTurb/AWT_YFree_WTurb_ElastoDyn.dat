@@ -94,12 +94,12 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   TeetSStP    - Rotor-teeter soft-stop position (degrees) [used only for 2 blades and when TeetMod=1]
         180   TeetHStP    - Rotor-teeter hard-stop position (degrees) [used only for 2 blades and when TeetMod=1]
           1   TeetSSSp    - Rotor-teeter soft-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
-      5E+06   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
+    5000000   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
 ---------------------- DRIVETRAIN ----------------------------------------------
         100   GBoxEff     - Gearbox efficiency (%)
        22.5   GBRatio     - Gearbox ratio (-)
-      5E+07   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
-      1E+06   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
+   50000000   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
+    1000000   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
 False         Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
