@@ -5,6 +5,8 @@ Example test case to run simple case
 --------------------------------------------------------------------------------------------------------------
 "sed_primary.inp"                SEDiptFile     - SED input file
 "adsk_primary"                   OutRootName    - RootName for output files
+----- Output  ------------------------------------------------------------------------------------------------
+   2                             WrVTK          - Option for writing VTK visualization files must be [0: none, 1: init only, 2: animation]
 ----- Case Analysis ------------------------------------------------------------------------------------------
 0.0                              TStart         - Start time (currently unused)
 "DEFAULT"                        DT             - Time step (DEFAULT to use the smallest DT value from input series below)
