@@ -6,6 +6,7 @@ False         Echo        - Echo input data to "<RootName>.ech" (flag)
 "default"     DT          - Integration time step (s)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True          GenDOF      - Generator DOF (flag)
+True          YawDOF      - Yaw degree of freedom -- controlled by controller (flag)
 ---------------------- INITIAL CONDITIONS --------------------------------------
           0   Azimuth     - Initial azimuth angle for blades (degrees)
           0   BlPitch     - Blades initial pitch (degrees)
