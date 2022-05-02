@@ -39,7 +39,7 @@ end
 
 %% example files in the OpenFAST AeroDyn documentation:
 docsPath = '../../docs/source/user/aerodyn/examples/';
-caseNames = strcat(docsPath, {'ad_driver_example.inp'} );
+caseNames = strcat(docsPath, {'ad_driver_example.dvr'} );
 
 for i= 1:length(caseNames)
     ConvertAeroDynDriver( caseNames{i}, docsPath );  
@@ -57,7 +57,7 @@ if fid > 0
 
     for i= 1:length(caseNames)
         casePath = [ pathstr filesep caseNames{i} ];
-        ConvertAeroDynDriver( [casePath filesep 'ad_driver.inp'], casePath );  
+        ConvertAeroDynDriver( [casePath filesep 'ad_driver.dvr'], casePath );  
     end
 end
 
