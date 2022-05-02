@@ -1,17 +1,18 @@
 %% example files in the OpenFAST glue-code regression tests:
-caseFile = './glue-codes/openfast/CaseList.md';
-[pathstr] = fileparts(caseFile);
-
-fid = fopen(caseFile);
-caseNames = textscan(fid,'%s');
-caseNames = caseNames{1};
-fclose(fid);
-
-for i= 1:length(caseNames)
-    casePath = [ pathstr filesep caseNames{i} ];
-    ConvertFAST8_16to17( [casePath filesep caseNames{i} '.fst'], casePath );
+caseFile = {'./glue-codes/openfast/CaseList.md', './glue-codes/openfast-cpp/CaseList.md'};
+for iGlue=1:length(caseFile)
+    [pathstr] = fileparts(caseFile{iGlue});
+    
+    fid = fopen(caseFile{iGlue});
+    caseNames = textscan(fid,'%s');
+    caseNames = caseNames{1};
+    fclose(fid);
+    
+    for i= 1:length(caseNames)
+        casePath = [ pathstr filesep caseNames{i} ];
+        ConvertFAST8_16to17( [casePath filesep caseNames{i} '.fst'], casePath );
+    end
 end
-
 
 %% example files in the OpenFAST BeamDyn regression tests:
 caseFile = './modules/beamdyn/CaseList.md';
