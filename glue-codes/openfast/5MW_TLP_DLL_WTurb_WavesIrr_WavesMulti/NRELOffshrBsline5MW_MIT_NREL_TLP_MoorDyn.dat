@@ -2,12 +2,10 @@
 Mooring system for MIT/NREL TLP
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-1        NTypes    - number of LineTypes
-Name     Diam      MassDen       EA    BA/-zeta  Can     Cat   Cdn   Cdt
-(-)       (m)      (kg/m)        (N)    (N-s/-)  (-)     (-)   (-)   (-)
-main     0.127    116.027       1.5E9    6.0E6   1.0     0.0   1.6   0.1
----------------------- CONNECTION PROPERTIES --------------------------------
-16       NConnects - number of connections including anchors and fairleads
+Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+(-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
+main     0.127    116.027       1.5E9    6.0E6     0.0   1.0     0.0    1.6    0.1
+---------------------- POINTS --------------------------------                                           
 Node   Type       X        Y         Z      M      V      FX   FY   FZ     CdA   CA
 (-)    (-)       (m)      (m)       (m)    (kg)   (m^3)  (kN) (kN) (kN)   (m^2)  (-)
 1      fixed     27.0      0.0    -200.0    0      0      0    0    0       0     0
@@ -26,18 +24,17 @@ Node   Type       X        Y         Z      M      V      FX   FY   FZ     CdA  
 14     vessel     0.0     27.0     -47.89   0      0      0    0    0       0     0
 15     vessel   -27.0      0.0     -47.89   0      0      0    0    0       0     0
 16     vessel     0.0    -27.0     -47.89   0      0      0    0    0       0     0
----------------------- LINE PROPERTIES --------------------------------------
-8        NLines    - number of line objects
-Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
-(-)       (-)       (m)       (-)       (-)       (-)       (-)      (-)
-1         main    151.73       10        1         9         -        0
-2         main    151.73       10        2         10        -        0
-3         main    151.73       10        3         11        -        0
-4         main    151.73       10        4         12        -        0
-5         main    151.73       10        5         13        -        0
-6         main    151.73       10        6         14        -        0
-7         main    151.73       10        7         15        -        0
-8         main    151.73       10        8         16        -        0
+---------------------- LINES --------------------------------------                                           
+Line    LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
+(-)       (-)        (-)       (-)      (m)       (-)       (-)
+1         main        1         9     151.73       10        -
+2         main        2         10    151.73       10        -
+3         main        3         11    151.73       10        -
+4         main        4         12    151.73       10        -
+5         main        5         13    151.73       10        -
+6         main        6         14    151.73       10        -
+7         main        7         15    151.73       10        -
+8         main        8         16    151.73       10        -
 ---------------------- SOLVER OPTIONS ---------------------------------------
 0.001    dtM       - time step to use in mooring integration (s)
 3.0e4    kbot      - bottom stiffness (Pa/m)
