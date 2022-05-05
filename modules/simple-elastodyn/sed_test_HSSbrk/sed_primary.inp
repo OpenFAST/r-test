@@ -2,7 +2,7 @@
 Test case input file for SED (not representative of any model)
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
-          3   IntMethod   - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
+          1   IntMethod   - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "default"     DT          - Integration time step (s)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True          GenDOF      - Generator DOF (flag)
@@ -10,7 +10,7 @@ True          YawDOF      - Yaw degree of freedom -- controlled by controller (f
 ---------------------- INITIAL CONDITIONS --------------------------------------
           0   Azimuth     - Initial azimuth angle for blades (degrees)
           0   BlPitch     - Blades initial pitch (degrees)
-        0.0   RotSpeed    - Initial or fixed rotor speed (rpm)
+       12.0   RotSpeed    - Initial or fixed rotor speed (rpm)
           0   NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
           0   PtfmPitch   - Fixed pitch tilt rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------

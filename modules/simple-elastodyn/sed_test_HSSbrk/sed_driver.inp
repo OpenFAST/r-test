@@ -11,6 +11,6 @@ Example test case to run simple case
 0.0                              TStart         - Start time (currently unused)
 "DEFAULT"                        DT             - Time step (DEFAULT to use the smallest DT value from input series below)
 "DEFAULT"                        NumTimeSteps   - Number of timesteps (DEFAULT to run to end of time in input series below)
-Time      AerTrq      HSSBrTrqC   GenTrq      BlPitchCom  Yaw         YawRate
+Time      AeroTrq     HSSBrTrqC   GenTrq      BlPitchCom  Yaw         YawRate
 (s)       (N-m)       (N-m)       (N-m)       (deg)       (deg)       (deg/s)
-@DummyTest.csv
+@HSSBrk.csv
