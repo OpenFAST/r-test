@@ -1,6 +1,6 @@
 ------- HydroDyn Input File ----------------------------------------------------
 NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the ITI Barge with 4m draft.
-False            Echo           - Echo the input file data (flag)
+True             Echo           - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
 "default"        WtrDens        - Water density (kg/m^3)
 "default"        WtrDpth        - Water depth (meters)
