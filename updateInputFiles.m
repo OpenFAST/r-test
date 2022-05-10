@@ -66,7 +66,7 @@ end
 pathstr = './modules/hydrodyn/';
 caseNames = GetSubDirsFirstLevelOnly(pathstr);
 
-for i= 1 %1:length(caseNames)
+for i= 1:length(caseNames)
     casePath = fullfile(pathstr, caseNames{i});
 
     if strcmpi(caseNames{i},'HydroDyn_NBodyMod_cases')

@@ -56,6 +56,7 @@ FALSE            Echo           - Echo the input file data (flag)
              0             0             0             0             0             0
 ---------------------- STRIP THEORY OPTIONS --------------------------------------
              1   WaveDisp       - Method of computing Wave Kinematics {0: use undisplaced position, 1: use displaced position) } (switch)
+             0   AMMod          - Method of computing distributed added-mass force. (0: Only and always on nodes below SWL at the undisplaced position. 2: Up to the instantaneous free surface) [overwrite to 0 when WaveMod = 0 or 6 or when WaveStMod = 0 in SeaState]
 ---------------------- AXIAL COEFFICIENTS --------------------------------------
              1   NAxCoef        - Number of axial coefficients (-)
 AxCoefID  AxCd     AxCa     AxCp
@@ -223,7 +224,7 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
    19          1        1.000
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
              0   NJOutputs      - Number of joint outputs [Must be < 10]
-   0           JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+   3, 20         JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]

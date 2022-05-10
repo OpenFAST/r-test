@@ -8,7 +8,7 @@ FALSE         Echo                - Echo the input file data (flag)
           0   MSL2SWL             - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- HYDRODYN -----------------------------------------------
 "./Taper_HD_primary.dat"    HDInputFile       - Primary HydroDyn input file name (quoted string)
-SeaState.dat    SeaStateInputFile       - Primary SeaState input file name (quoted string)
+"SeaState.dat"    SeaStateInputFile       - Primary SeaState input file name (quoted string)
 "./driver"    OutRootName       - The name which prefixes all HydroDyn generated files (quoted string)
 FALSE         Linearize         - Flag to enable linearization
          80   NSteps            - Number of time steps in the simulations (-)   [10 seconds]
@@ -20,4 +20,3 @@ FALSE         Linearize         - Flag to enable linearization
           1,          2,         -3,          0,          0,          0    uPRPInSteady         - PRP Steady-state displacements and rotations at the platform reference point (m, rads)
           0,          0,          0,          0,          0,          0    uDotPRPInSteady      - PRP Steady-state translational and rotational velocities at the platform reference point (m/s, rads/s)
           0,          0,          0,          0,          0,          0    uDotDotPRPInSteady   - PRP Steady-state translational and rotational accelerations at the platform reference point (m/s^2, rads/s^2)
-"END"         of driver input file

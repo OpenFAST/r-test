@@ -20,4 +20,3 @@ FALSE         Linearize         - Flag to enable linearization
           1,          2,         -3,          0,          0,          0    uPRPInSteady         - PRP Steady-state displacements and rotations at the platform reference point (m, rads)
           0,          0,          0,          0,          0,          0    uDotPRPInSteady      - PRP Steady-state translational and rotational velocities at the platform reference point (m/s, rads/s)
           0,          0,          0,          0,          0,          0    uDotDotPRPInSteady   - PRP Steady-state translational and rotational accelerations at the platform reference point (m/s^2, rads/s^2)
-"END"         of driver input file
