@@ -115,5 +115,6 @@ True          TabDelim     - Use tab delimiters in text tabular output file? (fl
 "TStC1_XQ"                 
 "TStC1_XQD"                
 "TStC1_Fxl"                
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of ServoDyn input file (the word "END" must appear in the first 3 columns of this last line).
+
+

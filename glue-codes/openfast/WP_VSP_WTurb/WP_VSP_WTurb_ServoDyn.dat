@@ -104,5 +104,6 @@ True          TabDelim     - Use tab delimiters in text tabular output file? (fl
 "ES10.3E2"    OutFmt       - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
           0   TStart       - Time to begin tabular output (s) (currently unused)
               OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of ServoDyn input file (the word "END" must appear in the first 3 columns of this last line).
+
+

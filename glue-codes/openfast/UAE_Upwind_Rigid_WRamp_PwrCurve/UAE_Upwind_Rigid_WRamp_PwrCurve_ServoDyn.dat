@@ -105,5 +105,6 @@ True          TabDelim     - Use tab delimiters in text tabular output file? (fl
           5   TStart       - Time to begin tabular output (s) (currently unused)
               OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "GenPwr"                   
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of ServoDyn input file (the word "END" must appear in the first 3 columns of this last line).
+
+

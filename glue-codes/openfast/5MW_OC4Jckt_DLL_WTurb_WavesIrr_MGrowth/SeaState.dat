@@ -8,7 +8,7 @@ False            Echo           - Echo the input file data (flag)
 ---------------------- SPATIAL DISCRETIZATION ---------------------------------------------------
             10   X_HalfWidth    – Half-width of the domain in the X direction (m) [>0, NOTE: X[nX] = nX*dX, where nX = {-NX+1,-NX+2,…,NX-1} and dX = X_HalfWidth/(NX-1)]
             10   Y_HalfWidth    – Half-width of the domain in the Y direction (m) [>0, NOTE: Y[nY] = nY*dY, where nY = {-NY+1,-NY+2,…,NY-1} and dY = Y_HalfWidth/(NY-1)]
-     "default"   Z_Depth        – Depth of the domain the Z direction (m) relative to SWL [0 < Z_Depth <= WtrDpth+MSL2SWL; "default": Z_Depth = WtrDpth+MSL2SWL; Z[nZ] = ( COS( nZ*dthetaZ ) – 1 )*Z_Depth, where nZ = {0,1,…NZ-1} and dthetaZ = pi/( 2*(NZ-1) )]
+"default"        Z_Depth        – Depth of the domain the Z direction (m) relative to SWL [0 < Z_Depth <= WtrDpth+MSL2SWL; "default": Z_Depth = WtrDpth+MSL2SWL; Z[nZ] = ( COS( nZ*dthetaZ ) – 1 )*Z_Depth, where nZ = {0,1,…NZ-1} and dthetaZ = pi/( 2*(NZ-1) )]
              2   NX             – Number of nodes in half of the X-direction domain (-) [>=2]
              2   NY             – Number of nodes in half of the Y-direction domain (-) [>=2]
             30   NZ             – Number of nodes in the Z direction (-) [>=2]

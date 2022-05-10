@@ -8,7 +8,7 @@ False         Echo                - Echo the input file data (flag)
           0   MSL2SWL             - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- HYDRODYN -----------------------------------------------
 "NBodyMod1.dat"    HDInputFile       - Primary HydroDyn input file name (quoted string)
-SeaState.dat    SeaStateInputFile       - Primary SeaState input file name (quoted string)
+"SeaState.dat"    SeaStateInputFile       - Primary SeaState input file name (quoted string)
 "NBodyMod1"    OutRootName       - The name which prefixes all HydroDyn generated files (quoted string)
 FALSE         Linearize         - Flag to enable linearization
        8000   NSteps            - Number of time steps in the simulations (-)   [10 seconds]
