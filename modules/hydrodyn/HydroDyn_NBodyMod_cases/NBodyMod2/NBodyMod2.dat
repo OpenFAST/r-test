@@ -59,10 +59,10 @@ semi_center, semi_col, semi_col, semi_col    PotFile       - Root name of potent
              0   AMMod          - Method of computing distributed added-mass force. (0: Only and always on nodes below SWL at the undisplaced position. 2: Up to the instantaneous free surface) [overwrite to 0 when WaveMod = 0 or 6 or when WaveStMod = 0 in SeaState]
 ---------------------- AXIAL COEFFICIENTS --------------------------------------
              2   NAxCoef        - Number of axial coefficients (-)
-AxCoefID  AxCd     AxCa     AxCp
-   (-)    (-)      (-)      (-)
-    1     0.00     0.00     1.00
-    2     9.60     0.00     1.00
+AxCoefID  AxCd     AxCa     AxCp    AxFDMod   AxVnCOff  AxFDLoFSc
+   (-)    (-)      (-)      (-)      (-)       (-)        (-)
+    1     0.00     0.00     1.00      0        0.00       1.00
+    2     9.60     0.00     1.00      0        0.00       1.00
 ---------------------- MEMBER JOINTS -------------------------------------------
             44   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2]
 JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member]
