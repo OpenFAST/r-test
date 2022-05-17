@@ -8,6 +8,7 @@ for iGlue=1:length(caseFile)
     caseNames = caseNames{1};
     fclose(fid);
     
+%     caseNames = {'5MW_Land_ModeShapes'}
     for i= 1:length(caseNames)
         casePath = [ pathstr filesep caseNames{i} ];
         ConvertFAST8_16to17( [casePath filesep caseNames{i} '.fst'], casePath );
