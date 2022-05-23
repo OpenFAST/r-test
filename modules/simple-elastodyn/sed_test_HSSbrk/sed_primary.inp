@@ -2,7 +2,7 @@
 Test case input file for SED (not representative of any model)
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
-          1   IntMethod   - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
+          3   IntMethod   - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
 "default"     DT          - Integration time step (s)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
 True          GenDOF      - Generator DOF (flag)
