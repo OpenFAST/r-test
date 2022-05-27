@@ -10,6 +10,8 @@ False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag
 True          TwrAero            - Calculate tower aerodynamic loads? (flag)
 True          FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False         CavitCheck         - Perform cavitation check? (flag) [AFAeroMod must be 1 when CavitCheck=true]
+False         CompAA             - Flag to compute AeroAcoustics calculation [used only when WakeMod = 1 or 2]
+"unused"      AA_InputFile       - AeroAcoustics input file [used only when CompAA=true]
 ======  Environmental Conditions  ===================================================================
 "default"     AirDens            - Air density (kg/m^3)
 "default"     KinVisc            - Kinematic viscosity of working fluid (m^2/s)
