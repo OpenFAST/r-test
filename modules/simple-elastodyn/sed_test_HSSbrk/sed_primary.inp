@@ -23,17 +23,24 @@ True          YawDOF      - Yaw degree of freedom -- controlled by controller (f
     1.96256   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
        87.6   TowerHt     - Height of tower above ground level [onshore] or MSL [offshore] (meters)
 ---------------------- MASS AND INERTIA ----------------------------------------
-     115926   RotIner     - Rot inertia about rotor axis [blades + hub] (kg m^2)
+   38677052   RotIner     - Rot inertia about rotor axis [blades + hub] (kg m^2)
     534.116   GenIner     - Generator inertia about HSS (kg m^2)
 ---------------------- DRIVETRAIN ----------------------------------------------
-        100   GBoxEff     - Gearbox efficiency (%)
          97   GBoxRatio   - Gearbox ratio (-)
 ---------------------- OUTPUT --------------------------------------------------
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+"BlPitch1"
+"BlPitch2"
+"BlPitch3"
 "Azimuth"                 - Blades azimuth angle                        (deg)
 "RotSpeed"                - Low-speed shaft rotational speed            (rpm)
 "RotAcc"                  - Low-speed shaft rotational acceleration     (rad/s^2)
 "GenSpeed"                - High-speed shaft rotational speed           (rpm)
 "GenAcc"                  - High-speed shaft rotational acceleration    (rad/s^2)
+"Yaw"                     - Commanded yaw angle
+"YawRate"                 - Commanded yaw angle rate
+"RotPwr"
+"RotThrust"
+"RotTorq"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
