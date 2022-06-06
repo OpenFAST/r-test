@@ -246,6 +246,6 @@ M1N1FDxi                  - Viscous drag loads at member 19, mesh node 19
 M1N1FDzi                  - Viscous drag loads at member 19, mesh node 19
 M1N1FIxi                  - Inertia loads at member 19, mesh node 19
 M1N1FIzi                  - Inertia loads at member 19, mesh node 19
-M1N1FAxi                  - Added mass loads at member 19, mesh node 19
-M1N1FAzi                  - Added mass loads at member 19, mesh node 19
+M1N1FAMxi                 - Added mass loads at member 19, mesh node 19
+M1N1FAMzi                 - Added mass loads at member 19, mesh node 19
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

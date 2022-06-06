@@ -64,9 +64,9 @@ True             SeaStSum       - Output a summary file [flag]
              0   WaveElevxi     - List of xi-coordinates for points where the incident wave elevations can be output (meters) [NWaveElev points, separated by commas or white space; usused if NWaveElev = 0]
              0   WaveElevyi     - List of yi-coordinates for points where the incident wave elevations can be output (meters) [NWaveElev points, separated by commas or white space; usused if NWaveElev = 0]
              2   NWaveKin       - Number of points where the wave kinematics can be output (-)       [maximum of 9 output locations]
-      14.43376,      -18.4752    WaveKinxi - List of xi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
-            25,            -6    WaveKinyi - List of yi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
-           -14,           -17    WaveKinzi - List of zi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+            10,      -10    WaveKinxi - List of xi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+            10,      -6     WaveKinyi - List of yi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
+           -14,      -17    WaveKinzi - List of zi-coordinates for points where the wave kinematics can be output (meters) [NWaveKin points, separated by commas or white space; usused if NWaveKin = 0]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 "Wave1Elev"               - Wave elevation at the platform reference point (  0,  0)
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
