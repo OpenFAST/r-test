@@ -1,0 +1,18 @@
+ Running SED_Driver.
+
+ **************************************************************************************************
+ SED Driver
+
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+  Running SED Driver
+  a part of OpenFAST - v3.1.0-165-ge514041d-dirty
+  linked with NWTC Subroutine Library
+
+ Using smallest DT from data file: 0.1 seconds.
+ Running SED (v1.00.00, 15-Feb-2022).

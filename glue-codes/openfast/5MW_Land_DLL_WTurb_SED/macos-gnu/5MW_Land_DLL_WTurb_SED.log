@@ -9,7 +9,7 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.1.0-160-g4ae48bd2-dirty
+ OpenFAST-v3.1.0-165-ge514041d-dirty
  Compile Info:
   - Compiler: GCC version 10.3.0
   - Architecture: 64 bit
@@ -18,8 +18,8 @@
   - Date: Apr 12 2022
   - Time: 14:37:42
  Execution Info:
-  - Date: 06/14/2022
-  - Time: 14:46:31-0600
+  - Date: 06/15/2022
+  - Time: 16:51:04-0600
 
  OpenFAST input file heading:
      FAST Certification Test #18: NREL 5.0 MW Baseline Wind Turbine (Onshore)
@@ -63,12 +63,12 @@
  Running ServoDyn Interface for Bladed Controllers (using GNU Fortran for Linux, ).
  Using legacy Bladed DLL interface.
   Time: 0 of 60 seconds.
-                                                                                                   Time: 5 of 60 seconds.  Estimated final completion at 14:47:02.                                                                                                                                     Time: 10 of 60 seconds.  Estimated final completion at 14:46:60.                                                                                                                                    Time: 15 of 60 seconds.  Estimated final completion at 14:46:59.                                                                                                                                    Time: 20 of 60 seconds.  Estimated final completion at 14:46:60.                                                                                                                                    Time: 25 of 60 seconds.  Estimated final completion at 14:46:60.                                                                                                                                    Time: 30 of 60 seconds.  Estimated final completion at 14:47:00.                                                                                                                                    Time: 35 of 60 seconds.  Estimated final completion at 14:46:60.                                                                                                                                    Time: 40 of 60 seconds.  Estimated final completion at 14:47:00.                                                                                                                                    Time: 45 of 60 seconds.  Estimated final completion at 14:47:00.                                                                                                                                    Time: 50 of 60 seconds.  Estimated final completion at 14:47:01.                                                                                                                                    Time: 55 of 60 seconds.  Estimated final completion at 14:47:00.                                                                                                                                    Time: 60 of 60 seconds.  Estimated final completion at 14:47:00.                                                                                                                                   
-  Total Real Time:       29.138 seconds
-  Total CPU Time:        28.758 seconds
-  Simulation CPU Time:   28.242 seconds
+                                                                                                   Time: 5 of 60 seconds.  Estimated final completion at 16:51:35.                                                                                                                                     Time: 10 of 60 seconds.  Estimated final completion at 16:51:36.                                                                                                                                    Time: 15 of 60 seconds.  Estimated final completion at 16:51:36.                                                                                                                                    Time: 20 of 60 seconds.  Estimated final completion at 16:51:36.                                                                                                                                    Time: 25 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 30 of 60 seconds.  Estimated final completion at 16:51:35.                                                                                                                                    Time: 35 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 40 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 45 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 50 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 55 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                    Time: 60 of 60 seconds.  Estimated final completion at 16:51:34.                                                                                                                                   
+  Total Real Time:       29.72 seconds
+  Total CPU Time:        29.272 seconds
+  Simulation CPU Time:   28.816 seconds
   Simulated Time:        60 seconds
-  Time Ratio (Sim/CPU):  2.1245
+  Time Ratio (Sim/CPU):  2.0822
 
   OpenFAST terminated normally.
 
