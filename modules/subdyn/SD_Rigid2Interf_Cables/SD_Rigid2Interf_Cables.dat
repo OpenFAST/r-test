@@ -5,7 +5,7 @@ False             Echo             Echo input data to "<rootname>.SD.ech" (flag)
 DEFAULT          SDdeltaT         Local Integration Step. If "default", the glue-code integration step will be used.
 3                IntMethod        Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 False             SttcSolve        Solve dynamics about static equilibrium point
-False             ExtraMoment      Include extra moment from lever arm at interface in interface reactions.
+False             GuyanLoadCorrection      Include extra moment from lever arm at interface in interface reactions.
 --- FEA and CRAIG-BAMPTON PARAMETERS ---
 3                FEMMod           FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
 1                NDiv             Number of sub-elements per member
@@ -31,11 +31,11 @@ JointID          JointXss         JointYss         JointZss         JointType   
 17               5                0                12               1                0                0                0                0                0                                 ! Top Conn 2
 --- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---
 0                NReact           Number of Joints with reaction forces (-); be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
-RJointID	        RctTDXss         RctTDYss         RctTDZss         RctRDXss         RctRDYss         RctRDZss                          Global Coordinate System
-(-)              (flag)           (flag)           (flag)           (flag)           (flag)           (flag)
+RJointID	        RctTDXss         RctTDYss         RctTDZss         RctRDXss         RctRDYss         RctRDZss        SSIfile   ![Global Coordinate System]
+(-)              (flag)           (flag)           (flag)           (flag)           (flag)           (flag)             (string)
 --- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---
 1                NInterf          Number of interface joints locked to the Transition Piece (TP) (-):  be sure to remove all rigid motion DOFs
-IJointID         ItfTDXss         ItfTDYss         ItfTDZss         ItfRDXss         ItfRDYss         ItfRDZss                          Global Coordinate System
+IJointID         ItfTDXss         ItfTDYss         ItfTDZss         ItfRDXss         ItfRDYss         ItfRDZss
 (-)              (-)              (-)              (-)              (-)              (-)              (-)
 1                1                1                1                1                1                1                                 ! Stem
 --- MEMBERS ---
@@ -89,7 +89,7 @@ True             TabDelim         Generate a tab-delimited output in the <rootna
 "A11"            OutSFmt          Output format for header strings in the <rootname>.SD.out file
 --- MMEMBER OUTPUT LIST ---
 0                NMOutputs        Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9]
-MemberID         NOutCnt          NodeCnt                           [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank
+MemberID         NOutCnt          NodeCnt                           ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank
 (-)              (-)              (-)
 --- SSOutList    - The next line(s) contains a list of output parameters that will be output in the main FAST.out ---
 "IntfFXss, IntfFYss, IntfFZss"
