@@ -70,7 +70,7 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           1   NumTStC      - Number of tower structural controllers (integer)
 "StC-Twr-TLCD.dat"    TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
           2   NumSStC      - Number of substructure structural controllers (integer)
-"StC-Sub-Zdof-1.dat"    SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
+"StC-Sub-Zdof-1.dat" "StC-Sub-Zdof-2.dat"    SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
 ---------------------- CABLE CONTROL -------------------------------------------
           0   CCmode       - Cable control mode {0: none, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
