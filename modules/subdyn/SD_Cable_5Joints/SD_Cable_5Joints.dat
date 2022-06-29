@@ -5,7 +5,7 @@ False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
 "DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
              3   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 True             SttcSolve   - Solve dynamics about static equilibrium point
-True             ExtraMoment - Include extra moment from lever arm at interface in interface reactions.
+True             GuyanLoadCorrection - Include extra moment from lever arm at interface in interface reactions.
 -------------------- FEA and CRAIG-BAMPTON PARAMETERS---------------------------
              3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
              1   NDiv        - Number of sub-elements per member
@@ -60,7 +60,7 @@ PropSetID     YoungE          ShearG          MatDens          XsecA          Xs
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES  -------------------------------------
              2   NCablePropSets   - Number of cable properties
-PropSetID     EA          MatDens      T0<0   CtrlChannel (DeltaL)
+PropSetID     EA          MatDens      T0<0   CtrlChannel !(DeltaL, DeltaLdot, 2 variables, but SuybDyn only uses DeltaL)
   (-)         (N)         (kg/m)        (N)        (-)
   12          210E7      7850.00        1E7         0
   43          420E7      7850.00        1E7         0
@@ -89,7 +89,7 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
              4   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
-MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
   (-)        (-)        (-)
   12          2          1      2
    3          2          1      2
@@ -117,7 +117,7 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
 "IntfFXss"   - X-displacement at the interface
 "IntfFYss"   - X-displacement at the interface
 "IntfFZss"   - X-displacement at the interface
-"IntfMXss"   - X-displacement at the interface #"IntfMYss"   - X-displacement at the interface
+"IntfMXss"   - X-displacement at the interface !"IntfMYss"   - X-displacement at the interface
 "IntfMZss"   - X-displacement at the interface
 "M3N2FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N1FKye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
