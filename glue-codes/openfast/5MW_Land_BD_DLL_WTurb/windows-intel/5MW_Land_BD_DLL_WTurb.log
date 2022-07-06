@@ -2,24 +2,25 @@
 **************************************************************************************************
 OpenFAST
 
-Copyright (C) 2021 National Renewable Energy Laboratory
-Copyright (C) 2021 Envision Energy USA LTD
+Copyright (C) 2022 National Renewable Energy Laboratory
+Copyright (C) 2022 Envision Energy USA LTD
 
 This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
 See the "LICENSE" file distributed with this software for details.
 **************************************************************************************************
 
-OpenFAST-v2.4.0-137-gb5d9a13c
+OpenFAST-v2.0.0-2968-g7fe8bef2
 Compile Info:
  - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
  64, Version 2021.1 Build 20201112_000000
  - Architecture: 64 bit
  - Precision: double
- - Date: Jan 11 2021
- - Time: 20:21:29
+ - OpenMP: No
+ - Date: Jul 06 2022
+ - Time: 12:33:55
 Execution Info:
- - Date: 01/11/2021
- - Time: 21:06:20-0600
+ - Date: 07/06/2022
+ - Time: 14:41:08-0500
 
 OpenFAST input file heading:
     FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
@@ -33,19 +34,32 @@ Nodal outputs section of BeamDyn input file not found or improperly formatted.
 Running BeamDyn.
 Nodal outputs section of BeamDyn input file not found or improperly formatted.
 Running AeroDyn.
-Nodal output section of AeroDyn input file not found or improperly formatted.
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 1)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 1)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 2)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 2)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 2)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 3)
-Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 3)
+AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+Skipping nodal outputs.
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 1, blade 1)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 2, blade 1)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 3, blade 1)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 4, blade 1)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 1, blade 2)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 2, blade 2)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 3, blade 2)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 4, blade 2)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 1, blade 3)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 2, blade 3)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 3, blade 3)
+Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+(airfoil has likely has constant polars). (node 4, blade 3)
 Running InflowWind.
 
    Reading a 31x31 grid (145 m wide, 17.5 m to 162.5 m above ground) with a characteristic wind
@@ -58,21 +72,16 @@ Running ServoDyn Interface for Bladed Controllers (using Intel Visual Fortran fo
 Using legacy Bladed DLL interface.
  Time: 0 of 20 seconds.
 
-FAST_Solution0:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:DLL_controller_call:Run
-ning with torque and pitch control of the NREL offshore 5MW baseline wind turbine from DISCON.dll
-as written by J. Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies.
-
-
 FAST_Solution:FAST_AdvanceStates:SrvD_UpdateStates:DLL_controller_call:BladedInterface option was
 designed for an explicit-loose coupling scheme. Using last calculated values from DLL on all
 subsequent calls until time is advanced. Warning will not be displayed again.
-                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 21:09:38.                                                                                                   Time: 2 of 20 seconds.  Estimated final completion at 21:09:25.                                                                                                   Time: 3 of 20 seconds.  Estimated final completion at 21:09:29.                                                                                                   Time: 4 of 20 seconds.  Estimated final completion at 21:09:18.                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 21:09:18.                                                                                                   Time: 6 of 20 seconds.  Estimated final completion at 21:09:15.                                                                                                   Time: 7 of 20 seconds.  Estimated final completion at 21:09:24.                                                                                                   Time: 8 of 20 seconds.  Estimated final completion at 21:09:24.                                                                                                   Time: 9 of 20 seconds.  Estimated final completion at 21:09:19.                                                                                                   Time: 10 of 20 seconds.  Estimated final completion at 21:09:31.                                                                                                   Time: 11 of 20 seconds.  Estimated final completion at 21:09:39.                                                                                                   Time: 12 of 20 seconds.  Estimated final completion at 21:09:39.                                                                                                   Time: 13 of 20 seconds.  Estimated final completion at 21:09:49.                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 21:09:42.                                                                                                   Time: 15 of 20 seconds.  Estimated final completion at 21:09:28.                                                                                                   Time: 16 of 20 seconds.  Estimated final completion at 21:09:27.                                                                                                   Time: 17 of 20 seconds.  Estimated final completion at 21:09:24.                                                                                                   Time: 18 of 20 seconds.  Estimated final completion at 21:09:24.                                                                                                   Time: 19 of 20 seconds.  Estimated final completion at 21:09:24.                                                                                                  
+                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 14:43:48.                                                                                                   Time: 2 of 20 seconds.  Estimated final completion at 14:43:34.                                                                                                   Time: 3 of 20 seconds.  Estimated final completion at 14:43:31.                                                                                                   Time: 4 of 20 seconds.  Estimated final completion at 14:43:57.                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 14:43:38.                                                                                                   Time: 6 of 20 seconds.  Estimated final completion at 14:43:40.                                                                                                   Time: 7 of 20 seconds.  Estimated final completion at 14:43:56.                                                                                                   Time: 8 of 20 seconds.  Estimated final completion at 14:43:40.                                                                                                   Time: 9 of 20 seconds.  Estimated final completion at 14:43:39.                                                                                                   Time: 10 of 20 seconds.  Estimated final completion at 14:43:46.                                                                                                   Time: 11 of 20 seconds.  Estimated final completion at 14:43:50.                                                                                                   Time: 12 of 20 seconds.  Estimated final completion at 14:43:44.                                                                                                   Time: 13 of 20 seconds.  Estimated final completion at 14:43:41.                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 14:43:39.                                                                                                   Time: 15 of 20 seconds.  Estimated final completion at 14:43:39.                                                                                                   Time: 16 of 20 seconds.  Estimated final completion at 14:43:39.                                                                                                   Time: 17 of 20 seconds.  Estimated final completion at 14:43:41.                                                                                                   Time: 18 of 20 seconds.  Estimated final completion at 14:43:44.                                                                                                   Time: 19 of 20 seconds.  Estimated final completion at 14:43:41.                                                                                                  
 
- Total Real Time:       3.0588 minutes
- Total CPU Time:        3.0469 minutes
- Simulation CPU Time:   3.026 minutes
+ Total Real Time:       2.5392 minutes
+ Total CPU Time:        2.5318 minutes
+ Simulation CPU Time:   2.5154 minutes
  Simulated Time:        0.33335 minutes
- Time Ratio (Sim/CPU):  0.11016
+ Time Ratio (Sim/CPU):  0.13253
 
  OpenFAST terminated normally.
 
