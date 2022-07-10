@@ -170,7 +170,7 @@ except Exception as e:
 t_start             = 30                 # initial time
 ifwlib.dt           = 0.1                # time interval that it's being called at, not usedby IFW, only here for consistency with other modules
 final_time          = 30.8               # final time
-time                = np.arange(t_start,final_time + ifwlib.dt,ifwlib.dt) # total time + increment because python doesnt include endpoint!
+time                = np.linspace(t_start, final_time, 9) # total time + increment because python doesnt include endpoint!
 ifwlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
 
 #   Initialize position array 
