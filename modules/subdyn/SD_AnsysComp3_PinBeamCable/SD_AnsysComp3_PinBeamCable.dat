@@ -5,7 +5,7 @@ False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
 "DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
              4   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
 True             SttcSolve   - Solve dynamics about static equilibrium point
-True             ExtraMoment - Include extra moment from lever arm at interface in interface reactions.
+True             GuyanLoadCorrection - Include extra moment from lever arm at interface in interface reactions.
 -------------------- FEA and CRAIG-BAMPTON PARAMETERS---------------------------
              3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
              5   NDiv        - Number of sub-elements per member
@@ -23,10 +23,10 @@ True             CBMod       - [T/F] If True perform C-B reduction, else full FE
 0 0 0 0 0 0
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File)---
             11   NJoints     - Number of joints (-). Roger comments: JointType: (1): cantilever beam, (2) universal joint, (3) revolute joint, (4) spherical joint. 
-JointID          JointXss               JointYss               JointZss          JointType     JointDirX   JointDirY     JointDirZ    JointStiff    JointDamp   [Coordinates of Member joints in SS-Coordinate System]
+JointID          JointXss               JointYss               JointZss          JointType     JointDirX   JointDirY     JointDirZ    JointStiff    JointDamp   ![Coordinates of Member joints in SS-Coordinate System]
   (-)               (m)                    (m)                    (m)               (-)           (-)         (-)           (-)        (Nm/rad)     (N/rad.s)
    1                 0                      0                      0                 1			   0		   0			 0			   0			0
-   2                 1                      0                      0                 3			   0		   1			 0			   0  		    0    # Revolute joint without associated stiffess (free to rotate)
+   2                 1                      0                      0                 3			   0		   1			 0			   0  		    0    ! Revolute joint without associated stiffess (free to rotate)
    3                 2                      0                      0                 1             0		   0			 0			   0			0
    4                 7                      0                      0                 1             0		   0			 0			   0			0
    5                12                      0                      0                 1             0		   0			 0			   0			0
@@ -34,22 +34,22 @@ JointID          JointXss               JointYss               JointZss         
    7                22                      0                      0                 1             0		   0			 0			   0			0
    8                27                      0                      0                 1             0		   0			 0			   0			0
    9                32                      0                      0                 1             0		   0			 0			   0			0
-  10                 0                      0                     -5                 1             0           0             0             0            0   # Pretensioned lower cable
-  11                 0                      0                     21                 1             0           0             0             0            0   # Pretensioned upper cable   
+  10                 0                      0                     -5                 1             0           0             0             0            0   ! Pretensioned lower cable
+  11                 0                      0                     21                 1             0           0             0             0            0   ! Pretensioned upper cable   
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
              2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
-RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     [Global Coordinate System]
-  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
-  10           1           1           1           1           1           1
-  11           1           1           1           1           1           1
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss   SSIfile  ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)    (string)
+  10           1           1           1           1           1           1         ""
+  11           1           1           1           1           1           1         ""
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
-IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     [Global Coordinate System]
+IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
   (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
    1           1           1           1           1           1           1
 ----------------------------------- MEMBERS --------------------------------------
             10   NMembers    - Number of frame members. 
-MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     MType        COSMID        Roger comments: MType: (1): beam, (2) pre-tensioned cable, (3) rigid connection. NDiv defined at the beginning only applies to beams.
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     MType        COSMID       !MType: 1:beam, 2:pre-tensioned cable, 3:rigid connection. NDiv only applies to beams.
   (-)         (-)         (-)          (-)           (-)          (-)              (-)
    1           1           2            1             1            1
    2           2           3            1             1            1
@@ -59,8 +59,8 @@ MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     MType        CO
    6           6           7            1             1            1
    7           7           8            1             1            1
    8           8           9            1             1            1
-   9          10           9            2             2            2    # Pretensioned lower cable
-  10          11           9            3             3       	   2    # Pretensioned upper cable		          
+   9          10           9            2             2            2    ! Pretensioned lower cable
+  10          11           9            3             3       	   2    ! Pretensioned upper cable		          
 ------------------ MEMBER X-SECTION PROPERTY data 1/2 [isotropic material for now: use this table for circular-tubular elements] ------------------------
               1   NPropSets   - Number of structurally unique x-sections (i.e. how many groups of X-sectional properties are utilized throughout all of the members)
 PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
@@ -99,7 +99,7 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
             9   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
-MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
   (-)        (-)        (-)
    1          1          6
    2          2         1 6

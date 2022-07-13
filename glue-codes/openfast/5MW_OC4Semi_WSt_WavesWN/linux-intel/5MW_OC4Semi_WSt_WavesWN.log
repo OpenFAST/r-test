@@ -2,24 +2,25 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v1.0.0-1800-g1082ba16
+ OpenFAST-v3.1.0-243-ge6028eae-dirty
  Compile Info:
   - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
-  64, Version 2021.1.2 Build 20201208_000000
+  64, Version 2021.1 Build 20201112_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 28 2021
-  - Time: 15:57:01
+  - OpenMP: No
+  - Date: Jul 06 2022
+  - Time: 19:28:39
  Execution Info:
-  - Date: 01/28/2021
-  - Time: 17:07:22-0600
+  - Date: 07/06/2022
+  - Time: 23:15:08-0500
 
  OpenFAST input file heading:
      FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi
@@ -30,34 +31,43 @@
  Running AeroDyn.
  AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
  Skipping nodal outputs.
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 3, blade 3)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 4, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 1, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 2, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 3, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 4, blade 1)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 1, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 2, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 3, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 4, blade 2)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 1, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 2, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 3, blade 3)
+ Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
+ (airfoil has likely has constant polars). (node 4, blade 3)
  Running InflowWind.
- Running ServoDyn.
- Running ServoDyn Interface for Bladed Controllers (using Intel Fortran for Linux, ).
- Using legacy Bladed DLL interface.
  Running HydroDyn.
   Generating incident wave kinematics and current time history.
   Reading in WAMIT output with root name
-  "/home/rmudafor/tcf/openfast/build_intel/reg_tests/glue-codes/openfast/5MW_OC4Semi_WSt_WavesWN/..
-  /5MW_Baseline/HydroData/marin_semi".
+  "/home/raf/Development/bonnie/build_intel/reg_tests/glue-codes/openfast/5MW_OC4Semi_WSt_WavesWN/.
+  ./5MW_Baseline/HydroData/marin_semi".
   Computing radiation impulse response functions and wave diffraction forces.
   Calculating second order difference-frequency force using the full quadratic transfer function.
   Calculating second order sum-frequency force using the full quadratic transfer function.
- Running MoorDyn (v1.01.02F, 8-Apr-2016).
+ Running MoorDyn.
    MD_Init: Opening MoorDyn input file:
-   /home/rmudafor/tcf/openfast/build_intel/reg_tests/glue-codes/openfast/5MW_OC4Semi_WSt_WavesWN/NR
-   ELOffshrBsline5MW_OC4DeepCwindSemi_MoorDyn.dat
+   /home/raf/Development/bonnie/build_intel/reg_tests/glue-codes/openfast/5MW_OC4Semi_WSt_WavesWN/N
+   RELOffshrBsline5MW_OC4DeepCwindSemi_MoorDyn.dat
     Creating mooring system.   3 fairleads, 3 anchors, 0 connects.
     Finalizing ICs using dynamic relaxation.
 
@@ -71,140 +81,137 @@
 +   t=16  FairTen 1: 9.94751E+05, 1.00567E+06, 1.00241E+06                                         
 +   t=18  FairTen 1: 9.99281E+05, 9.94751E+05, 1.00567E+06                                         
     Fairlead tensions converged to 1% after 18 seconds.
+ Running ServoDyn.
+ Running ServoDyn Interface for Bladed Controllers (using Intel Fortran for Linux).
+ Using legacy Bladed DLL interface.
   Time: 0 of 60 seconds.
-
- FAST_Solution0:CalcOutputs_And_SolveForInputs:SolveOption2:SrvD_CalcOutput:DLL_controller_call:Run
- ning with torque and pitch control of the NREL offshore 5MW baseline wind turbine from DISCON.dll
- as written by J. Jonkman of NREL/NWTC for use in the IEA Annex XXIII OC3 studies.  Includes
- modifications for the Hywind spar.
-
 +                                                                                                  
-+ Time: 1 of 60 seconds.  Estimated final completion at 17:10:50.
++ Time: 1 of 60 seconds.  Estimated final completion at 23:18:51.
 +                                                                                                  
-+ Time: 2 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 2 of 60 seconds.  Estimated final completion at 23:18:45.
 +                                                                                                  
-+ Time: 3 of 60 seconds.  Estimated final completion at 17:10:53.
++ Time: 3 of 60 seconds.  Estimated final completion at 23:19:09.
 +                                                                                                  
-+ Time: 4 of 60 seconds.  Estimated final completion at 17:10:50.
++ Time: 4 of 60 seconds.  Estimated final completion at 23:18:50.
 +                                                                                                  
-+ Time: 5 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 5 of 60 seconds.  Estimated final completion at 23:18:55.
 +                                                                                                  
-+ Time: 6 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 6 of 60 seconds.  Estimated final completion at 23:19:06.
 +                                                                                                  
-+ Time: 7 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 7 of 60 seconds.  Estimated final completion at 23:19:09.
 +                                                                                                  
-+ Time: 8 of 60 seconds.  Estimated final completion at 17:10:50.
++ Time: 8 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 9 of 60 seconds.  Estimated final completion at 17:10:45.
++ Time: 9 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 10 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 10 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 11 of 60 seconds.  Estimated final completion at 17:10:44.
++ Time: 11 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 12 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 12 of 60 seconds.  Estimated final completion at 23:18:58.
 +                                                                                                  
-+ Time: 13 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 13 of 60 seconds.  Estimated final completion at 23:19:18.
 +                                                                                                  
-+ Time: 14 of 60 seconds.  Estimated final completion at 17:10:52.
++ Time: 14 of 60 seconds.  Estimated final completion at 23:18:55.
 +                                                                                                  
-+ Time: 15 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 15 of 60 seconds.  Estimated final completion at 23:19:06.
 +                                                                                                  
-+ Time: 16 of 60 seconds.  Estimated final completion at 17:10:41.
++ Time: 16 of 60 seconds.  Estimated final completion at 23:19:03.
 +                                                                                                  
-+ Time: 17 of 60 seconds.  Estimated final completion at 17:10:45.
++ Time: 17 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 18 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 18 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 19 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 19 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 20 of 60 seconds.  Estimated final completion at 17:10:56.
++ Time: 20 of 60 seconds.  Estimated final completion at 23:18:55.
 +                                                                                                  
-+ Time: 21 of 60 seconds.  Estimated final completion at 17:11:12.
++ Time: 21 of 60 seconds.  Estimated final completion at 23:18:58.
 +                                                                                                  
-+ Time: 22 of 60 seconds.  Estimated final completion at 17:10:54.
++ Time: 22 of 60 seconds.  Estimated final completion at 23:18:54.
 +                                                                                                  
-+ Time: 23 of 60 seconds.  Estimated final completion at 17:10:53.
++ Time: 23 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 24 of 60 seconds.  Estimated final completion at 17:10:50.
++ Time: 24 of 60 seconds.  Estimated final completion at 23:19:01.
 +                                                                                                  
-+ Time: 25 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 25 of 60 seconds.  Estimated final completion at 23:18:60.
 +                                                                                                  
-+ Time: 26 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 26 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 27 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 27 of 60 seconds.  Estimated final completion at 23:18:58.
 +                                                                                                  
-+ Time: 28 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 28 of 60 seconds.  Estimated final completion at 23:18:58.
 +                                                                                                  
-+ Time: 29 of 60 seconds.  Estimated final completion at 17:10:51.
++ Time: 29 of 60 seconds.  Estimated final completion at 23:19:01.
 +                                                                                                  
-+ Time: 30 of 60 seconds.  Estimated final completion at 17:10:51.
++ Time: 30 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 31 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 31 of 60 seconds.  Estimated final completion at 23:19:13.
 +                                                                                                  
-+ Time: 32 of 60 seconds.  Estimated final completion at 17:10:55.
++ Time: 32 of 60 seconds.  Estimated final completion at 23:19:08.
 +                                                                                                  
-+ Time: 33 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 33 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 34 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 34 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 35 of 60 seconds.  Estimated final completion at 17:10:46.
++ Time: 35 of 60 seconds.  Estimated final completion at 23:19:10.
 +                                                                                                  
-+ Time: 36 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 36 of 60 seconds.  Estimated final completion at 23:19:10.
 +                                                                                                  
-+ Time: 37 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 37 of 60 seconds.  Estimated final completion at 23:18:59.
 +                                                                                                  
-+ Time: 38 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 38 of 60 seconds.  Estimated final completion at 23:19:06.
 +                                                                                                  
-+ Time: 39 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 39 of 60 seconds.  Estimated final completion at 23:19:01.
 +                                                                                                  
-+ Time: 40 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 40 of 60 seconds.  Estimated final completion at 23:19:11.
 +                                                                                                  
-+ Time: 41 of 60 seconds.  Estimated final completion at 17:10:50.
++ Time: 41 of 60 seconds.  Estimated final completion at 23:19:06.
 +                                                                                                  
-+ Time: 42 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 42 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 43 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 43 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 44 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 44 of 60 seconds.  Estimated final completion at 23:19:03.
 +                                                                                                  
-+ Time: 45 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 45 of 60 seconds.  Estimated final completion at 23:19:03.
 +                                                                                                  
-+ Time: 46 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 46 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 47 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 47 of 60 seconds.  Estimated final completion at 23:19:09.
 +                                                                                                  
-+ Time: 48 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 48 of 60 seconds.  Estimated final completion at 23:19:09.
 +                                                                                                  
-+ Time: 49 of 60 seconds.  Estimated final completion at 17:10:47.
++ Time: 49 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 50 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 50 of 60 seconds.  Estimated final completion at 23:19:07.
 +                                                                                                  
-+ Time: 51 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 51 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 52 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 52 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 53 of 60 seconds.  Estimated final completion at 17:10:48.
++ Time: 53 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 54 of 60 seconds.  Estimated final completion at 17:10:52.
++ Time: 54 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 55 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 55 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 56 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 56 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 57 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 57 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 58 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 58 of 60 seconds.  Estimated final completion at 23:19:04.
 +                                                                                                  
-+ Time: 59 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 59 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
-+ Time: 60 of 60 seconds.  Estimated final completion at 17:10:49.
++ Time: 60 of 60 seconds.  Estimated final completion at 23:19:05.
 +                                                                                                  
 
-  Total Real Time:       3.4365 minutes
-  Total CPU Time:        3.4328 minutes
-  Simulation CPU Time:   2.8281 minutes
+  Total Real Time:       3.9312 minutes
+  Total CPU Time:        3.9304 minutes
+  Simulation CPU Time:   3.2447 minutes
   Simulated Time:        1 minutes
-  Time Ratio (Sim/CPU):  0.35359
+  Time Ratio (Sim/CPU):  0.30819
 
   OpenFAST terminated normally.
 
