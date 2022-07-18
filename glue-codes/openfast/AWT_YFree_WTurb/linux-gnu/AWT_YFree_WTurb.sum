@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 14-Jan-2021 at 17:38:19 using OpenFAST, compiled as a 64-bit application using double precision at commit v2.5.0-10-gb4fd3acc
+Predictions were generated on 06-Jul-2022 at 19:51:48 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.1.0-243-ge6028eae-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
