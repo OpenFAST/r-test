@@ -2,24 +2,25 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.4.0-138-g9a6c1967
+ OpenFAST-v3.1.0-243-ge6028eae-dirty
  Compile Info:
   - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
-  64, Version 2021.1.2 Build 20201208_000000
+  64, Version 2021.1 Build 20201112_000000
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 12 2021
-  - Time: 13:31:16
+  - OpenMP: No
+  - Date: Jul 06 2022
+  - Time: 19:28:39
  Execution Info:
-  - Date: 01/12/2021
-  - Time: 14:07:12-0600
+  - Date: 07/06/2022
+  - Time: 22:25:00-0500
 
  OpenFAST input file heading:
      FAST Certification Test #17: SWRT 3-bladed upwind turbine with many DOFs, variable speed
@@ -28,6 +29,7 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn14.
+   WARNING:   AeroDyn 14 is deprecated and will be removed in a future release.
  Running InflowWind.
 
     Reading a 6x6 grid (8 m wide, 30.619 m to 38.619 m above ground) with a characteristic wind
@@ -42,152 +44,152 @@
     Torque vs RPM.xls
 
 +                                                                                                  
-+ Time: 1 of 70 seconds.  Estimated final completion at 14:09:57.
++ Time: 1 of 70 seconds.  Estimated final completion at 22:28:40.
 +                                                                                                  
-+ Time: 2 of 70 seconds.  Estimated final completion at 14:09:59.
++ Time: 2 of 70 seconds.  Estimated final completion at 22:28:33.
 +                                                                                                  
-+ Time: 3 of 70 seconds.  Estimated final completion at 14:09:52.
++ Time: 3 of 70 seconds.  Estimated final completion at 22:28:42.
 +                                                                                                  
-+ Time: 4 of 70 seconds.  Estimated final completion at 14:09:46.
++ Time: 4 of 70 seconds.  Estimated final completion at 22:28:48.
 +                                                                                                  
-+ Time: 5 of 70 seconds.  Estimated final completion at 14:09:46.
++ Time: 5 of 70 seconds.  Estimated final completion at 22:29:06.
 +                                                                                                  
-+ Time: 6 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 6 of 70 seconds.  Estimated final completion at 22:28:52.
 +                                                                                                  
-+ Time: 7 of 70 seconds.  Estimated final completion at 14:09:50.
++ Time: 7 of 70 seconds.  Estimated final completion at 22:28:44.
 +                                                                                                  
-+ Time: 8 of 70 seconds.  Estimated final completion at 14:09:59.
++ Time: 8 of 70 seconds.  Estimated final completion at 22:28:53.
 +                                                                                                  
-+ Time: 9 of 70 seconds.  Estimated final completion at 14:09:47.
++ Time: 9 of 70 seconds.  Estimated final completion at 22:28:58.
 +                                                                                                  
-+ Time: 10 of 70 seconds.  Estimated final completion at 14:09:55.
++ Time: 10 of 70 seconds.  Estimated final completion at 22:28:40.
 +                                                                                                  
-+ Time: 11 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 11 of 70 seconds.  Estimated final completion at 22:28:43.
 +                                                                                                  
-+ Time: 12 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 12 of 70 seconds.  Estimated final completion at 22:28:37.
 +                                                                                                  
-+ Time: 13 of 70 seconds.  Estimated final completion at 14:09:47.
++ Time: 13 of 70 seconds.  Estimated final completion at 22:28:37.
 +                                                                                                  
-+ Time: 14 of 70 seconds.  Estimated final completion at 14:10:01.
++ Time: 14 of 70 seconds.  Estimated final completion at 22:28:31.
 +                                                                                                  
-+ Time: 15 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 15 of 70 seconds.  Estimated final completion at 22:28:08.
 +                                                                                                  
-+ Time: 16 of 70 seconds.  Estimated final completion at 14:10:07.
++ Time: 16 of 70 seconds.  Estimated final completion at 22:28:49.
 +                                                                                                  
-+ Time: 17 of 70 seconds.  Estimated final completion at 14:09:51.
++ Time: 17 of 70 seconds.  Estimated final completion at 22:28:16.
 +                                                                                                  
-+ Time: 18 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 18 of 70 seconds.  Estimated final completion at 22:28:34.
 +                                                                                                  
-+ Time: 19 of 70 seconds.  Estimated final completion at 14:09:57.
++ Time: 19 of 70 seconds.  Estimated final completion at 22:28:30.
 +                                                                                                  
-+ Time: 20 of 70 seconds.  Estimated final completion at 14:09:58.
++ Time: 20 of 70 seconds.  Estimated final completion at 22:28:35.
 +                                                                                                  
-+ Time: 21 of 70 seconds.  Estimated final completion at 14:09:52.
++ Time: 21 of 70 seconds.  Estimated final completion at 22:28:34.
 +                                                                                                  
-+ Time: 22 of 70 seconds.  Estimated final completion at 14:09:49.
++ Time: 22 of 70 seconds.  Estimated final completion at 22:28:24.
 +                                                                                                  
-+ Time: 23 of 70 seconds.  Estimated final completion at 14:09:57.
++ Time: 23 of 70 seconds.  Estimated final completion at 22:28:32.
 +                                                                                                  
-+ Time: 24 of 70 seconds.  Estimated final completion at 14:09:56.
++ Time: 24 of 70 seconds.  Estimated final completion at 22:28:25.
 +                                                                                                  
-+ Time: 25 of 70 seconds.  Estimated final completion at 14:09:58.
++ Time: 25 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 26 of 70 seconds.  Estimated final completion at 14:09:58.
++ Time: 26 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 27 of 70 seconds.  Estimated final completion at 14:09:55.
++ Time: 27 of 70 seconds.  Estimated final completion at 22:28:20.
 +                                                                                                  
-+ Time: 28 of 70 seconds.  Estimated final completion at 14:10:07.
++ Time: 28 of 70 seconds.  Estimated final completion at 22:28:04.
 +                                                                                                  
-+ Time: 29 of 70 seconds.  Estimated final completion at 14:10:13.
++ Time: 29 of 70 seconds.  Estimated final completion at 22:28:08.
 +                                                                                                  
-+ Time: 30 of 70 seconds.  Estimated final completion at 14:09:56.
++ Time: 30 of 70 seconds.  Estimated final completion at 22:28:39.
 +                                                                                                  
-+ Time: 31 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 31 of 70 seconds.  Estimated final completion at 22:28:19.
 +                                                                                                  
-+ Time: 32 of 70 seconds.  Estimated final completion at 14:09:58.
++ Time: 32 of 70 seconds.  Estimated final completion at 22:28:34.
 +                                                                                                  
-+ Time: 33 of 70 seconds.  Estimated final completion at 14:10:00.
++ Time: 33 of 70 seconds.  Estimated final completion at 22:28:09.
 +                                                                                                  
-+ Time: 34 of 70 seconds.  Estimated final completion at 14:09:57.
++ Time: 34 of 70 seconds.  Estimated final completion at 22:28:10.
 +                                                                                                  
-+ Time: 35 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 35 of 70 seconds.  Estimated final completion at 22:28:15.
 +                                                                                                  
-+ Time: 36 of 70 seconds.  Estimated final completion at 14:09:60.
++ Time: 36 of 70 seconds.  Estimated final completion at 22:28:16.
 +                                                                                                  
-+ Time: 37 of 70 seconds.  Estimated final completion at 14:10:11.
++ Time: 37 of 70 seconds.  Estimated final completion at 22:28:25.
 +                                                                                                  
-+ Time: 38 of 70 seconds.  Estimated final completion at 14:10:01.
++ Time: 38 of 70 seconds.  Estimated final completion at 22:28:13.
 +                                                                                                  
-+ Time: 39 of 70 seconds.  Estimated final completion at 14:10:07.
++ Time: 39 of 70 seconds.  Estimated final completion at 22:28:16.
 +                                                                                                  
-+ Time: 40 of 70 seconds.  Estimated final completion at 14:10:01.
++ Time: 40 of 70 seconds.  Estimated final completion at 22:28:17.
 +                                                                                                  
-+ Time: 41 of 70 seconds.  Estimated final completion at 14:10:10.
++ Time: 41 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 42 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 42 of 70 seconds.  Estimated final completion at 22:28:19.
 +                                                                                                  
-+ Time: 43 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 43 of 70 seconds.  Estimated final completion at 22:28:24.
 +                                                                                                  
-+ Time: 44 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 44 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 45 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 45 of 70 seconds.  Estimated final completion at 22:28:12.
 +                                                                                                  
-+ Time: 46 of 70 seconds.  Estimated final completion at 14:10:01.
++ Time: 46 of 70 seconds.  Estimated final completion at 22:28:07.
 +                                                                                                  
-+ Time: 47 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 47 of 70 seconds.  Estimated final completion at 22:28:19.
 +                                                                                                  
-+ Time: 48 of 70 seconds.  Estimated final completion at 14:10:02.
++ Time: 48 of 70 seconds.  Estimated final completion at 22:28:15.
 +                                                                                                  
-+ Time: 49 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 49 of 70 seconds.  Estimated final completion at 22:28:23.
 +                                                                                                  
-+ Time: 50 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 50 of 70 seconds.  Estimated final completion at 22:28:24.
 +                                                                                                  
-+ Time: 51 of 70 seconds.  Estimated final completion at 14:09:59.
++ Time: 51 of 70 seconds.  Estimated final completion at 22:28:19.
 +                                                                                                  
-+ Time: 52 of 70 seconds.  Estimated final completion at 14:10:17.
++ Time: 52 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 53 of 70 seconds.  Estimated final completion at 14:10:09.
++ Time: 53 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 54 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 54 of 70 seconds.  Estimated final completion at 22:28:22.
 +                                                                                                  
-+ Time: 55 of 70 seconds.  Estimated final completion at 14:10:09.
++ Time: 55 of 70 seconds.  Estimated final completion at 22:28:20.
 +                                                                                                  
-+ Time: 56 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 56 of 70 seconds.  Estimated final completion at 22:28:16.
 +                                                                                                  
-+ Time: 57 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 57 of 70 seconds.  Estimated final completion at 22:28:20.
 +                                                                                                  
-+ Time: 58 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 58 of 70 seconds.  Estimated final completion at 22:28:22.
 +                                                                                                  
-+ Time: 59 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 59 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 60 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 60 of 70 seconds.  Estimated final completion at 22:28:15.
 +                                                                                                  
-+ Time: 61 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 61 of 70 seconds.  Estimated final completion at 22:28:19.
 +                                                                                                  
-+ Time: 62 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 62 of 70 seconds.  Estimated final completion at 22:28:16.
 +                                                                                                  
-+ Time: 63 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 63 of 70 seconds.  Estimated final completion at 22:28:21.
 +                                                                                                  
-+ Time: 64 of 70 seconds.  Estimated final completion at 14:10:03.
++ Time: 64 of 70 seconds.  Estimated final completion at 22:28:20.
 +                                                                                                  
-+ Time: 65 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 65 of 70 seconds.  Estimated final completion at 22:28:17.
 +                                                                                                  
-+ Time: 66 of 70 seconds.  Estimated final completion at 14:10:05.
++ Time: 66 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 67 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 67 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 68 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 68 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 69 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 69 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
-+ Time: 70 of 70 seconds.  Estimated final completion at 14:10:04.
++ Time: 70 of 70 seconds.  Estimated final completion at 22:28:18.
 +                                                                                                  
 
-  Total Real Time:       2.8562 minutes
-  Total CPU Time:        2.8531 minutes
-  Simulation CPU Time:   2.8513 minutes
+  Total Real Time:       3.2936 minutes
+  Total CPU Time:        3.2928 minutes
+  Simulation CPU Time:   3.2915 minutes
   Simulated Time:        1.1667 minutes
-  Time Ratio (Sim/CPU):  0.40917
+  Time Ratio (Sim/CPU):  0.35445
 
   OpenFAST terminated normally.
 
