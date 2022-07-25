@@ -256,7 +256,8 @@ time                = np.arange(adilib.t_start,(TimeStepsToRun+1)*adilib.dt,adil
 
 # set some flags 
 adilib.storeHHvel   = False
-adilib.WrVTK        = 2
+adilib.WrVTK        = 2         # animation
+adilib.WrVTK_Type   = 3         # surface and line meshes
 adilib.transposeDCM = True
 
 #==============================================================================
