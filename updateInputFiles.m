@@ -62,3 +62,26 @@ if fid > 0
 end
 
 
+%% TurbSim files in all the regression tests:
+caseFile = './glue-codes/TurbSimWindsList.md';
+[pathstr] = fileparts(caseFile);
+
+fid = fopen(caseFile);
+caseNames = textscan(fid,'%s');
+caseNames = caseNames{1};
+fclose(fid);
+
+thisFile    = which('ConvertFAST8_16to17');
+thisDir     = fileparts(thisFile);
+templateDir = strcat(thisDir,filesep, 'TemplateFiles' );
+template    = [templateDir filesep 'TurbSim.inp'];  %template for primary file
+TurbSim_exe = '..\..\build\bin\TurbSim_x64.exe';
+    
+%%
+for i= 1:length(caseNames)
+    TSfile = [ pathstr filesep caseNames{i} ];
+    TSData=FAST2Matlab(TSfile,2);
+    Matlab2FAST(TSData,template,TSfile,2);
+    system([TurbSim_exe ' ' TSfile])
+end
+
