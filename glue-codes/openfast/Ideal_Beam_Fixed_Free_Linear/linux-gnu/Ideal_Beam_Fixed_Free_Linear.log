@@ -2,23 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.5.0-10-gb4fd3acc
+ OpenFAST-v3.2.0-33-g3aa7f39b
  Compile Info:
-  - Compiler: GCC version 10.2.0
+  - Compiler: GCC version 11.3.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 14 2021
-  - Time: 17:19:34
+  - OpenMP: No
+  - Date: Jul 29 2022
+  - Time: 13:27:54
  Execution Info:
-  - Date: 01/14/2021
-  - Time: 17:44:26-0600
+  - Date: 07/29/2022
+  - Time: 13:41:18-0500
 
  OpenFAST input file heading:
      Fixed-free beam test case
@@ -30,11 +31,11 @@
   Time: 0 of 1.50000E-03 seconds.
                                                                                                    Performing linearization 1 at simulation time 0 s. (RotSpeed=0 rpm, BldPitch1=0 deg)             
                                                                                                   
-  Total Real Time:       1.139 seconds
-  Total CPU Time:        1.1094 seconds
-  Simulation CPU Time:   0.84375 seconds
+  Total Real Time:       0.444 seconds
+  Total CPU Time:        0.47502 seconds
+  Simulation CPU Time:   0.33757 seconds
   Simulated Time:        1.50000E-03 seconds
-  Time Ratio (Sim/CPU):  1.77778E-03
+  Time Ratio (Sim/CPU):  4.44356E-03
 
   OpenFAST terminated normally.
 
