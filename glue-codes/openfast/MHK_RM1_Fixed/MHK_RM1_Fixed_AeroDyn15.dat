@@ -85,7 +85,7 @@ TwrElev     TwrDiam     TwrCd     TwrTI (used only with TwrShadow=2)     TwrCb (
 0.0     NacCenBy                 - Nacelle center of buoyancy y direction offset (m)
 0.0     NacCenBz                 - Nacelle center of buoyancy z direction offset (m)
 ======  Outputs  ====================================================================================
-False                   SumPrint - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
+True                    SumPrint - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
                       9 NBlOuts  - Number of blade node outputs [0 - 9] (-)
 1,5,9,13,17,21,25,27,30 BlOutNd  - Blade nodes whose values will be output  (-)
                       6 NTwOuts  - Number of tower node outputs [0 - 9]  (-)

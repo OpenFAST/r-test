@@ -1,0 +1,42 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v3.2.1-122-gc1599127-dirty
+ Compile Info:
+  - Compiler: GCC version 11.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - OpenMP: No
+  - Date: Aug  4 2022
+  - Time: 16:32:40
+ Execution Info:
+  - Date: 08/05/2022
+  - Time: 10:59:13-0600
+
+ OpenFAST input file heading:
+     Fixed MHK turbine, based on the RM1 tidal current turbine
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
+ Running InflowWind.
+  Time: 0 of 10 seconds.
+                                                                                                   Time: 5 of 10 seconds.  Estimated final completion at 11:02:20.                                                                                                                                     Time: 10 of 10 seconds.  Estimated final completion at 11:02:23.                                                                                                                                   
+  Total Real Time:       3.1695 minutes
+  Total CPU Time:        2.7746 minutes
+  Simulation CPU Time:   2.7715 minutes
+  Simulated Time:        0.1667 minutes
+  Time Ratio (Sim/CPU):  6.01478E-02
+
+  OpenFAST terminated normally.
+
