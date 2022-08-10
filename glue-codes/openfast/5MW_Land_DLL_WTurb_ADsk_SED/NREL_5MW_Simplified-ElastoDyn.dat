@@ -40,7 +40,6 @@ True          YawDOF      - Yaw degree of freedom -- controlled by controller (f
 "Yaw"                     - Commanded yaw angle
 "YawRate"                 - Commanded yaw angle rate
 "RotPwr"
-"RotThrust"
 "RotTorq"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
