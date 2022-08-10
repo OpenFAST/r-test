@@ -76,4 +76,5 @@ True             SeaStSum       - Output a summary file [flag]
 "FVel2xi, FVel2yi, FVel2zi"       - fluid velocity      at location 2
 "FAcc2xi, FAcc2yi, FAcc2zi"       - fluid accelerations at location 2
 "FDynP2"                           
+"Wave1Elev"                       - Wave elevation at the platform reference point (0,  0)
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
