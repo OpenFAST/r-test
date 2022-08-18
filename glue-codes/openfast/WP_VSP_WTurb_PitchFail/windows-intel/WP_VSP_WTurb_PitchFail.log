@@ -1,55 +1,0 @@
-
-**************************************************************************************************
-OpenFAST
-
-Copyright (C) 2022 National Renewable Energy Laboratory
-Copyright (C) 2022 Envision Energy USA LTD
-
-This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
-See the "LICENSE" file distributed with this software for details.
-**************************************************************************************************
-
-OpenFAST-v3.1.0-243-ge6028eae
-Compile Info:
- - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
- 64, Version 2021.1 Build 20201112_000000
- - Architecture: 64 bit
- - Precision: double
- - OpenMP: No
- - Date: Jul 06 2022
- - Time: 19:36:47
-Execution Info:
- - Date: 07/06/2022
- - Time: 20:08:21-0500
-
-OpenFAST input file heading:
-    FAST Certification Test #11: WindPACT 1.5 MW Baseline with many DOFs undergoing a pitch
-    failure.
-
-Running ElastoDyn.
-Nodal outputs section of ElastoDyn input file not found or improperly formatted.
-Running AeroDyn14.
-  WARNING:   AeroDyn 14 is deprecated and will be removed in a future release.
-Running InflowWind.
-
-   Reading a 7x7 grid (84 m wide, 42.288 m to 126.29 m above ground) with a characteristic wind
-   speed of 12 m/s.
-
-   Processed 940 time steps of 20-Hz full-field data (46.95 seconds).
-Running ServoDyn.
- Time: 0 of 20 seconds.                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 2 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 3 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 4 of 20 seconds.  Estimated final completion at 20:08:30.
-
-***********************************************
-Running with control option using data from:
- Speed controller for ADAMS WindPACT 15A1001 model April, 2002.
-***********************************************
-                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 6 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 7 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 8 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 9 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 10 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 11 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 12 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 13 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 15 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 16 of 20 seconds.  Estimated final completion at 20:08:30.                                                                                                   Time: 17 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 18 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 19 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                   Time: 20 of 20 seconds.  Estimated final completion at 20:08:31.                                                                                                  
-
- Total Real Time:       9.086 seconds
- Total CPU Time:        9.0781 seconds
- Simulation CPU Time:   8.9219 seconds
- Simulated Time:        20 seconds
- Time Ratio (Sim/CPU):  2.2417
-
- OpenFAST terminated normally.
-

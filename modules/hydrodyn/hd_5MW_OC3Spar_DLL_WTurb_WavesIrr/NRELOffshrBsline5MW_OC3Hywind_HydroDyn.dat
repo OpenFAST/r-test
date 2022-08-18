@@ -114,7 +114,7 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
-"E15.7e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
+"E16.8e2"       OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 HydroFxi                   

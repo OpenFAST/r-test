@@ -70,12 +70,12 @@ elif sys.platform == "win32":
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
         library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_lib_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
-            print(f"Python is 32 bit and cannot find 32 bit InflowWind DLL expected at: {library_path}")
+            print(f"Python is 32 bit and cannot find 32 bit HydroDyn DLL expected at: {library_path}")
             exit(1)
     if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
         library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_lib_x64.dll"]) # VS build install location
         if not os.path.isfile(library_path):
-            print(f"Python is 64 bit and cannot find 64 bit InflowWind DLL expected at: {library_path}")
+            print(f"Python is 64 bit and cannot find 64 bit HydroDyn DLL expected at: {library_path}")
             exit(1)
 
 
@@ -148,7 +148,7 @@ except Exception as e:
 #           hdlib.numTimeSteps -- total number of timesteps, only used to
 #                                  construct arrays to hold the output channel
 #                                  info
-hdlib.InterpOrder   = 2                  # order of the interpolation
+hdlib.InterpOrder   = 1                  # order of the interpolation
 hdlib.t_start       = 0                  # initial time
 hdlib.dt            = 0.0125             # time interval that it's being called at
 final_time          = 60                 # final time

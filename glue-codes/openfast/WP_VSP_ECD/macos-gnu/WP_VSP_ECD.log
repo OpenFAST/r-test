@@ -1,64 +1,0 @@
-
- **************************************************************************************************
- OpenFAST
-
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
-
- This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
- See the "LICENSE" file distributed with this software for details.
- **************************************************************************************************
-
- OpenFAST-v2.5.0-607-g1dd8e752
- Compile Info:
-  - Compiler: GCC version 10.2.0
-  - Architecture: 64 bit
-  - Precision: double
-  - Date: Mar  4 2021
-  - Time: 11:41:08
- Execution Info:
-  - Date: 03/04/2021
-  - Time: 11:57:28-0700
-
- OpenFAST input file heading:
-     FAST Certification Test #12: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and ECD
-     wind.
-
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
- Skipping nodal outputs.
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 1)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 2)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 1, blade 3)
- Warning: Turning off Unsteady Aerodynamics because C_nalpha is 0. (node 2, blade 3)
- Running InflowWind.
- Running ServoDyn.
-
- FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
- files. Assuming upflow is 0.
-
-  Time: 0 of 20 seconds.
-                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 11:58:02.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 11:58:01.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 11:58:03.                                  
- ***********************************************
- Running with control option using data from:
-  Speed controller for ADAMS WindPACT 15A1001 model April, 2002.
- ***********************************************
-
-                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 11:58:02.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 11:58:02.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 11:58:02.                                  
- FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 3,
- blade 3):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
- low relative velocity. This warning will not be repeated though the condition may persist.
-
-                                                                                                   Time: 10 of 20 seconds.  Estimated final completion at 11:58:02.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 11:58:04.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 14 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 11:58:03.                                                                                                                                   
-  Total Real Time:       34.809 seconds
-  Total CPU Time:        34.342 seconds
-  Simulation CPU Time:   34.307 seconds
-  Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.58298
-
-  OpenFAST terminated normally.
-
