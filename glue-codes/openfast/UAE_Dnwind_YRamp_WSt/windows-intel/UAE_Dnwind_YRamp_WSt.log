@@ -1,46 +1,0 @@
-
-**************************************************************************************************
-OpenFAST
-
-Copyright (C) 2021 National Renewable Energy Laboratory
-Copyright (C) 2021 Envision Energy USA LTD
-
-This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
-See the "LICENSE" file distributed with this software for details.
-**************************************************************************************************
-
-OpenFAST-v2.4.0-137-gb5d9a13c
-Compile Info:
- - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
- 64, Version 2021.1 Build 20201112_000000
- - Architecture: 64 bit
- - Precision: double
- - Date: Jan 11 2021
- - Time: 20:21:29
-Execution Info:
- - Date: 01/11/2021
- - Time: 20:49:04-0600
-
-OpenFAST input file heading:
-    FAST Certification Test #09: UAE Phase VI (downwind) with many DOFs with yaw ramp and a
-    steady wind.
-
-Running ElastoDyn.
-Nodal outputs section of ElastoDyn input file not found or improperly formatted.
-Running AeroDyn14.
-Running InflowWind.
-Running ServoDyn.
-
-FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
-files. Assuming upflow is 0.
-
- Time: 0 of 40 seconds.                                                                                                   Time: 2 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 4 of 40 seconds.  Estimated final completion at 20:49:48.                                                                                                   Time: 6 of 40 seconds.  Estimated final completion at 20:49:44.                                                                                                   Time: 8 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 10 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                   Time: 12 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 14 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 16 of 40 seconds.  Estimated final completion at 20:49:48.                                                                                                   Time: 18 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                   Time: 20 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 22 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 24 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 26 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 28 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 30 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                   Time: 32 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                   Time: 34 of 40 seconds.  Estimated final completion at 20:49:46.                                                                                                   Time: 36 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                   Time: 38 of 40 seconds.  Estimated final completion at 20:49:45.                                                                                                  
-
- Total Real Time:       40.616 seconds
- Total CPU Time:        40.25 seconds
- Simulation CPU Time:   40.203 seconds
- Simulated Time:        40.002 seconds
- Time Ratio (Sim/CPU):  0.995
-
- OpenFAST terminated normally.
-
