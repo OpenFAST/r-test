@@ -1,10 +1,10 @@
 
-Predictions were generated on 20-Dec-2018 at 17:44:40 using BeamDyn
+Predictions were generated on 13-Jun-2022 at 18:33:43 using BeamDyn
 
 
 
 
-Time	TipTDxr   	TipTDyr   	TipTDzr   	TipRDxr   	TipRDyr   	TipRDzr   
+Time	TipTDxr             	TipTDyr             	TipTDzr             	TipRDxr             	TipRDyr             	TipRDzr             
 (s)	(m)	(m)	(m)	(-)	(-)	(-)
        0.000000	  0.00000000E+00	  0.00000000E+00	  0.00000000E+00	  0.00000000E+00	  0.00000000E+00	  0.00000000E+00
        0.002000	  0.00000000E+00	  5.49867743E+00	 -2.43174319E+00	 -1.29968203E+00	  0.00000000E+00	  0.00000000E+00
