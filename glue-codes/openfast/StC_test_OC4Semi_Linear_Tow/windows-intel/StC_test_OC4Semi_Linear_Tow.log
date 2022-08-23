@@ -1,42 +1,0 @@
-
-**************************************************************************************************
-OpenFAST
-
-Copyright (C) 2022 National Renewable Energy Laboratory
-Copyright (C) 2022 Envision Energy USA LTD
-
-This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
-See the "LICENSE" file distributed with this software for details.
-**************************************************************************************************
-
-OpenFAST-v3.1.0-55-gaeae69fe
-Compile Info:
- - Compiler: Intel(R) Fortran Compiler 2021
- - Architecture: 64 bit
- - Precision: double
- - OpenMP: No
- - Date: Mar 16 2022
- - Time: 17:03:38
-Execution Info:
- - Date: 03/16/2022
- - Time: 20:10:07-0600
-
-OpenFAST input file heading:
-    FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi
-    configuration, for use in offshore analysis
-
-Running ElastoDyn.
-Nodal outputs section of ElastoDyn input file not found or improperly formatted.
-Running ServoDyn.
-Running StrucCtrl.
- Time: 0 of 5 seconds.                                                                                                   Performing linearization 1 at simulation time 0 s. (RotSpeed=12 rpm, BldPitch1=0 deg)
-                                                                                                   Time: 1 of 5 seconds.  Estimated final completion at 20:10:10.                                                                                                   Time: 2 of 5 seconds.  Estimated final completion at 20:10:09.                                                                                                   Time: 3 of 5 seconds.  Estimated final completion at 20:10:09.                                                                                                   Time: 4 of 5 seconds.  Estimated final completion at 20:10:09.                                                                                                   Time: 5 of 5 seconds.  Estimated final completion at 20:10:09.                                                                                                  
-
- Total Real Time:       1.358 seconds
- Total CPU Time:        1.3594 seconds
- Simulation CPU Time:   1.2969 seconds
- Simulated Time:        5 seconds
- Time Ratio (Sim/CPU):  3.8554
-
- OpenFAST terminated normally.
-

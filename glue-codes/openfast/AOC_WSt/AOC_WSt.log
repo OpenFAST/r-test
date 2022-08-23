@@ -1,0 +1,45 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2021 National Renewable Energy Laboratory
+ Copyright (C) 2021 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v2.5.0-10-gb4fd3acc
+ Compile Info:
+  - Compiler: GCC version 10.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - Date: Jan 14 2021
+  - Time: 17:19:34
+ Execution Info:
+  - Date: 01/14/2021
+  - Time: 17:38:19-0600
+
+ OpenFAST input file heading:
+     FAST Certification Test #06: AOC 15/50 with many DOFs with gen start, loss of grid, and
+     tip-brake shutdown. Many parameters are pure fiction.
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn14.
+ Running InflowWind.
+ Running ServoDyn.
+
+ FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
+ files. Assuming upflow is 0.
+
+  Time: 0 of 35 seconds.
+                                                                                                   Time: 5 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                     Time: 10 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                    Time: 15 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                    Time: 20 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                    Time: 25 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                    Time: 30 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                    Time: 35 of 35 seconds.  Estimated final completion at 17:38:36.                                                                                                                                   
+  Total Real Time:       16.133 seconds
+  Total CPU Time:        16.094 seconds
+  Simulation CPU Time:   16.047 seconds
+  Simulated Time:        35 seconds
+  Time Ratio (Sim/CPU):  2.1811
+
+  OpenFAST terminated normally.
+

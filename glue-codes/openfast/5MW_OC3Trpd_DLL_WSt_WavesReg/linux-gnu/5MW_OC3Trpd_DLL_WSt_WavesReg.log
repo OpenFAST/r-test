@@ -1,95 +1,0 @@
-
- **************************************************************************************************
- OpenFAST
-
- Copyright (C) 2022 National Renewable Energy Laboratory
- Copyright (C) 2022 Envision Energy USA LTD
-
- This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
- See the "LICENSE" file distributed with this software for details.
- **************************************************************************************************
-
- OpenFAST-v3.1.0-243-ge6028eae-dirty
- Compile Info:
-  - Compiler: GCC version 10.3.0
-  - Architecture: 64 bit
-  - Precision: double
-  - OpenMP: No
-  - Date: Jul  6 2022
-  - Time: 19:37:29
- Execution Info:
-  - Date: 07/06/2022
-  - Time: 22:18:32-0500
-
- OpenFAST input file heading:
-     FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration,
-     for use in offshore analysis
-
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
- Skipping nodal outputs.
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 1, blade 1)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 2, blade 1)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 3, blade 1)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 4, blade 1)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 1, blade 2)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 2, blade 2)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 3, blade 2)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 4, blade 2)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 1, blade 3)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 2, blade 3)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 3, blade 3)
- Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
- (airfoil has likely has constant polars). (node 4, blade 3)
- Running InflowWind.
- Running HydroDyn.
-  WARNING:  The requested output channel is invalid: M1N1FAxi
-  WARNING:  The requested output channel is invalid: M1N1FAzi
-  WARNING:   The random number generator in use differs from the original code provided by NREL.
-  This pRNG uses 8 seeds instead of the 2 in the input file.
-  Generating incident wave kinematics and current time history.
- Running SubDyn.
-    Fixed bottom case detected
-    Performing Craig-Bampton reduction 948 DOFs -> 12 modes + 6 DOFs
-    Using static improvement method for gravity and ext. loads
-    SubDyn recommended dt: 0.00782 - Current dt: 0.00800 - Max frequency:    6.396
-    Calculating Full System Modes for output files
-    Exporting Summary file
- Running ServoDyn.
- Running ServoDyn Interface for Bladed Controllers (using GNU Fortran for Linux).
- Using legacy Bladed DLL interface.
-
- FAST_InitializeAll:HydroDyn_Init:HydroDynInput_ProcessInitData: A requested output channel is
- invalid
- HydroDyn_Init:Waves_Init:VariousWaves_Init: The random number generator in use differs from the
- original code provided by NREL. This pRNG uses 8 seeds instead of the 2 in the HydroDyn input
- file.
-
-  Time: 0 of 60 seconds.
-
- FAST_Solution:FAST_AdvanceStates:SrvD_UpdateStates:DLL_controller_call:BladedInterface option was
- designed for an explicit-loose coupling scheme. Using last calculated values from DLL on all
- subsequent calls until time is advanced. Warning will not be displayed again.
-
-                                                                                                   Time: 1 of 60 seconds.  Estimated final completion at 23:08:41.                                                                                                                                     Time: 2 of 60 seconds.  Estimated final completion at 22:33:46.                                                                                                                                     Time: 3 of 60 seconds.  Estimated final completion at 22:35:06.                                                                                                                                     Time: 4 of 60 seconds.  Estimated final completion at 22:36:17.                                                                                                                                     Time: 5 of 60 seconds.  Estimated final completion at 22:36:01.                                                                                                                                     Time: 6 of 60 seconds.  Estimated final completion at 22:35:28.                                                                                                                                     Time: 7 of 60 seconds.  Estimated final completion at 22:34:57.                                                                                                                                     Time: 8 of 60 seconds.  Estimated final completion at 22:35:30.                                                                                                                                     Time: 9 of 60 seconds.  Estimated final completion at 22:35:13.                                                                                                                                     Time: 10 of 60 seconds.  Estimated final completion at 22:34:59.                                                                                                                                    Time: 11 of 60 seconds.  Estimated final completion at 22:35:06.                                                                                                                                    Time: 12 of 60 seconds.  Estimated final completion at 22:35:01.                                                                                                                                    Time: 13 of 60 seconds.  Estimated final completion at 22:35:03.                                                                                                                                    Time: 14 of 60 seconds.  Estimated final completion at 22:35:26.                                                                                                                                    Time: 15 of 60 seconds.  Estimated final completion at 22:35:08.                                                                                                                                    Time: 16 of 60 seconds.  Estimated final completion at 22:34:04.                                                                                                                                    Time: 17 of 60 seconds.  Estimated final completion at 22:34:11.                                                                                                                                    Time: 18 of 60 seconds.  Estimated final completion at 22:34:16.                                                                                                                                    Time: 19 of 60 seconds.  Estimated final completion at 22:34:19.                                                                                                                                    Time: 20 of 60 seconds.  Estimated final completion at 22:34:18.                                                                                                                                    Time: 21 of 60 seconds.  Estimated final completion at 22:34:27.                                                                                                                                    Time: 22 of 60 seconds.  Estimated final completion at 22:34:22.                                                                                                                                    Time: 23 of 60 seconds.  Estimated final completion at 22:34:12.                                                                                                                                    Time: 24 of 60 seconds.  Estimated final completion at 22:33:59.                                                                                                                                    Time: 25 of 60 seconds.  Estimated final completion at 22:33:32.                                                                                                                                    Time: 26 of 60 seconds.  Estimated final completion at 22:33:31.                                                                                                                                    Time: 27 of 60 seconds.  Estimated final completion at 22:33:29.                                                                                                                                    Time: 28 of 60 seconds.  Estimated final completion at 22:33:09.                                                                                                                                    Time: 29 of 60 seconds.  Estimated final completion at 22:32:52.                                                                                                                                    Time: 30 of 60 seconds.  Estimated final completion at 22:33:19.                                                                                                                                    Time: 31 of 60 seconds.  Estimated final completion at 22:32:51.                                                                                                                                    Time: 32 of 60 seconds.  Estimated final completion at 22:32:47.                                                                                                                                    Time: 33 of 60 seconds.  Estimated final completion at 22:33:13.                                                                                                                                    Time: 34 of 60 seconds.  Estimated final completion at 22:32:59.                                                                                                                                    Time: 35 of 60 seconds.  Estimated final completion at 22:33:08.                                                                                                                                    Time: 36 of 60 seconds.  Estimated final completion at 22:32:55.                                                                                                                                    Time: 37 of 60 seconds.  Estimated final completion at 22:33:00.                                                                                                                                    Time: 38 of 60 seconds.  Estimated final completion at 22:33:13.                                                                                                                                    Time: 39 of 60 seconds.  Estimated final completion at 22:33:20.                                                                                                                                    Time: 40 of 60 seconds.  Estimated final completion at 22:33:12.                                                                                                                                    Time: 41 of 60 seconds.  Estimated final completion at 22:32:49.                                                                                                                                    Time: 42 of 60 seconds.  Estimated final completion at 22:32:54.                                                                                                                                    Time: 43 of 60 seconds.  Estimated final completion at 22:32:44.                                                                                                                                    Time: 44 of 60 seconds.  Estimated final completion at 22:33:02.                                                                                                                                    Time: 45 of 60 seconds.  Estimated final completion at 22:32:56.                                                                                                                                    Time: 46 of 60 seconds.  Estimated final completion at 22:32:55.                                                                                                                                    Time: 47 of 60 seconds.  Estimated final completion at 22:32:54.                                                                                                                                    Time: 48 of 60 seconds.  Estimated final completion at 22:32:52.                                                                                                                                    Time: 49 of 60 seconds.  Estimated final completion at 22:32:57.                                                                                                                                    Time: 50 of 60 seconds.  Estimated final completion at 22:32:47.                                                                                                                                    Time: 51 of 60 seconds.  Estimated final completion at 22:32:54.                                                                                                                                    Time: 52 of 60 seconds.  Estimated final completion at 22:33:02.                                                                                                                                    Time: 53 of 60 seconds.  Estimated final completion at 22:32:57.                                                                                                                                    Time: 54 of 60 seconds.  Estimated final completion at 22:32:58.                                                                                                                                    Time: 55 of 60 seconds.  Estimated final completion at 22:32:56.                                                                                                                                    Time: 56 of 60 seconds.  Estimated final completion at 22:32:54.                                                                                                                                    Time: 57 of 60 seconds.  Estimated final completion at 22:32:55.                                                                                                                                    Time: 58 of 60 seconds.  Estimated final completion at 22:32:57.                                                                                                                                    Time: 59 of 60 seconds.  Estimated final completion at 22:32:55.                                                                                                                                    Time: 60 of 60 seconds.  Estimated final completion at 22:32:56.                                                                                                                                   
-  Total Real Time:       14.391 minutes
-  Total CPU Time:        14.385 minutes
-  Simulation CPU Time:   13.744 minutes
-  Simulated Time:        1.0001 minutes
-  Time Ratio (Sim/CPU):  7.27688E-02
-
-  OpenFAST terminated normally.
-
