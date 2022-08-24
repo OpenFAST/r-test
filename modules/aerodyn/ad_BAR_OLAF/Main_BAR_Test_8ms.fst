@@ -18,6 +18,8 @@ False                   Echo        - Echo input data to <RootName>.ech (flag)
 0                      CompSub     - 
 0                      CompMooring - 
 0                      CompIce     - 
+0                      CompSoil    -
+0                      MHK         -
 ---------------------- INPUT FILES ---------------------------------------------
 "OpenFAST_BAR_00_ElastoDyn.dat" EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
 "NA" BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
@@ -30,6 +32,7 @@ False                   Echo        - Echo input data to <RootName>.ech (flag)
 "NA"               SubFile     - Name of file containing sub-structural input parameters (quoted string)
 "NA"               MooringFile - Name of file containing mooring system input parameters (quoted string)
 "NA"               IceFile     - Name of file containing ice input parameters (quoted string)
+"NA"               SoilFile    - Name of the file containing the SoilDyn input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 False                   SumPrint    - Print summary data to "<RootName>.sum" (flag)
 1.0                    SttsTime    - Amount of time between screen status messages (s)

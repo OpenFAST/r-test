@@ -42,6 +42,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
+"unused"      SoilFile        - Name of the file containing the SoilDyn input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
