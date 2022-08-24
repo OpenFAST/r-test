@@ -1,0 +1,16 @@
+REDWINmodel 2 Input File. Valid for REDWINmodel2-2.0.0, 11-Nov-2018.
+----- Coefficients of the elastic stiffness matrix at seabed ------------------------------------
+   0.0570e+12			K11 = K22		- Elastic horizontal stiffness at seabed
+  -0.2601e+12			K15 = -K24 		- Elastic horizontal-rotational cross stiffness at seabed
+  -0.2601e+12			K51 = -K42 		- Elastic rotational-horizontal cross stiffness at seabed
+   2.3483e+14			K55 = K44 		- Elastic rotational stiffness at seabed
+   1.0000e+11			K33 			- Elastic vertical stiffness at seabed
+   1.0000e+13			K66 			- Elastic torsional stiffness at seabed
+----- Settings ----------------------------------------------------------------------------------
+   15				Ns			- Number of yield surfaces (recommended value = 15-25)
+   20				iMax			- Num. of iterations before activating sub-stepping (recommended value = 10-20)
+   1.000000e-06			tol			- Convergence tolerance (recommended value = 1.0e-06)
+   
+==================================================
+NOTE: Do not add or remove any lines in this file!
+==================================================
