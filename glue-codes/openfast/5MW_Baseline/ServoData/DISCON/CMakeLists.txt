@@ -18,7 +18,7 @@
 
 # Customizations for GNU Fortran compiler
 macro(set_gfortran)
-  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -m64 -ffree-line-length-none -fdefault-real-8 -C")
+  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -ffree-line-length-none -fdefault-real-8 -C")
 
   # debug flags
   if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -37,7 +37,7 @@ endmacro(set_ifort)
 
 # Customizations for Intel Fortran Compiler on posix systems
 macro(set_ifort_posix)
-  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -m64 -fpp -real-size 64")
+  set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fpp -real-size 64")
 
   # debug flags
   if(CMAKE_BUILD_TYPE MATCHES Debug)

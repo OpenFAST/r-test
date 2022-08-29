@@ -23,7 +23,7 @@
     source_solution_parent - the location to copy the files from. this is the parent directory of the cases; for example, `openfast/build/reg_tests/openfast`
     target_solution_parent - the location to copy the files to. this is the parent directory of the target cases; for example, `openfast/reg_tests/r-test/openfast`
 
-    Example: python updateBaselineSolutions.py caselist.txt source/solution/parent target/solution/parent [macos,linux,windows] [intel,gnu]
+    Example: python updateBaselineSolutions.py caselist.txt source/solution/parent target/solution/parent
 """
 
 import sys
@@ -41,9 +41,9 @@ def exitWithDirNotFound(dir):
 ##### Main
 
 ### Verify input arguments
-if len(sys.argv) != 6:
+if len(sys.argv) != 4:
     exitWithError("Invalid arguments: {}\n".format(" ".join(sys.argv)) +
-    "Usage: python updateBaselineSolutions.py caselist.txt local/solution/parent baseline/solution/parent [macos,linux,windows] [intel,gnu]")
+    "Usage: python updateBaselineSolutions.py caselist.txt local/solution/parent baseline/solution/parent")
 
 with open(sys.argv[1]) as listfile:
     content = listfile.readlines()
@@ -55,8 +55,6 @@ casenames = [x for x in casenames if len(x.strip()) > 0]
 
 sourceParent = sys.argv[2]
 targetParent = sys.argv[3]
-machine = sys.argv[4]
-compiler = sys.argv[5]
 
 for case in casenames:
     # verify source directory exists. if not, bail
@@ -64,7 +62,7 @@ for case in casenames:
         exitWithDirNotFound(sourceParent)
 
     # verify destination directory exists. if not, make it
-    destinationDir = os.path.join(targetParent, case, "{}-{}".format(machine, compiler))
+    destinationDir = os.path.join(targetParent, case)
     if not os.path.isdir(destinationDir):
         os.makedirs(destinationDir)
 
