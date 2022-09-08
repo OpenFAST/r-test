@@ -1,10 +1,6 @@
 ------- HydroDyn Input File ----------------------------------------------------
 NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC3 Hywind.
 True             Echo           - Echo the input file data (flag)
----------------------- ENVIRONMENTAL CONDITIONS --------------------------------
-"default"        WtrDens        - Water density (kg/m^3)
-"default"        WtrDpth        - Water depth (meters)
-"default"        MSL2SWL        - Offset between still-water level and mean sea level (meters) [positive upward; unused when WaveMod = 6; must be zero if PotMod=1 or 2]
 ---------------------- FLOATING PLATFORM --------------------------------------- [unused with WaveMod=6]
              1   PotMod         - Potential-flow model {0: none=no potential flow, 1: frequency-to-time-domain transforms based on WAMIT output, 2: fluid-impulse theory (FIT)} (switch)
              1   ExctnMod       - Wave-excitation model {0: no wave-excitation calculation, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]

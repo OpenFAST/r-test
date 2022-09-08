@@ -102,6 +102,6 @@ for i= 1:length(caseNames)
     TSfile = [ pathstr filesep caseNames{i} ];
     TSData=FAST2Matlab(TSfile,2);
     Matlab2FAST(TSData,template,TSfile,2);
-    system([TurbSim_exe ' ' TSfile])
+    %system([TurbSim_exe ' ' TSfile])
 end
 
