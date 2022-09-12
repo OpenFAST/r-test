@@ -2,27 +2,24 @@
 Mooring system for OC4-DeepCwind Semi
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-1        NTypes    - number of LineTypes
-Name     Diam      MassDen      EA    BA/-zeta  Can   Cat   Cdn   Cdt
-(-)       (m)      (kg/m)       (N)   (N-s/-)   (-)   (-)   (-)   (-)
-main     0.0766    113.35     7.536E8  -1.0     0.8   0.25  2.0   0.4
----------------------- CONNECTION PROPERTIES --------------------------------
-6       NConnects - number of connections including anchors and fairleads
-Node    Type      X        Y        Z       M     V      FX   FY   FZ   CdA   CA
-(-)     (-)      (m)      (m)      (m)     (kg)  (m^3)  (kN) (kN) (kN) (m^2)  (-)
-1      Fixed   418.8    725.383  -200.0     0      0      0    0    0    0     0
-2      Fixed  -837.6      0.0    -200.0     0      0      0    0    0    0     0
-3      Fixed   418.8   -725.383  -200.0     0      0      0    0    0    0     0
-4      Vessel   20.434   35.393   -14.0     0      0      0    0    0    0     0
-5      Vessel  -40.868    0.0     -14.0     0      0      0    0    0    0     0
-6      Vessel   20.434  -35.393   -14.0     0      0      0    0    0    0     0
----------------------- LINE PROPERTIES --------------------------------------
-3        NLines    - number of line objects
-Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
-(-)       (-)       (m)       (-)       (-)       (-)       (-)      (-)
-1         main     835.35      20        1         4         -        0
-2         main     835.35      20        2         5         -        0
-3         main     835.35      20        3         6         -        0
+Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+(-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
+main     0.0766    113.35     7.536E8     -1.0      0    2.0     0.8    0.4   0.25
+---------------------- POINTS --------------------------------                                           
+ID     Attachment   X          Y         Z      M      V       CdA   CA
+(-)    (-)         (m)        (m)       (m)    (kg)   (m^3)   (m^2)  (-)
+1      Fixed     418.8      725.383   -200.0     0      0       0     0
+2      Fixed    -837.6        0.0     -200.0     0      0       0     0
+3      Fixed     418.8     -725.383   -200.0     0      0       0     0
+4      Vessel     20.434     35.393    -14.0     0      0       0     0
+5      Vessel    -40.868      0.0      -14.0     0      0       0     0
+6      Vessel     20.434    -35.393    -14.0     0      0       0     0
+---------------------- LINES --------------------------------------                                           
+ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
+(-)       (-)       (-)       (-)         (m)      (-)         (-)   
+1         main       1         4        835.35      20          -
+2         main       2         5        835.35      20          -
+3         main       3         6        835.35      20          -
 ---------------------- SOLVER OPTIONS ---------------------------------------
 0.001    dtM       - time step to use in mooring integration (s)
 3.0e6    kbot      - bottom stiffness (Pa/m)
