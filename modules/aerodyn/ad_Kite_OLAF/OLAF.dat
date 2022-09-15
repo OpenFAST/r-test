@@ -15,8 +15,8 @@ default DTfvw              Time interval for wake propagation. {default: dtaero}
 --------------------------- WAKE OPTIONS ------------------------------------------------------
 ------------------- WAKE EXTENT AND DISCRETIZATION --------------------------------------------
 31     nNWPanel           Number of near-wake panels (-)
-10     WakeLength         Total wake distance, in number of wake panels (-)
-05     FreeWakeLength     Wake length that is free, in number of wake panels (-) {default: WakeLength}
+10     nFWPanels           Total wake distance [integer] (number of time steps)
+05     nFWPanelsFree       Wake length that is free [integer] (number of time steps) {default: nFWPanels}
 default FWShedVorticity    Include shed vorticity in the far wake {default: false}
 ------------------- WAKE REGULARIZATIONS AND DIFFUSION -----------------------------------------
 0       DiffusionMethod    Diffusion method to account for viscous effects {0: None, 1: Core Spreading, "default": 0}         
