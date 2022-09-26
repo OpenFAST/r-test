@@ -1,73 +1,0 @@
-
-**************************************************************************************************
-OpenFAST
-
-Copyright (C) 2022 National Renewable Energy Laboratory
-Copyright (C) 2022 Envision Energy USA LTD
-
-This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
-See the "LICENSE" file distributed with this software for details.
-**************************************************************************************************
-
-OpenFAST-v3.1.0-243-ge6028eae
-Compile Info:
- - Compiler: Intel(R) Fortran Intel(R) 64 Compiler Classic for applications running on Intel(R)
- 64, Version 2021.1 Build 20201112_000000
- - Architecture: 64 bit
- - Precision: double
- - OpenMP: No
- - Date: Jul 06 2022
- - Time: 19:36:47
-Execution Info:
- - Date: 07/06/2022
- - Time: 20:08:36-0500
-
-OpenFAST input file heading:
-    FAST Certification Test #13: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and FF
-    turbulence.
-
-Running ElastoDyn.
-Nodal outputs section of ElastoDyn input file not found or improperly formatted.
-Running AeroDyn.
-AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
-Skipping nodal outputs.
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 1, blade 1)
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 2, blade 1)
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 1, blade 2)
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 2, blade 2)
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 1, blade 3)
-Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
-(airfoil has likely has constant polars). (node 2, blade 3)
-Running InflowWind.
-
-   Reading a 7x7 grid (84 m wide, 42.288 m to 126.29 m above ground) with a characteristic wind
-   speed of 12 m/s.
-
-   Processed 940 time steps of 20-Hz full-field data (46.95 seconds).
-Running ServoDyn.
- Time: 0 of 40 seconds.                                                                                                   Time: 1 of 40 seconds.  Estimated final completion at 20:09:13.                                                                                                   Time: 2 of 40 seconds.  Estimated final completion at 20:09:10.                                                                                                   Time: 3 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 4 of 40 seconds.  Estimated final completion at 20:09:10.
-
-***********************************************
-Running with control option using data from:
- Speed controller for ADAMS WindPACT 15A1001 model April, 2002.
-***********************************************
-                                                                                                   Time: 5 of 40 seconds.  Estimated final completion at 20:09:12.
-
-FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:RotCalcOutput:BEMT_CalcOutput(node 3,
-blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
-low relative velocity. This warning will not be repeated though the condition may persist.
-                                                                                                   Time: 6 of 40 seconds.  Estimated final completion at 20:09:10.                                                                                                   Time: 7 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 8 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 9 of 40 seconds.  Estimated final completion at 20:09:14.                                                                                                   Time: 10 of 40 seconds.  Estimated final completion at 20:09:13.                                                                                                   Time: 11 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 12 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 13 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 14 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 15 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 16 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 17 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 18 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 19 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 20 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 21 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 22 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 23 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 24 of 40 seconds.  Estimated final completion at 20:09:13.                                                                                                   Time: 25 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 26 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 27 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 28 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 29 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 30 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 31 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 32 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 33 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 34 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 35 of 40 seconds.  Estimated final completion at 20:09:12.                                                                                                   Time: 36 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 37 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 38 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 39 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                   Time: 40 of 40 seconds.  Estimated final completion at 20:09:11.                                                                                                  
-
- Total Real Time:       34.694 seconds
- Total CPU Time:        34.672 seconds
- Simulation CPU Time:   34.516 seconds
- Simulated Time:        40 seconds
- Time Ratio (Sim/CPU):  1.1589
-
- OpenFAST terminated normally.
-
