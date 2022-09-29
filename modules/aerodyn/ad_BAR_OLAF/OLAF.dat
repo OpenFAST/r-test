@@ -14,10 +14,10 @@ default  CircSolvMaxIter    Maximum number of iterations for circulation solving
 ===============================================================================================
 --------------------------- WAKE OPTIONS ------------------------------------------------------
 ------------------- WAKE EXTENT AND DISCRETIZATION --------------------------------------------
-35       nNWPanel           !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of near-wake panels (-)
-10       WakeLength         !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Total wake distance (D)
-10       FreeWakeLength     !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Wake length that is free (D) {default: WakeLength}
-False    FWShedVorticity    Include shed vorticity in the far wake {default: False}
+35      nNWPanel           !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of near-wake panels (-)
+10      nFWPanel           !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of far-wake panels (-)
+10      nFWPanelFree       !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of free far-wake panels (-) {default: nFWPanel}
+False   FWShedVorticity    Include shed vorticity in the far wake {default: False}
 ------------------- WAKE REGULARIZATIONS AND DIFFUSION -----------------------------------------
 0       DiffusionMethod    Diffusion method to account for viscous effects {0: None, 1: Core Spreading, "default": 0}         
 2       RegDeterMethod     Method to determine the regularization parameters {0:  Manual, 1: Optimized, 2: Chord, 3: Span, default: 0 }          
@@ -37,8 +37,8 @@ True    TwrShadowOnWake    Include tower flow disturbance effects on wake convec
 --------------------------- OUTPUT OPTIONS  ---------------------------------------------------
 2       WrVTk              Outputs Visualization Toolkit (VTK) (independent of .fst option) {0: NoVTK, 1: Write VTK at VTK_fps, 2: Write VTK at init and final} (flag)
 1       nVTKBlades         Number of blades for which VTK files are exported {0: No VTK per blade, n: VTK for blade 1 to n} (-) 
-3       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, "default": 1} 
-0       VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all FVW timesteps} [only if WrVTK=1]
+3       VTKCoord           Coordinate system used for VTK export. {1: Global, 2: Hub, 3: Both, "default": 1} 
+0       VTK_fps            Frame rate for VTK output (frames per second) {"all" for all glue code timesteps, "default" for all OLAF timesteps} [only if WrVTK=1]
 1       nGridOut           Number of grid outputs
 GridName  GridType  TStart   TEnd    DTGrid   XStart  XEnd   nX   YStart   YEnd   nY   ZStart   ZEnd   nZ
 (-)         (-)      (s)     (s)      (s)       (m)    (m)   (-)   (m)     (m)    (-)   (m)     (m)    (-)
