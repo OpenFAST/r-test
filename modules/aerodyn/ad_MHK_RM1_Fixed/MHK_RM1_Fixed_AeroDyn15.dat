@@ -45,19 +45,19 @@ True          FLookup            - Flag to indicate whether a lookup for f' will
           0   InCol_Cm           - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
           4   InCol_Cpmin        - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
           9   NumAFfiles         - Number of airfoil files used (-)
-"../MHK_RM1/Airfoils/NACA6_1000.dat"    AFNames    - Airfoil file names (NumAFfiles lines) (quoted strings)
-"../MHK_RM1/Airfoils/NACA6_0864.dat"
-"../MHK_RM1/Airfoils/NACA6_0629.dat"
-"../MHK_RM1/Airfoils/NACA6_0444.dat"
-"../MHK_RM1/Airfoils/NACA6_0329.dat"
-"../MHK_RM1/Airfoils/NACA6_0276.dat"
-"../MHK_RM1/Airfoils/NACA6_0259.dat"
-"../MHK_RM1/Airfoils/NACA6_0247.dat"
-"../MHK_RM1/Airfoils/NACA6_0240.dat"
+"Airfoils/NACA6_1000.dat"    AFNames    - Airfoil file names (NumAFfiles lines) (quoted strings)
+"Airfoils/NACA6_0864.dat"
+"Airfoils/NACA6_0629.dat"
+"Airfoils/NACA6_0444.dat"
+"Airfoils/NACA6_0329.dat"
+"Airfoils/NACA6_0276.dat"
+"Airfoils/NACA6_0259.dat"
+"Airfoils/NACA6_0247.dat"
+"Airfoils/NACA6_0240.dat"
 ======  Rotor/Blade Properties  =====================================================================
 False         UseBlCm            - Include aerodynamic pitching moment in calculations?  (flag)
-"../MHK_RM1/MHK_RM1_AeroDyn15_Blade.dat"    ADBlFile(1)    - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"../MHK_RM1/MHK_RM1_AeroDyn15_Blade.dat"    ADBlFile(2)    - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"MHK_RM1_AeroDyn15_Blade.dat"    ADBlFile(1)    - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"MHK_RM1_AeroDyn15_Blade.dat"    ADBlFile(2)    - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "unused"                         ADBlFile(3)    - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
           13  NumTwrNds          - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
