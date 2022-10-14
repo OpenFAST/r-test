@@ -1,0 +1,190 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v3.2.1-170-gfd4fab06
+ Compile Info:
+  - Compiler: GCC version 11.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - OpenMP: No
+  - Date: Oct 14 2022
+  - Time: 10:50:09
+ Execution Info:
+  - Date: 10/14/2022
+  - Time: 14:15:08-0600
+
+ OpenFAST input file heading:
+     Fixed MHK turbine, based on the RM1 tidal current turbine
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
+ Running InflowWind.
+  Time: 0 of 10 seconds.
+
+ Cavitation occurred at blade 2 and node 31.
+
+ Cavitation occurred at blade 2 and node 30.
+
+ Cavitation occurred at blade 2 and node 29.
+ Warning: SkewedWakeCorrection encountered a large value of chi (93.909 deg), so the yaw
+ correction will be limited. This warning will not be repeated though the condition may persist.
+ See the AD15 chi output channels, and consider turning off the Pitt/Peters skew model (set
+ SkewMod=1) if this condition persists.
+
+
+ Cavitation occurred at blade 2 and node 28.
+
+ Cavitation occurred at blade 2 and node 27.
+ The BEM solution is being turned off due to low TSR.  (TSR = -241.81). This warning will not be
+ repeated though the condition may persist. (See GeomPhi output channel.)
+
+ Cavitation occurred at blade 1 and node 31.
+
+ Cavitation occurred at blade 1 and node 30.
+
+ Cavitation occurred at blade 2 and node 32.
+
+ Cavitation occurred at blade 1 and node 29.
+
+ Cavitation occurred at blade 2 and node 19.
+
+ Cavitation occurred at blade 2 and node 20.
+
+ Cavitation occurred at blade 1 and node 28.
+
+ Cavitation occurred at blade 1 and node 27.
+
+ Cavitation occurred at blade 1 and node 32.
+
+ Cavitation occurred at blade 2 and node 21.
+
+ Cavitation occurred at blade 2 and node 18.
+
+ Cavitation occurred at blade 1 and node 19.
+
+ Cavitation occurred at blade 1 and node 20.
+
+ Cavitation occurred at blade 1 and node 26.
+
+ Cavitation occurred at blade 1 and node 18.
+
+ Cavitation occurred at blade 1 and node 21.
+
+ Cavitation occurred at blade 1 and node 22.
+
+ Cavitation occurred at blade 1 and node 17.
+
+ Cavitation occurred at blade 2 and node 26.
+
+ Cavitation occurred at blade 2 and node 22.
+
+ Cavitation occurred at blade 1 and node 24.
+
+ Cavitation occurred at blade 1 and node 25.
+
+ Cavitation occurred at blade 1 and node 16.
+
+ Cavitation occurred at blade 1 and node 23.
+
+ Cavitation occurred at blade 2 and node 17.
+
+ FAST_Solution:FAST_AdvanceStates:AD_UpdateStates:BEMT_UpdateStates(node 1, blade
+ 1):ComputeTau:Uninduced axial relative air speed, Un, is less than 0.1 m/s; limiting time-varying
+ tau1. This message will not be repeated though the condition may persist.
+
+
+ Cavitation occurred at blade 1 and node 15.
+
+ Cavitation occurred at blade 2 and node 16.
+
+ Cavitation occurred at blade 2 and node 23.
+
+ Cavitation occurred at blade 2 and node 15.
+
+ Cavitation occurred at blade 1 and node 10.
+
+ FAST_Solution:FAST_AdvanceStates:ED_ABM4:ED_CalcContStateDeriv:SetCoordSy:Small angle assumption
+ violated in SUBROUTINE SmllRotTrans() due to a large blade deflection (ElastoDyn SetCoordSy). The
+ solution may be inaccurate. Simulation continuing, but future warnings from SmllRotTrans() will
+ be suppressed.
+  Additional debugging message from SUBROUTINE SmllRotTrans(): 0.522 s
+
+
+ Cavitation occurred at blade 1 and node 14.
+
+ Cavitation occurred at blade 2 and node 24.
+
+ Cavitation occurred at blade 2 and node 25.
+
+ Cavitation occurred at blade 1 and node 11.
+
+ Cavitation occurred at blade 2 and node 8.
+
+ Cavitation occurred at blade 2 and node 9.
+
+ Cavitation occurred at blade 1 and node 9.
+
+ Cavitation occurred at blade 2 and node 14.
+
+ Cavitation occurred at blade 1 and node 8.
+
+ Cavitation occurred at blade 2 and node 10.
+
+ Cavitation occurred at blade 1 and node 13.
+
+ Cavitation occurred at blade 2 and node 11.
+
+ Cavitation occurred at blade 1 and node 7.
+
+ Cavitation occurred at blade 2 and node 6.
+
+ Cavitation occurred at blade 2 and node 7.
+
+ Cavitation occurred at blade 2 and node 12.
+
+ Cavitation occurred at blade 2 and node 13.
+
+ Cavitation occurred at blade 2 and node 4.
+
+ Cavitation occurred at blade 2 and node 5.
+
+ Cavitation occurred at blade 1 and node 1.
+
+ Cavitation occurred at blade 1 and node 2.
+
+ Cavitation occurred at blade 1 and node 3.
+
+ Cavitation occurred at blade 1 and node 4.
+
+ Cavitation occurred at blade 1 and node 5.
+
+ Cavitation occurred at blade 1 and node 6.
+
+ Cavitation occurred at blade 1 and node 12.
+
+ Cavitation occurred at blade 2 and node 1.
+
+ Cavitation occurred at blade 2 and node 2.
+
+ Cavitation occurred at blade 2 and node 3.
+
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:CalcBuoyantLoads:The hub cannot go
+ beneath the seabed or pierce the free surface
+ CalcBuoyantLoads:The nacelle cannot go beneath the seabed or pierce the free surface
+
+ OpenFAST encountered an error at simulation time 0.549 of 10 seconds.
+  Simulation error level: FATAL ERROR
+
+  Aborting OpenFAST.
+
