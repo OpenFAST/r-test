@@ -19,7 +19,7 @@
   - Time: 10:27:12
  Execution Info:
   - Date: 10/15/2022
-  - Time: 11:14:26-0600
+  - Time: 12:29:12-0600
 
  OpenFAST input file heading:
      Fixed MHK turbine, based on the RM1 tidal current turbine
@@ -30,13 +30,13 @@
  AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
  Skipping nodal outputs.
  Running InflowWind.
-  Time: 0 of 10 seconds.
-                                                                                                   Time: 5 of 10 seconds.  Estimated final completion at 11:18:58.                                                                                                                                     Time: 10 of 10 seconds.  Estimated final completion at 11:18:35.                                                                                                                                   
-  Total Real Time:       4.1406 minutes
-  Total CPU Time:        3.9748 minutes
-  Simulation CPU Time:   3.9725 minutes
-  Simulated Time:        0.16667 minutes
-  Time Ratio (Sim/CPU):  4.19549E-02
+  Time: 0 of 8 seconds.
+                                                                                                   Time: 5 of 8 seconds.  Estimated final completion at 12:32:51.                                                                                                                                     
+  Total Real Time:       3.5363 minutes
+  Total CPU Time:        3.2171 minutes
+  Simulation CPU Time:   3.2135 minutes
+  Simulated Time:        0.13337 minutes
+  Time Ratio (Sim/CPU):  4.15020E-02
 
   OpenFAST terminated normally.
 
