@@ -4,7 +4,7 @@
 
 Features:
  - regular analysis, time series analysis, combined cases analyses
- - with or wihtout inflowind
+ - with or without inflowind
  - basic or advanced rotor inputs
  - OLAF or BEM
  - regular HAWT, or general multi-bladed rotors
@@ -23,6 +23,7 @@ BEM test cases (feature testing):
 
  - BAR\_CombinedCases:  BAR rotor, combined case analysis type
  - BAR\_SineMotion: BAR rotor, regular analysis type, sine motion of the base 
+ - BAR\_SineMotion\_UA4\_DBEMT3: same as BAR\_SineMotion, but uses continuous formulations for unsteady aerodynamics and DBEMT
  - BAR\_RNAMotion: BAR rotor, regular analysis type, advanced rotor inputs, genereral motion of yaw/pitch and rotor speed, unrealistic case
  - MHK\_RM1\_Fixed: MHK RM1 rotor, regular analysis type, basic rotor inputs, no base motion, buoyancy and cavitation on
 
