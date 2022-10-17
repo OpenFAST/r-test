@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.1.0-243-ge6028eae-dirty
+ OpenFAST-v3.2.1-281-g936f18e7
  Compile Info:
-  - Compiler: GCC version 10.3.0
+  - Compiler: GCC version 11.3.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Jul  6 2022
-  - Time: 19:37:29
+  - Date: Sep 19 2022
+  - Time: 15:38:47
  Execution Info:
-  - Date: 07/06/2022
-  - Time: 19:51:48-0500
+  - Date: 09/19/2022
+  - Time: 15:45:34-0500
 
  OpenFAST input file heading:
      FAST Certification Test #07: AOC 15/50 with many DOFs with free yaw and FF turbulence. Many
@@ -43,12 +43,12 @@
  blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
  low relative velocity. This warning will not be repeated though the condition may persist.
 
-                                                                                                   Time: 5 of 70 seconds.  Estimated final completion at 19:53:35.                                                                                                                                     Time: 10 of 70 seconds.  Estimated final completion at 19:53:35.                                                                                                                                    Time: 15 of 70 seconds.  Estimated final completion at 19:53:41.                                                                                                                                    Time: 20 of 70 seconds.  Estimated final completion at 19:53:36.                                                                                                                                    Time: 25 of 70 seconds.  Estimated final completion at 19:53:38.                                                                                                                                    Time: 30 of 70 seconds.  Estimated final completion at 19:53:41.                                                                                                                                    Time: 35 of 70 seconds.  Estimated final completion at 19:53:36.                                                                                                                                    Time: 40 of 70 seconds.  Estimated final completion at 19:53:38.                                                                                                                                    Time: 45 of 70 seconds.  Estimated final completion at 19:53:39.                                                                                                                                    Time: 50 of 70 seconds.  Estimated final completion at 19:53:39.                                                                                                                                    Time: 55 of 70 seconds.  Estimated final completion at 19:53:40.                                                                                                                                    Time: 60 of 70 seconds.  Estimated final completion at 19:53:39.                                                                                                                                    Time: 65 of 70 seconds.  Estimated final completion at 19:53:40.                                                                                                                                    Time: 70 of 70 seconds.  Estimated final completion at 19:53:40.                                                                                                                                   
-  Total Real Time:       1.8612 minutes
-  Total CPU Time:        1.8498 minutes
-  Simulation CPU Time:   1.8489 minutes
+                                                                                                   Time: 5 of 70 seconds.  Estimated final completion at 15:46:43.                                                                                                                                     Time: 10 of 70 seconds.  Estimated final completion at 15:47:43.                                                                                                                                    Time: 15 of 70 seconds.  Estimated final completion at 15:48:32.                                                                                                                                    Time: 20 of 70 seconds.  Estimated final completion at 15:48:21.                                                                                                                                    Time: 25 of 70 seconds.  Estimated final completion at 15:47:22.                                                                                                                                    Time: 30 of 70 seconds.  Estimated final completion at 15:47:14.                                                                                                                                    Time: 35 of 70 seconds.  Estimated final completion at 15:47:08.                                                                                                                                    Time: 40 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 45 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 50 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 55 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 60 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 65 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                    Time: 70 of 70 seconds.  Estimated final completion at 15:47:07.                                                                                                                                   
+  Total Real Time:       1.5372 minutes
+  Total CPU Time:        1.4287 minutes
+  Simulation CPU Time:   1.4279 minutes
   Simulated Time:        1.1667 minutes
-  Time Ratio (Sim/CPU):  0.631
+  Time Ratio (Sim/CPU):  0.81705
 
   OpenFAST terminated normally.
 
