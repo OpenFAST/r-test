@@ -80,6 +80,12 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
+0.0     VolHub                   - Hub volume (m^3)
+0.0     HubCenBx                 - Hub center of buoyancy x direction offset (m)
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
+0.0     VolNac                   - Nacelle volume (m^3)
+0,0,0   NacCenB                  - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 9                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 TwrElev     TwrDiam     TwrCd     TwrTI (used only with TwrShadow=2)     TwrCb (used only with Buoyancy=True)
@@ -93,14 +99,6 @@ TwrElev     TwrDiam     TwrCd     TwrTI (used only with TwrShadow=2)     TwrCb (
  1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1  0.0
  1.233000000000000e+02  4.600000000000000e+00  1.000000000000000e+00  0.1  0.0
  1.370000000000000e+02  4.000000000000000e+00  1.000000000000000e+00  0.1  0.0
-======  Hub Properties ============================================================================== [used only when Buoyancy=True]
-0.0     VolHub                   - Hub volume (m^3)
-0.0     HubCenBx                 - Hub center of buoyancy x direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
-0.0     VolNac                   - Nacelle volume (m^3)
-0.0     NacCenBx                 - Nacelle center of buoyancy x direction offset (m)
-0.0     NacCenBy                 - Nacelle center of buoyancy y direction offset (m)
-0.0     NacCenBz                 - Nacelle center of buoyancy z direction offset (m)
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 False                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 0                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
