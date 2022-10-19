@@ -10,6 +10,7 @@ False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag
 True          TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False         CavitCheck         - Perform cavitation check? (flag) [AFAeroMod must be 1 when CavitCheck=true]
+False         Buoyancy           - Include buoyancy effects? (flag)
 False         CompAA             - Flag to compute AeroAcoustics calculation [used only when WakeMod = 1 or 2]
 "unused"      AA_InputFile       - AeroAcoustics input file [used only when CompAA=true]
 ======  Environmental Conditions  ===================================================================
@@ -57,21 +58,27 @@ True          UseBlCm            - Include aerodynamic pitching moment in calcul
 "../5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "../5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../5MW_Baseline/NRELOffshrBsline5MW_AeroDyn_blade.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-         11   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)
-(m)              (m)           (-)            (-)
-1.0000000E+01  6.0000000E+00  1.0000000E+00  1.0000000E-01
-1.7760000E+01  5.7870000E+00  1.0000000E+00  1.0000000E-01
-2.5520000E+01  5.5740000E+00  1.0000000E+00  1.0000000E-01
-3.3280000E+01  5.3610000E+00  1.0000000E+00  1.0000000E-01
-4.1040000E+01  5.1480000E+00  1.0000000E+00  1.0000000E-01
-4.8800000E+01  4.9350000E+00  1.0000000E+00  1.0000000E-01
-5.6560000E+01  4.7220000E+00  1.0000000E+00  1.0000000E-01
-6.4320000E+01  4.5090000E+00  1.0000000E+00  1.0000000E-01
-7.2080000E+01  4.2960000E+00  1.0000000E+00  1.0000000E-01
-7.9840000E+01  4.0830000E+00  1.0000000E+00  1.0000000E-01
-8.7600000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
+0.0   VolHub             - Hub volume (m^3)
+0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
+0.0   VolNac             - Nacelle volume (m^3)
+0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+         11   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)              (m)           (-)            (-)                                (-)
+1.0000000E+01  6.0000000E+00  1.0000000E+00  1.0000000E-01                       0.0
+1.7760000E+01  5.7870000E+00  1.0000000E+00  1.0000000E-01                       0.0
+2.5520000E+01  5.5740000E+00  1.0000000E+00  1.0000000E-01                       0.0
+3.3280000E+01  5.3610000E+00  1.0000000E+00  1.0000000E-01                       0.0
+4.1040000E+01  5.1480000E+00  1.0000000E+00  1.0000000E-01                       0.0
+4.8800000E+01  4.9350000E+00  1.0000000E+00  1.0000000E-01                       0.0
+5.6560000E+01  4.7220000E+00  1.0000000E+00  1.0000000E-01                       0.0
+6.4320000E+01  4.5090000E+00  1.0000000E+00  1.0000000E-01                       0.0
+7.2080000E+01  4.2960000E+00  1.0000000E+00  1.0000000E-01                       0.0
+7.9840000E+01  4.0830000E+00  1.0000000E+00  1.0000000E-01                       0.0
+8.7600000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01                       0.0
 ======  Outputs  ====================================================================================
 True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           0   NBlOuts             - Number of blade node outputs [0 - 9] (-)
@@ -79,7 +86,7 @@ True          SumPrint            - Generate a summary file listing input option
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
           1,          2,          3,          4,          5    TwOutNd             - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtAeroFxh, RtAeroFyh, RtAeroFzh"  
-"RtAeroMxh, RtAeroMyh, RtAeroMzh"  
+"RtFldFxh, RtFldFyh, RtFldFzh"  
+"RtFldMxh, RtFldMyh, RtFldMzh"  
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
