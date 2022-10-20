@@ -2,23 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.5.0-607-g1dd8e752-dirty
+ OpenFAST-v3.2.1-281-g936f18e7
  Compile Info:
-  - Compiler: GCC version 10.2.0
+  - Compiler: GCC version 11.3.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Mar  4 2021
-  - Time: 11:39:55
+  - OpenMP: No
+  - Date: Sep 19 2022
+  - Time: 15:38:47
  Execution Info:
-  - Date: 03/05/2021
-  - Time: 13:43:13-0700
+  - Date: 09/19/2022
+  - Time: 15:48:34-0500
 
  OpenFAST input file heading:
      FAST Certification Test #08: AOC 15/50 with many DOFs with fixed yaw error and steady wind.
@@ -33,16 +34,16 @@
  Running ServoDyn.
   Time: 0 of 20 seconds.
 
- FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 1,
+ FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:RotCalcOutput:BEMT_CalcOutput(node 1,
  blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
  low relative velocity. This warning will not be repeated though the condition may persist.
 
-                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 13:43:50.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 13:43:49.                                                                                                                                   
-  Total Real Time:       35.747 seconds
-  Total CPU Time:        34.85 seconds
-  Simulation CPU Time:   34.837 seconds
+                                                                                                   Time: 5 of 20 seconds.  Estimated final completion at 15:48:54.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 15:48:54.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 15:48:54.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 15:48:55.                                                                                                                                   
+  Total Real Time:       20.127 seconds
+  Total CPU Time:        20.095 seconds
+  Simulation CPU Time:   20.068 seconds
   Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.5741
+  Time Ratio (Sim/CPU):  0.99662
 
   OpenFAST terminated normally.
 

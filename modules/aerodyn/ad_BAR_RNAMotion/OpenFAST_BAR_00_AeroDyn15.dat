@@ -10,6 +10,7 @@ False                  Echo        - Echo the input to "<rootname>.AD.ech"?  (fl
 False                  TwrAero     - Calculate tower aerodynamic loads? (flag)
 False                  FrozenWake  - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False                  CavitCheck  - Perform cavitation check? (flag) TRUE will turn off unsteady aerodynamics
+False                  Buoyancy    - Include buoyancy effects? (flag)
 False                  CompAA      Flag to compute AeroAcoustics calculation [only used when WakeMod=1 or 2]
 "AeroAcousticsInput.dat" AA_InputFile - Aeroacoustics input file
 ======  Environmental Conditions  ===================================================================
@@ -29,12 +30,12 @@ True                   TIDrag      - Include the drag term in the tangential-ind
 "Default"              IndToler    - Convergence tolerance for BEMT nonlinear solve residual equation {or "default"} (-) [used only when WakeMod=1]
 100                    MaxIter     - Maximum number of iteration steps (-) [used only when WakeMod=1]
 ======  Dynamic Blade-Element/Momentum Theory Options  ====================================================== [used only when WakeMod=1]
-1                      DBEMT_Mod   - Type of dynamic BEMT (DBEMT) model {1=constant tau1, 2=time-dependent tau1} (-) [used only when WakeMod=2]
-20                     tau1_const  - Time constant for DBEMT (s) [used only when WakeMod=2 and DBEMT_Mod=1]
+1                      DBEMT_Mod   - Type of dynamic BEMT (DBEMT) model {1=constant tau1, 2=time-dependent tau1, 3=constant tau1 with continuous formulation} (-) [used only when WakeMod=2]
+20                     tau1_const  - Time constant for DBEMT (s) [used only when WakeMod=2 and DBEMT_Mod=1 or 3]
 ======  OLAF -- cOnvecting LAgrangian Filaments (Free Vortex Wake) Theory Options  ================== [used only when WakeMod=3]
 "OLAF.dat"               OLAFInputFileName - Input file for OLAF [used only when WakeMod=3]
 ======  Beddoes-Leishman Unsteady Airfoil Aerodynamics Options  ===================================== [used only when AFAeroMod=2]
-3                      UAMod       Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez's variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
+3                      UAMod       Unsteady Aero Model Switch (switch) {2=B-L Gonzalez, 3=B-L Minnema/Pierce, 4=B-L HGM 4-states, 5=B-L 5 states, 6=Oye, 7=Boeing-Vertol} [used only when AFAeroMod=2]
 True                   FLookup     Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ======  Airfoil Information =========================================================================
 1                      AFTabMod    - Interpolation method for multiple airfoil tables {1=1D interpolation on AoA (first table only); 2=2D interpolation on AoA and Re; 3=2D interpolation on AoA and UserProp} (-)
@@ -79,34 +80,40 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
-9                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
-TwrElev        TwrDiam        TwrCd
-(m)              (m)           (-)
- 0.000000000000000e+00  8.500000000000000e+00  1.000000000000000e+00  0.1
- 4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1
- 5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1
- 6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1
- 8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1
- 9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1
- 1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1
- 1.233000000000000e+02  4.600000000000000e+00  1.000000000000000e+00  0.1
- 1.370000000000000e+02  4.000000000000000e+00  1.000000000000000e+00  0.1
-======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
+0.0   VolHub             - Hub volume (m^3)
+0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
+0.0   VolNac             - Nacelle volume (m^3)
+0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+9                      NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev                TwrDiam                TwrCd                  TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)                    (m)                    (-)                    (-)                                 (-)
+0.000000000000000e+00  8.500000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+4.110000000000000e+01  8.199999999999999e+00  1.000000000000000e+00  0.1                                 0.0
+5.480000000000000e+01  7.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+6.850000000000000e+01  7.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+8.220000000000000e+01  6.400000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+9.590000000000001e+01  5.800000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.096000000000000e+02  5.200000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.233000000000000e+02  4.600000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+1.370000000000000e+02  4.000000000000000e+00  1.000000000000000e+00  0.1                                 0.0
+======  Outputs  ====================================================================================
 False                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 0                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
 1, 4, 7, 13, 18, 23, 26, 28, 30 BlOutNd     - Blade nodes whose values will be output  (-)
 0                      NTwOuts     - Number of tower node outputs [0 - 9]  (-)
 1, 2, 6                TwOutNd     - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtAeroCp"
-"RtAeroCq"
-"RtAeroCt"
-"RtAeroFyh"
-"RtAeroFzh"
-"RtAeroMxh"
-"RtAeroMyh"
-"RtAeroPwr"
+"RtFldCp"
+"RtFldCq"
+"RtFldCt"
+"RtFldFyh"
+"RtFldFzh"
+"RtFldMxh"
+"RtFldMyh"
+"RtFldPwr"
 "RtArea"
 "RtSkew"
 "RtSpeed"
@@ -115,7 +122,7 @@ False                   SumPrint    - Generate a summary file listing input opti
 "RtVAvgyh"
 "RtVAvgzh"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
-====== Outputs for all blade stations (same ending as above for B1N1.... =========================== [optional section]
+====== Outputs for all blade stations (same ending as above for B1N1.... ============================ [optional section]
    1              BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
    "All"          BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
                   OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
