@@ -57,10 +57,13 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 ======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
 0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Tail fin Aerodynamics ======================================================================== 
+False         TFinAero           - Calculate tail fin aerodynamics model (flag)
+"unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 0        NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
-TwrElev  TwrDiam   TwrCd     TwrTI  TwrCb (used only with Buoyancy=True)
-(m)        (m)      (-)       (-)   (-)
+TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb !TwrTI used only with TwrShadow=2, TwrCb used only with Buoyancy=True
+(m)              (m)           (-)            (-)           (-)
 ======  Outputs  ====================================================================================
 False                  SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 0                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
