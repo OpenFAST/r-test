@@ -105,7 +105,7 @@ debugout_file="DbgOutputs.out"
 #       section of the output file are passed back for writing to file.  Here
 #       we will write the aggregated output channels to a file at the end of
 #       the simulation.
-output_file="ad_py_driver.out"
+output_file="py_ad_driver.out"
 
 #   For checking if our library is correctly handling correction steps, set
 #   this to > 0
@@ -117,11 +117,10 @@ NumCorrections=0
 vtkDir="vtkRef"
 numBlades=3
 vtkFieldLen=5
-TimeStepsToRun=10
+TimeStepsToRun=4
 hubMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
 nacMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
 bldRootMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
-#bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_Blade"         # for struct mesh aligned with AD15 mesh
 bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"   # for struct mesh not aligned with AD15 mesh
 
 
@@ -315,7 +314,7 @@ outputChannelValues = np.zeros(adilib.numChannels)
 allOutputChannelValues = np.zeros( (adilib.numTimeSteps+1,adilib.numChannels+1) )
 
 #   Open outputfile for regession testing purposes.
-dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
+#dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
 
 #--------------------------------
 # Calculate outputs for t_initial
@@ -337,13 +336,13 @@ try:
             outputChannelValues)
 except Exception as e:
     print("{}".format(e))
-    dbg_outfile.end()
+    #dbg_outfile.end()
     #FIXME: temporary statement here
     print("Exit after failed call to aerodyn_inflow_calcOutput at T=0")
     exit(1)
  
 ## Write the debug output at t=t_initial
-dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
+#dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
 # Save the output at t=t_initial
 allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 
@@ -388,7 +387,7 @@ for i in range( 1, len(time)):
                    MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
         except Exception as e:
             print("{}".format(e))
-            dbg_outfile.end()
+            #dbg_outfile.end()
             #FIXME: temporary statement here
             print("Exit after failed call to aerodyn_inflow_updateStates")
             exit(1)
@@ -413,7 +412,7 @@ for i in range( 1, len(time)):
                    outputChannelValues)
         except Exception as e:
             print("{}".format(e))
-            dbg_outfile.end()
+            #dbg_outfile.end()
             #FIXME: temporary statement here
             print(f"Exit after failed call to aerodyn_inflow_calcOutput at time {time[i]}")
             exit(1)
@@ -427,7 +426,7 @@ for i in range( 1, len(time)):
         #   the regression simulation, but for simplicity we are writting one line
         #   at a time during the call).  The regression test will have one row for
         #   each timestep + position array entry.
-        dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
+        #dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
@@ -438,7 +437,7 @@ for i in range( 1, len(time)):
     allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 
 
-dbg_outfile.end()   # close the debug output file
+#dbg_outfile.end()   # close the debug output file
 
 
 # aerodyn_inflow_end: Only need to call aerodyn_inflow_end once.
