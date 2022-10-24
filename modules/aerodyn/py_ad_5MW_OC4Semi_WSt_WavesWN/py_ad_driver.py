@@ -269,6 +269,12 @@ adilib.transposeDCM = True
 #       end up with memory leaks and a bunch of garbage in the other library
 #       instances).
 
+# Aero calculation method -- AeroProjMod
+#     APM_BEM_NoSweepPitchTwist - 1 -  "Original AeroDyn model where momentum balance is done in the WithoutSweepPitchTwist system"
+#     APM_BEM_Polar             - 2 -  "Use staggered polar grid for momentum balance in each annulus"
+#     APM_LiftingLine           - 3 -  "Use the blade lifting line (i.e. the structural) orientation (currently for OLAF with VAWT)"
+adilib.AeroProjMod = 1
+
 # Set hub and blade root positions/orientations
 adilib.initHubPos           = initHubPos[0,:]
 adilib.initHubOrient        = initHubOrient[0,:]
