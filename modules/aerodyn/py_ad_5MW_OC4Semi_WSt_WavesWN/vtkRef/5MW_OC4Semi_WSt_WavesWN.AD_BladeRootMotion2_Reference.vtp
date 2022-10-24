@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<VTKFile type="PolyData" version="0.1" byte_order="LittleEndian">
+  <PolyData>
+    <Piece NumberOfPoints="      1" NumberOfVerts="  0" NumberOfLines="      0"
+           NumberOfStrips="  0" NumberOfPolys="      0">
+      <Points>
+        <DataArray type="Float32" NumberOfComponents="3" format="ascii">
+                      -5.13049                      -1.29780                      89.25927
+        </DataArray>
+      </Points>
+      <PointData>
+        <DataArray type="Float32" Name="RefOrientationX" NumberOfComponents="3" format="ascii">
+                       0.99335                      -0.03778                      -0.10880
+        </DataArray>
+        <DataArray type="Float32" Name="RefOrientationY" NumberOfComponents="3" format="ascii">
+                       0.07548                      -0.50000                       0.86273
+        </DataArray>
+        <DataArray type="Float32" Name="RefOrientationZ" NumberOfComponents="3" format="ascii">
+                      -0.08699                      -0.86520                      -0.49382
+        </DataArray>
+      </PointData>
+    </Piece>
+  </PolyData>
+</VTKFile>
