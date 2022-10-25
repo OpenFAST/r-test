@@ -66,21 +66,24 @@ True          UseBlCm            - Include aerodynamic pitching moment in calcul
 ======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 0.0   VolNac             - Nacelle volume (m^3)
 0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Tail fin Aerodynamics ======================================================================== 
+False         TFinAero           - Calculate tail fin aerodynamics model (flag)
+"unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
          11   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
-TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
-(m)              (m)           (-)            (-)                                (-)
-1.0000000E+01  6.5000000E+00  1.0000000E+00  1.0000000E-01                       0.0
-1.7760000E+01  6.2400000E+00  1.0000000E+00  1.0000000E-01                       0.0
-2.5520000E+01  5.9700000E+00  1.0000000E+00  1.0000000E-01                       0.0
-3.3280000E+01  5.7100000E+00  1.0000000E+00  1.0000000E-01                       0.0
-4.1040000E+01  5.4500000E+00  1.0000000E+00  1.0000000E-01                       0.0
-4.8800000E+01  5.1800000E+00  1.0000000E+00  1.0000000E-01                       0.0
-5.6560000E+01  4.9200000E+00  1.0000000E+00  1.0000000E-01                       0.0
-6.4320000E+01  4.6600000E+00  1.0000000E+00  1.0000000E-01                       0.0
-7.2080000E+01  4.4000000E+00  1.0000000E+00  1.0000000E-01                       0.0
-7.9840000E+01  4.1300000E+00  1.0000000E+00  1.0000000E-01                       0.0
-8.7600000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01                       0.0
+TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb !TwrTI used only with TwrShadow=2, TwrCb used only with Buoyancy=True
+(m)              (m)           (-)            (-)           (-)
+1.0000000E+01  6.5000000E+00  1.0000000E+00  1.0000000E-01  0.0
+1.7760000E+01  6.2400000E+00  1.0000000E+00  1.0000000E-01  0.0
+2.5520000E+01  5.9700000E+00  1.0000000E+00  1.0000000E-01  0.0
+3.3280000E+01  5.7100000E+00  1.0000000E+00  1.0000000E-01  0.0
+4.1040000E+01  5.4500000E+00  1.0000000E+00  1.0000000E-01  0.0
+4.8800000E+01  5.1800000E+00  1.0000000E+00  1.0000000E-01  0.0
+5.6560000E+01  4.9200000E+00  1.0000000E+00  1.0000000E-01  0.0
+6.4320000E+01  4.6600000E+00  1.0000000E+00  1.0000000E-01  0.0
+7.2080000E+01  4.4000000E+00  1.0000000E+00  1.0000000E-01  0.0
+7.9840000E+01  4.1300000E+00  1.0000000E+00  1.0000000E-01  0.0
+8.7600000E+01  3.8700000E+00  1.0000000E+00  1.0000000E-01  0.0
 ======  Outputs  ====================================================================================
 True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           3   NBlOuts             - Number of blade node outputs [0 - 9] (-)
