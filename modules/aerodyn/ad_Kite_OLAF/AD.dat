@@ -10,6 +10,7 @@ False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag
 False         TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False         CavitCheck         - Perform cavitation check? (flag) [AFAeroMod must be 1 when CavitCheck=true]
+False         Buoyancy           - Include buoyancy effects? (flag)
 False         CompAA             - Flag to compute AeroAcoustics calculation [used only when WakeMod = 1 or 2]
 "unused"      AA_InputFile       - AeroAcoustics input file [used only when CompAA=true]
 ======  Environmental Conditions  ===================================================================
@@ -52,17 +53,23 @@ True          UseBlCm            - Include aerodynamic pitching moment in calcul
 "Kite_blade.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "Kite_blade.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "Kite_blade.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-          7   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-TwrElev        TwrDiam        TwrCd          TwrTI 
-(m)              (m)           (-)            (-)   ! TwrTI used only when TwrShadow=2
-0.0000000E+00  1.0000000E+01  1.0000000E+00  1.0000000E-01  
-2.3330000E+01  9.3300000E+00  1.0000000E+00  1.0000000E-01  
-4.6670000E+01  8.6700000E+00  1.0000000E+00  1.0000000E-01  
-7.0000000E+01  8.0000000E+00  1.0000000E+00  1.0000000E-01  
-9.3330000E+01  7.3300000E+00  1.0000000E+00  1.0000000E-01  
-1.1667000E+02  6.6700000E+00  1.0000000E+00  1.0000000E-01  
-1.4000000E+02  6.0000000E+00  1.0000000E+00  1.0000000E-01  
+======  Hub Properties ============================================================================== [used only when Buoyancy=True]
+0.0   VolHub             - Hub volume (m^3)
+0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
+0.0   VolNac             - Nacelle volume (m^3)
+0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+          7   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
+TwrElev        TwrDiam        TwrCd          TwrTI (used only with TwrShadow=2)  TwrCb (used only with Buoyancy=True)
+(m)              (m)           (-)            (-)                                (-)
+0.0000000E+00  1.0000000E+01  1.0000000E+00  1.0000000E-01                       0.0
+2.3330000E+01  9.3300000E+00  1.0000000E+00  1.0000000E-01                       0.0
+4.6670000E+01  8.6700000E+00  1.0000000E+00  1.0000000E-01                       0.0
+7.0000000E+01  8.0000000E+00  1.0000000E+00  1.0000000E-01                       0.0
+9.3330000E+01  7.3300000E+00  1.0000000E+00  1.0000000E-01                       0.0
+1.1667000E+02  6.6700000E+00  1.0000000E+00  1.0000000E-01                       0.0
+1.4000000E+02  6.0000000E+00  1.0000000E+00  1.0000000E-01                       0.0
 ======  Outputs  ====================================================================================
 False         SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           0   NBlOuts             - Number of blade node outputs [0 - 9] (-)
@@ -70,34 +77,34 @@ False         SumPrint            - Generate a summary file listing input option
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
           1   TwOutNd             - Tower nodes whose values will be output  (-)
               OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtTSR"                    
-"RtVAvgxh"                 
-"RtVAvgyh"                 
-"RtVAvgzh"                 
-"RtSkew"                   
-"RtAeroFxh"                
-"RtAeroFyh"                
-"RtAeroFzh"                
-"RtAeroMyh"                
-"RtAeroMzh"                
-"RtAeroPwr"                
-"RtAeroCp"                 
-"RtAeroCq"                 
-"RtAeroCt"                 
-END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
-====== Outputs for all blade stations (same ending as above for B1N1.... =========================== [optional section]
-          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
-"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
-              OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"Fn"                       
-"Ft"                       
-"STVx"                     
-"STVy"                     
-"STVz"                     
-"Vrel"                     
-"Alpha"                    
-"Gam"                      
-"Cl"                       
-"Cd"                       
-END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
-====================================================================================================
+"RtTSR"                                                                    
+"RtVAvgxh"                                                                 
+"RtVAvgyh"                                                                 
+"RtVAvgzh"                                                                 
+"RtSkew"                                                                   
+"RtFldFxh"                                                                
+"RtFldFyh"                                                                
+"RtFldFzh"                                                                
+"RtFldMyh"                                                                
+"RtFldMzh"                                                                
+"RtFldPwr"                                                                
+"RtFldCp"                                                                 
+"RtFldCq"                                                                 
+"RtFldCt"                                                                 
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+====== Outputs for all blade stations (same ending as above for B1N1.... ============================ [optional section]
+   1              BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+   "All"          BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutListAD             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+Fn
+Ft
+STVx
+STVy
+STVz
+Vrel
+Alpha
+Gam
+Cl
+Cd
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+---------------------------------------------------------------------------------------
