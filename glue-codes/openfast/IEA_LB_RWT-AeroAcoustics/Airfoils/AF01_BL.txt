@@ -1,4 +1,4 @@
-! Boundary layer characteristics at the trailing edge for the airfoil coordinates of /Users/pbortolo/work/2_openfast/noise/verifyAA/OpenFAST_IEA_LB_RWT/Airfoils/AF05_Coords.txt
+! Boundary layer characteristics at the trailing edge for the airfoil coordinates of AF05_Coords.txt
 ! Legend: aoa - angle of attack (deg), Re - Reynolds number (-, millions), PS - pressure side, SS - suction side,  Ue_Vinf - edge velocity (-), Dstar - displacement thickness (-), Delta - nominal boundary layer thickness (-) Cf  - friction coefficient (-)
 4 	 ReListBL   -  Number of Reynolds numbers (it corresponds to the number of tables)
 30 	 aoaListBL  -  Number of angles of attack (it corresponds to the number of rows in each table)
