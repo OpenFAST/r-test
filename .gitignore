@@ -24,6 +24,7 @@ install_manifest.txt
 *.err
 *.screendump
 *.sh
+vtk_ff
 
 # build directories
 glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build

@@ -1,0 +1,8 @@
+*.T1.out
+*.T2.out
+*.T3.out
+*.T1.outb
+*.T2.outb
+*.T3.outb
+*_ref*
+*_Ref*
