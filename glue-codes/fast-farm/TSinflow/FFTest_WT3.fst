@@ -1,7 +1,7 @@
 ------- OpenFAST INPUT FILE -------------------------------------------
 FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
 ---------------------- SIMULATION CONTROL --------------------------------------
-True          Echo            - Echo input data to <RootName>.ech (flag)
+False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
 630           TMax            - Total run time (s)
     0.00625   DT              - Recommended module time step (s)
@@ -34,15 +34,15 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "unused"                                          BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
 "unused"                                          BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "unused"                                          BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"NRELOffshrBsline5MW_InflowWind.dat"         InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"NRELOffshrBsline5MW_Onshore_AeroDyn15.dat"           AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"IW_WT.dat"         InflowFile      - Name of file containing inflow wind input parameters (quoted string)
+"../5MW_Baseline/AD.dat"           AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_Onshore_ServoDyn_WT3.dat"           ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint        - Print summary data to "<RootName>.sum" (flag)
           5   SttsTime        - Amount of time between screen status messages (s)
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
 "default"     DT_Out          - Time step for tabular output (s) (or "default")
