@@ -40,14 +40,15 @@ WT_X   WT_Y   WT_Z   WT_FASTInFile                                              
 (m)    (m)    (m)    (string)                                                                    (m)      (m)      (m)      (m)      (m)      (m)
 1000.0  1000.0 0.0    "FFTest_WT1.fst"            -77.7    -80.0   5.0      10.0     10.0     10.0
 --- WAKE DYNAMICS ---
+1                  Mod_Wake           - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           - Number of radii in the radial finite-difference grid (-) [>=2]
 140                NumPlanes          - Number of wake planes (-) [>=2]
-DEFAULT            f_c                - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model (Hz) [>0.0] or DEFAULT [DEFAULT=0.0007]
+0.0007             f_c                - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model (Hz) [>0.0] or DEFAULT [DEFAULT=12.5/R]
 DEFAULT            C_HWkDfl_O         - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor                                               (m    ) or DEFAULT [DEFAULT= 0.0  ]
-DEFAULT            C_HWkDfl_OY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor scaled with                         yaw error (m/deg) or DEFAULT [DEFAULT= 0.3  ]
+DEFAULT            C_HWkDfl_OY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor scaled with                         yaw error (m/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 1, 0.3 otherwise]
 DEFAULT            C_HWkDfl_x         - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance               (-    ) or DEFAULT [DEFAULT= 0.0  ]
-DEFAULT            C_HWkDfl_xY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance and yaw error (1/deg) or DEFAULT [DEFAULT=-0.004]
+DEFAULT            C_HWkDfl_xY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance and yaw error (1/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 1, -0.004 otherwise]
 DEFAULT            C_NearWake         - Calibrated parameter for the near-wake correction (-) [>1.0 and <2.5] or DEFAULT [DEFAULT=1.8]
 DEFAULT            k_vAmb             - Calibrated parameter for the influence of ambient turbulence in the eddy viscosity (-) [>=0.0] or DEFAULT [DEFAULT=0.05 ]
 DEFAULT            k_vShr             - Calibrated parameter for the influence of the shear layer    in the eddy viscosity (-) [>=0.0] or DEFAULT [DEFAULT=0.016]
@@ -63,6 +64,14 @@ DEFAULT            Mod_WakeDiam       - Wake diameter calculation model (-) (swi
 DEFAULT            C_WakeDiam         - Calibrated parameter for wake diameter calculation (-) [>0.0 and <0.99] or DEFAULT [DEFAULT=0.95] [unused for Mod_WakeDiam=1]
 DEFAULT            Mod_Meander        - Spatial filter model for wake meandering (-) (switch) {1: uniform, 2: truncated jinc, 3: windowed jinc} or DEFAULT [DEFAULT=3]
 DEFAULT            C_Meander          - Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
+--- CURLED-WAKE PARAMETERS [only used if Mod_Wake=2 or 3] ---
+True          Swirl                   - Switch to include swirl velocities in wake [only used if Mod_Wake=2 or Mod_Wake=3] (-) (switch) [DEFAULT=TRUE]
+0             k_VortexDecay           - Vortex decay constant for curl (-) [DEFAULT=0]
+DEFAULT       NumVortices             - The number of vortices in the curled wake model (-) [DEFAULT=100]
+DEFAULT       sigma_D                 - The width of the vortices in the curled wake model non-dimesionalized by rotor diameter (-) [DEFAULT=0.2]
+DEFAULT       FilterInit              - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] [unused for Mod_Wake=1] (switch)
+DEFAULT       k_vCurl                 - Calibrated parameter for scaling the eddy viscosity in the curled-wake model (-) [only used if Mod_Wake=2 or Mod_Wake=3] [>=0] or DEFAULT [DEFAULT=2.0 ]
+DEFAULT       Mod_Projection          - Switch to select how the wake plane velocity is projected in AWAE {1: keep all components, 2: project against plane normal} or DEFAULT [DEFAULT=1: if Mod_Wake is 1 or 3, or DEFAULT=2: if Mod_Wake is 2] (switch)
 --- VISUALIZATION ---
 False              WrDisWind          - Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
 0                  NOutDisWindXY      - Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 9]
@@ -79,6 +88,7 @@ False              SumPrint           - Print summary data to <RootName>.sum? (f
 1                  OutFileFmt         - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 True               TabDelim           - Use tab delimiters in text tabular output file? (flag) {uses spaces if False}
 "ES10.3E2"         OutFmt             - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+DEFAULT            OutAllPlanes       - Output all wake planes at all time steps. [DEFAULT=False]
 20                 NOutRadii          - Number of radial nodes         for wake output for an individual rotor (-) [0 to 20]
 0, 1, 2, 3, 4, 5, 7, 9, 11, 13, 15, 16, 17, 18, 19, 21, 24, 28, 33, 39  OutRadii           List of radial nodes         for wake output for an individual rotor (-) [1 to NOutRadii] [unused for NOutRadii=0]
 7                  NOutDist           - Number of downstream distances for wake output for an individual rotor (-) [0 to 9 ]
