@@ -1,5 +1,5 @@
 ------- FAST.Farm for OpenFAST INPUT FILE -------------------------------------------------
-FAST.Farm input file, using two turbines separated by 3D, with a turbulent inflow given by one turbsim box
+FAST.Farm input file, using two turbines separated by 3D downstream and an offset of 30m, with a turbulent inflow given by one turbsim box
 --- SIMULATION CONTROL ---
 False              Echo               - Echo input data to <RootName>.ech? (flag)
 FATAL              AbortLevel         - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
