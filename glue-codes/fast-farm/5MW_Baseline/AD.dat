@@ -89,7 +89,9 @@ False         SumPrint            - Generate a summary file listing input option
           0,  BlOutNd             - Blade nodes whose values will be output  (-)
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
           0,  TwOutNd             - Tower nodes whose values will be output  (-)
-                   OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+              OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+RtSkew
+RtVAvgxh
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ====== Outputs for all blade stations (same ending as above for B1N1.... =========================== [optional section]
 0              BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
