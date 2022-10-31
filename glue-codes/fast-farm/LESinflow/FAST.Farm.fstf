@@ -44,7 +44,7 @@ WT_X   WT_Y   WT_Z   WT_FASTInFile                                              
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           - Number of radii in the radial finite-difference grid (-) [>=2]
 140                NumPlanes          - Number of wake planes (-) [>=2]
-0.14               f_c                - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model (Hz) [>0.0] or DEFAULT [DEFAULT=12.5/R]
+0.14               f_c                - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model [recommended=1.28*U0/R] (Hz) [>0.0] or DEFAULT [DEFAULT=12.5/R, R estimated from dr and NumRadii, not recommended]
 DEFAULT            C_HWkDfl_O         - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor                                               (m    ) or DEFAULT [DEFAULT= 0.0  ]
 DEFAULT            C_HWkDfl_OY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor scaled with                         yaw error (m/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 2, 0.3 otherwise]
 DEFAULT            C_HWkDfl_x         - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance               (-    ) or DEFAULT [DEFAULT= 0.0  ]
@@ -66,7 +66,7 @@ DEFAULT            Mod_Meander        - Spatial filter model for wake meandering
 DEFAULT            C_Meander          - Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
 --- CURLED-WAKE PARAMETERS [only used if Mod_Wake=2 or 3] ---
 DEFAULT            Swirl              - Switch to include swirl velocities in wake (-) (switch) [DEFAULT=TRUE]
-DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0]
+DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0.01]
 DEFAULT            NumVortices        - The number of vortices in the curled wake model (-) [DEFAULT=100]
 DEFAULT            sigma_D            - The width of the vortices in the curled wake model non-dimesionalized by rotor diameter (-) [DEFAULT=0.2]
 DEFAULT            FilterInit         - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] [unused for Mod_Wake=1] (switch)
