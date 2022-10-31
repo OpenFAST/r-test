@@ -102,7 +102,7 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
     1          2        0.000  1.000
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
              2   NJOutputs      - Number of joint outputs [Must be < 10]
-   1,  2         JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
+             1,             2    JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
