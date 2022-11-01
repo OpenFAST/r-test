@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 04-Aug-2022 at 19:24:55 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.2.1-109-g914d385a-dirty
+Predictions were generated on 01-Nov-2022 at 16:15:38 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.3.0-248-g69252a6a-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn (unknown version, unknown date) [not called]
@@ -62,28 +62,27 @@ Number of correction iterations:  0
       13  Yaw                   (deg)                 AeroDisk
       14  YawRate               (deg/s)               AeroDisk
       15  RotPwr                (kW)                  AeroDisk
-      16  RotThrust             (kN)                  AeroDisk
-      17  RotTorq               (kN-m)                AeroDisk
-      18  ADSpeed               (rpm)                 AeroDisk
-      19  ADTSR                 (-)                   AeroDisk
-      20  ADPitch               (deg)                 AeroDisk
-      21  ADVWindx              (m/s)                 AeroDisk
-      22  ADVWindy              (m/s)                 AeroDisk
-      23  ADVWindz              (m/s)                 AeroDisk
-      24  ADSTVx                (m/s)                 AeroDisk
-      25  ADSTVy                (m/s)                 AeroDisk
-      26  ADSTVz                (m/s)                 AeroDisk
-      27  ADVRel                (m/s)                 AeroDisk
-      28  ADSkew                (deg)                 SED
-      29  ADCp                  (-)                   SED
-      30  ADCt                  (-)                   SED
-      31  ADCq                  (-)                   SED
-      32  ADFx                  (N)                   SED
-      33  ADFy                  (N)                   SED
-      34  ADFz                  (N)                   SED
-      35  ADMx                  (N-m)                 SED
-      36  ADMy                  (N-m)                 SED
-      37  ADMz                  (N-m)                 SED
-      38  ADPower               (W)                   SED
-      39  GenPwr                (kW)                  SED
-      40  GenTq                 (kN-m)                SED
+      16  RotTorq               (kN-m)                AeroDisk
+      17  ADSpeed               (rpm)                 AeroDisk
+      18  ADTSR                 (-)                   AeroDisk
+      19  ADPitch               (deg)                 AeroDisk
+      20  ADVWindx              (m/s)                 AeroDisk
+      21  ADVWindy              (m/s)                 AeroDisk
+      22  ADVWindz              (m/s)                 AeroDisk
+      23  ADSTVx                (m/s)                 AeroDisk
+      24  ADSTVy                (m/s)                 AeroDisk
+      25  ADSTVz                (m/s)                 AeroDisk
+      26  ADVRel                (m/s)                 AeroDisk
+      27  ADSkew                (deg)                 AeroDisk
+      28  ADCp                  (-)                   SED
+      29  ADCt                  (-)                   SED
+      30  ADCq                  (-)                   SED
+      31  ADFx                  (N)                   SED
+      32  ADFy                  (N)                   SED
+      33  ADFz                  (N)                   SED
+      34  ADMx                  (N-m)                 SED
+      35  ADMy                  (N-m)                 SED
+      36  ADMz                  (N-m)                 SED
+      37  ADPower               (W)                   SED
+      38  GenPwr                (kW)                  SED
+      39  GenTq                 (kN-m)                SED

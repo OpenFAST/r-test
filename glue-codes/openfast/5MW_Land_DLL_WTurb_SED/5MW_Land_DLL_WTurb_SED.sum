@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 04-Aug-2022 at 18:23:02 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.2.1-109-g914d385a-dirty
+Predictions were generated on 01-Nov-2022 at 15:03:37 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.3.0-248-g69252a6a
   compiled with
     NWTC Subroutine Library
     ElastoDyn (unknown version, unknown date) [not called]
@@ -62,7 +62,6 @@ Number of correction iterations:  0
       13  Yaw                   (deg)                 SED
       14  YawRate               (deg/s)               SED
       15  RotPwr                (kW)                  SED
-      16  RotThrust             (kN)                  SED
-      17  RotTorq               (kN-m)                SED
-      18  GenPwr                (kW)                  SED
-      19  GenTq                 (kN-m)                SED
+      16  RotTorq               (kN-m)                SED
+      17  GenPwr                (kW)                  SED
+      18  GenTq                 (kN-m)                SED
