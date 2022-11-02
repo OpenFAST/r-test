@@ -118,9 +118,6 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           3   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           5,          9,         13    BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"OoPDefl1"                - Blade 1 out-of-plane and in-plane deflections and tip twist
-"IPDefl1"                 - Blade 1 out-of-plane and in-plane deflections and tip twist
-"TwstDefl1"               - Blade 1 out-of-plane and in-plane deflections and tip twist
 "BldPitch1"               - Blade 1 pitch angle
 "Azimuth"                 - Blade 1 azimuth angle
 "RotSpeed"                - Low-speed shaft and high-speed shaft speeds
@@ -128,14 +125,6 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "TTDspFA"                 - Tower fore-aft and side-to-side displacements and top twist
 "TTDspSS"                 - Tower fore-aft and side-to-side displacements and top twist
 "TTDspTwst"               - Tower fore-aft and side-to-side displacements and top twist
-"Spn2MLxb1"               - Blade 1 local edgewise and flapwise bending moments at span station 2 (approx. 50% span)
-"Spn2MLyb1"               - Blade 1 local edgewise and flapwise bending moments at span station 2 (approx. 50% span)
-"RootFxb1"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 1
-"RootFyb1"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 1
-"RootFzb1"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 1
-"RootMxb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
-"RootMyb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
-"RootMzb1"                - In-plane bending, out-of-plane bending, and pitching moments at the root of blade 1
 "RotTorq"                 - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
 "LSSGagMya"               - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
 "LSSGagMza"               - Rotor torque and low-speed shaft 0- and 90-bending moments at the main bearing
