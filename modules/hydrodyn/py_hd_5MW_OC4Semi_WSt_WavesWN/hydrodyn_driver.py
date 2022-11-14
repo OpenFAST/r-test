@@ -105,7 +105,7 @@ debugout_file="DbgOutputs.out"
 #       section of the output file are passed back for writing to file.  Here
 #       we will write the aggregated output channels to a file at the end of
 #       the simulation.
-output_file="hd_py.out"
+output_file="py_hd.out"
 
 #   For checking if our library is correctly handling correction steps, set
 #   this to > 0
