@@ -9,8 +9,7 @@ import moorpy as mp
 import numpy as np 
 import os
 import sys
-basepath = "C:/code/openfast/reg_tests"
-sys.path.insert(0, os.path.sep.join([basepath, "lib"]))
+sys.path.insert(0, os.path.sep.join(["..","..","..","..", "lib"]))
 import argparse
 import shutil
 import glob
