@@ -23,7 +23,6 @@
 # Usage: This program gives an example for how the user calls the main
 #        subroutines of AeroDyn, and thus is specific to the user
 #
-#FIXME:
 # Basic alogrithm for using AeroDyn InflowWind python library
 #   1.  initialize python wrapper library
 #           set necessary library values
@@ -68,12 +67,12 @@ elif sys.platform == "win32":
     # on which build system was used (CMake or VS).
     library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".dll"])   # cmake install location
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_lib_Win32.dll"]) # VS build install location
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 32 bit and cannot find 32 bit InflowWind DLL expected at: {library_path}")
             exit(1)
     if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_lib_x64.dll"]) # VS build install location
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_x64.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 64 bit and cannot find 64 bit InflowWind DLL expected at: {library_path}")
             exit(1)
