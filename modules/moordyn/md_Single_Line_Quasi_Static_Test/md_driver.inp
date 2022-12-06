@@ -8,7 +8,7 @@ FALSE    Echo      - echo the input file data (flag)
 ---------------- MOORDYN ------------------
 test.dat	MDInputFile      - Primary MoorDyn input file name (quoted string)
 "driver"	OutRootName      -  The name which prefixes all HydroDyn generated files (quoted string)
-60.0225		TMax       - Number of time steps in the simulations (-)
+60.0000		TMax       - Number of time steps in the simulations (-)
 0.0125		dtC      - TimeInterval for the simulation (sec)
 0 		InputsMode       - MoorDyn coupled object inputs (0: all inputs are zero for every timestep, 1: time-series inputs) (switch)
 ""		InputsFile       - Filename for the MoorDyn inputs file for when InputsMod = 1 (quoted string)
