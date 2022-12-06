@@ -68,12 +68,12 @@ elif sys.platform == "win32":
     # on which build system was used (CMake or VS).
     library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".dll"])   # cmake install location
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_lib_Win32.dll"]) # VS build install location
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_binding_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 32 bit and cannot find 32 bit HydroDyn DLL expected at: {library_path}")
             exit(1)
     if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_lib_x64.dll"]) # VS build install location
+        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_binding_x64.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 64 bit and cannot find 64 bit HydroDyn DLL expected at: {library_path}")
             exit(1)
@@ -105,7 +105,7 @@ debugout_file="DbgOutputs.out"
 #       section of the output file are passed back for writing to file.  Here
 #       we will write the aggregated output channels to a file at the end of
 #       the simulation.
-output_file="hd_py.out"
+output_file="py_hd.out"
 
 #   For checking if our library is correctly handling correction steps, set
 #   this to > 0
