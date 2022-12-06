@@ -32,6 +32,9 @@ ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
 FairTen1
 FairTen2
 FairTen3
+AnchTen1
+AnchTen2
+AnchTen3
 L1N10T
 L2N10T
 L3N10T
@@ -53,5 +56,14 @@ L2N19Pz
 L3N19Px
 L3N19Py
 L3N19Pz
+Con4Px
+Con4Py
+Con4Pz
+Con5Px
+Con5Py
+Con5Pz
+Con6Px
+Con6Py
+Con6Pz
 END
 ------------------------- need this line --------------------------------------
