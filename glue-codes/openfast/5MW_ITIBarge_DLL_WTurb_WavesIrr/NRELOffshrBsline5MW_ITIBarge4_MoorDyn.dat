@@ -2,42 +2,39 @@
 Mooring system for ITI Energy Barge
 False   Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-1        NTypes    - number of LineTypes
-Name     Diam      MassDen       EA    BA/-zeta  Can     Cat   Cdn   Cdt
-(-)       (m)      (kg/m)        (N)   (N-s/-)   (-)     (-)   (-)   (-)
-main     0.0809    130.403     589.0E6   -0.8    1.0     0.0   1.6   0.1
----------------------- CONNECTION PROPERTIES --------------------------------
-16       NConnects - number of connections including anchors and fairleads
-Node    Type      X        Y        Z       M     V      FX   FY   FZ     CdA   CA
-(-)     (-)      (m)      (m)      (m)     (kg)  (m^3)  (kN) (kN) (kN)   (m^2)  (-)
-1      fixed    386.92   171.98   -150.0    0      0      0    0    0      0     0
-2      fixed    171.98   386.92   -150.0    0      0      0    0    0      0     0
-3      fixed   -171.98   386.92   -150.0    0      0      0    0    0      0     0
-4      fixed   -386.92   171.98   -150.0    0      0      0    0    0      0     0
-5      fixed   -386.92  -171.98   -150.0    0      0      0    0    0      0     0
-6      fixed   -171.98  -386.92   -150.0    0      0      0    0    0      0     0
-7      fixed    171.98  -386.92   -150.0    0      0      0    0    0      0     0
-8      fixed    386.92  -171.98   -150.0    0      0      0    0    0      0     0
-9      vessel    20.0     20.0      -4.0    0      0      0    0    0      0     0
-10     vessel    20.0     20.0      -4.0    0      0      0    0    0      0     0
-11     vessel   -20.0     20.0      -4.0    0      0      0    0    0      0     0
-12     vessel   -20.0     20.0      -4.0    0      0      0    0    0      0     0
-13     vessel   -20.0    -20.0      -4.0    0      0      0    0    0      0     0
-14     vessel   -20.0    -20.0      -4.0    0      0      0    0    0      0     0
-15     vessel    20.0    -20.0      -4.0    0      0      0    0    0      0     0
-16     vessel    20.0    -20.0      -4.0    0      0      0    0    0      0     0
----------------------- LINE PROPERTIES --------------------------------------
-8        NLines    - number of line objects
-Line    LineType  UnstrLen  NumSegs   NodeAnch  NodeFair  Outputs  CtrlChan
-(-)       (-)       (m)       (-)       (-)       (-)       (-)      (-)
-1         main    473.312      40        1         9         -        0
-2         main    473.312      40        2         10        -        0
-3         main    473.312      40        3         11        -        0
-4         main    473.312      40        4         12        -        0
-5         main    473.312      40        5         13        -        0
-6         main    473.312      40        6         14        -        0
-7         main    473.312      40        7         15        -        0
-8         main    473.312      40        8         16        -        0
+Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+(-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
+main     0.0809    130.403     589.0E6   -0.8      0.0   1.6     1.0    0.1    0.0
+---------------------- POINTS --------------------------------
+ID     Attachment  X        Y         Z      M      V       CdA   CA
+(-)    (-)        (m)      (m)       (m)    (kg)   (m^3)   (m^2)  (-)
+1      fixed     386.92   171.98    -150.0    0       0      0     0
+2      fixed     171.98   386.92    -150.0    0       0      0     0
+3      fixed    -171.98   386.92    -150.0    0       0      0     0
+4      fixed    -386.92   171.98    -150.0    0       0      0     0
+5      fixed    -386.92  -171.98    -150.0    0       0      0     0
+6      fixed    -171.98  -386.92    -150.0    0       0      0     0
+7      fixed     171.98  -386.92    -150.0    0       0      0     0
+8      fixed     386.92  -171.98    -150.0    0       0      0     0
+9      vessel     20.0     20.0       -4.0    0       0      0     0
+10     vessel     20.0     20.0       -4.0    0       0      0     0
+11     vessel    -20.0     20.0       -4.0    0       0      0     0
+12     vessel    -20.0     20.0       -4.0    0       0      0     0
+13     vessel    -20.0    -20.0       -4.0    0       0      0     0
+14     vessel    -20.0    -20.0       -4.0    0       0      0     0
+15     vessel     20.0    -20.0       -4.0    0       0      0     0
+16     vessel     20.0    -20.0       -4.0    0       0      0     0
+---------------------- LINES --------------------------------------
+ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
+(-)       (-)        (-)       (-)       (m)      (-)       (-)
+1         main       1         9      473.312      40        -
+2         main       2         10     473.312      40        -
+3         main       3         11     473.312      40        -
+4         main       4         12     473.312      40        -
+5         main       5         13     473.312      40        -
+6         main       6         14     473.312      40        -
+7         main       7         15     473.312      40        -
+8         main       8         16     473.312      40        -
 ---------------------- SOLVER OPTIONS ---------------------------------------
 0.001    dtM       - time step to use in mooring integration (s)
 3.0e4    kbot      - bottom stiffness (Pa/m)

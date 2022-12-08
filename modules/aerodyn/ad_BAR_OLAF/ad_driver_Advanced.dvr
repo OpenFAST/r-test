@@ -46,8 +46,8 @@ True            HAWTprojection(1)      - True if turbine is a horizontal axis tu
 ----- Turbine(1) Base Motion [used only when AnalysisType=1] ----------------------------
 0               BaseMotionType(1)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 1               DegreeOfFreedom(1)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0               Amplitude(1)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0               Frequency(1)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0               Amplitude(1)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or rad)
+0               Frequency(1)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(1)   - Filename containing arbitrary base motion (19 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacMotionType(1)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
 0               NacYaw(1)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
@@ -86,8 +86,8 @@ True            HAWTprojection(2)      - True if turbine is a horizontal axis tu
 ----- Turbine(2) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(2)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 1               DegreeOfFreedom(2)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0               Amplitude(2)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0               Frequency(2)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0               Amplitude(2)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or rad)
+0               Frequency(2)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(2)   - Filename containing arbitrary base motion (29 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacMotionType(2)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
 0               NacYaw(2)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
@@ -126,8 +126,8 @@ True            HAWTprojection(3)      - True if turbine is a horizontal axis tu
 ----- Turbine(3) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(3)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 1               DegreeOfFreedom(3)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0               Amplitude(3)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0               Frequency(3)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0               Amplitude(3)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or rad)
+0               Frequency(3)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(3)   - Filename containing arbitrary base motion (39 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacMotionType(3)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
 0               NacYaw(3)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
@@ -166,8 +166,8 @@ True            HAWTprojection(4)      - True if turbine is a horizontal axis tu
 ----- Turbine(4) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(4)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 1               DegreeOfFreedom(4)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0               Amplitude(4)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0               Frequency(4)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0               Amplitude(4)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or rad)
+0               Frequency(4)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(4)   - Filename containing arbitrary base motion (49 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacMotionType(4)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
 0               NacYaw(4)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
@@ -206,8 +206,8 @@ True            HAWTprojection(5)      - True if turbine is a horizontal axis tu
 ----- Turbine(5) Motion [used only when AnalysisType=1] ---------------------------------
 0               BaseMotionType(5)       - Type of motion prescribed for this base {0: fixed, 1: Sinusoidal motion, 2: arbitrary motion} (flag)
 1               DegreeOfFreedom(5)      - {1:xt, 2:yt, 3:zt, 4:theta_xt, 5:theta_yt, 6:theta_zt} [used only when BaseMotionType=1] (flag)
-0               Amplitude(5)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1]
-0               Frequency(5)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1]
+0               Amplitude(5)            - Amplitude of sinusoidal motion   [used only when BaseMotionType=1] (m or rad)
+0               Frequency(5)            - Frequency of sinusoidal motion   [used only when BaseMotionType=1] (Hz)
 "unused"        BaseMotionFileName(5)   - Filename containing arbitrary base motion (59 columns: Time, x, y, z, theta_x, ..., alpha_z)  [used only when BaseMotionType=2]
 0               NacMotionType(5)        - Type of motion prescribed for the nacelle {0: fixed yaw, 1: time varying yaw angle} (flag)
 0               NacYaw(5)               - Yaw angle (about z_t) of the nacelle [user only when NacMotionType=0] (deg)
@@ -227,7 +227,7 @@ True            HAWTprojection(5)      - True if turbine is a horizontal axis tu
 ----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
           0  NumCases     - Number of cases to run
 HWndSpeed    PLExp       RotSpd        Pitch         Yaw     dT      Tmax  DOF  Amplitude Frequency  
-(m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)     (-)     (Hz)
+(m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)  (m or rad) (Hz)
 ----- Output Settings -------------------------------------------------------------------
 "ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}

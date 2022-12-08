@@ -4,9 +4,11 @@ ad_BAR_CombinedCases
 ad_BAR_OLAF
 ad_BAR_RNAMotion
 ad_BAR_SineMotion
+ad_BAR_SineMotion_UA4_DBEMT3
 ad_EllipticalWingInf_OLAF
 ad_HelicalWakeInf_OLAF
 ad_Kite_OLAF
 ad_MultipleHAWT
 ad_QuadRotor_OLAF
 ad_VerticalAxis_OLAF
+ad_MHK_RM1_Fixed

@@ -1,44 +1,0 @@
-
- **************************************************************************************************
- OpenFAST
-
- Copyright (C) 2020 National Renewable Energy Laboratory
- Copyright (C) 2020 Envision Energy USA LTD
-
- This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
- See the "LICENSE" file distributed with this software for details.
- **************************************************************************************************
-
- OpenFAST-v2.4.0-50-g416ff436
- Compile Info:
-  - Compiler: GCC version 7.4.0
-  - Architecture: 64 bit
-  - Precision: double
-  - Date: Nov  6 2020
-  - Time: 12:35:02
- Execution Info:
-  - Date: 11/06/2020
-  - Time: 12:35:37-0700
-
- OpenFAST input file heading:
-     FAST Certification Test #02: AWT-27CR2 with many DOFs with startup and shutdown and steady
-     wind
-
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running AeroDyn.
- Nodal output section of AeroDyn input file not found or improperly formatted.
- Running InflowWind.
- Running ServoDyn.
-  Time: 0 of 20 seconds.
- The BEM solution is being turned off due to low TSR.  (TSR = 0). This warning will not be
- repeated though the condition may persist. (See GeomPhi output channel.)
-                                                                                                   Time: 2 of 20 seconds.  Estimated final completion at 12:36:03.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 12:36:06.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 12:36:07.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 12:36:08.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                    Time: 14 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 12:36:09.                                                                                                                                   
-  Total Real Time:       31.1 seconds
-  Total CPU Time:        28.814 seconds
-  Simulation CPU Time:   28.777 seconds
-  Simulated Time:        20 seconds
-  Time Ratio (Sim/CPU):  0.695
-
-  OpenFAST terminated normally.
-
