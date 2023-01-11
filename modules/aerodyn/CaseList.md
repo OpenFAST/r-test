@@ -11,3 +11,4 @@ ad_Kite_OLAF
 ad_MultipleHAWT
 ad_QuadRotor_OLAF
 ad_VerticalAxis_OLAF
+ad_MHK_RM1_Fixed
