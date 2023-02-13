@@ -83,12 +83,12 @@ False          SumPrint            - Generate a summary file listing input optio
 "RtVAvgyh"                                                                 
 "RtVAvgzh"                                                                 
 "RtSkew"                                                                   
-"RtFldFxh"                                                                
-"RtFldMxh"                                                                
-"RtFldPwr"                                                                
-"RtFldCp"                                                                 
-"RtFldCq"                                                                 
-"RtFldCt"                                                                 
+"RtAeroFxh"                                                                
+"RtAeroMxh"                                                                
+"RtAeroPwr"                                                                
+"RtAeroCp"                                                                 
+"RtAeroCq"                                                                 
+"RtAeroCt"                                                                 
 "B1N9Clrnc,"                                                              B1N9Clrnc, B1N9Clrnc
 "B1N1Alpha"                                                               Angle of attack at Blade 3, Node 8
 "B1N1Cl"                                                                   

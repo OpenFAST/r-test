@@ -71,7 +71,7 @@ False                  SumPrint    - Generate a summary file listing input optio
 0                      NTwOuts     - Number of tower node outputs [0 - 9]  (-)
 1                      TwOutNd           - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtFldPwr"
+"RtAeroPwr"
 "RtSpeed"
 "RtVAvgyh"
 "RtVAvgzh"
