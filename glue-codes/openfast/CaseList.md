@@ -15,10 +15,6 @@ WP_VSP_WTurb_PitchFail
 WP_VSP_ECD
 WP_VSP_WTurb
 
-SWRT_YFree_VS_EDG01
-SWRT_YFree_VS_EDC01
-SWRT_YFree_VS_WTurb
-
 5MW_Land_DLL_WTurb
 5MW_OC3Mnpl_DLL_WTurb_WavesIrr
 5MW_OC3Trpd_DLL_WSt_WavesReg
