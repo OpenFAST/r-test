@@ -77,7 +77,7 @@ COSMID           	COSM11          COSM12           COSM13           COSM21      
 CMJointID        Mass             JMXX             JMYY             JMZZ             JMXY             JMXZ             JMYZ             MCGX             MCGY             MCGZ
 (-)              (kg)             (kg*m2)          (kg*m2)          (kg*m2)          (kg*m2)          (kg*m2)          (kg*m2)          (m)              (m)              (m)
 --- OUTPUT ---
-True             SSSum            Output a Summary File (flag).It contains: matrices K,M  and C-B reduced M_BB, M-BM, K_BB, K_MM(OMG^2), PHI_R, PHI_M. IT can also contain COSMs if requested
+True             SumPrint         Output a Summary File (flag).It contains: matrices K,M  and C-B reduced M_BB, M-BM, K_BB, K_MM(OMG^2), PHI_R, PHI_M. IT can also contain COSMs if requested
 1                OutCBModes
 1                OutFEMModes
 True             OutCOSM          Output cosine matrices with the selected output member forces (flag)
