@@ -25,7 +25,7 @@
  9.64    1.4            Numerator coefficients   (Order+1 values, ascending powers of s)
  0.358   1.0            Denominator coefficients (Order+1 values, ascending powers of s)
 
-   0        Order of tf #4, input=Pitch demand(deg), output=pitch (deg) (Use 0 for ADAMS to not include actuator)
+   0        Order of tf #4, input=Pitch demand(deg), output=pitch (deg)
 85.696   0.0    0.0     Numerator coefficients   (Order+1 values, ascending powers of s)
 85.696  14.812  1.0     Denominator coefficients (Order+1 values, ascending powers of s)
 

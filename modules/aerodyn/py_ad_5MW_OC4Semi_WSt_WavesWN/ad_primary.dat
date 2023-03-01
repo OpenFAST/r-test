@@ -89,15 +89,15 @@ True          SumPrint            - Generate a summary file listing input option
           0   NTwOuts             - Number of tower node outputs [0 - 9]  (-)
           1,          2,          6    TwOutNd             - Tower nodes whose values will be output  (-)
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"RtFldCp"                 
-"RtFldCt"                 
-"RtFldCq"                 
+"RtAeroCp"
+"RtAeroCt"
+"RtAeroCq"
 "RtTSR"                    
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------- NODE OUTPUTS --------------------------------------------
           3   BldNd_BladesOut  - Blades to output
          99   BldNd_BlOutNd   - Blade nodes on each blade (currently unused)
-              OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx, FldDyn_Nodes tab for a listing of available output channels, (-)
+              OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx, AeroDyn_Nodes tab for a listing of available output channels, (-)
 "VUndx"     - x-component of undisturbed wind velocity at each node
 "VUndy"     - y-component of undisturbed wind velocity at each node
 "VUndz"     - z-component of undisturbed wind velocity at each node
