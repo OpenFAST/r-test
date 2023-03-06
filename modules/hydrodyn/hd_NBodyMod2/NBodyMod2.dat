@@ -1,5 +1,5 @@
 ------- HydroDyn Input File ----------------------------------------------------
-This is a sample file demonstrating NBodyMod=3 inputs, based on NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC4 Semi-submersible.
+This is a sample file demonstrating NBodyMod=1 inputs, based on NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC4 Semi-submersible.
 True            Echo           - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
      "default"   WtrDens        - Water density (kg/m^3)
@@ -50,8 +50,8 @@ FALSE            WvSumQTF       - Full summation-frequency  2nd-order wave kinem
             60   RdtnTMax       - Analysis time for wave radiation kernel calculations (sec) [only used when PotMod=1 and RdtnMod>0; determines RdtnDOmega=Pi/RdtnTMax in the cosine transform; MAKE SURE THIS IS LONG ENOUGH FOR THE RADIATION IMPULSE RESPONSE FUNCTIONS TO DECAY TO NEAR-ZERO FOR THE GIVEN PLATFORM!]
         0.0125   RdtnDT         - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1 and ExctnMod>0 or RdtnMod>0; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
              4   NBody          - Number of WAMIT bodies to be used (-) [>=1; only used when PotMod=1. If NBodyMod=1, the WAMIT data contains a vector of size 6*NBody x 1 and matrices of size 6*NBody x 6*NBody; if NBodyMod>1, there are NBody sets of WAMIT data each with a vector of size 6 x 1 and matrices of size 6 x 6]
-             3   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
-"semi_center, semi_col1, semi_col2, semi_col3"    PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
+             2   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
+"semi_center" "semi_col" "semi_col" "semi_col"       PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
    1             1           1           1        WAMITULEN     - Characteristic body length scale used to redimensionalize WAMIT output (meters) [1 to NBody if NBodyMod>1] [only used when PotMod=1]
    0.0           14.43376  -28.86751    14.43376  PtfmRefxt     - The xt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
    0.0           25.0        0.0       -25.0      PtfmRefyt     - The yt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
@@ -250,6 +250,12 @@ False            OutAll         - Output all user-specified member and joint loa
 "B1WvsMxi, B2WvsMxi, B3WvsMxi, B4WvsMxi"
 "B1WvsMyi, B2WvsMyi, B3WvsMyi, B4WvsMyi"
 "B1WvsMzi, B2WvsMzi, B3WvsMzi, B4WvsMzi"
+"B1WvsF1xi, B2WvsF1xi, B3WvsF1xi, B4WvsF1xi"
+"B1WvsF1yi, B2WvsF1yi, B3WvsF1yi, B4WvsF1yi"
+"B1WvsF1zi, B2WvsF1zi, B3WvsF1zi, B4WvsF1zi"
+"B1WvsM1xi, B2WvsM1xi, B3WvsM1xi, B4WvsM1xi"
+"B1WvsM1yi, B2WvsM1yi, B3WvsM1yi, B4WvsM1yi"
+"B1WvsM1zi, B2WvsM1zi, B3WvsM1zi, B4WvsM1zi"
 "B1Surge, B1Sway, B1Heave, B1Roll, B1Pitch, B1Yaw"
 "B2Surge, B2Sway, B2Heave, B2Roll, B2Pitch, B2Yaw"
 "B3Surge, B3Sway, B3Heave, B3Roll, B3Pitch, B3Yaw"
