@@ -265,7 +265,7 @@ MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1   
             25   NMembers       - Number of members (-)
 MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MDivSize   MCoefMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
   (-)        (-)        (-)         (-)          (-)        (m)      (switch)   (flag)
-    1         1          2           1            1         1.0000      3        FALSE          ! Main Column
+    1         1          2           1            1         1.0000      3        TRUE           ! Main Column
     2         3          4           2            2         1.0000      3        TRUE           ! Upper Column 1
     3         5          6           2            2         1.0000      3        TRUE           ! Upper Column 2
     4         7          8           2            2         1.0000      3        TRUE           ! Upper Column 3
@@ -311,11 +311,11 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              1   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
-"ES11.4e2"       OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
+"E16.8e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 "Wave1Elev"               - Wave elevation at the platform reference point (0,  0)
-"HydroFxi, HydroFyi, HydroFzi, HydroMxi, HydroMyi, HydroMzi"
+"HydroFxi, HydroFzi, HydroMyi"
 "B1WvsFxi, B2WvsFxi, B3WvsFxi, B4WvsFxi"
 "B1WvsFyi, B2WvsFyi, B3WvsFyi, B4WvsFyi"
 "B1WvsFzi, B2WvsFzi, B3WvsFzi, B4WvsFzi"
@@ -333,3 +333,6 @@ False            OutAll         - Output all user-specified member and joint loa
 "B3Surge, B3Sway, B3Heave, B3Roll, B3Pitch, B3Yaw"
 "B4Surge, B4Sway, B4Heave, B4Roll, B4Pitch, B4Yaw"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
+
+#Removed the following channels as they are too small to compare well
+"HydroFyi, HydroMxi, HydroMzi"
