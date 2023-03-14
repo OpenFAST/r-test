@@ -42,6 +42,7 @@ WT_X    WT_Y   WT_Z   WT_FASTInFile     X0_High  Y0_High  Z0_High  dX_High  dY_H
 378.0   0.0    0.0    "FFTest_WT2.fst"   296.63   -80.0   5.0      10.17    10.0     10.0
 --- WAKE DYNAMICS ---
 1                  Mod_Wake           - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
+125                RotorDiamRef       - Reference turbine rotor diameter for wake calculations (m) [>0.0]
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           - Number of radii in the radial finite-difference grid (-) [>=2]
 136                NumPlanes          - Number of wake planes (-) [>=2]
@@ -76,7 +77,8 @@ DEFAULT            Mod_Projection     - Switch to select how the wake plane velo
 --- WAKE-ADDED TURBULENCE ---
 0                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
 "Inflow/WAT/isoturb_1024x32x16.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
-5.5, 4.0, 4.0      WAT_UserDxDyDz     - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2] (m)
+1024, 32, 16       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+5.5, 4.0, 4.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
 default            WAT_k_Def          - Calibrated parameter for the influence of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=0.6]
 default            WAT_k_Grad         - Calibrated parameter for the influence of the radial velocity gradient of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=0.35]
 --- VISUALIZATION ---
