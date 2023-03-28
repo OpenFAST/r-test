@@ -1,0 +1,24 @@
+Example file
+InflowWind driver input file.
+   f           echo           -- whether this input file should be echoed to a file (flag)
+===============================================================================
+"../../../glue-codes/openfast/5MW_Baseline/NRELOffshrBsline5MW_InflowWind_12mps.dat"  IfWFileName    -- Name of InflowWind input file (-)
+===================== File Conversion Options =================================
+ false         WrHAWC         -- Convert all data to HAWC2 format? (flag)
+ false         WrBladed       -- Convert all data to Bladed format? (flag)
+ false         WrVTK          -- Convert all data to VTK format? (flag)
+=====================  Tests of Interpolation Options =========================
+   1           NumTSteps      -- number of timesteps to run (DEFAULT for all) (-)
+  12.0         TStart         -- Start time (s)
+   DEFAULT     DT             -- timestep size for driver to take (s, or DEFAULT for what the file contains)
+   t           Summary        -- Summarize the data extents in the windfile (flag)
+   t           SummaryFile    -- Write summary to file (.dvr.sum) (flag)
+----  Points file input (output given as POINTSFILENAME.Velocity.dat) --------
+   f           PointsFile     -- read in a list of output points from a file (flag)
+"Test005.txt"  PointsFileName -- name of points file (-) (comma separated x,y,z coordinates, # symbol for comments)
+----  Output grid (Points below ground will simply be ignored) ---------------
+   t           WindGrid       -- report wind data at set of X,Y,Z coordinat            (flag)
+   0,0,139.5      GridCtrCoord   -- coordinate of center of grid                          (m)
+   0,1.375,1.375  GridDx,GridDY,GridDZ  -- Step size of grid                              (m)
+   0,319,201      GridNx,GridNY,GridNZ  -- number of grid points in X, Y and Z directions (-)
+END of driver input file
