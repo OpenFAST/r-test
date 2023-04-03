@@ -43,7 +43,6 @@ The included turbine model are listed below.
  5MW_Baseline   `NREL offshore 5-MW baseline wind turbine <http://www.nrel.gov/docs/fy09osti/38060.pdf>`_
  AOC            `Atlantic Orient Company 15/50 wind turbine <http://www.nrel.gov/docs/legosti/old/4740.pdf>`_
  AWT27          Advanced Wind Turbine program blade 27
- SWRT           `Small Wind Research Turbine <http://www.nrel.gov/docs/fy06osti/38550.pdf>`__
  UAE_VI         `Unsteady Aerodynamics Experiment research wind turbine <http://www.nrel.gov/docs/fy04osti/34755.pdf>`__
  WP_Baseline    `WindPACT 1.5-MW baseline wind turbine <http://www.nrel.gov/docs/fy06osti/32495.pdf>`__
 ============== ========================================================================================================================
@@ -68,9 +67,6 @@ the current test names is given below.
  Test12   WP_VSP_ECD
  Test13   WP_VSP_WTurb
  Test14   WP_Stationary_Linear
- Test15   SWRT_YFree_VS_EDG01
- Test16   SWRT_YFree_VS_EDC01
- Test17   SWRT_YFree_VS_WTurb
  Test18   5MW_Land_DLL_WTurb
  Test19   5MW_OC3Mnpl_DLL_WTurb_WavesIrr
  Test20   5MW_OC3Trpd_DLL_WSt_WavesReg
