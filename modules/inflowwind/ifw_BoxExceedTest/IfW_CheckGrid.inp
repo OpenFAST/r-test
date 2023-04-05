@@ -17,10 +17,10 @@ InflowWind driver input file.
 ----  Points file input (output given as POINTSFILENAME.Velocity.dat) --------
    false       PointsFile     -- read in a list of output points from a file (flag)
    "unused"    PointsFileName -- name of points file (-) (comma separated x,y,z coordinates, # symbol for comments)
-   true        CalcAccel      -- calculate and output acceleration at points in addition to velocity
+   true       CalcAccel      -- calculate and output acceleration at points in addition to velocity
 ----  Output grid (Points below ground will simply be ignored) ---------------
    true           WindGrid       -- report wind data at set of X,Y,Z coordinates          (flag)
    0,0,139.5      GridCtrCoord   -- coordinate of center of grid                          (m)
    0,1.375,1.375  GridDx,GridDY,GridDZ  -- Step size of grid                              (m)
-   0,319,201      GridNx,GridNY,GridNZ  -- number of grid points in X, Y and Z directions (-)
+   0,319,203      GridNx,GridNY,GridNZ  -- number of grid points in X, Y and Z directions (-)
 END of driver input file
