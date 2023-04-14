@@ -55,7 +55,7 @@ PropSetID     YoungE          ShearG          MatDens          XsecD           X
    3        2.10000e+11     8.08000e+10       8500.00         3.870000        0.019000
    4        2.10000e+14     8.08000e+14          1.00         1.000000        0.010000
 ----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
-             0   NXPropSets  - Number of structurally unique non-circular x-sections (if 0 the following table is ignored)
+             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
 PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy        XsecJ0
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES -------------------------------------------

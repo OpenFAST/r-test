@@ -41,8 +41,8 @@ IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
           2    NMembers    - Number of members (-)
 MemberID   MJointID1   MJointID2  MPropSetID1   MPropSetID2   MType      COSMID   ![MType={1:beam circ., 2:cable, 3:rigid, 4:beam arb.}. COMSID={-1:none}]
   (-)         (-)         (-)       (-)           (-)         (-)        (-)
-   1            1           2       1              1           1         -1
-   2            2           3       1              1           1         -1
+   1            1           2       1              1           1          10
+   2            2           3       1              1           1          10
 ------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
             1   NPropSets   - Number of structurally unique cross-sections
 PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
@@ -61,9 +61,10 @@ PropSetID     EA          MatDens        T0         CtrlChannel
 PropSetID   MatDens   
   (-)       (kg/m)
 ---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
-             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+             1   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
 COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
  (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)
+  10       1.0        0.0      0.0       0.0      -1.0       0.0       0.0       0.0      -1.0
 ------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
             1    NCmass      - Number of joints with concentrated masses; Global Coordinate System
 CMJointID       JMass            JMXX             JMYY             JMZZ          JMXY        JMXZ         JMYZ        MCGX      MCGY        MCGZ
