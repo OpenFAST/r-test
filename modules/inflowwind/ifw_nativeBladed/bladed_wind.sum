@@ -1,0 +1,10 @@
+UBAR     10.0                        # mean wind speed, m/s
+REFHT    90.0                        # reference height, m
+TI       0.09                        # u-component turbulence intensity, -
+TI_V     0.0774                      # v-component turbulence intensity, -
+TI_W     0.0459                      # w-component turbulence intensity, -
+WDIR     0.0                         # PropagationDir (propagation direction), rad
+FLINC    0.0                         # VFlowAngle (vertical flow angle), rad
+WINDF    "TurbSim.wnd"               # binary wind file, -
+WSHEAR   0.11                        # PLExp (power law exponent), -
+XOFFSET  0                           # m
