@@ -19,7 +19,7 @@
   - Time: 09:56:12
  Execution Info:
   - Date: 04/19/2023
-  - Time: 11:08:20-0600
+  - Time: 12:18:13-0600
 
  OpenFAST input file heading:
      Fixed MHK turbine, based on the RM1 tidal current turbine
@@ -31,12 +31,12 @@
  Skipping nodal outputs.
  Running InflowWind.
   Time: 0 of 30 seconds.
-                                                                                                   Time: 5 of 30 seconds.  Estimated final completion at 11:09:02.                                                                                                                                     Time: 10 of 30 seconds.  Estimated final completion at 11:09:01.                                                                                                                                    Time: 15 of 30 seconds.  Estimated final completion at 11:09:01.                                                                                                                                    Time: 20 of 30 seconds.  Estimated final completion at 11:09:02.                                                                                                                                    Time: 25 of 30 seconds.  Estimated final completion at 11:09:01.                                                                                                                                    Time: 30 of 30 seconds.  Estimated final completion at 11:09:01.                                                                                                                                   
-  Total Real Time:       40.598 seconds
-  Total CPU Time:        40.588 seconds
-  Simulation CPU Time:   40.515 seconds
+                                                                                                   Time: 5 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                     Time: 10 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                    Time: 15 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                    Time: 20 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                    Time: 25 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                    Time: 30 of 30 seconds.  Estimated final completion at 12:18:54.                                                                                                                                   
+  Total Real Time:       40.436 seconds
+  Total CPU Time:        40.435 seconds
+  Simulation CPU Time:   40.363 seconds
   Simulated Time:        30 seconds
-  Time Ratio (Sim/CPU):  0.74046
+  Time Ratio (Sim/CPU):  0.74325
 
   OpenFAST terminated normally.
 
