@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 15-Oct-2022 at 12:29:12 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.2.1-174-g07cb65e0
+Predictions were generated on 19-Apr-2023 at 11:08:20 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.4.1-164-gc9aa5554-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -33,11 +33,11 @@ Number of correction iterations:  5
   -------------------------------------------------
   Component          Time Step (s)    Subcycles (-)
   -----------------  ---------------  -------------
-  FAST (glue code)    2.000E-03
-  InflowWind          2.000E-03              1
-  ElastoDyn           2.000E-03              1
-  AeroDyn             2.000E-03              1
-  FAST output files   2.000E-02             10^-1
+  FAST (glue code)    5.000E-03
+  InflowWind          5.000E-03              1
+  ElastoDyn           5.000E-03              1
+  AeroDyn             5.000E-03              1
+  FAST output files   2.000E-02              4^-1
 
 
    Requested Channels in FAST Output File(s)  
