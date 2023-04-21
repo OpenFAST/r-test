@@ -1,0 +1,60 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2023 National Renewable Energy Laboratory
+ Copyright (C) 2023 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v3.4.1-164-gc9aa5554-dirty
+ Compile Info:
+  - Compiler: GCC version 12.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - OpenMP: No
+  - Date: Apr 19 2023
+  - Time: 09:56:12
+ Execution Info:
+  - Date: 04/20/2023
+  - Time: 13:19:34-0400
+
+ OpenFAST input file heading:
+     Floating MHK turbine, based on the RM1 tidal current rotor
+
+ Running ElastoDyn.
+ Nodal outputs section of ElastoDyn input file not found or improperly formatted.
+ Running AeroDyn.
+ AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ Skipping nodal outputs.
+ Running InflowWind.
+ Running HydroDyn.
+  Generating incident wave kinematics and current time history.
+  Reading in WAMIT output with root name "IOFiles/MHK_RM1_Floating".
+  Computing radiation impulse response functions and wave diffraction forces.
+ Running MoorDyn (v2.0.0, 2022-12-08).
+    This is MoorDyn v2, with significant input file changes from v1.
+    Copyright: (C) 2022 National Renewable Energy Laboratory, (C) 2019 Matt Hall
+    Parsing MoorDyn input file: IOFiles/MHK_RM1_Floating_MoorDyn.dat
+   Created mooring system:  6 lines, 12 points, 0 rods, 0 bodies.
+    Finalizing initial conditions using dynamic relaxation.
+
+   t=1  FairTen 1: 1.83514E+05, 1, 2                                                                 t=2  FairTen 1: 5.52594E+05, 1.83514E+05, 1                                                       t=3  FairTen 1: 3.29106E+05, 5.52594E+05, 1.83514E+05                                             t=4  FairTen 1: 6.89791E+05, 3.29106E+05, 5.52594E+05                                             t=5  FairTen 1: 4.85278E+05, 6.89791E+05, 3.29106E+05                                             t=6  FairTen 1: 6.65317E+05, 4.85278E+05, 6.89791E+05                                             t=7  FairTen 1: 6.12713E+05, 6.65317E+05, 4.85278E+05                                             t=8  FairTen 1: 6.08934E+05, 6.12713E+05, 6.65317E+05                                             t=9  FairTen 1: 6.08252E+05, 6.08934E+05, 6.12713E+05                                             t=10  FairTen 1: 5.82534E+05, 6.08252E+05, 6.08934E+05                                             Fairlead tensions did not converge within TMaxIC=10 seconds.
+    MoorDyn initialization completed.
+
+ FAST_InitializeAll:HydroDyn_Init:Waves_Init:VariousWaves_Init: The random number generator in use
+ differs from the original code provided by NREL. This pRNG uses 8 seeds instead of the 2 in the
+ HydroDyn input file.
+
+  Time: 0 of 10 seconds.
+                                                                                                   Time: 5 of 10 seconds.  Estimated final completion at 13:22:46.                                                                                                                                     Time: 10 of 10 seconds.  Estimated final completion at 13:22:45.                                                                                                                                   
+  Total Real Time:       3.1825 minutes
+  Total CPU Time:        3.1794 minutes
+  Simulation CPU Time:   2.9764 minutes
+  Simulated Time:        0.1667 minutes
+  Time Ratio (Sim/CPU):  5.60075E-02
+
+  OpenFAST terminated normally.
+
