@@ -3,7 +3,7 @@ Floating MHK turbine, based on the RM1 tidal current rotor
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-         10   TMax            - Total run time (s)
+          6   TMax            - Total run time (s)
       0.003   DT              - Recommended module time step (s)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           5   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}

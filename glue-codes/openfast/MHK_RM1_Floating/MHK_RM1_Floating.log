@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.4.1-164-gc9aa5554-dirty
+ OpenFAST-v3.4.1-166-gaccfaee5
  Compile Info:
   - Compiler: GCC version 12.2.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Apr 19 2023
-  - Time: 09:56:12
+  - Date: Apr 21 2023
+  - Time: 11:12:51
  Execution Info:
-  - Date: 04/20/2023
-  - Time: 13:19:34-0400
+  - Date: 04/21/2023
+  - Time: 11:14:20-0400
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -48,13 +48,13 @@
  differs from the original code provided by NREL. This pRNG uses 8 seeds instead of the 2 in the
  HydroDyn input file.
 
-  Time: 0 of 10 seconds.
-                                                                                                   Time: 5 of 10 seconds.  Estimated final completion at 13:22:46.                                                                                                                                     Time: 10 of 10 seconds.  Estimated final completion at 13:22:45.                                                                                                                                   
-  Total Real Time:       3.1825 minutes
-  Total CPU Time:        3.1794 minutes
-  Simulation CPU Time:   2.9764 minutes
-  Simulated Time:        0.1667 minutes
-  Time Ratio (Sim/CPU):  5.60075E-02
+  Time: 0 of 6 seconds.
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 11:16:19.                                                                                                                                     
+  Total Real Time:       1.9816 minutes
+  Total CPU Time:        1.9814 minutes
+  Simulation CPU Time:   1.777 minutes
+  Simulated Time:        0.1 minutes
+  Time Ratio (Sim/CPU):  5.62739E-02
 
   OpenFAST terminated normally.
 
