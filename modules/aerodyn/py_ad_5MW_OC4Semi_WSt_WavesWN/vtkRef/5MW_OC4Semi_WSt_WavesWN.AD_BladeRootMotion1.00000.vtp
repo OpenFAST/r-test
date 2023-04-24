@@ -16,10 +16,10 @@
                        0.93565                      -0.00000                      -0.11321
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
-                      -0.09341                      -0.01365                      -1.60564
+                      -0.08747                      -0.01414                      -1.57571
         </DataArray>
         <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.03947                      -0.06181                      -0.01507
+                       0.03877                      -0.05620                      -0.01474
         </DataArray>
         <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
                        0.99705                       0.00000                      -0.07671
