@@ -1,4 +1,4 @@
-5MW_OC4
-Node_Check_N20
-Node_Check_N40
-Single_Line_Quasi_Static_Test
+md_5MW_OC4Semi
+md_Node_Check_N20
+md_Node_Check_N40
+md_Single_Line_Quasi_Static_Test
