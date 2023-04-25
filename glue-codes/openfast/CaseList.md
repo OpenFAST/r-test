@@ -46,3 +46,4 @@ StC_test_OC4Semi_Linear_Nac
 StC_test_OC4Semi_Linear_Tow
 
 MHK_RM1_Fixed
+MHK_RM1_Floating

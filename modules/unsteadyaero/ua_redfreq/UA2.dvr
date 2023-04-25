@@ -20,7 +20,7 @@ True          UseCm               - Use Cm (moment coefficient) data in airfoil 
        1      Frequency           - Frequency for the airfoil oscillations (Hz)
        2      Amplitude           - Amplitude of the angle of attack oscillations (deg)
      7.5      Mean                - Cycle mean (deg)
-       0      Phase               - Initial phase (num steps). Roger: It describes a sinus function for the angle of attack. For example, if we would like to start by a phase of 90 deg, we should write: (StepsPerCycle/360)*90 = 180 steps. 
+       0      Phase               - Initial phase (num steps). 
 "UA-driver-timeseries.dat"     InputsFile          - Time series data in an ASCII input file (whitespace-separated data).  8 header lines, followed by column data. First column is time (sec), second column is angle-of-attack (deg), third column is InflowVel (m/s)
 ------------------- OUTPUT CONTROL --------------------------------------------
 True          SumPrint            - Write unsteady aerodynamics summary file (flag)
