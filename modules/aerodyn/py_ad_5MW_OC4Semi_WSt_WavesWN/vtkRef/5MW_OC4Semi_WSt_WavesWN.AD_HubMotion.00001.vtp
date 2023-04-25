@@ -13,7 +13,7 @@
                        0.00000                       0.00000                       0.00000
         </DataArray>
         <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.93608                      -0.00076                      -0.11339
+                       0.93607                      -0.00069                      -0.11338
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
                        0.00000                       0.00000                       0.00000

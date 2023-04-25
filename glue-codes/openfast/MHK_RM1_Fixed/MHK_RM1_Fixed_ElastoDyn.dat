@@ -61,12 +61,12 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
         1.2   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
         1.2   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
-       28.8   TowerHt     - Height of tower above ground level [onshore], MSL [offshore], or seabed [MHK] (meters)
-          0   TowerBsHt   - Height of tower base above ground level [onshore], MSL [offshore], or seabed [MHK] (meters)
-          0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-          0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-          0   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-          0   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform reference point (meters)
+       28.8   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+          0   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+          0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+          0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+          0   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+          0   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
 ---------------------- MASS AND INERTIA ----------------------------------------
           0   TipMass(1)  - Tip-brake mass, blade 1 (kg)
           0   TipMass(2)  - Tip-brake mass, blade 2 (kg)
@@ -105,7 +105,7 @@ False         Furling     - Read in additional model properties for furling turb
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
          10   TwrNodes    - Number of tower nodes used for analysis (-)
-"MHK_RM1_ElastoDyn_Tower.dat"    TwrFile    - Name of file containing tower properties (quoted string)
+"MHK_RM1_Fixed_ElastoDyn_Tower.dat"    TwrFile    - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
           1   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
