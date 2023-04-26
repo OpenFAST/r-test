@@ -11,7 +11,6 @@ False            Echo           - Echo the input file data (flag)
         0.0125   RdtnDT         - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1 and ExctnMod>0 or RdtnMod>0; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
              4   NBody          - Number of WAMIT bodies to be used (-) [>=1; only used when PotMod=1. If NBodyMod=1, the WAMIT data contains a vector of size 6*NBody x 1 and matrices of size 6*NBody x 6*NBody; if NBodyMod>1, there are NBody sets of WAMIT data each with a vector of size 6 x 1 and matrices of size 6 x 6]
              3   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
-<<<<<<< HEAD:modules/hydrodyn/HydroDyn_NBodyMod_cases/NBodyMod3/NBodyMod3.dat
 "semi_center", "semi_col1", "semi_col2", "semi_col3"    PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
              1,             1,             1,             1    WAMITULEN      - Characteristic body length scale used to redimensionalize WAMIT output (meters) [1 to NBody if NBodyMod>1] [only used when PotMod=1]
              0,       14.4338,      -28.8675,       14.4338    PtfmRefxt      - The xt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
@@ -21,17 +20,6 @@ False            Echo           - Echo the input file data (flag)
          663.7,        4297.7,        4297.7,        4297.7    PtfmVol0       - Displaced volume of water when the body is in its undisplaced position (m^3) [1 to NBody] [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!]
              0,       14.4338,      -28.8675,       14.4338    PtfmCOBxt      - The xt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
              0,            25,             0,           -25    PtfmCOByt      - The yt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
-=======
-"semi_center" "semi_col1" "semi_col2" "semi_col3"       PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
-   1             1           1           1        WAMITULEN     - Characteristic body length scale used to redimensionalize WAMIT output (meters) [1 to NBody if NBodyMod>1] [only used when PotMod=1]
-   0.0           14.43376  -28.86751    14.43376  PtfmRefxt     - The xt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
-   0.0           25.0        0.0       -25.0      PtfmRefyt     - The yt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
-   0.0            0.0        0.0         0.0      PtfmRefzt     - The zt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1. If NBodyMod=2,PtfmRefzt=0.0]
-   0.0            0.0        0.0         0.0      PtfmRefztRot  - The rotation about zt of the body reference frame(s) from xt/yt (degrees) [1 to NBody] [only used when PotMod=1]
- 663.7         4297.7     4297.7      4297.7      PtfmVol0      - Displaced volume of water when the body is in its undisplaced position (m^3) [1 to NBody] [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!]
-   0.0           14.43376  -28.86751    14.43376  PtfmCOBxt     - The xt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
-   0.0           25.0        0.0       -25.0      PtfmCOByt     - The yt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
->>>>>>> dev:modules/hydrodyn/hd_NBodyMod3/NBodyMod3.dat
 ---------------------- 2ND-ORDER FLOATING PLATFORM FORCES ---------------------- [unused with WaveMod=0 or 6, or PotMod=0 or 2]
              0   MnDrift        - Mean-drift 2nd-order forces computed                                       {0: None; [7, 8, 9, 10, 11, or 12]: WAMIT file to use} [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero. If NBody>1, MnDrift  /=8]
              0   NewmanApp      - Mean- and slow-drift 2nd-order forces computed with Newman's approximation {0: None; [7, 8, 9, 10, 11, or 12]: WAMIT file to use} [Only one of MnDrift, NewmanApp, or DiffQTF can be non-zero. If NBody>1, NewmanApp/=8. Used only when WaveDirMod=0]
@@ -213,11 +201,10 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
-             1   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
+             2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
 "E16.8e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
-<<<<<<< HEAD:modules/hydrodyn/HydroDyn_NBodyMod_cases/NBodyMod3/NBodyMod3.dat
 HydroFxi                   
 HydroFyi                   
 HydroFzi                   
@@ -272,21 +259,4 @@ B4Heave
 B4Roll                     
 B4Pitch                    
 B4Yaw                      
-=======
-"Wave1Elev"               - Wave elevation at the platform reference point (0,  0)
-"HydroFxi, HydroFzi, HydroMyi"
-"B1WvsFxi, B2WvsFxi, B3WvsFxi, B4WvsFxi"
-"B1WvsFyi, B2WvsFyi, B3WvsFyi, B4WvsFyi"
-"B1WvsFzi, B2WvsFzi, B3WvsFzi, B4WvsFzi"
-"B1WvsMxi, B2WvsMxi, B3WvsMxi, B4WvsMxi"
-"B1WvsMyi, B2WvsMyi, B3WvsMyi, B4WvsMyi"
-"B1WvsMzi, B2WvsMzi, B3WvsMzi, B4WvsMzi"
-"B1Surge, B1Sway, B1Heave, B1Roll, B1Pitch, B1Yaw"
-"B2Surge, B2Sway, B2Heave, B2Roll, B2Pitch, B2Yaw"
-"B3Surge, B3Sway, B3Heave, B3Roll, B3Pitch, B3Yaw"
-"B4Surge, B4Sway, B4Heave, B4Roll, B4Pitch, B4Yaw"
->>>>>>> dev:modules/hydrodyn/hd_NBodyMod3/NBodyMod3.dat
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
-
-#Removed the following channels as they are too small to compare well
-"HydroFyi, HydroMxi, HydroMzi"

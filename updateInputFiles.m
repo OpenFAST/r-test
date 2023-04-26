@@ -69,16 +69,7 @@ caseNames = GetSubDirsFirstLevelOnly(pathstr);
 
 for i= 1:length(caseNames)
     casePath = fullfile(pathstr, caseNames{i});
-
-    if strcmpi(caseNames{i},'HydroDyn_NBodyMod_cases')
-        caseNamesSub = GetSubDirsFirstLevelOnly(casePath);
-        for j=1:length(caseNamesSub)
-            casePathSub = [ casePath filesep caseNamesSub{j} ];
-            ConvertHydroDynDriver( [casePathSub filesep caseNamesSub{j} '.dvr'], casePathSub );          
-        end
-    else
-        ConvertHydroDynDriver( [casePath filesep 'hd_driver.inp'], casePath );  
-    end
+    ConvertHydroDynDriver( [casePath filesep 'hd_driver.inp'], casePath );  
 end
 
 

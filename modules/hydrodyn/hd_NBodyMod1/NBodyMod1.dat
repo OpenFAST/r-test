@@ -273,11 +273,10 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 ---------------------- OUTPUT --------------------------------------------------
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
-             1   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
+             2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
 "E16.8e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
-<<<<<<< HEAD:modules/hydrodyn/HydroDyn_NBodyMod_cases/NBodyMod1/NBodyMod1.dat
 HydroFxi                   
 HydroFyi                   
 HydroFzi                   
@@ -356,27 +355,4 @@ B4Heave
 B4Roll                     
 B4Pitch                    
 B4Yaw                      
-=======
-"Wave1Elev"               - Wave elevation at the platform reference point (0,  0)
-"HydroFxi, HydroFzi, HydroMyi"
-"B1WvsFxi, B2WvsFxi, B3WvsFxi, B4WvsFxi"
-"B1WvsFyi, B2WvsFyi, B3WvsFyi, B4WvsFyi"
-"B1WvsFzi, B2WvsFzi, B3WvsFzi, B4WvsFzi"
-"B1WvsMxi, B2WvsMxi, B3WvsMxi, B4WvsMxi"
-"B1WvsMyi, B2WvsMyi, B3WvsMyi, B4WvsMyi"
-"B1WvsMzi, B2WvsMzi, B3WvsMzi, B4WvsMzi"
-"B1WvsF1xi, B2WvsF1xi, B3WvsF1xi, B4WvsF1xi"
-"B1WvsF1yi, B2WvsF1yi, B3WvsF1yi, B4WvsF1yi"
-"B1WvsF1zi, B2WvsF1zi, B3WvsF1zi, B4WvsF1zi"
-"B1WvsM1xi, B2WvsM1xi, B3WvsM1xi, B4WvsM1xi"
-"B1WvsM1yi, B2WvsM1yi, B3WvsM1yi, B4WvsM1yi"
-"B1WvsM1zi, B2WvsM1zi, B3WvsM1zi, B4WvsM1zi"
-"B1Surge, B1Sway, B1Heave, B1Roll, B1Pitch, B1Yaw"
-"B2Surge, B2Sway, B2Heave, B2Roll, B2Pitch, B2Yaw"
-"B3Surge, B3Sway, B3Heave, B3Roll, B3Pitch, B3Yaw"
-"B4Surge, B4Sway, B4Heave, B4Roll, B4Pitch, B4Yaw"
->>>>>>> dev:modules/hydrodyn/hd_NBodyMod1/NBodyMod1.dat
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
-
-#Removed the following channels as they are too small to compare well
-"HydroFyi, HydroMxi, HydroMzi"

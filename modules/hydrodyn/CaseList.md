@@ -4,6 +4,8 @@ hd_5MW_OC4Jckt_DLL_WTurb_WavesIrr_MGrowth
 hd_5MW_OC4Semi_WSt_WavesWN
 hd_5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti
 hd_OC3tripod_offshore_fixedbottom_wavesirr
-hd_py_5MW_OC4Semi_WSt_WavesWN
+py_hd_5MW_OC4Semi_WSt_WavesWN
 hd_TaperCylinderPitchMoment
-#HydroDyn_NBodyMod_cases/NBodyMod1
+hd_NBodyMod1
+hd_NBodyMod2
+hd_NBodyMod3
