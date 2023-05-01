@@ -5,21 +5,21 @@
            NumberOfStrips="  0" NumberOfPolys="      0">
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-                       2.82707                      -1.27977                      89.35002
+                       2.82707                      -1.27977                      89.35003
         </DataArray>
       </Points>
       <PointData>
         <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
-                      -0.13990                       0.73583                      -1.20528
+                      -0.14007                       0.73577                      -1.20458
         </DataArray>
         <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.93638                      -0.00143                      -0.11349
+                       0.93636                      -0.00130                      -0.11348
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.30452                       1.12024                       0.44808
+                       0.29965                       1.11779                       0.46686
         </DataArray>
         <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.00561                      -0.04859                      -0.00429
+                       0.01009                      -0.04383                      -0.00390
         </DataArray>
         <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
                        0.98909                      -0.03725                      -0.14252
@@ -28,7 +28,7 @@
                        0.10257                      -0.52027                       0.84782
         </DataArray>
         <DataArray type="Float32" Name="OrientationZ" NumberOfComponents="3" format="ascii">
-                      -0.10573                      -0.85319                      -0.51078
+                      -0.10574                      -0.85319                      -0.51078
         </DataArray>
       </PointData>
     </Piece>
