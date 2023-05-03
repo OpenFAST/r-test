@@ -1,5 +1,5 @@
 ------- HydroDyn Driver Input File --------------------------------------------
-Compatible with HydroDyn v3.00
+Sample file demonstrating NBodyMod=1 inputs, based on NREL 5.0 MW offshore baseline floating platform HydroDyn input properties for the OC4 Semi-submersible.
 False         Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
     9.80665   Gravity             - Gravity (m/s^2)

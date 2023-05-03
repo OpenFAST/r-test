@@ -1,5 +1,5 @@
 ------- HydroDyn Driver Input File --------------------------------------------
-Compatible with HydroDyn v3.00
+NREL 5.0 MW offshore fixed-bottom HydroDyn input properties for the OC3 Tripod
 FALSE         Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
     9.80665   Gravity             - Gravity (m/s^2)

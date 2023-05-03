@@ -278,11 +278,8 @@ False            OutAll         - Output all user-specified member and joint loa
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 HydroFxi                   
-HydroFyi                   
 HydroFzi                   
-HydroMxi                   
 HydroMyi                   
-HydroMzi                   
 B1WvsFxi                   
 B2WvsFxi                   
 B3WvsFxi                   
