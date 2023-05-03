@@ -69,21 +69,21 @@ False         TFinAero           - Calculate tail fin aerodynamics model (flag)
 "unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
           13  NumTwrNds          - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
-TwrElev     TwrDiam     TwrCd     TwrTI  TwrCb !TwrTI used only with TwrShadow=2, TwrCb used only with MHK=1 or 2
-(m)         (m)         (-)       (-)    (-)
-0.0         3.50        1.1       0.0    1.0
-2.4         3.48        1.1       0.0    1.0
-4.8         3.46        1.1       0.0    1.0
-7.2         3.44        1.1       0.0    1.0
-9.6         3.42        1.1       0.0    1.0
-12.0        3.40        1.1       0.0    1.0
-14.4        3.38        1.1       0.0    1.0
-16.8        3.36        1.1       0.0    1.0
-19.2        3.34        1.1       0.0    1.0
-21.6        3.32        1.1       0.0    1.0
-24.0        3.30        1.1       0.0    1.0
-26.4        3.28        1.1       0.0    1.0
-28.8        3.26        1.1       0.0    1.0
+TwrElev     TwrDiam     TwrCd     TwrTI  TwrCb     TwrCp     TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
+(m)         (m)         (-)       (-)    (-)       (-)       (-)
+0.0         3.50        1.1       0.0    1.0       0.0       0.0
+2.4         3.48        1.1       0.0    1.0       0.0       0.0
+4.8         3.46        1.1       0.0    1.0       0.0       0.0
+7.2         3.44        1.1       0.0    1.0       0.0       0.0
+9.6         3.42        1.1       0.0    1.0       0.0       0.0
+12.0        3.40        1.1       0.0    1.0       0.0       0.0
+14.4        3.38        1.1       0.0    1.0       0.0       0.0
+16.8        3.36        1.1       0.0    1.0       0.0       0.0
+19.2        3.34        1.1       0.0    1.0       0.0       0.0
+21.6        3.32        1.1       0.0    1.0       0.0       0.0
+24.0        3.30        1.1       0.0    1.0       0.0       0.0
+26.4        3.28        1.1       0.0    1.0       0.0       0.0
+28.8        3.26        1.1       0.0    1.0       0.0       0.0
 ======  Outputs  ====================================================================================
 True                    SumPrint - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
                       9 NBlOuts  - Number of blade node outputs [0 - 9] (-)

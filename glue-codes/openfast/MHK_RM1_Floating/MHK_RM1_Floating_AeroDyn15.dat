@@ -70,12 +70,12 @@ False         TFinAero           - Calculate tail fin aerodynamics model (flag)
 "unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
            4  NumTwrNds          - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
-TwrElev     TwrDiam     TwrCd     TwrTI  TwrCb !TwrTI used only with TwrShadow=2, TwrCb used only with Buoyancy=True
-(m)         (m)         (-)       (-)    (-)
--9	     0.3253      0.2       0.0    1.0
--14	     0.3253      0.2       0.0    1.0
--19	     0.3253      0.2       0.0    1.0
--24	     0.3253      0.2       0.0    1.0
+TwrElev     TwrDiam     TwrCd     TwrTI  TwrCb     TwrCp     TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
+(m)         (m)         (-)       (-)    (-)       (-)       (-)
+-9	     0.3253      0.2       0.0    1.0       0.0       0.0
+-14	     0.3253      0.2       0.0    1.0       0.0       0.0
+-19	     0.3253      0.2       0.0    1.0       0.0       0.0
+-24	     0.3253      0.2       0.0    1.0       0.0       0.0
 ======  Outputs  ====================================================================================
 True                    SumPrint - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
                       9 NBlOuts  - Number of blade node outputs [0 - 9] (-)

@@ -68,17 +68,17 @@ False         TFinAero           - Calculate tail fin aerodynamics model (flag)
 "unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
           9   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
-TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb !TwrTI used only with TwrShadow=2, TwrCb used only with MHK=1 or 2
-(m)              (m)           (-)            (-)           (-)
-2.0150000E+01  5.6000000E+00  1.0000000E+00  1.0000000E-01  0.0
-2.1150000E+01  5.5770000E+00  1.0000000E+00  1.0000000E-01  0.0
-3.2150000E+01  5.3180000E+00  1.0000000E+00  1.0000000E-01  0.0
-4.2150000E+01  5.0820000E+00  1.0000000E+00  1.0000000E-01  0.0
-5.4150000E+01  4.8000000E+00  1.0000000E+00  1.0000000E-01  0.0
-6.4150000E+01  4.5650000E+00  1.0000000E+00  1.0000000E-01  0.0
-7.4150000E+01  4.3290000E+00  1.0000000E+00  1.0000000E-01  0.0
-8.3150000E+01  4.1180000E+00  1.0000000E+00  1.0000000E-01  0.0
-8.8150000E+01  4.0000000E+00  1.0000000E+00  1.0000000E-01  0.0
+TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb     TwrCp     TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
+(m)              (m)           (-)            (-)           (-)       (-)       (-)
+2.0150000E+01  5.6000000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+2.1150000E+01  5.5770000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+3.2150000E+01  5.3180000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+4.2150000E+01  5.0820000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+5.4150000E+01  4.8000000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+6.4150000E+01  4.5650000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+7.4150000E+01  4.3290000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+8.3150000E+01  4.1180000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
+8.8150000E+01  4.0000000E+00  1.0000000E+00  1.0000000E-01  0.0       0.0       0.0
 ======  Outputs  ====================================================================================
 True          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           3   NBlOuts             - Number of blade node outputs [0 - 9] (-)
