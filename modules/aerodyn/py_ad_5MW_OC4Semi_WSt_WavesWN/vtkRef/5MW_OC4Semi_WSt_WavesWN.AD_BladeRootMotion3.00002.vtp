@@ -5,24 +5,24 @@
            NumberOfStrips="  0" NumberOfPolys="      0">
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-                       2.83442                       1.31511                      89.41076
+                       2.83442                       1.31511                      89.41077
         </DataArray>
       </Points>
       <PointData>
         <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.15450                       0.67813                       1.22452
+                       0.15431                       0.67806                       1.22518
         </DataArray>
         <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.93638                      -0.00143                      -0.11349
+                       0.93636                      -0.00130                      -0.11348
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.30269                      -1.18875                       0.40938
+                       0.29741                      -1.19138                       0.43972
         </DataArray>
         <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.00561                      -0.04859                      -0.00429
+                       0.01009                      -0.04383                      -0.00390
         </DataArray>
         <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
-                       0.98930                       0.03828                      -0.14075
+                       0.98930                       0.03828                      -0.14076
         </DataArray>
         <DataArray type="Float32" Name="OrientationY" NumberOfComponents="3" format="ascii">
                       -0.10540                      -0.47945                      -0.87122
