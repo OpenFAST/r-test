@@ -17,7 +17,7 @@ False            Echo           - Echo the input file data (flag)
              0   WaveStMod      - Model for stretching incident wave kinematics to instantaneous free surface {0: none=no stretching, 1: vertical stretching, 2: extrapolation stretching, 3: Wheeler stretching} (switch) [unused when WaveMod=0 or when PotMod/=0]
           4600   WaveTMax       - Analysis time for incident wave calculations (sec) [unused when WaveMod=0; determines WaveDOmega=2Pi/WaveTMax in the IFFT]
          0.125   WaveDT         - Time step for incident wave calculations     (sec) [unused when WaveMod=0 or 7; 0.1<=WaveDT<=1.0 recommended; determines WaveOmegaMax=Pi/WaveDT in the IFFT]
-        1.2646   WaveHs         - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
+   1.788414471   WaveHs         - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
             10   WaveTp         - Peak-spectral period of incident waves       (sec) [used only when WaveMod=1 or 2]
 "DEFAULT"        WavePkShp      - Peak-shape parameter of incident wave spectrum (-) or DEFAULT (string) [used only when WaveMod=2; use 1.0 for Pierson-Moskowitz]
       0.314159   WvLowCOff      - Low  cut-off frequency or lower frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, 6, or 7]
