@@ -1,13 +1,12 @@
-% pathToNewFiles = '..\..\build\reg_tests';
-pathToNewFiles = '.\';
-OpenFASTexe = '..\..\build\bin\openfast_x64.exe';
-goldStandard = 'windows-intel';
+pathToLocalFiles = '..\..\build\reg_tests';
+% pathToNewFiles = '.\';
+OpenFASTexe = '..\..\build\bin\openfast_x64_Double.exe';
 
 
 %% example files in the OpenFAST glue-code regression tests:
 caseFile = './glue-codes/openfast/CaseList.md';
 [pathstr] = fileparts(caseFile);
-NewPath = fullfile(pathToNewFiles, pathstr);
+LocalPath = fullfile(pathToLocalFiles, pathstr);
 
 
 fid = fopen(caseFile);
@@ -16,14 +15,14 @@ caseNames = caseNames{1};
 fclose(fid);
 
 for i= 1:length(caseNames)
-    oldRoot = fullfile(pathstr, caseNames{i}, goldStandard, caseNames{i});
-    newRoot = fullfile(NewPath, caseNames{i}, caseNames{i});
+    baselineRoot = fullfile(pathstr,   caseNames{i}, caseNames{i});
+    localRoot    = fullfile(LocalPath, caseNames{i}, caseNames{i});
     
-    status = system([OpenFASTexe ' ' newRoot '.fst']);
+    status = system([OpenFASTexe ' ' localRoot '.fst']);
     if status ~= 0
         disp(['case failed: ' newRoot])
     else
-        PlotFASToutput(strcat({oldRoot,newRoot},'.outb'),{oldRoot,newRoot});
+        PlotFASToutput(strcat({baselineRoot,localRoot},'.outb'),{baselineRoot,localRoot},2);
     end
 end
 
@@ -43,28 +42,25 @@ end
 % end
 
 %%
-
 pathstr = './modules/hydrodyn/';
-
-NewPath = pathstr;
-goldStandard = 'windows-intel';
 
 caseNames = GetSubDirsFirstLevelOnly(pathstr);
 HDexe= '..\..\build\bin\HydroDynDriver_x64.exe';
 
-for i= 1:length(caseNames)
+for i= 4 %1:length(caseNames)
     if ~contains(caseNames{i},'py_')
         % skip the python ones for now
     
         casePath = [ pathstr filesep caseNames{i} ];
         
-        oldRoot = fullfile(casePath, goldStandard);
+        baselineRoot = casePath;
+        localRoot = fullfile(pathToLocalFiles, casePath);
     
         status = system([HDexe ' ' casePath filesep 'hd_driver.inp']);
         if status ~= 0
             disp(['case failed: ' casePath])
         else
-            PlotFASToutput(strcat({oldRoot,casePath},filesep, {'driver.HD.out','driver.SeaSt.out'}),{oldRoot,casePath},2);
+            PlotFASToutput(strcat({baselineRoot,localRoot},filesep, 'driver.out'),{'baseline','local'},2);
         end
     end
 end
