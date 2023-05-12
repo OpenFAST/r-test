@@ -1,5 +1,5 @@
 ------- ELASTODYN V1.00.* INDIVIDUAL BLADE INPUT FILE --------------------------
-AOC 15/50 blade file.  GJStiff -> EdgEAof are mostly lies.
+AOC 15/50 blade file.
 ---------------------- BLADE PARAMETERS ----------------------------------------
          11   NBlInpSt    - Number of blade input stations (-)
           4   BldFlDmp(1) - Blade flap mode #1 structural damping in percent of critical (%)

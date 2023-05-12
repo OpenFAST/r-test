@@ -1,18 +1,7 @@
-Simple rigid motion test of 3 blade rotor through python interface with turbulent inflow
-Based on 5MW\_OC4Semi\_WSt\_WavesWN regression test case
+#py\_ad\_5MW\_OC4Semi\_WSt\_WavesWN
 
-- Rigid rotor, root node defined only
-- Steady rotation speed
-- Turbulent inflow
+This test is based on the fully coupled OpenFAST regression test case 5MW\_OC4Semi\_WSt\_WavesWN. The purpose of this test is to verify that if the same input motions from an OpenFAST test were passed through the c-bindings interface to AeroDyn and InflowWind, the same results would be achieved.
 
-NodePositions.txt -- order of points [x,y,z]
-   - hub point
-   - blade 1 -- 19 nodes
-   - blade 2 -- 19 nodes
-   - blade 3 -- 19 nodes
+For this test, the 5MW\_OC4Semi\_WSt\_WavesWN case is run with no tower effects, and slightly simplified aero (see the `ad_primary.dat` in this case).  All motions are output for all timesteps from OpenFAST using the `WrVTK` option 3 with all fields.
 
-NodeOrientations.txt -- order of points [r11,r12,r13,r21,r22,r23,r31,r32,r33]
-   - hub point
-   - blade 1 -- 19 nodes
-   - blade 2 -- 19 nodes
-   - blade 3 -- 19 nodes
+The resulting vtk motion files are then read in by the simple driver with this test case and used to set all mesh motions passed to AD15 through the c-bindings interface from Python.  The resulting aero loads should be exactly identical to the full test case.

@@ -5,7 +5,7 @@
            NumberOfStrips="  0" NumberOfPolys="      0">
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-                       2.98599                      -0.00003                      90.11583
+                       2.98598                      -0.00003                      90.11588
         </DataArray>
       </Points>
       <PointData>
@@ -13,19 +13,19 @@
                        0.00000                       0.00000                       0.00000
         </DataArray>
         <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.93475                      -0.00232                      -0.11316
+                       0.93497                      -0.00207                      -0.11316
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
                        0.00000                       0.00000                       0.00000
         </DataArray>
         <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
-                       0.99277                      -0.00001                      -0.12003
+                       0.99277                      -0.00001                      -0.12004
         </DataArray>
         <DataArray type="Float32" Name="OrientationY" NumberOfComponents="3" format="ascii">
-                       0.00708                       0.99826                       0.05846
+                       0.00708                       0.99826                       0.05847
         </DataArray>
         <DataArray type="Float32" Name="OrientationZ" NumberOfComponents="3" format="ascii">
-                       0.11982                      -0.05889                       0.99105
+                       0.11983                      -0.05889                       0.99105
         </DataArray>
       </PointData>
     </Piece>

@@ -64,7 +64,7 @@ False         UseBlCm            - Include aerodynamic pitching moment in calcul
 0.2222  HubCenBx                 - Hub center of buoyancy x direction offset (m)
 ======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
 38.6    VolNac                   - Nacelle volume (m^3)
-0.43,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+0.43,0,0 NacCenB                 - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 ======  Tail fin Aerodynamics ======================================================================== 
 False         TFinAero           - Calculate tail fin aerodynamics model (flag)
 "unused"      TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]

@@ -237,7 +237,6 @@ except Exception as e:
 #                                  construct arrays to hold the output channel
 #                                  info
 adilib.InterpOrder   = 2          # order of the interpolation
-adilib.t_start       = 0          # initial time
 adilib.dt            = 0.0125     # time interval that it's being called at
 final_time           = 60         # final time
 adilib.gravity       =   9.80665  # Gravitational acceleration (m/s^2)
@@ -251,7 +250,7 @@ adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean se
 
 # Setup some timekeeping -- this may be smaller than what is passed to AD15
 adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
-time                = np.arange(adilib.t_start,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
+time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 
 # set some flags 
 adilib.storeHHvel   = False
