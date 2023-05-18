@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.4.1-166-gaccfaee5
+ OpenFAST-v3.5.0
  Compile Info:
-  - Compiler: GCC version 12.2.0
+  - Compiler: GCC version 13.1.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Apr 21 2023
-  - Time: 11:12:51
+  - Date: May 18 2023
+  - Time: 16:02:00
  Execution Info:
-  - Date: 04/21/2023
-  - Time: 11:14:20-0400
+  - Date: 05/18/2023
+  - Time: 16:56:31-0600
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -32,12 +32,12 @@
  Running InflowWind.
  Running HydroDyn.
   Generating incident wave kinematics and current time history.
-  Reading in WAMIT output with root name "IOFiles/MHK_RM1_Floating".
+  Reading in WAMIT output with root name "./MHK_RM1_Floating".
   Computing radiation impulse response functions and wave diffraction forces.
  Running MoorDyn (v2.0.0, 2022-12-08).
     This is MoorDyn v2, with significant input file changes from v1.
     Copyright: (C) 2022 National Renewable Energy Laboratory, (C) 2019 Matt Hall
-    Parsing MoorDyn input file: IOFiles/MHK_RM1_Floating_MoorDyn.dat
+    Parsing MoorDyn input file: ./MHK_RM1_Floating_MoorDyn.dat
    Created mooring system:  6 lines, 12 points, 0 rods, 0 bodies.
     Finalizing initial conditions using dynamic relaxation.
 
@@ -49,12 +49,12 @@
  HydroDyn input file.
 
   Time: 0 of 6 seconds.
-                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 11:16:19.                                                                                                                                     
-  Total Real Time:       1.9816 minutes
-  Total CPU Time:        1.9814 minutes
-  Simulation CPU Time:   1.777 minutes
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 16:58:30.                                                                                                                                     
+  Total Real Time:       1.9786 minutes
+  Total CPU Time:        1.9779 minutes
+  Simulation CPU Time:   1.7727 minutes
   Simulated Time:        0.1 minutes
-  Time Ratio (Sim/CPU):  5.62739E-02
+  Time Ratio (Sim/CPU):  5.64100E-02
 
   OpenFAST terminated normally.
 
