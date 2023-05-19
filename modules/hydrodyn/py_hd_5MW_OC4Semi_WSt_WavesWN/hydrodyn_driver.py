@@ -50,7 +50,10 @@ import os
 import sys
 
 # path to find the hydrodyn_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "hydrodyn", "python-lib"]))
+os.chdir(sys.path[0])
+hdLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "hydrodyn", "python-lib"])
+sys.path.insert(0, hdLibPath)
+print(f"Importing 'hydrodyn_library' from {hdLibPath}")
 import hydrodyn_library # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################

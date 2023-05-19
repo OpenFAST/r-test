@@ -48,7 +48,10 @@ import os
 import sys
 
 # path to find the inflowwind_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "inflowwind", "python-lib"]))
+os.chdir(sys.path[0])
+ifwLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "inflowwind", "python-lib"])
+sys.path.insert(0, ifwLibPath)
+print(f"Importing 'inflowwind_library' from {ifwLibPath}")
 import inflowwind_library # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################
