@@ -64,7 +64,7 @@ False         Echo         - Echo input data to <RootName>.ech (flag)
     1.0E10        GSL22        - The linear spring stiffness in y-direction between mooring & platform
     1.0E10        GSL23        - The linear spring stiffness in z-direction between mooring & platform
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint     - Print summary data to <RootName>.sum (flag) (currently unused)
+False         SumPrint     - Print summary data to <RootName>.sum (flag) (currently unused)
           1   OutFile      - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
 True          TabDelim     - Use tab delimiters in text tabular output file? (flag) (currently unused)
 "ES10.3E2"    OutFmt       - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
