@@ -1,7 +1,7 @@
 ------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi configuration, for use in offshore analysis
 ---------------------- SIMULATION CONTROL --------------------------------------
-True          Echo            - Echo input data to <RootName>.ech (flag)
+False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          90   TMax            - Total run time (s)
      0.0125   DT              - Recommended module time step (s)
@@ -44,7 +44,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "NRELOffshrBsline5MW_OC4DeepCwindSemi_MoorDyn.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
        0.05   DT_Out          - Time step for tabular output (s) (or "default")
