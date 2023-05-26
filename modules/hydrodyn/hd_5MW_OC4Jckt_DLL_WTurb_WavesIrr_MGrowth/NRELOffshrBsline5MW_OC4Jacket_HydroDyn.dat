@@ -283,7 +283,7 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
              0   NJOutputs      - Number of joint outputs [Must be < 10]
              0   JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
-True             HDSum          - Output a summary file [flag]
+False            HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
 "E16.8e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
