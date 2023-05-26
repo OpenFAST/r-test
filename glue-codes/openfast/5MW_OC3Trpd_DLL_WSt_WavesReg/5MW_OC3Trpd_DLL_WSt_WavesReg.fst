@@ -1,7 +1,7 @@
 ------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #20: NREL 5.0 MW Baseline Wind Turbine with OC3 Tripod Configuration, for use in offshore analysis
 ---------------------- SIMULATION CONTROL --------------------------------------
-True          Echo            - Echo input data to <RootName>.ech (flag)
+False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          60   TMax            - Total run time (s)
       0.008   DT              - Recommended module time step (s)
@@ -44,7 +44,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
        1000   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
        0.04   DT_Out          - Time step for tabular output (s) (or "default")
