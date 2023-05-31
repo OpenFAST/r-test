@@ -141,7 +141,11 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "TwrBsMyt"                - Side-to-side bending, fore-aft bending, and yaw moments at the base of the tower (mudline)
 "TwrBsMzt"                - Side-to-side bending, fore-aft bending, and yaw moments at the base of the tower (mudline)
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
+          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
 
 "RootFxb1 RootFxb2 RootFxb3"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 1
 "RootFyb1 RootFyb2 RootFyb3"                - Out-of-plane shear, in-plane shear, and axial forces at the root of blade 1

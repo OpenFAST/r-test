@@ -49,7 +49,10 @@ import os
 import sys
 
 # path to find the moordyn_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "moordyn", "python-lib"]))
+os.chdir(sys.path[0])
+mdLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "moordyn", "python-lib"])
+sys.path.insert(0, mdLibPath)
+print(f"Importing 'moordyn_library' from {mdLibPath}")
 import moordyn_library      # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################

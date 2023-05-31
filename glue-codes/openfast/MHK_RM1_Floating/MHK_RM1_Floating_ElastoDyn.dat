@@ -1,4 +1,4 @@
-------- ELASTODYN for OpenFAST INPUT FILE --------------------------------------
+------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
 Floating MHK turbine structural input properties, based on the RM1 tidal current rotor
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
@@ -30,7 +30,7 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
           0   TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
           0   Azimuth     - Initial azimuth angle for blade 1 (degrees)
-      11.50   RotSpeed    - Initial or fixed rotor speed (rpm)
+       11.5   RotSpeed    - Initial or fixed rotor speed (rpm)
           0   NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
           0   TTDspFA     - Initial fore-aft tower-top displacement (meters)
           0   TTDspSS     - Initial side-to-side tower-top displacement (meters)
@@ -42,11 +42,11 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
 ---------------------- TURBINE CONFIGURATION -----------------------------------
           2   NumBl       - Number of blades (-)
-       10.0   TipRad      - The distance from the rotor apex to the blade tip (meters)
-        1.0   HubRad      - The distance from the rotor apex to the blade root (meters)
-        0.0   PreCone(1)  - Blade 1 cone angle (degrees)
-        0.0   PreCone(2)  - Blade 2 cone angle (degrees)
-        0.0   PreCone(3)  - Blade 3 cone angle (degrees) [unused for 2 blades]
+         10   TipRad      - The distance from the rotor apex to the blade tip (meters)
+          1   HubRad      - The distance from the rotor apex to the blade root (meters)
+          0   PreCone(1)  - Blade 1 cone angle (degrees)
+          0   PreCone(2)  - Blade 2 cone angle (degrees)
+          0   PreCone(3)  - Blade 3 cone angle (degrees) [unused for 2 blades]
      0.2222   HubCM       - Distance from rotor apex to hub mass [positive downwind] (meters)
           0   UndSling    - Undersling length [distance from teeter pin to the rotor apex] (meters) [unused for 3 blades]
           0   Delta3      - Delta-3 angle for teetering rotors (degrees) [unused for 3 blades]
@@ -61,8 +61,8 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
        -1.2   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
        -1.2   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
-      -24.0   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
-       -9.0   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+        -24   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+         -9   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
           0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
           0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
       -6.09   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
@@ -73,7 +73,7 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   TipMass(3)  - Tip-brake mass, blade 3 (kg) [unused for 2 blades]
         140   HubMass     - Hub mass (kg)
        79.6   HubIner     - Hub inertia about rotor axis [3 blades] or teeter axis [2 blades] (kg m^2)
-     139.50   GenIner     - Generator inertia about HSS (kg m^2)
+      139.5   GenIner     - Generator inertia about HSS (kg m^2)
       40100   NacMass     - Nacelle mass (kg)
      244643   NacYIner    - Nacelle inertia about yaw axis (kg m^2)
           0   YawBrMass   - Yaw bearing mass (kg)
@@ -83,9 +83,9 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
  1053535885   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
           8   BldNodes    - Number of blade nodes (per blade) used for analysis (-)
-"MHK_RM1_ElastoDyn_Blade.dat"    BldFile(1)    - Name of file containing properties for blade 1 (quoted string)
-"MHK_RM1_ElastoDyn_Blade.dat"    BldFile(2)    - Name of file containing properties for blade 2 (quoted string)
-"unused"                         BldFile(3)    - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
+"MHK_RM1_ElastoDyn_Blade.dat"    BldFile(1)  - Name of file containing properties for blade 1 (quoted string)
+"MHK_RM1_ElastoDyn_Blade.dat"    BldFile(2)  - Name of file containing properties for blade 2 (quoted string)
+"unused"      BldFile(3)  - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
 ---------------------- ROTOR-TEETER --------------------------------------------
           0   TeetMod     - Rotor-teeter spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
           0   TeetDmpP    - Rotor-teeter damper position (degrees) [used only for 2 blades and when TeetMod=1]
@@ -105,7 +105,7 @@ False         Furling     - Read in additional model properties for furling turb
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
           2   TwrNodes    - Number of tower nodes used for analysis (-)
-"MHK_RM1_Floating_ElastoDyn_Tower.dat"    TwrFile    - Name of file containing tower properties (quoted string)
+"MHK_RM1_Floating_ElastoDyn_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
           1   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
@@ -118,15 +118,21 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           0   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           0   BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-PtfmSurge
-PtfmSway
-PtfmHeave
-PtfmRoll
-PtfmPitch
-PtfmYaw
-TwrTpTDxi
-TwrTpTDyi
-TwrTpTDzi
-OoPDefl1
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
---------------------------------------------------------------------------------
+"PtfmSurge"                
+"PtfmSway"                 
+"PtfmHeave"                
+"PtfmRoll"                 
+"PtfmPitch"                
+"PtfmYaw"                  
+"TwrTpTDxi"                
+"TwrTpTDyi"                
+"TwrTpTDzi"                
+"OoPDefl1"                 
+END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
+====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
+          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
+----------------------------------------------------------------
+
