@@ -230,7 +230,6 @@ False            OutAll         - Output all user-specified member and joint loa
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 HydroFxi                   
 HydroFzi                   
-HydroMxi                   
 HydroMyi                   
 M1N1Vxi                   - Longitudinal and vertical wave particle velocities at output joint 1 == mesh node 19
 M1N1Vzi                   - Longitudinal and vertical wave particle velocities at output joint 1 == mesh node 19
@@ -246,4 +245,5 @@ END of output channels and end of file. (the word "END" must appear in the first
 
 # channels removed due to numerical instability in reg-test
 HydroFyi                   
+HydroMxi                   
 HydroMzi                   
