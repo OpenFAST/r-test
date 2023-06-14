@@ -49,8 +49,11 @@ import sys
 from visread import *
 
 # path to find the aerodyn_inflow_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"]))
-import aerodyn_inflow_library as adi        # this file handles the conversion from python to c-bound types and should not be changed by the user
+os.chdir(sys.path[0])
+adiLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"])
+sys.path.insert(0, adiLibPath)
+print(f"Importing 'aerodyn_inflow_library' from {adiLibPath}")
+import aerodyn_inflow_library as adi # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################
 # Locations to build directory relative to r-test directory.  This is specific
