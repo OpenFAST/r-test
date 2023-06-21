@@ -24,4 +24,7 @@ F              WindGrid -- report wind data at set of Y,Z coordinates (flag)
 0,0,150        GridCtrCoord -- coordinates of center of grid (m)
 1,1,1          GridDX,GridDY,GridDZ -- Stepsize of grid (m)
 10,10,10       GridNX,GridNY,GridNZ -- number of grid points in X, Y and Z directions (-)
+---- Output VTK of XY slice -------------------------------------------------
+f              XYslice        -- Export an XY slice to VTK
+90             XYslice_height -- Height for XY slice
 END of driver input file

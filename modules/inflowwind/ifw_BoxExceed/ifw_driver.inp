@@ -24,4 +24,7 @@ InflowWind driver input file.
    0,0,139.5      GridCtrCoord   -- coordinate of center of grid                          (m)
    0,1.25,1.25    GridDx,GridDY,GridDZ  -- Step size of grid                              (m)
    0,319,223      GridNx,GridNY,GridNZ  -- number of grid points in X, Y and Z directions (-)
+---- Output VTK of XY slice -------------------------------------------------
+f              XYslice        -- Export an XY slice to VTK
+90             XYslice_height -- Height for XY slice
 END of driver input file
