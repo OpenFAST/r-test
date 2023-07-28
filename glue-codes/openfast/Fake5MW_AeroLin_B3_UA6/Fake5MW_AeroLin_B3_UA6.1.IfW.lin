@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 28-Jul-2023 at 17:14:57 using OpenFAST, compiled on Jul 28 2023 at 13:54:30 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
+Linearized model: Predictions were generated on 28-Jul-2023 at 17:47:17 using OpenFAST, compiled on Jul 28 2023 at 17:24:37 as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
