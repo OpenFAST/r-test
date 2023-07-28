@@ -262,7 +262,7 @@ time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # to
 adilib.storeHHvel   = False
 adilib.WrVTK        = 2         # animation
 adilib.WrVTK_Type   = 3         # surface and line meshes
-adilib.transposeDCM = True
+adilib.transposeDCM = 1         # 0=false, 1=true
 
 #==============================================================================
 # Basic alogrithm for using AeroDyn+InflowWind library
