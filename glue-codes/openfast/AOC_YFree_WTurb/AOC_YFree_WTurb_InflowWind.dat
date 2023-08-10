@@ -49,15 +49,15 @@ False         TowerFile      - Have tower file (.twr) (flag) ignored when WindTy
        0.03   Z0             - Surface roughness length (m) (used for LG wind profile type only)
           0   XOffset         - Initial offset in +x direction (shift of wind box)
 ================== LIDAR Parameters ===========================================================================
-          0   SensorType          - Switch for lidar configuration (0 = None, 1 = Single Point Beam(s), 2 = Continuous, 3 = Pulsed)
+          1   SensorType          - Switch for lidar configuration (0 = None, 1 = Single Point Beam(s), 2 = Continuous, 3 = Pulsed)
           0   NumPulseGate        - Number of lidar measurement gates (used when SensorType = 3)
          30   PulseSpacing        - Distance between range gates (m) (used when SensorType = 3)
-          0   NumBeam             - Number of lidar measurement beams (0-5)(used when SensorType = 1)
-       -200   FocalDistanceX      - Focal distance co-ordinates of the lidar beam in the x direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
-          0   FocalDistanceY      - Focal distance co-ordinates of the lidar beam in the y direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
-          0   FocalDistanceZ      - Focal distance co-ordinates of the lidar beam in the z direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
+          2   NumBeam             - Number of lidar measurement beams (0-5)(used when SensorType = 1)
+     -10 -5   FocalDistanceX      - Focal distance co-ordinates of the lidar beam in the x direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
+       0  0   FocalDistanceY      - Focal distance co-ordinates of the lidar beam in the y direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
+       0  0   FocalDistanceZ      - Focal distance co-ordinates of the lidar beam in the z direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
 0.0 0.0 0.0   RotorApexOffsetPos  - Offset of the lidar from hub height (m)
-         17   URefLid             - Reference average wind speed for the lidar[m/s]
+         12   URefLid             - Reference average wind speed for the lidar[m/s]
        0.25   MeasurementInterval - Time between each measurement [s]
       False   LidRadialVel        - TRUE => return radial component, FALSE => return 'x' direction estimate
           1   ConsiderHubMotion   - Flag whether to consider the hub motion's impact on Lidar measurements
@@ -67,5 +67,7 @@ False         SumPrint     - Print summary data to <RootName>.IfW.sum (flag)
 "Wind1VelX"               X-direction wind velocity at point WindList(1)
 "Wind1VelY"               Y-direction wind velocity at point WindList(1)
 "Wind1VelZ"               Z-direction wind velocity at point WindList(1)
+"WindMeas1"               Wind measurement at sensor 1
+"WindMeas2"               Wind measurement at sensor 2
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
