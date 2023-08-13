@@ -5,24 +5,24 @@
            NumberOfStrips="  0" NumberOfPolys="      0">
       <Points>
         <DataArray type="Float32" NumberOfComponents="3" format="ascii">
-                       3.10060                      -0.07063                      91.60990
+                       3.10061                      -0.07063                      91.60993
         </DataArray>
       </Points>
       <PointData>
         <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
-                      -0.00160                      -1.41237                      -0.07627
+                      -0.00134                      -1.41281                      -0.07516
         </DataArray>
         <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
-                       0.93571                      -0.00226                      -0.11338
+                       0.93587                      -0.00203                      -0.11337
         </DataArray>
         <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
-                       0.08079                       0.02544                      -1.37547
+                       0.08541                       0.01317                      -1.36398
         </DataArray>
         <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
-                      -0.05920                      -0.01518                       0.01302
+                      -0.05333                      -0.01260                       0.01253
         </DataArray>
         <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
-                       0.99705                      -0.00206                      -0.07669
+                       0.99705                      -0.00206                      -0.07670
         </DataArray>
         <DataArray type="Float32" Name="OrientationY" NumberOfComponents="3" format="ascii">
                        0.00567                       0.99889                       0.04679

@@ -61,12 +61,12 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
           0   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
       0.692   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
-       11.5   TowerHt     - Height of tower above ground level [onshore], MSL [offshore], or seabed [MHK] (meters)
-          0   TowerBsHt   - Height of tower base above ground level [onshore], MSL [offshore], or seabed [MHK] (meters)
-          0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-          0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-         -0   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform CM (meters)
-         -0   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore], or seabed [MHK] to the platform reference point (meters)
+       11.5   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+          0   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+          0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+          0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+         -0   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+         -0   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
 ---------------------- MASS AND INERTIA ----------------------------------------
           0   TipMass(1)  - Tip-brake mass, blade 1 (kg)
           0   TipMass(2)  - Tip-brake mass, blade 2 (kg)
@@ -141,5 +141,11 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "YawBrFyp"                - Tower-top (non-yawing) FA and S2S shear forces
 "YawBrMxn"                - Tower-top (yawing) rolling and pitching bending moments
 "YawBrMyn"                - Tower-top (yawing) rolling and pitching bending moments
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
+====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
+          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
+----------------------------------------------------------------
+

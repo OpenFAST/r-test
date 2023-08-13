@@ -1,5 +1,4 @@
 ad_timeseries_shutdown
-ad_BAR_Baseline
 ad_BAR_CombinedCases
 ad_BAR_OLAF
 ad_BAR_RNAMotion
@@ -12,3 +11,4 @@ ad_MultipleHAWT
 ad_QuadRotor_OLAF
 ad_VerticalAxis_OLAF
 ad_MHK_RM1_Fixed
+ad_MHK_RM1_Floating

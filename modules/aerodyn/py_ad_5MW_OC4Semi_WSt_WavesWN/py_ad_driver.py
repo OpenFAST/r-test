@@ -49,8 +49,11 @@ import sys
 from visread import *
 
 # path to find the aerodyn_inflow_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"]))
-import aerodyn_inflow_library as adi        # this file handles the conversion from python to c-bound types and should not be changed by the user
+os.chdir(sys.path[0])
+adiLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"])
+sys.path.insert(0, adiLibPath)
+print(f"Importing 'aerodyn_inflow_library' from {adiLibPath}")
+import aerodyn_inflow_library as adi # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################
 # Locations to build directory relative to r-test directory.  This is specific
@@ -237,7 +240,6 @@ except Exception as e:
 #                                  construct arrays to hold the output channel
 #                                  info
 adilib.InterpOrder   = 2          # order of the interpolation
-adilib.t_start       = 0          # initial time
 adilib.dt            = 0.0125     # time interval that it's being called at
 final_time           = 60         # final time
 adilib.gravity       =   9.80665  # Gravitational acceleration (m/s^2)
@@ -251,7 +253,7 @@ adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean se
 
 # Setup some timekeeping -- this may be smaller than what is passed to AD15
 adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
-time                = np.arange(adilib.t_start,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
+time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 
 # set some flags 
 adilib.storeHHvel   = False

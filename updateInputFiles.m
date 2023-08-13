@@ -1,17 +1,19 @@
 %% example files in the OpenFAST glue-code regression tests:
-caseFile = './glue-codes/openfast/CaseList.md';
-[pathstr] = fileparts(caseFile);
-
-fid = fopen(caseFile);
-caseNames = textscan(fid,'%s');
-caseNames = caseNames{1};
-fclose(fid);
-
-for i= 1:length(caseNames)
-    casePath = [ pathstr filesep caseNames{i} ];
-    ConvertFAST8_16to17( [casePath filesep caseNames{i} '.fst'], casePath );
+caseFile = {'./glue-codes/openfast/CaseList.md', './glue-codes/openfast-cpp/CaseList.md'};
+for iGlue=1:length(caseFile)
+    [pathstr] = fileparts(caseFile{iGlue});
+    
+    fid = fopen(caseFile{iGlue});
+    caseNames = textscan(fid,'%s');
+    caseNames = caseNames{1};
+    fclose(fid);
+    
+%     caseNames = {'5MW_Land_ModeShapes'}
+    for i= 1:length(caseNames)
+        casePath = [ pathstr filesep caseNames{i} ];
+        ConvertFAST8_16to17( [casePath filesep caseNames{i} '.fst'], casePath );
+    end
 end
-
 
 %% example files in the OpenFAST BeamDyn regression tests:
 caseFile = './modules/beamdyn/CaseList.md';
@@ -39,7 +41,7 @@ end
 
 %% example files in the OpenFAST AeroDyn documentation:
 docsPath = '../../docs/source/user/aerodyn/examples/';
-caseNames = strcat(docsPath, {'ad_driver_example.inp'} );
+caseNames = strcat(docsPath, {'ad_driver_example.dvr'} );
 
 for i= 1:length(caseNames)
     ConvertAeroDynDriver( caseNames{i}, docsPath );  
@@ -57,8 +59,17 @@ if fid > 0
 
     for i= 1:length(caseNames)
         casePath = [ pathstr filesep caseNames{i} ];
-        ConvertAeroDynDriver( [casePath filesep 'ad_driver.inp'], casePath );  
+        ConvertAeroDynDriver( [casePath filesep 'ad_driver.dvr'], casePath );  
     end
+end
+
+%% example files in the OpenFAST HydroDyn regression tests:
+pathstr = './modules/hydrodyn/';
+caseNames = GetSubDirsFirstLevelOnly(pathstr);
+
+for i= 1:length(caseNames)
+    casePath = fullfile(pathstr, caseNames{i});
+    ConvertHydroDynDriver( [casePath filesep 'hd_driver.inp'], casePath );  
 end
 
 
@@ -82,6 +93,6 @@ for i= 1:length(caseNames)
     TSfile = [ pathstr filesep caseNames{i} ];
     TSData=FAST2Matlab(TSfile,2);
     Matlab2FAST(TSData,template,TSfile,2);
-    system([TurbSim_exe ' ' TSfile])
+    %system([TurbSim_exe ' ' TSfile])
 end
 
