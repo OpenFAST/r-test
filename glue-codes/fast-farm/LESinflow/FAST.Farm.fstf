@@ -78,8 +78,10 @@ DEFAULT            Mod_Projection     - Switch to select how the wake plane velo
 "Inflow/WAT/isoturb_1024x32x16.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
 1024, 32, 16       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
 5.5, 4.0, 4.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=True] (flag)
 default            WAT_k_Def          - Calibrated parameter for the influence of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=0.6]
 default            WAT_k_Grad         - Calibrated parameter for the influence of the radial velocity gradient of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=0.35]
+default            WAT_D_BrkDwn       - Downstream distance in rotor diameter after which WAT scaling has reached 100% capacity [>=0] or DEFAULT [DEFAULT=1] (D)
 --- VISUALIZATION ---
 False              WrDisWind          - Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
 0                  NOutDisWindXY      - Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 99]
