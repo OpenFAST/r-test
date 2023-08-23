@@ -40,6 +40,10 @@ WT_X    WT_Y   WT_Z   WT_FASTInFile     X0_High  Y0_High  Z0_High  dX_High  dY_H
 (m)     (m)    (m)    (string)          (m)      (m)      (m)      (m)      (m)      (m)
   0.0  30.0    0.0    "FFTest_WT1.fst"   -69.49   -50.0   5.0      10.17    10.0     10.0
 378.0   0.0    0.0    "FFTest_WT2.fst"   296.63   -80.0   5.0      10.17    10.0     10.0
+--- GROUND/FIXED LIDAR ---
+0                  NumLidar           Number of ground/fixed lidar units (simulated with LidarSim) (-) [>=0]
+Ldr_X  Ldr_Y  Ldr_Z  Ldr_InFile
+(m)    (m)    (m)    (string)
 --- WAKE DYNAMICS ---
 2                  Mod_Wake           - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
@@ -82,6 +86,7 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 0                  NOutDisWindXZ      - Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 99]
 0.0                OutDisWindY        - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 2.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
+False              WrLdrVis           - Write Farm level Lidar visualization info (lidar position, lidar measurement points and values) as VTK [unused when NumLidar==0]
 --- OUTPUT ---
 False              SumPrint           - Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          - Amount of time between creating checkpoint files for potential restart (s) [>0.0]

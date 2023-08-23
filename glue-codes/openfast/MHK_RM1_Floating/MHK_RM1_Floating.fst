@@ -19,6 +19,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           3   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
+          0   CompLidar       - Compute Lidar Module (switch) {0 (None), 1 (nacelle mounted), 2 (hub mounted), 3 (ground mounted), or 4 (platform mounted)}
           2   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
     9.80665   Gravity         - Gravitational acceleration (m/s^2)
@@ -43,6 +44,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "MHK_RM1_Floating_MoorDyn.dat"    MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
+"unused"      LidarFile       - Name of file containing Lidar input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           5   SttsTime        - Amount of time between screen status messages (s)
