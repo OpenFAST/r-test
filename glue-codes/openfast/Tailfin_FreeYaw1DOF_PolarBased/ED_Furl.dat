@@ -1,0 +1,50 @@
+---------------------- FAST FURLING FILE ---------------------------------------
+Comment
+---------------------- FEATURE FLAGS -------------------------------------------
+False       RFrlDOF     - Rotor-furl DOF (flag)
+True       TFrlDOF     - Tail-furl DOF (flag)
+---------------------- INITIAL CONDITIONS --------------------------------------
+   0.0      RotFurl     - Initial or fixed rotor-furl angle (degrees)
+  10.0      TailFurl    - Initial or fixed tail-furl angle (degrees)
+---------------------- TURBINE CONFIGURATION -----------------------------------
+   0.0      Yaw2Shft    - Lateral distance from the yaw axis to the rotor shaft (meters)
+   0.0      ShftSkew    - Rotor shaft skew angle (degrees)
+   0,0,0    RFrlCM_n    - Downwind distance from the tower-top to the CM of the structure that furls with the rotor [not including rotor] (meters)
+   0,0,0    BoomCM_n    - Downwind distance from the tower-top to the tail boom CM (meters)
+10.0,0,0    TFinCM_n    - Downwind distance from the tower-top to the tail fin CM (meters)
+   0,0,0    RFrlPnt_n   - Downwind distance from the tower-top to an arbitrary point on the rotor-furl axis (meters)
+   0.0      RFrlSkew    - Rotor-furl axis skew angle (degrees)
+   0.0      RFrlTilt    - Rotor-furl axis tilt angle (degrees)
+   0,0,0    TFrlPnt_n   - Downwind distance from the tower-top to an arbitrary point on the tail-furl axis (meters)
+   0.0      TFrlSkew    - Tail-furl axis skew angle (degrees)
+  90.0      TFrlTilt    - Tail-furl axis tilt angle (degrees)
+---------------------- MASS AND INERTIA ----------------------------------------
+   0.0      RFrlMass    - Mass of structure that furls with the rotor [not including rotor] (kg)
+   0.0      BoomMass    - Tail boom mass (kg)
+ 300.0      TFinMass    - Tail fin mass (kg)
+   0.0      RFrlIner    - Inertia of the structure that furls with the rotor about the rotor-furl axis (kg m^2) [not including rotor]
+ 0000.0     TFrlIner    - Tail boom inertia about tail-furl axis (kg m^2)
+---------------------- ROTOR-FURL ----------------------------------------------
+   0        RFrlMod     - Rotor-furl spring/damper model {0: none, 1: standard, 2: user-defined from routine UserRFrl} (switch)
+   0.0      RFrlSpr     - Rotor-furl spring constant (N-m/rad) [used only when RFrlMod=1]
+   0.0      RFrlDmp     - Rotor-furl damping constant (N-m/(rad/s)) [used only when RFrlMod=1]
+   0.0      RFrlUSSP    - Rotor-furl up-stop spring position (degrees) [used only when RFrlMod=1]
+   0.0      RFrlDSSP    - Rotor-furl down-stop spring position (degrees) [used only when RFrlMod=1]
+   0.0      RFrlUSSpr   - Rotor-furl up-stop spring constant (N-m/rad) [used only when RFrlMod=1]
+   0.0      RFrlDSSpr   - Rotor-furl down-stop spring constant (N-m/rad) [used only when RFrlMod=1]
+   0.0      RFrlUSDP    - Rotor-furl up-stop damper position (degrees) [used only when RFrlMod=1]
+   0.0      RFrlDSDP    - Rotor-furl down-stop damper position (degrees) [used only when RFrlMod=1]
+   0.0      RFrlUSDmp   - Rotor-furl up-stop damping constant (N-m/(rad/s)) [used only when RFrlMod=1]
+   0.0      RFrlDSDmp   - Rotor-furl down-stop damping constant (N-m/(rad/s)) [used only when RFrlMod=1]
+---------------------- TAIL-FURL -----------------------------------------------
+   0        TFrlMod     - Tail-furl spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTFrl} (switch)
+3848.0      TFrlSpr     - Tail-furl spring constant (N-m/rad) [used only when TFrlMod=1]
+3848.0      TFrlDmp     - Tail-furl damping constant (N-m/(rad/s)) [used only when TFrlMod=1]
+   0.0      TFrlUSSP    - Tail-furl up-stop spring position (degrees) [used only when TFrlMod=1]
+   0.0      TFrlDSSP    - Tail-furl down-stop spring position (degrees) [used only when TFrlMod=1]
+   0.0      TFrlUSSpr   - Tail-furl up-stop spring constant (N-m/rad) [used only when TFrlMod=1]
+   0.0      TFrlDSSpr   - Tail-furl down-stop spring constant (N-m/rad) [used only when TFrlMod=1]
+   0.0      TFrlUSDP    - Tail-furl up-stop damper position (degrees) [used only when TFrlMod=1]
+   0.0      TFrlDSDP    - Tail-furl down-stop damper position (degrees) [used only when TFrlMod=1]
+   0.0      TFrlUSDmp   - Tail-furl up-stop damping constant (N-m/(rad/s)) [used only when TFrlMod=1]
+   0.0      TFrlDSDmp   - Tail-furl down-stop damping constant (N-m/(rad/s)) [used only when TFrlMod=1]
