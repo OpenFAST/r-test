@@ -68,7 +68,7 @@ DEFAULT            Mod_Meander        - Spatial filter model for wake meandering
 DEFAULT            C_Meander          - Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
 --- CURLED-WAKE PARAMETERS [only used if Mod_Wake=2 or 3] ---
 DEFAULT            Swirl              - Switch to include swirl velocities in wake (-) (switch) [DEFAULT=TRUE]
-DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0]
+DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0.0001]
 DEFAULT            NumVortices        - The number of vortices in the curled wake model (-) [DEFAULT=100]
 DEFAULT            sigma_D            - The width of the vortices in the curled wake model non-dimesionalized by rotor diameter (-) [DEFAULT=0.2]
 DEFAULT            FilterInit         - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] (switch)
@@ -77,11 +77,11 @@ DEFAULT            Mod_Projection     - Switch to select how the wake plane velo
 --- WAKE-ADDED TURBULENCE ---
 0                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
 "Inflow/WAT/isoturb_1024x32x16.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
-1024, 32, 16       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+1024, 32, 16       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (-)
 5.5, 4.0, 4.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
-default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=True] (flag)
-0.0                WAT_k_Def          - Calibrated parameter for the influence of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
-0.0                WAT_k_Grad         - Calibrated parameter for the influence of the radial velocity gradient of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
+default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=False] (flag)
+0.5                WAT_k_Def          - Calibrated parameter for the influence of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
+0.5                WAT_k_Grad         - Calibrated parameter for the influence of the radial velocity gradient of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
 default            WAT_D_BrkDwn       - Downstream distance in rotor diameter after which WAT scaling has reached 100% capacity [>=0] or DEFAULT [DEFAULT=1] (D)
 --- VISUALIZATION ---
 False              WrDisWind          - Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
