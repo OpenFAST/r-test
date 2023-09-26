@@ -59,21 +59,22 @@ import aerodyn_inflow_library as adi # this file handles the conversion from pyt
 # coupled to other codes or use cases
 
 basename = "libaerodyn_inflow_c_binding"
+builddir=os.path.sep.join(["..", "..", "..", "..", "..", "build"])
 if sys.platform == "linux" or sys.platform == "linux2":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".so"])
+    library_path = os.path.sep.join([builddir, "modules", "aerodyn", basename + ".so"])
 elif sys.platform == "darwin":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".dylib"])
+    library_path = os.path.sep.join([builddir, "modules", "aerodyn", basename + ".dylib"])
 elif sys.platform == "win32":
     # Windows may have this library installed in one of two locations depending
     # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".dll"])   # cmake install location
+    library_path = os.path.sep.join([builddir, "modules", "aerodyn", basename + ".dll"])   # cmake install location
     if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_Win32.dll"]) # VS build install location
+        library_path = os.path.sep.join([builddir, "bin", "AeroDyn_Inflow_c_binding_Win32.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 32 bit and cannot find 32 bit InflowWind DLL expected at: {library_path}")
             exit(1)
     if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_x64.dll"]) # VS build install location
+        library_path = os.path.sep.join([builddir, "bin", "AeroDyn_Inflow_c_binding_x64.dll"]) # VS build install location
         if not os.path.isfile(library_path):
             print(f"Python is 64 bit and cannot find 64 bit InflowWind DLL expected at: {library_path}")
             exit(1)
@@ -260,7 +261,7 @@ time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # to
 
 # set some flags 
 adilib.storeHHvel   = False
-adilib.WrVTK        = 2         # animation
+adilib.WrVTK        = 0         # animation (0: off, 1: init only, 2: all timesteps)
 adilib.WrVTK_Type   = 3         # surface and line meshes
 adilib.transposeDCM = 1         # 0=false, 1=true
 
