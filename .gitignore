@@ -28,3 +28,7 @@ vtk*
 
 # build directories
 glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build
+
+
+# temporary figures
+_*.png
