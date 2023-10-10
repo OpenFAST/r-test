@@ -1,0 +1,44 @@
+; Wind file converted to HAWC format on 14-Jul-2023 at 20:12:40
+
+; mean removed at z( 31) =        13.11873
+; mean removed at z( 30) =        13.18300
+; mean removed at z( 29) =        13.31895
+; mean removed at z( 28) =        12.95560
+; mean removed at z( 27) =        12.76377
+; mean removed at z( 26) =        13.04453
+; mean removed at z( 25) =        12.35920
+; mean removed at z( 24) =        12.08591
+; mean removed at z( 23) =        11.74931
+; mean removed at z( 22) =        12.03188
+; mean removed at z( 21) =        11.19938
+; mean removed at z( 20) =        10.88357
+; mean removed at z( 19) =        11.09378
+; mean removed at z( 18) =        10.74369
+; mean removed at z( 17) =        10.82134
+; mean removed at z( 16) =        10.34241
+; mean removed at z( 15) =        10.36587
+; mean removed at z( 14) =        10.28314
+; mean removed at z( 13) =        10.14087
+; mean removed at z( 12) =        10.36213
+; mean removed at z( 11) =        10.30617
+; mean removed at z( 10) =        10.53022
+; mean removed at z(  9) =        10.35757
+; mean removed at z(  8) =         9.68071
+; mean removed at z(  7) =         9.80217
+; mean removed at z(  6) =         9.68396
+; mean removed at z(  5) =         9.18591
+; mean removed at z(  4) =         9.27300
+; mean removed at z(  3) =         9.26620
+; mean removed at z(  2) =         9.29807
+; mean removed at z(  1) =         8.52394
+turb_format 1 ;
+
+begin mann;
+  filename_u                               wind-u.bin ;
+  filename_v                               wind-v.bin ;
+  filename_w                               wind-w.bin ;
+  box_dim_u                      1442         0.60000 ;
+  box_dim_v                        31         4.83333 ;
+  box_dim_w                        31         4.83333 ;
+  dont_scale 1;  converter did not rescale turbulence to unit standard deviation
+end mann;
