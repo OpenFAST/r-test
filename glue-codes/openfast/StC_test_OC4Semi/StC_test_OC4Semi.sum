@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 08-Sep-2022 at 14:21:28 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.2.1-270-gf067eb99-dirty
+Predictions were generated on 16-Oct-2023 at 11:00:29 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.0-118-g2774b6c4-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -15,7 +15,7 @@ Predictions were generated on 08-Sep-2022 at 14:21:28 using OpenFAST, compiled a
     ExtPtfm_MCKF (unknown version, unknown date) [not called]
     MAP (unknown version, unknown date) [not called]
     FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (v2.a27, 2022-07-20)
+    MoorDyn (v2.0.0, 2023-09-18)
     OrcaFlexInterface (unknown version, unknown date) [not called]
     IceFloe (unknown version, unknown date) [not called]
     IceDyn (unknown version, unknown date) [not called]
