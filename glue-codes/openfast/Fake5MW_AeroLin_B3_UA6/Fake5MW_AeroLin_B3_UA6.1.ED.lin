@@ -1,0 +1,173 @@
+
+Linearized model: Predictions were generated on 18-Jul-2023 at 21:05:48 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.0-38-g507dd698-dirty
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
+
+Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
+
+Simulation information:
+   Simulation time:                     1.1000 s
+   Rotor Speed:                         1.2671 rad/s
+   Azimuth:                             1.3938 rad
+   Wind Speed:                         13.0000 m/s
+   Number of continuous states:         6
+   Number of discrete states:           0
+   Number of constraint states:         0
+   Number of inputs:                   96
+   Number of outputs:                   4
+   Jacobians included in this file?    No
+
+Order of continuous states:
+   Row/Column Operating Point                  Rotating Frame? Derivative Order Description
+   ---------- ---------------                  --------------- ---------------- -----------
+          1    5.90E+00                               T               2         1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m
+          2    4.78E+00                               T               2         1st flapwise bending-mode DOF of blade 2 (internal DOF index = DOF_BF(2,1)), m
+          3    5.33E+00                               T               2         1st flapwise bending-mode DOF of blade 3 (internal DOF index = DOF_BF(3,1)), m
+          4   -6.41E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
+          5   -6.96E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 2 (internal DOF index = DOF_BF(2,1)), m/s
+          6   -5.04E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 3 (internal DOF index = DOF_BF(3,1)), m/s
+
+Order of continuous state derivatives:
+   Row/Column Operating Point                  Rotating Frame? Derivative Order Description
+   ---------- ---------------                  --------------- ---------------- -----------
+          1   -6.41E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
+          2   -6.96E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 2 (internal DOF index = DOF_BF(2,1)), m/s
+          3   -5.04E+00                               T               2         First time derivative of 1st flapwise bending-mode DOF of blade 3 (internal DOF index = DOF_BF(3,1)), m/s
+          4   -6.50E+00                               T               2         First time derivative of First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s/s
+          5   -1.04E+00                               T               2         First time derivative of First time derivative of 1st flapwise bending-mode DOF of blade 2 (internal DOF index = DOF_BF(2,1)), m/s/s
+          6   -4.15E+00                               T               2         First time derivative of First time derivative of 1st flapwise bending-mode DOF of blade 3 (internal DOF index = DOF_BF(3,1)), m/s/s
+
+Order of inputs:
+     Column   Operating Point                  Rotating Frame? Derivative Order Description
+   ---------- ---------------                  --------------- ---------------- -----------
+          1    2.34E+04                               F               0         Blade 1 X force, node 1, N
+          2   -9.80E+02                               F               0         Blade 1 Y force, node 1, N
+          3   -9.57E+03                               F               0         Blade 1 Z force, node 1, N
+          4    9.85E+04                               F               0         Blade 1 X force, node 2, N
+          5    8.83E+02                               F               0         Blade 1 Y force, node 2, N
+          6   -3.63E+04                               F               0         Blade 1 Z force, node 2, N
+          7    1.47E+05                               F               0         Blade 1 X force, node 3, N
+          8    1.24E+04                               F               0         Blade 1 Y force, node 3, N
+          9   -4.28E+04                               F               0         Blade 1 Z force, node 3, N
+         10    1.64E+04                               F               0         Blade 1 X moment, node 1, Nm
+         11    8.97E+03                               F               0         Blade 1 Y moment, node 1, Nm
+         12    3.78E+04                               F               0         Blade 1 Z moment, node 1, Nm
+         13   -9.08E+04                               F               0         Blade 1 X moment, node 2, Nm
+         14   -4.92E+04                               F               0         Blade 1 Y moment, node 2, Nm
+         15   -1.86E+05                               F               0         Blade 1 Z moment, node 2, Nm
+         16   -2.18E+05                               F               0         Blade 1 X moment, node 3, Nm
+         17   -1.34E+05                               F               0         Blade 1 Y moment, node 3, Nm
+         18   -6.29E+05                               F               0         Blade 1 Z moment, node 3, Nm
+         19    2.27E+04                               F               0         Blade 2 X force, node 1, N
+         20    6.64E+03                               F               0         Blade 2 Y force, node 1, N
+         21    5.11E+02                               F               0         Blade 2 Z force, node 1, N
+         22    9.36E+04                               F               0         Blade 2 X force, node 2, N
+         23    2.16E+04                               F               0         Blade 2 Y force, node 2, N
+         24    3.31E+03                               F               0         Blade 2 Z force, node 2, N
+         25    1.38E+05                               F               0         Blade 2 X force, node 3, N
+         26    1.74E+04                               F               0         Blade 2 Y force, node 3, N
+         27    6.96E+03                               F               0         Blade 2 Z force, node 3, N
+         28    1.09E+04                               F               0         Blade 2 X moment, node 1, Nm
+         29   -3.57E+04                               F               0         Blade 2 Y moment, node 1, Nm
+         30   -1.23E+04                               F               0         Blade 2 Z moment, node 1, Nm
+         31   -6.70E+04                               F               0         Blade 2 X moment, node 2, Nm
+         32    1.83E+05                               F               0         Blade 2 Y moment, node 2, Nm
+         33    5.86E+04                               F               0         Blade 2 Z moment, node 2, Nm
+         34   -1.21E+05                               F               0         Blade 2 X moment, node 3, Nm
+         35    5.56E+05                               F               0         Blade 2 Y moment, node 3, Nm
+         36    2.00E+05                               F               0         Blade 2 Z moment, node 3, Nm
+         37    2.51E+04                               F               0         Blade 3 X force, node 1, N
+         38   -6.47E+03                               F               0         Blade 3 Y force, node 1, N
+         39    2.99E+03                               F               0         Blade 3 Z force, node 1, N
+         40    1.02E+05                               F               0         Blade 3 X force, node 2, N
+         41   -2.49E+04                               F               0         Blade 3 Y force, node 2, N
+         42    5.98E+03                               F               0         Blade 3 Z force, node 2, N
+         43    1.47E+05                               F               0         Blade 3 X force, node 3, N
+         44   -3.09E+04                               F               0         Blade 3 Y force, node 3, N
+         45   -6.23E+03                               F               0         Blade 3 Z force, node 3, N
+         46    1.14E+04                               F               0         Blade 3 X moment, node 1, Nm
+         47    3.08E+04                               F               0         Blade 3 Y moment, node 1, Nm
+         48   -2.81E+04                               F               0         Blade 3 Z moment, node 1, Nm
+         49   -6.91E+04                               F               0         Blade 3 X moment, node 2, Nm
+         50   -1.48E+05                               F               0         Blade 3 Y moment, node 2, Nm
+         51    1.54E+05                               F               0         Blade 3 Z moment, node 2, Nm
+         52   -1.29E+05                               F               0         Blade 3 X moment, node 3, Nm
+         53   -4.84E+05                               F               0         Blade 3 Y moment, node 3, Nm
+         54    4.46E+05                               F               0         Blade 3 Z moment, node 3, Nm
+         55    0.00E+00                               F               0         Platform X force, node 1, N
+         56    0.00E+00                               F               0         Platform Y force, node 1, N
+         57    0.00E+00                               F               0         Platform Z force, node 1, N
+         58    0.00E+00                               F               0         Platform X moment, node 1, Nm
+         59    0.00E+00                               F               0         Platform Y moment, node 1, Nm
+         60    0.00E+00                               F               0         Platform Z moment, node 1, Nm
+         61    0.00E+00                               F               0         Tower X force, node 1, N
+         62    0.00E+00                               F               0         Tower Y force, node 1, N
+         63    0.00E+00                               F               0         Tower Z force, node 1, N
+         64    0.00E+00                               F               0         Tower X force, node 2, N
+         65    0.00E+00                               F               0         Tower Y force, node 2, N
+         66    0.00E+00                               F               0         Tower Z force, node 2, N
+         67    0.00E+00                               F               0         Tower X force, node 3, N
+         68    0.00E+00                               F               0         Tower Y force, node 3, N
+         69    0.00E+00                               F               0         Tower Z force, node 3, N
+         70    0.00E+00                               F               0         Tower X moment, node 1, Nm
+         71    0.00E+00                               F               0         Tower Y moment, node 1, Nm
+         72    0.00E+00                               F               0         Tower Z moment, node 1, Nm
+         73    0.00E+00                               F               0         Tower X moment, node 2, Nm
+         74    0.00E+00                               F               0         Tower Y moment, node 2, Nm
+         75    0.00E+00                               F               0         Tower Z moment, node 2, Nm
+         76    0.00E+00                               F               0         Tower X moment, node 3, Nm
+         77    0.00E+00                               F               0         Tower Y moment, node 3, Nm
+         78    0.00E+00                               F               0         Tower Z moment, node 3, Nm
+         79    0.00E+00                               F               0         Hub X force, node 1, N
+         80    0.00E+00                               F               0         Hub Y force, node 1, N
+         81    0.00E+00                               F               0         Hub Z force, node 1, N
+         82    0.00E+00                               F               0         Hub X moment, node 1, Nm
+         83    0.00E+00                               F               0         Hub Y moment, node 1, Nm
+         84    0.00E+00                               F               0         Hub Z moment, node 1, Nm
+         85    0.00E+00                               F               0         Nacelle X force, node 1, N
+         86    0.00E+00                               F               0         Nacelle Y force, node 1, N
+         87    0.00E+00                               F               0         Nacelle Z force, node 1, N
+         88    0.00E+00                               F               0         Nacelle X moment, node 1, Nm
+         89    0.00E+00                               F               0         Nacelle Y moment, node 1, Nm
+         90    0.00E+00                               F               0         Nacelle Z moment, node 1, Nm
+         91    0.00E+00                               T               0         Blade 1 pitch command, rad
+         92    0.00E+00                               T               0         Blade 2 pitch command, rad
+         93    0.00E+00                               T               0         Blade 3 pitch command, rad
+         94    0.00E+00                               F               0         Yaw moment, Nm
+         95    0.00E+00                               F               0         Generator torque, Nm
+         96    0.00E+00                               F               0         Extended input: collective blade-pitch command, rad
+
+Order of outputs:
+        Row   Operating Point                  Rotating Frame? Derivative Order Description
+   ---------- ---------------                  --------------- ---------------- -----------
+          1    7.99E+01                               F               0         Azimuth, (deg)
+          2    1.21E+01                               F               0         RotSpeed, (rpm)
+          3    8.33E+02                               F               0         TwrBsFxt, (kN)
+          4    7.47E+04                               F               0         TwrBsMyt, (kN-m)
+
+
+Linearized state matrices:
+
+A: 6 x 6
+    0.00E+00  0.00E+00  0.00E+00  1.00E+00  0.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.00E+00
+   -1.60E+01  0.00E+00  0.00E+00  2.38E-03  0.00E+00  0.00E+00
+    0.00E+00 -1.66E+01  0.00E+00  0.00E+00 -1.43E-03  0.00E+00
+    0.00E+00  0.00E+00 -1.59E+01  0.00E+00  0.00E+00 -6.84E-03
+B: 6 x 96
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    2.22E-05 -1.50E-06 -7.15E-06  1.51E-04 -1.47E-06 -4.22E-05  5.00E-04  3.17E-05 -1.25E-04  7.13E-07  3.68E-07  2.13E-06  2.65E-06  1.78E-06  1.02E-05  4.68E-06  4.09E-06  2.32E-05  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  2.40E+01  0.00E+00  0.00E+00  0.00E+00  0.00E+00  2.40E+01
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  2.29E-05  5.30E-06 -7.68E-07  1.55E-04  2.66E-05 -2.13E-06  5.14E-04  5.86E-05  1.13E-05  4.57E-07 -2.09E-06 -8.22E-07  1.43E-06 -9.96E-06 -3.82E-06  1.93E-06 -2.25E-05 -8.46E-06  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00 -6.04E+00  0.00E+00  0.00E+00  0.00E+00 -6.04E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  2.31E-05 -3.73E-06  1.94E-06  1.55E-04 -2.37E-05  3.01E-06  5.10E-04 -8.17E-05 -2.67E-05  4.00E-07  1.72E-06 -1.46E-06  1.16E-06  8.15E-06 -6.90E-06  1.31E-06  1.84E-05 -1.55E-05  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00 -1.03E+01  0.00E+00  0.00E+00 -1.03E+01
+C: 4 x 6
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    4.70E+01  4.99E+01  4.77E+01 -3.88E-03 -8.42E-03  1.14E-01
+    4.50E+03  2.80E+03  5.66E+03 -9.79E-01 -4.84E+00  1.54E+01
+D: 4 x 96
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00
+    9.35E-04  4.41E-06  2.10E-05  5.56E-04  4.32E-06  1.24E-04 -4.72E-04 -9.34E-05  3.67E-04 -2.10E-06 -1.08E-06 -6.28E-06 -7.80E-06 -5.25E-06 -3.01E-05 -1.38E-05 -1.20E-05 -6.82E-05  9.31E-04 -1.60E-05  2.31E-06  5.33E-04 -8.00E-05  6.42E-06 -5.47E-04 -1.76E-04 -3.41E-05 -1.37E-06  6.29E-06  2.47E-06 -4.31E-06  3.00E-05  1.15E-05 -5.80E-06  6.78E-05  2.55E-05  9.31E-04  1.12E-05 -5.82E-06  5.33E-04  7.13E-05 -9.05E-06 -5.33E-04  2.46E-04  8.02E-05 -1.20E-06 -5.16E-06  4.38E-06 -3.48E-06 -2.45E-05  2.07E-05 -3.92E-06 -5.52E-05  4.66E-05  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00 -7.87E+01  2.27E+01  2.84E+01  0.00E+00  0.00E+00 -2.76E+01
+    8.58E-02  4.22E-04  7.17E-03  5.29E-02  4.14E-04  1.66E-02 -4.23E-02 -8.94E-03  3.76E-02 -2.01E-04  8.96E-04 -6.01E-04 -7.47E-04  4.97E-04 -2.88E-03 -1.32E-03 -1.51E-04 -6.53E-03  7.55E-02 -8.28E-04  6.44E-03  3.57E-02 -4.15E-03  8.37E-03 -3.96E-02 -9.15E-03  6.51E-03 -7.13E-05  1.33E-03  1.28E-04 -2.24E-04  2.56E-03  5.97E-04 -3.01E-04  4.52E-03  1.32E-03  9.06E-02  1.36E-03  3.85E-03  5.81E-02  8.65E-03  2.03E-03 -5.56E-02  2.98E-02  9.78E-03 -1.46E-04  3.75E-04  5.31E-04 -4.22E-04 -1.97E-03  2.51E-03 -4.76E-04 -5.70E-03  5.65E-03  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  0.00E+00  1.46E-02  0.00E+00  0.00E+00  4.38E-02  0.00E+00  0.00E+00  7.30E-02  0.00E+00  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  1.00E-03  0.00E+00  0.00E+00  1.00E-03  0.00E+00  9.00E-02  0.00E+00  5.00E-03  0.00E+00  1.00E-03  0.00E+00  8.76E-02  0.00E+00  0.00E+00  0.00E+00  1.00E-03  0.00E+00 -8.56E+03  1.69E+03  4.00E+03  0.00E+00  0.00E+00 -2.87E+03

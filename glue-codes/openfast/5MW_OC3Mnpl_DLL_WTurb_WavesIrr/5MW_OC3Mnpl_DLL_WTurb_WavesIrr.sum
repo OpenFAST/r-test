@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 06-Jul-2022 at 23:04:27 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.1.0-243-ge6028eae-dirty
+Predictions were generated on 16-Oct-2023 at 11:03:25 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.0-118-g2774b6c4-dirty
   compiled with
     NWTC Subroutine Library
     ElastoDyn
@@ -105,6 +105,6 @@ Number of rows in Jacobian matrix used for coupling ElastoDyn, SubDyn, HydroDyn,
       55  -ReactFXss            (N)                   SubDyn
       56  -ReactFYss            (N)                   SubDyn
       57  -ReactFZss            (N)                   SubDyn
-      58  -ReactMXss            (Nm)                  SubDyn
-      59  -ReactMYss            (Nm)                  SubDyn
-      60  -ReactMZss            (Nm)                  SubDyn
+      58  -ReactMXss            (N*m)                 SubDyn
+      59  -ReactMYss            (N*m)                 SubDyn
+      60  -ReactMZss            (N*m)                 SubDyn
