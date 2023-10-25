@@ -86,7 +86,7 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
 "ES11.4e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
-             2   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9].
+             2   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
 MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
   (-)        (-)        (-)
    2          1          1
