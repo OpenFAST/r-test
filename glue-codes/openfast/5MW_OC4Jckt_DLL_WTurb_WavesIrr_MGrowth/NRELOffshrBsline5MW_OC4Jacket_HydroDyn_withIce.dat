@@ -313,7 +313,7 @@ MGDpth     MGThck       MGDens
   -2.00     0.100    1100
  -40.00     0.100    1100
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             0   NMOutputs      - Number of member outputs (-) [must be < 10]
+             0   NMOutputs      - Number of member outputs (-) [must be <= 99]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
 ---------------------- JOINT OUTPUT LIST ---------------------------------------
