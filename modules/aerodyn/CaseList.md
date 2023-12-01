@@ -1,5 +1,4 @@
 ad_timeseries_shutdown
-ad_BAR_Baseline
 ad_BAR_CombinedCases
 ad_BAR_OLAF
 ad_BAR_RNAMotion

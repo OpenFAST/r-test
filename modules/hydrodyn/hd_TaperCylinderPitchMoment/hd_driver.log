@@ -1,25 +1,0 @@
-
- **************************************************************************************************
- HydroDyn Driver
-
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
-
- This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
- See the "LICENSE" file distributed with this software for details.
- **************************************************************************************************
-
-  Running HydroDyn Driver a part of OpenFAST - v2.5.0-628-g691a8597-dirty
-  linked with NWTC Subroutine Library
-
- Opening HydroDyn Driver input file:
- /Users/aplatt/software-development/GitHub/openfast-2/build-DP-gcc10/reg_tests/modules/hydrodyn/hd_
- TaperCylinderPitchMoment/hd_driver.inp
- Running HydroDyn.
-   Setting WaveTMax to 0.0 since WaveMod = 0
-  WARNING:   The random number generator in use differs from the original code provided by NREL.
-  This pRNG uses 8 seeds instead of the 2 in the input file.
-  Time: 0 of 1 seconds.
-                                                                                                   Time: 1 of 1 seconds.  Estimated final completion at 09:17:55.                                   
-  HydroDyn Driver terminated normally.
-

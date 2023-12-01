@@ -1,4 +1,4 @@
-------- SERVODYN v1.05.* INPUT FILE --------------------------------------------
+------- SERVODYN INPUT FILE --------------------------------------------
 FAST certification Test #12: WindPACT 1.5 MW Baseline with many DOFs with VS and VP and ECD wind. Model properties from "InputData1.5A08V07adm.xls" (from C. Hansen) with bugs removed.
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo         - Echo input data to <RootName>.ech (flag)
@@ -63,13 +63,13 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           0   AfC_Amp      - Amplitude for for cosine cycling of flap signal (-) [used only with AfCmode==1]
           0   AfC_Phase    - Phase relative to the blade azimuth (0 is vertical) for for cosine cycling of flap signal (deg) [used only with AfCmode==1]
 ---------------------- STRUCTURAL CONTROL --------------------------------------
-0             NumBStC      - Number of blade structural controllers (integer)
+          0   NumBStC      - Number of blade structural controllers (integer)
 "unused"      BStCfiles    - Name of the files for blade structural controllers (quoted strings) [unused when NumBStC==0]
-0             NumNStC      - Number of nacelle structural controllers (integer)
+          0   NumNStC      - Number of nacelle structural controllers (integer)
 "unused"      NStCfiles    - Name of the files for nacelle structural controllers (quoted strings) [unused when NumNStC==0]
-0             NumTStC      - Number of tower structural controllers (integer)
+          0   NumTStC      - Number of tower structural controllers (integer)
 "unused"      TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
-0             NumSStC      - Number of substructure structural controllers (integer)
+          0   NumSStC      - Number of substructure structural controllers (integer)
 "unused"      SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
 ---------------------- CABLE CONTROL -------------------------------------------
           0   CCmode       - Cable control mode {0: none, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
@@ -104,5 +104,6 @@ True          TabDelim     - Use tab delimiters in text tabular output file? (fl
 "ES10.3E2"    OutFmt       - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
           5   TStart       - Time to begin tabular output (s) (currently unused)
               OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of ServoDyn input file (the word "END" must appear in the first 3 columns of this last line).
+
+

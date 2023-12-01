@@ -44,5 +44,9 @@ True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
 "RootMxr, RootMyr, RootMzr"  
 "TipTDxr, TipTDyr, TipTDzr"  
 "TipRDxr, TipRDyr, TipRDzr"  
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
+====== Outputs for all blade stations (same ending as above for B1N1.... =========================== (optional section)
+"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
+--------------------------------------------------------------------------------
