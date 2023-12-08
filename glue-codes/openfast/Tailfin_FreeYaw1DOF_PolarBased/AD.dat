@@ -1,16 +1,15 @@
 ------- AERODYN v15.04.* INPUT FILE ------------------------------------------------
 Comment
 ======  General Options  ============================================================================
-False        Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)
+False         Echo               - Echo the input to "<rootname>.AD.ech"?  (flag)
 "default"     DTAero             - Time interval for aerodynamic calculations {or "default"} (s)
           0   WakeMod            - Type of wake/induction model (switch) {0=none, 1=BEMT}
           1   AFAeroMod          - Type of blade airfoil aerodynamics model (switch) {1=steady model, 2=Beddoes-Leishman unsteady model}
           0   TwrPotent          - Type tower influence on wind based on potential flow around the tower (switch) {0=none, 1=baseline potential flow, 2=potential flow with Bak correction}
-0             TwrShadow          – Calculate tower influence on wind based on downstream tower shadow? (flag)
+          0   TwrShadow          - Calculate tower influence on wind based on downstream tower shadow? (flag)
 False         TwrAero            - Calculate tower aerodynamic loads? (flag)
 False         FrozenWake         - Assume frozen wake during linearization? (flag) [used only when WakeMod=1 and when linearizing]
 False         CavitCheck         - Perform cavitation check? (flag)
-False         Buoyancy           - Include buoyancy effects? (flag)
 False         CompAA             - Flag to compute AeroAcoustics calculation [only used when WakeMod=1 or 2]
 "unused"      AA_InputFile       - Aeroacoustics input file
 ======  Environmental Conditions  ===================================================================
@@ -35,7 +34,7 @@ False         TIDrag             - Include the drag term in the tangential-induc
 ======  OLAF -- cOnvecting LAgrangian Filaments (Free Vortex Wake) Theory Options  ================== [used only when WakeMod=3]
 "unused"      OLAFInputFileName - Input file for OLAF [used only when WakeMod=3]
 ======  Beddoes-Leishman Unsteady Airfoil Aerodynamics Options  ===================================== [used only when AFAeroMod=2]
-          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalez’s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
+          3   UAMod              - Unsteady Aero Model Switch (switch) {1=Baseline model (Original), 2=Gonzalezï¿½s variant (changes in Cn,Cc,Cm), 3=Minemma/Pierce variant (changes in Cc and Cm)} [used only when AFAeroMod=2]
 True          FLookup            - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ======  Airfoil Information =========================================================================
           1   AFTabMod           - Interpolation method for multiple airfoil tables {1=1D interpolation on AoA (first table only); 2=2D interpolation on AoA and Re; 3=2D interpolation on AoA and UserProp} (-)
@@ -52,19 +51,19 @@ True          UseBlCm            - Include aerodynamic pitching moment in calcul
 "../_DummyTurbineData/AD_Blade_Dummy.dat"    ADBlFile(1)        - Name of file containing distributed aerodynamic properties for Blade #1 (-)
 "../_DummyTurbineData/AD_Blade_Dummy.dat"    ADBlFile(2)        - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "../_DummyTurbineData/AD_Blade_Dummy.dat"    ADBlFile(3)        - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-======  Hub Properties ============================================================================== [used only when Buoyancy=True]
-0.0   VolHub             - Hub volume (m^3)
-0.0   HubCenBx           - Hub center of buoyancy x direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
-0.0   VolNac             - Nacelle volume (m^3)
-0,0,0 NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+======  Hub Properties ============================================================================== [used only when MHK=1 or 2]
+          0   VolHub             - Hub volume (m^3)
+          0   HubCenBx           - Hub center of buoyancy x direction offset (m)
+======  Nacelle Properties ========================================================================== [used only when MHK=1 or 2]
+          0   VolNac             - Nacelle volume (m^3)
+          0,          0,          0    NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 ======  Tail fin Aerodynamics ======================================================================== 
     true      TFinAero           - Calculate tail fin aerodynamics model (flag)
 "AD_Fin.dat"  TFinFile           - Input file for tail fin aerodynamics [used only when TFinAero=True]
-======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-         0   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, or TwrAero=True]
-TwrElev        TwrDiam        TwrCd          TwrTI            TwrCb  !(used only with TwrShadow=2)
-(m)              (m)           (-)            (-)              (-)
+======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
+          0   NumTwrNds         - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
+TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb          TwrCp          TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
+(m)            (m)            (-)            (-)            (-)            (-)            (-)
 ======  Outputs  ====================================================================================
 False          SumPrint            - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
           0   NBlOuts             - Number of blade node outputs [0 - 9] (-)
