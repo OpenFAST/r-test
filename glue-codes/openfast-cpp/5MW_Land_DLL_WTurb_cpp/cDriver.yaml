@@ -8,7 +8,6 @@ t_end:    60.0
 t_max:    60.0
 dt_driver:  0.00625
 restart_freq: 1000
-x_blade_force: 0.0   # we shouldn't need this
 Turbine0:
   turb_id: 0
   FAST_input_filename: "5MW_Land_DLL_WTurb_cpp.fst"
