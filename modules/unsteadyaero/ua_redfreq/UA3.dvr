@@ -34,7 +34,9 @@ True          UseCm               - Use Cm (moment coefficient) data in airfoil 
 T, T, T       ActiveDOF           - List of Degrees of freedom that are active (true or false)
 0.0, 0, 0.01  InitPos             - List of initial positions for the elastic degrees of freedom (m, m and rad)
 0, 0, 0.06    InitVel             - List of initial velocities for the elastic degrees of freedom  (m/s, m/s, and rad/s)
-0.001, 0.001, 0.001     GFScaling - List of generalized force scaling factors to convert from section loads to generalized loads
+0.001, 0.000, 0.000     GFScalingL1 - Generalized force scaling factors to convert from section loads to generalized loads
+0.000, 0.001, 0.000     GFScalingL2 - 
+0.000, 0.000, 0.001     GFScalingL3 -
 2, 0, 0       MassMatrixL1        - Mass matrix 
 0, 2, 0       MassMatrixL2
 0, 0, 2       MassMatrixL3
