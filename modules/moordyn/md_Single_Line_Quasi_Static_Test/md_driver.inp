@@ -1,6 +1,5 @@
  MoorDyn Driver Input File 
 Another comment line
-FALSE    Echo      - echo the input file data (flag)
 ---------------- ENVIRONMENTAL CONDITIONS ------------------
 9.80665		gravity      - gravity (m/s^2)
 1025.0		rhoW      - water density (kg/m^3)
