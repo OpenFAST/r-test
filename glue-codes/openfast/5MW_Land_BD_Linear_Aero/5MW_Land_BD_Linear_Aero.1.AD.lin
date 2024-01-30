@@ -1,0 +1,82 @@
+
+Linearized model: Predictions were generated on 30-Jan-2024 at 09:27:26 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.2
+ linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn; InflowWind; AeroDyn; ServoDyn
+
+Description from the FAST input file: FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
+
+Simulation information:
+   Simulation time:                     1.0005 s
+   Rotor Speed:                         1.2835 rad/s
+   Azimuth:                             1.2733 rad
+   Wind Speed:                          8.0000 m/s
+   Number of continuous states:         0
+   Number of discrete states:           0
+   Number of constraint states:         0
+   Number of inputs:                   57
+   Number of outputs:                   0
+   Jacobians included in this file?    No
+
+Order of inputs:
+     Column   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    0.000000000000E+000                                                     T               0         User property on blade 1, node 1, -
+          2    0.000000000000E+000                                                     T               0         User property on blade 1, node 2, -
+          3    0.000000000000E+000                                                     T               0         User property on blade 1, node 3, -
+          4    0.000000000000E+000                                                     T               0         User property on blade 1, node 4, -
+          5    0.000000000000E+000                                                     T               0         User property on blade 1, node 5, -
+          6    0.000000000000E+000                                                     T               0         User property on blade 1, node 6, -
+          7    0.000000000000E+000                                                     T               0         User property on blade 1, node 7, -
+          8    0.000000000000E+000                                                     T               0         User property on blade 1, node 8, -
+          9    0.000000000000E+000                                                     T               0         User property on blade 1, node 9, -
+         10    0.000000000000E+000                                                     T               0         User property on blade 1, node 10, -
+         11    0.000000000000E+000                                                     T               0         User property on blade 1, node 11, -
+         12    0.000000000000E+000                                                     T               0         User property on blade 1, node 12, -
+         13    0.000000000000E+000                                                     T               0         User property on blade 1, node 13, -
+         14    0.000000000000E+000                                                     T               0         User property on blade 1, node 14, -
+         15    0.000000000000E+000                                                     T               0         User property on blade 1, node 15, -
+         16    0.000000000000E+000                                                     T               0         User property on blade 1, node 16, -
+         17    0.000000000000E+000                                                     T               0         User property on blade 1, node 17, -
+         18    0.000000000000E+000                                                     T               0         User property on blade 1, node 18, -
+         19    0.000000000000E+000                                                     T               0         User property on blade 1, node 19, -
+         20    0.000000000000E+000                                                     T               0         User property on blade 2, node 1, -
+         21    0.000000000000E+000                                                     T               0         User property on blade 2, node 2, -
+         22    0.000000000000E+000                                                     T               0         User property on blade 2, node 3, -
+         23    0.000000000000E+000                                                     T               0         User property on blade 2, node 4, -
+         24    0.000000000000E+000                                                     T               0         User property on blade 2, node 5, -
+         25    0.000000000000E+000                                                     T               0         User property on blade 2, node 6, -
+         26    0.000000000000E+000                                                     T               0         User property on blade 2, node 7, -
+         27    0.000000000000E+000                                                     T               0         User property on blade 2, node 8, -
+         28    0.000000000000E+000                                                     T               0         User property on blade 2, node 9, -
+         29    0.000000000000E+000                                                     T               0         User property on blade 2, node 10, -
+         30    0.000000000000E+000                                                     T               0         User property on blade 2, node 11, -
+         31    0.000000000000E+000                                                     T               0         User property on blade 2, node 12, -
+         32    0.000000000000E+000                                                     T               0         User property on blade 2, node 13, -
+         33    0.000000000000E+000                                                     T               0         User property on blade 2, node 14, -
+         34    0.000000000000E+000                                                     T               0         User property on blade 2, node 15, -
+         35    0.000000000000E+000                                                     T               0         User property on blade 2, node 16, -
+         36    0.000000000000E+000                                                     T               0         User property on blade 2, node 17, -
+         37    0.000000000000E+000                                                     T               0         User property on blade 2, node 18, -
+         38    0.000000000000E+000                                                     T               0         User property on blade 2, node 19, -
+         39    0.000000000000E+000                                                     T               0         User property on blade 3, node 1, -
+         40    0.000000000000E+000                                                     T               0         User property on blade 3, node 2, -
+         41    0.000000000000E+000                                                     T               0         User property on blade 3, node 3, -
+         42    0.000000000000E+000                                                     T               0         User property on blade 3, node 4, -
+         43    0.000000000000E+000                                                     T               0         User property on blade 3, node 5, -
+         44    0.000000000000E+000                                                     T               0         User property on blade 3, node 6, -
+         45    0.000000000000E+000                                                     T               0         User property on blade 3, node 7, -
+         46    0.000000000000E+000                                                     T               0         User property on blade 3, node 8, -
+         47    0.000000000000E+000                                                     T               0         User property on blade 3, node 9, -
+         48    0.000000000000E+000                                                     T               0         User property on blade 3, node 10, -
+         49    0.000000000000E+000                                                     T               0         User property on blade 3, node 11, -
+         50    0.000000000000E+000                                                     T               0         User property on blade 3, node 12, -
+         51    0.000000000000E+000                                                     T               0         User property on blade 3, node 13, -
+         52    0.000000000000E+000                                                     T               0         User property on blade 3, node 14, -
+         53    0.000000000000E+000                                                     T               0         User property on blade 3, node 15, -
+         54    0.000000000000E+000                                                     T               0         User property on blade 3, node 16, -
+         55    0.000000000000E+000                                                     T               0         User property on blade 3, node 17, -
+         56    0.000000000000E+000                                                     T               0         User property on blade 3, node 18, -
+         57    0.000000000000E+000                                                     T               0         User property on blade 3, node 19, -
+
+
+Linearized state matrices:
+
