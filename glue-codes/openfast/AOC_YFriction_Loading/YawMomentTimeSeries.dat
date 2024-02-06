@@ -1,0 +1,16 @@
+#------- STRUCTURAL CONTROL (StC) TIME SERIES FILE ----------------------------
+#         Input file for AOC YawFriction Module Testing (FWTC)
+#---------------------- SIMULATION CONTROL --------------------------------------
+#---------------------- StC SPRING FORCES TABLE -------------------------------- [used only when StC_DOF_MODE=1 or 2]
+#    t                F_X              F_Y             F_Z            M_X                M_Y               M_Z
+#   (s)               (N)              (N)             (N)           (N*m)              (N*m)             (N*m)
+    0.0               0.0              0.0              0.0           0.0              0.0              0.0             
+    10.0              0.0              0.0              0.0           0.0              0.0              100.0              #below MCD
+    20.0              0.0              0.0              0.0           0.0              0.0              200.0              #above MCD, below MCSmax
+    30.0              0.0              0.0              0.0           0.0              0.0              400.0              #above  MCSmax
+    40.0              0.0              0.0              0.0           0.0              0.0              -250.0             #below  MCSmax above MCD
+    50.0              0.0              0.0              0.0           0.0              0.0              -250.0             #below  MCD
+    65.0              0.0              0.0              0.0           0.0              0.0              205.0              #constant forcing
+    70.0              0.0              0.0              0.0           0.0              0.0              140.0              #constant forcing
+    100.0             0.0              0.0              0.0           0.0              0.0              -100.0              #constant forcing
+
