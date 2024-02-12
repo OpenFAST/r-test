@@ -1,3 +1,9 @@
 seastate_wavemod5
+seastate_wavemod7
 seastate_wr_kin1
 seastate1
+seastate_CNW1
+seastate_CNW2
+seastate_WaveStMod1
+seastate_WaveStMod2
+seastate_WaveStMod3
