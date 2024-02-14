@@ -10,6 +10,8 @@ hd_NBodyMod1
 hd_NBodyMod2
 hd_NBodyMod3
 hd_MHstLMod2
+hd_MHstLMod1_compare
+hd_MHstLMod2_compare
 hd_WaveStMod1
 hd_WaveStMod2
 hd_WaveStMod3
