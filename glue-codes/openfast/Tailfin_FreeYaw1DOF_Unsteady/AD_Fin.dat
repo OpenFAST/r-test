@@ -1,10 +1,10 @@
 ------- TAIL FIN AERODYNAMICS INPUT FILE--------------------------------------------
 Comment
 ======  General inputs =============================================================
-1         TFinMod     - Tail fin aerodynamics model {0: none, 1: polar-based, 2: USB-based} (switch)
-1.0       TFinChord   - Tail fin chord (m) [used only when TFinMod=1]
-1.0       TFinArea    - Tail fin planform area (m^2) [used only when TFinMod=1]
-10.,0.,0. TFinRefP_n  - Undeflected position of the tail fin reference point wrt the tower top (m)
+2         TFinMod     - Tail fin aerodynamics model {0: none, 1: polar-based, 2: USB-based} (switch)
+0.27      TFinChord   - Tail fin chord (m) [used only when TFinMod=1]
+0.01053   TFinArea    - Tail fin planform area (m^2) [used only when TFinMod=1]
+0.623,0.,0.    TFinRefP_n  - Undeflected position of the tail fin reference point wrt the tower top (m)
 0.,0.,0.  TFinAngles  - Tail fin chordline skew, tilt, and bank angles about the reference point (degrees)
 0         TFinIndMod  - Model for induced velocity calculation {0: none, 1:rotor-average} (switch)
 ====== Polar-based model ================================ [used only when TFinMod=1] 
