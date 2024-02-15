@@ -1,0 +1,39 @@
+
+Linearized model: Predictions were generated on 14-Feb-2024 at 16:50:13 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.2-dirty
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
+
+Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
+
+Simulation information:
+   Simulation time:                     1.0000 s
+   Rotor Speed:                         1.2799 rad/s
+   Azimuth:                             1.2699 rad
+   Wind Speed:                          8.0000 m/s
+   Number of continuous states:         0
+   Number of discrete states:           0
+   Number of constraint states:         0
+   Number of inputs:                    3
+   Number of outputs:                   3
+   Jacobians included in this file?    No
+
+Order of inputs:
+     Column   Operating Point                     Rotating Frame? Derivative Order Description
+   ---------- ---------------                     --------------- ---------------- -----------
+          1    8.000E+00                                 F               0         Extended input: horizontal wind speed (steady/uniform wind), m/s
+          2    0.000E+00                                 F               0         Extended input: vertical power-law shear exponent, -
+          3    0.000E+00                                 F               0         Extended input: propagation direction, rad
+
+Order of outputs:
+        Row   Operating Point                     Rotating Frame? Derivative Order Description
+   ---------- ---------------                     --------------- ---------------- -----------
+          1    8.000E+00                                 F               0         Wind1VelX, (m/s)
+          2   -0.000E+00                                 F               0         Wind1VelY, (m/s)
+          3    0.000E+00                                 F               0         Wind1VelZ, (m/s)
+
+
+Linearized state matrices:
+
+D: 3 x 3
+    1.000E+00  0.000E+00  0.000E+00
+   -0.000E+00 -0.000E+00 -8.000E+00
+    0.000E+00  0.000E+00  0.000E+00
