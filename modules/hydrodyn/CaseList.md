@@ -19,3 +19,5 @@ hd_MCF_WaveStMod0
 hd_MCF_WaveStMod1
 hd_MCF_WaveStMod2
 hd_MCF_WaveStMod3
+hd_ExctnMod1_ExctnDisp1
+hd_ExctnMod1_ExctnDisp2
