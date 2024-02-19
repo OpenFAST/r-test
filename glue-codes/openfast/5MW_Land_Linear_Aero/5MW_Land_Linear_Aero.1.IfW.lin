@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 14-Feb-2024 at 16:50:13 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.2-dirty
+Linearized model: Predictions were generated on 19-Feb-2024 at 16:54:54 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
