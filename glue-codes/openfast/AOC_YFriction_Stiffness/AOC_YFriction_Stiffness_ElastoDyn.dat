@@ -149,6 +149,7 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "Spn1RDxb3"               - local rotational deflections
 "Spn2RDyb3"               - local rotational deflections
 "Spn3RDzb3"               - local rotational deflections
+"YawFriMom"               - Yaw friction moment
 END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
 ====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
           1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
