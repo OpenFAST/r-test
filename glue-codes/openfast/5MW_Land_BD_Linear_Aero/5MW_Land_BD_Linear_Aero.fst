@@ -1,5 +1,5 @@
 ------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
-FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
+NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + BD
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
