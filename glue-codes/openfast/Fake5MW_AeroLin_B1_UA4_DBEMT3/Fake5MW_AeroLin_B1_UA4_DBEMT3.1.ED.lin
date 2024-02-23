@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 23-Aug-2023 at 18:11:14 using OpenFAST, compiled on Aug 23 2023 at 17:49:47 as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 23-Feb-2024 at 10:24:58 using OpenFAST, compiled on Feb 23 2024 at 09:57:41 as a 64-bit application using double precision at commit v3.5.2-961-gd8feecc1-dirty
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
@@ -48,12 +48,12 @@ Linearized state matrices:
 
 A: 2 x 2
     0.000000000000E+000  1.000000000000E+000
-   -1.593029164215E+001  2.291978849000E-002
+   -1.593029164215E+001  2.291978849005E-002
 B: 2 x 4
     0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
     2.542474657106E+001  0.000000000000E+000  0.000000000000E+000  2.542474657106E+001
 C: 3 x 2
-    4.691463288739E+001 -5.819977817102E-002
+    4.691463288739E+001 -5.819977817116E-002
     4.492627707378E+003 -6.396179845116E+000
     1.000000000000E+000  0.000000000000E+000
 D: 3 x 4
