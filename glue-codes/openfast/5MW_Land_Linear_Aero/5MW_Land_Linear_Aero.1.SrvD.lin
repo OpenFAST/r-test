@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 19-Feb-2024 at 16:54:54 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 26-Feb-2024 at 21:54:36 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
@@ -17,10 +17,10 @@ Simulation information:
    Jacobians included in this file?    No
 
 Order of outputs:
-        Row   Operating Point                     Rotating Frame? Derivative Order Description
-   ---------- ---------------                     --------------- ---------------- -----------
-          1    0.000E+00                                 F               0         GenPwr, (kW)
-          2    0.000E+00                                 F               0         GenTq, (kN-m)
+        Row   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    0.000000000000E+000                                                     F               0         GenPwr, (kW)
+          2    0.000000000000E+000                                                     F               0         GenTq, (kN-m)
 
 
 Linearized state matrices:
