@@ -98,7 +98,7 @@ primary_ifw_file="ifw_primary.dat"
 #       velocities, and accelerations are passed in, and an array of
 #       Forces+Moments is returned.  For debugging, it may be useful to dump all
 #       off this to file.
-DbgOuts=0                       #   For checking the interface, set this to 1
+DbgOuts=1                       #   For checking the interface, set this to 1
 debugout_file="DbgOutputs.out"
 
 #   Output file
@@ -293,6 +293,16 @@ adilib.initRootOrient       = initRootOrient
 adilib.numMeshPts = np.size(initMeshPos_ar,0)
 adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
+
+# assign first 1/3 of mesh points to blade 1, second 1/3 to blade 2, etc.
+adilib.meshPtToBladeNum = np.ones((adilib.numMeshPts),dtype=int)
+for n_pts in range(adilib.numMeshPts):
+    if n_pts < numBladeNode[0]:
+        adilib.meshPtToBladeNum[n_pts] = 1
+    elif n_pts < sum(numBladeNode[0:2]):
+        adilib.meshPtToBladeNum[n_pts] = 2
+    else:
+        adilib.meshPtToBladeNum[n_pts] = 3
 
 # ADI_PreInit: call before anything else
 try:
