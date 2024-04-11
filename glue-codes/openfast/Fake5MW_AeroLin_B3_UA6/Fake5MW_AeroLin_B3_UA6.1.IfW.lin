@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 23-Aug-2023 at 18:11:14 using OpenFAST, compiled on Aug 23 2023 at 17:49:47 as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 26-Feb-2024 at 14:10:34 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.5.2-18-gd6483eb0
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
@@ -40,7 +40,7 @@ Order of inputs:
          19   -8.615590906800E+000                                                     F               0         X-component position of node 7 (blade 2, node 3), m
          20    1.579484528995E+001                                                     F               0         Y-component position of node 7 (blade 2, node 3), m
          21    4.852863399139E+001                                                     F               0         Z-component position of node 7 (blade 2, node 3), m
-         22   -7.951002469533E+000                                                     F               0         X-component position of node 8 (blade 2, node 4), m
+         22   -7.951002469534E+000                                                     F               0         X-component position of node 8 (blade 2, node 4), m
          23    2.213897907052E+001                                                     F               0         Y-component position of node 8 (blade 2, node 4), m
          24    3.121097837086E+001                                                     F               0         Z-component position of node 8 (blade 2, node 4), m
          25   -4.965333909396E+000                                                     F               0         X-component position of node 9 (blade 3, node 1), m
