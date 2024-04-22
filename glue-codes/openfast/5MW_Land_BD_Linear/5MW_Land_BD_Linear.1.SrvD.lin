@@ -1,13 +1,13 @@
 
-Linearized model: Predictions were generated on 28-Jul-2023 at 14:31:42 using OpenFAST, compiled on Jul 28 2023 at 14:11:31 as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 17-Apr-2024 at 16:54:59 using OpenFAST, compiled on Apr 17 2024 at 16:41:44 as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn; ServoDyn
 
 Description from the FAST input file: FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
 
 Simulation information:
-   Simulation time:                     0.0000 s
-   Rotor Speed:                         1.2671 rad/s
-   Azimuth:                             0.0000 rad
+   Simulation time:                     1.0005 s
+   Rotor Speed:                         1.2670 rad/s
+   Azimuth:                             1.2678 rad
    Wind Speed:                          0.0000 m/s
    Number of continuous states:         0
    Number of discrete states:           0

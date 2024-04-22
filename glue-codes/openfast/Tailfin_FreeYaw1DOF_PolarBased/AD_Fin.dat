@@ -10,4 +10,8 @@ Comment
 ====== Polar-based model ================================ [used only when TFinMod=1] 
 2       TFinAFID - Index of Tail fin airfoil number [1 to NumAFfiles]
 ====== Unsteady slender body model  ===================== [used only when TFinMod=2] 
-[TODO inputs for model 2]
+0.911     TFinKp  - Tail fin moment of area about reference point [used only when TFMod=2] (m^3)
+0.3,0.1,0.1       TFinSigma    - Tail fin emperical constant for vortex separation functions [used only when TFMod=2]
+39,60,60  TFinAStar    - Tail fin initial angles for vortex separation functions [used only when TFMod=2] (deg)
+3.1416    TFinKv       - Tail fin vortex lift coefficient [used only when TFMod=2]
+1.3       TFinCDc      - Tail fin drag coefficient [used only when TFMod=2]
