@@ -2,38 +2,36 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2024 National Renewable Energy Laboratory
+ Copyright (C) 2024 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.5.0-607-g1dd8e752-dirty
+ OpenFAST--128-NOTFOUND
  Compile Info:
-  - Compiler: GCC version 10.2.0
+  - Compiler: GCC version 12.3.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Mar  4 2021
-  - Time: 11:39:55
+  - OpenMP: Yes, number of threads: 4/4
+  - Date: May  2 2024
+  - Time: 21:38:56
  Execution Info:
-  - Date: 03/05/2021
-  - Time: 13:45:25-0700
+  - Date: 05/02/2024
+  - Time: 21:57:44+0000
 
  OpenFAST input file heading:
      FAST Certification Test #15: SWRT 3-bladed upwind turbine with many DOFs, variable speed
      control, free yaw, tail-furl, EOG01 event
 
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
- Skipping nodal outputs.
- Running InflowWind.
- Running ServoDyn.
+  Running ElastoDyn.
+  Running InflowWind.
+  Running AeroDyn.
+  Running ServoDyn.
 
- FAST_InitializeAll: IfW_Init:IfW_UniformWind_Init: Could not read upflow column in uniform wind
- files. Assuming upflow is 0.
+ FAST_InitializeAll:InflowWind_Init:IfW_UniformWind_Init: Could not read upflow column in uniform
+ wind files. Assuming upflow is 0.
 
   Time: 0 of 20 seconds.
 
@@ -42,21 +40,22 @@
     Torque vs RPM.xls
 
 
- FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 1,
- blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA due to high angle of attack or
- low relative velocity. This warning will not be repeated though the condition may persist.
+ FAST_Solution:FAST_UpdateStates:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:RotCalcO
+ utput:BEMT_CalcOutput(node 1, blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA
+ due to high angle of attack or low relative velocity. This warning will not be repeated though
+ the condition may persist.
 
-                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 13:48:47.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 13:48:56.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 13:48:50.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 13:48:53.                                                                                                                                     Time: 5 of 20 seconds.  Estimated final completion at 13:48:46.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 13:48:46.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 13:48:50.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 13:48:46.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 13:48:48.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 13:48:45.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 13:48:44.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 13:48:45.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 13:48:46.                                 
- FAST_Solution:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:BEMT_CalcOutput(node 17,
- blade 1):UA_CalcOutput:Mach number exceeds 0.3. Theory is invalid. This warning will not be
- repeated though the condition may persist.
+                                                                                                   Time: 1 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                     Time: 2 of 20 seconds.  Estimated final completion at 21:58:28.                                                                                                                                     Time: 3 of 20 seconds.  Estimated final completion at 21:58:28.                                                                                                                                     Time: 4 of 20 seconds.  Estimated final completion at 21:58:28.                                                                                                                                     Time: 5 of 20 seconds.  Estimated final completion at 21:58:32.                                                                                                                                     Time: 6 of 20 seconds.  Estimated final completion at 21:58:31.                                                                                                                                     Time: 7 of 20 seconds.  Estimated final completion at 21:58:30.                                                                                                                                     Time: 8 of 20 seconds.  Estimated final completion at 21:58:31.                                                                                                                                     Time: 9 of 20 seconds.  Estimated final completion at 21:58:30.                                                                                                                                     Time: 10 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 11 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 12 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 13 of 20 seconds.  Estimated final completion at 21:58:29.                                 
+ FAST_Solution:FAST_UpdateStates:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:RotCalcO
+ utput:BEMT_CalcOutput(node 17, blade 1):UA_CalcOutput:Mach number exceeds 0.3. Theory is invalid.
+ This warning will not be repeated though the condition may persist.
 
-                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 13:48:48.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 13:48:46.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 13:48:47.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 13:48:47.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 13:48:46.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 13:48:47.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 13:48:47.                                                                                                                                   
-  Total Real Time:       3.3609 minutes
-  Total CPU Time:        3.342 minutes
-  Simulation CPU Time:   3.3415 minutes
-  Simulated Time:        0.33333 minutes
-  Time Ratio (Sim/CPU):  9.97560E-02
+                                                                                                   Time: 14 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 15 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 16 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 17 of 20 seconds.  Estimated final completion at 21:58:30.                                                                                                                                    Time: 18 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 19 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                    Time: 20 of 20 seconds.  Estimated final completion at 21:58:29.                                                                                                                                   
+  Total Real Time:       45.337 seconds
+  Total CPU Time:        44.853 seconds
+  Simulation CPU Time:   44.599 seconds
+  Simulated Time:        20 seconds
+  Time Ratio (Sim/CPU):  0.44844
 
   OpenFAST terminated normally.
 
