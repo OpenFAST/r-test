@@ -98,7 +98,7 @@ primary_ifw_file="ifw_primary.dat"
 #       velocities, and accelerations are passed in, and an array of
 #       Forces+Moments is returned.  For debugging, it may be useful to dump all
 #       off this to file.
-DbgOuts=0                       #   For checking the interface, set this to 1
+DbgOuts=1                       #   For checking the interface, set this to 1
 debugout_file="DbgOutputs.out"
 
 #   Output file
@@ -167,12 +167,17 @@ for i in range(numBlades):
 numBladeNode = np.zeros( (numBlades), dtype=int )
 initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
 initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
+initMeshPtToBladeNum_ar = np.empty( (0), dtype=int )
 for i in range(numBlades):
     #   can add checks here that numpts==1
     tmpPos, tmpOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
     initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
     initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
     numBladeNode[i] = numpts
+    # store which blade number this is that these points belong to
+    tmpPtToBladeNum = np.zeros( numpts, dtype=int )
+    tmpPtToBladeNum.fill(i+1)
+    initMeshPtToBladeNum_ar = np.concatenate((initMeshPtToBladeNum_ar,tmpPtToBladeNum))
 del tmpPos
 del tmpOrient
 
@@ -293,6 +298,7 @@ adilib.initRootOrient       = initRootOrient
 adilib.numMeshPts = np.size(initMeshPos_ar,0)
 adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
+adilib.meshPtToBladeNum = initMeshPtToBladeNum_ar
 
 # ADI_PreInit: call before anything else
 try:
