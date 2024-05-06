@@ -2,26 +2,56 @@
 -------------------------------------------------------------------------------
 FALSE         Echo                - Echo the input file data (flag)
 ---------------------- ENVIRONMENTAL CONDITIONS -------------------------------
+ 1.225        FldDens             - Density of working fluid (kg/m^3)
+ 1.464e-05    KinVisc             - Kinematic viscosity of working fluid (m^2/s)
      340.29   SpdSound            - Speed of sound of working fluid (m/s)
 ---------------------- UNSTEADYAERO -------------------------------------------
-"UA3"         OutRootName         - The name which prefixes all UnsteadyAero generated files (quoted string)
-     40.0     InflowVel           - Inflow velocity (m/s)
-       1.0    Re                  - Reynolds number in millions (-)
         3     UAMod               - Unsteady Aero Model Switch (switch) {2=B-L Gonzalez, 3=B-L Minnema/Pierce, 4=B-L HGM 4-states, 5=B-L 5 states, 6=Oye, 7=Boeing-Vertol} [used only when AFAeroMod=2]
 True          FLookup             - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ------------------- AIRFOIL PROPERTIES ----------------------------------------
 "DU21_A17.dat" AirFoil            - Airfoil table (Column 1: Angle of Attack (AoA), column 2: Lift coeff, column 3: Drag coeff).
     3.5       Chord               - Chord length (m)
+0, -0.25      Vec_AQ              - Vector from reference point "A" to aerodynamic center (~quarter chord) "Q" in airfoil coordinates and in chord length. If "A" is at mid chord values are likely (0, -0.25) (-)
+0,  0.25      Vec_AT              - Vector from reference point "A" to three-quarter chord point           "T" in airfoil coordinates and in chord length. If "A" is at mid chord values are likely (0,  0.25) (-)
 True          UseCm               - Use Cm (moment coefficient) data in airfoil table {true/false}
 ------------------- SIMULATION CONTROL ----------------------------------------
-       1      SimMod              - Simulation model [ 1 - use reduced frequency model, 2 - use time series data stored in the TimeInputs file and ignore the remaining parameters ]
+       1      SimMod              - Simulation model {1=reduced frequency model, 2=prescribed-aero time series, 3=elastic cross section}
+---------- REDUCED-FREQUENCY SIMULATION [used only when SimMod=1] -------------
+     40.0     InflowVel           - Inflow velocity (m/s)
        1      NCycles             - Number of angle-of-attack oscillations over the length of the simulation (-)
       60      StepsPerCycle       - Number of timesteps per cycle (-)
        1      Frequency           - Frequency for the airfoil oscillations (Hz)
        2      Amplitude           - Amplitude of the angle of attack oscillations (deg)
      7.5      Mean                - Cycle mean (deg)
        0      Phase               - Initial phase (num steps). 
-"UA-driver-timeseries.dat"     InputsFile          - Time series data in an ASCII input file (whitespace-separated data).  8 header lines, followed by column data. First column is time (sec), second column is angle-of-attack (deg), third column is InflowVel (m/s)
+---------- PRESCRIBED-AERO INPUTS SIMULATION [used only when SimMod=2] --------
+     50.0     TMax_PA             - Total run time (s)
+      0.01    DT_PA               - Recommended module time step (s)
+"AeroTSFile.csv"  AeroTSFile      - Time series data in delimited input file (e.g. csv) with 1 header line, 4 columns: Time (s), angle-of-attack (deg), InflowVel (m/s), Pitch rate (rad/s)
+---------- AERO-ELASTIC SIMULATION [used only when SimMod=3] ------------------
+     50.      TMax                - Total run time (s)
+      0.0050  DT                  - Recommended module time step (s)
+T, T, T       ActiveDOF           - List of Degrees of freedom that are active (true or false)
+0.0, 0, 0.01  InitPos             - List of initial positions for the elastic degrees of freedom (m, m and rad)
+0, 0, 0.06    InitVel             - List of initial velocities for the elastic degrees of freedom  (m/s, m/s, and rad/s)
+0.001, 0.000, 0.000     GFScalingL1 - Generalized force scaling factors to convert from section loads to generalized loads
+0.000, 0.001, 0.000     GFScalingL2 - 
+0.000, 0.000, 0.001     GFScalingL3 -
+2, 0, 0       MassMatrixL1        - Mass matrix 
+0, 2, 0       MassMatrixL2
+0, 0, 2       MassMatrixL3
+0.1, 0, 0     DampMatrixL1        - Damping matrix
+0, 0.1, 0     DampMatrixL2
+0, 0, 3       DampMatrixL3
+3, 0, 0       StifMatrixL1        - Stiffness matrix
+0, 3, 0       StifMatrixL2
+0, 0, 3       StifMatrixL3
+1             Twist               - Fixed twist of the section when torsion degree of freedom is zero (deg)
+1             InflowMod           - Model for the inflow velocity. {1: constant velocity, 2: time series}
+1, 10         Inflow              - Inflow velocity in x and y direction [used only when InflowMod=1]
+"InflowFile.csv"   InflowTSFile    - Input file for inflow velocity. Delimited file (e.g. csv) with one header line, three columns: Time (s), Ux (m/s), Uy (m/s). [used only when InflowMod=2]
+1             MotionMod           - Model for the motion of the degrees of freedom {1: dynamic, 2: prescribed}
+"MotionFile.csv"   MotionTSFile     - Input file for prescribed motion. Delimited file (e.g. csv) with one header line, 10 columns: Time (s), x (m), y (m), th (rad), velocities, and accelerations. [used only when InflowMod=2]
 ------------------- OUTPUT CONTROL --------------------------------------------
 True          SumPrint            - Write unsteady aerodynamics summary file (flag)
 True          WrAFITables         - Write back the aerodynamic coefficients used internally (flag)
