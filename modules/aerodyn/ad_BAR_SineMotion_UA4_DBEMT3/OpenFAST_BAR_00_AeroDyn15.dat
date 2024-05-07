@@ -44,7 +44,7 @@ default                SectAvgPsiFwd - Forward azimuth relative to blade where t
 ======  OLAF -- cOnvecting LAgrangian Filaments (Free Vortex Wake) Theory Options  ================== [used only when WakeMod=3]
 "OLAF.dat"             OLAFInputFileName - Input file for OLAF [used only when WakeMod=3]
 ======  Unsteady Airfoil Aerodynamics Options  ====================================================
-False                  AoA34       - Sample the angle of attack (AoA) at the 3/4 chord or the AC point {default=True} [always used]
+True                   AoA34       - Sample the angle of attack (AoA) at the 3/4 chord or the AC point {default=True} [always used]
 4                      UA_Mod      - Unsteady Aero Model Switch (switch) {0=Quasi-steady (no UA), 2=B-L Gonzalez, 3=B-L Minnema/Pierce, 4=B-L HGM 4-states, 5=B-L HGM+vortex 5 states, 6=Oye, 7=Boeing-Vertol}
 True                   FLookup     - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 0                      UAStartRad  - Starting radius for dynamic stall (fraction of rotor radius [0.0,1.0]) [used only when AFAeroMod=2; if line is missing UAStartRad=0]
