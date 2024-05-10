@@ -214,7 +214,7 @@ FillNumM FillMList             FillFSLoc     FillDens
 MGDpth     MGThck       MGDens
 (m)        (m)         (kg/m^3)
 ---------------------- MEMBER OUTPUT LIST --------------------------------------
-             1   NMOutputs      - Number of member outputs (-) [must be < 10]
+             1   NMOutputs      - Number of member outputs (-) [must be <= 99]
 MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized distance from the start of the member, and must be >=0 and <= 1] [unused if NMOutputs=0]
   (-)        (-)        (-)
    19          1        1.000

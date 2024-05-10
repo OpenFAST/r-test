@@ -17,11 +17,11 @@ False            Echo           - Echo the input file data (flag)
              0   WaveStMod      - Model for stretching incident wave kinematics to instantaneous free surface {0: none=no stretching, 1: vertical stretching, 2: extrapolation stretching, 3: Wheeler stretching} (switch) [unused when WaveMod=0 or when PotMod/=0]
            600   WaveTMax       - Analysis time for incident wave calculations (sec) [unused when WaveMod=0; determines WaveDOmega=2Pi/WaveTMax in the IFFT]
            0.1   WaveDT         - Time step for incident wave calculations     (sec) [unused when WaveMod=0 or 7; 0.1<=WaveDT<=1.0 recommended; determines WaveOmegaMax=Pi/WaveDT in the IFFT]
-             2   WaveHs         - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
+           2.0   WaveHs         - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
           6.75   WaveTp         - Peak-spectral period of incident waves       (sec) [used only when WaveMod=1 or 2]
 "DEFAULT"        WavePkShp      - Peak-shape parameter of incident wave spectrum (-) or DEFAULT (string) [used only when WaveMod=2; use 1.0 for Pierson-Moskowitz]
       0.314159   WvLowCOff      - Low  cut-off frequency or lower frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, 6, or 7]
-        1.5708   WvHiCOff       - High cut-off frequency or upper frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, 6, or 7]
+      1.570796   WvHiCOff       - High cut-off frequency or upper frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, 6, or 7]
              0   WaveDir        - Incident wave propagation heading direction                         (degrees) [unused when WaveMod=0, 6 or 7]
              0   WaveDirMod     - Directional spreading function {0: none, 1: COS2S}                  (-)       [only used when WaveMod=2,3, or 4]
              1   WaveDirSpread  - Wave direction spreading coefficient ( > 0 )                        (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1]
@@ -35,9 +35,9 @@ FALSE            WaveNDAmp      - Flag for normally distributed amplitudes      
 FALSE            WvDiffQTF      - Full difference-frequency 2nd-order wave kinematics (flag)
 FALSE            WvSumQTF       - Full summation-frequency  2nd-order wave kinematics (flag)
              0   WvLowCOffD     - Low  frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
-       1.25664   WvHiCOffD      - High frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
+      1.256637   WvHiCOffD      - High frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
       0.618319   WvLowCOffS     - Low  frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]
-       3.14159   WvHiCOffS      - High frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]
+      3.141593   WvHiCOffS      - High frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]
 ---------------------- CONSTRAINED WAVES --------------------------------------- 
              0   ConstWaveMod   - Constrained wave model: 0=none; 1=Constrained wave with specified crest elevation, alpha; 2=Constrained wave with guaranteed peak-to-trough crest height, HCrest (flag)
              1   CrestHmax      - Crest height (2*alpha for ConstWaveMod=1 or HCrest for ConstWaveMod=2), must be larger than WaveHs (m) [unused when ConstWaveMod=0]

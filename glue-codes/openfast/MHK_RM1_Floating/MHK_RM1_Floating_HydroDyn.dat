@@ -3,12 +3,12 @@ Floating MHK turbine hydrodynamic support structure input properties, based on t
 False            Echo           - Echo the input file data (flag)
 ---------------------- FLOATING PLATFORM --------------------------------------- [unused with WaveMod=6]
              1   PotMod         - Potential-flow model {0: none=no potential flow, 1: frequency-to-time-domain transforms based on WAMIT output, 2: fluid-impulse theory (FIT)} (switch)
-             0   ExctnMod       - Wave-excitation model {0: no wave-excitation calculation, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]
+             1   ExctnMod       - Wave-excitation model {0: no wave-excitation calculation, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]
              0   ExctnDisp      - Method of computing Wave Excitation {0: use undisplaced position, 1: use displaced position, 2: use low-pass filtered displaced position) [only used when PotMod=1 and ExctnMod>0 and SeaState's WaveMod>0]} (switch)
-            10   ExctnCutOff    - Cutoff (corner) frequency of the low-pass time-filtered displaced position (Hz) [>0.0] [used only when PotMod=1, ExctnMod>0, and ExctnDisp=2]) [only used when PotMod=1 and ExctnMod>0 and SeaState's WaveMod>0]} (switch)
-             0   RdtnMod        - Radiation memory-effect model {0: no memory-effect calculation, 1: convolution, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ss INPUT FILE]
-             0   RdtnTMax       - Analysis time for wave radiation kernel calculations (sec) [only used when PotMod=1 and RdtnMod>0; determines RdtnDOmega=Pi/RdtnTMax in the cosine transform; MAKE SURE THIS IS LONG ENOUGH FOR THE RADIATION IMPULSE RESPONSE FUNCTIONS TO DECAY TO NEAR-ZERO FOR THE GIVEN PLATFORM!]
-          0.01   RdtnDT         - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1 and ExctnMod>0 or RdtnMod>0; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
+             0   ExctnCutOff    - Cutoff (corner) frequency of the low-pass time-filtered displaced position (Hz) [>0.0] [used only when PotMod=1, ExctnMod>0, and ExctnDisp=2]) [only used when PotMod=1 and ExctnMod>0 and SeaState's WaveMod>0]} (switch)
+             1   RdtnMod        - Radiation memory-effect model {0: no memory-effect calculation, 1: convolution, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ss INPUT FILE]
+            60   RdtnTMax       - Analysis time for wave radiation kernel calculations (sec) [only used when PotMod=1 and RdtnMod>0; determines RdtnDOmega=Pi/RdtnTMax in the cosine transform; MAKE SURE THIS IS LONG ENOUGH FOR THE RADIATION IMPULSE RESPONSE FUNCTIONS TO DECAY TO NEAR-ZERO FOR THE GIVEN PLATFORM!]
+     "DEFAULT"   RdtnDT         - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1 and ExctnMod>0 or RdtnMod>0; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
              1   NBody          - Number of WAMIT bodies to be used (-) [>=1; only used when PotMod=1. If NBodyMod=1, the WAMIT data contains a vector of size 6*NBody x 1 and matrices of size 6*NBody x 6*NBody; if NBodyMod>1, there are NBody sets of WAMIT data each with a vector of size 6 x 1 and matrices of size 6 x 6]
              2   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
 "MHK_RM1_Floating"    PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
@@ -57,8 +57,8 @@ False            Echo           - Echo the input file data (flag)
              2   NAxCoef        - Number of axial coefficients (-)
 AxCoefID  AxCd     AxCa     AxCp    AxFDMod   AxVnCOff  AxFDLoFSc
    (-)    (-)      (-)      (-)      (-)       (-)        (-)
-    1     0.00     0.00     0.00      0        0.00       1.00	  ! Columns / Braces (no exposed member ends)
-    2     1.00     1.00     1.00      0        0.00       1.00	  ! Heave Plates
+    1     0.00     0.00     0.00      0       -1.00      1.00	  ! Columns / Braces (no exposed member ends)
+    2     1.00     1.00     1.00      0       -1.00      1.00	  ! Heave Plates
 ---------------------- MEMBER JOINTS -------------------------------------------
             33   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2]
 JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member]
@@ -162,6 +162,7 @@ False            OutAll         - Output all user-specified member and joint loa
 "E15.7e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
+Wave1Elev                 - Wave elevation at the platform reference point (0,  0)
 HydroFxi                  - Buoyancy force [N] in the X direction.
 HydroFyi                  - Buoyancy force [N] in the Y direction.
 HydroFzi                  - Buoyancy force [N] in the vertical direction (Z).

@@ -40,18 +40,18 @@ Line     LineType  AttachA  AttachB   UnstrLen   NumSegs   Outputs
 ------------------------ OUTPUTS --------------------------------------------
 FairTen1 FairTen2 FairTen3 FairTen4 FairTen5 FairTen6
 AnchTen1 AnchTen2 AnchTen3 AnchTen4 AnchTen5 AnchTen6
-Con1fX   Con1fY   Con1fZ
-Con2fX   Con2fY   Con2fZ
-Con3fX   Con3fY   Con3fZ 
-Con4fX   Con4fY   Con4fZ
-Con5fX   Con5fY   Con5fZ 
-Con6fX   Con6fY   Con6fZ 
-Con7fX   Con7fY   Con7fZ   Con7pX   Con7pY   Con7pZ
-Con8fX   Con8fY   Con8fZ   Con8pX   Con8pY   Con8pZ
-Con9fX   Con9fY   Con9fZ   Con9pX   Con9pY   Con9pZ
-Con10fX  Con10fY  Con10fZ  Con10pX  Con10pY  Con10pZ
-Con11fX  Con11fY  Con11fZ  Con11pX  Con11pY  Con11pZ
-Con12fX  Con12fY  Con12fZ  Con12pX  Con12pY  Con12pZ
+P1fX   P1fY   P1fZ
+P2fX   P2fY   P2fZ
+P3fX   P3fY   P3fZ 
+P4fX   P4fY   P4fZ
+P5fX   P5fY   P5fZ 
+P6fX   P6fY   P6fZ 
+P7fX   P7fY   P7fZ   P7pX   P7pY   P7pZ
+P8fX   P8fY   P8fZ   P8pX   P8pY   P8pZ
+P9fX   P9fY   P9fZ   P9pX   P9pY   P9pZ
+P10fX  P10fY  P10fZ  P10pX  P10pY  P10pZ
+P11fX  P11fY  P11fZ  P11pX  P11pY  P11pZ
+P12fX  P12fY  P12fZ  P12pX  P12pY  P12pZ
 L1N1pZ   L1N2pZ   L1N3pZ   L1N4pZ   L1N5pZ   L1N6pZ  L1N7pZ L1N8pZ L1N9pZ L1N10pZ L1N11pZ L1N12pZ L1N13pZ L1N14pZ L1N15pZ L1N16pZ L1N17pZ L1N18pZ L1N19pZ L1N20pZ L1N21pZ L1N22pZ L1N23pZ L1N24pZ L1N25pZ L1N26pZ L1N27pZ L1N28pZ L1N29pZ L1N30pZ 
 L2N1pZ   L2N2pZ   L2N3pZ   L2N4pZ   L2N5pZ   L2N6pZ  L2N7pZ L2N8pZ L2N9pZ L2N10pZ L2N11pZ L2N12pZ L2N13pZ L2N14pZ L2N15pZ L2N16pZ L2N17pZ L2N18pZ L2N19pZ L2N20pZ L2N21pZ L2N22pZ L2N23pZ L2N24pZ L2N25pZ L2N26pZ L2N27pZ L2N28pZ L2N29pZ L2N30pZ 
 END

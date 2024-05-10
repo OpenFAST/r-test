@@ -28,18 +28,16 @@
 #           set necessary library values
 #           set input file string arrays (from file or script)
 #   2.  initialize AeroDyn Fortran library
-#           set initial position, velocity, acceleration values
-#           call aerodyn_inflow_init once to initialize IfW
-#           Handle any resulting errors
+#           - ADI_PreInit       -- set number of turbines
+#           - ADI_SetupTurb     -- initialize one rotor (iterate over turbines)
+#           - ADI_Init          -- actually call ADI to initialize the simulation
 #   3.  timestep iteration
-#           set extrapolated values for inputs
-#           call aerodyn_inflow_updatestates to propogate forwared from t to t+dt
-#           set position, velocity, and accleration information for all nodes
-#           call aerodyn_inflow_calcoutput.  Handle any resulting errors
-#           return the resulting force and moment array
-#           aggregate output channnels
+#           - ADI_SetMotion     -- set motions of single turbine (iterate over turbines)
+#           - ADI_UpdateStates  -- update to next timestep
+#           - ADI_CalcOutput    -- get outputs
+#           - ADI_GetRotorLoads -- get loads per rotor (iterate over turbines)
 #   4. End
-#         call aerodyn_inflow_end to close the AeroDyn library and free memory
+#         call adi_end to close the AeroDyn library and free memory
 #         handle any resulting errors
 #
 #
@@ -100,7 +98,7 @@ primary_ifw_file="ifw_primary.dat"
 #       velocities, and accelerations are passed in, and an array of
 #       Forces+Moments is returned.  For debugging, it may be useful to dump all
 #       off this to file.
-DbgOuts=0                       #   For checking the interface, set this to 1
+DbgOuts=1                       #   For checking the interface, set this to 1
 debugout_file="DbgOutputs.out"
 
 #   Output file
@@ -150,6 +148,10 @@ fh.close()
 
 
 #===============================================================================
+#   Number of turbines
+numTurbines = 1
+
+#===============================================================================
 #   Initial hub and root locations from vtk files
 #       can add checks here that numpts==1
 initHubPos,     initHubOrient,     numpts = visread_positions_ref(os.path.sep.join([vtkDir, hubMeshRootName+"_Reference.vtp"]))
@@ -165,12 +167,17 @@ for i in range(numBlades):
 numBladeNode = np.zeros( (numBlades), dtype=int )
 initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
 initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
+initMeshPtToBladeNum_ar = np.empty( (0), dtype=int )
 for i in range(numBlades):
     #   can add checks here that numpts==1
     tmpPos, tmpOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
     initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
     initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
     numBladeNode[i] = numpts
+    # store which blade number this is that these points belong to
+    tmpPtToBladeNum = np.zeros( numpts, dtype=int )
+    tmpPtToBladeNum.fill(i+1)
+    initMeshPtToBladeNum_ar = np.concatenate((initMeshPtToBladeNum_ar,tmpPtToBladeNum))
 del tmpPos
 del tmpOrient
 
@@ -250,6 +257,7 @@ adilib.defPatm       =  103500.0  # Atmospheric pressure (Pa) [used only for an 
 adilib.defPvap       =    1700.0  # Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
 adilib.WtrDpth       =       0.0  # Water depth (m)
 adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
+adilib.numTurbines   = numTurbines
 
 # Setup some timekeeping -- this may be smaller than what is passed to AD15
 adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
@@ -259,7 +267,7 @@ time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # to
 adilib.storeHHvel   = False
 adilib.WrVTK        = 2         # animation
 adilib.WrVTK_Type   = 3         # surface and line meshes
-adilib.transposeDCM = True
+adilib.transposeDCM = 1         # 0=false, 1=true
 
 #==============================================================================
 # Basic alogrithm for using AeroDyn+InflowWind library
@@ -271,11 +279,7 @@ adilib.transposeDCM = True
 #       end up with memory leaks and a bunch of garbage in the other library
 #       instances).
 
-# Aero calculation method -- AeroProjMod
-#     APM_BEM_NoSweepPitchTwist - 1 -  "Original AeroDyn model where momentum balance is done in the WithoutSweepPitchTwist system"
-#     APM_BEM_Polar             - 2 -  "Use staggered polar grid for momentum balance in each annulus"
-#     APM_LiftingLine           - 3 -  "Use the blade lifting line (i.e. the structural) orientation (currently for OLAF with VAWT)"
-adilib.AeroProjMod = 1
+isHAWT = 1      # 1: HAWT, 0: VAWT or cross-flow
 
 # Set hub and blade root positions/orientations
 adilib.initHubPos           = initHubPos[0,:]
@@ -294,14 +298,36 @@ adilib.initRootOrient       = initRootOrient
 adilib.numMeshPts = np.size(initMeshPos_ar,0)
 adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
+adilib.meshPtToBladeNum = initMeshPtToBladeNum_ar
 
-# AeroDyn_Inflow_Init: Only need to call aerodyn_inflow_init once
+# ADI_PreInit: call before anything else
 try:
-    adilib.aerodyn_inflow_init(adiAD_input_string_array,adiIfW_input_string_array)
+    adilib.adi_preinit()
 except Exception as e:
-    print("{}".format(e))   # Exceptions handled in aerodyn_inflow_library.py
+    print("{}".format(e))   # Exceptions handled in adi_library.py
     #FIXME: temporary statement here
-    print("Exit after failed call to aerodyn_inflow_init")
+    print("Exit after failed call to adi_preinit")
+    exit(1)
+
+# ADI_SetupRotor
+try:
+    #FIXME: hard code to one turbine for now
+    iturb=1
+    turbRefPos=[0,0,0]
+    adilib.adi_setuprotor(iturb,isHAWT,turbRefPos)
+except Exception as e:
+    print("{}".format(e))   # Exceptions handled in adi_library.py
+    #FIXME: temporary statement here
+    print("Exit after failed call to adi_setuprotor")
+    exit(1)
+
+# ADI_Init: Only need to call adi_init once
+try:
+    adilib.adi_init(adiAD_input_string_array,adiIfW_input_string_array)
+except Exception as e:
+    print("{}".format(e))   # Exceptions handled in adi_library.py
+    #FIXME: temporary statement here
+    print("Exit after failed call to adi_init")
     exit(1)
 
 
@@ -334,22 +360,48 @@ NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
 RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
 MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
-print(f"Time step: {i} at {time[i]}")
+# Set initial motions for rotor 1
 try:
-    adilib.aerodyn_inflow_calcOutput(time[i],
+    adilib.adi_setrotormotion(
+            iturb,
             HubPos, HubOrient, HubVel, HubAcc,
             NacPos, NacOrient, NacVel, NacAcc,
             RootPos, RootOrient, RootVel, RootAcc,
-            MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar,
-            MeshFrcMom,
+            MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
+except Exception as e:
+    print("{}".format(e))
+    if DbgOuts == 1:
+        dbg_outfile.end()
+    #FIXME: temporary statement here
+    print("Exit after failed call to adi_calcOutput at T=0")
+    exit(1)
+
+
+print(f"Time step: {i} at {time[i]}")
+try:
+    adilib.adi_calcOutput(time[i],
             outputChannelValues)
 except Exception as e:
     print("{}".format(e))
     if DbgOuts == 1:
         dbg_outfile.end()
     #FIXME: temporary statement here
-    print("Exit after failed call to aerodyn_inflow_calcOutput at T=0")
+    print("Exit after failed call to adi_calcOutput at T=0")
     exit(1)
+
+# get resulting forces
+try:
+    adilib.adi_getrotorloads(
+            iturb,
+            MeshFrcMom)
+except Exception as e:
+    print("{}".format(e))
+    if DbgOuts == 1:
+        dbg_outfile.end()
+    #FIXME: temporary statement here
+    print("Exit after failed call to adi_getrotorloads at T=0")
+    exit(1)
+
  
 ## Write the debug output at t=t_initial
 if DbgOuts == 1:
@@ -376,6 +428,9 @@ allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 #   time[i]   is at t+dt
 for i in range( 1, len(time)):
 
+    # hard code to one turbine for now
+    iturb = 1
+
     for correction in range(0, NumCorrections+1):
 
         #print(f"Correction step: {correction} for {time[i-1]} --> {time[i]}")
@@ -388,20 +443,32 @@ for i in range( 1, len(time)):
         RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
         MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
-
-        #   Update the states from t to t+dt (only if not beyond end of sim)
+        # Set motions for rotor
         try:
-            adilib.aerodyn_inflow_updateStates(time[i-1], time[i],
-                   HubPos, HubOrient, HubVel, HubAcc,
-                   NacPos, NacOrient, NacVel, NacAcc,
-                   RootPos, RootOrient, RootVel, RootAcc,
-                   MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
+            adilib.adi_setrotormotion(
+                    iturb,
+                    HubPos, HubOrient, HubVel, HubAcc,
+                    NacPos, NacOrient, NacVel, NacAcc,
+                    RootPos, RootOrient, RootVel, RootAcc,
+                    MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
         except Exception as e:
             print("{}".format(e))
             if DbgOuts == 1:
                 dbg_outfile.end()
             #FIXME: temporary statement here
-            print("Exit after failed call to aerodyn_inflow_updateStates")
+            print("Exit after failed call to adi_setrotormotion at {time[i]}")
+            exit(1)
+
+
+        #   Update the states from t to t+dt (only if not beyond end of sim)
+        try:
+            adilib.adi_updateStates(time[i-1], time[i])
+        except Exception as e:
+            print("{}".format(e))
+            if DbgOuts == 1:
+                dbg_outfile.end()
+            #FIXME: temporary statement here
+            print("Exit after failed call to adi_updateStates")
             exit(1)
  
         # Calculate the outputs at t+dt
@@ -414,22 +481,48 @@ for i in range( 1, len(time)):
         RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
         MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
 
+        # Set motions for rotor
         try:
-            adilib.aerodyn_inflow_calcOutput(time[i],
-                   HubPos, HubOrient, HubVel, HubAcc,
-                   NacPos, NacOrient, NacVel, NacAcc,
-                   RootPos, RootOrient, RootVel, RootAcc,
-                   MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar,
-                   MeshFrcMom,
-                   outputChannelValues)
+            adilib.adi_setrotormotion(
+                    iturb,
+                    HubPos, HubOrient, HubVel, HubAcc,
+                    NacPos, NacOrient, NacVel, NacAcc,
+                    RootPos, RootOrient, RootVel, RootAcc,
+                    MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
         except Exception as e:
             print("{}".format(e))
             if DbgOuts == 1:
                 dbg_outfile.end()
             #FIXME: temporary statement here
-            print(f"Exit after failed call to aerodyn_inflow_calcOutput at time {time[i]}")
+            print("Exit after failed call to adi_setrotormotion at {time[i]}")
             exit(1)
 
+
+        try:
+            adilib.adi_calcOutput(time[i], outputChannelValues)
+        except Exception as e:
+            print("{}".format(e))
+            if DbgOuts == 1:
+                dbg_outfile.end()
+            #FIXME: temporary statement here
+            print(f"Exit after failed call to adi_calcOutput at time {time[i]}")
+            exit(1)
+
+        # get resulting forces
+        try:
+            adilib.adi_getrotorloads(
+                    iturb,
+                    MeshFrcMom)
+        except Exception as e:
+            print("{}".format(e))
+            if DbgOuts == 1:
+                dbg_outfile.end()
+            #FIXME: temporary statement here
+            print("Exit after failed call to adi_getrotorloads at {time[i]}")
+            exit(1)
+
+ 
+## Write the debug output at t=t_initial
  
         #   When coupled to a different code, this is where the Force/Moment info
         #   would be passed to the aerodynamic solver.
@@ -454,22 +547,25 @@ for i in range( 1, len(time)):
 if DbgOuts == 1:
     dbg_outfile.end()   # close the debug output file
 
+# if we got this far, things must have succeeded
+print("Simulation completed sucessfully")
 
-# aerodyn_inflow_end: Only need to call aerodyn_inflow_end once.
+
+# adi_end: Only need to call aerodyn_inflow_end once.
 #   NOTE:   in the event of an error during the above Init or CalcOutput calls,
 #           the IfW_End routine will be called during that error handling.
 #           This works for IfW, but may not be a desirable way to handle
 #           errors in other codes (we may still want to retrieve some info
 #           from memory before clearing out everything).
-#   NOTE:   Error handling from the aerodyn_inflow_end call may not be entirely
+#   NOTE:   Error handling from the adi_end call may not be entirely
 #           necessary, but we may want to know if some memory was not released
 #           properly or a file not closed correctly.
 try:
-    adilib.aerodyn_inflow_end()
+    adilib.adi_end()
 except Exception as e:
     print("{}".format(e))
     #FIXME: temporary statement here
-    print("Exit after failed call to aerodyn_inflow_end")
+    print("Exit after failed call to adi_end")
     exit(1)
 
 

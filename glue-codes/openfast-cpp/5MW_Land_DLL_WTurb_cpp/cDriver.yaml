@@ -1,16 +1,13 @@
-
-nTurbinesGlob: 1
-dryRun:  False
+n_turbines_glob: 1
+dry_run:  False
 debug: False
-simStart: init
+sim_start: init
 coupling_mode: strong
-tStart:  0.0
-tEnd:    60.0
-tMax:    60.0
-dtFAST:  0.00625
-n_substeps: 10
-n_checkpoint: 1000
-nEveryCheckPoint: 1000
+t_start:  0.0
+t_end:    60.0
+t_max:    60.0
+dt_driver:  0.00625
+restart_freq: 1000
 Turbine0:
   turb_id: 0
   FAST_input_filename: "5MW_Land_DLL_WTurb_cpp.fst"

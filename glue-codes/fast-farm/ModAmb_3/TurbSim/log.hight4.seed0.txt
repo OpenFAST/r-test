@@ -1,0 +1,44 @@
+
+**************************************************************************************************
+TurbSim
+
+Copyright (C)  National Renewable Energy Laboratory
+Copyright (C)  Envision Energy USA LTD
+
+This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+See the "LICENSE" file distributed with this software for details.
+**************************************************************************************************
+
+ Running TurbSim
+ a part of OpenFAST - Unversioned from f147b805
+ linked with NWTC Subroutine Library
+
+
+ Reading the input file
+ "D:\data\40_mahfouz\github\repo\r-test\glue-codes\fast-farm\ModAmb_3\Cond00_v08.0_PL0.2_TI6\Case0
+ _wdir0.0\Seed_0\TurbSim\HighT4.inp".
+
+ Reading the user-defined time-series input file
+ "D:\data\40_mahfouz\github\repo\r-test\glue-codes\fast-farm\ModAmb_3\Cond00_v08.0_PL0.2_TI6\Case0
+ _wdir0.0\Seed_0\TurbSim\USRTimeSeries_T4.txt".
+   Found 20 lines of time-series data.
+Warning: WindProfileType will default to power-law profile because only one time-series point was
+entered.
+ Calculating the spectral and transfer function matrices:
+    u-component matrices (IEC coherence method)
+    v-component matrices (IEC coherence method)
+    w-component matrices (IEC coherence method)
+ Generating time series for all points:
+    u-component
+    v-component
+    w-component
+ Computing hub-height statistics
+ Writing statistics to summary file
+ Generating AeroDyn binary time-series file
+ "D:\data\40_mahfouz\github\repo\r-test\glue-codes\fast-farm\ModAmb_3\Cond00_v08.0_PL0.2_TI6\Case0
+ _wdir0.0\Seed_0\TurbSim\HighT4.bts"
+
+ Processing complete.  74.406 CPU seconds used.
+
+ TurbSim terminated normally.
+
