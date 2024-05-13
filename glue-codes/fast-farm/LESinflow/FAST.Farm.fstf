@@ -74,10 +74,10 @@ DEFAULT            FilterInit         - Switch to filter the initial wake plane 
 DEFAULT            k_vCurl            - Calibrated parameter for scaling the eddy viscosity in the curled-wake model (-) [>=0] or DEFAULT [DEFAULT=2.0 ]
 DEFAULT            Mod_Projection     - Switch to select how the wake plane velocity is projected in AWAE {1: keep all components, 2: project against plane normal} or DEFAULT [DEFAULT=1: if Mod_Wake is 1 or 3, or DEFAULT=2: if Mod_Wake is 2] (switch)
 --- WAKE-ADDED TURBULENCE ---
-0                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
-"Inflow/WAT/isoturb_1024x32x16.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
-1024, 32, 16       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (-)
-5.5, 4.0, 4.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+2                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
+"../WAT_MannBoxDB/FFDB_D100_512x512x64.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
+512, 512, 64       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (-)
+5.0, 5.0, 5.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
 default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=False] (flag)
 0.5                WAT_k_Def          - Calibrated parameter for the influence of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
 0.5                WAT_k_Grad         - Calibrated parameter for the influence of the radial velocity gradient of the wake deficit in the wake-added turbulence [>=0.0, no upper bound] or DEFAULT [DEFAULT=NONE]
