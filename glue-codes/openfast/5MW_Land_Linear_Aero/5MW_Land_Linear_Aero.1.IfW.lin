@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 19-Feb-2024 at 16:54:54 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 04-Mar-2024 at 11:06:45 using OpenFAST, compiled on Mar  4 2024 at 10:16:10 as a 64-bit application using double precision at commit v3.5.2-982-g1e454dbe
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
@@ -17,23 +17,23 @@ Simulation information:
    Jacobians included in this file?    No
 
 Order of inputs:
-     Column   Operating Point                     Rotating Frame? Derivative Order Description
-   ---------- ---------------                     --------------- ---------------- -----------
-          1    8.000E+00                                 F               0         Extended input: horizontal wind speed (steady/uniform wind), m/s
-          2    0.000E+00                                 F               0         Extended input: vertical power-law shear exponent, -
-          3    0.000E+00                                 F               0         Extended input: propagation direction, rad
+     Column   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    8.000000000000E+000                                                     F               0         Extended input: horizontal wind speed (steady/uniform wind) (hub), m/s
+          2    0.000000000000E+000                                                     F               0         Extended input: vertical power-law shear exponent (hub), -
+          3    0.000000000000E+000                                                     F               0         Extended input: propagation direction (hub), rad
 
 Order of outputs:
-        Row   Operating Point                     Rotating Frame? Derivative Order Description
-   ---------- ---------------                     --------------- ---------------- -----------
-          1    8.000E+00                                 F               0         Wind1VelX, (m/s)
-          2   -0.000E+00                                 F               0         Wind1VelY, (m/s)
-          3    0.000E+00                                 F               0         Wind1VelZ, (m/s)
+        Row   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    8.000000000000E+000                                                     F               0         Wind1VelX, (m/s)
+          2   -0.000000000000E+000                                                     F               0         Wind1VelY, (m/s)
+          3    0.000000000000E+000                                                     F               0         Wind1VelZ, (m/s)
 
 
 Linearized state matrices:
 
 D: 3 x 3
-    1.000E+00  0.000E+00  0.000E+00
-   -0.000E+00 -0.000E+00 -8.000E+00
-    0.000E+00  0.000E+00  0.000E+00
+    1.000000000000E+000  0.000000000000E+000  0.000000000000E+000
+   -0.000000000000E+000 -0.000000000000E+000 -8.000000000000E+000
+    0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
