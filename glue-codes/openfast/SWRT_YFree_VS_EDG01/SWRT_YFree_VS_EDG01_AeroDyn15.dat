@@ -21,7 +21,7 @@ False                  CompAA      - Flag to compute AeroAcoustics calculation [
 1                      BEM_Mod     - BEM model {1=legacy NoSweepPitchTwist, 2=polar} (switch) [used for all Wake_Mod to determine output coordinate system]
 --- Skew correction
 1                      Skew_Mod    - Skew model {0=No skew model, -1=Remove non-normal component for linearization, 1=skew model active}
-False                  SkewMomCorr - Turn the skew momentum correction on or off [used only when Skew_Mod=1]
+True                   SkewMomCorr - Turn the skew momentum correction on or off [used only when Skew_Mod=1]
 default                SkewRedistr_Mod - Type of skewed-wake correction model (switch) {0=no redistribution, 1=Glauert/Pitt/Peters, default=1} [used only when Skew_Mod=1]
 "default"              SkewRedistrFactor - Constant used in Pitt/Peters skewed wake model {or "default" is 15/32*pi} (-) [used only when Skew_Mod=1 and SkewRedistr_Mod=1]
 --- BEM algorithm 
@@ -73,8 +73,8 @@ False                  UseBlCm     - Include aerodynamic pitching moment in calc
 0                      VolNac      - Nacelle volume (m^3)
 0, 0, 0                NacCenB     - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 ======  Tail Fin Aerodynamics =======================================================================
-False                  TFinAero    - Calculate tail fin aerodynamics model (flag)
-"unused"               TFinFile    - Input file for tail fin aerodynamics [used only when TFinAero=True]
+True                   TFinAero    - Calculate tail fin aerodynamics model (flag)
+"../SWRT/SWRT_AD15_TFin.dat" TFinFile    - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 2                      NumTwrNds   - Number of tower nodes used in the analysis (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb         ! TwrTI used only when TwrShadow=2; TwrCb used only when Buoyancy=True
@@ -97,6 +97,5 @@ END of OutList section (the word "END" must appear in the first 3 columns of the
 1                      BldNd_BladesOut - Number of blades to output all node information at. Up to number of blades on turbine. (-)
 "All"                  BldNd_BlOutNd - Future feature will allow selecting a portion of the nodes to output. Not implemented yet. (-)
                        OutList_Nodal - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-
 END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
 ====================================================================================================
