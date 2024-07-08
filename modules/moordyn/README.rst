@@ -11,3 +11,6 @@ Other moordyn test cases have been drawn from the MoorDyn-C unit tests.
 Some code to set up/compare these additional MoorDyn tests is included in MoordynQSchecks.py (users will need to update paths)
 
 The additional MoorDyn test cases are a work in progress - more test cases and code to analyze them will be added.
+
+This directory is used by MoorDyn-C to test between the two codes. Changes made here should be coordinated with that project
+where necessary: https://github.com/FloatingArrayDesign/MoorDyn
