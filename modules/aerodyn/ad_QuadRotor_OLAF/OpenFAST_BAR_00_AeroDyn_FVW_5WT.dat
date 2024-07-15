@@ -57,50 +57,50 @@ True                   FLookup     - Flag to indicate whether a lookup for f' wi
 4                      InCol_Cm    - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
 0                      InCol_Cpmin - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
 30                     NumAFfiles  - Number of airfoil files used (-)
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_00.dat" AFNames - Airfoil file names (NumAFfiles lines) (quoted strings)
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_01.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_02.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_03.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_04.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_05.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_06.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_07.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_08.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_09.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_10.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_11.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_12.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_13.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_14.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_15.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_16.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_17.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_18.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_19.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_20.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_21.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_22.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_23.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_24.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_25.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_26.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_27.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_28.dat"
-"../BAR_Baseline/Airfoils/BAR0_AeroDyn15_Polar_29.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_00.dat" AFNames - Airfoil file names (NumAFfiles lines) (quoted strings)
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_01.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_02.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_03.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_04.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_05.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_06.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_07.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_08.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_09.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_10.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_11.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_12.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_13.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_14.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_15.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_16.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_17.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_18.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_19.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_20.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_21.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_22.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_23.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_24.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_25.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_26.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_27.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_28.dat"
+"../BAR_Baseline/Airfoils/BAR0_AeroDyn_Polar_29.dat"
 ======  Rotor/Blade Properties  =====================================================================
 True                   UseBlCm     - Include aerodynamic pitching moment in calculations? (flag)
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn15_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(4) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(5) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"../BAR_Baseline/OpenFAST_BAR_00_AeroDyn_blade.dat" ADBlFile(6) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0.0                    VolHub      - Hub volume (m^3)
 0.0                    HubCenBx    - Hub center of buoyancy x direction offset (m)

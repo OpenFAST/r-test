@@ -1,5 +1,5 @@
 ------- AERODYN INPUT FILE --------------------------------------------------------------------------
-Helical Wake test case for OLAF free vortex wake mdoule in AD15
+Helical Wake test case for OLAF free vortex wake mdoule in AeroDyn
 ======  General Options  ============================================================================
 False                  Echo        - Echo the input to "<rootname>.AD.ech"? (flag)
 "default"              DTAero      - Time interval for aerodynamic calculations {or "default"} (s)
@@ -57,12 +57,12 @@ True                   FLookup     - Flag to indicate whether a lookup for f' wi
 4                      InCol_Cm    - The column in the airfoil tables that contains the pitching-moment coefficient; use zero if there is no Cm column (-)
 0                      InCol_Cpmin - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
 1                      NumAFfiles  - Number of airfoil files used (-)
-"Polar2PiAlpha_AD15.dat" AFNames - Airfoil file names (NumAFfiles lines) (quoted strings)
+"Polar2PiAlpha_AeroDyn.dat" AFNames - Airfoil file names (NumAFfiles lines) (quoted strings)
 ======  Rotor/Blade Properties  =====================================================================
 True                   UseBlCm     - Include aerodynamic pitching moment in calculations? (flag)
-"Helix_AD15_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"Helix_AD15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
-"Helix_AD15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
+"Helix_AeroDyn_blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"Helix_AeroDyn_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"Helix_AeroDyn_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0                      VolHub      - Hub volume (m^3)
 0                      HubCenBx    - Hub center of buoyancy x direction offset (m)
