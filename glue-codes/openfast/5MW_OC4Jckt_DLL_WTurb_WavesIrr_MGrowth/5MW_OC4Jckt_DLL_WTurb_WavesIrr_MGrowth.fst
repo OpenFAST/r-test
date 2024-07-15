@@ -3,7 +3,7 @@ FAST Certification Test #21: NREL 5.0 MW Baseline Offshore Turbine with OC4 Jack
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-         60   TMax            - Total run time (s)
+         10   TMax            - Total run time (s)
        0.01   DT              - Recommended module time step (s)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           1   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
@@ -12,7 +12,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
           1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-          2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
+          2   CompAero        - Compute aerodynamic loads (switch) {0=None; 2=AeroDyn v15}
           1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           1   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
           1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
@@ -36,7 +36,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_InflowWind_12mps.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"NRELOffshrBsline5MW_OC4Jacket_AeroDyn15.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"NRELOffshrBsline5MW_OC4Jacket_AeroDyn.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_OC4Jacket_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "SeaState.dat"    SeaStFile       - Name of file containing sea state input parameters (quoted string)
 "NRELOffshrBsline5MW_OC4Jacket_HydroDyn.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
