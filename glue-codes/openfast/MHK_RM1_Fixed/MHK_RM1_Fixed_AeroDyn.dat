@@ -68,8 +68,8 @@ True                   FLookup     - Flag to indicate whether a lookup for f' wi
 "Airfoils/NACA6_0240.dat"
 ======  Rotor/Blade Properties  =====================================================================
 False                  UseBlCm     - Include aerodynamic pitching moment in calculations? (flag)
-"MHK_RM1_AeroDyn15_Blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
-"MHK_RM1_AeroDyn15_Blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
+"MHK_RM1_AeroDyn_Blade.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
+"MHK_RM1_AeroDyn_Blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "unused"               ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 7.2                    VolHub      - Hub volume (m^3)

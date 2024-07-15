@@ -1,5 +1,5 @@
 ------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
-NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
+NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AeroDyn + ED
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
@@ -36,7 +36,7 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_InflowWind_Steady8mps.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"NRELOffshrBsline5MW_Onshore_AeroDyn15.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"NRELOffshrBsline5MW_Onshore_AeroDyn.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_Onshore_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      SeaStFile       - Name of file containing sea state input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)

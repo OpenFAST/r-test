@@ -74,7 +74,7 @@ False                  UseBlCm     - Include aerodynamic pitching moment in calc
 0, 0, 0                NacCenB     - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 ======  Tail Fin Aerodynamics =======================================================================
 True                   TFinAero    - Calculate tail fin aerodynamics model (flag)
-"../SWRT/SWRT_AD15_TFin.dat" TFinFile    - Input file for tail fin aerodynamics [used only when TFinAero=True]
+"../SWRT/SWRT_AeroDyn_TFin.dat" TFinFile    - Input file for tail fin aerodynamics [used only when TFinAero=True]
 ======  Tower Influence and Aerodynamics ============================================================ [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 2                      NumTwrNds   - Number of tower nodes used in the analysis (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or Buoyancy=True]
 TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb         ! TwrTI used only when TwrShadow=2; TwrCb used only when Buoyancy=True

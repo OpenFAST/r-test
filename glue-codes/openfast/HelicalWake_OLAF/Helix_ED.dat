@@ -1,5 +1,5 @@
 ------- ELASTODYN for OpenFAST INPUT FILE -------------------------------------------
-Helical wake test case for OLAF free vortex wake in AD15
+Helical wake test case for OLAF free vortex wake in AeroDyn
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo        - Echo input data to "<RootName>.ech" (flag)
           3   Method      - Integration method: {1: RK4, 2: AB4, or 3: ABM4} (-)
