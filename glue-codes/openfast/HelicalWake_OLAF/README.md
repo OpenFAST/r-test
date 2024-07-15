@@ -1,6 +1,6 @@
 2020.06.15
 
-This is a test case for the OLAF (cOnvecting LAgrangian Filaments) free vortex wake in AD15. This case is not representative of any turbine but rather it is designed to test the vortex wake calculations. The velocity field from a semi-infinite helix is close to constant (close to 1/3) at the inner part of the blade, and has a singular behavior near the tip. 
+This is a test case for the OLAF (cOnvecting LAgrangian Filaments) free vortex wake in AeroDyn. This case is not representative of any turbine but rather it is designed to test the vortex wake calculations. The velocity field from a semi-infinite helix is close to constant (close to 1/3) at the inner part of the blade, and has a singular behavior near the tip. 
 
 Example of analytical results are provided in the folder `AnalyticalResults`. 
 

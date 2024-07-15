@@ -21,7 +21,7 @@
   - Time: 17:43:19-0600
 
  OpenFAST input file heading:
-     Helical wake test case for OLAF free wake vortex in AD15
+     Helical wake test case for OLAF free wake vortex in AeroDyn
 
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.

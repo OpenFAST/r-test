@@ -2,7 +2,7 @@
 Linearized model: Predictions were generated on 03-Jun-2024 at 16:51:59 using OpenFAST, compiled on Jun  3 2024 at 16:15:14 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
-Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AD15 + ED
+Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AeroDyn + ED
 
 Simulation information:
    Simulation time:                   406.4500 s
