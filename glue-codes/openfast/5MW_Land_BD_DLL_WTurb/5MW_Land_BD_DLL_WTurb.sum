@@ -1,27 +1,14 @@
 
 FAST Summary File
 
-Predictions were generated on 07-Mar-2023 at 14:44:03 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
-  compiled with
+Predictions were generated on 17-Nov-2023 at 17:32:50 using OpenFAST, compiled on Nov 17 2023 at 12:15:02 as a 64-bit application using double precision at commit v3.5.1-733-gce100adc
+  run with
     NWTC Subroutine Library
+    InflowWind
     ElastoDyn
     BeamDyn
-    InflowWind
-    AeroDyn14 (unknown version, unknown date) [not called]
     AeroDyn
     ServoDyn
-    HydroDyn (unknown version, unknown date) [not called]
-    SubDyn (unknown version, unknown date) [not called]
-    ExtPtfm_MCKF (unknown version, unknown date) [not called]
-    MAP (unknown version, unknown date) [not called]
-    FEAMooring (unknown version, unknown date) [not called]
-    MoorDyn (unknown version, unknown date) [not called]
-    OrcaFlexInterface (unknown version, unknown date) [not called]
-    IceFloe (unknown version, unknown date) [not called]
-    IceDyn (unknown version, unknown date) [not called]
-
-
-Modeling a land-based turbine
 Description from the FAST input file: 
   FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
 

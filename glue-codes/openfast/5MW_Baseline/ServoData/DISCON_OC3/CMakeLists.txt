@@ -57,7 +57,7 @@ endmacro(set_ifort_windows)
 
 
 # CMake config
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.15)
 project(DISCON_OC3Hywind)
 enable_language(Fortran)
 

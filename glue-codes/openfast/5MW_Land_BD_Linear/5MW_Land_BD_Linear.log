@@ -2,23 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2021 National Renewable Energy Laboratory
- Copyright (C) 2021 Envision Energy USA LTD
+ Copyright (C) 2024 National Renewable Energy Laboratory
+ Copyright (C) 2024 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v2.5.0-10-gb4fd3acc
+ OpenFAST--128-NOTFOUND
  Compile Info:
-  - Compiler: GCC version 10.2.0
+  - Compiler: GCC version 12.3.0
   - Architecture: 64 bit
   - Precision: double
-  - Date: Jan 14 2021
-  - Time: 17:19:34
+  - OpenMP: Yes, number of threads: 4/4
+  - Date: Mar 11 2024
+  - Time: 16:30:44
  Execution Info:
-  - Date: 01/14/2021
-  - Time: 17:44:32-0600
+  - Date: 03/11/2024
+  - Time: 16:43:15+0000
 
  OpenFAST input file heading:
      FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
@@ -36,14 +37,14 @@
  FAST_InitializeAll:FAST_Init:ValidateInputData:LinOutJac can be used only when
  LinInputs=LinOutputs=2.
 
-  Time: 0 of 5 seconds.
-                                                                                                   Performing linearization 1 at simulation time 0 s. (RotSpeed=12.1 rpm, BldPitch1=0 deg)          
-                                                                                                   Time: 1 of 5 seconds.  Estimated final completion at 17:47:02.                                                                                                                                      Time: 2 of 5 seconds.  Estimated final completion at 17:45:38.                                                                                                                                      Time: 3 of 5 seconds.  Estimated final completion at 17:45:39.                                                                                                                                      Time: 4 of 5 seconds.  Estimated final completion at 17:45:38.                                                                                                                                     
-  Total Real Time:       1.1071 minutes
-  Total CPU Time:        1.0977 minutes
-  Simulation CPU Time:   1.0919 minutes
-  Simulated Time:        8.33500E-02 minutes
-  Time Ratio (Sim/CPU):  7.63329E-02
+  Time: 0 of 1.0015 seconds.
+                                                                                                   Time: 1 of 1.0015 seconds.  Estimated final completion at 16:43:19.                                                                                                                                 Performing linearization 1 at simulation time 1.0005 s. (RotSpeed=12.1 rpm, BldPitch1=0 deg)     
+                                                                                                  
+  Total Real Time:       5.803 seconds
+  Total CPU Time:        7.4167 seconds
+  Simulation CPU Time:   6.2964 seconds
+  Simulated Time:        1.002 seconds
+  Time Ratio (Sim/CPU):  0.15914
 
   OpenFAST terminated normally.
 

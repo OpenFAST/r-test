@@ -1,4 +1,4 @@
-------- SERVODYN v1.05.* INPUT FILE --------------------------------------------
+------- SERVODYN INPUT FILE --------------------------------------------
 NREL 5.0 MW Baseline Wind Turbine for Use in Offshore Analysis. Properties from Dutch Offshore Wind Energy Converter (DOWEC) 6MW Pre-Design (10046_009.pdf) and REpower 5M 5MW (5m_uk.pdf)
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo         - Echo input data to <RootName>.ech (flag)
@@ -53,7 +53,7 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
      9999.9   TYCOn        - Time to enable active yaw control (s) [unused when YCMode=0]
           0   YawNeut      - Neutral yaw position--yaw spring force is zero at this yaw (degrees)
 9.02832E+09   YawSpr       - Nacelle-yaw spring constant (N-m/rad)
-  1.916E+07   YawDamp      - Nacelle-yaw damping constant (N-m/(rad/s))
+   19160000   YawDamp      - Nacelle-yaw damping constant (N-m/(rad/s))
      9999.9   TYawManS     - Time to start override yaw maneuver and end standard yaw control (s)
         0.3   YawManRat    - Yaw maneuver rate (in absolute value) (deg/s)
           0   NacYawF      - Final yaw angle for override yaw maneuvers (degrees)
@@ -63,14 +63,14 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
           0   AfC_Amp      - Amplitude for for cosine cycling of flap signal (-) [used only with AfCmode==1]
           0   AfC_Phase    - Phase relative to the blade azimuth (0 is vertical) for for cosine cycling of flap signal (deg) [used only with AfCmode==1]
 ---------------------- STRUCTURAL CONTROL --------------------------------------
-0             NumBStC      - Number of blade structural controllers (integer)
+          0   NumBStC      - Number of blade structural controllers (integer)
 "unused"      BStCfiles    - Name of the files for blade structural controllers (quoted strings) [unused when NumBStC==0]
-1             NumNStC      - Number of nacelle structural controllers (integer)
-"StC-Nac-XDir.dat"      NStCfiles    - Name of the files for nacelle structural controllers (quoted strings) [unused when NumNStC==0]
-0             NumTStC      - Number of tower structural controllers (integer)
-"StC-Tow-XDir.dat"      TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
-0             NumSStC      - Number of substructure structural controllers (integer)
-"StC-Sub-Zdof-1.dat" "StC-Sub-Zdof-2.dat" "StC-Sub-Zdof-3.dat"      SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
+          1   NumNStC      - Number of nacelle structural controllers (integer)
+"StC-Nac-XDir.dat"    NStCfiles    - Name of the files for nacelle structural controllers (quoted strings) [unused when NumNStC==0]
+          0   NumTStC      - Number of tower structural controllers (integer)
+"StC-Tow-XDir.dat"    TStCfiles    - Name of the files for tower structural controllers (quoted strings) [unused when NumTStC==0]
+          0   NumSStC      - Number of substructure structural controllers (integer)
+"StC-Sub-Zdof-1.dat"    SStCfiles    - Name of the files for substructure structural controllers (quoted strings) [unused when NumSStC==0]
 ---------------------- CABLE CONTROL -------------------------------------------
           0   CCmode       - Cable control mode {0: none, 4: user-defined from Simulink/Labview, 5: user-defined from Bladed-style DLL} (switch)
 ---------------------- BLADED INTERFACE ---------------------------------------- [used only with Bladed Interface]
@@ -79,7 +79,7 @@ True          GenTiStp     - Method to stop the generator {T: timed using TimGen
 "DISCON"      DLL_ProcName - Name of procedure in DLL to be called (-) [case sensitive; used only with DLL Interface]
 "default"     DLL_DT       - Communication interval for dynamic library (s) (or "default") [used only with Bladed Interface]
 false         DLL_Ramp     - Whether a linear ramp should be used between DLL_DT time steps [introduces time shift when true] (flag) [used only with Bladed Interface]
-     9999.9   BPCutoff     - Cuttoff frequency for low-pass filter on blade pitch from DLL (Hz) [used only with Bladed Interface]
+     9999.9   BPCutoff     - Cutoff frequency for low-pass filter on blade pitch from DLL (Hz) [used only with Bladed Interface]
           0   NacYaw_North - Reference yaw angle of the nacelle when the upwind end points due North (deg) [used only with Bladed Interface]
           0   Ptch_Cntrl   - Record 28: Use individual pitch control {0: collective pitch; 1: individual pitch control} (switch) [used only with Bladed Interface]
           0   Ptch_SetPnt  - Record  5: Below-rated pitch angle set-point (deg) [used only with Bladed Interface]
@@ -102,18 +102,19 @@ True          SumPrint     - Print summary data to <RootName>.sum (flag) (curren
           2   OutFile      - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
 True          TabDelim     - Use tab delimiters in text tabular output file? (flag) (currently unused)
 "ES10.3E2"    OutFmt       - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
-30.0                   TStart      - Time to begin tabular output (s) (currently unused)
-OutList      - The next line(s) contains a list of output parameters.  
-"GenPwr"
-"GenTq"
-"SStC1_ZQ"
-"SStC1_ZQD"
-"SStC1_Fzl"
-"NStC1_XQ"
-"NStC1_XQD"
-"NStC1_Fxl"
-"TStC1_XQ"
-"TStC1_XQD"
-"TStC1_Fxl"
-END of input file (the word "END" must appear in the first 3 columns of this last Out_List line)
----------------------------------------------------------------------------------------
+         30   TStart       - Time to begin tabular output (s) (currently unused)
+              OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+"GenPwr"                   
+"GenTq"                    
+"SStC1_ZQ"                 
+"SStC1_ZQD"                
+"SStC1_Fzl"                
+"NStC1_XQ"                 
+"NStC1_XQD"                
+"NStC1_Fxl"                
+"TStC1_XQ"                 
+"TStC1_XQD"                
+"TStC1_Fxl"                
+END of ServoDyn input file (the word "END" must appear in the first 3 columns of this last line).
+
+

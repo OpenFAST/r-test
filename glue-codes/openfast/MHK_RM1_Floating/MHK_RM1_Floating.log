@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.4.1-166-gaccfaee5
+ OpenFAST-v3.5.1-3-gb48c9b22
  Compile Info:
-  - Compiler: GCC version 12.2.0
+  - Compiler: GCC version 13.2.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Apr 21 2023
-  - Time: 11:12:51
+  - Date: Nov 20 2023
+  - Time: 16:26:54
  Execution Info:
-  - Date: 04/21/2023
-  - Time: 11:14:20-0400
+  - Date: 11/20/2023
+  - Time: 17:13:51-0700
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -27,21 +27,34 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ AeroDyn Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
  Skipping nodal outputs.
  Running InflowWind.
  Running HydroDyn.
   Generating incident wave kinematics and current time history.
-  Reading in WAMIT output with root name "IOFiles/MHK_RM1_Floating".
+  Reading in WAMIT output with root name "MHK_RM1_Floating/MHK_RM1_Floating".
   Computing radiation impulse response functions and wave diffraction forces.
- Running MoorDyn (v2.0.0, 2022-12-08).
+ Running MoorDyn (v2.0.0, 2023-09-18).
     This is MoorDyn v2, with significant input file changes from v1.
-    Copyright: (C) 2022 National Renewable Energy Laboratory, (C) 2019 Matt Hall
-    Parsing MoorDyn input file: IOFiles/MHK_RM1_Floating_MoorDyn.dat
+    Copyright: (C) 2023 National Renewable Energy Laboratory, (C) 2019 Matt Hall
+    Parsing MoorDyn input file: MHK_RM1_Floating/MHK_RM1_Floating_MoorDyn.dat
    Created mooring system:  6 lines, 12 points, 0 rods, 0 bodies.
     Finalizing initial conditions using dynamic relaxation.
 
-   t=1  FairTen 1: 1.83514E+05, 1, 2                                                                 t=2  FairTen 1: 5.52594E+05, 1.83514E+05, 1                                                       t=3  FairTen 1: 3.29106E+05, 5.52594E+05, 1.83514E+05                                             t=4  FairTen 1: 6.89791E+05, 3.29106E+05, 5.52594E+05                                             t=5  FairTen 1: 4.85278E+05, 6.89791E+05, 3.29106E+05                                             t=6  FairTen 1: 6.65317E+05, 4.85278E+05, 6.89791E+05                                             t=7  FairTen 1: 6.12713E+05, 6.65317E+05, 4.85278E+05                                             t=8  FairTen 1: 6.08934E+05, 6.12713E+05, 6.65317E+05                                             t=9  FairTen 1: 6.08252E+05, 6.08934E+05, 6.12713E+05                                             t=10  FairTen 1: 5.82534E+05, 6.08252E+05, 6.08934E+05                                             Fairlead tensions did not converge within TMaxIC=10 seconds.
+   t=0.1  FairTen 1: 7.95811E+07, 1, 2                                                               t=0.2  FairTen 1: 1.84919E+07, 7.95811E+07, 1                                                     t=0.3  FairTen 1: 43259, 1.84919E+07, 7.95811E+07                                                 t=0.4  FairTen 1: 1.10835E+05, 43259, 1.84919E+07                                                 t=0.5  FairTen 1: 1.99544E+05, 1.10835E+05, 43259                                                 t=0.6  FairTen 1: 3.44276E+05, 1.99544E+05, 1.10835E+05                                           t=0.7  FairTen 1: 3.53782E+05, 3.44276E+05, 1.99544E+05                                           t=0.8  FairTen 1: 3.98816E+05, 3.53782E+05, 3.44276E+05                                           t=0.9  FairTen 1: 3.51782E+05, 3.98816E+05, 3.53782E+05                                           t=1  FairTen 1: 3.95815E+05, 3.51782E+05, 3.98816E+05                                             t=1.1  FairTen 1: 4.29878E+05, 3.95815E+05, 3.51782E+05                                           t=1.2  FairTen 1: 4.46345E+05, 4.29878E+05, 3.95815E+05                                           t=1.3  FairTen 1: 4.54337E+05, 4.46345E+05, 4.29878E+05                                           t=1.4  FairTen 1: 5.61544E+05, 4.54337E+05, 4.46345E+05                                           t=1.5  FairTen 1: 2.03242E+06, 5.61544E+05, 4.54337E+05                                           t=1.6  FairTen 1: 7.07750E+05, 2.03242E+06, 5.61544E+05                                           t=1.7  FairTen 1: 5.46372E+05, 7.07750E+05, 2.03242E+06                                           t=1.8  FairTen 1: 5.24955E+05, 5.46372E+05, 7.07750E+05                                           t=1.9  FairTen 1: 8.48240E+05, 5.24955E+05, 5.46372E+05                                           t=2  FairTen 1: 1.29137E+05, 8.48240E+05, 5.24955E+05                                             t=2.1  FairTen 1: 7.02372E+05, 1.29137E+05, 8.48240E+05                                           t=2.2  FairTen 1: 6.16146E+05, 7.02372E+05, 1.29137E+05                                           t=2.3  FairTen 1: 5.57112E+05, 6.16146E+05, 7.02372E+05                                           t=2.4  FairTen 1: 8.10322E+05, 5.57112E+05, 6.16146E+05                                           t=2.5  FairTen 1: 3.88797E+05, 8.10322E+05, 5.57112E+05                                           t=2.6  FairTen 1: 7.06655E+05, 3.88797E+05, 8.10322E+05                                           t=2.7  FairTen 1: 5.17904E+05, 7.06655E+05, 3.88797E+05                                           t=2.8  FairTen 1: 5.62574E+05, 5.17904E+05, 7.06655E+05                                           t=2.9  FairTen 1: 6.99485E+05, 5.62574E+05, 5.17904E+05                                           t=3  FairTen 1: 4.98369E+05, 6.99485E+05, 5.62574E+05                                             t=3.1  FairTen 1: 6.88911E+05, 4.98369E+05, 6.99485E+05                                           t=3.2  FairTen 1: 5.66938E+05, 6.88911E+05, 4.98369E+05                                           t=3.3  FairTen 1: 5.82086E+05, 5.66938E+05, 6.88911E+05                                           t=3.4  FairTen 1: 6.61749E+05, 5.82086E+05, 5.66938E+05                                           t=3.5  FairTen 1: 5.44694E+05, 6.61749E+05, 5.82086E+05                                           t=3.6  FairTen 1: 6.56470E+05, 5.44694E+05, 6.61749E+05                                           t=3.7  FairTen 1: 5.96182E+05, 6.56470E+05, 5.44694E+05                                           t=3.8  FairTen 1: 5.89163E+05, 5.96182E+05, 6.56470E+05                                           t=3.9  FairTen 1: 6.45893E+05, 5.89163E+05, 5.96182E+05                                           t=4  FairTen 1: 5.68675E+05, 6.45893E+05, 5.89163E+05                                             t=4.1  FairTen 1: 6.33800E+05, 5.68675E+05, 6.45893E+05                                           t=4.2  FairTen 1: 6.03493E+05, 6.33800E+05, 5.68675E+05                                           t=4.3  FairTen 1: 5.92355E+05, 6.03493E+05, 6.33800E+05                                           t=4.4  FairTen 1: 6.30474E+05, 5.92355E+05, 6.03493E+05                                           t=4.5  FairTen 1: 5.81307E+05, 6.30474E+05, 5.92355E+05                                           t=4.6  FairTen 1: 6.20115E+05, 5.81307E+05, 6.30474E+05                                           t=4.7  FairTen 1: 6.01546E+05, 6.20115E+05, 5.81307E+05                                           t=4.8  FairTen 1: 5.94462E+05, 6.01546E+05, 6.20115E+05                                           t=4.9  FairTen 1: 6.17937E+05, 5.94462E+05, 6.01546E+05                                           t=5  FairTen 1: 5.86709E+05, 6.17937E+05, 5.94462E+05                                             t=5.1  FairTen 1: 6.11378E+05, 5.86709E+05, 6.17937E+05                                           t=5.2  FairTen 1: 5.99782E+05, 6.11378E+05, 5.86709E+05                                           t=5.3  FairTen 1: 5.95208E+05, 5.99782E+05, 6.11378E+05                                           t=5.4  FairTen 1: 6.11059E+05, 5.95208E+05, 5.99782E+05                                           t=5.5  FairTen 1: 5.90978E+05, 6.11059E+05, 5.95208E+05                                           t=5.6  FairTen 1: 6.07678E+05, 5.90978E+05, 6.11059E+05                                        
+    Fairlead tensions converged to 10% after 5.6 seconds.
+    Fairlead tension: 6.07678E+05
+    Fairlead forces: -3.67278E+05, -1.18447E+05, -4.69415E+05
+    Fairlead tension: 5.31458E+05
+    Fairlead forces: -3.21659E+05, 0, -4.23064E+05
+    Fairlead tension: 6.07678E+05
+    Fairlead forces: -3.67278E+05, 1.18447E+05, -4.69415E+05
+    Fairlead tension: 2.13755E+05
+    Fairlead forces: -35829, -6507.1, -2.10631E+05
+    Fairlead tension: 2.28462E+05
+    Fairlead forces: -40557, 0, -2.24833E+05
+    Fairlead tension: 2.13755E+05
+    Fairlead forces: -35829, 6507.1, -2.10631E+05
     MoorDyn initialization completed.
 
  FAST_InitializeAll:HydroDyn_Init:Waves_Init:VariousWaves_Init: The random number generator in use
@@ -49,12 +62,12 @@
  HydroDyn input file.
 
   Time: 0 of 6 seconds.
-                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 11:16:19.                                                                                                                                     
-  Total Real Time:       1.9816 minutes
-  Total CPU Time:        1.9814 minutes
-  Simulation CPU Time:   1.777 minutes
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 17:15:46.                                                                                                                                     
+  Total Real Time:       1.9129 minutes
+  Total CPU Time:        1.9127 minutes
+  Simulation CPU Time:   1.7903 minutes
   Simulated Time:        0.1 minutes
-  Time Ratio (Sim/CPU):  5.62739E-02
+  Time Ratio (Sim/CPU):  5.58553E-02
 
   OpenFAST terminated normally.
 

@@ -1,4 +1,4 @@
-------- OpenFAST example INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #18: NREL 5.0 MW Baseline Wind Turbine (Onshore)
 ---------------------- SIMULATION CONTROL --------------------------------------
 True          Echo            - Echo input data to <RootName>.ech (flag)
@@ -8,12 +8,13 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
       99999   DT_UJac         - Time between calls to get Jacobians (s)
-      1E+06   UJacSclFact     - Scaling factor used in Jacobians (-)
+    1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
           1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-          2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15; 3=AeroDisk}
+          2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn}
           1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
+          0   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
           0   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
           0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
@@ -35,8 +36,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_InflowWind_Steady13mps.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"NRELOffshrBsline5MW_Onshore_AeroDyn15.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"NRELOffshrBsline5MW_Onshore_AeroDyn.dat"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_Onshore_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
+"unused"      SeaStFile       - Name of file containing sea state input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
@@ -47,7 +49,7 @@ True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
 "default"     DT_Out          - Time step for tabular output (s) (or "default")
           0   TStart          - Time to begin tabular output (s)
-          0   OutFileFmt      - Format for tabular (time-marching) output file (switch) {0: uncompressed binary [<RootName>.outb], 1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2}
+          4   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
 "ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
@@ -68,4 +70,4 @@ False         LinOutMod       - Write module-level linearization output files in
           3   WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation; 3=mode shapes}
           1   VTK_type        - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0]
 true          VTK_fields      - Write mesh fields to VTK data files? (flag) {true/false} [unused if WrVTK=0]
-         30   VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2]
+         30   VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2 or WrVTK=3]

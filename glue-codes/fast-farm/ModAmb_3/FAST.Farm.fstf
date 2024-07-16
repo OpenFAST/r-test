@@ -1,0 +1,162 @@
+------- FAST.Farm for OpenFAST INPUT FILE -------------------------------------------------
+FAST.Farm     input         - file, using two turbines separated by 3D downstream and an offset of 30m, with a turbulent inflow given by one turbsim box
+--- SIMULATION CONTROL ---
+False         Echo          - Echo input data to <RootName>.ech? (flag)
+FATAL         AbortLevel    - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
+10            TMax          - Total run time (s) [>=0.0]
+False         UseSC         - Use a super controller? (flag)
+3             Mod_AmbWind   - Ambient wind model (-) (switch) {1: high-fidelity precursor in VTK format, 2: one InflowWind module, 3: multiple instances of InflowWind module}
+2             Mod_WaveField - Wave field handling (-) (switch) {1: use individual HydroDyn inputs without adjustment, 2: adjust wave phases based on turbine offsets from farm origin}
+0             Mod_SharedMooring - Shared mooring system model (switch) {0: None, 3=MoorDyn}}
+--- SUPER CONTROLLER --- [used only for UseSC=True]
+/path/to/SC_DLL.dll SC_FileName   - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} containing the Super Controller algorithms (quoated string)
+--- SHARED MOORING SYSTEM --- [used only for Mod_SharedMoor>0]
+""            SharedMoorFile - Name of file containing shared mooring system input parameters (quoted string) [used only when Mod_SharedMooring > 0]
+0.04          DT_Mooring    - Time step for farm-level mooring coupling with each turbine (s) [used only when Mod_SharedMooring > 0]
+--- AMBIENT WIND: PRECURSOR IN VTK FORMAT --- [used only for Mod_AmbWind=1]
+3.0           DT_Low-VTK    - Time step for low -resolution wind data input files; will be used as the global FAST.Farm time step (s) [>0.0]
+0.1           DT_High-VTK   - Time step for high-resolution wind data input files (s) [>0.0]
+"unused"      WindFilePath  - Path name to VTK wind data files from precursor (string)
+False         ChkWndFiles   - Check all the ambient wind files for data consistency? (flag)
+--- AMBIENT WIND: INFLOWWIND MODULE --- [used only for Mod_AmbWind=2 or 3]
+4.0           DT_Low        - Time step for low -resolution wind data interpolation; will be used as the global FAST.Farm time step (s) [>0.0]
+0.5           DT_High       - Time step for high-resolution wind data interpolation (s) [>0.0]
+86            NX_Low        - Number of low -resolution spatial nodes in X direction for wind data interpolation (-) [>=2]
+25            NY_Low        - Number of low -resolution spatial nodes in Y direction for wind data interpolation (-) [>=2]
+7             NZ_Low        - Number of low -resolution spatial nodes in Z direction for wind data interpolation (-) [>=2]
+0             X0_Low        - Origin of low -resolution spatial nodes in X direction for wind data interpolation (m)
+-420.0        Y0_Low        - Origin of low -resolution spatial nodes in Y direction for wind data interpolation (m)
+1.0           Z0_Low        - Origin of low -resolution spatial nodes in Z direction for wind data interpolation (m)
+32            dX_Low        - Spacing of low -resolution spatial nodes in X direction for wind data interpolation (m) [>0.0]
+35.0          dY_Low        - Spacing of low -resolution spatial nodes in Y direction for wind data interpolation (m) [>0.0]
+35.0          dZ_Low        - Spacing of low -resolution spatial nodes in Z direction for wind data interpolation (m) [>0.0]
+112           NX_High       - Number of high-resolution spatial nodes in X direction for wind data interpolation (-) [>=2]
+91            NY_High       - Number of high-resolution spatial nodes in Y direction for wind data interpolation (-) [>=2]
+63            NZ_High       - Number of high-resolution spatial nodes in Z direction for wind data interpolation (-) [>=2]
+"InflowWind.dat" InflowFile    - Name of file containing InflowWind module input parameters (quoted string)
+--- WIND TURBINES ---
+4             NumTurbines   - Number of wind turbines (-) [>=1] [last 6 columns below used only for Mod_AmbWind=2 or 3]
+WT_X            WT_Y            WT_Z            WT_FASTInFile   X0_High         Y0_High         Z0_High         dX_High         dY_High         dZ_High        
+(m)             (m)             (m)             (string)        (m)             (m)             (m)             (m)             (m)             (m)            
+1.20200000e+02	-315	0	"FFTest_WT1.fst"	-1.00300000e+02	-540	1	4	5	5
+1.20200000e+02	315	0	"FFTest_WT2.fst"	-1.00300000e+02	90	1	4	5	5
+7.50200000e+02	-315	0	"FFTest_WT3.fst"	5.29700000e+02	-540	1	4	5	5
+7.50200000e+02	315	0	"FFTest_WT4.fst"	5.29700000e+02	90	1	4	5	5
+--- WAKE DYNAMICS ---
+1             Mod_Wake      - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
+125           RotorDiamRef       - Reference turbine rotor diameter for wake calculations (m) [>0.0]
+4             dr            - Radial increment of radial finite-difference grid (m) [>0.0]
+49            NumRadii      - Number of radii in the radial finite-difference grid (-) [>=2]
+71            NumPlanes     - Number of wake planes (-) [>=2]
+0.17          f_c           - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model [recommended=1.28*U0/R] (Hz) [>0.0] or DEFAULT [DEFAULT=12.5/R, R estimated from dr and NumRadii, not recommended]
+DEFAULT       C_HWkDfl_O    - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor (m ) or DEFAULT [DEFAULT= 0.0 ]
+DEFAULT       C_HWkDfl_OY   - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor scaled with yaw error (m/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 2, 0.3 otherwise]
+DEFAULT       C_HWkDfl_x    - Calibrated parameter in the correction for wake deflection defining the horizontal offset scaled with downstream distance (- ) or DEFAULT [DEFAULT= 0.0 ]
+DEFAULT       C_HWkDfl_xY   - Calibrated parameter in the correction for wake deflection defining the horizontal offset scaled with downstream distance and yaw error (1/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 2, -0.004 otherwise]
+DEFAULT       C_NearWake    - Calibrated parameter for the near-wake correction (-) [>1.0 and <2.5] or DEFAULT [DEFAULT=1.8]
+DEFAULT       k_vAmb        - Calibrated parameters for the influence of the ambient turbulence in the eddy viscosity (set of 5 parameters: k, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=0.05, 1.0, 0.0, 1.0, 0.01]
+DEFAULT       k_vShr        - Calibrated parameters for the influence of the shear layer in the eddy viscosity (set of 5 parameters: k, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=0.016, 0.2, 3.0, 25.0, 0.1]
+DEFAULT       Mod_WakeDiam  - Wake diameter calculation model (-) (switch) {1: rotor diameter, 2: velocity based, 3: mass-flux based, 4: momentum-flux based} or DEFAULT [DEFAULT=1]
+DEFAULT       C_WakeDiam    - Calibrated parameter for wake diameter calculation (-) [>0.0 and <0.99] or DEFAULT [DEFAULT=0.95] [unused for Mod_WakeDiam=1]
+DEFAULT       Mod_Meander   - Spatial filter model for wake meandering (-) (switch) {1: uniform, 2: truncated jinc, 3: windowed jinc} or DEFAULT [DEFAULT=3]
+DEFAULT       C_Meander     - Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
+--- CURLED-WAKE PARAMETERS [only used if Mod_Wake=2 or 3] ---
+DEFAULT       Swirl         - Switch to include swirl velocities in wake (-) (switch) [DEFAULT=TRUE]
+DEFAULT       k_VortexDecay - Vortex decay constant for curl (-) [DEFAULT=0.0001]
+DEFAULT       NumVortices   - The number of vortices in the curled wake model (-) [DEFAULT=100]
+DEFAULT       sigma_D       - The width of the vortices in the curled wake model non-dimesionalized by rotor diameter (-) [DEFAULT=0.2]
+DEFAULT       FilterInit    - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] [unused for Mod_Wake=1] (switch)
+DEFAULT       k_vCurl       - Calibrated parameter for scaling the eddy viscosity in the curled-wake model (-) [>=0] or DEFAULT [DEFAULT=2.0 ]
+DEFAULT       Mod_Projection - Switch to select how the wake plane velocity is projected in AWAE {1: keep all components, 2: project against plane normal} or DEFAULT [DEFAULT=1: if Mod_Wake is 1 or 3, or DEFAULT=2: if Mod_Wake is 2] (switch)
+--- WAKE-ADDED TURBULENCE ---
+2                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
+"../WAT_MannBoxDB/FFDB_D100_512x512x64.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
+512, 512, 64       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (-)
+5.0, 5.0, 5.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=False] (flag)
+default            WAT_k_Def          - Calibrated parameters for the influence of the maximum wake deficit on wake-added turbulence (set of 5 parameters: k_Def, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=[0.6, 0.0, 0.0, 2.0, 1.0 ]]
+default            WAT_k_Grad         - Calibrated parameters for the influence of the radial velocity gradient of the wake deficit on wake-added turbulence (set of 5 parameters: k_Grad, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=[3.0, 0.0, 0.0, 12.0, 0.65]
+--- VISUALIZATION ---
+False         WrDisWind     - Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
+1             NOutDisWindXY - Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 99]
+87.6          OutDisWindZ   - Z coordinates of XY planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXY] [unused for NOutDisWindXY=0]
+2             NOutDisWindYZ - Number of YZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisYZ<n_out>.t<n>.vtk (-) [0 to 99]
+10.000000000000014, 640.0 OutDisWindX   - X coordinates of YZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindYZ] [unused for NOutDisWindYZ=0]
+2             NOutDisWindXZ - Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 99]
+-315.0, 315.0 OutDisWindY   - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
+4.0           WrDisDT       - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
+--- OUTPUT ---
+False         SumPrint      - Print summary data to <RootName>.sum? (flag)
+99999.9       ChkptTime     - Amount of time between creating checkpoint files for potential restart (s) [>0.0]
+0.0           TStart        - Time to begin tabular output (s) [>=0.0]
+1             OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
+True          TabDelim      - Use tab delimiters in text tabular output file? (flag) {uses spaces if False}
+"ES10.3E2"    OutFmt        - Format used for text tabular output, excluding the time channel. Resulting field should be 10 characters. (quoted string)
+DEFAULT       OutAllPlanes  - Output all wake planes at all time steps. [DEFAULT=False]
+7             NOutRadii     - Number of radial nodes for wake output for an individual rotor (-) [0 to 20]
+0, 2, 5, 11, 17, 21, 39 OutRadii      - List of radial nodes for wake output for an individual rotor (-) [1 to NOutRadii] [unused for NOutRadii=0]
+9             NOutDist      - Number of downstream distances for wake output for an individual rotor (-) [0 to 9 ]
+126.0, 189.0, 252.0, 315.0, 378.0, 441.0, 504.0, 630.0, 756.0 OutDist       - List of downstream distances for wake output for an individual rotor (m) [1 to NOutDist ] [unused for NOutDist =0]
+4             NWindVel      - Number of points for wind output (-) [0 to 9]
+120.2, 120.2, 750.2, 750.2 WindVelX      - List of coordinates in the X direction for wind output (m) [1 to NWindVel] [unused for NWindVel=0]
+-315.0, 315.0, -315.0, 315.0 WindVelY      - List of coordinates in the Y direction for wind output (m) [1 to NWindVel] [unused for NWindVel=0]
+87.6, 87.6, 87.6, 87.6 WindVelZ      - List of coordinates in the Z direction for wind output (m) [1 to NWindVel] [unused for NWindVel=0]
+ OutList The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels (quoted string)
+"RtAxsXT1     , RtAxsYT1     , RtAxsZT1"
+"RtAxsXT2     , RtAxsYT2     , RtAxsZT2"
+"RtAxsXT3     , RtAxsYT3     , RtAxsZT3"
+"RtAxsXT4     , RtAxsYT4     , RtAxsZT4"
+"RtPosXT1     , RtPosYT1     , RtPosZT1"
+"RtPosXT2     , RtPosYT2     , RtPosZT2"
+"RtPosXT3     , RtPosYT3     , RtPosZT3"
+"RtPosXT4     , RtPosYT4     , RtPosZT4"
+"YawErrT1"
+"YawErrT2"
+"YawErrT3"
+"YawErrT4"
+"TIAmbT1"
+"TIAmbT2"
+"TIAmbT3"
+"TIAmbT4"
+"RtVAmbT1"
+"RtVAmbT2"
+"RtVAmbT3"
+"RtVAmbT4"
+"RtVRelT1 "
+"RtVRelT2 "
+"RtVRelT3 "
+"RtVRelT4 "
+"RtSkewT1"
+"RtSkewT2"
+"RtSkewT3"
+"RtSkewT4"
+"RtCtAvgT1"
+"RtCtAvgT2"
+"RtCtAvgT3"
+"RtCtAvgT4"
+"W1VAmbX, W1VAmbY, W1VAmbZ"
+"W2VAmbX, W2VAmbY, W2VAmbZ"
+"W3VAmbX, W3VAmbY, W3VAmbZ"
+"W4VAmbX, W4VAmbY, W4VAmbZ"
+"W1VDisX, W1VDisY, W1VDisZ"
+"W2VDisX, W2VDisY, W2VDisZ"
+"W3VDisX, W3VDisY, W3VDisZ"
+"W4VDisX, W4VDisY, W4VDisZ"
+"CtT1N01      , CtT1N02      , CtT1N03      , CtT1N04      , CtT1N05      , CtT1N06      , CtT1N07      , CtT1N08      , CtT1N09      , CtT1N10      , CtT1N11      , CtT1N12      , CtT1N13      , CtT1N14      , CtT1N15      , CtT1N16      , CtT1N17      , CtT1N18      , CtT1N19      ,  CtT1N20"
+"CtT2N01      , CtT2N02      , CtT2N03      , CtT2N04      , CtT2N05      , CtT2N06      , CtT2N07      , CtT2N08      , CtT2N09      , CtT2N10      , CtT2N11      , CtT2N12      , CtT2N13      , CtT2N14      , CtT2N15      , CtT2N16      , CtT2N17      , CtT2N18      , CtT2N19      ,  CtT2N20"
+"CtT3N01      , CtT3N02      , CtT3N03      , CtT3N04      , CtT3N05      , CtT3N06      , CtT3N07      , CtT3N08      , CtT3N09      , CtT3N10      , CtT3N11      , CtT3N12      , CtT3N13      , CtT3N14      , CtT3N15      , CtT3N16      , CtT3N17      , CtT3N18      , CtT3N19      ,  CtT3N20"
+"CtT4N01      , CtT4N02      , CtT4N03      , CtT4N04      , CtT4N05      , CtT4N06      , CtT4N07      , CtT4N08      , CtT4N09      , CtT4N10      , CtT4N11      , CtT4N12      , CtT4N13      , CtT4N14      , CtT4N15      , CtT4N16      , CtT4N17      , CtT4N18      , CtT4N19      ,  CtT4N20"
+"WkPosXT1D1   , WkPosXT1D2   , WkPosXT1D3   , WkPosXT1D4   , WkPosXT1D5   , WkPosXT1D6   , WkPosXT1D7   , WkPosXT1D8   , WkPosXT1D9"
+"WkPosXT2D1   , WkPosXT2D2   , WkPosXT2D3   , WkPosXT2D4   , WkPosXT2D5   , WkPosXT2D6   , WkPosXT2D7   , WkPosXT2D8   , WkPosXT2D9"
+"WkPosXT3D1   , WkPosXT3D2   , WkPosXT3D3   , WkPosXT3D4   , WkPosXT3D5   , WkPosXT3D6   , WkPosXT3D7   , WkPosXT3D8   , WkPosXT3D9"
+"WkPosXT4D1   , WkPosXT4D2   , WkPosXT4D3   , WkPosXT4D4   , WkPosXT4D5   , WkPosXT4D6   , WkPosXT4D7   , WkPosXT4D8   , WkPosXT4D9"
+"WkPosYT1D1   , WkPosYT1D2   , WkPosYT1D3   , WkPosYT1D4   , WkPosYT1D5   , WkPosYT1D6   , WkPosYT1D7   , WkPosYT1D8   , WkPosYT1D9"
+"WkPosYT2D1   , WkPosYT2D2   , WkPosYT2D3   , WkPosYT2D4   , WkPosYT2D5   , WkPosYT2D6   , WkPosYT2D7   , WkPosYT2D8   , WkPosYT2D9"
+"WkPosYT3D1   , WkPosYT3D2   , WkPosYT3D3   , WkPosYT3D4   , WkPosYT3D5   , WkPosYT3D6   , WkPosYT3D7   , WkPosYT3D8   , WkPosYT3D9"
+"WkPosYT4D1   , WkPosYT4D2   , WkPosYT4D3   , WkPosYT4D4   , WkPosYT4D5   , WkPosYT4D6   , WkPosYT4D7   , WkPosYT4D8   , WkPosYT4D9"
+"WkPosZT1D1   , WkPosZT1D2   , WkPosZT1D3   , WkPosZT1D4   , WkPosZT1D5   , WkPosZT1D6   , WkPosZT1D7   , WkPosZT1D8   , WkPosZT1D9"
+"WkPosZT2D1   , WkPosZT2D2   , WkPosZT2D3   , WkPosZT2D4   , WkPosZT2D5   , WkPosZT2D6   , WkPosZT2D7   , WkPosZT2D8   , WkPosZT2D9"
+"WkPosZT3D1   , WkPosZT3D2   , WkPosZT3D3   , WkPosZT3D4   , WkPosZT3D5   , WkPosZT3D6   , WkPosZT3D7   , WkPosZT3D8   , WkPosZT3D9"
+"WkPosZT4D1   , WkPosZT4D2   , WkPosZT4D3   , WkPosZT4D4   , WkPosZT4D5   , WkPosZT4D6   , WkPosZT4D7   , WkPosZT4D8   , WkPosZT4D9"
+END
+---------------------------------------------------------------------------------------

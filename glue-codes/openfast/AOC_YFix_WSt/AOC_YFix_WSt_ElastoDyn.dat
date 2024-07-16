@@ -81,6 +81,9 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   PtfmRIner   - Platform inertia for roll tilt rotation about the platform CM (kg m^2)
           0   PtfmPIner   - Platform inertia for pitch tilt rotation about the platform CM (kg m^2)
           0   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
+          0   PtfmXYIner  - Platform xy moment of inertia about the platform CM (=-int(xydm)) (kg m^2)
+          0   PtfmYZIner  - Platform yz moment of inertia about the platform CM (=-int(yzdm)) (kg m^2)
+          0   PtfmXZIner  - Platform xz moment of inertia about the platform CM (=-int(xzdm)) (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
          10   BldNodes    - Number of blade nodes (per blade) used for analysis (-)
 "../AOC/AOC_Blade.dat"    BldFile(1)  - Name of file containing properties for blade 1 (quoted string)
@@ -95,6 +98,11 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   TeetHStP    - Rotor-teeter hard-stop position (degrees) [used only for 2 blades and when TeetMod=1]
           0   TeetSSSp    - Rotor-teeter soft-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
           0   TeetHSSp    - Rotor-teeter hard-stop linear-spring constant (N-m/rad) [used only for 2 blades and when TeetMod=1]
+---------------------- YAW-FRICTION --------------------------------------------
+          0   YawFrctMod  - Yaw-friction model {0: none, 1: friction without Fz term at the yaw bearing, 2: friction includes Fz term at yaw bearing, 3: user defined model} (switch)
+        300   M_CSmax     - Maximum Coulomb friction torque (N-m)[mu_s*D_eff when YawFrctMod=1 and Fz*mu_s*D_eff when YawFrctMod=2]
+         40   M_CD        - Dynamic friction moment at null yaw rate (N-m) [mu_d*D_eff when YawFrctMod=1 and Fz*mu_d*D_eff when YawFrctMod=2]
+          0   sig_v       - Viscous friction coefficient (N-m/(rad/s))
 ---------------------- DRIVETRAIN ----------------------------------------------
         100   GBoxEff     - Gearbox efficiency (%)
       28.25   GBRatio     - Gearbox ratio (-)
@@ -144,5 +152,11 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "LSShftFza"               - Rotating LSS shear forces
 "YawBrFxn"                - Yaw-bearing shear forces in the yawed nacelle coordinates
 "YawBrFyn"                - Yaw-bearing shear forces in the yawed nacelle coordinates
-END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
----------------------------------------------------------------------------------------
+END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
+====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
+          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+"All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
+                  OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
+----------------------------------------------------------------
+

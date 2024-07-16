@@ -1,0 +1,27 @@
+Test driver input file
+InflowWind driver input file. V1.00
+f       echo (flag)
+===============================================================================
+"ifw_primary.inp"       IfWFileName -- IfW input filename (-)
+===================== File Conversion Options =================================
+ false         WrHAWC         -- Convert all data to HAWC2 format? (flag)
+ false         WrBladed       -- Convert all data to Bladed format? (flag)
+ false         WrVTK          -- Convert all data to VTK format? (flag)
+ false         WrUniform      -- Convert data to Uniform wind format? (flag)
+=====================  Tests of Interpolation Options =========================
+20000          NumTSteps -- number of timesteps to run (DEFAULT for all) (-)
+0.0            TStart -- Start time (s)
+0.5            DT -- timestep size for driver to take (s, or DEFAULT for what the file contains)
+false          Summary -- Summarize the data extents in the windfile (flag)
+true           SummaryFile -- Write summary to file .dvr.sum (flag)
+false          BoxExceedAllow -- Allow point sampling outside grid
+---- Points file input (output given as PointsFileName.Velocity.dat) --------
+true           PointsFileName -- read in a list of points from a file (flag)
+"Points.inp"   PointsFileName -- name of points file (-) (comma separated x,y,z coordinates, # symbol for comments)
+false          CalcAccel -- calculate and output acceleration at points in addition to velocity
+---- Output grid (Points below ground will simply be ignored) ---------------
+F              WindGrid -- report wind data at set of Y,Z coordinates (flag)
+0,0,150        GridCtrCoord -- coordinates of center of grid (m)
+1,1,1          GridDX,GridDY,GridDZ -- Stepsize of grid (m)
+1,1,1          GridNX,GridNY,GridNZ -- number of grid points in X, Y and Z directions (-)
+END of driver input file

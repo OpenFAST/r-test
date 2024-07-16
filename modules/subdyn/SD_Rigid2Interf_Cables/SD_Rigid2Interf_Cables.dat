@@ -68,6 +68,10 @@ PropSetID        EA               MatDens          T0               CtrlChannel
 PropSetID        MatDens
 (-)              (kg/m)
 400              4722.8354                         ! Bulkhead density per meter (bulkhead mass/ 3 rigid links/ 4m = 56674 / 3 / 4)
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
 ---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
              0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
 COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
@@ -88,7 +92,7 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
 "ES16.8e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
-0                NMOutputs       - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 9]
+0                NMOutputs       - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99]
 MemberID         NOutCnt          NodeCnt                           ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank
 (-)              (-)              (-)
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
