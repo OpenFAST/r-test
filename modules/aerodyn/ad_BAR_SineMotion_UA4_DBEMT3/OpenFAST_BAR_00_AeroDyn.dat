@@ -96,7 +96,7 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 ======  Hub Properties ============================================================================== [used only when Buoyancy=True]
 0                      VolHub      - Hub volume (m^3)
 0                      HubCenBx    - Hub center of buoyancy x direction offset (m)
-======  Nacelle Properties ========================================================================== [used only when Buoyancy=True]
+======  Nacelle Properties ========================================================================== [used only when Buoyancy=True or NacelleDrag=True]
 0                      VolNac      - Nacelle volume (m^3)
 0.0, 0.0, 0.0   NacCenB            - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 0, 0, 0      NacArea        - Projected area of the nacelle in X, Y, Z in the nacelle coordinate system (m^2)
