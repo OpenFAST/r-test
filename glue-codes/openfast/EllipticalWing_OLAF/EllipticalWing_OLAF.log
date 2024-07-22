@@ -21,7 +21,7 @@
   - Time: 15:19:35-0600
 
  OpenFAST input file heading:
-     Elliptical wing test case for OLAF free vortex wake in AD15
+     Elliptical wing test case for OLAF free vortex wake in AeroDyn
 
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.

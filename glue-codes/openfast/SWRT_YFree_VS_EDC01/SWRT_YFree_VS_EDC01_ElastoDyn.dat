@@ -113,8 +113,8 @@ False         PtfmYDOF    - Platform yaw rotation DOF (flag)
      9999.9   DTTorSpr    - Drivetrain torsional spring (N-m/rad)
      9999.9   DTTorDmp    - Drivetrain torsional damper (N-m/(rad/s))
 ---------------------- FURLING -------------------------------------------------
-False         Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
-"../SWRT/SWRT_Furl.dat"    FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
+True          Furling     - Read in additional model properties for furling turbine (flag) [must currently be FALSE)
+"../SWRT/SWRT_ED_Furl.dat"    FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
          10   TwrNodes    - Number of tower nodes used for analysis (-)
 "../SWRT/SWRT_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
