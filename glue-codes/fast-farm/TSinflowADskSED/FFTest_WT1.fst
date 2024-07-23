@@ -1,4 +1,4 @@
-------- OpenFAST INPUT FILE -------------------------------------------
+------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
 FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo            - Echo input data to <RootName>.ech (flag)
@@ -38,6 +38,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "IW_WT.dat"         InflowFile      - Name of file containing inflow wind input parameters (quoted string)
 "NRELOffshrBsline5MW_Onshore_AeroDisk.dat"           AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_Onshore_ServoDyn_WT1.dat"           ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
+"unused"      SeaStFile       - Name of file containing sea state input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
