@@ -16,9 +16,6 @@ FALSE         Linearize         - Flag to enable linearization
 ---------------------- PRP INPUTS (Platform Reference Point) ------------------
           2   PRPInputsMod      - Model for the PRP (principal reference point) inputs {0: all inputs are zero for every timestep, 1: steadystate inputs, 2: read inputs from a file (InputsFile)} (switch)
           0   PtfmRefzt         - Vertical distance from the ground level to the platform reference point (m)
-          0   PtfmYMod          - Model for large platform yaw offset {0: Static reference yaw offset based on PtfmRefY, 1: dynamic reference yaw offset based on low-pass filtering the PRP yaw motion with cutoff frequency PtfmYCutOff} (switch)
-          0   PtfmRefY          - Constant or initial platform reference yaw offset (rad)
-       0.01   PtfmYCutOff       - Cutoff frequency for the low-pass filtering of PRP yaw motion when PtfmYMod=1 [unused when PtfmYMod=0] (Hz)
 "Ry.dat"      PRPInputsFile     - Filename for the PRP HydroDyn input InputsMod = 2 (quoted string)
 ---------------------- PRP STEADY STATE INPUTS  -------------------------------
           1,          2,         -3,          0,          0,          0    uPRPInSteady         - PRP Steady-state (3) displacements and (3) rotations at the platform reference point (m, m, m, rad, rad, rad)
