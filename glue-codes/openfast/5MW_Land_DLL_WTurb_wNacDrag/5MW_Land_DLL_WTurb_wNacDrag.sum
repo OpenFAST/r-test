@@ -1,7 +1,7 @@
 
 FAST Summary File
 
-Predictions were generated on 18-Jul-2024 at 17:31:51 using OpenFAST, compiled on Jul 18 2024 at 17:03:07 as a 64-bit application using double precision at commit 3.5.TEST-1359-g6725541c-dirty
+Predictions were generated on 24-Jul-2024 at 17:06:19 using OpenFAST, compiled on Jul 18 2024 at 17:03:07 as a 64-bit application using double precision at commit 3.5.TEST-1359-g6725541c-dirty
   run with
     NWTC Subroutine Library
     InflowWind
