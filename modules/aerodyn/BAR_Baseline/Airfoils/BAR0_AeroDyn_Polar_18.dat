@@ -20,6 +20,7 @@ True                     InclUAdata  ! Is unsteady aerodynamics data included in
 -13.030303               alpha2      ! Angle of attack at f=0.7, (approximately the stall angle) for AOA<alpha0. (deg)
 1.000000                 eta_e       ! Recovery factor in the range [0.85 - 0.95] used only for UAMOD=1, it is set to 1 in the code when flookup=True. (-)
 7.484864                 C_nalpha    ! Slope of the 2D normal force coefficient curve. (1/rad)
+9.13812                  C_lalpha
 1.569358                 Cn1         ! Critical value of C0n at leading edge separation. It should be extracted from airfoil data at a given Mach and Reynolds number. It can be calculated from the static value of Cn at either the break in the pitching moment or the loss of chord force at the onset of stall. It is close to the condition of maximum lift of the airfoil at low Mach numbers.
 -1.219601                Cn2         ! As Cn1 for negative AOAs.
 0.005340                 Cd0         ! 2D drag coefficient value at 0-lift.
