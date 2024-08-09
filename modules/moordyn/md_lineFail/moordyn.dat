@@ -18,7 +18,7 @@ Node Type      X     Y      Z     M    V   CdA   CA
 1   Fixed  -399.0   0.0  -215.0    0    0    0    0
 2   Free   -145.0   0.0  -173.0    0    0    0    0
 3   Fixed   401.0   0.0  -215.0    0    0    0    0
-4   Coupled   1.0   0.0     0.0    0    0    0    0   
+4   Coupled   0.0   0.0     0.0    0    0    0    0   
 ---------------------- LINES --------------------------------------       
 Line  LineType NodeA    NodeB   UnstrLen  NumSegs    Flags/Outputs                   
 (-)   (-)      (-)       (-)      (m)       (-)        (-)                 
