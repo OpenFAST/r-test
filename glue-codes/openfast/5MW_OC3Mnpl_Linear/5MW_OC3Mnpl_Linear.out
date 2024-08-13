@@ -1,9 +1,9 @@
 
-Predictions were generated on 26-Feb-2024 at 22:46:50 using OpenFAST, compiled as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
+Predictions were generated on 13-Aug-2024 at 13:23:16 using OpenFAST, compiled on Aug 07 2024 at 10:29:13 as a 64-bit application using double precision at commit v3.5.3-1523-g5f1aecbe
  linked with  NWTC Subroutine Library; ElastoDyn; SubDyn
 
 Description from the FAST input file: FAST Certification Test #19: NREL 5.0 MW Baseline Wind Turbine with OC3 Monopile RF Configuration, for use in offshore analysis
 
 Time	OoPDefl1	IPDefl1	TwstDefl1	BldPitch1	Azimuth	RotSpeed	GenSpeed	TwHt1TPxi	TwHt1TPyi	TTDspTwst	PtfmSurge	PtfmSway	PtfmRoll	PtfmPitch	Spn2MLxb1	Spn2MLyb1	RootFxc1	RootFyc1	RootFzc1	RootMxc1	RootMyc1	RootMzc1	RotTorq	LSSGagMya	LSSGagMza	YawBrFxp	YawBrFyp	YawBrFzp	YawBrMxp	YawBrMyp	YawBrMzp	M2N1MKxe	M2N1MKye	M1N1MKxe	M1N1MKye	-ReactFXss	-ReactFYss	-ReactFZss	-ReactMXss	-ReactMYss	-ReactMZss
 (s)	(m)	(m)	(deg)	(deg)	(deg)	(rpm)	(rpm)	(m)	(m)	(deg)	(m)	(m)	(deg)	(deg)	(kN-m)	(kN-m)	(kN)	(kN)	(kN)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(kN-m)	(kN)	(kN)	(kN)	(kN-m)	(kN-m)	(kN-m)	(N*m)	(N*m)	(N*m)	(N*m)	(N)	(N)	(N)	(N*m)	(N*m)	(N*m)
-    0.0000	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.210E+01	 1.174E+03	 0.000E+00	-0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 5.282E+00	-1.534E+01	 1.687E+01	-4.899E-01	 4.554E+02	 2.456E+00	 1.563E+02	-1.244E-15	-4.308E-13	-1.842E+03	-4.167E+01	 1.632E+01	-1.073E-01	-3.323E+03	-1.124E+00	-2.236E+02	 1.310E-13	-0.000E+00	-0.000E+00	-0.000E+00	-0.000E+00	-0.000E+00	-0.000E+00	-8.298E+06	-0.000E+00	-0.000E+00	-0.000E+00
+    0.0000	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 1.210E+01	 1.174E+03	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 5.282E+00	-1.534E+01	 1.687E+01	-4.899E-01	 4.554E+02	 2.456E+00	 1.563E+02	 2.253E-15	-4.592E-13	-1.842E+03	-4.167E+01	 1.632E+01	-1.073E-01	-3.323E+03	-1.124E+00	-2.236E+02	 8.731E-14	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	 0.000E+00	-8.298E+06	 0.000E+00	 0.000E+00	 0.000E+00
