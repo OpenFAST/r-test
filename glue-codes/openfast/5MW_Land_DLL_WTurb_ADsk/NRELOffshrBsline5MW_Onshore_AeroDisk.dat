@@ -8,7 +8,7 @@ true          echo            - Echo input data to "<RootName>.ADsk.ech" (flag)
 --- ACTUATOR DISK PROPERTIES ---
      63.0     RotorRad        - Rotor radius (m) (or "default")
 "TSR,  RtSpd ,   VRel,  Skew ,   Pitch" InColNames      - Input column headers (string) {may include a combination of "TSR, RtSpd, VRel, Pitch, Skew"} (up to 4 columns) [choose TSR or RtSpd,VRel; if Skew is absent, Skew is modeled as (COS(Skew))^2]
-48, 0, 0, 0, 104       InColDims       - Number of values in each column (-) (must have same number of columns as InColName) [each >=2]
+48, 0, 0, 0, 104       InColDims       - Number of unique values in each column (-) (must have same number of columns as InColName) [each >=2]
 @CpCtCq.csv
 --- OUTPUTS --------------------
               OutList         - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
