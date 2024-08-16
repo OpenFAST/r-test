@@ -78,8 +78,8 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 0                      VolNac      - Nacelle volume (m^3)
 0.0, 0.0, 0.0          NacCenB     - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 4.959, 22.106, 16.262  NacArea     - Projected area of the nacelle in X, Y, Z in the nacelle coordinate system (m^2)
-0.5, 0.5, 0.5          NacCd       - Drag coefficient for the nacelle areas defined above (-)
-4.257, 0.955, 1.298    NacDragAC   - Position of aerodynamic center of nacelle drag in nacelle coordinates (m)
+1.0, 1.0, 1.0          NacCd       - Drag coefficient for the nacelle areas defined above (-)
+0, 0, 1.298    NacDragAC   - Position of aerodynamic center of nacelle drag in nacelle coordinates (m)
 ======  Tail Fin Aerodynamics =======================================================================
 False                  TFinAero    - Calculate tail fin aerodynamics model (flag)
 "unused"               TFinFile    - Input file for tail fin aerodynamics [used only when TFinAero=True]

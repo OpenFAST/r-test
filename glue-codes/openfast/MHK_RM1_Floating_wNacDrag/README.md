@@ -1,4 +1,4 @@
-## ad_MHK_RM1_Floating
+## MHK_RM1_Floating_wNacDrag
 
 Test of features for floating MHK turbines
 
