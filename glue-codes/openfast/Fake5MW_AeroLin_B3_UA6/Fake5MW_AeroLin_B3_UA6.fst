@@ -1,5 +1,5 @@
 ------- OpenFAST EXAMPLE INPUT FILE -------------------------------------------
-One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
+Three blades, 4 aero-stations, Linearization with continuous-state aerodynamic modules
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
