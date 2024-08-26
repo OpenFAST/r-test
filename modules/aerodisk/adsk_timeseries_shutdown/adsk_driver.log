@@ -1,0 +1,18 @@
+ Running ADsk_Driver.
+
+ **************************************************************************************************
+ AeroDisk Driver
+
+ Copyright (C) 2022 National Renewable Energy Laboratory
+ Copyright (C) 2022 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+  Running AeroDisk Driver
+  a part of OpenFAST - v3.1.0-164-gfb6b4cdc-dirty
+  linked with NWTC Subroutine Library
+
+ Using smallest DT from data file: 2.00000E-02 seconds.
+ Running AeroDisk.
