@@ -1,4 +1,4 @@
-        67   NumCoords         ! The number of coordinates in the airfoil shape file (including an extra coordinate for airfoil reference).  Set to zero if coordinates not included.
+        66   NumCoords         ! The number of coordinates in the airfoil shape file (including an extra coordinate for airfoil reference).  Set to zero if coordinates not included.
 ! ......... x-y coordinates are next if NumCoords > 0 .............
 ! x-y coordinate of airfoil reference
 !  x/c        y/c
