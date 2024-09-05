@@ -60,7 +60,7 @@ True          FLookup            - Flag to indicate whether a lookup for f' will
 0             InCol_Cpmin        - The column in the airfoil tables that contains the Cpmin coefficient; use zero if there is no Cpmin column (-)
 2             NumAFfiles         - Number of airfoil files used (-)
 "../_DummyTurbineData/Polar_Dummy.dat" AFNames - Airfoil file names (NumAFfiles lines) (quoted strings)
-"Polar_2PiAlpha.dat"
+"Polars.dat"
 ======  Rotor/Blade Properties  =====================================================================
 True                   UseBlCm     - Include aerodynamic pitching moment in calculations? (flag)
 "../_DummyTurbineData/AD_Blade_Dummy.dat" ADBlFile(1) - Name of file containing distributed aerodynamic properties for Blade #1 (-)
