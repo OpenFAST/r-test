@@ -7,7 +7,6 @@ Turbine0:
   nacelle_cd: 0.8
   num_force_pts_blade: 50
   num_force_pts_tower: 12
-  shear_exp: 0.0
   sim_type: ext-loads
   turb_id: 0
   turbine_base_pos:
@@ -18,9 +17,6 @@ Turbine0:
   - 0.0
   - 0.0
   - 0.0
-  vel_mean: 8.0
-  wind_dir: 270.0
-  z_ref: 150.0
 coupling_mode: strong
 debug: false
 dry_run: false
