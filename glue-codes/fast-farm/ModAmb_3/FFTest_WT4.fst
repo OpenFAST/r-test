@@ -7,14 +7,17 @@ False         Echo          - Echo input data to <RootName>.ech (flag)
 0.01          DT            - Recommended module time step (s)
 2             InterpOrder   - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
 0             NumCrctn      - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
+        0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
+       1e-4   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+          6   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
 99999         DT_UJac       - Time between calls to get Jacobians (s)
 1000000.0     UJacSclFact   - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-1             CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
-1             CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-2             CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn}
+1             CompElast     - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
+1             CompInflow    - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
+2             CompAero      - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn}
 1             CompServo     - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
-0             CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
+0             CompSeaSt     - Compute sea state information (switch) {0=None; 1=SeaState}
 0             CompHydro     - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
 0             CompSub       - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
 0             CompMooring   - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
@@ -44,14 +47,14 @@ False         Echo          - Echo input data to <RootName>.ech (flag)
 "unused"      MooringFile   - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile       - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-False         SumPrint      - Print summary data to "<RootName>.sum" (flag)
+True          SumPrint      - Print summary data to "<RootName>.sum" (flag)
 5             SttsTime      - Amount of time between screen status messages (s)
 99999         ChkptTime     - Amount of time between creating checkpoint files for potential restart (s)
 0.1           DT_Out        - Time step for tabular output (s) (or "default")
 0             TStart        - Time to begin tabular output (s)
 3             OutFileFmt    - Format for tabular (time-marching) output file (switch) {0: uncompressed binary [<RootName>.outb], 1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2}
 True          TabDelim      - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"ES10.3E2"    OutFmt        - Format used for text tabular output, excluding the time channel. Resulting field should be 10 characters. (quoted string)
+"G0"          OutFmt        - Format used for text tabular output, excluding the time channel. Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 False         Linearize     - Linearization analysis (flag)
 False         CalcSteady    - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)

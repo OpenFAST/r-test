@@ -83,7 +83,7 @@ True                   TFinAero    - Calculate tail fin aerodynamics model (flag
 TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb  ! TwrTI used only when TwrShadow=2; TwrCb used only when Buoyancy=True
 (m)            (m)            (-)            (-)            (-)
 ======  Outputs  ====================================================================================
-False                  SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
+True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
 0                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
 0,                     BlOutNd     - Blade nodes whose values will be output (-)
 0                      NTwOuts     - Number of tower node outputs [0 - 9] (-)
