@@ -1,8 +1,8 @@
 
-Linearized model: Predictions were generated on 23-Feb-2024 at 10:24:58 using OpenFAST, compiled on Feb 23 2024 at 09:57:41 as a 64-bit application using double precision at commit v3.5.2-961-gd8feecc1-dirty
+Linearized model: Predictions were generated on 13-Sep-2024 at 18:19:15 using OpenFAST, compiled on Sep 13 2024 at 17:02:28 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
-Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
+Description from the FAST input file: One blade, 4 aero-stations, Linearization with continuous-state aerodynamic modules
 
 Simulation information:
    Simulation time:                     1.1000 s
@@ -19,9 +19,9 @@ Simulation information:
 Order of inputs:
      Column   Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
-          1    1.300000000000E+001                                                     F               0         Extended input: horizontal wind speed (steady/uniform wind), m/s
-          2    2.000000000000E-001                                                     F               0         Extended input: vertical power-law shear exponent, -
-          3    0.000000000000E+000                                                     F               0         Extended input: propagation direction, rad
+          1    1.300000000000E+001                                                     F               0         Extended input: horizontal wind speed (steady/uniform wind) (hub), m/s
+          2    2.000000000000E-001                                                     F               0         Extended input: vertical power-law shear exponent (hub), -
+          3    0.000000000000E+000                                                     F               0         Extended input: propagation direction (hub), rad
 
 Order of outputs:
         Row   Operating Point                                                   Rotating Frame? Derivative Order Description
