@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 13-Sep-2024 at 18:27:34 using OpenFAST, compiled on Sep 13 2024 at 17:02:28 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
+Linearized model: Predictions were generated on 13-Sep-2024 at 19:29:03 using OpenFAST, compiled on Sep 13 2024 at 19:10:08 as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; SeaState; HydroDyn; MoorDyn (v2.2.2, 2024-01-16)
 
 Description from the FAST input file: Floating MHK turbine, based on the RM1 tidal current rotor
