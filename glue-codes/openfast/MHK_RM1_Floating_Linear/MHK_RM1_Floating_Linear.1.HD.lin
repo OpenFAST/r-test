@@ -1,0 +1,40 @@
+
+Linearized model: Predictions were generated on 13-Sep-2024 at 18:27:34 using OpenFAST, compiled on Sep 13 2024 at 17:02:28 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
+ linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; SeaState; HydroDyn; MoorDyn (v2.2.2, 2024-01-16)
+
+Description from the FAST input file: Floating MHK turbine, based on the RM1 tidal current rotor
+
+Simulation information:
+   Simulation time:                     1.0000 s
+   Rotor Speed:                         1.6563 rad/s
+   Azimuth:                             1.5113 rad
+   Wind Speed:                          1.9000 m/s
+   Number of continuous states:         0
+   Number of discrete states:           0
+   Number of constraint states:         0
+   Number of inputs:                    4
+   Number of outputs:                   3
+   Jacobians included in this file?    No
+
+Order of inputs:
+     Column   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    0.000000000000E+000                                                     F               0         Extended input: wave elevation at platform ref point, m
+          2    0.000000000000E+000                                                     F               0         Extended input: horizontal current speed (steady/uniform wind), m/s
+          3    0.000000000000E+000                                                     F               0         Extended input: vertical power-law shear exponent, -
+          4    0.000000000000E+000                                                     F               0         Extended input: propagation direction, rad
+
+Order of outputs:
+        Row   Operating Point                                                   Rotating Frame? Derivative Order Description
+   ---------- ---------------                                                   --------------- ---------------- -----------
+          1    8.490077811102E+005                                                     F               0         HydroFxi, (N)
+          2    8.244236593946E+003                                                     F               0         HydroFyi, (N)
+          3    2.686638424256E+007                                                     F               0         HydroFzi, (N)
+
+
+Linearized state matrices:
+
+D: 3 x 4
+    0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
+    0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
+    0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
