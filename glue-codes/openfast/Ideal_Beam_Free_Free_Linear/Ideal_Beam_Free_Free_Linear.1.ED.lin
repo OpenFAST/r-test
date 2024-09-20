@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 29-Jul-2022 at 13:41:18 using OpenFAST, compiled as a 64-bit application using double precision at commit v3.2.0-33-g3aa7f39b
+Linearized model: Predictions were generated on 18-Sep-2024 at 14:38:43 using OpenFAST, compiled as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn
 
 Description from the FAST input file: Free-free beam test case
