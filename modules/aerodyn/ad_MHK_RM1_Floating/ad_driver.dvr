@@ -6,7 +6,7 @@ False           Echo                   - Echo input parameters to "<rootname>.ec
           1     AnalysisType           - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
          60     TMax                   - Total run time [used only when AnalysisType/=3] (s)
         0.1     DT                     - Simulation time step [used only when AnalysisType/=3] (s)
-"MHK_RM1_Floating_AeroDyn15.dat" AeroFile - Name of the primary AeroDyn input file
+"MHK_RM1_Floating_AeroDyn.dat" AeroFile - Name of the primary AeroDyn input file
 ----- Environmental Conditions ----------------------------------------------------------
      1025.0     FldDens                - Density of working fluid (kg/m^3)
    1.06E-06     KinVisc                - Kinematic viscosity of working fluid (m^2/s)

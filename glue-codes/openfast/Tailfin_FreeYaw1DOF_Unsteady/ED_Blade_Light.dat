@@ -8,7 +8,7 @@ Light blade
 ---------------------- BLADE ADJUSTMENT FACTORS --------------------------------
           1   FlStTunr(1) - Blade flapwise modal stiffness tuner, 1st mode (-)
           1   FlStTunr(2) - Blade flapwise modal stiffness tuner, 2nd mode (-)
-        1.0   AdjBlMs     - Factor to adjust blade mass density (-)  !bjj: value for AD14=1.04536; value for AD15=1.057344 (it would be nice to enter the requested blade mass instead of a factor here)
+        1.0   AdjBlMs     - Factor to adjust blade mass density (-)  !bjj: value for AD14=1.04536; value for AeroDyn=1.057344 (it would be nice to enter the requested blade mass instead of a factor here)
           1   AdjFlSt     - Factor to adjust blade flap stiffness (-)
           1   AdjEdSt     - Factor to adjust blade edge stiffness (-)
 ---------------------- DISTRIBUTED BLADE PROPERTIES ----------------------------

@@ -21,3 +21,6 @@ hd_MCF_WaveStMod2
 hd_MCF_WaveStMod3
 hd_ExctnMod1_ExctnDisp1
 hd_ExctnMod1_ExctnDisp2
+hd_ExctnMod1_ExctnDisp2_PtfmYMod1
+hd_5MW_OC4Semi_WSt_WavesWN_PtfmYMod0_LargeYaw
+hd_5MW_OC4Semi_WSt_WavesWN_PtfmYMod1_LargeYaw

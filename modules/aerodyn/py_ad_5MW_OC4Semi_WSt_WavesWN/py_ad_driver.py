@@ -2,7 +2,7 @@
 # LICENSING
 # Copyright (C) 2021 National Renewable Energy Lab
 #
-# This file is part of AeroDyn15. 
+# This file is part of AeroDyn. 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -122,7 +122,7 @@ TimeStepsToRun=4
 hubMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
 nacMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
 bldRootMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
-bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"   # for struct mesh not aligned with AD15 mesh
+bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"   # for struct mesh not aligned with AeroDyn mesh
 
 
 
@@ -259,7 +259,7 @@ adilib.WtrDpth       =       0.0  # Water depth (m)
 adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
 adilib.numTurbines   = numTurbines
 
-# Setup some timekeeping -- this may be smaller than what is passed to AD15
+# Setup some timekeeping -- this may be smaller than what is passed to AeroDyn
 adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
 time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 
@@ -287,7 +287,7 @@ adilib.initHubOrient        = initHubOrient[0,:]
 adilib.initNacellePos       = initNacellePos[0,:]
 adilib.initNacelleOrient    = initNacelleOrient[0,:]
 adilib.numBlades            = numBlades
-#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AD15 for mesh mapping.
+#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AeroDyn for mesh mapping.
 adilib.initRootPos          = initRootPos
 adilib.initRootOrient       = initRootOrient
 

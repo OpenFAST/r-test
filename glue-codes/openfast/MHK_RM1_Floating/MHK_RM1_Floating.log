@@ -27,7 +27,7 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ AeroDyn Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
  Skipping nodal outputs.
  Running InflowWind.
  Running HydroDyn.

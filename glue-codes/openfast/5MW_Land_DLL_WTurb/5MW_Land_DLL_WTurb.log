@@ -27,7 +27,7 @@
  Running ElastoDyn.
  Nodal outputs section of ElastoDyn input file not found or improperly formatted.
  Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
+ AeroDyn Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
  Skipping nodal outputs.
  Warning: Turning off Unsteady Aerodynamics because UA parameters are not included in airfoil
  (airfoil has likely has constant polars). (node 1, blade 1)

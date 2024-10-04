@@ -1,0 +1,33 @@
+MoorDyn Input File                                        
+single catenary line from VolturnUS-S
+----------------------- LINE TYPES ------------------------------------------        
+Name  Diam  MassDen  EA       BA/-zeta   EI    Cd    Ca   CdAx   CaAx 
+(-)   (m)   (kg/m)   (N)      (N-s/-)   (-)   (-)   (-)   (-)   (-)      
+main  0.333  685.00  3.27E+09  -1        0     1    0.27  1      0.20        
+rope  0.33   100.00  3.27E+09  -1        0     1    0.27  1      0.20        
+---------------------- POINTS --------------------------------                                       
+Node Type      X     Y      Z     M    V   CdA   CA
+(-)  (-)      (m)   (m)    (m)   (kg) (m^3)  (m^2) (-)
+1   Fixed  -800.0   0.0  -200.0    0    0    0    0
+2   Free   -400.0   0.0  -100.0    0    0    0    0
+3   Fixed   0.0   0.0     0.0    0    0    0    0
+---------------------- LINES --------------------------------------       
+Line  LineType NodeAnch  NodeFair UnstrLen  NumSegs    Flags/Outputs                   
+(-)   (-)      (-)       (-)      (m)       (-)        (-)                 
+1     main      1         2       500.00    24          p                  
+2     rope      2         3       350.00    10          p                  
+---------------------- SOLVER OPTIONS ---------------------------------------    
+2        writeLog 
+200      WtrDpth                                       
+0.001    dtM       - time step to use in mooring integration (s)
+3.0e6    kBot      - bottom stiffness (Pa/m)
+3.0e5    cBot      - bottom damping (Pa-s/m)
+1.0      dtIC      - time interval for analyzing convergence during IC gen (s)
+0.0     TmaxIC    - max time for ic gen (s)
+4.0      CdScaleIC - factor by which to scale drag coefficients during dynamic relaxation (-)
+0.001    threshIC  - threshold for IC convergence (-)  
+0.1             dtOut                                   
+-------------------------- OUTPUTS --------------------------------
+FAIRTEN2   
+Line1NBPZ                                
+------------------------- need this line --------------------------------------                                                                                     

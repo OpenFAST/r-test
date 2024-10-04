@@ -56,7 +56,7 @@ False         TowerFile     - Have tower file (.twr) (flag) ignored when WindTyp
 -200          FocalDistanceX - Focal distance co-ordinates of the lidar beam in the x direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
 0             FocalDistanceY - Focal distance co-ordinates of the lidar beam in the y direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
 0             FocalDistanceZ - Focal distance co-ordinates of the lidar beam in the z direction (relative to hub height) (only first coordinate used for SensorType 2 and 3) (m)
-0.0           RotorApexOffsetPos - Offset of the lidar from hub height (m)
+0.0, 0.0, 0.0  RotorApexOffsetPos - Offset of the lidar from hub height (m)
 17            URefLid       - Reference average wind speed for the lidar[m/s]
 0.25          MeasurementInterval - Time between each measurement [s]
 False         LidRadialVel  - TRUE => return radial component, FALSE => return 'x' direction estimate

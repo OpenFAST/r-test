@@ -1,7 +1,7 @@
 # Infinite Helical Wake test case
 
 ## Introduction
-This is a test case for the OLAF (cOnvecting LAgrangian Filaments) free vortex wake in AD15. 
+This is a test case for the OLAF (cOnvecting LAgrangian Filaments) free vortex wake in AeroDyn. 
 
 It is designed to test the vortex wake calculations, and determine the induced velocity field at the lifting line from a "rigid" semi-infinite helix and a straight root vortex.
 

@@ -3,7 +3,7 @@
 Test of features for floating MHK turbines
 
 - Floating MHK RM1 turbine (MHK = 2)
-- ElastoDyn, InflowWind, AeroDyn15, HydroDyn, MoorDyn
+- ElastoDyn, InflowWind, AeroDyn, HydroDyn, MoorDyn
 - Blade, tower, drivetrain, and platform DOFs on
 - Initial platform surge displacement
 - Fixed rotor rotational speed

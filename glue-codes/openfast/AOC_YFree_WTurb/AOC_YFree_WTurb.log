@@ -1,54 +1,0 @@
-
- **************************************************************************************************
- OpenFAST
-
- Copyright (C) 2024 National Renewable Energy Laboratory
- Copyright (C) 2024 Envision Energy USA LTD
-
- This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
- See the "LICENSE" file distributed with this software for details.
- **************************************************************************************************
-
- OpenFAST--128-NOTFOUND
- Compile Info:
-  - Compiler: GCC version 12.3.0
-  - Architecture: 64 bit
-  - Precision: double
-  - OpenMP: Yes, number of threads: 4/4
-  - Date: May  2 2024
-  - Time: 21:38:56
- Execution Info:
-  - Date: 05/02/2024
-  - Time: 21:57:26+0000
-
- OpenFAST input file heading:
-     FAST Certification Test #07: AOC 15/50 with many DOFs with free yaw and FF turbulence. Many
-     parameters are pure fiction.
-
-  Running ElastoDyn.
-  Running InflowWind.
-
-    Reading a 6x6 grid (18 m wide, 16 m to 34 m above ground) with a characteristic wind speed of
-    12 m/s.
-
-    Processed 1430 time steps of 20-Hz full-field data (71.45 seconds).
-  Running AeroDyn.
- AD15 Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
- Skipping nodal outputs.
-  Running ServoDyn.
-  Time: 0 of 70 seconds.
-
- FAST_Solution:FAST_UpdateStates:CalcOutputs_And_SolveForInputs:SolveOption2:AD_CalcOutput:RotCalcO
- utput:BEMT_CalcOutput(node 1, blade 1):UA_CalcOutput:UA_BlendSteady:Temporarily turning off UA
- due to high angle of attack or low relative velocity. This warning will not be repeated though
- the condition may persist.
-
-                                                                                                   Time: 5 of 70 seconds.  Estimated final completion at 21:57:55.                                                                                                                                     Time: 10 of 70 seconds.  Estimated final completion at 21:57:51.                                                                                                                                    Time: 15 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 20 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 25 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 30 of 70 seconds.  Estimated final completion at 21:57:53.                                                                                                                                    Time: 35 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 40 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 45 of 70 seconds.  Estimated final completion at 21:57:53.                                                                                                                                    Time: 50 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 55 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 60 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 65 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                    Time: 70 of 70 seconds.  Estimated final completion at 21:57:52.                                                                                                                                   
-  Total Real Time:       26.456 seconds
-  Total CPU Time:        25.834 seconds
-  Simulation CPU Time:   25.667 seconds
-  Simulated Time:        70 seconds
-  Time Ratio (Sim/CPU):  2.7273
-
-  OpenFAST terminated normally.
-

@@ -1,0 +1,31 @@
+MoorDyn input file for matching RM3 WEC umbilical cable at 50 m
+NOTE: Re-running this file in MD_C using go.py gives different results each run!!
+---------------------- LINE DICTIONARY -----------------------------------------------------
+LineType  Diam    MassDenInAir   EA     cIntDamp     EI       Cd      Ca    CdAx    CaAx 
+(-)       (m)       (kg/m)       (N)     (Pa-s)    (N-m^2)    (-)     (-)    (-)     (-)  
+cable     0.175      40       751e6       -0.8      0         1.0     0.0    1.2     0.008    
+buoyancy  0.26       40       751e6       -0.8      0         1.0     0.0    1.2     0.008 
+---------------------- POINTS -----------------------------------------------------
+Node      Type      X      Y         Z        M       V      CdA   Ca 
+(-)       (-)      (m)    (m)       (m)      (kg)    (m^3)   (m2)  () 
+1       Fixed    -800      0      -600        0       0       0    0
+2       Free     -300      0      -300        0       0       0    0
+3       Free     -100      0      -300        0       0       0    0
+4       Vessel     0      0         0        0       0       0    0   
+---------------------- LINES -----------------------------------------------------
+Line     LineType   NodeA     NodeB   UnstrLen  NumSegs   Flags/Outputs
+(-)       (-)       (-)       (-)       (m)       (-)         (-)
+1        cable      1          2       600         30        p
+2      buoyancy     2          3       300         20        p
+3        cable      3          4       280         20        p
+---------------------- SOLVER OPTIONS ---------------------------------------- 
+0.001    dtM          - time step to use in mooring integration
+1.5e5    kb           - bottom stiffness  Senu used 1.5e6 but for MD this causes pretty bad bumps on seabed contact
+1e4      cb           - bottom damping   Senu used zero
+600      WtrDpth       - water depth
+0        TmaxIC        - threshold for IC convergence
+0.01      dtOut     
+---------------------- OUTPUTS -----------------------------------------
+FAIRTEN1
+LINE3NAPZ
+------------- need this line ------------------

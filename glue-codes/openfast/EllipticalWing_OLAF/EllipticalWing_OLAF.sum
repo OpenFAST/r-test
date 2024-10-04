@@ -23,7 +23,7 @@ Predictions were generated on 22-Mar-2021 at 15:19:35 using OpenFAST, compiled a
 
 Modeling a land-based turbine
 Description from the FAST input file: 
-  Elliptical wing test case for OLAF free vortex wake in AD15
+  Elliptical wing test case for OLAF free vortex wake in AeroDyn
 
 Interpolation order for input/output time histories: 1 (linear)
 Number of correction iterations:  0

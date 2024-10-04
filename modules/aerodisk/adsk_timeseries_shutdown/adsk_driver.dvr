@@ -1,0 +1,19 @@
+------- AeroDisk driver v1.0 INPUT FILE ----------------------------------------------------------------------
+NREL 5MW, shutdown case (compare to aerodyn/ad_timeseries_shutdown)
+--------------------------------------------------------------------------------------------------------------
+      True                       Echo           - Echo input data to <RootName>.ech (flag)
+--------------------------------------------------------------------------------------------------------------
+"adsk_primary.inp"               ADskIptFile    - AeroDisk input file
+"adsk_driver"                    OutRootName    - RootName for output files
+----- Geometry and Environment -------------------------------------------------------------------------------
+1.225                            AirDens        - Air density (kg/m^3) (or "default")
+63.0                             RotorRad       - Hub radius (m)
+80.0                             RotorHeight    - Rotor height (m)
+0                                ShftTilt       - Shaft tilt (deg)
+----- Case Analysis ------------------------------------------------------------------------------------------
+0.0                              TStart         - Start time (currently unused)
+"DEFAULT"                        DT             - Time step (DEFAULT to use the smallest DT value from input series below)
+2750                             NumTimeSteps   - Number of timesteps (DEFAULT to run to end of time in input series below)
+Time        WndSpeed_X      WndSpeed_Y      WndSpeed_Z      RotSpd         Pitch          Yaw
+(s)         (m/s)           (m/s)           (m/s)           (rpm)          (deg)          (deg)
+@adsk_TimeseriesInput.csv

@@ -1,0 +1,35 @@
+Turbine0:
+  FAST_input_filename: "5MW_Land_DLL_WTurb_cpp.fst"
+  air_density: 1.225
+  az_blend_delta: 3.141592653589793
+  az_blend_mean: 72.25663103256524
+  nacelle_area: 8.0
+  nacelle_cd: 0.8
+  num_force_pts_blade: 50
+  num_force_pts_tower: 12
+  sim_type: ext-loads
+  turb_id: 0
+  turbine_base_pos:
+  - 5.01
+  - 0
+  - -90.0
+  turbine_hub_pos:
+  - 0.0
+  - 0.0
+  - 0.0
+coupling_mode: strong
+debug: false
+dry_run: false
+dt_driver: 0.01
+n_iter: 1
+n_turbines_glob: 1
+output_freq: 1
+restart_freq: 10
+set_exp_law_wind: false
+set_uniform_x_blade_forces: true
+sim_start: init
+super_controller: false
+t_end: 0.1
+t_max: 100.0
+t_start: 0.0
+x_blade_force: 1000.0
