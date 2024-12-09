@@ -6,7 +6,7 @@ False           Echo         - Echo input parameters to "<rootname>.ech"?
         1       AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
         6.0     TMax         - Total run time [used only when AnalysisType/=3] (s)
         0.1     DT           - Simulation time step [used only when AnalysisType/=3] (s)
-"./OpenFAST_BAR_00_AeroDyn15.dat" AeroFile - Name of the primary AeroDyn input file
+"./OpenFAST_BAR_00_AeroDyn.dat" AeroFile - Name of the primary AeroDyn input file
 ----- Environmental Conditions ----------------------------------------------------------
  1.225000000000000e+00     FldDens      - Density of working fluid (kg/m^3)
  1.477551020408163e-05     KinVisc      - Kinematic viscosity of working fluid (m^2/s)
@@ -14,7 +14,7 @@ False           Echo         - Echo input parameters to "<rootname>.ech"?
  1.035000000000000e+05     Patm         - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
  1.700000000000000e+03     Pvap         - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
                      0     WtrDpth      - Water depth (m)
------ Inflow Data ---------------------------------------------------------------
+----- Inflow Data -----------------------------------------------------------------------
           0      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
 "./OpenFAST_BAR_00_InflowFile.dat" InflowFile  - Name of the InflowWind input file [used only when CompInflow=1]
         8.0      HWindSpeed  - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)

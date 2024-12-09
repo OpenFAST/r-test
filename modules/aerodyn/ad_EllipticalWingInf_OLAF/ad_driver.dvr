@@ -6,7 +6,7 @@ False           Echo       - Echo input parameters to "<rootname>.ech"?
        1        AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
        1000     TMax       - Total run time (s)
         100     DT         - Simulation time step (s)
-"Elliptic_AD15_40.dat"        AeroFile   - Name of the AeroDyn input file
+"Elliptic_AeroDyn_40.dat"        AeroFile   - Name of the AeroDyn input file
 ----- Environmental Conditions ----------------------------------------------------------
       1.225     FldDens      - Density of working fluid (kg/m^3)
  1.4639E-05     KinVisc      - Kinematic viscosity of working fluid (m^2/s)

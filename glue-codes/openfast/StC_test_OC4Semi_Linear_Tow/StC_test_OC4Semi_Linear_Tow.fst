@@ -10,9 +10,9 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
-          0   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-          0   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
+          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
+          0   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
+          0   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
           1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           0   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
           0   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
@@ -51,7 +51,7 @@ True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           0   TStart          - Time to begin tabular output (s)
           4   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"ES20.12E3"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES20.12E3"   OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 True          Linearize       - Linearization analysis (flag)
 False         CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)

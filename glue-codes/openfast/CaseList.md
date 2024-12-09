@@ -20,6 +20,7 @@ SWRT_YFree_VS_EDC01
 SWRT_YFree_VS_WTurb
 
 5MW_Land_DLL_WTurb
+5MW_Land_DLL_WTurb_wNacDrag
 5MW_OC3Mnpl_DLL_WTurb_WavesIrr
 5MW_OC3Trpd_DLL_WSt_WavesReg
 5MW_OC4Jckt_DLL_WTurb_WavesIrr_MGrowth
@@ -39,11 +40,20 @@ EllipticalWing_OLAF
 
 WP_Stationary_Linear
 5MW_Land_BD_Linear
+5MW_Land_BD_Linear_Aero
+5MW_Land_Linear_Aero
+5MW_Land_ModeShapes
 5MW_OC4Semi_Linear
+5MW_OC4Semi_MD_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
 StC_test_OC4Semi_Linear_Nac
 StC_test_OC4Semi_Linear_Tow
+Fake5MW_AeroLin_B1_UA4_DBEMT3
+Fake5MW_AeroLin_B3_UA6
 
 MHK_RM1_Fixed
 MHK_RM1_Floating
+MHK_RM1_Floating_wNacDrag
+
+Tailfin_FreeYaw1DOF_PolarBased

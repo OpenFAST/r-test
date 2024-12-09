@@ -10,9 +10,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
-          1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-          1   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
+          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
+          1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
+          2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
           1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           0   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
           0   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
@@ -25,9 +25,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
       1.225   AirDens         - Air density (kg/m^3)
           0   WtrDens         - Water density (kg/m^3)
  1.4639E-05   KinVisc         - Kinematic viscosity of working fluid (m^2/s)
-          0   SpdSound        - Speed of sound in working fluid (m/s)
-          0   Patm            - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
-          0   Pvap            - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+        335   SpdSound        - Speed of sound in working fluid (m/s)
+     103500   Patm            - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+       1700   Pvap            - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
           0   WtrDpth         - Water depth (m)
           0   MSL2SWL         - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- INPUT FILES ---------------------------------------------
@@ -35,9 +35,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
 "unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"AWT_YFix_WSt_InflowWind.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string)
-"AWT_YFix_WSt_AD.ipt"    AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
-"AWT_YFix_WSt_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
+"AWT_YFix_WSt_InflowWind.dat" InflowFile      - Name of file containing inflow wind input parameters (quoted string)
+"AWT_YFix_WSt_AeroDyn.dat"       AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
+"AWT_YFix_WSt_ServoDyn.dat"   ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 "unused"      SeaStFile       - Name of file containing sea state input parameters (quoted string)
 "unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)

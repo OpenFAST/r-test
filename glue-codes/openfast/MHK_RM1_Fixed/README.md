@@ -3,7 +3,7 @@
 Test of the MHK cavitation and buoyancy features
 
 - Fixed MHK RM1 turbine (MHK = 1)
-- ElastoDyn, InflowWind, AeroDyn15
+- ElastoDyn, InflowWind, AeroDyn
 - Blade, tower, and drivetrain DOFs on
 - No initial displacements
 - Fixed rotor rotational speed

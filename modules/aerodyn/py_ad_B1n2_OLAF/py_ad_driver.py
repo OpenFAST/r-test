@@ -2,7 +2,7 @@
 # LICENSING
 # Copyright (C) 2021 National Renewable Energy Lab
 #
-# This file is part of AeroDyn15. 
+# This file is part of AeroDyn. 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -91,7 +91,7 @@ elif sys.platform == "win32":
 #       not passing it.  When coupled to other codes, this may be passed
 #       directly from memory (i.e. during optimization with WEIS), or read as a
 #       template and edited in memory for each iteration loop.
-primary_ad_file="AD.dat"
+primary_ad_file="AeroDyn.dat"
 primary_ifw_file="ifw_primary.dat"
 
 #   Debug output file
@@ -123,7 +123,7 @@ TimeStepsToRun=59
 hubMeshRootName="AD_HubMotion"
 nacMeshRootName="AD_Nacelle"
 bldRootMeshRootName="AD_BladeRootMotion"
-bldMeshRootName="AD_BladeMotion"   # for struct mesh not aligned with AD15 mesh
+bldMeshRootName="AD_BladeMotion"   # for struct mesh not aligned with AeroDyn mesh
 
 
 
@@ -168,12 +168,17 @@ for i in range(numBlades):
 numBladeNode = np.zeros( (numBlades), dtype=int )
 initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
 initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
+initMeshPtToBladeNum_ar = np.empty( (0), dtype=int )
 for i in range(numBlades):
     #   can add checks here that numpts==1
     tmpPos, tmpOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
     initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
     initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
     numBladeNode[i] = numpts
+    # store which blade number this is that these points belong to
+    tmpPtToBladeNum = np.zeros( numpts, dtype=int )
+    tmpPtToBladeNum.fill(i+1)
+    initMeshPtToBladeNum_ar = np.concatenate((initMeshPtToBladeNum_ar,tmpPtToBladeNum))
 del tmpPos
 del tmpOrient
 
@@ -255,7 +260,7 @@ adilib.WtrDpth       =       0.0  # Water depth (m)
 adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
 adilib.numTurbines   = numTurbines
 
-# Setup some timekeeping -- this may be smaller than what is passed to AD15
+# Setup some timekeeping -- this may be smaller than what is passed to AeroDyn
 adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
 time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
 
@@ -283,7 +288,7 @@ adilib.initHubOrient        = initHubOrient[0,:]
 adilib.initNacellePos       = initNacellePos[0,:]
 adilib.initNacelleOrient    = initNacelleOrient[0,:]
 adilib.numBlades            = numBlades
-#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AD15 for mesh mapping.
+#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AeroDyn for mesh mapping.
 adilib.initRootPos          = initRootPos
 adilib.initRootOrient       = initRootOrient
 
@@ -294,6 +299,7 @@ adilib.initRootOrient       = initRootOrient
 adilib.numMeshPts = np.size(initMeshPos_ar,0)
 adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
+adilib.meshPtToBladeNum = initMeshPtToBladeNum_ar
 
 # ADI_PreInit: call before anything else
 try:
