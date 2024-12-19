@@ -267,7 +267,11 @@ time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # to
 adilib.storeHHvel   = False
 adilib.WrVTK        = 2         # animation
 adilib.WrVTK_Type   = 3         # surface and line meshes
+adilib.WrVTK_DT     = adilib.dt*4.0     # every 4th timestep
 adilib.transposeDCM = 1         # 0=false, 1=true
+
+# debugging of internals of ADI library
+adilib.debuglevel   = 0         # 0-4
 
 #==============================================================================
 # Basic alogrithm for using AeroDyn+InflowWind library
