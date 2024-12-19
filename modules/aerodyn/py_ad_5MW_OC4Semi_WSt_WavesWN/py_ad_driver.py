@@ -304,6 +304,10 @@ adilib.initMeshPos    = initMeshPos_ar
 adilib.initMeshOrient = initMeshOrient_ar
 adilib.meshPtToBladeNum = initMeshPtToBladeNum_ar
 
+# Disk average velocity
+DiskAvgVel = np.zeros(3)       # [Vx Vy Vz]
+
+
 # ADI_PreInit: call before anything else
 try:
     adilib.adi_preinit()
@@ -377,7 +381,7 @@ except Exception as e:
     if DbgOuts == 1:
         dbg_outfile.end()
     #FIXME: temporary statement here
-    print("Exit after failed call to adi_calcOutput at T=0")
+    print("Exit after failed call to adi_setrotormotion at T=0")
     exit(1)
 
 
@@ -406,10 +410,23 @@ except Exception as e:
     print("Exit after failed call to adi_getrotorloads at T=0")
     exit(1)
 
- 
-## Write the debug output at t=t_initial
+# get resulting disk average velocity
+try:
+    adilib.adi_getdiskavgvel(
+            iturb,
+            DiskAvgVel)
+except Exception as e:
+    print("{}".format(e))
+    if DbgOuts == 1:
+        dbg_outfile.end()
+    #FIXME: temporary statement here
+    print("Exit after failed call to adi_getdiskavgvel at T=0")
+    exit(1)
+
+
+ ## Write the debug output at t=t_initial
 if DbgOuts == 1:
-    dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
+    dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom,DiskAvgVel)
 # Save the output at t=t_initial
 allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
 
@@ -525,6 +542,21 @@ for i in range( 1, len(time)):
             print("Exit after failed call to adi_getrotorloads at {time[i]}")
             exit(1)
 
+        # get resulting disk average velocity
+        try:
+            adilib.adi_getdiskavgvel(
+                    iturb,
+                    DiskAvgVel)
+        except Exception as e:
+            print("{}".format(e))
+            if DbgOuts == 1:
+                dbg_outfile.end()
+            #FIXME: temporary statement here
+            print("Exit after failed call to adi_getdiskavgvel at {time[i]}")
+            exit(1)
+
+ 
+## Write the debug output at t=t_initial
  
 ## Write the debug output at t=t_initial
  
@@ -537,7 +569,7 @@ for i in range( 1, len(time)):
         #   at a time during the call).  The regression test will have one row for
         #   each timestep + position array entry.
         if DbgOuts == 1:
-            dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom)
+            dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom,DiskAvgVel)
 
 
     # Store the channel outputs -- these are requested from within the IfW input
