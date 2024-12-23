@@ -1,6 +1,6 @@
 ! ------------ AirfoilInfo v1.01.x Input File ----------------------------------
-! NACA6_0259 airfoil, data based on values used for the design of the RM1 tidal current turbine.
-! line
+! NACA6_0259, data based on values used for the design of the RM1 tidal current turbine.
+! This data represents a 25.9 percent thick airfoil, and was interpolated between the airfoil data in the files NACA6_1000.dat and NACA6_0240.dat.
 ! line
 ! ------------------------------------------------------------------------------
 "default"                 InterpOrd   ! Interpolation order to use for quasi-steady table lookup {1=linear; 3=cubic spline; "default"} [default=1]
