@@ -91,15 +91,7 @@ elif sys.platform == "win32":
 #       not passing it.  When coupled to other codes, this may be passed
 #       directly from memory (i.e. during optimization with WEIS), or read as a
 #       template and edited in memory for each iteration loop.
-primary_file="ifw_primary.inp"
-
-#   Uniform wind input file
-#       This is identical to what InflowWind would read from disk if we were
-#       not passing it through the interface.  When coupled to other codes,
-#       this may be passed directly from memory (i.e. during optimization with
-#       WEIS), or potentially not even used if turbulent wind inputs are used
-#       instead (which would need to be read from disk).
-uniform_file="UniformWindInput.inp"
+primary_ifw_file="ifw_primary.inp"
 
 #   Positions array
 #       When coupled to another code, an array of positions (N points of
@@ -133,20 +125,11 @@ output_file="ifw_primary.out"
 #       strings with the line endings stripped off.  This array will be have
 #       the same number of elements as there are lines in the file.
 ifw_input_string_array = []     # instantiate empty array
-fh = open(primary_file, "r")
+fh = open(primary_ifw_file, "r")
 for line in fh:
   # strip line ending and ending white space and add to array of strings
   ifw_input_string_array.append(line.rstrip())
 fh.close()
-
-#   Uniform wind input file - only needed for WindType = 2
-#       Also for testing, we read this file in from disk before the simulation.
-ifw_uniform_string_array=[]
-fh = open(uniform_file, "r")
-for line in fh:
-  ifw_uniform_string_array.append(line.rstrip())
-fh.close()
-
 
 #=============================================================================================================================
 #----------------------------------------------------- FUNCTION CALLS --------------------------------------------------------
@@ -175,6 +158,13 @@ ifwlib.dt           = 0.1                # time interval that it's being called 
 final_time          = 30.8               # final time
 time                = np.linspace(t_start, final_time, 9) # total time + increment because python doesnt include endpoint!
 ifwlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
+
+#   Test passing of filename, uncomment next two lines
+#ifw_input_string_array=[primary_ifw_file];
+#ifwlib.IfWinputPass = 0
+
+# debugging of internals of ADI library
+ifwlib.debuglevel   = 3         # 0-4
 
 #   Initialize position array 
 #       For testing, a set of points is read from the position_file and stored
@@ -235,7 +225,7 @@ velocities          = np.zeros((ifwlib.numWindPts,3)) # output velocities (N x 3
 
 # IFW_INIT: Only need to call ifw_init once
 try:
-    ifwlib.ifw_init(ifw_input_string_array, ifw_uniform_string_array)
+    ifwlib.ifw_init(ifw_input_string_array)
 except Exception as e:
     # Do any required clean up
     print("{}".format(e))   # Exception is from inflowwind_library.py
