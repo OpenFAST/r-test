@@ -13,6 +13,7 @@ False         UseSC         - Use a super controller? (flag)
 --- SHARED MOORING SYSTEM --- [used only for Mod_SharedMoor>0]
 ""            SharedMoorFile - Name of file containing shared mooring system input parameters (quoted string) [used only when Mod_SharedMooring > 0]
 0.04          DT_Mooring    - Time step for farm-level mooring coupling with each turbine (s) [used only when Mod_SharedMooring > 0]
+true              WrMooringVis       - Write shared mooring visualization, at the global FAST.Farm time step (-) [only used for Mod_SharedMooring=3]
 --- AMBIENT WIND: PRECURSOR IN VTK FORMAT --- [used only for Mod_AmbWind=1]
 3.0           DT_Low-VTK    - Time step for low -resolution wind data input files; will be used as the global FAST.Farm time step (s) [>0.0]
 0.1           DT_High-VTK   - Time step for high-resolution wind data input files (s) [>0.0]
