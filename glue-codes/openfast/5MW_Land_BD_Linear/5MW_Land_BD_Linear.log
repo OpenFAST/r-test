@@ -15,11 +15,11 @@
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: Yes, number of threads: 4/4
-  - Date: Sep 18 2024
-  - Time: 14:26:14
+  - Date: Mar 11 2024
+  - Time: 16:30:44
  Execution Info:
-  - Date: 09/18/2024
-  - Time: 14:38:45+0000
+  - Date: 03/11/2024
+  - Time: 16:43:15+0000
 
  OpenFAST input file heading:
      FAST Certification Test #26: NREL 5.0 MW Baseline Wind Turbine (Onshore)
@@ -38,13 +38,13 @@
  LinInputs=LinOutputs=2.
 
   Time: 0 of 1.0015 seconds.
-                                                                                                   Time: 1 of 1.0015 seconds.  Estimated final completion at 14:38:50.                                                                                                                                 Performing linearization 1 at simulation time 1.0005 s. (RotSpeed=12.1 rpm, BldPitch1=0 deg)     
+                                                                                                   Time: 1 of 1.0015 seconds.  Estimated final completion at 16:43:19.                                                                                                                                 Performing linearization 1 at simulation time 1.0005 s. (RotSpeed=12.1 rpm, BldPitch1=0 deg)     
                                                                                                   
-  Total Real Time:       6.791 seconds
-  Total CPU Time:        9.0336 seconds
-  Simulation CPU Time:   8.1957 seconds
+  Total Real Time:       5.803 seconds
+  Total CPU Time:        7.4167 seconds
+  Simulation CPU Time:   6.2964 seconds
   Simulated Time:        1.002 seconds
-  Time Ratio (Sim/CPU):  0.12226
+  Time Ratio (Sim/CPU):  0.15914
 
   OpenFAST terminated normally.
 

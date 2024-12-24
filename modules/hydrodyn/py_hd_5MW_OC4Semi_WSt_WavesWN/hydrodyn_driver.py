@@ -50,7 +50,10 @@ import os
 import sys
 
 # path to find the hydrodyn_library.py from the local directory
-sys.path.insert(0, os.path.sep.join(["..", "..", "..", "..", "..", "modules", "hydrodyn", "python-lib"]))
+os.chdir(sys.path[0])
+hdLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "hydrodyn", "python-lib"])
+sys.path.insert(0, hdLibPath)
+print(f"Importing 'hydrodyn_library' from {hdLibPath}")
 import hydrodyn_library # this file handles the conversion from python to c-bound types and should not be changed by the user
 
 ###############################################################################
@@ -90,7 +93,8 @@ elif sys.platform == "win32":
 #       not passing it.  When coupled to other codes, this may be passed
 #       directly from memory (i.e. during optimization with WEIS), or read as a
 #       template and edited in memory for each iteration loop.
-primary_file="NRELOffshrBsline5MW_OC4DeepCwindSemi_HydroDyn.dat"
+seast_primary_file  ="NRELOffshrBsline5MW_OC4DeepCwindSemi_SeaState.dat"
+hd_primary_file     ="NRELOffshrBsline5MW_OC4DeepCwindSemi_HydroDyn.dat"
 
 #   Debug output file
 #       When coupled into another code, an array of position/orientation,
@@ -114,12 +118,19 @@ NumCorrections=0
 #   Input Files
 #===============================================================================
 
-#   Main HydroDyn input file
+#   Main SeaState and HydroDyn input files
 #       This file is read from disk to an array of strings with the line
 #       endings stripped off.  This array will have the same number of elements
 #       as there are lines in the file.
+seast_input_string_array = []     # instantiate empty array
+fh = open(seast_primary_file, "r")
+for line in fh:
+  # strip line ending and ending white space and add to array of strings
+  seast_input_string_array.append(line.rstrip())
+fh.close()
+
 hd_input_string_array = []     # instantiate empty array
-fh = open(primary_file, "r")
+fh = open(hd_primary_file, "r")
 for line in fh:
   # strip line ending and ending white space and add to array of strings
   hd_input_string_array.append(line.rstrip())
@@ -179,7 +190,7 @@ hdlib.initNodePos = np.zeros((hdlib.numNodePts,6))
 
 # HydroDyn_Init: Only need to call hydrodyn_init once
 try:
-    hdlib.hydrodyn_init(hd_input_string_array)
+    hdlib.hydrodyn_init(seast_input_string_array,hd_input_string_array)
 except Exception as e:
     print("{}".format(e))   # Exceptions handled in hydrodyn_library.py
     exit(1)

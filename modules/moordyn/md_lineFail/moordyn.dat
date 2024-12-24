@@ -1,0 +1,52 @@
+MoorDyn Input File                                        
+single catenary line from VolturnUS-S
+----------------------- LINE TYPES ------------------------------------------        
+Name  Diam  MassDen  EA       BA/-zeta   EI    Cd    Ca   CdAx   CaAx 
+(-)   (m)   (kg/m)   (N)      (N-s/-)   (-)   (-)   (-)   (-)   (-)      
+main  0.333  685.00  3.27E+09  -0.008        0     1    0.27  1      0.20  
+---------------------- ROD TYPES ------------------------------------
+TypeName      Diam     Mass/m    Cd     Ca      CdEnd    CaEnd
+(name)        (m)      (kg/m)    (-)    (-)     (-)      (-)
+main           0.333   685   1      0.27   1         0.20
+---------------------- RODS ----------------------------------------
+ID   RodType  Attachment  Xa    Ya    Za    Xb      Yb     Zb    NumSegs  RodOutputs
+(#)  (name)    (#/key)    (m)   (m)   (m)   (m)     (m)    (m)   (-)       (-)
+1     main      Free       1     0     -20   1       0      -10   3         p
+---------------------- POINTS --------------------------------                                       
+Node Type      X     Y      Z     M    V   CdA   CA
+(-)  (-)      (m)   (m)    (m)   (kg) (m^3)  (m^2) (-)
+1   Fixed  -399.0   0.0  -215.0    0    0    0    0
+2   Free   -145.0   0.0  -173.0    0    0    0    0
+3   Fixed   401.0   0.0  -215.0    0    0    0    0
+4   Coupled   0.0   0.0     0.0    0    0    0    0   
+---------------------- LINES --------------------------------------       
+Line  LineType NodeA    NodeB   UnstrLen  NumSegs    Flags/Outputs                   
+(-)   (-)      (-)       (-)      (m)       (-)        (-)                 
+1     main      1         2       325.00    20          p  
+2     main      2         R1A     150.00    10          p           
+3     main      3         R1A     475.00    30          p   
+4     main      R1B        4        10       1          p  
+---------------------- FAILURE ----------------------
+FailureID    Node    Line(s)   FailTime   FailTen
+()           ()       (,)      (s or 0)   (N or 0)
+1            R1a      2          15            0
+2            2        1          11            0
+3            R1A      3          10       100000
+4            R1B      4          5             0
+---------------------- SOLVER OPTIONS ---------------------------------------    
+2        writeLog 
+215      WtrDpth                                       
+0.001    dtM       - time step to use in mooring integration (s)
+3.0e6    kBot      - bottom stiffness (Pa/m)
+3.0e5    cBot      - bottom damping (Pa-s/m)
+0.1      dtIC      - time interval for analyzing convergence during IC gen (s)
+100.0     TmaxIC    - max time for ic gen (s)
+5.0      CdScaleIC - factor by which to scale drag coefficients during dynamic relaxation (-)
+0.001    threshIC  - threshold for IC convergence (-)   
+0.001             dtOut                                       
+-------------------------- OUTPUTS --------------------------------
+Line2NBPZ
+Line2NBPX
+Line3NBPZ
+Line3NBPX
+------------------------- need this line --------------------------------------                                                                                     

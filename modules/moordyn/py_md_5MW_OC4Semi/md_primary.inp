@@ -1,6 +1,5 @@
 --------------------- MoorDyn Input File ------------------------------------
 Mooring system for OC4-DeepCwind Semi
-FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
 Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
 (-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)

@@ -1,0 +1,37 @@
+--- AERO DISK INPUT FILE -------
+NREL 5MW actuator disk input file
+--- SIMULATION CONTROL ---------
+true          echo            - Echo input data to "<RootName>.ADsk.ech" (flag)
+  "default"   DT              - Integration time step (s)
+--- ENVIRONMENTAL CONDITIONS ---
+      1.225   AirDens         - Air density (kg/m^3) (or "default")
+--- ACTUATOR DISK PROPERTIES ---
+     63.0     RotorRad        - Rotor radius (m) (or "default")
+"TSR,  RtSpd ,   VRel,  Skew ,   Pitch" InColNames      - Input column headers (string) {may include a combination of "TSR, RtSpd, VRel, Pitch, Skew"} (up to 4 columns) [choose TSR or RtSpd,VRel; if Skew is absent, Skew is modeled as (COS(Skew))^2]
+48, 0, 0, 0, 104       InColDims       - Number of unique values in each column (-) (must have same number of columns as InColName) [each >=2]
+@CpCtCq.csv
+--- OUTPUTS --------------------
+              OutList         - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+ADSpeed        ! Actuator disk rotational speed                                                    (rpm)   
+ADTSR          ! Actuator disk tip-speed ratio                                                     (-)   
+ADPitch        ! Actuator-disk collective blade-pitch angle                                        (deg)   
+ADVWindx       ! Actuator-disk-averaged wind velocity (x) in the local coordinate system           (m/s)
+ADVWindy       ! Actuator-disk-averaged wind velocity (y) in the local coordinate system           (m/s)
+ADVWindz       ! Actuator-disk-averaged wind velocity (z) in the local coordinate system           (m/s)
+ADSTVx         ! Actuator-disk structural translational velocity (Vx) in local coordinate system   (m/s)
+ADSTVy         ! Actuator-disk structural translational velocity (Vy) in local coordinate system   (m/s)
+ADSTVz         ! Actuator-disk structural translational velocity (Vz) in local coordinate system   (m/s)
+ADVRel         ! Actuator-disk-averaged relative wind speed                                        (m/s)
+ADSkew         ! Actuator-disk inflow-skew angle                                                   (deg)
+ADCp           ! Actuator-disk power  coefficient                                                  (-)
+ADCt           ! Actuator-disk thrust coefficient                                                  (-)
+ADCq           ! Actuator-disk torque coefficient                                                  (-)
+ADFx           ! Actuator disk aerodynamic force  (Fx) loads in the local coordinate system        (N)
+ADFy           ! Actuator disk aerodynamic force  (Fy) loads in the local coordinate system        (N)
+ADFz           ! Actuator disk aerodynamic force  (Fz) loads in the local coordinate system        (N)
+ADMx           ! Actuator disk aerodynamic moment (Mx) loads in the local coordinate system        (N-m)
+ADMy           ! Actuator disk aerodynamic moment (Mx) loads in the local coordinate system        (N-m)
+ADMz           ! Actuator disk aerodynamic moment (Mx) loads in the local coordinate system        (N-m)
+ADPower        ! Actuator disk power                                                               (W)
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+--------------------------------

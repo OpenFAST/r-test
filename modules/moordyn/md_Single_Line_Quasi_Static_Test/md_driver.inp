@@ -1,18 +1,17 @@
  MoorDyn Driver Input File 
 Another comment line
-FALSE    Echo      - echo the input file data (flag)
 ---------------- ENVIRONMENTAL CONDITIONS ------------------
 9.80665		gravity      - gravity (m/s^2)
-1025.0		rhoW      - water density (kg/m^3)
-600.0		WtrDpth      - water depth
+1025.0		rhoW         - water density (kg/m^3)
+600.0		   WtrDpth      - water depth
 ---------------- MOORDYN ------------------
-test.dat	MDInputFile      - Primary MoorDyn input file name (quoted string)
-"driver"	OutRootName      -  The name which prefixes all HydroDyn generated files (quoted string)
-60.0000		TMax       - Number of time steps in the simulations (-)
-0.0125		dtC      - TimeInterval for the simulation (sec)
-0 		InputsMode       - MoorDyn coupled object inputs (0: all inputs are zero for every timestep, 1: time-series inputs) (switch)
-""		InputsFile       - Filename for the MoorDyn inputs file for when InputsMod = 1 (quoted string)
-0 		NumTurbines      - Number of wind turbines (-) [>=1 to use FAST.Farm mode. 0 to use OpenFAST mode.]
+moordyn.dat MDInputFile  - Primary MoorDyn input file name (quoted string)
+"driver"	   OutRootName  -  The name which prefixes all HydroDyn generated files (quoted string)
+60.0000		TMax         - Number of time steps in the simulations (-)
+0.0125		dtC          - TimeInterval for the simulation (sec)
+0 		      InputsMode   - MoorDyn coupled object inputs (0: all inputs are zero for every timestep, 1: time-series inputs) (switch)
+""		      InputsFile   - Filename for the MoorDyn inputs file for when InputsMod = 1 (quoted string)
+0 		      NumTurbines  - Number of wind turbines (-) [>=1 to use FAST.Farm mode. 0 to use OpenFAST mode.]
 ---------------- Initial Positions ------------------
 ref_X    ref_Y    surge_init   sway_init  heave_init  roll_init  pitch_init   yaw_init
 (m)      (m)        (m)          (m)        (m)        (m)         (m)        (m)         [followed by NumTurbines rows of data]

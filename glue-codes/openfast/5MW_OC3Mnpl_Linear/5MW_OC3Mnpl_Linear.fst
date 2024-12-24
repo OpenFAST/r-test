@@ -10,10 +10,11 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
       1E+06   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
-          0   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
-          0   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
+          1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
+          0   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
+          0   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
           0   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
+          0   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
           0   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
           1   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
@@ -37,7 +38,8 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      InflowFile      - Name of file containing inflow wind input parameters (quoted string)
 "unused"      AeroFile        - Name of file containing aerodynamic input parameters (quoted string)
 "unused"      ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
-"unused"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
+"SeaState.dat"    SeaStFile       - Name of file containing sea state input parameters (quoted string)
+"NRELOffshrBsline5MW_OC3Monopile_HydroDyn.dat"    HydroFile       - Name of file containing hydrodynamic input parameters (quoted string)
 "NRELOffshrBsline5MW_OC3Monopile_SubDyn.dat"    SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
@@ -49,7 +51,7 @@ True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           0   TStart          - Time to begin tabular output (s)
           0   OutFileFmt      - Format for tabular (time-marching) output file (switch) {0: uncompressed binary [<RootName>.outb], 1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES20.12E3"   OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 True         Linearize       - Linearization analysis (flag)
 False         CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)

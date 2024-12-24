@@ -13,6 +13,7 @@ False              UseSC              - Use a super controller? (flag)
 --- SHARED MOORING SYSTEM --- [used only for Mod_SharedMoor>0]
 ""                 SharedMoorFile     - Name of file containing shared mooring system input parameters (quoted string) [used only when Mod_SharedMooring > 0]
 0.04	           DT_Mooring         - Time step for farm-level mooring coupling with each turbine (s) [used only when Mod_SharedMooring > 0]
+true              WrMooringVis       - Write shared mooring visualization, at the global FAST.Farm time step (-) [only used for Mod_SharedMooring=3]
 --- AMBIENT WIND: PRECURSOR IN VTK FORMAT --- [used only for Mod_AmbWind=1]
 3.0                DT_Low-VTK         - Time step for low -resolution wind data input files; will be used as the global FAST.Farm time step (s) [>0.0]
 0.1                DT_High-VTK        - Time step for high-resolution wind data input files (s) [>0.0]
@@ -42,6 +43,7 @@ WT_X    WT_Y   WT_Z   WT_FASTInFile     X0_High  Y0_High  Z0_High  dX_High  dY_H
 378.0   0.0    0.0    "FFTest_WT2.fst"   296.63   -80.0   5.0      10.17    10.0     10.0
 --- WAKE DYNAMICS ---
 1                  Mod_Wake           - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
+125                RotorDiamRef       - Reference turbine rotor diameter for wake calculations (m) [>0.0]
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           - Number of radii in the radial finite-difference grid (-) [>=2]
 136                NumPlanes          - Number of wake planes (-) [>=2]
@@ -51,28 +53,28 @@ DEFAULT            C_HWkDfl_OY        - Calibrated parameter in the correction f
 DEFAULT            C_HWkDfl_x         - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance               (-    ) or DEFAULT [DEFAULT= 0.0  ]
 DEFAULT            C_HWkDfl_xY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset              scaled with downstream distance and yaw error (1/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 2, -0.004 otherwise]
 DEFAULT            C_NearWake         - Calibrated parameter for the near-wake correction (-) [>1.0 and <2.5] or DEFAULT [DEFAULT=1.8]
-DEFAULT            k_vAmb             - Calibrated parameter for the influence of ambient turbulence in the eddy viscosity (-) [>=0.0] or DEFAULT [DEFAULT=0.05 ]
-DEFAULT            k_vShr             - Calibrated parameter for the influence of the shear layer    in the eddy viscosity (-) [>=0.0] or DEFAULT [DEFAULT=0.016]
-DEFAULT            C_vAmb_DMin        - Calibrated parameter in the eddy viscosity filter function for ambient turbulence defining the transitional diameter fraction between the minimum and exponential regions (-) [>=0.0          ] or DEFAULT [DEFAULT= 0.0 ]
-DEFAULT            C_vAmb_DMax        - Calibrated parameter in the eddy viscosity filter function for ambient turbulence defining the transitional diameter fraction between the exponential and maximum regions (-) [> C_vAmb_DMin  ] or DEFAULT [DEFAULT= 1.0 ]
-DEFAULT            C_vAmb_FMin        - Calibrated parameter in the eddy viscosity filter function for ambient turbulence defining the value in the minimum region                                                (-) [>=0.0 and <=1.0] or DEFAULT [DEFAULT= 1.0 ]
-DEFAULT            C_vAmb_Exp         - Calibrated parameter in the eddy viscosity filter function for ambient turbulence defining the exponent in the exponential region                                         (-) [> 0.0          ] or DEFAULT [DEFAULT= 0.01]
-DEFAULT            C_vShr_DMin        - Calibrated parameter in the eddy viscosity filter function for the shear layer    defining the transitional diameter fraction between the minimum and exponential regions (-) [>=0.0          ] or DEFAULT [DEFAULT= 3.0 ]
-DEFAULT            C_vShr_DMax        - Calibrated parameter in the eddy viscosity filter function for the shear layer    defining the transitional diameter fraction between the exponential and maximum regions (-) [> C_vShr_DMin  ] or DEFAULT [DEFAULT=25.0 ]
-DEFAULT            C_vShr_FMin        - Calibrated parameter in the eddy viscosity filter function for the shear layer    defining the value in the minimum region                                                (-) [>=0.0 and <=1.0] or DEFAULT [DEFAULT= 0.2 ]
-DEFAULT            C_vShr_Exp         - Calibrated parameter in the eddy viscosity filter function for the shear layer    defining the exponent in the exponential region                                         (-) [> 0.0          ] or DEFAULT [DEFAULT= 0.1 ]
+DEFAULT       k_vAmb        - Calibrated parameters for the influence of the ambient turbulence in the eddy viscosity (set of 5 parameters: k, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=0.05, 1.0, 0.0, 1.0, 0.01]
+DEFAULT       k_vShr        - Calibrated parameters for the influence of the shear layer in the eddy viscosity (set of 5 parameters: k, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=0.016, 0.2, 3.0, 25.0, 0.1]
 DEFAULT            Mod_WakeDiam       - Wake diameter calculation model (-) (switch) {1: rotor diameter, 2: velocity based, 3: mass-flux based, 4: momentum-flux based} or DEFAULT [DEFAULT=1]
 DEFAULT            C_WakeDiam         - Calibrated parameter for wake diameter calculation (-) [>0.0 and <0.99] or DEFAULT [DEFAULT=0.95] [unused for Mod_WakeDiam=1]
 DEFAULT            Mod_Meander        - Spatial filter model for wake meandering (-) (switch) {1: uniform, 2: truncated jinc, 3: windowed jinc} or DEFAULT [DEFAULT=3]
 DEFAULT            C_Meander          - Calibrated parameter for wake meandering (-) [>=1.0] or DEFAULT [DEFAULT=1.9]
 --- CURLED-WAKE PARAMETERS [only used if Mod_Wake=2 or 3] ---
 DEFAULT            Swirl              - Switch to include swirl velocities in wake (-) (switch) [DEFAULT=TRUE]
-DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0]
+DEFAULT            k_VortexDecay      - Vortex decay constant for curl (-) [DEFAULT=0.0001]
 DEFAULT            NumVortices        - The number of vortices in the curled wake model (-) [DEFAULT=100]
 DEFAULT            sigma_D            - The width of the vortices in the curled wake model non-dimesionalized by rotor diameter (-) [DEFAULT=0.2]
-DEFAULT            FilterInit         - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] (switch)
+DEFAULT            FilterInit         - Switch to filter the initial wake plane deficit and select the number of grid points for the filter {0: no filter, 1: filter of size 1} or DEFAULT [DEFAULT=1] [unused for Mod_Wake=1] (switch)
 DEFAULT            k_vCurl            - Calibrated parameter for scaling the eddy viscosity in the curled-wake model (-) [>=0] or DEFAULT [DEFAULT=2.0 ]
 DEFAULT            Mod_Projection     - Switch to select how the wake plane velocity is projected in AWAE {1: keep all components, 2: project against plane normal} or DEFAULT [DEFAULT=1: if Mod_Wake is 1 or 3, or DEFAULT=2: if Mod_Wake is 2] (switch)
+--- WAKE-ADDED TURBULENCE ---
+2                  WAT                - Switch between wake-added turbulence box options {0: no wake added turbulence, 1: predefined turbulence box, 2: user defined turbulence box} (switch)
+"../WAT_MannBoxDB/FFDB_D100_512x512x64.u" WAT_BoxFile  - Filepath to the file containing the u-component of the turbulence box (either predefined or user-defined) (quoted string)
+512, 512, 64       WAT_NxNyNz         - Number of points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (-)
+5.0, 5.0, 5.0      WAT_DxDyDz         - Distance (in meters) between points in the x, y, and z directions of the WAT_BoxFile [used only if WAT=2, derived value if WAT=1] (m)
+default            WAT_ScaleBox       - Flag to scale the input turbulence box to zero mean and unit standard deviation at every node [DEFAULT=False] (flag)
+default            WAT_k_Def          - Calibrated parameters for the influence of the maximum wake deficit on wake-added turbulence (set of 5 parameters: k_Def, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=[0.6, 0.0, 0.0, 2.0, 1.0 ]]
+default            WAT_k_Grad         - Calibrated parameters for the influence of the radial velocity gradient of the wake deficit on wake-added turbulence (set of 5 parameters: k_Grad, FMin, DMin, DMax, Exp) (-) [>=0.0, >=0.0 and <=1.0, >=0.0, >DMin, >=0.0] or DEFAULT [DEFAULT=[3.0, 0.0, 0.0, 12.0, 0.65]
 --- VISUALIZATION ---
 False              WrDisWind          - Write low- and high-resolution disturbed wind data to <RootName>.Low.Dis.t<n>.vtk etc.? (flag)
 0                  NOutDisWindXY      - Number of XY planes for output of disturbed wind data across the low-resolution domain to <RootName>.Low.DisXY<n_out>.t<n>.vtk (-) [0 to 999]
