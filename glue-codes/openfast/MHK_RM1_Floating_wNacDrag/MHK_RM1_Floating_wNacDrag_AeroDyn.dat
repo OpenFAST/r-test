@@ -73,11 +73,11 @@ False                  UseBlCm     - Include aerodynamic pitching moment in calc
 "MHK_RM1_AeroDyn_Blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "unused"               ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Hub Properties ============================================================================== [used only when MHK=1 or 2]
-7.2                    VolHub      - Hub volume (m^3)
-0.2222                 HubCenBx    - Hub center of buoyancy x direction offset (m)
+0.01                   VolHub      - Hub volume (m^3)
+0                      HubCenBx    - Hub center of buoyancy x direction offset (m)
 ======  Nacelle Properties ========================================================================== [used only when MHK=1 or 2 or when NacelleDrag=True]
-38.6                   VolNac      - Nacelle volume (m^3)
-0.43, 0, 0             NacCenB     - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
+0                      VolNac      - Nacelle volume (m^3)
+0, 0, 0                NacCenB     - Position of nacelle center of buoyancy from yaw bearing in nacelle coordinates (m)
 4.67, 20.1544, 20.1544 NacArea     - Projected area of the nacelle in X, Y, Z in the nacelle coordinate system (m^2)
 0.5, 0.5, 0.5          NacCd       - Drag coefficient for the nacelle areas defined above (-)
 0.43, 0, 0             NacDragAC   - Position of aerodynamic center of nacelle drag in nacelle coordinates (m)
@@ -88,10 +88,10 @@ False                  TFinAero    - Calculate tail fin aerodynamics model (flag
 4                      NumTwrNds   - Number of tower nodes used in the analysis (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
 TwrElev         TwrDiam        TwrCd          TwrTI          TwrCb          TwrCp          TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
 (m)             (m)            (-)            (-)            (-)            (-)            (-)
--9.0000000E+00  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--1.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--1.9000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--2.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
+-9.0000000E+00  3.2530000E-01  2.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
+-1.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
+-1.9000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
+-2.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00  0.0000000E+00
 ======  Outputs  ====================================================================================
 True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
 9                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
