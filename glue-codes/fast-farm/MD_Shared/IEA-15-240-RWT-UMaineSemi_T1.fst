@@ -7,6 +7,9 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 0.025                  DT          - Integration time step (s)  
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic} 
 0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections} 
+0.0                    RhoInf      - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
+1e-4                   ConvTol     - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+6                      MaxConvIter - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
 99999.0                DT_UJac     - Time between calls to get Jacobians (s) 
 1000000.0              UJacSclFact - Scaling factor used in Jacobians (-) 
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------ 
