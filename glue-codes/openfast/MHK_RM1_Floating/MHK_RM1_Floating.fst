@@ -6,7 +6,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           6   TMax            - Total run time (s)
       0.003   DT              - Recommended module time step (s)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
-          0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
+          5   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
