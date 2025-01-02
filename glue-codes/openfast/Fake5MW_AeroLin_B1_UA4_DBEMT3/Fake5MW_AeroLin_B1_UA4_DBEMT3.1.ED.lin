@@ -1,8 +1,8 @@
 
-Linearized model: Predictions were generated on 06-May-2024 at 17:13:36 using OpenFAST, compiled on May  6 2024 at 17:01:17 as a 64-bit application using double precision at commit -128-NOTFOUND
+Linearized model: Predictions were generated on 13-Sep-2024 at 18:19:15 using OpenFAST, compiled on Sep 13 2024 at 17:02:28 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
-Description from the FAST input file: One Blade, 4 aero-stations, Linearization with continuous States AeroDynamic modules
+Description from the FAST input file: One blade, 4 aero-stations, Linearization with continuous-state aerodynamic modules
 
 Simulation information:
    Simulation time:                     1.1000 s
@@ -19,14 +19,14 @@ Simulation information:
 Order of continuous states:
    Row/Column Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
-          1    6.242751928096E+000                                                     T               2         1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m
-          2   -9.974515858730E+000                                                     T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
+          1    6.242703524074E+000                                                     T               2         1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m
+          2   -1.001124195282E+001                                                     T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
 
 Order of continuous state derivatives:
    Row/Column Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
-          1   -9.974515858730E+000                                                     T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
-          2   -6.361263817209E+000                                                     T               2         First time derivative of First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s/s
+          1   -1.001124195282E+001                                                     T               2         First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s
+          2   -6.282750035587E+000                                                     T               2         First time derivative of First time derivative of 1st flapwise bending-mode DOF of blade 1 (internal DOF index = DOF_BF(1,1)), m/s/s
 
 Order of inputs:
      Column   Operating Point                                                   Rotating Frame? Derivative Order Description
@@ -39,24 +39,24 @@ Order of inputs:
 Order of outputs:
         Row   Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
-          1    3.202937562789E+002                                                     F               0         TwrBsFxt, (kN)
-          2    3.176541141602E+004                                                     F               0         TwrBsMyt, (kN-m)
-          3    6.242751928096E+000                                                     F               0         Q_B1F1, (m)
+          1    3.203207746202E+002                                                     F               0         TwrBsFxt, (kN)
+          2    3.176784617970E+004                                                     F               0         TwrBsMyt, (kN-m)
+          3    6.242703524074E+000                                                     F               0         Q_B1F1, (m)
 
 
 Linearized state matrices:
 
 A: 2 x 2
     0.000000000000E+000  1.000000000000E+000
-   -1.593071928518E+001  2.290040317835E-002
+   -1.593111709924E+001  2.309239509229E-002
 B: 2 x 4
     0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
-    2.542177562303E+001  0.000000000000E+000  0.000000000000E+000  2.542177562303E+001
+    2.542353983184E+001  0.000000000000E+000  0.000000000000E+000  2.542353983184E+001
 C: 3 x 2
-    4.691581570488E+001 -5.812391037441E-002
-    4.492738842513E+003 -6.388699644736E+000
+    4.691726765149E+001 -5.858720884228E-002
+    4.492888113803E+003 -6.434733686652E+000
     1.000000000000E+000  0.000000000000E+000
 D: 3 x 4
-   -8.333618343035E+001  0.000000000000E+000  0.000000000000E+000 -8.333618343035E+001
-   -9.121525467115E+003  0.000000000000E+000  0.000000000000E+000 -9.121525467115E+003
+   -8.328550026933E+001  0.000000000000E+000  0.000000000000E+000 -8.328550026933E+001
+   -9.116182052715E+003  0.000000000000E+000  0.000000000000E+000 -9.116182052715E+003
     0.000000000000E+000  0.000000000000E+000  0.000000000000E+000  0.000000000000E+000

@@ -105,7 +105,7 @@ TwrElev        TwrDiam        TwrCd          TwrTI          TwrCb          TwrCp
 8.2500000E+01  5.5140000E+00  1.0000000E+00  1.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00
 8.7600000E+01  5.5000000E+00  1.0000000E+00  1.0000000E-01  0.0000000E+00  0.0000000E+00  0.0000000E+00
 ======  Outputs  ====================================================================================
-False                  SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
+True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
 0                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
 1, 8, 19               BlOutNd     - Blade nodes whose values will be output (-)
 5                      NTwOuts     - Number of tower node outputs [0 - 9] (-)
