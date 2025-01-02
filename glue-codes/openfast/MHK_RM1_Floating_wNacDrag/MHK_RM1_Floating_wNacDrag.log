@@ -19,7 +19,7 @@
   - Time: 18:48:30
  Execution Info:
   - Date: 01/02/2025
-  - Time: 09:46:21-0700
+  - Time: 09:52:43-0700
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -33,7 +33,7 @@
     Projection: legacy (NoSweepPitchTwist), BEM: legacy (2D)
   Running HydroDyn.
   WARNING:  The requested output channel is invalid: Wave1Elev
-  Reading in WAMIT output with root name "MHK_RM1_Floating/MHK_RM1_Floating".
+  Reading in WAMIT output with root name "MHK_RM1_Floating_wNacDrag/MHK_RM1_Floating".
   Computing radiation impulse response functions and wave diffraction forces.
   Running MoorDyn (v2.2.2, 2024-01-16).
     This is MoorDyn v2, with significant input file changes from v1.
@@ -48,7 +48,7 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
-    Parsing MoorDyn input file: MHK_RM1_Floating/MHK_RM1_Floating_MoorDyn.dat
+    Parsing MoorDyn input file: MHK_RM1_Floating_wNacDrag/MHK_RM1_Floating_wNacDrag_MoorDyn.dat
    Created mooring system:  6 lines, 12 points, 0 rods, 0 bodies.
     Finalizing initial conditions using dynamic relaxation.
 
@@ -68,20 +68,20 @@
     MoorDyn initialization completed.
 
  FAST_InitializeAll:ED_Init:ED_ReadInput:ReadBladeInputs:ReadBladeFile:The ElastoDyn Blade file,
- MHK_RM1_Floating/MHK_RM1_ElastoDyn_Blade.dat, DISTRIBUTED BLADE PROPERTIES table contains the
- PitchAxis column.  This column is unused and will be removed in future releases
+ MHK_RM1_Floating_wNacDrag/MHK_RM1_ElastoDyn_Blade.dat, DISTRIBUTED BLADE PROPERTIES table
+ contains the PitchAxis column.  This column is unused and will be removed in future releases
  FAST_InitializeAll:SeaSt_Init:SeaStateInput_ProcessInitData:Expecting current field from
  InflowWind. Setting CurrMod to 0.
  FAST_InitializeAll:HydroDyn_Init:HydroDynInput_ProcessInitData: A requested output channel is
  invalid
 
   Time: 0 of 6 seconds.
-                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 09:49:49.                                                                                                                                     
-  Total Real Time:       3.4677 minutes
-  Total CPU Time:        3.4563 minutes
-  Simulation CPU Time:   3.2545 minutes
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 09:56:05.                                                                                                                                     
+  Total Real Time:       3.3411 minutes
+  Total CPU Time:        3.3601 minutes
+  Simulation CPU Time:   3.162 minutes
   Simulated Time:        0.1 minutes
-  Time Ratio (Sim/CPU):  3.07271E-02
+  Time Ratio (Sim/CPU):  3.16259E-02
 
   OpenFAST terminated normally.
 
