@@ -34,7 +34,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
          50   WtrDpth         - Water depth (m)
           0   MSL2SWL         - Offset between still-water level and mean sea level (m) [positive upward]
 ---------------------- INPUT FILES ---------------------------------------------
-"MHK_RM1_Fixed_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
+"MHK_RM1_Fixed_ElastoDyn.dat"   EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
 "unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
 "unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
