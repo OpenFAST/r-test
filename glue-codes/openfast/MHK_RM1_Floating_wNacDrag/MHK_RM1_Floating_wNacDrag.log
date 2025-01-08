@@ -2,24 +2,24 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2024 National Renewable Energy Laboratory
- Copyright (C) 2024 Envision Energy USA LTD
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.5.5-2172-g964a549e
+ OpenFAST-v3.5.5-2453-g7626fee3
  Compile Info:
   - Compiler: GCC version 14.2.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Dec 31 2024
-  - Time: 18:48:30
+  - Date: Jan  8 2025
+  - Time: 09:26:16
  Execution Info:
-  - Date: 01/02/2025
-  - Time: 09:52:43-0700
+  - Date: 01/08/2025
+  - Time: 12:27:55-0700
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -41,8 +41,8 @@
  **************************************************************************************************
  MoorDyn
 
- Copyright (C) 2024 National Renewable Energy Laboratory
- Copyright (C) 2024 Envision Energy USA LTD
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
@@ -66,22 +66,33 @@
     Fairlead tension: 2.13755E+05
     Fairlead forces: -35829, 6507.1, -2.10631E+05
     MoorDyn initialization completed.
-
- FAST_InitializeAll:ED_Init:ED_ReadInput:ReadBladeInputs:ReadBladeFile:The ElastoDyn Blade file,
- MHK_RM1_Floating_wNacDrag/MHK_RM1_ElastoDyn_Blade.dat, DISTRIBUTED BLADE PROPERTIES table
- contains the PitchAxis column.  This column is unused and will be removed in future releases
- FAST_InitializeAll:SeaSt_Init:SeaStateInput_ProcessInitData:Expecting current field from
- InflowWind. Setting CurrMod to 0.
- FAST_InitializeAll:HydroDyn_Init:HydroDynInput_ProcessInitData: A requested output channel is
- invalid
-
+ Mapping: ED%y%BladeLn2Mesh(1) -> AD%u%rotors(1)%BladeMotion(1)                                                                           
+ Mapping: ED%y%BladeLn2Mesh(2) -> AD%u%rotors(1)%BladeMotion(2)                                                                           
+ Mapping: ED%y%BladeRootMotion(1) -> AD%u%rotors(1)%BladeRootMotion(1)                                                                    
+ Mapping: ED%y%BladeRootMotion(2) -> AD%u%rotors(1)%BladeRootMotion(2)                                                                    
+ Mapping: ED%y%TowerLn2Mesh -> AD%u%rotors(1)%TowerMotion                                                                                 
+ Mapping: ED%y%HubPtMotion -> AD%u%rotors(1)%HubMotion                                                                                    
+ Mapping: ED%y%NacelleMotion -> AD%u%rotors(1)%NacelleMotion                                                                              
+ Mapping: ED%y%PlatformPtMesh -> HD%u%PRPMesh                                                                                             
+ Mapping: ED%y%PlatformPtMesh -> HD%u%Morison%Mesh                                                                                        
+ Mapping: ED%y%PlatformPtMesh -> HD%u%WAMITMesh                                                                                           
+ Mapping: ED%y%PlatformPtMesh -> MD%u%CoupledKinematics(1)                                                                                
+ Mapping: AD%y%rotors(1)%BladeLoad(1) -> ED%u%BladePtLoads(1) [AD%u%rotors(1)%BladeMotion(1) @ ED%y%BladeLn2Mesh(1)]*                     
+ Mapping: AD%y%rotors(1)%BladeLoad(2) -> ED%u%BladePtLoads(2) [AD%u%rotors(1)%BladeMotion(2) @ ED%y%BladeLn2Mesh(2)]*                     
+ Mapping: AD%y%rotors(1)%HubLoad -> ED%u%HubPtLoad [AD%u%rotors(1)%HubMotion @ ED%y%HubPtMotion]                                          
+ Mapping: AD%y%rotors(1)%NacelleLoad -> ED%u%NacelleLoads [AD%u%rotors(1)%NacelleMotion @ ED%y%NacelleMotion]                             
+ Mapping: AD%y%rotors(1)%TowerLoad -> ED%u%TowerPtLoads [AD%u%rotors(1)%TowerMotion @ ED%y%TowerLn2Mesh]*                                 
+ Mapping: HD%y%Morison%Mesh -> ED%u%PlatformPtMesh [HD%u%Morison%Mesh @ ED%y%PlatformPtMesh]                                              
+ Mapping: HD%y%WAMITMesh -> ED%u%PlatformPtMesh [HD%u%WAMITMesh @ ED%y%PlatformPtMesh]                                                    
+ Mapping: MD%y%CoupledLoads(1) -> ED%u%PlatformPtMesh [MD%u%CoupledKinematics(1) @ ED%y%PlatformPtMesh]                                   
+ Mapping: ED -> IfW                                                                                                                       
   Time: 0 of 6 seconds.
-                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 09:56:05.                                                                                                                                     
-  Total Real Time:       3.3411 minutes
-  Total CPU Time:        3.3601 minutes
-  Simulation CPU Time:   3.162 minutes
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 12:28:49.                                                                                                                                     
+  Total Real Time:       0.8797 minutes
+  Total CPU Time:        1.2161 minutes
+  Simulation CPU Time:   1.0155 minutes
   Simulated Time:        0.1 minutes
-  Time Ratio (Sim/CPU):  3.16259E-02
+  Time Ratio (Sim/CPU):  9.84730E-02
 
   OpenFAST terminated normally.
 
