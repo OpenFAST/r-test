@@ -130,7 +130,7 @@ JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp=
    62     6.00000     6.00000   -50.00100      1            0
    63    -6.00000    -6.00000   -50.00100      1            0
    64    -6.00000     6.00000   -50.00100      1            0
----------------------- MEMBER CROSS-SECTION PROPERTIES -------------------------
+---------------- CYLINDRICAL MEMBER CROSS-SECTION PROPERTIES -------------------
              6   NPropSets      - Number of member property sets (-)
 PropSetID    PropD         PropThck
    (-)        (m)            (m)
@@ -140,134 +140,150 @@ PropSetID    PropD         PropThck
     4        1.20000        0.04000
     5        2.08200        0.49100
     6        2.08200        0.06000
----------------------- SIMPLE HYDRODYNAMIC COEFFICIENTS (model 1) --------------
+---------------- RECTANGULAR MEMBER CROSS-SECTION PROPERTIES -------------------
+             0   NRecPropSets      - Number of member property sets (-)
+MPropSetID   PropA      PropB    PropThck
+   (-)        (m)        (m)       (m)
+-------- SIMPLE CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
      SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG    SimplCb    SimplCbMG
        (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)            (-)         (-)
        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00        1.00           1.00        1.00
----------------------- DEPTH-BASED HYDRODYNAMIC COEFFICIENTS (model 2) ---------
+-------- SIMPLE RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
+     SimplCdA    SimplCdAMG    SimplCdB    SimplCdBMG    SimplCaA    SimplCaAMG    SimplCaB    SimplCaBMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG  SimplCb  SimplCbMG
+       (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)         (-)         (-)          (-)         (-)         (-)         (-)          (-)       (-)
+       0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0         0.0         0.0          0.0         0.0         0.0         0.0          1.0       1.0
+------ DEPTH-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
              0   NCoefDpth       - Number of depth-dependent coefficients (-)
 Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)      (-)        (-)      (-)            (-)      (-)        (-)        (-)          (-)        (-)          (-)        (-)           (-)      (-)
----------------------- MEMBER-BASED HYDRODYNAMIC COEFFICIENTS (model 3) --------
+------ DEPTH-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
+             0   NRecCoefDpth       - Number of depth-dependent coefficients (-)
+Dpth    DpthCdA   DpthCdAMG    DpthCdB   DpthCdBMG   DpthCaA   DpthCaAMG   DpthCaB   DpthCaBMG     DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
+(m)       (-)       (-)          (-)       (-)         (-)       (-)        (-)        (-)          (-)        (-)       (-)        (-)          (-)        (-)          (-)        (-)          (-)      (-)
+------ MEMBER-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
              0   NCoefMembers       - Number of member-based coefficients (-)
 MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2    MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)              (-)           (-)           (-)           (-)
+------ MEMBER-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
+            0   NRecCoefMembers    - Number of member-based coefficients (-)
+MemberID    MemberCdA1     MemberCdA2    MemberCdAMG1   MemberCdAMG2    MemberCdB1     MemberCdB2    MemberCdBMG1   MemberCdBMG2    MemberCaA1     MemberCaA2    MemberCaAMG1   MemberCaAMG2    MemberCaB1     MemberCaB2    MemberCaBMG1   MemberCaBMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2   MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
+   (-)         (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)           (-)          (-)           (-)           (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)              (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)
 -------------------- MEMBERS -------------------------------------------------
            112   NMembers       - Number of members (-)
-MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MDivSize   MCoefMod   MHstLMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
-  (-)        (-)        (-)         (-)          (-)        (m)      (switch)   (switch)  (flag)
-    1         1          2           2            2         1.0000      1          1       FALSE
-    2         2          3           2            2         1.0000      1          1       FALSE
-    3         3          4           2            2         1.0000      1          1       FALSE
-    4         4          5           2            2         1.0000      1          1       FALSE
-    5         6          7           2            2         1.0000      1          1       FALSE
-    6         7          8           2            2         1.0000      1          1       FALSE
-    7         8          9           2            2         1.0000      1          1       FALSE
-    8         9         10           2            2         1.0000      1          1       FALSE
-    9        11         12           2            2         1.0000      1          1       FALSE
-   10        12         13           2            2         1.0000      1          1       FALSE
-   11        13         14           2            2         1.0000      1          1       FALSE
-   12        14         15           2            2         1.0000      1          1       FALSE
-   13        16         17           2            2         1.0000      1          1       FALSE
-   14        17         18           2            2         1.0000      1          1       FALSE
-   15        18         19           2            2         1.0000      1          1       FALSE
-   16        19         20           2            2         1.0000      1          1       FALSE
-   17         5         21           3            3         1.0000      1          1       FALSE
-   18        21         22           3            3         1.0000      1          1       FALSE
-   19        22         23           3            3         1.0000      1          1       FALSE
-   20        23         24           3            3         1.0000      1          1       FALSE
-   21        10         25           3            3         1.0000      1          1       FALSE
-   22        25         26           3            3         1.0000      1          1       FALSE
-   23        26         27           3            3         1.0000      1          1       FALSE
-   24        27         28           3            3         1.0000      1          1       FALSE
-   25        15         29           3            3         1.0000      1          1       FALSE
-   26        29         30           3            3         1.0000      1          1       FALSE
-   27        30         31           3            3         1.0000      1          1       FALSE
-   28        31         32           3            3         1.0000      1          1       FALSE
-   29        20         33           3            3         1.0000      1          1       FALSE
-   30        33         34           3            3         1.0000      1          1       FALSE
-   31        34         35           3            3         1.0000      1          1       FALSE
-   32        35         36           3            3         1.0000      1          1       FALSE
-   33         3          8           1            1         1.0000      1          1       FALSE
-   34         8         13           1            1         1.0000      1          1       FALSE
-   35        13         18           1            1         1.0000      1          1       FALSE
-   36        18          3           1            1         1.0000      1          1       FALSE
-   37         4         37           1            1         1.0000      1          1       FALSE
-   38        37         20           1            1         1.0000      1          1       FALSE
-   39        19         37           1            1         1.0000      1          1       FALSE
-   40        37          5           1            1         1.0000      1          1       FALSE
-   41         9         38           1            1         1.0000      1          1       FALSE
-   42        38         15           1            1         1.0000      1          1       FALSE
-   43        14         38           1            1         1.0000      1          1       FALSE
-   44        38         10           1            1         1.0000      1          1       FALSE
-   45         4         39           1            1         1.0000      1          1       FALSE
-   46        39         10           1            1         1.0000      1          1       FALSE
-   47         9         39           1            1         1.0000      1          1       FALSE
-   48        39          5           1            1         1.0000      1          1       FALSE
-   49        19         40           1            1         1.0000      1          1       FALSE
-   50        40         15           1            1         1.0000      1          1       FALSE
-   51        14         40           1            1         1.0000      1          1       FALSE
-   52        40         20           1            1         1.0000      1          1       FALSE
-   53         5         41           1            1         1.0000      1          1       FALSE
-   54        41         33           1            1         1.0000      1          1       FALSE
-   55        20         41           1            1         1.0000      1          1       FALSE
-   56        41         21           1            1         1.0000      1          1       FALSE
-   57        10         42           1            1         1.0000      1          1       FALSE
-   58        42         29           1            1         1.0000      1          1       FALSE
-   59        15         42           1            1         1.0000      1          1       FALSE
-   60        42         25           1            1         1.0000      1          1       FALSE
-   61         5         43           1            1         1.0000      1          1       FALSE
-   62        43         25           1            1         1.0000      1          1       FALSE
-   63        10         43           1            1         1.0000      1          1       FALSE
-   64        43         21           1            1         1.0000      1          1       FALSE
-   65        20         44           1            1         1.0000      1          1       FALSE
-   66        44         29           1            1         1.0000      1          1       FALSE
-   67        15         44           1            1         1.0000      1          1       FALSE
-   68        44         33           1            1         1.0000      1          1       FALSE
-   69        21         45           1            1         1.0000      1          1       FALSE
-   70        45         34           1            1         1.0000      1          1       FALSE
-   71        33         45           1            1         1.0000      1          1       FALSE
-   72        45         22           1            1         1.0000      1          1       FALSE
-   73        25         46           1            1         1.0000      1          1       FALSE
-   74        46         30           1            1         1.0000      1          1       FALSE
-   75        29         46           1            1         1.0000      1          1       FALSE
-   76        46         26           1            1         1.0000      1          1       FALSE
-   77        21         47           1            1         1.0000      1          1       FALSE
-   78        47         26           1            1         1.0000      1          1       FALSE
-   79        25         47           1            1         1.0000      1          1       FALSE
-   80        47         22           1            1         1.0000      1          1       FALSE
-   81        33         48           1            1         1.0000      1          1       FALSE
-   82        48         30           1            1         1.0000      1          1       FALSE
-   83        29         48           1            1         1.0000      1          1       FALSE
-   84        48         34           1            1         1.0000      1          1       FALSE
-   85        22         49           1            1         1.0000      1          1       FALSE
-   86        49         35           1            1         1.0000      1          1       FALSE
-   87        34         49           1            1         1.0000      1          1       FALSE
-   88        49         23           1            1         1.0000      1          1       FALSE
-   89        26         50           1            1         1.0000      1          1       FALSE
-   90        50         31           1            1         1.0000      1          1       FALSE
-   91        30         50           1            1         1.0000      1          1       FALSE
-   92        50         27           1            1         1.0000      1          1       FALSE
-   93        22         51           1            1         1.0000      1          1       FALSE
-   94        51         27           1            1         1.0000      1          1       FALSE
-   95        26         51           1            1         1.0000      1          1       FALSE
-   96        51         23           1            1         1.0000      1          1       FALSE
-   97        34         52           1            1         1.0000      1          1       FALSE
-   98        52         31           1            1         1.0000      1          1       FALSE
-   99        30         52           1            1         1.0000      1          1       FALSE
-  100        52         35           1            1         1.0000      1          1       FALSE
-  101        24         53           4            4         1.0000      1          1       FALSE
-  102        28         54           4            4         1.0000      1          1       FALSE
-  103        32         56           4            4         1.0000      1          1       FALSE
-  104        36         55           4            4         1.0000      1          1       FALSE
-  105         1         58           5            5         1.0000      1          1       FALSE
-  106        16         57           5            5         1.0000      1          1       FALSE
-  107         6         60           5            5         1.0000      1          1       FALSE
-  108        11         59           5            5         1.0000      1          1       FALSE
-  109        58         62           6            6         1.0000      1          1       FALSE
-  110        57         61           6            6         1.0000      1          1       FALSE
-  111        60         64           6            6         1.0000      1          1       FALSE
-  112        59         63           6            6         1.0000      1          1       FALSE
+MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MSecGeom    MSpinOrient   MDivSize   MCoefMod  MHstLMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
+  (-)        (-)        (-)         (-)          (-)      (switch)       (deg)        (m)      (switch)  (switch)  (flag)
+   1          1          2           2            2           1            0         1.0000        1         1     FALSE
+   2          2          3           2            2           1            0         1.0000        1         1     FALSE
+   3          3          4           2            2           1            0         1.0000        1         1     FALSE
+   4          4          5           2            2           1            0         1.0000        1         1     FALSE
+   5          6          7           2            2           1            0         1.0000        1         1     FALSE
+   6          7          8           2            2           1            0         1.0000        1         1     FALSE
+   7          8          9           2            2           1            0         1.0000        1         1     FALSE
+   8          9         10           2            2           1            0         1.0000        1         1     FALSE
+   9         11         12           2            2           1            0         1.0000        1         1     FALSE
+  10         12         13           2            2           1            0         1.0000        1         1     FALSE
+  11         13         14           2            2           1            0         1.0000        1         1     FALSE
+  12         14         15           2            2           1            0         1.0000        1         1     FALSE
+  13         16         17           2            2           1            0         1.0000        1         1     FALSE
+  14         17         18           2            2           1            0         1.0000        1         1     FALSE
+  15         18         19           2            2           1            0         1.0000        1         1     FALSE
+  16         19         20           2            2           1            0         1.0000        1         1     FALSE
+  17          5         21           3            3           1            0         1.0000        1         1     FALSE
+  18         21         22           3            3           1            0         1.0000        1         1     FALSE
+  19         22         23           3            3           1            0         1.0000        1         1     FALSE
+  20         23         24           3            3           1            0         1.0000        1         1     FALSE
+  21         10         25           3            3           1            0         1.0000        1         1     FALSE
+  22         25         26           3            3           1            0         1.0000        1         1     FALSE
+  23         26         27           3            3           1            0         1.0000        1         1     FALSE
+  24         27         28           3            3           1            0         1.0000        1         1     FALSE
+  25         15         29           3            3           1            0         1.0000        1         1     FALSE
+  26         29         30           3            3           1            0         1.0000        1         1     FALSE
+  27         30         31           3            3           1            0         1.0000        1         1     FALSE
+  28         31         32           3            3           1            0         1.0000        1         1     FALSE
+  29         20         33           3            3           1            0         1.0000        1         1     FALSE
+  30         33         34           3            3           1            0         1.0000        1         1     FALSE
+  31         34         35           3            3           1            0         1.0000        1         1     FALSE
+  32         35         36           3            3           1            0         1.0000        1         1     FALSE
+  33          3          8           1            1           1            0         1.0000        1         1     FALSE
+  34          8         13           1            1           1            0         1.0000        1         1     FALSE
+  35         13         18           1            1           1            0         1.0000        1         1     FALSE
+  36         18          3           1            1           1            0         1.0000        1         1     FALSE
+  37          4         37           1            1           1            0         1.0000        1         1     FALSE
+  38         37         20           1            1           1            0         1.0000        1         1     FALSE
+  39         19         37           1            1           1            0         1.0000        1         1     FALSE
+  40         37          5           1            1           1            0         1.0000        1         1     FALSE
+  41          9         38           1            1           1            0         1.0000        1         1     FALSE
+  42         38         15           1            1           1            0         1.0000        1         1     FALSE
+  43         14         38           1            1           1            0         1.0000        1         1     FALSE
+  44         38         10           1            1           1            0         1.0000        1         1     FALSE
+  45          4         39           1            1           1            0         1.0000        1         1     FALSE
+  46         39         10           1            1           1            0         1.0000        1         1     FALSE
+  47          9         39           1            1           1            0         1.0000        1         1     FALSE
+  48         39          5           1            1           1            0         1.0000        1         1     FALSE
+  49         19         40           1            1           1            0         1.0000        1         1     FALSE
+  50         40         15           1            1           1            0         1.0000        1         1     FALSE
+  51         14         40           1            1           1            0         1.0000        1         1     FALSE
+  52         40         20           1            1           1            0         1.0000        1         1     FALSE
+  53          5         41           1            1           1            0         1.0000        1         1     FALSE
+  54         41         33           1            1           1            0         1.0000        1         1     FALSE
+  55         20         41           1            1           1            0         1.0000        1         1     FALSE
+  56         41         21           1            1           1            0         1.0000        1         1     FALSE
+  57         10         42           1            1           1            0         1.0000        1         1     FALSE
+  58         42         29           1            1           1            0         1.0000        1         1     FALSE
+  59         15         42           1            1           1            0         1.0000        1         1     FALSE
+  60         42         25           1            1           1            0         1.0000        1         1     FALSE
+  61          5         43           1            1           1            0         1.0000        1         1     FALSE
+  62         43         25           1            1           1            0         1.0000        1         1     FALSE
+  63         10         43           1            1           1            0         1.0000        1         1     FALSE
+  64         43         21           1            1           1            0         1.0000        1         1     FALSE
+  65         20         44           1            1           1            0         1.0000        1         1     FALSE
+  66         44         29           1            1           1            0         1.0000        1         1     FALSE
+  67         15         44           1            1           1            0         1.0000        1         1     FALSE
+  68         44         33           1            1           1            0         1.0000        1         1     FALSE
+  69         21         45           1            1           1            0         1.0000        1         1     FALSE
+  70         45         34           1            1           1            0         1.0000        1         1     FALSE
+  71         33         45           1            1           1            0         1.0000        1         1     FALSE
+  72         45         22           1            1           1            0         1.0000        1         1     FALSE
+  73         25         46           1            1           1            0         1.0000        1         1     FALSE
+  74         46         30           1            1           1            0         1.0000        1         1     FALSE
+  75         29         46           1            1           1            0         1.0000        1         1     FALSE
+  76         46         26           1            1           1            0         1.0000        1         1     FALSE
+  77         21         47           1            1           1            0         1.0000        1         1     FALSE
+  78         47         26           1            1           1            0         1.0000        1         1     FALSE
+  79         25         47           1            1           1            0         1.0000        1         1     FALSE
+  80         47         22           1            1           1            0         1.0000        1         1     FALSE
+  81         33         48           1            1           1            0         1.0000        1         1     FALSE
+  82         48         30           1            1           1            0         1.0000        1         1     FALSE
+  83         29         48           1            1           1            0         1.0000        1         1     FALSE
+  84         48         34           1            1           1            0         1.0000        1         1     FALSE
+  85         22         49           1            1           1            0         1.0000        1         1     FALSE
+  86         49         35           1            1           1            0         1.0000        1         1     FALSE
+  87         34         49           1            1           1            0         1.0000        1         1     FALSE
+  88         49         23           1            1           1            0         1.0000        1         1     FALSE
+  89         26         50           1            1           1            0         1.0000        1         1     FALSE
+  90         50         31           1            1           1            0         1.0000        1         1     FALSE
+  91         30         50           1            1           1            0         1.0000        1         1     FALSE
+  92         50         27           1            1           1            0         1.0000        1         1     FALSE
+  93         22         51           1            1           1            0         1.0000        1         1     FALSE
+  94         51         27           1            1           1            0         1.0000        1         1     FALSE
+  95         26         51           1            1           1            0         1.0000        1         1     FALSE
+  96         51         23           1            1           1            0         1.0000        1         1     FALSE
+  97         34         52           1            1           1            0         1.0000        1         1     FALSE
+  98         52         31           1            1           1            0         1.0000        1         1     FALSE
+  99         30         52           1            1           1            0         1.0000        1         1     FALSE
+ 100         52         35           1            1           1            0         1.0000        1         1     FALSE
+ 101         24         53           4            4           1            0         1.0000        1         1     FALSE
+ 102         28         54           4            4           1            0         1.0000        1         1     FALSE
+ 103         32         56           4            4           1            0         1.0000        1         1     FALSE
+ 104         36         55           4            4           1            0         1.0000        1         1     FALSE
+ 105          1         58           5            5           1            0         1.0000        1         1     FALSE
+ 106         16         57           5            5           1            0         1.0000        1         1     FALSE
+ 107          6         60           5            5           1            0         1.0000        1         1     FALSE
+ 108         11         59           5            5           1            0         1.0000        1         1     FALSE
+ 109         58         62           6            6           1            0         1.0000        1         1     FALSE
+ 110         57         61           6            6           1            0         1.0000        1         1     FALSE
+ 111         60         64           6            6           1            0         1.0000        1         1     FALSE
+ 112         59         63           6            6           1            0         1.0000        1         1     FALSE
 ---------------------- FILLED MEMBERS ------------------------------------------
              1   NFillGroups     - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
 FillNumM FillMList             FillFSLoc     FillDens
