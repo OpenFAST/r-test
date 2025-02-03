@@ -112,7 +112,7 @@ JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp=
    43   -28.86751     0.00000   -19.94000      1            0
    44    14.43376   -25.00000   -19.94000      1            0
 ---------------- CYLINDRICAL MEMBER CROSS-SECTION PROPERTIES -------------------
-             4   NPropSets      - Number of member property sets (-)
+             4   NPropSetsCyl    - Number of cylindrical member property sets (-)
 PropSetID    PropD         PropThck
    (-)        (m)            (m)
     1        6.50000        0.03000          ! Main Column
@@ -120,7 +120,7 @@ PropSetID    PropD         PropThck
     3       24.00000        0.06000          ! Base Columns
     4        1.60000        0.01750          ! Pontoons
 ---------------- RECTANGULAR MEMBER CROSS-SECTION PROPERTIES -------------------
-             0   NRecPropSets      - Number of member property sets (-)
+             0   NPropSetsRec    - Number of rectangular member property sets (-)
 MPropSetID   PropA      PropB    PropThck
    (-)        (m)        (m)       (m)
 -------- SIMPLE CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
@@ -132,15 +132,15 @@ MPropSetID   PropA      PropB    PropThck
        (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)         (-)         (-)          (-)         (-)         (-)         (-)          (-)       (-)
        0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0         0.0         0.0          0.0         0.0         0.0         0.0          1.0       1.0
 ------ DEPTH-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
-             0   NCoefDpth       - Number of depth-dependent coefficients (-)
+             0   NCoefDpthCyl    - Number of depth-dependent cylindrical member coefficients (-)
 Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)      (-)        (-)      (-)            (-)      (-)        (-)        (-)          (-)        (-)          (-)        (-)           (-)      (-)
 ------ DEPTH-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
-             0   NRecCoefDpth       - Number of depth-dependent coefficients (-)
+             0   NCoefDpthRec    - Number of depth-dependent rectangular member coefficients (-)
 Dpth    DpthCdA   DpthCdAMG    DpthCdB   DpthCdBMG   DpthCaA   DpthCaAMG   DpthCaB   DpthCaBMG     DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)       (-)          (-)       (-)         (-)       (-)        (-)        (-)          (-)        (-)       (-)        (-)          (-)        (-)          (-)        (-)          (-)      (-)
 ------ MEMBER-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
-            25   NCoefMembers       - Number of member-based coefficients (-)
+            25   NCoefMembersCyl - Number of member-based cylindrical member coefficients (-)
 MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2    MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)              (-)           (-)           (-)           (-)
     1          0.56          0.56          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00             1.00          1.00          1.00          1.00          ! Main Column
@@ -169,7 +169,7 @@ MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1   
    21          0.63          0.63          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00             1.00          1.00          1.00          1.00          ! Cross Brace 2
    22          0.63          0.63          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00             1.00          1.00          1.00          1.00          ! Cross Brace 3
 ------ MEMBER-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
-            0   NRecCoefMembers    - Number of member-based coefficients (-)
+            0   NCoefMembersRec - Number of member-based rectangular member coefficients (-)
 MemberID    MemberCdA1     MemberCdA2    MemberCdAMG1   MemberCdAMG2    MemberCdB1     MemberCdB2    MemberCdBMG1   MemberCdBMG2    MemberCaA1     MemberCaA2    MemberCaAMG1   MemberCaAMG2    MemberCaB1     MemberCaB2    MemberCaBMG1   MemberCaBMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2   MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)           (-)          (-)           (-)           (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)              (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)
 -------------------- MEMBERS -------------------------------------------------

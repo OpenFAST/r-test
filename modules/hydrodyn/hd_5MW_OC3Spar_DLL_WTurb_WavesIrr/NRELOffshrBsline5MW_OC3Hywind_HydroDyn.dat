@@ -71,13 +71,13 @@ JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp=
     3     0.00000     0.00000    -4.00000      1            0
     4     0.00000     0.00000    10.00000      1            0
 ---------------- CYLINDRICAL MEMBER CROSS-SECTION PROPERTIES -------------------
-             2   NPropSets      - Number of member property sets (-)
+             2   NPropSetsCyl    - Number of cylindrical member property sets (-)
 PropSetID    PropD         PropThck
    (-)        (m)            (m)
     1        9.40000        0.00010
     2        6.50000        0.00010
 ---------------- RECTANGULAR MEMBER CROSS-SECTION PROPERTIES -------------------
-             0   NRecPropSets      - Number of member property sets (-)
+             0   NPropSetsRec    - Number of rectangular member property sets (-)
 MPropSetID   PropA      PropB    PropThck
    (-)        (m)        (m)       (m)
 -------- SIMPLE CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
@@ -89,19 +89,19 @@ MPropSetID   PropA      PropB    PropThck
        (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)         (-)         (-)          (-)         (-)         (-)         (-)          (-)       (-)
        0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0         0.0         0.0          0.0         0.0         0.0         0.0          1.0       1.0
 ------ DEPTH-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
-             0   NCoefDpth       - Number of depth-dependent coefficients (-)
+             0   NCoefDpthCyl    - Number of depth-dependent cylindrical member coefficients (-)
 Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)      (-)        (-)      (-)            (-)      (-)        (-)        (-)          (-)        (-)          (-)        (-)           (-)      (-)
 ------ DEPTH-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
-             0   NRecCoefDpth       - Number of depth-dependent coefficients (-)
+             0   NCoefDpthRec    - Number of depth-dependent rectangular member coefficients (-)
 Dpth    DpthCdA   DpthCdAMG    DpthCdB   DpthCdBMG   DpthCaA   DpthCaAMG   DpthCaB   DpthCaBMG     DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)       (-)          (-)       (-)         (-)       (-)        (-)        (-)          (-)        (-)       (-)        (-)          (-)        (-)          (-)        (-)          (-)      (-)
 ------ MEMBER-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
-             0   NCoefMembers       - Number of member-based coefficients (-)
+             0   NCoefMembersCyl - Number of member-based cylindrical member coefficients (-)
 MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2    MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)              (-)           (-)           (-)           (-)
 ------ MEMBER-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
-            0   NRecCoefMembers    - Number of member-based coefficients (-)
+            0   NCoefMembersRec - Number of member-based rectangular member coefficients (-)
 MemberID    MemberCdA1     MemberCdA2    MemberCdAMG1   MemberCdAMG2    MemberCdB1     MemberCdB2    MemberCdBMG1   MemberCdBMG2    MemberCaA1     MemberCaA2    MemberCaAMG1   MemberCaAMG2    MemberCaB1     MemberCaB2    MemberCaBMG1   MemberCaBMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2   MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)           (-)          (-)           (-)           (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)              (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)
 -------------------- MEMBERS -------------------------------------------------
