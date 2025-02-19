@@ -37,19 +37,23 @@ IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
    1           1           1           1           1           1           1
 ----------------------------------- MEMBERS -------------------------------------------
           2    NMembers    - Number of members (-)
-MemberID   MJointID1   MJointID2  MPropSetID1   MPropSetID2   MType      COSMID   ![MType={1:beam circ., 2:cable, 3:rigid, 4:beam arb.}. COMSID={-1:none}]
-  (-)         (-)         (-)       (-)           (-)         (-)        (-)
-   1            1           2       1              1           1          10
-   2            2           3       1              1           1          10
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  MSpin/COSMID   ! [MType={1c:beam circ., 1r:beam rect., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
+  (-)         (-)         (-)          (-)           (-)        (-)    (deg/-)
+   1            1           2       1              1           1c          0
+   2            2           3       1              1           1c          0
 ------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
             1   NPropSets   - Number of structurally unique cross-sections
 PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
   (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
    1        2.10E11         8.00E10            7850             2.4164         1.2082
+----------------- RECTANGULAR BEAM CROSS-SECTION PROPERTIES ---------------------------
+             0   NPropSets   - Number of structurally unique cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecB           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)            (m)             (m)
 ----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
              0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
-PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy        XsecJ0
-  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy       XsecJ0        XsecJt
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES -------------------------------------------
              0   NCablePropSets   - Number of cable cable properties
 PropSetID     EA          MatDens        T0         CtrlChannel
