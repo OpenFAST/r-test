@@ -1,8 +1,9 @@
-#*******************************************************************************
+#-------------------------------------------------------------------------------
 # LICENSING
-# Copyright (C) 2021 National Renewable Energy Lab
+#-------------------------------------------------------------------------------
+# Copyright (C) 2021-present by National Renewable Energy Lab (NREL)
 #
-# This file is part of AeroDyn. 
+# This file is part of AeroDyn
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,603 +16,595 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+#-------------------------------------------------------------------------------
+# Overview of AeroDyn x InflowWind python driver
+#-------------------------------------------------------------------------------
+# This script serves as a Python driver for the AeroDyn library with InflowWind
+# integration. It demonstrates how to interact with the main subroutines of
+# AeroDyn.
 #
-#*******************************************************************************
+# NOTE: This script serves as a template and can be customized to meet
+# individual requirements.
 #
-# This is an exampe of Python driver code for AeroDyn with InflowWind
+# Workflow for using the AeroDyn x InflowWind Python library:
+#   1. Initialize the Python Wrapper:
+#      - Set necessary library parameters (e.g., number of turbines, simulation
+#        time)
+#      - Load input file data (from file/script)
 #
-# Usage: This program gives an example for how the user calls the main
-#        subroutines of AeroDyn, and thus is specific to the user
+#   2. Initialize the AeroDyn Fortran Library (C-bindings interface):
+#      - ADI_PreInit: Specify the number of turbines
+#      - ADI_SetupTurb: Initialize each rotor and iterate over turbines
+#      - ADI_Init: Initialize the simulation environment by calling ADI
 #
-# Basic alogrithm for using AeroDyn InflowWind python library
-#   1.  initialize python wrapper library
-#           set necessary library values
-#           set input file string arrays (from file or script)
-#   2.  initialize AeroDyn Fortran library
-#           - ADI_PreInit       -- set number of turbines
-#           - ADI_SetupTurb     -- initialize one rotor (iterate over turbines)
-#           - ADI_Init          -- actually call ADI to initialize the simulation
-#   3.  timestep iteration
-#           - ADI_SetMotion     -- set motions of single turbine (iterate over turbines)
-#           - ADI_UpdateStates  -- update to next timestep
-#           - ADI_CalcOutput    -- get outputs
-#           - ADI_GetRotorLoads -- get loads per rotor (iterate over turbines)
-#   4. End
-#         call adi_end to close the AeroDyn library and free memory
-#         handle any resulting errors
+#   3. Perform Timestep Iterations:
+#      - ADI_SetRotorMotion: Define the motion parameters for each turbine and iterate
+#        over turbines
+#      - ADI_UpdateStates: Advance the simulation to the next timestep
+#      - ADI_CalcOutput: Retrieve simulation outputs
+#      - ADI_GetRotorLoads: Obtain load data for each rotor and iterate over
+#        turbines
 #
-#
-import numpy as np
+#   4. Finalize the Simulation:
+#      - Call adi_end to properly close the AeroDyn library and release resources
+#      - Handle any errors that may have occurred during the process
+
+#-------------------------------------------------------------------------------
+# Imports
+#-------------------------------------------------------------------------------
 import os
 import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional
+
+import numpy as np
+
 from visread import *
 
-# path to find the aerodyn_inflow_library.py from the local directory
+# Path to find the aerodyn_inflow_library.py from the local directory
+#
+# NOTE: This file handles the conversion from python to c-bound types
+#       and should not be modified by the user
 os.chdir(sys.path[0])
-adiLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib"])
-sys.path.insert(0, adiLibPath)
-print(f"Importing 'aerodyn_inflow_library' from {adiLibPath}")
-import aerodyn_inflow_library as adi # this file handles the conversion from python to c-bound types and should not be changed by the user
-
-###############################################################################
-# Locations to build directory relative to r-test directory.  This is specific
-# to the regession testing with openfast and will need to be updated when
-# coupled to other codes or use cases
-
-basename = "libaerodyn_inflow_c_binding"
-if sys.platform == "linux" or sys.platform == "linux2":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".so"])
-elif sys.platform == "darwin":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".dylib"])
-elif sys.platform == "win32":
-    # Windows may have this library installed in one of two locations depending
-    # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "aerodyn", basename + ".dll"])   # cmake install location
-    if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_Win32.dll"]) # VS build install location
-        if not os.path.isfile(library_path):
-            print(f"Python is 32 bit and cannot find 32 bit InflowWind DLL expected at: {library_path}")
-            exit(1)
-    if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "AeroDyn_Inflow_c_binding_x64.dll"]) # VS build install location
-        if not os.path.isfile(library_path):
-            print(f"Python is 64 bit and cannot find 64 bit InflowWind DLL expected at: {library_path}")
-            exit(1)
-
-
-
-###############################################################################
-# For testing, a set of input files is read in.  Everything in these input
-# files could in principle be hard coded into this script.  These are separated
-# out for convenience in testing.
-
-#   Primary input
-#       This is identical to what AeroDyn would read from disk if we were
-#       not passing it.  When coupled to other codes, this may be passed
-#       directly from memory (i.e. during optimization with WEIS), or read as a
-#       template and edited in memory for each iteration loop.
-primary_ad_file="ad_primary.dat"
-primary_ifw_file="ifw_primary.dat"
-
-#   Debug output file
-#       When coupled into another code, an array of position/orientation,
-#       velocities, and accelerations are passed in, and an array of
-#       Forces+Moments is returned.  For debugging, it may be useful to dump all
-#       off this to file.
-DbgOuts=1                       #   For checking the interface, set this to 1
-debugout_file="DbgOutputs.out"
-
-#   Output file
-#       When coupled to another code, the channels requested in the outlist
-#       section of the output file are passed back for writing to file.  Here
-#       we will write the aggregated output channels to a file at the end of
-#       the simulation.
-output_file="py_ad_driver.out"
-
-#   For checking if our library is correctly handling correction steps, set
-#   this to > 0
-NumCorrections=0
-
-
-#===============================================================================
-#   Mesh inputs from vtk
-vtkDir="vtkRef"
-numBlades=3
-vtkFieldLen=5
-TimeStepsToRun=4
-hubMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
-nacMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
-bldRootMeshRootName="5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
-bldMeshRootName="5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"   # for struct mesh not aligned with AeroDyn mesh
-
-
-
-#   Input Files
-#===============================================================================
-#   Main AeroDyn input file
-#       This file is read from disk to an array of strings with the line
-#       endings stripped off.  This array will have the same number of elements
-#       as there are lines in the file.
-adiAD_input_string_array = []     # instantiate empty array
-fh = open(primary_ad_file, "r")
-for line in fh:
-  # strip line ending and ending white space and add to array of strings
-  adiAD_input_string_array.append(line.rstrip())
-fh.close()
-
-adiIfW_input_string_array = []     # instantiate empty array
-fh = open(primary_ifw_file, "r")
-for line in fh:
-  # strip line ending and ending white space and add to array of strings
-  adiIfW_input_string_array.append(line.rstrip())
-fh.close()
-
-
-#===============================================================================
-#   Number of turbines
-numTurbines = 1
-
-#===============================================================================
-#   Initial hub and root locations from vtk files
-#       can add checks here that numpts==1
-initHubPos,     initHubOrient,     numpts = visread_positions_ref(os.path.sep.join([vtkDir, hubMeshRootName+"_Reference.vtp"]))
-initNacellePos, initNacelleOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, nacMeshRootName+"_Reference.vtp"]))
-
-initRootPos     = np.zeros((numBlades,3),dtype="float32")
-initRootOrient  = np.zeros((numBlades,9),dtype="float64")
-for i in range(numBlades):
-    #   can add checks here that numpts==1
-    initRootPos[i,:], initRootOrient[i,:], numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldRootMeshRootName+str(i+1)+"_Reference.vtp"]))
-
-#   Initial blade mesh positions
-numBladeNode = np.zeros( (numBlades), dtype=int )
-initMeshPos_ar    = np.empty( (0,3), dtype="float32" )
-initMeshOrient_ar = np.empty( (0,9), dtype="float64" )
-initMeshPtToBladeNum_ar = np.empty( (0), dtype=int )
-for i in range(numBlades):
-    #   can add checks here that numpts==1
-    tmpPos, tmpOrient, numpts = visread_positions_ref(os.path.sep.join([vtkDir, bldMeshRootName+str(i+1)+"_Reference.vtp"]))
-    initMeshPos_ar    = np.concatenate((initMeshPos_ar,   tmpPos   ))
-    initMeshOrient_ar = np.concatenate((initMeshOrient_ar,tmpOrient))
-    numBladeNode[i] = numpts
-    # store which blade number this is that these points belong to
-    tmpPtToBladeNum = np.zeros( numpts, dtype=int )
-    tmpPtToBladeNum.fill(i+1)
-    initMeshPtToBladeNum_ar = np.concatenate((initMeshPtToBladeNum_ar,tmpPtToBladeNum))
-del tmpPos
-del tmpOrient
-
-#===============================================================================
-#   Helper functions
-#===============================================================================
-def SetMotionHub(N_Step):
-    timeField=str(N_Step).zfill(vtkFieldLen)
-    HubPos, HubOrient, numpts = visread_positions(os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]))
-    HubVel, HubAcc            = visread_velacc(   os.path.sep.join([vtkDir, hubMeshRootName+'.'+timeField+".vtp"]),numpts)
-    return (HubPos, HubOrient, HubVel, HubAcc)
-
-def SetMotionNac(N_Step):
-    timeField=str(N_Step).zfill(vtkFieldLen)
-    NacPos, NacOrient, numpts = visread_positions(os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]))
-    NacVel, NacAcc            = visread_velacc(   os.path.sep.join([vtkDir, nacMeshRootName+'.'+timeField+".vtp"]),numpts)
-    return (NacPos, NacOrient, NacVel, NacAcc)
-
-def SetMotionRoot(N_Step):
-    timeField=str(N_Step).zfill(vtkFieldLen)
-    RootPos       = np.zeros((numBlades,3),dtype="float32")
-    RootOrient    = np.zeros((numBlades,9),dtype="float64")
-    RootVel       = np.zeros((numBlades,6),dtype="float32")
-    RootAcc       = np.zeros((numBlades,6),dtype="float32")
-    for k in range(numBlades):
-        RootPos[k,:], RootOrient[k,:], numpts = visread_positions(os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-        RootVel[k,:], RootAcc[k,:]            = visread_velacc(   os.path.sep.join([vtkDir, bldRootMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-    return (RootPos, RootOrient, RootVel, RootAcc)
-
-def SetMotionBlMesh(N_Step):
-    timeField=str(N_Step).zfill(vtkFieldLen)
-    MeshPos_ar    = np.empty( (0,3), dtype="float32" )
-    MeshOrient_ar = np.empty( (0,9), dtype="float64" )
-    MeshVel_ar    = np.empty( (0,6), dtype="float32" )
-    MeshAcc_ar    = np.empty( (0,6), dtype="float32" )
-    MeshFrcMom    = np.zeros((sum(numBladeNode),6))       # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
-    for k in range(numBlades):
-        tmpPos, tmpOrient, numpts = visread_positions(os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]))
-        tmpVel, tmpAcc            = visread_velacc(   os.path.sep.join([vtkDir, bldMeshRootName+str(k+1)+'.'+timeField+".vtp"]),numpts)
-        MeshPos_ar    = np.concatenate((MeshPos_ar,   tmpPos   ))
-        MeshOrient_ar = np.concatenate((MeshOrient_ar,tmpOrient))
-        MeshVel_ar    = np.concatenate((MeshVel_ar,   tmpVel   ))
-        MeshAcc_ar    = np.concatenate((MeshAcc_ar,   tmpAcc   ))
-    del tmpPos
-    del tmpOrient
-    del tmpVel
-    del tmpAcc
-    return (MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom)
-
-#===============================================================================
-#   AeroDyn python interface initialization 
-#===============================================================================
-
-#   Instantiate the hdlib python object
-#       wrap this in error handling in case the library_path is incorrect
-try:
-    adilib = adi.AeroDynInflowLib(library_path)
-except Exception as e:
-    print("{}".format(e))
-    print(f"Cannot load library at {library_path}")
-    exit(1)
-
-# These will be read from the AD driver input file
-#   Time inputs
-#           adlib.dt           -- the timestep aerodyn is called at.
-#           adlib.numTimeSteps -- total number of timesteps, only used to
-#                                  construct arrays to hold the output channel
-#                                  info
-adilib.InterpOrder   = 2          # order of the interpolation
-adilib.dt            = 0.0125     # time interval that it's being called at
-final_time           = 60         # final time
-adilib.gravity       =   9.80665  # Gravitational acceleration (m/s^2)
-adilib.defFldDens    =     1.225  # Air density (kg/m^3)
-adilib.defKinVisc    = 1.464E-05  # Kinematic viscosity of working fluid (m^2/s)
-adilib.defSpdSound   =     335.0  # Speed of sound in working fluid (m/s)
-adilib.defPatm       =  103500.0  # Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
-adilib.defPvap       =    1700.0  # Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
-adilib.WtrDpth       =       0.0  # Water depth (m)
-adilib.MSL2SWL       =       0.0  # Offset between still-water level and mean sea level (m) [positive upward]
-adilib.numTurbines   = numTurbines
-
-# Setup some timekeeping -- this may be smaller than what is passed to AeroDyn
-adilib.numTimeSteps = TimeStepsToRun          # only for constructing array of output channels for duration of simulation
-time                = np.arange(0.0,(TimeStepsToRun+1)*adilib.dt,adilib.dt) # total time + increment because python doesnt include endpoint!
-
-# set some flags 
-adilib.storeHHvel   = False
-adilib.WrVTK        = 2         # animation
-adilib.WrVTK_Type   = 3         # surface and line meshes
-adilib.WrVTK_DT     = adilib.dt*4.0     # every 4th timestep
-adilib.transposeDCM = 1         # 0=false, 1=true
-
-# debugging of internals of ADI library
-adilib.debuglevel   = 0         # 0-4
-
-#==============================================================================
-# Basic alogrithm for using AeroDyn+InflowWind library
-#
-# NOTE: the error handling here is handled locally since this is the only
-#       driver code.  If AeroDyn+InflowWind is incorporated into another code,
-#       the error handling will need to be passed to the main code.  That way
-#       the main code can close other modules as necessary (otherwise you will
-#       end up with memory leaks and a bunch of garbage in the other library
-#       instances).
-
-isHAWT = 1      # 1: HAWT, 0: VAWT or cross-flow
-
-# Set hub and blade root positions/orientations
-adilib.initHubPos           = initHubPos[0,:]
-adilib.initHubOrient        = initHubOrient[0,:]
-adilib.initNacellePos       = initNacellePos[0,:]
-adilib.initNacelleOrient    = initNacelleOrient[0,:]
-adilib.numBlades            = numBlades
-#adilib.numBladeNode         = numBladeNode     # May be necessary to pass info on nodes on each blade to AeroDyn for mesh mapping.
-adilib.initRootPos          = initRootPos
-adilib.initRootOrient       = initRootOrient
-
-
-# Set number of mesh nodes and initial position
-#       position    is an N x 3 array [x,y,z]
-#       orientation is a  N x 9 array [r11,r12,r13,r21,r22,r23,r31,r32,r33]
-adilib.numMeshPts = np.size(initMeshPos_ar,0)
-adilib.initMeshPos    = initMeshPos_ar
-adilib.initMeshOrient = initMeshOrient_ar
-adilib.meshPtToBladeNum = initMeshPtToBladeNum_ar
-
-# Disk average velocity
-DiskAvgVel = np.zeros(3)       # [Vx Vy Vz]
-
-
-# ADI_PreInit: call before anything else
-try:
-    adilib.adi_preinit()
-except Exception as e:
-    print("{}".format(e))   # Exceptions handled in adi_library.py
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_preinit")
-    exit(1)
-
-# ADI_SetupRotor
-try:
-    #FIXME: hard code to one turbine for now
-    iturb=1
-    turbRefPos=[0,0,0]
-    adilib.adi_setuprotor(iturb,isHAWT,turbRefPos)
-except Exception as e:
-    print("{}".format(e))   # Exceptions handled in adi_library.py
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_setuprotor")
-    exit(1)
-
-# ADI_Init: Only need to call adi_init once
-try:
-    adilib.adi_init(adiAD_input_string_array,adiIfW_input_string_array)
-except Exception as e:
-    print("{}".format(e))   # Exceptions handled in adi_library.py
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_init")
-    exit(1)
-
-
-#  To get the names and units of the output channels
-output_channel_names = adilib.output_channel_names
-output_channel_units = adilib.output_channel_units
-
-
-#-------------------
-#   Time steppping
-#-------------------
-
-#  Set the array holding the ouput channel values to zeros initially.  Output
-#  channel values returned from each CalcOutput call in this array.  We will
-#  aggregate them together in the time stepping loop to get the entire time
-#  series.  Time channel is not included, so we must add that.
-outputChannelValues = np.zeros(adilib.numChannels)
-allOutputChannelValues = np.zeros( (adilib.numTimeSteps+1,adilib.numChannels+1) )
-
-#   Open outputfile for regession testing purposes.
-if DbgOuts == 1:
-    dbg_outfile = adi.DriverDbg(debugout_file,adilib.numMeshPts)
-
-#--------------------------------
-# Calculate outputs for t_initial
-i=0
-#   read position/motion from vtk
-HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
-NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
-RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
-MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
-
-# Set initial motions for rotor 1
-try:
-    adilib.adi_setrotormotion(
-            iturb,
-            HubPos, HubOrient, HubVel, HubAcc,
-            NacPos, NacOrient, NacVel, NacAcc,
-            RootPos, RootOrient, RootVel, RootAcc,
-            MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
-except Exception as e:
-    print("{}".format(e))
-    if DbgOuts == 1:
-        dbg_outfile.end()
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_setrotormotion at T=0")
-    exit(1)
-
-
-print(f"Time step: {i} at {time[i]}")
-try:
-    adilib.adi_calcOutput(time[i],
-            outputChannelValues)
-except Exception as e:
-    print("{}".format(e))
-    if DbgOuts == 1:
-        dbg_outfile.end()
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_calcOutput at T=0")
-    exit(1)
-
-# get resulting forces
-try:
-    adilib.adi_getrotorloads(
-            iturb,
-            MeshFrcMom)
-except Exception as e:
-    print("{}".format(e))
-    if DbgOuts == 1:
-        dbg_outfile.end()
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_getrotorloads at T=0")
-    exit(1)
-
-# get resulting disk average velocity
-try:
-    adilib.adi_getdiskavgvel(
-            iturb,
-            DiskAvgVel)
-except Exception as e:
-    print("{}".format(e))
-    if DbgOuts == 1:
-        dbg_outfile.end()
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_getdiskavgvel at T=0")
-    exit(1)
-
-
- ## Write the debug output at t=t_initial
-if DbgOuts == 1:
-    dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom,DiskAvgVel)
-# Save the output at t=t_initial
-allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
-
-
-#   Timestep iteration
-#       Correction loop:
-#           1.  Set inputs at t+dt using either extrapolated values (or
-#               corrected values if in a correction step) from the structural
-#               solver
-#           2.  Call UpdateStates to propogate states from t -> t+dt
-#           3.  call Ifw_CalcOutput_C to get the resulting forces at t+dt using
-#               the updated state information for t+dt.  These would be passed
-#               back to the structural solver at each step of the correction
-#               loop so that it can be used to tune the states of other modules
-#               (structural solver etc).
-#       End correction loop:
-#           4.  Once correction loop is complete, save the resulting values
-#
-#   time[i-1] is at t
-#   time[i]   is at t+dt
-for i in range( 1, len(time)):
-
-    # hard code to one turbine for now
-    iturb = 1
-
-    for correction in range(0, NumCorrections+1):
-
-        #print(f"Correction step: {correction} for {time[i-1]} --> {time[i]}")
-
-        # If there are correction steps, the inputs would be updated using outputs
-        # from the other modules.
-        #   read position/motion from vtk
-        HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
-        NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
-        RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
-        MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
-
-        # Set motions for rotor
-        try:
-            adilib.adi_setrotormotion(
-                    iturb,
-                    HubPos, HubOrient, HubVel, HubAcc,
-                    NacPos, NacOrient, NacVel, NacAcc,
-                    RootPos, RootOrient, RootVel, RootAcc,
-                    MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
-        except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to adi_setrotormotion at {time[i]}")
-            exit(1)
-
-
-        #   Update the states from t to t+dt (only if not beyond end of sim)
-        try:
-            adilib.adi_updateStates(time[i-1], time[i])
-        except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to adi_updateStates")
-            exit(1)
- 
-        # Calculate the outputs at t+dt
-        print(f"Time step: {i} at {time[i]}")
-        #       NOTE: new input values may be available at this point from the
-        #       structural solver, so update them here.
-        #   read position/motion from vtk
-        HubPos,  HubOrient,  HubVel,  HubAcc  = SetMotionHub(i)
-        NacPos,  NacOrient,  NacVel,  NacAcc  = SetMotionNac(i)
-        RootPos, RootOrient, RootVel, RootAcc = SetMotionRoot(i)
-        MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar, MeshFrcMom = SetMotionBlMesh(i)
-
-        # Set motions for rotor
-        try:
-            adilib.adi_setrotormotion(
-                    iturb,
-                    HubPos, HubOrient, HubVel, HubAcc,
-                    NacPos, NacOrient, NacVel, NacAcc,
-                    RootPos, RootOrient, RootVel, RootAcc,
-                    MeshPos_ar, MeshOrient_ar, MeshVel_ar, MeshAcc_ar)
-        except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to adi_setrotormotion at {time[i]}")
-            exit(1)
-
+adi_lib_path = os.path.join("..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib")
+sys.path.insert(0, adi_lib_path)
+print(f"Importing 'aerodyn_inflow_library' from {adi_lib_path}")
+import aerodyn_inflow_library as adi
+
+#-------------------------------------------------------------------------------
+# Configuration classes containing problem inputs
+#-------------------------------------------------------------------------------
+@dataclass
+class AeroDynConfig:
+    """Configuration settings for AeroDyn simulation."""
+    num_turbines: int = 1          # Number of turbines
+    is_hawt: int = 1               # 1: HAWT, 0: VAWT or cross-flow
+    num_blades: int = 3            # Number of blades
+    vtk_field_len: int = 5         # Length of the time field in filename
+    time_steps_to_run: int = 4     # Number of time steps to run
+    num_corrections: int = 0       # Number of corrections to perform
+    debug_outputs: int = 1         # For checking the interface, set this to 1
+
+    # File paths
+    vtk_dir: str = "vtkRef"
+    # Primary input files: This is identical to what AeroDyn would read from disk
+    # if we were not passing it. When coupled to other codes, this may be passed
+    # directly from memory (e.g. during optimization with WEIS), or read as a
+    # template and edited in memory for each iteration loop.
+    primary_ad_file: str = "ad_primary.dat"
+    primary_ifw_file: str = "ifw_primary.dat"
+    # Debug output file: When coupled into another code, an array of position/orientation,
+    # velocities, and accelerations are passed in, and an array of Forces + Moments is
+    # returned. For debugging, it may be useful to dump all off this to a file.
+    debug_output_file: str = "DbgOutputs.out"
+    # Output file: When coupled to another code, the channels requested in the outlist
+    # section of the output file are passed back for writing to file. Here we will
+    # write the aggregated output channels to a file at the end of the simulation.
+    output_file: str = "py_ad_driver.out"
+
+    # Mesh root names
+    hub_mesh_root: str = "5MW_OC4Semi_WSt_WavesWN.AD_HubMotion"
+    nac_mesh_root: str = "5MW_OC4Semi_WSt_WavesWN.ED_Nacelle"
+    bld_root_mesh_root: str = "5MW_OC4Semi_WSt_WavesWN.AD_BladeRootMotion"
+    bld_mesh_root: str = "5MW_OC4Semi_WSt_WavesWN.ED_BladeLn2Mesh_motion"
+
+@dataclass
+class LibraryConfig:
+    """Configuration settings for AeroDyn library."""
+    interpolation_order: int = 2                # Order of the interpolation
+    time_interval: float = 0.0125               # Time interval for ADI calls
+    gravity: float = 9.80665                    # Gravitational acceleration (m/s^2)
+    density: float = 1.225                      # Air density (kg/m^3)
+    kinematic_viscosity: float = 1.464E-05      # Kinematic viscosity of working fluid (m^2/s)
+    speed_of_sound: float = 335.                # Speed of sound in working fluid (m/s)
+    atmospheric_pressure: float = 103500.       # Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+    vapor_pressure: float = 1700.               # Vapor pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+    water_depth: float = 0.                     # Water depth (m)
+    mean_sea_level_offset: float = 0.           # Offset between still-water level and mean sea level (m) [positive upward]
+    store_horizontal_hub_velocity: bool = False # Store horizontal hub velocity
+    write_vtk: int = 2                          # Animation
+    write_vtk_type: int = 3                     # Surface and line meshes
+    debug_level: int = 0                        # 0-4
+    transpose_dcm: int = 1                      # 0=false, 1=true
+
+    @property
+    def write_vtk_dt(self) -> float:
+        return self.time_interval * 4.          # Every 4th timestep
+
+#-------------------------------------------------------------------------------
+# Helper functions
+#-------------------------------------------------------------------------------
+def read_lines_from_file(file_path: str) -> list[str]:
+    """Reads a file line by line, stripping whitespace.
+
+    Args:
+        file_path: Path to the file to read
+
+    Returns:
+        List of stripped lines from the file
+    """
+    return [line.rstrip() for line in open(file_path, "r")]
+
+def read_vtk_motion(vtk_dir: str, base_name: str, time_step: int, field_len: int) -> tuple:
+    """Reads position, orientation, velocity, and acceleration from a VTK file.
+
+    Args:
+        vtk_dir: Directory containing VTK files
+        base_name: Base name of the VTK file
+        time_step: Current time step number
+        field_len: Length of the time field in filename
+
+    Returns:
+        tuple: (positions, orientations, velocities, accelerations)
+    """
+    time_field = str(time_step).zfill(field_len)
+    file_path = os.path.sep.join([vtk_dir, f"{base_name}.{time_field}.vtp"])
+    positions, orientations, num_pts = visread_positions(file_path)
+    velocities, accelerations = visread_velacc(file_path, num_pts)
+    return positions, orientations, velocities, accelerations
+
+def get_library_path() -> str:
+    """Determines the correct library path based on platform.
+
+    Returns:
+        str: Path to the AeroDyn library for the current platform.
+
+    Raises:
+        ValueError: If the current platform is not supported.
+        SystemExit: If on Windows and the DLL cannot be found in expected locations.
+    """
+    basename = "libaerodyn_inflow_c_binding"
+    build_path = Path("..").joinpath(*[".."] * 4, "build")
+
+    if sys.platform in ["linux", "linux2"]:
+        return str(build_path / "modules" / "aerodyn" / f"{basename}.so")
+
+    if sys.platform == "darwin":
+        return str(build_path / "modules" / "aerodyn" / f"{basename}.dylib")
+
+    if sys.platform == "win32":
+        bit_version = "Win32" if sys.maxsize <= 2**32 else "x64"
+        possible_paths = [
+            build_path / "modules" / "aerodyn" / f"{basename}.dll",
+            build_path / "bin" / f"AeroDyn_Inflow_c_binding_{bit_version}.dll"
+        ]
+        return str(next((path for path in possible_paths if path.is_file()), None)) or sys.exit(
+            f"Python is {bit_version} bit and cannot find {bit_version} "
+            f"bit InflowWind DLL in any expected location."
+        )
+
+    raise ValueError(f"Unsupported platform: {sys.platform}")
+
+#-------------------------------------------------------------------------------
+# Main driver class
+#-------------------------------------------------------------------------------
+class AeroDynDriver:
+    """Main driver class for AeroDyn simulation.
+
+    This class manages the initialization and execution of the AeroDyn simulation.
+    It handles the configuration of the simulation parameters, the initialization
+    of the AeroDyn library, and the execution of the main simulation loop.
+    """
+
+    def __init__(self, config: AeroDynConfig, lib_config: LibraryConfig):
+        self.config = config
+        self.lib_config = lib_config
+
+        # Initialize mesh data structures
+        self._initialize_mesh_data()
+
+        # Initialize library
+        self.adilib = self._initialize_library()
+
+        # Initialize output arrays as placeholders
+        self.output_channel_values = None
+        self.all_output_channel_values = None
+        self.disk_avg_vel = None
+
+    def run_simulation(self) -> None:
+        """Run the main simulation loop with corrections."""
+        self._initialize_simulation()
+
+        # Initialize output arrays
+        self.output_channel_values = np.zeros(self.adilib.numChannels)
+        self.all_output_channel_values = np.zeros((
+            self.config.time_steps_to_run + 1, self.adilib.numChannels + 1
+        ))
+        self.disk_avg_vel = np.zeros(3)  # [Vx Vy Vz]
+
+        # Initialize debug output file if needed
+        debug_output_file = None
+        if self.config.debug_outputs:
+            debug_output_file = adi.DriverDbg(
+                self.config.debug_output_file, self.adilib.numMeshPts
+            )
 
         try:
-            adilib.adi_calcOutput(time[i], outputChannelValues)
-        except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print(f"Exit after failed call to adi_calcOutput at time {time[i]}")
-            exit(1)
+            # Time stepping loop with corrections
+            print(f"Time steps: {self.adilib.numTimeSteps}")
+            for i in range(0, self.adilib.numTimeSteps + 1):
+                current_time = i * self.adilib.dt
+                print(f"Time step: {i} at {current_time}")
 
-        # get resulting forces
+                # Correction loop
+                for correction in range(self.config.num_corrections + 1):
+                    self._process_timestep(
+                        time_step=i,
+                        current_time=current_time,
+                        debug_output_file=debug_output_file,
+                        update_states=False
+                    )
+
+        finally:
+            # Close debug output file if it was opened
+            if debug_output_file:
+                debug_output_file.end()
+
+            # End AeroDyn simulation
+            try:
+                self.adilib.adi_end()
+            except Exception as e:
+                print(f"Failed to end AeroDyn simulation: {e}")
+                sys.exit(1)
+
+        # Save results to output file
+        out_file = adi.WriteOutChans(
+            self.config.output_file, self.output_channel_names, self.output_channel_units
+        )
+        out_file.write(self.all_output_channel_values)
+        out_file.end()
+        print("Simulation completed successfully")
+
+    def _initialize_mesh_data(self) -> None:
+        """Initializes mesh data from VTK files for hub, nacelle, and blades.
+
+        Reads initial positions and orientations from VTK reference files and stores
+        them as class attributes for later use in the simulation.
+        """
+        # Initialize hub and nacelle positions
+        read_vtk_ref = lambda root_name: visread_positions_ref(
+            os.path.sep.join([self.config.vtk_dir, root_name + "_Reference.vtp"])
+        )
+        self.init_hub_pos, self.init_hub_orient, num_pts = read_vtk_ref(
+            self.config.hub_mesh_root
+        )
+        self.init_nacelle_pos, self.init_nacelle_orient, num_pts = read_vtk_ref(
+            self.config.nac_mesh_root
+        )
+
+        # Initialize blade root positions and orientations
+        self.init_root_pos = np.zeros((self.config.num_blades, 3), dtype="float32")
+        self.init_root_orient = np.zeros((self.config.num_blades, 9), dtype="float64")
+        for i in range(self.config.num_blades):
+            self.init_root_pos[i,:], self.init_root_orient[i,:], num_pts = read_vtk_ref(
+                self.config.bld_root_mesh_root + str(i+1)
+            )
+
+        # Initialize blade mesh positions and orientations
+        self.num_blade_node = np.zeros((self.config.num_blades), dtype=int)
+        self.init_mesh_pos = np.empty((0, 3), dtype="float32")
+        self.init_mesh_orient = np.empty((0, 9), dtype="float64")
+        self.init_mesh_pt_to_blade_num = np.empty((0), dtype=int)
+
+        for i in range(self.config.num_blades):
+            tmp_pos, tmp_orient, num_pts = read_vtk_ref(
+                self.config.bld_mesh_root + str(i+1)
+            )
+            self.init_mesh_pos = np.concatenate((self.init_mesh_pos, tmp_pos))
+            self.init_mesh_orient = np.concatenate((self.init_mesh_orient, tmp_orient))
+            self.num_blade_node[i] = num_pts
+
+            # Store blade number for these points
+            tmp_pt_to_blade_num = np.full(num_pts, i+1, dtype=int)
+            self.init_mesh_pt_to_blade_num = np.concatenate(
+                (self.init_mesh_pt_to_blade_num, tmp_pt_to_blade_num)
+            )
+
+    def _initialize_library(self) -> adi.AeroDynInflowLib:
+        """Initializes the AeroDyn library with configuration settings.
+
+        Returns:
+            AeroDynInflowLib: Configured instance of the AeroDyn library.
+
+        Raises:
+            SystemExit: If library initialization fails.
+        """
+        library_path = get_library_path()
         try:
-            adilib.adi_getrotorloads(
-                    iturb,
-                    MeshFrcMom)
+            adilib = adi.AeroDynInflowLib(library_path)
         except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to adi_getrotorloads at {time[i]}")
-            exit(1)
+            print(f"Failed to load AeroDyn library at {library_path}: {e}")
+            sys.exit(1)
 
-        # get resulting disk average velocity
+        self._configure_library(adilib)
+        return adilib
+
+    def _configure_library(self, adilib) -> None:
+        """Configures the AeroDyn library with simulation parameters.
+
+        Args:
+            adilib (AeroDynInflowLib): Instance of AeroDyn library to configure.
+        """
+        adilib.InterpOrder   = self.lib_config.interpolation_order
+
+        # Time settings
+        adilib.dt            = self.lib_config.time_interval
+        adilib.numTimeSteps  = self.config.time_steps_to_run
+
+        # Physical parameters
+        adilib.gravity       = self.lib_config.gravity
+        adilib.defFldDens    = self.lib_config.density
+        adilib.defKinVisc    = self.lib_config.kinematic_viscosity
+        adilib.defSpdSound   = self.lib_config.speed_of_sound
+        adilib.defPatm       = self.lib_config.atmospheric_pressure
+        adilib.defPvap       = self.lib_config.vapor_pressure
+        adilib.WtrDpth       = self.lib_config.water_depth
+        adilib.MSL2SWL       = self.lib_config.mean_sea_level_offset
+        adilib.numTurbines   = self.config.num_turbines
+
+        # Visualization settings
+        adilib.storeHHvel    = self.lib_config.store_horizontal_hub_velocity
+        adilib.WrVTK         = self.lib_config.write_vtk
+        adilib.WrVTK_Type    = self.lib_config.write_vtk_type
+        adilib.WrVTK_DT      = self.lib_config.write_vtk_dt
+        adilib.transposeDCM  = self.lib_config.transpose_dcm
+
+        # Debugging of internals of ADI library
+        adilib.debuglevel    = self.lib_config.debug_level
+
+    def _initialize_simulation(self) -> None:
+        """Initializes the AeroDyn library with configuration settings.
+
+        Returns:
+            AeroDynInflowLib: Configured instance of the AeroDyn library.
+
+        Raises:
+            SystemExit: If library initialization fails.
+        """
+        # Set initial positions and orientations
+        self.adilib.initHubPos = self.init_hub_pos[0,:]
+        self.adilib.initHubOrient = self.init_hub_orient[0,:]
+        self.adilib.initNacellePos = self.init_nacelle_pos[0,:]
+        self.adilib.initNacelleOrient = self.init_nacelle_orient[0,:]
+        self.adilib.numBlades = self.config.num_blades
+        self.adilib.initRootPos = self.init_root_pos
+        self.adilib.initRootOrient = self.init_root_orient
+
+        # Set mesh data
+        self.adilib.numMeshPts = np.size(self.init_mesh_pos, 0)
+        self.adilib.initMeshPos = self.init_mesh_pos
+        self.adilib.initMeshOrient = self.init_mesh_orient
+        self.adilib.meshPtToBladeNum = self.init_mesh_pt_to_blade_num
+
+        # Initialize the library
         try:
-            adilib.adi_getdiskavgvel(
-                    iturb,
-                    DiskAvgVel)
+            self.adilib.adi_preinit()
         except Exception as e:
-            print("{}".format(e))
-            if DbgOuts == 1:
-                dbg_outfile.end()
-            #FIXME: temporary statement here
-            print("Exit after failed call to adi_getdiskavgvel at {time[i]}")
-            exit(1)
+            print(f"Failed to pre-initialize AeroDyn: {e}")
+            sys.exit(1)
 
- 
-## Write the debug output at t=t_initial
- 
-## Write the debug output at t=t_initial
- 
-        #   When coupled to a different code, this is where the Force/Moment info
-        #   would be passed to the aerodynamic solver.
-        #
-        #   For this regression test example, we will write this to file (in
-        #   principle this could be aggregated and written out once at the end of
-        #   the regression simulation, but for simplicity we are writting one line
-        #   at a time during the call).  The regression test will have one row for
-        #   each timestep + position array entry.
-        if DbgOuts == 1:
-            dbg_outfile.write(time[i],MeshPos_ar,MeshVel_ar,MeshAcc_ar,MeshFrcMom,DiskAvgVel)
+        # Setup rotor for each turbine
+        self._setup_rotors()
 
+        # Initialize with input files
+        ad_input_lines = read_lines_from_file(self.config.primary_ad_file)
+        ifw_input_lines = read_lines_from_file(self.config.primary_ifw_file)
+        try:
+            self.adilib.adi_init(ad_input_lines, ifw_input_lines)
+        except Exception as e:
+            print(f"Failed to initialize AeroDyn: {e}")
+            sys.exit(1)
 
-    # Store the channel outputs -- these are requested from within the IfW input
-    # file OutList section.  In OpenFAST, these are added to the output
-    # channel array for all modules and written to that output file.  For this
-    # example we will write to file at the end of the simulation in a single
-    # shot.
-    allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
+        # Store output channel information
+        self.output_channel_names = self.adilib.output_channel_names
+        self.output_channel_units = self.adilib.output_channel_units
 
+    def _setup_rotors(self) -> None:
+        """Sets up rotors for all turbines in the simulation.
 
-if DbgOuts == 1:
-    dbg_outfile.end()   # close the debug output file
+        Args:
+            adilib: Instance of AeroDyn library to configure.
+        """
+        turb_ref_pos = [0., 0., 0.]
+        for i in range(self.config.num_turbines):
+            try:
+                self.adilib.adi_setuprotor(i + 1, self.config.is_hawt, turb_ref_pos)
+            except Exception as e:
+                print(f"Failed to setup rotor for turbine {i + 1}: {e}")
+                sys.exit(1)
 
-# if we got this far, things must have succeeded
-print("Simulation completed sucessfully")
+    def _process_timestep(
+        self,
+        time_step: int,
+        current_time: float,
+        debug_output_file: Optional[adi.DriverDbg],
+        update_states: bool = False
+    ) -> None:
+        """Calculate outputs for a single time step.
 
+        Args:
+            time_step: Current time step index
+            current_time: Current simulation time
+            debug_output_file: Debug output file handler
+            update_states: Whether to update states before calculating outputs
+        """
+        # Get motion data for current timestep from vtk
+        hub_pos, hub_orient, hub_vel, hub_acc = self._set_motion_hub(time_step)
+        nac_pos, nac_orient, nac_vel, nac_acc = self._set_motion_nacelle(time_step)
+        root_pos, root_orient, root_vel, root_acc = self._set_motion_root(time_step)
+        mesh_pos, mesh_orient, mesh_vel, mesh_acc, mesh_forces_moments = self._set_motion_blade_mesh(time_step)
 
-# adi_end: Only need to call aerodyn_inflow_end once.
-#   NOTE:   in the event of an error during the above Init or CalcOutput calls,
-#           the IfW_End routine will be called during that error handling.
-#           This works for IfW, but may not be a desirable way to handle
-#           errors in other codes (we may still want to retrieve some info
-#           from memory before clearing out everything).
-#   NOTE:   Error handling from the adi_end call may not be entirely
-#           necessary, but we may want to know if some memory was not released
-#           properly or a file not closed correctly.
-try:
-    adilib.adi_end()
-except Exception as e:
-    print("{}".format(e))
-    #FIXME: temporary statement here
-    print("Exit after failed call to adi_end")
-    exit(1)
+        # Set rotor motion for each turbine
+        for i_turbine in range(self.config.num_turbines):
+            try:
+                self.adilib.adi_setrotormotion(
+                    i_turbine + 1,  # 1-based indexing for turbines
+                    hub_pos, hub_orient, hub_vel, hub_acc,
+                    nac_pos, nac_orient, nac_vel, nac_acc,
+                    root_pos, root_orient, root_vel, root_acc,
+                    mesh_pos, mesh_orient, mesh_vel, mesh_acc
+                )
+            except Exception as e:
+                print(f"Failed to set rotor motion at T={current_time}: {e}")
+                raise
 
+        # If not first time step, update states
+        if time_step > 0:
+            # Update states if requested and not at the end of simulation
+            if update_states and time_step < self.config.time_steps_to_run:
+                previous_time = (time_step - 1) * self.adilib.dt
+                try:
+                    self.adilib.adi_updateStates(previous_time, current_time)
+                except Exception as e:
+                    print(f"Failed to update states at T={current_time}: {e}")
+                    if debug_output_file:
+                        debug_output_file.end()
+                    sys.exit(1)
 
-#   Now write the ouput channels to a file
-OutFile=adi.WriteOutChans(output_file,adilib.output_channel_names,adilib.output_channel_units)
-OutFile.write(allOutputChannelValues)
-OutFile.end()
+            # Set rotor motion for each turbine
+            for i_turbine in range(self.config.num_turbines):
+                try:
+                    self.adilib.adi_setrotormotion(
+                        i_turbine + 1,  # 1-based indexing for turbines
+                        hub_pos, hub_orient, hub_vel, hub_acc,
+                        nac_pos, nac_orient, nac_vel, nac_acc,
+                        root_pos, root_orient, root_vel, root_acc,
+                        mesh_pos, mesh_orient, mesh_vel, mesh_acc
+                    )
+                except Exception as e:
+                    print(f"Failed to set rotor motion at T={current_time}: {e}")
+                    raise
 
+        # Calculate outputs
+        try:
+            self.adilib.adi_calcOutput(current_time, self.output_channel_values)
+        except Exception as e:
+            print(f"Failed to calculate outputs at T={current_time}: {e}")
+            raise
 
+        # Get rotor loads and disk average velocity for each turbine
+        for i_turbine in range(self.config.num_turbines):
+            try:
+                self.adilib.adi_getrotorloads(i_turbine + 1, mesh_forces_moments)
+                self.adilib.adi_getdiskavgvel(i_turbine + 1, self.disk_avg_vel)
+            except Exception as e:
+                print(f"Failed to get rotor data at T={current_time}: {e}")
+                raise
 
-#print("HydroDyn successful.")
-exit()
+        # Write debug output if enabled
+        if debug_output_file:
+            debug_output_file.write(
+                current_time, mesh_pos, mesh_vel, mesh_acc, mesh_forces_moments, self.disk_avg_vel
+            )
 
+        # Store outputs
+        self.all_output_channel_values[time_step, :] = np.append(current_time, self.output_channel_values)
+
+    def _set_motion_hub(self, time_step: int) -> tuple:
+        """Gets hub motion parameters for the current time step.
+
+        Args:
+            time_step: Current time step number
+
+        Returns:
+            tuple: (hub_position, hub_orientation, hub_velocity, hub_acceleration)
+        """
+        return read_vtk_motion(
+            self.config.vtk_dir, self.config.hub_mesh_root, time_step, self.config.vtk_field_len
+        )
+
+    def _set_motion_nacelle(self, time_step: int) -> tuple:
+        """Gets nacelle motion parameters for the current time step.
+
+        Args:
+            time_step: Current time step number
+
+        Returns:
+            tuple: (nacelle_position, nacelle_orientation, nacelle_velocity, nacelle_acceleration)
+        """
+        return read_vtk_motion(
+            self.config.vtk_dir, self.config.nac_mesh_root, time_step, self.config.vtk_field_len
+        )
+
+    def _set_motion_root(self, time_step: int) -> tuple:
+        """Gets blade root motion parameters for the current time step.
+
+        Args:
+            time_step: Current time step number
+
+        Returns:
+            tuple: (root_positions, root_orientations, root_velocities, root_accelerations)
+        """
+        root_positions = np.zeros((self.config.num_blades, 3), dtype="float32")
+        root_orientations = np.zeros((self.config.num_blades, 9), dtype="float64")
+        root_velocities = np.zeros((self.config.num_blades, 6), dtype="float32")
+        root_accelerations = np.zeros((self.config.num_blades, 6), dtype="float32")
+
+        for k in range(self.config.num_blades):
+            positions, orientations, velocities, accelerations = read_vtk_motion(
+                self.config.vtk_dir,
+                self.config.bld_root_mesh_root + str(k+1),
+                time_step,
+                self.config.vtk_field_len
+            )
+            root_positions[k, :] = positions
+            root_orientations[k, :] = orientations
+            root_velocities[k, :] = velocities
+            root_accelerations[k, :] = accelerations
+
+        return root_positions, root_orientations, root_velocities, root_accelerations
+
+    def _set_motion_blade_mesh(self, time_step: int) -> tuple:
+        """Gets blade mesh motion parameters for the current time step.
+
+        Args:
+            time_step: Current time step number
+
+        Returns:
+            tuple: (mesh_positions, mesh_orientations, mesh_velocities, mesh_accelerations, mesh_forces_moments)
+        """
+        mesh_positions = np.empty((0, 3), dtype="float32")
+        mesh_orientations = np.empty((0, 9), dtype="float64")
+        mesh_velocities = np.empty((0, 6), dtype="float32")
+        mesh_accelerations = np.empty((0, 6), dtype="float32")
+        mesh_forces_moments = np.zeros((sum(self.num_blade_node), 6))  # [Fx, Fy, Fz, Mx, My, Mz]
+
+        for k in range(self.config.num_blades):
+            positions, orientations, velocities, accelerations = read_vtk_motion(
+                self.config.vtk_dir,
+                self.config.bld_mesh_root + str(k+1),
+                time_step,
+                self.config.vtk_field_len
+            )
+            mesh_positions = np.concatenate((mesh_positions, positions))
+            mesh_orientations = np.concatenate((mesh_orientations, orientations))
+            mesh_velocities = np.concatenate((mesh_velocities, velocities))
+            mesh_accelerations = np.concatenate((mesh_accelerations, accelerations))
+
+        return mesh_positions, mesh_orientations, mesh_velocities, mesh_accelerations, mesh_forces_moments
+
+if __name__ == "__main__":
+    driver = AeroDynDriver(AeroDynConfig(), LibraryConfig())
+    driver.run_simulation()
