@@ -70,9 +70,10 @@ PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24 
   (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
    2        2E7      0       0       0       0       0     1E12      0       0       0       0     1E12      0       0       0      1E12       0        0      1E8        0      1E12                                                  
 ---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
-             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+             1   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
 COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
  (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)     
+  1         1         0         0         0         1         0         0         0         1
 ------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
              0   NCmass      - Number of joints with concentrated masses; Global Coordinate System
 CMJointID       JMass            JMXX             JMYY             JMZZ          JMXY        JMXZ         JMYZ        MCGX      MCGY        MCGZ
