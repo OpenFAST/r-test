@@ -4,7 +4,7 @@ FAST Certification Test #19: NREL 5.0 MW Baseline Wind Turbine with OC3 Monopile
 False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
          60   TMax            - Total run time (s)
-      0.005   DT              - Recommended module time step (s)
+       0.01   DT              - Recommended module time step (s)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
         1.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
