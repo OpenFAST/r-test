@@ -1,8 +1,9 @@
-#*******************************************************************************
+#-------------------------------------------------------------------------------
 # LICENSING
-# Copyright (C) 2021 National Renewable Energy Lab
+#-------------------------------------------------------------------------------
+# Copyright (C) 2021-present by National Renewable Energy Lab (NREL)
 #
-# This file is part of HydroDyn. 
+# This file is part of HydroDyn
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,332 +16,360 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+#-------------------------------------------------------------------------------
+# Overview of HydroDyn python driver
+#-------------------------------------------------------------------------------
+# This script serves as a Python driver for the HydroDyn library. It demonstrates
+# how to interact with the main subroutines of HydroDyn.
 #
-#*******************************************************************************
+# NOTE: This script serves as a template and can be customized to meet
+# individual requirements.
 #
-# This is an exampe of Python driver code for HydroDyn (this will be replaced
-# by a full Python driver with the same functionality as the HydroDyn Fortran
-# driver).
+# Basic algorithm for using HydroDyn python library:
+#   1. Initialize the Python wrapper library:
+#      - Set necessary library values
+#      - Set input file string arrays (from file/script)
 #
-# Usage: This program gives an example for how the user calls the main
-#        subroutines of HydroDyn, and thus is specific to the user
+#   2. Initialize the HydroDyn Fortran library (i.e. C-bindings interface)
+#      - Set initial position, velocity, and acceleration values
+#      - Call hydrodyn_init once to initialize HydroDyn
+#      - Handle any resulting errors
 #
-# Basic alogrithm for using HydroDyn python library
-#   1.  initialize python wrapper library
-#           set necessary library values
-#           set input file string arrays (from file or script)
-#   2.  initialize HydroDyn Fortran library
-#           set initial position, velocity, acceleration values
-#           call hydrodyn_init once to initialize IfW
-#           Handle any resulting errors
-#   3.  timestep iteration
-#           set extrapolated values for inputs
-#           call hydrodyn_updatestates to propogate forwared from t to t+dt
-#           set position, velocity, and accleration information for all nodes
-#           call hydrodybn_calcoutput.  Handle any resulting errors
-#           return the resulting force and moment array
-#           aggregate output channnels
-#   4. End
-#         call hydrodyn_end to close the HydroDyn library and free memory
-#         handle any resulting errors
+#   3. Timestep iteration:
+#      - Set extrapolated values for inputs
+#      - Call hydrodyn_updatestates to propagate forward from t to t+dt
+#      - Set position, velocity, and acceleration information for all nodes
+#      - Call hydrodyn_calcoutput. Handle any resulting errors
+#      - Return the resulting force and moment array
+#      - Aggregate output channels
 #
-#
-import numpy as np
+#   4. End:
+#      - Call hydrodyn_end to close the HydroDyn library and free memory
+#      - Handle any resulting errors
+
+#-------------------------------------------------------------------------------
+# Imports
+#-------------------------------------------------------------------------------
 import os
 import sys
+from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Optional
 
-# path to find the hydrodyn_library.py from the local directory
-os.chdir(sys.path[0])
-hdLibPath=os.path.sep.join(["..", "..", "..", "..", "..", "modules", "hydrodyn", "python-lib"])
-sys.path.insert(0, hdLibPath)
-print(f"Importing 'hydrodyn_library' from {hdLibPath}")
-import hydrodyn_library # this file handles the conversion from python to c-bound types and should not be changed by the user
+import numpy as np
 
-###############################################################################
-# Locations to build directory relative to r-test directory.  This is specific
-# to the regession testing with openfast and will need to be updated when
-# coupled to other codes or use cases
+# Path to find the hydrodyn_library.py from the local directory
+os.chdir(Path(__file__).parent)
+hd_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "hydrodyn", "python-lib")
+sys.path.insert(0, str(hd_lib_path))
+print(f"Importing 'hydrodyn_library' from {hd_lib_path}")
+import hydrodyn_library
 
-basename = "libhydrodyn_c_binding"
-if sys.platform == "linux" or sys.platform == "linux2":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".so"])
-elif sys.platform == "darwin":
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".dylib"])
-elif sys.platform == "win32":
-    # Windows may have this library installed in one of two locations depending
-    # on which build system was used (CMake or VS).
-    library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "modules", "hydrodyn", basename + ".dll"])   # cmake install location
-    if not os.path.isfile(library_path) and not sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_binding_Win32.dll"]) # VS build install location
-        if not os.path.isfile(library_path):
-            print(f"Python is 32 bit and cannot find 32 bit HydroDyn DLL expected at: {library_path}")
-            exit(1)
-    if not os.path.isfile(library_path) and sys.maxsize > 2**32:        # Try VS build location otherwise
-        library_path = os.path.sep.join(["..", "..", "..", "..", "..", "build", "bin", "HydroDyn_c_binding_x64.dll"]) # VS build install location
-        if not os.path.isfile(library_path):
-            print(f"Python is 64 bit and cannot find 64 bit HydroDyn DLL expected at: {library_path}")
-            exit(1)
+#-------------------------------------------------------------------------------
+# Configuration classes containing problem inputs
+#-------------------------------------------------------------------------------
+@dataclass
+class HydroDynConfig:
+    """Configuration settings for HydroDyn simulation."""
+    num_nodes: int = 1         # Number of nodes
+    num_corrections: int = 0   # Number of correction steps to perform
+    debug_outputs: int = 1     # For checking the interface, set this to 1
 
+    #--------------------------------------
+    # File paths
+    #--------------------------------------
+    # Primary input files: These files are identical to what HydroDyn would read from disk if not
+    # passed directly. When coupled with other codes, they may be passed directly from memory
+    # (e.g., during optimization with WEIS), or read as a template and edited in memory for each
+    # iteration loop.
+    seastate_primary_file: str = "NRELOffshrBsline5MW_OC4DeepCwindSemi_SeaState.dat"
+    hd_primary_file: str = "NRELOffshrBsline5MW_OC4DeepCwindSemi_HydroDyn.dat"
+    # Debug output file: This file is used for debugging purposes. When coupled with another code,
+    # an array of position/orientation, velocities, and accelerations are passed in, and an array of
+    # Forces + Moments is returned. It may be useful to dump all of this information to a file for
+    # debugging.
+    debug_output_file: str = "DbgOutputs.out"
+    # Output file: When coupled with another code, the channels requested in the outlist section of
+    # the output file are passed back for writing to a file. Here, we will write the aggregated
+    # output channels to a file at the end of the simulation.
+    output_file: str = "py_hd.out"
+    # Time-series file: This file contains the time series data of motions
+    timeseries_file: str = "OpenFAST_DisplacementTimeseries.dat"
 
+@dataclass
+class LibraryConfig:
+    """Configuration settings for HydroDyn library."""
+    interpolation_order: int = 1       # Order of the interpolation
+    time_start: float = 0.             # Initial time
+    time_final: float = 60.            # Final time
+    time_interval: float = 0.0125      # Time interval for HydroDyn calls
+    gravity: float = 9.80665           # Gravity (m/s^2)
+    water_density: float = 1025.       # Water density (kg/m^3)
+    water_depth: float = 200.          # Water depth (m)
+    mean_sea_level_offset: float = 0.  # Offset between still-water level and mean sea level (m) [positive upward]
 
-###############################################################################
-# For testing, a set of input files is read in.  Everything in these input
-# files could in principle be hard coded into this script.  These are separated
-# out for convenience in testing.
+#-------------------------------------------------------------------------------
+# Helper functions
+#-------------------------------------------------------------------------------
+def read_lines_from_file(file_path: str) -> List[str]:
+    """Reads a file line by line, stripping whitespace.
 
-#   Primary input
-#       This is identical to what HydroDyn would read from disk if we were
-#       not passing it.  When coupled to other codes, this may be passed
-#       directly from memory (i.e. during optimization with WEIS), or read as a
-#       template and edited in memory for each iteration loop.
-seast_primary_file  ="NRELOffshrBsline5MW_OC4DeepCwindSemi_SeaState.dat"
-hd_primary_file     ="NRELOffshrBsline5MW_OC4DeepCwindSemi_HydroDyn.dat"
+    Args:
+        file_path: Path to the file to read
 
-#   Debug output file
-#       When coupled into another code, an array of position/orientation,
-#       velocities, and accelerations are passed in, and an array of
-#       Forces+Moments is returned.  For debugging, it may be useful to dump all
-#       off this to file.
-debugout_file="DbgOutputs.out"
+    Returns:
+        List of stripped lines from the file
+    """
+    with open(file_path, "r") as fh:
+        return [line.rstrip() for line in fh]
 
+def get_library_path() -> str:
+    """Determines the correct library path based on platform.
 
-#   Output file
-#       When coupled to another code, the channels requested in the outlist
-#       section of the output file are passed back for writing to file.  Here
-#       we will write the aggregated output channels to a file at the end of
-#       the simulation.
-output_file="py_hd.out"
+    Returns:
+        str: Path to the HydroDyn library for the current platform.
 
-#   For checking if our library is correctly handling correction steps, set
-#   this to > 0
-NumCorrections=0
+    Raises:
+        ValueError: If the current platform is not supported.
+        SystemExit: If on Windows and the DLL cannot be found in expected locations.
+    """
+    basename = "libhydrodyn_c_binding"
+    build_path = Path("..").joinpath(*[".."] * 4, "build")
 
-#   Input Files
-#===============================================================================
+    if sys.platform in ["linux", "linux2"]:
+        return str(build_path / "modules" / "hydrodyn" / f"{basename}.so")
 
-#   Main SeaState and HydroDyn input files
-#       This file is read from disk to an array of strings with the line
-#       endings stripped off.  This array will have the same number of elements
-#       as there are lines in the file.
-seast_input_string_array = []     # instantiate empty array
-fh = open(seast_primary_file, "r")
-for line in fh:
-  # strip line ending and ending white space and add to array of strings
-  seast_input_string_array.append(line.rstrip())
-fh.close()
+    if sys.platform == "darwin":
+        return str(build_path / "modules" / "hydrodyn" / f"{basename}.dylib")
 
-hd_input_string_array = []     # instantiate empty array
-fh = open(hd_primary_file, "r")
-for line in fh:
-  # strip line ending and ending white space and add to array of strings
-  hd_input_string_array.append(line.rstrip())
-fh.close()
+    if sys.platform == "win32":
+        bit_version = "Win32" if sys.maxsize <= 2**32 else "x64"
+        possible_paths = [
+            build_path / "modules" / "hydrodyn" / f"{basename}.dll",
+            build_path / "bin" / f"HydroDyn_c_binding_{bit_version}.dll"
+        ]
+        return str(next((path for path in possible_paths if path.is_file()), None)) or sys.exit(
+            f"Python is {bit_version} bit and cannot find {bit_version} "
+            f"bit HydroDyn DLL in any expected location."
+        )
 
-#   Time-series file
-#       Read in the time series file of motions.
-hd_timeseries = np.genfromtxt('OpenFAST_DisplacementTimeseries.dat', delimiter=",")
+    raise ValueError(f"Unsupported platform: {sys.platform}")
 
-#===============================================================================
-#   HydroDyn python interface initialization 
-#===============================================================================
+#-------------------------------------------------------------------------------
+# Main driver class
+#-------------------------------------------------------------------------------
+class HydroDynDriver:
+    """Main driver class for HydroDyn simulation."""
 
-#   Instantiate the hdlib python object
-#       wrap this in error handling in case the library_path is incorrect
-try:
-    hdlib = hydrodyn_library.HydroDynLib(library_path)
-except Exception as e:
-    print("{}".format(e))
-    print(f"Cannot load library at {library_path}")
-    exit(1)
+    def __init__(self, config: HydroDynConfig, lib_config: LibraryConfig):
+        """Initialize the HydroDyn driver.
 
-# These will be read from the HD driver input file
-#   Time inputs
-#           hdlib.dt           -- the timestep hydrodyn is called at.
-#           hdlib.numTimeSteps -- total number of timesteps, only used to
-#                                  construct arrays to hold the output channel
-#                                  info
-hdlib.InterpOrder   = 1                  # order of the interpolation
-hdlib.t_start       = 0                  # initial time
-hdlib.dt            = 0.0125             # time interval that it's being called at
-final_time          = 60                 # final time
-hdlib.gravity       = 9.80665  # Gravity (m/s^2)
-hdlib.defWtrDens    = 1025.0   # Water density (kg/m^3)
-hdlib.defWtrDpth    = 200.0    # Water depth (m)
-hdlib.defMSL2SWL    = 0.0      # Offset between still-water level and mean sea level (m) [positive upward]
+        Args:
+            config: Configuration settings for the simulation
+            lib_config: Configuration settings for the library
+        """
+        self.config = config
+        self.lib_config = lib_config
 
-time                = np.arange(hdlib.t_start,final_time + hdlib.dt,hdlib.dt) # total time + increment because python doesnt include endpoint!
-hdlib.numTimeSteps = len(time)          # only for constructing array of output channels for duration of simulation
+        # Calculate time steps
+        self.time = np.arange(
+            self.lib_config.time_start,
+            self.lib_config.time_final + self.lib_config.time_interval,
+            self.lib_config.time_interval
+        )
 
+        # Initialize data arrays
+        self._initialize_arrays()
 
-#==============================================================================
-# Basic alogrithm for using HydroDyn library
-#
-# NOTE: the error handling here is handled locally since this is the only
-#       driver code.  If HydroDyn is incorporated into another code, the
-#       error handling will need to be passed to the main code.  That way the
-#       main code can close other modules as necessary (otherwise you will end
-#       up with memory leaks and a bunch of garbage in the other library
-#       instances).
+        # Load timeseries data
+        self.timeseries = np.genfromtxt(self.config.timeseries_file, delimiter=",")
 
-# Set number of nodes and initial position
-#       positiion is an N x 6 array [x,y,z,Rx,Ry,Rz]
-#       -- see note in library interface about Euler angle rotations (Rx,Ry,Rz)
-hdlib.numNodes = 1
-hdlib.initNodePos = np.zeros((hdlib.numNodePts,6))
+        # Initialize library
+        self.hdlib = self._initialize_library()
 
-# HydroDyn_Init: Only need to call hydrodyn_init once
-try:
-    hdlib.hydrodyn_init(seast_input_string_array,hd_input_string_array)
-except Exception as e:
-    print("{}".format(e))   # Exceptions handled in hydrodyn_library.py
-    exit(1)
+    def _initialize_arrays(self) -> None:
+        """Initialize arrays for storing node kinematics and resulting loads.
 
+        Creates zero-initialized NumPy arrays to store position, velocity, acceleration,
+        and resulting force/moment data for each node in the simulation. Each array has shape
+        (num_nodes, 6) where the second dimension represents:
 
-#  To get the names and units of the output channels
-#output_channel_names = hdlib.output_channel_names
-#output_channel_units = hdlib.output_channel_units
+        Kinematics arrays (positions, velocities, accelerations):
+            - Translation: [x, y, z]
+            - Rotation: [Rx, Ry, Rz]
 
-#-------------------
-#   Time steppping
-#-------------------
+        Loads array (forces_moments):
+            - Forces: [Fx, Fy, Fz]
+            - Moments: [Mx, My, Mz]
 
-#  Set the array holding the ouput channel values to zeros initially.  Output
-#  channel values returned from each CalcOutput call in this array.  We will
-#  aggregate them together in the time stepping loop to get the entire time
-#  series.  Time channel is not included, so we must add that.
-outputChannelValues = np.zeros(hdlib.numChannels)
-allOutputChannelValues = np.zeros( (hdlib.numTimeSteps,hdlib.numChannels+1) )
+        All arrays use C-based index order to the C-bindings of the hydrodyn_library.
+        """
+        self.node_positions = np.zeros((self.config.num_nodes, 6))      # Translations and rotations
+        self.node_velocities = np.zeros((self.config.num_nodes, 6))     # First derivatives of position
+        self.node_accelerations = np.zeros((self.config.num_nodes, 6))  # Second derivatives of position
+        self.node_forces_moments = np.zeros((self.config.num_nodes, 6)) # Resulting loads
 
-#  Setup the arrays for motion and resulting forces/moments - C index order
-nodePos     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]
-nodeVel     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_dot  -- first  deriv (velocities)
-nodeAcc     = np.zeros((hdlib.numNodePts,6))    # [x,y,z,Rx,Ry,Rz]_ddot -- second deriv (accelerations)
-nodeFrcMom  = np.zeros((hdlib.numNodePts,6))    # [Fx,Fy,Fz,Mx,My,Mz]   -- resultant forces/moments at each node
+    def _initialize_library(self) -> hydrodyn_library.HydroDynLib:
+        """Initialize the HydroDyn library.
 
+        Returns:
+            HydroDynLib: Configured instance of the HydroDyn library
 
-#   Open outputfile for regession testing purposes.
-dbg_outfile = hydrodyn_library.DriverDbg(debugout_file,hdlib.numNodePts)
-
-
-# Calculate outputs for t_initial
-i=0
-nodePos[0,0:6] = hd_timeseries[i, 1: 7]     # note: python slicing stops at element before last index in range (different than fortran wich is inclusive)
-nodeVel[0,0:6] = hd_timeseries[i, 7:13]
-nodeAcc[0,0:6] = hd_timeseries[i,13:19]
-try:
-    hdlib.hydrodyn_calcOutput(time[i], nodePos, nodeVel, nodeAcc, 
-            nodeFrcMom, outputChannelValues)
-except Exception as e:
-    print("{}".format(e))
-    dbg_outfile.end()
-    exit(1)
- 
-# Write the debug output at t=t_initial
-dbg_outfile.write(time[i],nodePos,nodeVel,nodeAcc,nodeFrcMom)
-# Save the output at t=t_initial
-allOutputChannelValues[i,:] = np.append(time[i],outputChannelValues)
-
-
-#   Timestep iteration
-#       Correction loop:
-#           1.  Set inputs at t+dt using either extrapolated values (or
-#               corrected values if in a correction step) from the structural
-#               solver
-#           2.  Call UpdateStates to propogate states from t -> t+dt
-#           3.  call Ifw_CalcOutput_C to get the resulting forces at t+dt using
-#               the updated state information for t+dt.  These would be passed
-#               back to the structural solver at each step of the correction
-#               loop so that it can be used to tune the states of other modules
-#               (structural solver etc).
-#       End correction loop:
-#           4.  Once correction loop is complete, save the resulting values
-#
-#   time[i]   is at t
-#   time[i+1] is at t+dt
-for i in range( 0, len(time)-1):
-
-    #print(f"iter: {i}: {time[i]}")
-
-    for correction in range(0, NumCorrections+1):
-
-        #print(f"Correction step: {correction} for {time[i]} --> {time[i+1]}")
-
-        # If there are correction steps, the inputs would be updated using outputs
-        # from the other modules.
-        nodePos[0,0:6] = hd_timeseries[i+1, 1: 7]
-        nodeVel[0,0:6] = hd_timeseries[i+1, 7:13]
-        nodeAcc[0,0:6] = hd_timeseries[i+1,13:19]
-
-        #   Update the states from t to t+dt (only if not beyond end of sim)
+        Raises:
+            SystemExit: If library initialization fails
+        """
         try:
-            hdlib.hydrodyn_updateStates(time[i], time[i+1], nodePos, nodeVel,
-                    nodeAcc, nodeFrcMom)
+            hdlib = hydrodyn_library.HydroDynLib(get_library_path())
         except Exception as e:
-            print("{}".format(e))
-            dbg_outfile.end()
-            exit(1)
- 
-        # Calculate the outputs at t+dt
-        #       NOTE: new input values may be available at this point from the
-        #       structural solver, so update them here.
-        nodePos[0,0:6] = hd_timeseries[i+1, 1: 7]
-        nodeVel[0,0:6] = hd_timeseries[i+1, 7:13]
-        nodeAcc[0,0:6] = hd_timeseries[i+1,13:19]
+            print(f"Failed to load library: {e}")
+            sys.exit(1)
+
+        # Configure library
+        hdlib.InterpOrder = self.lib_config.interpolation_order
+        hdlib.t_start = self.lib_config.time_start
+        hdlib.dt = self.lib_config.time_interval
+        hdlib.numTimeSteps = len(self.time)
+        hdlib.gravity = self.lib_config.gravity
+        hdlib.defWtrDens = self.lib_config.water_density
+        hdlib.defWtrDpth = self.lib_config.water_depth
+        hdlib.defMSL2SWL = self.lib_config.mean_sea_level_offset
+        hdlib.numNodes = self.config.num_nodes
+
+        # Initialize HydroDyn with input files
+        seastate_input = read_lines_from_file(self.config.seastate_primary_file)
+        hd_input = read_lines_from_file(self.config.hd_primary_file)
+        try:
+            hdlib.hydrodyn_init(seastate_input, hd_input)
+        except Exception as e:
+            print(f"Failed to initialize HydroDyn: {e}")
+            sys.exit(1)
+
+        # Store output channel information and initialize output arrays
+        self.output_channel_names = hdlib.output_channel_names
+        self.output_channel_units = hdlib.output_channel_units
+        self.output_channel_values = np.zeros(hdlib.numChannels)
+        self.all_output_channel_values = np.zeros((len(self.time), hdlib.numChannels + 1))
+
+        return hdlib
+
+    def run_simulation(self) -> None:
+        """Run the main simulation loop."""
+        # Initialize debug output if needed
+        debug_output_file = None
+        if self.config.debug_outputs:
+            debug_output_file = hydrodyn_library.DriverDbg(
+                self.config.debug_output_file,
+                self.hdlib.numNodePts
+            )
 
         try:
-            hdlib.hydrodyn_calcOutput(time[i+1], nodePos, nodeVel, nodeAcc, 
-                    nodeFrcMom, outputChannelValues)
+            # Process initial timestep
+            self._process_timestep(
+                0,
+                self.time[0],
+                debug_output_file
+            )
+
+            # Time stepping loop
+            for i in range(len(self.time) - 1):
+                # Correction loop
+                for _ in range(self.config.num_corrections + 1):
+                    self._process_timestep(
+                        i + 1,
+                        self.time[i + 1],
+                        debug_output_file,
+                        update_states=True,
+                        previous_time=self.time[i]
+                    )
+
+        finally:
+            # Close debug output if it was opened
+            if debug_output_file:
+                debug_output_file.end()
+
+            # End HydroDyn simulation
+            try:
+                self.hdlib.hydrodyn_end()
+            except Exception as e:
+                print(f"Failed to end HydroDyn simulation: {e}")
+                sys.exit(1)
+
+        # Write output channels to file
+        out_file = hydrodyn_library.WriteOutChans(
+            self.config.output_file,
+            self.hdlib.output_channel_names,
+            self.hdlib.output_channel_units
+        )
+        out_file.write(self.all_output_channel_values)
+        out_file.end()
+
+    def _process_timestep(
+        self,
+        i_timestep: int,
+        current_time: float,
+        debug_output_file: Optional[hydrodyn_library.DriverDbg],
+        update_states: bool = False,
+        previous_time: Optional[float] = None
+    ) -> None:
+        """Process a single timestep in the simulation.
+
+        Args:
+            i_timestep: Current timestep index
+            current_time: Current simulation time
+            debug_output_file: Debug output handler
+            update_states: Whether to update states
+            previous_time: Previous timestep time (needed for state updates)
+        """
+        # Update node states from timeseries
+        self.node_positions[0, 0:6] = self.timeseries[i_timestep, 1:7]
+        self.node_velocities[0, 0:6] = self.timeseries[i_timestep, 7:13]
+        self.node_accelerations[0, 0:6] = self.timeseries[i_timestep, 13:19]
+
+        # Update states if requested
+        if update_states:
+            try:
+                self.hdlib.hydrodyn_updateStates(
+                    previous_time, current_time,
+                    self.node_positions, self.node_velocities,
+                    self.node_accelerations, self.node_forces_moments
+                )
+            except Exception as e:
+                print(f"Failed to update states at T={current_time}: {e}")
+                raise
+
+            # Update node states again after state update
+            self.node_positions[0, 0:6] = self.timeseries[i_timestep, 1:7]
+            self.node_velocities[0, 0:6] = self.timeseries[i_timestep, 7:13]
+            self.node_accelerations[0, 0:6] = self.timeseries[i_timestep, 13:19]
+
+        # Calculate outputs
+        try:
+            self.hdlib.hydrodyn_calcOutput(
+                current_time,
+                self.node_positions, self.node_velocities, self.node_accelerations,
+                self.node_forces_moments, self.output_channel_values
+            )
         except Exception as e:
-            print("{}".format(e))
-            dbg_outfile.end()
-            exit(1)
+            print(f"Failed to calculate outputs at T={current_time}: {e}")
+            raise
 
- 
-        #   When coupled to a different code, this is where the Force/Moment info
-        #   would be passed to the aerodynamic solver.
-        #
-        #   For this regression test example, we will write this to file (in
-        #   principle this could be aggregated and written out once at the end of
-        #   the regression simulation, but for simplicity we are writting one line
-        #   at a time during the call).  The regression test will have one row for
-        #   each timestep + position array entry.
-        dbg_outfile.write(time[i+1],nodePos,nodeVel,nodeAcc,nodeFrcMom)
+        # Write debug output if enabled
+        if debug_output_file:
+            debug_output_file.write(
+                current_time,
+                self.node_positions,
+                self.node_velocities,
+                self.node_accelerations,
+                self.node_forces_moments
+            )
 
+        # Store outputs
+        self.all_output_channel_values[i_timestep, :] = np.append(
+            current_time,
+            self.output_channel_values
+        )
 
-    # Store the channel outputs -- these are requested from within the IfW input
-    # file OutList section.  In OpenFAST, these are added to the output
-    # channel array for all modules and written to that output file.  For this
-    # example we will write to file at the end of the simulation in a single
-    # shot.
-    allOutputChannelValues[i+1,:] = np.append(time[i+1],outputChannelValues)
-
-
-dbg_outfile.end()   # close the debug output file
-
-
-# hydrodyn_end: Only need to call hydrodyn_end once.
-#   NOTE:   in the event of an error during the above Init or CalcOutput calls,
-#           the IfW_End routine will be called during that error handling.
-#           This works for IfW, but may not be a desirable way to handle
-#           errors in other codes (we may still want to retrieve some info
-#           from memory before clearing out everything).
-#   NOTE:   Error handling from the hydrodyn_end call may not be entirely
-#           necessary, but we may want to know if some memory was not released
-#           properly or a file not closed correctly.
-try:
-    hdlib.hydrodyn_end()
-except Exception as e:
-    print("{}".format(e))
-    exit(1)
-
-
-#   Now write the ouput channels to a file
-OutFile=hydrodyn_library.WriteOutChans(output_file,hdlib.output_channel_names,hdlib.output_channel_units)
-OutFile.write(allOutputChannelValues)
-OutFile.end()
-
-
-
-#print("HydroDyn successful.")
-exit()
-
+if __name__ == "__main__":
+    driver = HydroDynDriver(HydroDynConfig(), LibraryConfig())
+    driver.run_simulation()
