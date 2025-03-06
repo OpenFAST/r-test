@@ -61,15 +61,25 @@ from typing import Optional
 
 import numpy as np
 
-from visread import *
+#--------------------------------------
+# Library paths
+#--------------------------------------
+# Path to find the driver_utilities.py module from the local directory
+#
+# NOTE: This file contains helper functions to assist with the driver codes
+# across different modules
+modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", "modules")
+print(f"Importing 'driver_utilities' from {modules_path}")
+sys.path.insert(0, str(modules_path))
+from driver_utilities import *
 
 # Path to find the aerodyn_inflow_library.py from the local directory
 #
-# NOTE: This file handles the conversion from python to c-bound types
-#       and should not be modified by the user
-os.chdir(sys.path[0])
-adi_lib_path = os.path.join("..", "..", "..", "..", "..", "modules", "aerodyn", "python-lib")
-sys.path.insert(0, adi_lib_path)
+# NOTE: This file handles the conversion from python to C-bound types
+# and should NOT be modified by the user
+os.chdir(Path(__file__).parent)
+adi_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "aerodyn", "python-lib")
+sys.path.insert(0, str(adi_lib_path))
 print(f"Importing 'aerodyn_inflow_library' from {adi_lib_path}")
 import aerodyn_inflow_library as adi
 
@@ -87,7 +97,9 @@ class AeroDynConfig:
     num_corrections: int = 0       # Number of corrections to perform
     debug_outputs: int = 1         # For checking the interface, set this to 1
 
+    #--------------------------------------
     # File paths
+    #--------------------------------------
     vtk_dir: str = "vtkRef"
     # Primary input files: This is identical to what AeroDyn would read from disk
     # if we were not passing it. When coupled to other codes, this may be passed
@@ -131,71 +143,7 @@ class LibraryConfig:
 
     @property
     def write_vtk_dt(self) -> float:
-        return self.time_interval * 4.          # Every 4th timestep
-
-#-------------------------------------------------------------------------------
-# Helper functions
-#-------------------------------------------------------------------------------
-def read_lines_from_file(file_path: str) -> list[str]:
-    """Reads a file line by line, stripping whitespace.
-
-    Args:
-        file_path: Path to the file to read
-
-    Returns:
-        List of stripped lines from the file
-    """
-    return [line.rstrip() for line in open(file_path, "r")]
-
-def read_vtk_motion(vtk_dir: str, base_name: str, time_step: int, field_len: int) -> tuple:
-    """Reads position, orientation, velocity, and acceleration from a VTK file.
-
-    Args:
-        vtk_dir: Directory containing VTK files
-        base_name: Base name of the VTK file
-        time_step: Current time step number
-        field_len: Length of the time field in filename
-
-    Returns:
-        tuple: (positions, orientations, velocities, accelerations)
-    """
-    time_field = str(time_step).zfill(field_len)
-    file_path = os.path.sep.join([vtk_dir, f"{base_name}.{time_field}.vtp"])
-    positions, orientations, num_pts = visread_positions(file_path)
-    velocities, accelerations = visread_velacc(file_path, num_pts)
-    return positions, orientations, velocities, accelerations
-
-def get_library_path() -> str:
-    """Determines the correct library path based on platform.
-
-    Returns:
-        str: Path to the AeroDyn library for the current platform.
-
-    Raises:
-        ValueError: If the current platform is not supported.
-        SystemExit: If on Windows and the DLL cannot be found in expected locations.
-    """
-    basename = "libaerodyn_inflow_c_binding"
-    build_path = Path("..").joinpath(*[".."] * 4, "build")
-
-    if sys.platform in ["linux", "linux2"]:
-        return str(build_path / "modules" / "aerodyn" / f"{basename}.so")
-
-    if sys.platform == "darwin":
-        return str(build_path / "modules" / "aerodyn" / f"{basename}.dylib")
-
-    if sys.platform == "win32":
-        bit_version = "Win32" if sys.maxsize <= 2**32 else "x64"
-        possible_paths = [
-            build_path / "modules" / "aerodyn" / f"{basename}.dll",
-            build_path / "bin" / f"AeroDyn_Inflow_c_binding_{bit_version}.dll"
-        ]
-        return str(next((path for path in possible_paths if path.is_file()), None)) or sys.exit(
-            f"Python is {bit_version} bit and cannot find {bit_version} "
-            f"bit InflowWind DLL in any expected location."
-        )
-
-    raise ValueError(f"Unsupported platform: {sys.platform}")
+        return self.time_interval * 4.          # Write for every 4th timestep
 
 #-------------------------------------------------------------------------------
 # Main driver class
@@ -222,60 +170,6 @@ class AeroDynDriver:
         self.output_channel_values = None
         self.all_output_channel_values = None
         self.disk_avg_vel = None
-
-    def run_simulation(self) -> None:
-        """Run the main simulation loop with corrections."""
-        self._initialize_simulation()
-
-        # Initialize output arrays
-        self.output_channel_values = np.zeros(self.adilib.numChannels)
-        self.all_output_channel_values = np.zeros((
-            self.config.time_steps_to_run + 1, self.adilib.numChannels + 1
-        ))
-        self.disk_avg_vel = np.zeros(3)  # [Vx Vy Vz]
-
-        # Initialize debug output file if needed
-        debug_output_file = None
-        if self.config.debug_outputs:
-            debug_output_file = adi.DriverDbg(
-                self.config.debug_output_file, self.adilib.numMeshPts
-            )
-
-        try:
-            # Time stepping loop with corrections
-            print(f"Time steps: {self.adilib.numTimeSteps}")
-            for i in range(0, self.adilib.numTimeSteps + 1):
-                current_time = i * self.adilib.dt
-                print(f"Time step: {i} at {current_time}")
-
-                # Correction loop
-                for correction in range(self.config.num_corrections + 1):
-                    self._process_timestep(
-                        time_step=i,
-                        current_time=current_time,
-                        debug_output_file=debug_output_file,
-                        update_states=False
-                    )
-
-        finally:
-            # Close debug output file if it was opened
-            if debug_output_file:
-                debug_output_file.end()
-
-            # End AeroDyn simulation
-            try:
-                self.adilib.adi_end()
-            except Exception as e:
-                print(f"Failed to end AeroDyn simulation: {e}")
-                sys.exit(1)
-
-        # Save results to output file
-        out_file = adi.WriteOutChans(
-            self.config.output_file, self.output_channel_names, self.output_channel_units
-        )
-        out_file.write(self.all_output_channel_values)
-        out_file.end()
-        print("Simulation completed successfully")
 
     def _initialize_mesh_data(self) -> None:
         """Initializes mesh data from VTK files for hub, nacelle, and blades.
@@ -338,15 +232,9 @@ class AeroDynDriver:
             print(f"Failed to load AeroDyn library at {library_path}: {e}")
             sys.exit(1)
 
-        self._configure_library(adilib)
-        return adilib
-
-    def _configure_library(self, adilib) -> None:
-        """Configures the AeroDyn library with simulation parameters.
-
-        Args:
-            adilib (AeroDynInflowLib): Instance of AeroDyn library to configure.
-        """
+        #--------------------------------------
+        # Configure library
+        #--------------------------------------
         adilib.InterpOrder   = self.lib_config.interpolation_order
 
         # Time settings
@@ -374,14 +262,60 @@ class AeroDynDriver:
         # Debugging of internals of ADI library
         adilib.debuglevel    = self.lib_config.debug_level
 
-    def _initialize_simulation(self) -> None:
-        """Initializes the AeroDyn library with configuration settings.
+        return adilib
 
-        Returns:
-            AeroDynInflowLib: Configured instance of the AeroDyn library.
+    def run_simulation(self) -> None:
+        """Run the main simulation loop with corrections."""
+        self._initialize_simulation()
+
+        # Initialize debug output file if needed
+        debug_output_file = None
+        if self.config.debug_outputs:
+            debug_output_file = adi.DriverDbg(
+                self.config.debug_output_file, self.adilib.numMeshPts
+            )
+
+        try:
+            # Time stepping loop with corrections
+            print(f"Time steps: {self.adilib.numTimeSteps}")
+            for i in range(0, self.adilib.numTimeSteps + 1):
+                current_time = i * self.adilib.dt
+                print(f"Time step: {i} at {current_time}")
+
+                # Correction loop
+                for correction in range(self.config.num_corrections + 1):
+                    self._process_timestep(
+                        i_timestep=i,
+                        current_time=current_time,
+                        debug_output_file=debug_output_file,
+                        update_states=False
+                    )
+
+        finally:
+            # Close debug output file if it was opened
+            if debug_output_file:
+                debug_output_file.end()
+
+            # End AeroDyn simulation
+            try:
+                self.adilib.adi_end()
+            except Exception as e:
+                print(f"Failed to end AeroDyn simulation: {e}")
+                sys.exit(1)
+
+        # Save results to output file
+        out_file = adi.WriteOutChans(
+            self.config.output_file, self.output_channel_names, self.output_channel_units
+        )
+        out_file.write(self.all_output_channel_values)
+        out_file.end()
+        print("Simulation completed successfully")
+
+    def _initialize_simulation(self) -> None:
+        """Sets up and initializes the AeroDyn simulation.
 
         Raises:
-            SystemExit: If library initialization fails.
+            SystemExit: If pre-initialization or initialization of AeroDyn fails
         """
         # Set initial positions and orientations
         self.adilib.initHubPos = self.init_hub_pos[0,:]
@@ -398,7 +332,9 @@ class AeroDynDriver:
         self.adilib.initMeshOrient = self.init_mesh_orient
         self.adilib.meshPtToBladeNum = self.init_mesh_pt_to_blade_num
 
+        #--------------------------------------
         # Initialize the library
+        #--------------------------------------
         try:
             self.adilib.adi_preinit()
         except Exception as e:
@@ -421,6 +357,13 @@ class AeroDynDriver:
         self.output_channel_names = self.adilib.output_channel_names
         self.output_channel_units = self.adilib.output_channel_units
 
+        # Initialize output arrays
+        self.output_channel_values = np.zeros(self.adilib.numChannels)
+        self.all_output_channel_values = np.zeros((
+            self.config.time_steps_to_run + 1, self.adilib.numChannels + 1
+        ))
+        self.disk_avg_vel = np.zeros(3)  # [Vx Vy Vz]
+
     def _setup_rotors(self) -> None:
         """Sets up rotors for all turbines in the simulation.
 
@@ -437,7 +380,7 @@ class AeroDynDriver:
 
     def _process_timestep(
         self,
-        time_step: int,
+        i_timestep: int,
         current_time: float,
         debug_output_file: Optional[adi.DriverDbg],
         update_states: bool = False
@@ -445,16 +388,16 @@ class AeroDynDriver:
         """Calculate outputs for a single time step.
 
         Args:
-            time_step: Current time step index
+            i_timestep: Current time step index
             current_time: Current simulation time
             debug_output_file: Debug output file handler
             update_states: Whether to update states before calculating outputs
         """
         # Get motion data for current timestep from vtk
-        hub_pos, hub_orient, hub_vel, hub_acc = self._set_motion_hub(time_step)
-        nac_pos, nac_orient, nac_vel, nac_acc = self._set_motion_nacelle(time_step)
-        root_pos, root_orient, root_vel, root_acc = self._set_motion_root(time_step)
-        mesh_pos, mesh_orient, mesh_vel, mesh_acc, mesh_forces_moments = self._set_motion_blade_mesh(time_step)
+        hub_pos, hub_orient, hub_vel, hub_acc = self._set_motion_hub(i_timestep)
+        nac_pos, nac_orient, nac_vel, nac_acc = self._set_motion_nacelle(i_timestep)
+        root_pos, root_orient, root_vel, root_acc = self._set_motion_root(i_timestep)
+        mesh_pos, mesh_orient, mesh_vel, mesh_acc, mesh_forces_moments = self._set_motion_blade_mesh(i_timestep)
 
         # Set rotor motion for each turbine
         for i_turbine in range(self.config.num_turbines):
@@ -471,10 +414,10 @@ class AeroDynDriver:
                 raise
 
         # If not first time step, update states
-        if time_step > 0:
+        if i_timestep > 0:
             # Update states if requested and not at the end of simulation
-            if update_states and time_step < self.config.time_steps_to_run:
-                previous_time = (time_step - 1) * self.adilib.dt
+            if update_states and i_timestep < self.config.time_steps_to_run:
+                previous_time = (i_timestep - 1) * self.adilib.dt
                 try:
                     self.adilib.adi_updateStates(previous_time, current_time)
                 except Exception as e:
@@ -520,39 +463,39 @@ class AeroDynDriver:
             )
 
         # Store outputs
-        self.all_output_channel_values[time_step, :] = np.append(current_time, self.output_channel_values)
+        self.all_output_channel_values[i_timestep, :] = np.append(current_time, self.output_channel_values)
 
-    def _set_motion_hub(self, time_step: int) -> tuple:
+    def _set_motion_hub(self, i_timestep: int) -> tuple:
         """Gets hub motion parameters for the current time step.
 
         Args:
-            time_step: Current time step number
+            i_timestep: Current time step number
 
         Returns:
             tuple: (hub_position, hub_orientation, hub_velocity, hub_acceleration)
         """
         return read_vtk_motion(
-            self.config.vtk_dir, self.config.hub_mesh_root, time_step, self.config.vtk_field_len
+            self.config.vtk_dir, self.config.hub_mesh_root, i_timestep, self.config.vtk_field_len
         )
 
-    def _set_motion_nacelle(self, time_step: int) -> tuple:
+    def _set_motion_nacelle(self, i_timestep: int) -> tuple:
         """Gets nacelle motion parameters for the current time step.
 
         Args:
-            time_step: Current time step number
+            i_timestep: Current time step number
 
         Returns:
             tuple: (nacelle_position, nacelle_orientation, nacelle_velocity, nacelle_acceleration)
         """
         return read_vtk_motion(
-            self.config.vtk_dir, self.config.nac_mesh_root, time_step, self.config.vtk_field_len
+            self.config.vtk_dir, self.config.nac_mesh_root, i_timestep, self.config.vtk_field_len
         )
 
-    def _set_motion_root(self, time_step: int) -> tuple:
+    def _set_motion_root(self, i_timestep: int) -> tuple:
         """Gets blade root motion parameters for the current time step.
 
         Args:
-            time_step: Current time step number
+            i_timestep: Current time step number
 
         Returns:
             tuple: (root_positions, root_orientations, root_velocities, root_accelerations)
@@ -566,7 +509,7 @@ class AeroDynDriver:
             positions, orientations, velocities, accelerations = read_vtk_motion(
                 self.config.vtk_dir,
                 self.config.bld_root_mesh_root + str(k+1),
-                time_step,
+                i_timestep,
                 self.config.vtk_field_len
             )
             root_positions[k, :] = positions
@@ -576,11 +519,11 @@ class AeroDynDriver:
 
         return root_positions, root_orientations, root_velocities, root_accelerations
 
-    def _set_motion_blade_mesh(self, time_step: int) -> tuple:
+    def _set_motion_blade_mesh(self, i_timestep: int) -> tuple:
         """Gets blade mesh motion parameters for the current time step.
 
         Args:
-            time_step: Current time step number
+            i_timestep: Current time step number
 
         Returns:
             tuple: (mesh_positions, mesh_orientations, mesh_velocities, mesh_accelerations, mesh_forces_moments)
@@ -595,7 +538,7 @@ class AeroDynDriver:
             positions, orientations, velocities, accelerations = read_vtk_motion(
                 self.config.vtk_dir,
                 self.config.bld_mesh_root + str(k+1),
-                time_step,
+                i_timestep,
                 self.config.vtk_field_len
             )
             mesh_positions = np.concatenate((mesh_positions, positions))
