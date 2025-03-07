@@ -1,97 +1,98 @@
 import numpy as np
 import vtk
+from typing import Tuple, List
 
-def visread_positions_ref(filename):
+def _setup_vtk_reader(filename: str) -> Tuple[vtk.vtkXMLPolyDataReader, List[str]]:
+    """Set up VTK reader and return reader object with array names.
+
+    Args:
+        filename: Path to VTK file
+    Returns:
+        Tuple of (reader object, list of array names)
+    """
     reader = vtk.vtkXMLPolyDataReader()
-
     reader.SetFileName(filename)
     reader.Update()
 
-    _arName = []
-    _numArrays = reader.GetNumberOfPointArrays()
-    for i in range(_numArrays):
-        _arName.append(reader.GetPointArrayName(i))
+    array_names = [
+        reader.GetPointArrayName(i) for i in range(reader.GetNumberOfPointArrays())
+    ]
+    return reader, array_names
 
-    position_ar = np.array( reader.GetOutput().GetPoints().GetData(),  dtype="float32")
-    _orientX = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('RefOrientationX')),dtype="float64")
-    _orientY = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('RefOrientationY')),dtype="float64")
-    _orientZ = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('RefOrientationZ')),dtype="float64")
+def _read_positions(filename: str, orientation_prefix: str = '') -> Tuple[np.ndarray, np.ndarray, int]:
+    """Common implementation for reading positions and orientations.
 
-    orient_ar = np.hstack((_orientX, _orientY, _orientZ))
+    Args:
+        filename: Path to VTK file
+        orientation_prefix: Prefix for orientation array names ('' or 'Ref')
+    """
+    reader, array_names = _setup_vtk_reader(filename)
 
-    numpts_pos = np.size(position_ar,0)
-    numpts_ori = np.size(orient_ar,0)
+    # Read position array
+    position_array = np.array(reader.GetOutput().GetPoints().GetData(), dtype="float32")
 
-    if numpts_pos != numpts_ori:
-        raise Exception("\nvisread_positions: Number of position and orientation points differ in file "+filename)
+    # Read orientation arrays
+    orient_components = []
+    for axis in ['X', 'Y', 'Z']:
+        array_name = f'{orientation_prefix}Orientation{axis}'
+        orient_data = np.array(
+            reader.GetOutput().GetPointData().GetArray(array_names.index(array_name)),
+            dtype="float64"
+        )
+        orient_components.append(orient_data)
 
-    return position_ar, orient_ar, numpts_pos
+    orient_array = np.hstack(orient_components)
 
+    num_pts_position = position_array.shape[0]
+    num_pts_orientation = orient_array.shape[0]
 
-def visread_positions(filename):
-    reader = vtk.vtkXMLPolyDataReader()
+    if num_pts_position != num_pts_orientation:
+        raise Exception(f"\nread_positions: Number of position and orientation points differ in file {filename}")
 
-    reader.SetFileName(filename)
-    reader.Update()
+    return position_array, orient_array, num_pts_position
 
-    _arName = []
-    _numArrays = reader.GetNumberOfPointArrays()
-    for i in range(_numArrays):
-        _arName.append(reader.GetPointArrayName(i))
+def read_reference_positions_from_vtk(filename: str) -> Tuple[np.ndarray, np.ndarray, int]:
+    """Read reference positions and orientations from VTK file."""
+    return _read_positions(filename, orientation_prefix='Ref')
 
-    position_ar = np.array( reader.GetOutput().GetPoints().GetData(),  dtype="float32")
-    _orientX = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('OrientationX')),dtype="float64")
-    _orientY = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('OrientationY')),dtype="float64")
-    _orientZ = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('OrientationZ')),dtype="float64")
+def read_current_positions_from_vtk(filename: str) -> Tuple[np.ndarray, np.ndarray, int]:
+    """Read positions and orientations from VTK file."""
+    return _read_positions(filename, orientation_prefix='')
 
-    orient_ar = np.hstack((_orientX, _orientY, _orientZ))
+def read_velocities_and_accelerations_from_vtk(filename: str, num_pts: int) -> Tuple[np.ndarray, np.ndarray]:
+    """Read velocities and accelerations from VTK file.
 
-    numpts_pos = np.size(position_ar,0)
-    numpts_ori = np.size(orient_ar,0)
+    Args:
+        filename: Path to VTK file
+        num_pts: Expected number of points
+    Returns:
+        Tuple of (velocities array, accelerations array)
+    """
+    reader, array_names = _setup_vtk_reader(filename)
 
-    if numpts_pos != numpts_ori:
-        raise Exception("\nvisread_positions: Number of position and orientation points differ in file "+filename)
+    # Helper function to read array or return zeros if not present
+    def get_array_or_zeros(name: str) -> np.ndarray:
+        if name in array_names:
+            data = np.array(
+                reader.GetOutput().GetPointData().GetArray(array_names.index(name)),
+                dtype="float32"
+            )
+            if data.shape[0] != num_pts:
+                raise Exception(
+                    f"\nvisread_velacc: Unexpected number of {name} points in file {filename}"
+                    f" (expected {num_pts}, got {data.shape[0]})"
+                )
+            return data
+        return np.zeros((num_pts, 3), dtype="float32")
 
-    return position_ar, orient_ar, numpts_pos
+    # Read velocities
+    translational_velocity = get_array_or_zeros('TranslationalVelocity')
+    rotational_velocity = get_array_or_zeros('RotationalVelocity')
+    velocities_array = np.hstack((translational_velocity, rotational_velocity))
 
+    # Read accelerations
+    translational_acceleration = get_array_or_zeros('TranslationalAcceleration')
+    rotational_acceleration = get_array_or_zeros('RotationalAcceleration')
+    accelerations_array = np.hstack((translational_acceleration, rotational_acceleration))
 
-def visread_velacc(filename,numpts):
-    reader = vtk.vtkXMLPolyDataReader()
-
-    reader.SetFileName(filename)
-    reader.Update()
-
-    _arName = []
-    _numArrays = reader.GetNumberOfPointArrays()
-    for i in range(_numArrays):
-        _arName.append(reader.GetPointArrayName(i))
-
-    if 'TranslationalVelocity' in _arName:
-        _TV = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('TranslationalVelocity')),dtype="float32")
-        if np.size(_TV,0) != numpts:
-            raise Exception("\nvisread_velacc: Unexpected number of translational velocity points in file"+filename+" (expected "+str(numpts)+", got "+str(np.size(_TV,0))+")")
-    else:
-        _TV = np.zeros((numpts,3),dtype="float32")
-    if 'RotationalVelocity' in _arName:
-        _RV = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('RotationalVelocity'   )),dtype="float32")
-        if np.size(_RV,0) != numpts:
-            raise Exception("\nvisread_velacc: Unexpected number of rotational velocity points in file"+filename+" (expected "+str(numpts)+", got "+str(np.size(_RV,0))+")")
-    else:
-        _RV = np.zeros((numpts,3),dtype="float32")
-    vel_ar = np.hstack((_TV, _RV))
-
-    if 'TranslationalAcceleration' in _arName:
-        _TA = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('TranslationalAcceleration')),dtype="float32")
-        if np.size(_TA,0) != numpts:
-            raise Exception("\nvisread_velacc: Unexpected number of translational acceleration points in file"+filename+" (expected "+str(numpts)+", got "+str(np.size(_TA,0))+")")
-    else:
-        _TA = np.zeros((numpts,3),dtype="float32")
-    if 'RotationalAcceleration' in _arName:
-        _RA = np.array( reader.GetOutput().GetPointData().GetArray(_arName.index('RotationalAcceleration'   )),dtype="float32")
-        if np.size(_RA,0) != numpts:
-            raise Exception("\nvisread_velacc: Unexpected number of rotational acceleration points in file"+filename+" (expected "+str(numpts)+", got "+str(np.size(_RA,0))+")")
-    else:
-        _RA = np.zeros((numpts,3),dtype="float32")
-    acc_ar = np.hstack((_TA, _RA))
-
-    return vel_ar, acc_ar
+    return velocities_array, accelerations_array

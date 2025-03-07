@@ -28,8 +28,8 @@ def read_vtk_motion(vtk_dir: str, base_name: str, time_step: int, field_len: int
     """
     time_field = str(time_step).zfill(field_len)
     file_path = os.path.sep.join([vtk_dir, f"{base_name}.{time_field}.vtp"])
-    positions, orientations, num_pts = visread_positions(file_path)
-    velocities, accelerations = visread_velacc(file_path, num_pts)
+    positions, orientations, num_pts = read_current_positions_from_vtk(file_path)
+    velocities, accelerations = read_velocities_and_accelerations_from_vtk(file_path, num_pts)
     return positions, orientations, velocities, accelerations
 
 def get_library_path() -> str:

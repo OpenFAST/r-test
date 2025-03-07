@@ -98,7 +98,7 @@ class AeroDynConfig:
     debug_outputs: int = 1         # For checking the interface, set this to 1
 
     #--------------------------------------
-    # File paths
+    # File names
     #--------------------------------------
     vtk_dir: str = "vtkRef"
     # Primary input files: This is identical to what AeroDyn would read from disk
@@ -178,7 +178,7 @@ class AeroDynDriver:
         them as class attributes for later use in the simulation.
         """
         # Initialize hub and nacelle positions
-        read_vtk_ref = lambda root_name: visread_positions_ref(
+        read_vtk_ref = lambda root_name: read_reference_positions_from_vtk(
             os.path.sep.join([self.config.vtk_dir, root_name + "_Reference.vtp"])
         )
         self.init_hub_pos, self.init_hub_orient, num_pts = read_vtk_ref(
