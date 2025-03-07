@@ -225,7 +225,7 @@ class AeroDynDriver:
         Raises:
             SystemExit: If library initialization fails.
         """
-        library_path = get_library_path()
+        library_path = get_library_path(module_name="aerodyn")
         try:
             adilib = adi.AeroDynInflowLib(library_path)
         except Exception as e:

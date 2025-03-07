@@ -53,10 +53,22 @@ from typing import List, Optional
 
 import numpy as np
 
+#--------------------------------------
+# Library paths
+#--------------------------------------
+# Path to find the driver_utilities.py module from the local directory
+#
+# NOTE: This file contains helper functions to assist with the driver codes
+# across different modules
+modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", "modules")
+print(f"Importing 'driver_utilities' from {modules_path}")
+sys.path.insert(0, str(modules_path))
+from driver_utilities import *
+
 # Path to find the inflowwind_library.py from the local directory
 #
 # NOTE: This file handles the conversion from python to c-bound types
-#       and should NOT be changed by the user
+# and should NOT be changed by the user
 os.chdir(Path(__file__).parent)
 ifw_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "inflowwind", "python-lib")
 sys.path.insert(0, str(ifw_lib_path))
@@ -84,7 +96,7 @@ class InflowWindConfig:
     # Debug settings
     debug_level: int = 3  # 0-4
 
-    # File paths
+    # File names
     #
     # Primary input: This is identical to what InflowWind would read from disk if we were not
     # passing it. When coupled to other codes, this may be passed directly from memory (i.e.
@@ -106,92 +118,6 @@ class InflowWindConfig:
     # When coupled to other codes, these values could be passed back for writing by the calling
     # code instead of writing directly to file here.
     output_file: str = "ifw_primary.out"
-
-#-------------------------------------------------------------------------------
-# Helper functions
-#-------------------------------------------------------------------------------
-def read_lines_from_file(file_path: str) -> List[str]:
-    """Reads a file line by line, stripping whitespace.
-
-    Args:
-        file_path: Path to the file to read
-
-    Returns:
-        List of stripped lines from the file
-    """
-    with open(file_path, "r") as fh:
-        return [line.rstrip() for line in fh]
-
-def read_positions_from_file(file_path: str) -> np.ndarray:
-    """Reads initial position of points from a file.
-
-    The file should contain a list of X,Y,Z coordinates in the OpenFAST global/inertial
-    coordinate system, with one point per line. Lines starting with '#' are treated as
-    comments and ignored. Each line should contain exactly 3 space-separated floating
-    point values representing the X, Y, and Z coordinates respectively.
-
-    Example format:
-        #  x     y     z
-        0.0  0.0  150.0
-        0.0  0.0  125.0
-        0.0  0.0  175.0
-        0.0  25.0 150.0
-        0.0 -25.0 150.0
-
-    Args:
-        file_path: Path to the positions file
-
-    Returns:
-        numpy.ndarray: Array of position points (Nx3) where N is the number of points
-        and each point has [X,Y,Z] coordinates
-
-    Raises:
-        ValueError: If positions file format is invalid (doesn't contain exactly 3 values per line)
-    """
-    positions = []
-    with open(file_path, "r") as fh:
-        for line in fh:
-            if not line.startswith('#'):
-                positions.append([float(i) for i in line.split()])
-
-    positions = np.asarray(positions)
-    if positions.shape[1] != 3:
-        raise ValueError("Error in parsing points file. Does not contain a Nx3 set of position points")
-
-    return positions
-
-def get_library_path() -> str:
-    """Determines the correct library path based on platform.
-
-    Returns:
-        str: Path to the InflowWind library for the current platform
-
-    Raises:
-        SystemExit: If library cannot be found
-    """
-    basename = "libifw_c_binding"
-    build_path = Path("..").joinpath(*[".."] * 4, "build")
-
-    if sys.platform in ["linux", "linux2"]:
-        return str(build_path / "modules" / "inflowwind" / f"{basename}.so")
-
-    if sys.platform == "darwin":
-        return str(build_path / "modules" / "inflowwind" / f"{basename}.dylib")
-
-    if sys.platform == "win32":
-        # Try CMake location first
-        dll_path = build_path / "modules" / "inflowwind" / f"{basename}.dll"
-        if dll_path.is_file():
-            return str(dll_path)
-
-        # Try VS build location if CMake location not found
-        bit_version = "Win32" if not sys.maxsize > 2**32 else "x64"
-        vs_path = build_path / "bin" / f"InflowWind_c_binding_{bit_version}.dll"
-
-        if not vs_path.is_file():
-            print(f"Python is {bit_version} and cannot find {bit_version} InflowWind DLL")
-            sys.exit(1)
-        return str(vs_path)
 
 #-------------------------------------------------------------------------------
 # Main driver class
@@ -229,7 +155,7 @@ class InflowWindDriver:
             SystemExit: If library initialization fails
         """
         try:
-            ifwlib = ifw.InflowWindLib(get_library_path())
+            ifwlib = ifw.InflowWindLib(get_library_path(module_name="inflowwind"))
         except Exception as e:
             print(f"Failed to load library: {e}")
             sys.exit(1)

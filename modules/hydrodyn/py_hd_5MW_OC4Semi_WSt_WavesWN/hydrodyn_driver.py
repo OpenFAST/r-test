@@ -59,6 +59,18 @@ from typing import List, Optional
 
 import numpy as np
 
+#--------------------------------------
+# Library paths
+#--------------------------------------
+# Path to find the driver_utilities.py module from the local directory
+#
+# NOTE: This file contains helper functions to assist with the driver codes
+# across different modules
+modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", "modules")
+print(f"Importing 'driver_utilities' from {modules_path}")
+sys.path.insert(0, str(modules_path))
+from driver_utilities import *
+
 # Path to find the hydrodyn_library.py from the local directory
 os.chdir(Path(__file__).parent)
 hd_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "hydrodyn", "python-lib")
@@ -77,7 +89,7 @@ class HydroDynConfig:
     debug_outputs: int = 1     # For checking the interface, set this to 1
 
     #--------------------------------------
-    # File paths
+    # File names
     #--------------------------------------
     # Primary input files: These files are identical to what HydroDyn would read from disk if not
     # passed directly. When coupled with other codes, they may be passed directly from memory
@@ -108,53 +120,6 @@ class LibraryConfig:
     water_density: float = 1025.       # Water density (kg/m^3)
     water_depth: float = 200.          # Water depth (m)
     mean_sea_level_offset: float = 0.  # Offset between still-water level and mean sea level (m) [positive upward]
-
-#-------------------------------------------------------------------------------
-# Helper functions
-#-------------------------------------------------------------------------------
-def read_lines_from_file(file_path: str) -> List[str]:
-    """Reads a file line by line, stripping whitespace.
-
-    Args:
-        file_path: Path to the file to read
-
-    Returns:
-        List of stripped lines from the file
-    """
-    with open(file_path, "r") as fh:
-        return [line.rstrip() for line in fh]
-
-def get_library_path() -> str:
-    """Determines the correct library path based on platform.
-
-    Returns:
-        str: Path to the HydroDyn library for the current platform.
-
-    Raises:
-        ValueError: If the current platform is not supported.
-        SystemExit: If on Windows and the DLL cannot be found in expected locations.
-    """
-    basename = "libhydrodyn_c_binding"
-    build_path = Path("..").joinpath(*[".."] * 4, "build")
-
-    if sys.platform in ["linux", "linux2"]:
-        return str(build_path / "modules" / "hydrodyn" / f"{basename}.so")
-
-    if sys.platform == "darwin":
-        return str(build_path / "modules" / "hydrodyn" / f"{basename}.dylib")
-
-    if sys.platform == "win32":
-        bit_version = "Win32" if sys.maxsize <= 2**32 else "x64"
-        possible_paths = [
-            build_path / "modules" / "hydrodyn" / f"{basename}.dll",
-            build_path / "bin" / f"HydroDyn_c_binding_{bit_version}.dll"
-        ]
-        return str(next((path for path in possible_paths if path.is_file()), None)) or sys.exit(
-            f"Python is {bit_version} bit and cannot find {bit_version} "
-            f"bit HydroDyn DLL in any expected location."
-        )
-
-    raise ValueError(f"Unsupported platform: {sys.platform}")
 
 #-------------------------------------------------------------------------------
 # Main driver class
@@ -220,7 +185,7 @@ class HydroDynDriver:
             SystemExit: If library initialization fails
         """
         try:
-            hdlib = hydrodyn_library.HydroDynLib(get_library_path())
+            hdlib = hydrodyn_library.HydroDynLib(get_library_path(module_name="hydrodyn"))
         except Exception as e:
             print(f"Failed to load library: {e}")
             sys.exit(1)
