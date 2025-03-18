@@ -235,32 +235,32 @@ class AeroDynDriver:
         #--------------------------------------
         # Configure library
         #--------------------------------------
-        adilib.InterpOrder   = self.lib_config.interpolation_order
+        adilib.interpolation_order   = self.lib_config.interpolation_order
 
         # Time settings
         adilib.dt            = self.lib_config.time_interval
-        adilib.numTimeSteps  = self.config.time_steps_to_run
+        adilib.num_time_steps  = self.config.time_steps_to_run
 
         # Physical parameters
         adilib.gravity       = self.lib_config.gravity
-        adilib.defFldDens    = self.lib_config.density
-        adilib.defKinVisc    = self.lib_config.kinematic_viscosity
-        adilib.defSpdSound   = self.lib_config.speed_of_sound
-        adilib.defPatm       = self.lib_config.atmospheric_pressure
-        adilib.defPvap       = self.lib_config.vapor_pressure
-        adilib.WtrDpth       = self.lib_config.water_depth
-        adilib.MSL2SWL       = self.lib_config.mean_sea_level_offset
-        adilib.numTurbines   = self.config.num_turbines
+        adilib.fluid_density  = self.lib_config.density
+        adilib.kinematic_viscosity  = self.lib_config.kinematic_viscosity
+        adilib.sound_speed      = self.lib_config.speed_of_sound
+        adilib.atm_pressure          = self.lib_config.atmospheric_pressure
+        adilib.vapor_pressure          = self.lib_config.vapor_pressure
+        adilib.water_depth       = self.lib_config.water_depth
+        adilib.msl_to_swl       = self.lib_config.mean_sea_level_offset
+        adilib.num_turbines   = self.config.num_turbines
 
         # Visualization settings
-        adilib.storeHHvel    = self.lib_config.store_horizontal_hub_velocity
-        adilib.WrVTK         = self.lib_config.write_vtk
-        adilib.WrVTK_Type    = self.lib_config.write_vtk_type
-        adilib.WrVTK_DT      = self.lib_config.write_vtk_dt
-        adilib.transposeDCM  = self.lib_config.transpose_dcm
+        adilib.store_hub_height_velocity    = self.lib_config.store_horizontal_hub_velocity
+        adilib.write_vtk         = self.lib_config.write_vtk
+        adilib.vtk_type    = self.lib_config.write_vtk_type
+        adilib.vtk_dt      = self.lib_config.write_vtk_dt
+        adilib.transpose_dcm  = self.lib_config.transpose_dcm
 
         # Debugging of internals of ADI library
-        adilib.debuglevel    = self.lib_config.debug_level
+        adilib.debug_level    = self.lib_config.debug_level
 
         return adilib
 
@@ -272,13 +272,13 @@ class AeroDynDriver:
         debug_output_file = None
         if self.config.debug_outputs:
             debug_output_file = adi.DriverDbg(
-                self.config.debug_output_file, self.adilib.numMeshPts
+                self.config.debug_output_file, self.adilib.num_mesh_pts
             )
 
         try:
             # Time stepping loop with corrections
-            print(f"Time steps: {self.adilib.numTimeSteps}")
-            for i in range(0, self.adilib.numTimeSteps + 1):
+            print(f"Time steps: {self.adilib.num_time_steps}")
+            for i in range(0, self.adilib.num_time_steps + 1):
                 current_time = i * self.adilib.dt
                 print(f"Time step: {i} at {current_time}")
 
@@ -304,11 +304,13 @@ class AeroDynDriver:
                 sys.exit(1)
 
         # Save results to output file
+        print(f"Writing output to {self.config.output_file}")
         out_file = adi.WriteOutChans(
             self.config.output_file, self.output_channel_names, self.output_channel_units
         )
         out_file.write(self.all_output_channel_values)
         out_file.end()
+        print(f"Output written to {self.config.output_file}")
         print("Simulation completed successfully")
 
     def _initialize_simulation(self) -> None:
@@ -318,19 +320,19 @@ class AeroDynDriver:
             SystemExit: If pre-initialization or initialization of AeroDyn fails
         """
         # Set initial positions and orientations
-        self.adilib.initHubPos = self.init_hub_pos[0,:]
-        self.adilib.initHubOrient = self.init_hub_orient[0,:]
-        self.adilib.initNacellePos = self.init_nacelle_pos[0,:]
-        self.adilib.initNacelleOrient = self.init_nacelle_orient[0,:]
-        self.adilib.numBlades = self.config.num_blades
-        self.adilib.initRootPos = self.init_root_pos
-        self.adilib.initRootOrient = self.init_root_orient
+        self.adilib.init_hub_pos = self.init_hub_pos[0,:]
+        self.adilib.init_hub_orient = self.init_hub_orient[0,:]
+        self.adilib.init_nacelle_pos = self.init_nacelle_pos[0,:]
+        self.adilib.init_nacelle_orient = self.init_nacelle_orient[0,:]
+        self.adilib.num_blades = self.config.num_blades
+        self.adilib.init_root_pos = self.init_root_pos
+        self.adilib.init_root_orient = self.init_root_orient
 
         # Set mesh data
-        self.adilib.numMeshPts = np.size(self.init_mesh_pos, 0)
-        self.adilib.initMeshPos = self.init_mesh_pos
-        self.adilib.initMeshOrient = self.init_mesh_orient
-        self.adilib.meshPtToBladeNum = self.init_mesh_pt_to_blade_num
+        self.adilib.num_mesh_pts = np.size(self.init_mesh_pos, 0)
+        self.adilib.init_mesh_pos = self.init_mesh_pos
+        self.adilib.init_mesh_orient = self.init_mesh_orient
+        self.adilib.mesh_pt_to_blade_num = self.init_mesh_pt_to_blade_num
 
         #--------------------------------------
         # Initialize the library
@@ -358,9 +360,9 @@ class AeroDynDriver:
         self.output_channel_units = self.adilib.output_channel_units
 
         # Initialize output arrays
-        self.output_channel_values = np.zeros(self.adilib.numChannels)
+        self.output_channel_values = np.zeros(self.adilib.num_channels)
         self.all_output_channel_values = np.zeros((
-            self.config.time_steps_to_run + 1, self.adilib.numChannels + 1
+            self.config.time_steps_to_run + 1, self.adilib.num_channels + 1
         ))
         self.disk_avg_vel = np.zeros(3)  # [Vx Vy Vz]
 
@@ -395,19 +397,20 @@ class AeroDynDriver:
         """
         # Get motion data for current timestep from vtk
         hub_pos, hub_orient, hub_vel, hub_acc = self._set_motion_hub(i_timestep)
+        hub_motion = adi.MotionData(hub_pos, hub_orient, hub_vel, hub_acc)
         nac_pos, nac_orient, nac_vel, nac_acc = self._set_motion_nacelle(i_timestep)
+        nac_motion = adi.MotionData(nac_pos, nac_orient, nac_vel, nac_acc)
         root_pos, root_orient, root_vel, root_acc = self._set_motion_root(i_timestep)
+        root_motion = adi.MotionData(root_pos, root_orient, root_vel, root_acc)
         mesh_pos, mesh_orient, mesh_vel, mesh_acc, mesh_forces_moments = self._set_motion_blade_mesh(i_timestep)
+        mesh_motion = adi.MotionData(mesh_pos, mesh_orient, mesh_vel, mesh_acc)
 
         # Set rotor motion for each turbine
         for i_turbine in range(self.config.num_turbines):
             try:
                 self.adilib.adi_setrotormotion(
                     i_turbine + 1,  # 1-based indexing for turbines
-                    hub_pos, hub_orient, hub_vel, hub_acc,
-                    nac_pos, nac_orient, nac_vel, nac_acc,
-                    root_pos, root_orient, root_vel, root_acc,
-                    mesh_pos, mesh_orient, mesh_vel, mesh_acc
+                    hub_motion, nac_motion, root_motion, mesh_motion
                 )
             except Exception as e:
                 print(f"Failed to set rotor motion at T={current_time}: {e}")
@@ -431,10 +434,7 @@ class AeroDynDriver:
                 try:
                     self.adilib.adi_setrotormotion(
                         i_turbine + 1,  # 1-based indexing for turbines
-                        hub_pos, hub_orient, hub_vel, hub_acc,
-                        nac_pos, nac_orient, nac_vel, nac_acc,
-                        root_pos, root_orient, root_vel, root_acc,
-                        mesh_pos, mesh_orient, mesh_vel, mesh_acc
+                        hub_motion, nac_motion, root_motion, mesh_motion
                     )
                 except Exception as e:
                     print(f"Failed to set rotor motion at T={current_time}: {e}")
