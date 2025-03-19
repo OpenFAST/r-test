@@ -130,7 +130,7 @@ class LibraryConfig:
     gravity: float = 9.80665                    # Gravitational acceleration (m/s^2)
     density: float = 1.225                      # Air density (kg/m^3)
     kinematic_viscosity: float = 1.464E-05      # Kinematic viscosity of working fluid (m^2/s)
-    speed_of_sound: float = 335.                # Speed of sound in working fluid (m/s)
+    sound_speed: float = 335.                   # Speed of sound in working fluid (m/s)
     atmospheric_pressure: float = 103500.       # Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
     vapor_pressure: float = 1700.               # Vapor pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
     water_depth: float = 0.                     # Water depth (m)
@@ -235,32 +235,32 @@ class AeroDynDriver:
         #--------------------------------------
         # Configure library
         #--------------------------------------
-        adilib.interpolation_order   = self.lib_config.interpolation_order
+        adilib.interpolation_order      = self.lib_config.interpolation_order
 
         # Time settings
-        adilib.dt            = self.lib_config.time_interval
-        adilib.num_time_steps  = self.config.time_steps_to_run
+        adilib.dt                       = self.lib_config.time_interval
+        adilib.num_time_steps           = self.config.time_steps_to_run
 
         # Physical parameters
-        adilib.gravity       = self.lib_config.gravity
-        adilib.fluid_density  = self.lib_config.density
-        adilib.kinematic_viscosity  = self.lib_config.kinematic_viscosity
-        adilib.sound_speed      = self.lib_config.speed_of_sound
-        adilib.atm_pressure          = self.lib_config.atmospheric_pressure
-        adilib.vapor_pressure          = self.lib_config.vapor_pressure
-        adilib.water_depth       = self.lib_config.water_depth
-        adilib.msl_to_swl       = self.lib_config.mean_sea_level_offset
-        adilib.num_turbines   = self.config.num_turbines
+        adilib.gravity                  = self.lib_config.gravity
+        adilib.fluid_density            = self.lib_config.density
+        adilib.kinematic_viscosity      = self.lib_config.kinematic_viscosity
+        adilib.sound_speed              = self.lib_config.sound_speed
+        adilib.atmospheric_pressure     = self.lib_config.atmospheric_pressure
+        adilib.vapor_pressure           = self.lib_config.vapor_pressure
+        adilib.water_depth              = self.lib_config.water_depth
+        adilib.mean_sea_level_offset    = self.lib_config.mean_sea_level_offset
+        adilib.num_turbines             = self.config.num_turbines
 
         # Visualization settings
-        adilib.store_hub_height_velocity    = self.lib_config.store_horizontal_hub_velocity
-        adilib.write_vtk         = self.lib_config.write_vtk
-        adilib.vtk_type    = self.lib_config.write_vtk_type
-        adilib.vtk_dt      = self.lib_config.write_vtk_dt
-        adilib.transpose_dcm  = self.lib_config.transpose_dcm
+        adilib.store_hub_height_velocity = self.lib_config.store_horizontal_hub_velocity
+        adilib.write_vtk                 = self.lib_config.write_vtk
+        adilib.vtk_type                  = self.lib_config.write_vtk_type
+        adilib.vtk_dt                    = self.lib_config.write_vtk_dt
+        adilib.transpose_dcm             = self.lib_config.transpose_dcm
 
         # Debugging of internals of ADI library
-        adilib.debug_level    = self.lib_config.debug_level
+        adilib.debug_level              = self.lib_config.debug_level
 
         return adilib
 
