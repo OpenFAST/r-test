@@ -52,6 +52,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
+from OpynFAST import inflowwind_library as ifw
 
 #--------------------------------------
 # Library paths
@@ -64,16 +65,6 @@ modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", 
 print(f"Importing 'driver_utilities' from {modules_path}")
 sys.path.insert(0, str(modules_path))
 from driver_utilities import *
-
-# Path to find the inflowwind_library.py from the local directory
-#
-# NOTE: This file handles the conversion from python to c-bound types
-# and should NOT be changed by the user
-os.chdir(Path(__file__).parent)
-ifw_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "inflowwind", "python-lib")
-sys.path.insert(0, str(ifw_lib_path))
-print(f"Importing 'inflowwind_library' from {ifw_lib_path}")
-import inflowwind_library as ifw
 
 #-------------------------------------------------------------------------------
 # Configuration classes containing problem inputs

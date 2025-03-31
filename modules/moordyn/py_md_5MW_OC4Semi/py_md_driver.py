@@ -58,6 +58,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
+from OpynFAST import moordyn_library
 
 #--------------------------------------
 # Library paths
@@ -70,13 +71,6 @@ modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", 
 print(f"Importing 'driver_utilities' from {modules_path}")
 sys.path.insert(0, str(modules_path))
 from driver_utilities import *
-
-# Path to find the moordyn_library.py from the local directory
-os.chdir(Path(__file__).parent)
-md_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "moordyn", "python-lib")
-sys.path.insert(0, str(md_lib_path))
-print(f"Importing 'moordyn_library' from {md_lib_path}")
-import moordyn_library
 
 #-------------------------------------------------------------------------------
 # Configuration classes

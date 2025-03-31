@@ -60,6 +60,7 @@ from pathlib import Path
 from typing import Optional
 
 import numpy as np
+from OpynFAST import aerodyn_inflow_library as adi
 
 #--------------------------------------
 # Library paths
@@ -72,16 +73,6 @@ modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", 
 print(f"Importing 'driver_utilities' from {modules_path}")
 sys.path.insert(0, str(modules_path))
 from driver_utilities import *
-
-# Path to find the aerodyn_inflow_library.py from the local directory
-#
-# NOTE: This file handles the conversion from python to C-bound types
-# and should NOT be modified by the user
-os.chdir(Path(__file__).parent)
-adi_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "aerodyn", "python-lib")
-sys.path.insert(0, str(adi_lib_path))
-print(f"Importing 'aerodyn_inflow_library' from {adi_lib_path}")
-import aerodyn_inflow_library as adi
 
 #-------------------------------------------------------------------------------
 # Configuration classes

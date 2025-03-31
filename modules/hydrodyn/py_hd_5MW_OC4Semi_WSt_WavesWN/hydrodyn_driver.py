@@ -58,6 +58,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
+from OpynFAST import hydrodyn_library
 
 #--------------------------------------
 # Library paths
@@ -70,13 +71,6 @@ modules_path = Path(__file__).parent.joinpath(*[".."]*5, "reg_tests", "r-test", 
 print(f"Importing 'driver_utilities' from {modules_path}")
 sys.path.insert(0, str(modules_path))
 from driver_utilities import *
-
-# Path to find the hydrodyn_library.py from the local directory
-os.chdir(Path(__file__).parent)
-hd_lib_path = Path(__file__).parent.joinpath(*[".."]*5, "modules", "hydrodyn", "python-lib")
-sys.path.insert(0, str(hd_lib_path))
-print(f"Importing 'hydrodyn_library' from {hd_lib_path}")
-import hydrodyn_library
 
 #-------------------------------------------------------------------------------
 # Configuration classes containing problem inputs
