@@ -60,7 +60,7 @@ from pathlib import Path
 from typing import Optional
 
 import numpy as np
-from OpynFAST import aerodyn_inflow_library as adi
+from OpynFAST import aerodyn_inflow
 
 #--------------------------------------
 # Library paths
@@ -207,7 +207,7 @@ class AeroDynDriver:
                 (self.init_mesh_pt_to_blade_num, tmp_pt_to_blade_num)
             )
 
-    def _initialize_library(self) -> adi.AeroDynInflowLib:
+    def _initialize_library(self) -> aerodyn_inflow.AeroDynInflowLib:
         """Initializes the AeroDyn library with configuration settings.
 
         Returns:
@@ -218,7 +218,7 @@ class AeroDynDriver:
         """
         library_path = get_library_path(module_name="aerodyn")
         try:
-            adilib = adi.AeroDynInflowLib(library_path)
+            adilib = aerodyn_inflow.AeroDynInflowLib(library_path)
         except Exception as e:
             print(f"Failed to load AeroDyn library at {library_path}: {e}")
             sys.exit(1)
@@ -262,7 +262,7 @@ class AeroDynDriver:
         # Initialize debug output file if needed
         debug_output_file = None
         if self.config.debug_outputs:
-            debug_output_file = adi.DriverDbg(
+            debug_output_file = aerodyn_inflow.DriverDbg(
                 self.config.debug_output_file, self.adilib.num_mesh_pts
             )
 
@@ -296,7 +296,7 @@ class AeroDynDriver:
 
         # Save results to output file
         print(f"Writing output to {self.config.output_file}")
-        out_file = adi.WriteOutChans(
+        out_file = aerodyn_inflow.WriteOutChans(
             self.config.output_file, self.output_channel_names, self.output_channel_units
         )
         out_file.write(self.all_output_channel_values)
@@ -375,7 +375,7 @@ class AeroDynDriver:
         self,
         i_timestep: int,
         current_time: float,
-        debug_output_file: Optional[adi.DriverDbg],
+        debug_output_file: Optional[aerodyn_inflow.DriverDbg],
         update_states: bool = False
     ) -> None:
         """Calculate outputs for a single time step.
@@ -388,13 +388,13 @@ class AeroDynDriver:
         """
         # Get motion data for current timestep from vtk
         hub_pos, hub_orient, hub_vel, hub_acc = self._set_motion_hub(i_timestep)
-        hub_motion = adi.MotionData(hub_pos, hub_orient, hub_vel, hub_acc)
+        hub_motion = aerodyn_inflow.MotionData(hub_pos, hub_orient, hub_vel, hub_acc)
         nac_pos, nac_orient, nac_vel, nac_acc = self._set_motion_nacelle(i_timestep)
-        nac_motion = adi.MotionData(nac_pos, nac_orient, nac_vel, nac_acc)
+        nac_motion = aerodyn_inflow.MotionData(nac_pos, nac_orient, nac_vel, nac_acc)
         root_pos, root_orient, root_vel, root_acc = self._set_motion_root(i_timestep)
-        root_motion = adi.MotionData(root_pos, root_orient, root_vel, root_acc)
+        root_motion = aerodyn_inflow.MotionData(root_pos, root_orient, root_vel, root_acc)
         mesh_pos, mesh_orient, mesh_vel, mesh_acc, mesh_forces_moments = self._set_motion_blade_mesh(i_timestep)
-        mesh_motion = adi.MotionData(mesh_pos, mesh_orient, mesh_vel, mesh_acc)
+        mesh_motion = aerodyn_inflow.MotionData(mesh_pos, mesh_orient, mesh_vel, mesh_acc)
 
         # Set rotor motion for each turbine
         for i_turbine in range(self.config.num_turbines):

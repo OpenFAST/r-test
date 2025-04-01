@@ -52,7 +52,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
-from OpynFAST import inflowwind_library as ifw
+from OpynFAST import inflowwind
 
 #--------------------------------------
 # Library paths
@@ -136,7 +136,7 @@ class InflowWindDriver:
         # Initialize library
         self.ifwlib = self._initialize_library()
 
-    def _initialize_library(self) -> ifw.InflowWindLib:
+    def _initialize_library(self) -> inflowwind.InflowWindLib:
         """Initialize the InflowWind library with configuration settings.
 
         Returns:
@@ -146,7 +146,7 @@ class InflowWindDriver:
             SystemExit: If library initialization fails
         """
         try:
-            ifwlib = ifw.InflowWindLib(get_library_path(module_name="inflowwind"))
+            ifwlib = inflowwind.InflowWindLib(get_library_path(module_name="inflowwind"))
         except Exception as e:
             print(f"Failed to load library: {e}")
             sys.exit(1)
@@ -174,7 +174,7 @@ class InflowWindDriver:
         ifw_input = read_lines_from_file(self.config.primary_ifw_file)
 
         # Initialize debug output if needed
-        debug_output = ifw.DebugOut(
+        debug_output = inflowwind.DebugOut(
             self.config.velocities_file,
             self.ifwlib.numWindPts
         )
@@ -232,7 +232,7 @@ class InflowWindDriver:
             self.ifwlib.ifw_end()
 
         # Write final outputs
-        out_file = ifw.WriteOutChans(
+        out_file = inflowwind.WriteOutChans(
             self.config.output_file,
             self.ifwlib.output_channel_names,
             self.ifwlib.output_channel_units

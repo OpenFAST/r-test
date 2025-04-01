@@ -58,7 +58,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
-from OpynFAST import moordyn_library
+from OpynFAST import moordyn
 
 #--------------------------------------
 # Library paths
@@ -120,7 +120,7 @@ class MoorDynDriver:
         # Initialize debug output if needed
         self.debug_output = None
         if self.config.verbose:
-            self.debug_output = moordyn_library.DriverDbg(self.config.debug_output_file)
+            self.debug_output = moordyn.DriverDbg(self.config.debug_output_file)
 
     def _load_test_data(self) -> np.ndarray:
         """Load test data from file."""
@@ -134,10 +134,10 @@ class MoorDynDriver:
             print(f"Cannot load MoorDyn test file: {e}")
             sys.exit(1)
 
-    def _initialize_library(self) -> moordyn_library.MoorDynLib:
+    def _initialize_library(self) -> moordyn.MoorDynLib:
         """Initialize the MoorDyn library."""
         try:
-            mdlib = moordyn_library.MoorDynLib(get_library_path(module_name="moordyn"))
+            mdlib = moordyn.MoorDynLib(get_library_path(module_name="moordyn"))
         except Exception as e:
             print(f"Cannot load MoorDyn library: {e}")
             sys.exit(1)
@@ -246,7 +246,7 @@ class MoorDynDriver:
         channel_units = self.output_channel_units.decode().split()
         print("channel_names: ", channel_names)
         print("channel_units: ", channel_units)
-        out_file = moordyn_library.WriteOutChans(
+        out_file = moordyn.WriteOutChans(
             self.config.md_output_file,
             channel_names,
             channel_units

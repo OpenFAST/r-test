@@ -58,7 +58,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
-from OpynFAST import hydrodyn_library
+from OpynFAST import hydrodyn
 
 #--------------------------------------
 # Library paths
@@ -163,14 +163,14 @@ class HydroDynDriver:
             - Forces: [Fx, Fy, Fz]
             - Moments: [Mx, My, Mz]
 
-        All arrays use C-based index order to the C-bindings of the hydrodyn_library.
+        All arrays use C-based index order to the C-bindings of the hydrodyn.
         """
         self.node_positions = np.zeros((self.config.num_nodes, 6))      # Translations and rotations
         self.node_velocities = np.zeros((self.config.num_nodes, 6))     # First derivatives of position
         self.node_accelerations = np.zeros((self.config.num_nodes, 6))  # Second derivatives of position
         self.node_forces_moments = np.zeros((self.config.num_nodes, 6)) # Resulting loads
 
-    def _initialize_library(self) -> hydrodyn_library.HydroDynLib:
+    def _initialize_library(self) -> hydrodyn.HydroDynLib:
         """Initialize the HydroDyn library.
 
         Returns:
@@ -180,8 +180,8 @@ class HydroDynDriver:
             SystemExit: If library initialization fails
         """
         try:
-            # hdlib = hydrodyn_library.HydroDynLib(str(Path(library_path).absolute()))
-            hdlib = hydrodyn_library.HydroDynLib(get_library_path(module_name="hydrodyn"))
+            # hdlib = hydrodyn.HydroDynLib(str(Path(library_path).absolute()))
+            hdlib = hydrodyn.HydroDynLib(get_library_path(module_name="hydrodyn"))
         except Exception as e:
             print(f"Failed to load library: {e}")
             sys.exit(1)
@@ -221,7 +221,7 @@ class HydroDynDriver:
         # Initialize debug output if needed
         debug_output_file = None
         if self.config.debug_outputs:
-            debug_output_file = hydrodyn_library.DriverDbg(
+            debug_output_file = hydrodyn.DriverDbg(
                 self.config.debug_output_file,
                 self.hdlib.numNodePts
             )
@@ -259,7 +259,7 @@ class HydroDynDriver:
                 sys.exit(1)
 
         # Write output channels to file
-        out_file = hydrodyn_library.WriteOutChans(
+        out_file = hydrodyn.WriteOutChans(
             self.config.output_file,
             self.hdlib.output_channel_names,
             self.hdlib.output_channel_units
@@ -271,7 +271,7 @@ class HydroDynDriver:
         self,
         i_timestep: int,
         current_time: float,
-        debug_output_file: Optional[hydrodyn_library.DriverDbg],
+        debug_output_file: Optional[hydrodyn.DriverDbg],
         update_states: bool = False,
         previous_time: Optional[float] = None
     ) -> None:
