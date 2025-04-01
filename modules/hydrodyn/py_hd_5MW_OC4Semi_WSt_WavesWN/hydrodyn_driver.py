@@ -142,6 +142,7 @@ class HydroDynDriver:
         self._initialize_arrays()
 
         # Load timeseries data
+        # hd_timeseries = np.genfromtxt(Path(__file__).parent / 'OpenFAST_DisplacementTimeseries.dat', delimiter=",")
         self.timeseries = np.genfromtxt(self.config.timeseries_file, delimiter=",")
 
         # Initialize library
@@ -179,6 +180,7 @@ class HydroDynDriver:
             SystemExit: If library initialization fails
         """
         try:
+            # hdlib = hydrodyn_library.HydroDynLib(str(Path(library_path).absolute()))
             hdlib = hydrodyn_library.HydroDynLib(get_library_path(module_name="hydrodyn"))
         except Exception as e:
             print(f"Failed to load library: {e}")
@@ -196,7 +198,9 @@ class HydroDynDriver:
         hdlib.numNodes = self.config.num_nodes
 
         # Initialize HydroDyn with input files
+        # fh = open(Path(__file__).parent / seast_primary_file, "r")
         seastate_input = read_lines_from_file(self.config.seastate_primary_file)
+        # fh = open(Path(__file__).parent / hd_primary_file, "r")
         hd_input = read_lines_from_file(self.config.hd_primary_file)
         try:
             hdlib.hydrodyn_init(seastate_input, hd_input)
