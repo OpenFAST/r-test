@@ -167,6 +167,7 @@ class MoorDynDriver:
         # Initialize MoorDyn
         try:
             mdlib.md_init(
+                1,
                 md_input_string_array,
                 self.lib_config.gravity,
                 self.lib_config.water_density,
