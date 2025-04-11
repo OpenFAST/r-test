@@ -52,7 +52,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
-from OpynFAST import inflowwind
+from pyOpenFAST import inflowwind
 
 #--------------------------------------
 # Library paths

@@ -58,7 +58,7 @@ from pathlib import Path
 from typing import List, Optional
 
 import numpy as np
-from OpynFAST import moordyn
+from pyOpenFAST import moordyn
 
 #--------------------------------------
 # Library paths

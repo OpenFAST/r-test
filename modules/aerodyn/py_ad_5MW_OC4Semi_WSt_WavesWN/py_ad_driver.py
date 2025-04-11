@@ -60,7 +60,7 @@ from pathlib import Path
 from typing import Optional
 
 import numpy as np
-from OpynFAST import aerodyn_inflow
+from pyOpenFAST import aerodyn_inflow
 
 #--------------------------------------
 # Library paths
