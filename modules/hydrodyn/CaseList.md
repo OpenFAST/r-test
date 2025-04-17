@@ -12,6 +12,7 @@ hd_NBodyMod3
 hd_MHstLMod2
 hd_MHstLMod1_compare
 hd_MHstLMod2_compare
+hd_MHstLMod2_RectMmbr
 hd_WaveStMod1
 hd_WaveStMod2
 hd_WaveStMod3

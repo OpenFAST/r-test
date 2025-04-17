@@ -1,0 +1,35 @@
+From Thorsen Paper 4 uniform current
+Catenary riser in a steady flow from validation paper
+Frequency of FairTen should be 2.08 Hz
+Modified version of viv test from MD-C
+---------------------- LINE DICTIONARY -----------------------------------------------------
+LineType  Diam    MassDenInAir   EA     cIntDamp     EI       Cd      Ca    CdAx    CaAx   Cl
+(-)       (m)       (kg/m)       (N)     (Pa-s)    (N-m^2)    (-)     (-)    (-)     (-)   (-)  
+cable     0.024      0.69       6.66e5    -1        10.5      1.2     2.0    0.08   0.08   0.7 
+---------------------- POINTS -----------------------------------------------------
+Node      Type        X           Y          Z        M       V      CdA   Ca 
+(-)       (-)        (m)         (m)        (m)      (kg)    (m^3)   (m2)  () 
+1       Fixed       -21.0425      0         -10         0       0      0    0
+2       Fixed       0           0          -1         0       0      0    0
+---------------------- LINES -----------------------------------------------------
+Line     LineType   NodeA     NodeB   UnstrLen  NumSegs   Flags/Outputs
+(-)       (-)       (-)       (-)       (m)       (-)         (-)
+1        cable      1          2        23.71      100        -
+---------------------- SOLVER OPTIONS ---------------------------------------- 
+Rk4      tScheme      - The time integrator
+0.0001   dtM          - time step to use in mooring integration
+1.5e5    kb           - bottom stiffness  
+1e4      cb           - bottom damping  
+0.5      MU_KT        - seabed friction
+0.5      MU_KA        - seabed friction
+20000    FricDamp     - Friction damping coefficient
+1.0      CdScaleIC    - factor by which to scale drag coefficients during dynamic relaxation IC gen. Need to be 1 becasue of simulation with currents
+0.001    threshIC     - threshold for IC convergence
+2        dtIC         - The threshold amount of time the system must be converged for to be considered stationary (s)
+100      TmaxIC       - threshold for IC convergence
+0.001    dtOut        - Time step size to be written to output files. A value of zero will use the coupling timestep as a step size (s)
+"WaterKin.dat"   WaterKin - path to the moordyn water kinematics input file
+1        disableOutTime   - Disables the printing of the current timestep to the console, useful for the MATLAB wrapper
+---------------------- OUTPUTS -----------------------------------------
+FAIRTEN1
+---------------------- need this line -----------------------------------------

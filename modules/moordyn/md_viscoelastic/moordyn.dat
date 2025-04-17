@@ -1,0 +1,25 @@
+singal segement viscoelastic test
+Modified version of the visco test from MD-C polyester tests
+---------------------- LINE TYPES --------------------------------------------------
+TypeName      Diam     Mass/m     EA                      BA/-zeta       EI         Cd      Ca      CdAx    CaAx 
+(name)        (m)      (kg/m)     (N)                    (N-s/-)        (N-m^2)     (-)     (-)     (-)     (-)    
+rope          0.1438    22.42  1.424e+08|1.586e+08|0.4   4E9|11E6         0.000e+00    0   00   0.0    0.00 
+---------------------- POINTS -------------------------------------------------------
+ID  Attachment     X       Y       Z           Mass  Volume  CdA    Ca
+(#)   (-)         (m)     (m)     (m)          (kg)  (m�3)  (m^2)   (-)
+1    Fixed        0.00   0.0 0.0      0.00   0.00   0.00   0.00
+2    Coupled      2     0.0   0.0      0.00   0.00   0.00   0.00
+---------------------- LINES --------------------------------------------------------
+ID    LineType      AttachA  AttachB  UnstrLen  NumSegs  LineOutputs
+(#)    (name)        (#)      (#)       (m)       (-)     (-)
+1    rope              1       2      1.0        1       -
+---------------------- OPTIONS ------------------------------------------------------
+0.01             dtM       - desired mooring model maximum time step (s)
+60               TmaxIC    - The maximum simulation time to run in order to find a stationary initial condition (s)
+5.0              dtIC      - The threshold amount of time the system must be converged for to be considered stationary (s)
+0.001            threshIC  - The lines tension maximum relative error to consider that the initial condition have converged
+200              WtrDpth   - The water depth (m)
+--------------------- OUTPUTS ---------------------
+FairTen1
+Line1NBPX
+--------------------- need this line ------------------------------------------------
