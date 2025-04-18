@@ -97,16 +97,16 @@ RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss 
   64           1           1           1           1           1           1        ""
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              8   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
-IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
-  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
-  24           1           1           1           1           1           1
-  28           1           1           1           1           1           1
-  32           1           1           1           1           1           1
-  36           1           1           1           1           1           1
-  53           1           1           1           1           1           1
-  54           1           1           1           1           1           1
-  55           1           1           1           1           1           1
-  56           1           1           1           1           1           1
+IJointID     TPID      ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
+  (-)        (-)        (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+  24          1           1           1           1           1           1           1
+  28          1           1           1           1           1           1           1
+  32          1           1           1           1           1           1           1
+  36          1           1           1           1           1           1           1
+  53          1           1           1           1           1           1           1
+  54          1           1           1           1           1           1           1
+  55          1           1           1           1           1           1           1
+  56          1           1           1           1           1           1           1
 ----------------------------------- MEMBERS -------------------------------------------
            112   NMembers    - Number of members (-)
 MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  MSpin/COSMID   ! [MType={1c:beam circ., 1r:beam rect., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
