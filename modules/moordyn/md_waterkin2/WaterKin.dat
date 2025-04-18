@@ -1,16 +1,16 @@
 MoorDyn Waves and Currents input file
 This uses the hybrid approach, where wave and current init information is set by SeaState, and the grid is set by MoorDyn
 --------------------------- WAVES -------------------------------------
-0                    WaveKinMod  - type of wave input {0 no waves; 1 use the old method; 2 use the hybrid method}
+2                    WaveKinMod  - type of wave input {0 no waves; 1 use the old method; 2 use the hybrid method}
 ""                   WaveKinFile - file containing wave elevation time series at 0,0,0 # Ignored if WaveKinMod = 2
 0                    dtWave      - time step to use in setting up wave kinematics grid (s) # Ignored if WaveKinMod = 2
 0                    WaveDir     - wave heading (deg) # Ignored if WaveKinMod = 2
 2                                - X wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num) 
--800, 10, 100                    - X wave grid point data
+-800, 10, 101                    - X wave grid point data
 2                                - Y wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num)
 -5, 5, 3                         - Y wave grid point data
 2                                - Z wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num)
--600, 30, 60                     - Z wave grid point data
+-600, 0, 61                      - Z wave grid point data
 --------------------------- CURRENT -------------------------------------
 2                    CurrentMod  - type of current input {0 no current; 1 steady current profile described below; 2 hybrid method}
 2                                - Z wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num) # Ignored if CurrentMod = 1

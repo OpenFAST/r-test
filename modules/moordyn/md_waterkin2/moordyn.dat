@@ -1,10 +1,14 @@
 Testing the hybrid SeaState MD coupling
 A vertical line to check the current load
-A rod to check the waves (via submergence)
+A rod to check the waves (via submergence), 0.5 submergence = still water level 
 ---------------------- LINE DICTIONARY -----------------------------------------------------
 LineType  Diam    MassDenInAir   EA     cIntDamp     EI        Cd      Ca     CdAx    CaAx 
 (-)       (m)       (kg/m)       (N)     (Pa-s)    (N-m^2)     (-)     (-)     (-)     (-)  
 main  0.333  685.00  3.27E+09  -1        0     1    0.27  1      0.20        
+---------------------- ROD TYPES ------------------------------------
+TypeName      Diam     Mass/m    Cd     Ca      CdEnd    CaEnd
+(name)        (m)      (kg/m)    (-)    (-)     (-)      (-)
+Can          10       1.0e3     0.6    1.0     1.2      1.0        
 ---------------------- RODS ----------------------------------------
 ID   RodType  Attachment  Xa    Ya    Za    Xb    Yb    Zb   NumSegs  RodOutputs
 (#)  (name)    (#/key)    (m)   (m)   (m)   (m)   (m)   (m)  (-)       (-)
