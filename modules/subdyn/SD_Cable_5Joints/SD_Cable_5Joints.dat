@@ -22,23 +22,23 @@ True             SttcSolve   - Solve dynamics about static equilibrium point
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
             5  NJoints     - Number of joints (-).
 JointID          JointXss               JointYss               JointZss JointType  JointDirX JointDirY JointDirZ    JointStiff    ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
-  (-)               (m)                    (m)                    (m)      (-) 		 (-) 		(-) 	  (-) 		  (Nm/rad)
-   2            -10.10000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
-   3             -0.10000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
-   4              0.00000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
-   5              0.10000                0.00000                0.00000  	1 		 0.0 		0.0 	  0.0 			0.0 	
-   6             10.10000                0.00000                0.00000     1        0.0        0.0       0.0           0.0     
+  (-)               (m)                    (m)                    (m)      (-) 	      (-)       (-)       (-)        (Nm/rad)
+   2            -10.10000                0.00000                0.00000     1 	      0.0       0.0       0.0          0.0 	
+   3             -0.10000                0.00000                0.00000     1 	      0.0       0.0       0.0          0.0 	
+   4              0.00000                0.00000                0.00000     1 	      0.0       0.0       0.0          0.0 	
+   5              0.10000                0.00000                0.00000     1 	      0.0       0.0       0.0          0.0 	
+   6             10.10000                0.00000                0.00000     1         0.0       0.0       0.0          0.0     
 ------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
               2   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
-RJointID  
-  (-)     
-   2        1 1 1 1 1 1
-   6        1 1 1 1 1 1
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     SSIfile ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)      (string)   
+   2          1           1           1           1           1           1
+   6          1           1           1           1           1           1
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
-IJointID 
-  (-)    
-   4    1 1 1 1 1 1 
+IJointID   TPID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     ![Global Coordinate System]
+  (-)      (-)     (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+   4        1        1           1           1           1           1           1
 ----------------------------------- MEMBERS -------------------------------------------
            4   NMembers    - Number of members (-)
 MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  MSpin/COSMID   ! [MType={1c:beam circ., 1r:beam rect., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
