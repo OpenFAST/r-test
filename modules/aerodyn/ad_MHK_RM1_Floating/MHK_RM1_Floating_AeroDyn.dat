@@ -88,10 +88,10 @@ False                  TFinAero    - Calculate tail fin aerodynamics model (flag
 4                      NumTwrNds   - Number of tower nodes used in the analysis (-) [used only when TwrPotent/=0, TwrShadow/=0, TwrAero=True, or MHK=1 or 2]
 TwrElev         TwrDiam        TwrCd          TwrTI          TwrCb          TwrCp          TwrCa !TwrTI used only with TwrShadow=2, TwrCb/TwrCp/TwrCa used only with MHK=1 or 2
 (m)             (m)            (-)            (-)            (-)            (-)            (-)
--9.0000000E+00  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--1.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--1.9000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
--2.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  0.0000000E+00  0.0000000E+00
+-9.0000000E+00  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  1.0000000E+00  1.0000000E+00
+-1.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  1.0000000E+00  1.0000000E+00
+-1.9000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  1.0000000E+00  1.0000000E+00
+-2.4000000E+01  3.2530000E-01  2.0000000E-01  0.0000000E+00  1.0000000E+00  1.0000000E+00  1.0000000E+00
 ======  Outputs  ====================================================================================
 True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"? (flag)
 9                      NBlOuts     - Number of blade node outputs [0 - 9] (-)
