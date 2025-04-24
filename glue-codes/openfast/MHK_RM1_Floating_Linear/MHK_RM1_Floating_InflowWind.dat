@@ -9,10 +9,10 @@ False         VelInterpCubic - Use cubic interpolation for velocity in time (fal
           1   NWindVel       - Number of points to output the wind velocity    (0 to 9)
           0   WindVxiList    - List of coordinates in the inertial X direction (m)
           0   WindVyiList    - List of coordinates in the inertial Y direction (m)
-       24.8   WindVziList    - List of coordinates in the inertial Z direction (m)
+       26.0   WindVziList    - List of coordinates in the inertial Z direction (m)
 ================== Parameters for Steady Wind Conditions [used only for WindType = 1] =========================
         1.9   HWindSpeed     - Horizontal wind speed                           (m/s)
-       24.8   RefHt          - Reference height for horizontal wind speed      (m)
+       26.0   RefHt          - Reference height for horizontal wind speed      (m)
      0.1429   PLExp          - Power law exponent                              (-)
 ================== Parameters for Uniform wind file   [used only for WindType = 2] ============================
 "unused"      FileName_Uni   - Filename of time series data for uniform wind field.      (-)

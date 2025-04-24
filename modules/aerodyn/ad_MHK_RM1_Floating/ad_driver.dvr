@@ -18,7 +18,7 @@ False           Echo                   - Echo input parameters to "<rootname>.ec
           1     CompInflow             - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
 "MHK_RM1_Floating_InflowWind.dat" InflowFile - Name of the InflowWind input file [used only when CompInflow=1]
         1.9     HWindSpeed             - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)
-       24.8     RefHt                  - Reference height for horizontal wind speed [used only when CompInflow=0]  (m)
+       26.0     RefHt                  - Reference height for horizontal wind speed [used only when CompInflow=0]  (m)
      0.1429     PLExp                  - Power law exponent   [used only when CompInflow=0 and AnalysisType=1]                        (-)
 ----- SeaState Data ---------------------------------------------------------------------
           1     CompSeaSt              - Compute wave velocities (switch) {0=No Waves; 1=SeaState}

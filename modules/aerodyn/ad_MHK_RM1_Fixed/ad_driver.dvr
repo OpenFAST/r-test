@@ -15,14 +15,14 @@ False           Echo                   - Echo input parameters to "<rootname>.ec
        2500     Pvap                   - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
          50     WtrDpth                - Water depth (m)
 ----- Inflow Data -----------------------------------------------------------------------
-          0     CompInflow             - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
-"unused"        InflowFile             - Name of the InflowWind input file [used only when CompInflow=1]
+          1     CompInflow             - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
+"MHK_RM1_Fixed_InflowWind.dat" InflowFile - Name of the InflowWind input file [used only when CompInflow=1]
         1.9     HWindSpeed             - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)
          30     RefHt                  - Reference height for horizontal wind speed [used only when CompInflow=0]  (m)
      0.1429     PLExp                  - Power law exponent   [used only when CompInflow=0 and AnalysisType=1]                        (-)
 ----- SeaState Data [used only when MHK = 1 or 2] ---------------------------------------
-          0     CompSeaSt              - Compute wave velocities (switch) {0=No Waves; 1=SeaState}
-"unused"        SeaStFile              - Name of the SeaState input file [used only when CompSeaSt=1]
+          1     CompSeaSt              - Compute wave velocities (switch) {0=No Waves; 1=SeaState}
+"MHK_RM1_Fixed_SeaState.dat" SeaStFile - Name of the SeaState input file [used only when CompSeaSt=1]
 ----- Turbine Data ----------------------------------------------------------------------
           1     NumTurbines            - Number of turbines
 ----- Turbine(1) Geometry ---------------------------------------------------------------
