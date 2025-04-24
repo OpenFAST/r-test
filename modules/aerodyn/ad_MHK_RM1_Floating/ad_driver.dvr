@@ -30,7 +30,7 @@ True            BasicHAWTFormat(1)     - Flag to switch between basic or generic
      20,0,0     BaseOriginInit(1)      - Coordinate of tower base in base coordinates (m)
           2     NumBlades(1)           - Number of blades (-)
         1.0     HubRad(1)              - Hub radius (m)
-      -25.2     HubHt(1)               - Hub height (m)
+      -24.0     HubHt(1)               - Hub height (m)
       -4.91     Overhang(1)            - Overhang (m)
           0     ShftTilt(1)            - Shaft tilt (deg)
           0     Precone(1)             - Blade precone (deg)
