@@ -12,13 +12,17 @@ True             SttcSolve   - Solve dynamics about static equilibrium point
 837, 1, 3.9, 1, 25.24  JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
              0   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
   0.000, 0.003835059  RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
-             6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
+             6   GuyanDampSize - Guyan damping matrix (6nTPx6nTP if fixed bottom or 6(nTP-1)-by-6(nTP-1) if floating) [only if GuyanDampMod=2]
   0.354293E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,  -0.556744E+01,   0.000000E+00
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
  -0.556744E+01,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.874879E+02,   0.000000E+00
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+------- INITIAL RIGID-BODY POSITION [used only for floating structure with more than one transition pieces] -------
+RBSurge    RBSway     RBHeave    RBRoll     RBPitch    RBYaw
+  (m)        (m)        (m)      (deg)      (deg)      (deg)
+  0.0        0.0        0.0       0.0        0.0        0.0
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
              3   NJoints     - Number of joints (-)
 JointID          JointXss               JointYss               JointZss JointType JointDirX  JointDirY JointDirZ 	JointStiff 	    ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
