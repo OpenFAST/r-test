@@ -2,7 +2,7 @@
 Steady 1.9 m/s inflow for floating MHK turbine, based on the RM1 tidal current rotor
 ---------------------------------------------------------------------------------------------------------------
 False         Echo           - Echo input data to <RootName>.ech (flag)
-          1   WindType       - switch for wind file type (1=steady; 2=uniform; 3=binary TurbSim FF; 4=binary Bladed-style FF; 5=HAWC format; 6=User defined; 7=native Bladed FF)
+          3   WindType       - switch for wind file type (1=steady; 2=uniform; 3=binary TurbSim FF; 4=binary Bladed-style FF; 5=HAWC format; 6=User defined; 7=native Bladed FF)
           0   PropagationDir - Direction of wind propagation (meteorological rotation from aligned with X (positive rotates towards -Y) -- degrees) (not used for native Bladed format WindType=7)
           0   VFlowAng       - Upflow angle (degrees) (not used for native Bladed format WindType=7)
 False         VelInterpCubic - Use cubic interpolation for velocity in time (false=linear, true=cubic) [Used with WindType=2,3,4,5,7]
@@ -19,7 +19,7 @@ False         VelInterpCubic - Use cubic interpolation for velocity in time (fal
          30   RefHt_Uni      - Reference height for horizontal wind speed                (m)
      125.88   RefLength      - Reference length for linear horizontal and vertical sheer (-)
 ================== Parameters for Binary TurbSim Full-Field files   [used only for WindType = 3] ==============
-"unused"      FileName_BTS   - Name of the Full field wind file to use (.bts)
+"MHK_RM1_Floating_TurbSim.bts" FileName_BTS - Name of the Full field wind file to use (.bts)
 ================== Parameters for Binary Bladed-style Full-Field files   [used only for WindType = 4 or WindType = 7] =========
 "unused"      FileNameRoot   - WindType=4: Rootname of the full-field wind file to use (.wnd, .sum); WindType=7: name of the intermediate file with wind scaling values
 False         TowerFile      - Have tower file (.twr) (flag) ignored when WindType = 7
