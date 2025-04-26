@@ -9,17 +9,17 @@
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.5.5-2456-gb127b1c8
+ OpenFAST-v3.5.5-2458-gf4be568a
  Compile Info:
   - Compiler: GCC version 14.2.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Apr 21 2025
-  - Time: 20:46:55
+  - Date: Apr 24 2025
+  - Time: 09:33:39
  Execution Info:
-  - Date: 04/22/2025
-  - Time: 08:33:56-0600
+  - Date: 04/25/2025
+  - Time: 20:18:10-0600
 
  OpenFAST input file heading:
      Floating MHK turbine, based on the RM1 tidal current rotor
@@ -87,12 +87,12 @@
  Mapping: MD%y%CoupledLoads(1) -> ED%u%PlatformPtMesh [MD%u%CoupledKinematics(1) @ ED%y%PlatformPtMesh]                                   
  Mapping: ED -> IfW                                                                                                                       
   Time: 0 of 6 seconds.
-                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 08:34:33.                                                                                                                                     
-  Total Real Time:       35.62 seconds
-  Total CPU Time:        53.847 seconds
-  Simulation CPU Time:   48.964 seconds
-  Simulated Time:        6 seconds
-  Time Ratio (Sim/CPU):  0.12254
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 20:19:22.                                                                                                                                     
+  Total Real Time:       1.1696 minutes
+  Total CPU Time:        2.459 minutes
+  Simulation CPU Time:   2.3788 minutes
+  Simulated Time:        0.1 minutes
+  Time Ratio (Sim/CPU):  4.20375E-02
 
   OpenFAST terminated normally.
 
