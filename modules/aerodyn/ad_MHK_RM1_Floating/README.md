@@ -10,7 +10,7 @@ Test of features for floating MHK turbines, including cavitation and buoyancy
 - Fixed rotor rotational speed
 - DBEMT
 - Steady airfoil aerodynamics
-- Cavitation and buoyancy turned on
+- Cavitation turned on
 
 MHK RM1 turbine based on the following reference:
 Neary et al., "Methodology for Design and Economic Analysis of Marine Energy 
