@@ -1,0 +1,25 @@
+n_turbines_glob: 1
+dry_run:  False
+debug: False
+sim_start: init
+coupling_mode: strong
+t_start:  0.0
+t_end:    60.0
+t_max:    60.0
+dt_driver:  0.00625
+restart_freq: 1000
+set_exp_law_wind: True
+Turbine0:
+  turb_id: 0
+  FAST_input_filename: "5MW_Land_DLL_WTurb_cpp.fst"
+  restart_filename: "Turbine0"
+  turbine_base_pos:
+  - 0
+  - 0
+  - 0
+  turbine_hub_pos:
+  - 0
+  - 0
+  - 90
+  num_force_pts_blade: 50
+  num_force_pts_tower: 12

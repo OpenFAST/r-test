@@ -5,8 +5,8 @@ another comment line
 1025.0             rhoW             - Water density (kg/m^3) 
 215.0              WtrDpth          - Water depth (m) 
 ---------------------- MOORDYN ------------------------------------------------ 
-"moordyn.dat"      MDInputFile      - Primary HydroDyn input file name (quoted string) 
-"driver"           OutRootName      - The name which prefixes all HydroDyn generated files (quoted string) 
+"moordyn.dat"      MDInputFile      - Primary MoorDyn input file name (quoted string) 
+"driver"           OutRootName      - The name which prefixes all MoorDyn generated files (quoted string) 
 20                 TMax             - Number of time steps in the simulations (-) 
 0.001              dtC              - TimeInterval for the simulation (sec) 
 0                  InputsMode       - MoorDyn coupled object inputs (0: all inputs are zero for every timestep (no coupled objects), 1: time-series inputs (coupled objects)) (switch) 
