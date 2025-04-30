@@ -7,6 +7,9 @@ True          Echo            - Echo input data to <RootName>.ech (flag)
      0.0015   DT              - Recommended module time step (s)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
+        0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
+       1e-4   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+          6   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
@@ -51,7 +54,7 @@ True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           0   TStart          - Time to begin tabular output (s)
           4   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"ES20.12E3"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES20.12E3"   OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 True          Linearize       - Linearization analysis (flag)
 False         CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)
@@ -67,7 +70,7 @@ False         CalcSteady      - Calculate a steady-state periodic operating poin
 True          LinOutJac       - Include full Jacobians in linearization output (for debug) (flag) [unused if Linearize=False; used only if LinInputs=LinOutputs=2]
 True          LinOutMod       - Write module-level linearization output files in addition to output for full system? (flag) [unused if Linearize=False]
 ---------------------- VISUALIZATION ------------------------------------------
-          0   WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation; 3=mode shapes}
+          3   WrVTK           - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation; 3=mode shapes}
           2   VTK_type        - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0]
 False         VTK_fields      - Write mesh fields to VTK data files? (flag) {true/false} [unused if WrVTK=0]
-         15   VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2 or WrVTK=3]
+         30   VTK_fps         - Frame rate for VTK output (frames per second){will use closest integer multiple of DT} [used only if WrVTK=2 or WrVTK=3]

@@ -1,12 +1,12 @@
 
-Linearized model: Predictions were generated on 04-Mar-2024 at 11:06:45 using OpenFAST, compiled on Mar  4 2024 at 10:16:10 as a 64-bit application using double precision at commit v3.5.2-982-g1e454dbe
+Linearized model: Predictions were generated on 27-Feb-2025 at 19:40:41 using OpenFAST, compiled on Feb 27 2025 at 18:00:14 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn; ServoDyn
 
 Description from the FAST input file: NREL 5.0 MW Baseline Wind Turbine (Onshore), Linearization with AeroDyn + ED
 
 Simulation information:
    Simulation time:                     1.0000 s
-   Rotor Speed:                         1.2799 rad/s
+   Rotor Speed:                         1.2798 rad/s
    Azimuth:                             1.2699 rad
    Wind Speed:                          8.0000 m/s
    Number of continuous states:         0

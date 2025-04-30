@@ -62,7 +62,7 @@ False         TowerFile      - Have tower file (.twr) (flag) ignored when WindTy
       False   LidRadialVel        - TRUE => return radial component, FALSE => return 'x' direction estimate
           1   ConsiderHubMotion   - Flag whether to consider the hub motion's impact on Lidar measurements
 ====================== OUTPUT ==================================================
-False         SumPrint     - Print summary data to <RootName>.IfW.sum (flag)
+True          SumPrint     - Print summary data to <RootName>.IfW.sum (flag)
               OutList      - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 "Wind1VelX"               X-direction wind velocity at point WindList(1)
 "Wind1VelY"               Y-direction wind velocity at point WindList(1)

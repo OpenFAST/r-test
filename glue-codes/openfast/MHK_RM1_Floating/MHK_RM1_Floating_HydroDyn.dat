@@ -140,26 +140,26 @@ MemberID    MemberCdA1     MemberCdA2    MemberCdAMG1   MemberCdAMG2    MemberCd
             20   NMembers       - Number of members (-)
 MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MSecGeom    MSpinOrient   MDivSize   MCoefMod  MHstLMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
   (-)        (-)        (-)         (-)          (-)      (switch)       (deg)        (m)      (switch)  (switch)  (flag)
-   0          0          1           0            0           1            0         0.1000        1         1      TRUE           ! Columns
-   1          2          3           0            0           1            0         0.1000        1         1      TRUE
-   2          4          5           0            0           1            0         0.1000        1         1      TRUE
-   3          6          7           0            0           1            0         0.1000        1         1      TRUE
-   4          8          9           1            1           1            0         0.1000        1         1      TRUE           ! Upper Braces
-   5         10         11           1            1           1            0         0.1000        1         1      TRUE
-   6         12         13           1            1           1            0         0.1000        1         1      TRUE
-   7         14         15           1            1           1            0         0.1000        1         1      TRUE
-   8         16         17           2            2           1            0         0.1000        1         1      TRUE           ! Lower Braces
-   9         18         19           2            2           1            0         0.1000        1         1      TRUE
-  10         20         21           2            2           1            0         0.1000        1         1      TRUE
-  11         22         23           2            2           1            0         0.1000        1         1      TRUE
-  12         24         25           1            1           1            0         0.1000        1         1      TRUE           ! Tower Braces
-  13         26         27           1            1           1            0         0.1000        1         1      TRUE
-  14         24         28           1            1           1            0         0.1000        1         1      TRUE
-  15         25         28           1            1           1            0         0.1000        1         1      TRUE
-  16          0         29           3            3           1            0         0.1000        1         1      TRUE           ! Heave Plates
-  17          2         30           3            3           1            0         0.1000        1         1      TRUE
-  18          4         31           3            3           1            0         0.1000        1         1      TRUE
-  19          6         32           3            3           1            0         0.1000        1         1      TRUE
+   0          0          1           0            0           1            0         2.0000        1         1      TRUE           ! Columns
+   1          2          3           0            0           1            0         2.0000        1         1      TRUE
+   2          4          5           0            0           1            0         2.0000        1         1      TRUE
+   3          6          7           0            0           1            0         2.0000        1         1      TRUE
+   4          8          9           1            1           1            0         2.0000        1         1      TRUE           ! Upper Braces
+   5         10         11           1            1           1            0         2.0000        1         1      TRUE
+   6         12         13           1            1           1            0         2.0000        1         1      TRUE
+   7         14         15           1            1           1            0         2.0000        1         1      TRUE
+   8         16         17           2            2           1            0         2.0000        1         1      TRUE           ! Lower Braces
+   9         18         19           2            2           1            0         2.0000        1         1      TRUE
+  10         20         21           2            2           1            0         2.0000        1         1      TRUE
+  11         22         23           2            2           1            0         2.0000        1         1      TRUE
+  12         24         25           1            1           1            0         2.0000        1         1      TRUE           ! Tower Braces
+  13         26         27           1            1           1            0         2.0000        1         1      TRUE
+  14         24         28           1            1           1            0         2.0000        1         1      TRUE
+  15         25         28           1            1           1            0         2.0000        1         1      TRUE
+  16          0         29           3            3           1            0         2.0000        1         1      TRUE           ! Heave Plates
+  17          2         30           3            3           1            0         2.0000        1         1      TRUE
+  18          4         31           3            3           1            0         2.0000        1         1      TRUE
+  19          6         32           3            3           1            0         2.0000        1         1      TRUE
 ---------------------- FILLED MEMBERS ------------------------------------------
              0   NFillGroups     - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
 FillNumM FillMList             FillFSLoc     FillDens
@@ -179,7 +179,7 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
 True             HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
-"E15.7e2"        OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
+"G0"             OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
 Wave1Elev                 - Wave elevation at the platform reference point (0,  0)

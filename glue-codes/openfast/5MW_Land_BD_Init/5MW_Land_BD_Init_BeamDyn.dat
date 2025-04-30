@@ -81,8 +81,8 @@ False         UsePitchAct - Whether a pitch actuator should be used (flag)
       2E+07   PitchK      - Pitch actuator stiffness (kg-m^2/s^2) [used only when UsePitchAct is true]
      500000   PitchC      - Pitch actuator damping (kg-m^2/s) [used only when UsePitchAct is true]
 ---------------------- OUTPUTS -------------------------------------------------
-False          SumPrint       - Print summary data to "<RootName>.sum" (flag)
-"ES10.3E2"    OutFmt          - Format used for text tabular output, excluding the time channel.
+True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
+"G0"          OutFmt          - Format used for text tabular output, excluding the time channel.
           9   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
           1,          7,         14,         21,         28,         35,         42,         46,         49    OutNd          - Nodes whose values will be output  (-)
           OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
