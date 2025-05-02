@@ -5,12 +5,15 @@ False             Echo           - Echo the input file data (flag)
 0                  Gravity        - Gravity (m/s^2).
 0                  WtrDpth        - Water Depth (m) positive value.
 ---------------------- SubDyn -------------------------------------------------------------------
-"SD_2Beam_Spring.dat"    SDInputFile    - Absolute or relative path.   
-"SD_2Beam_Spring"          OutRootName    - Basename for output files.
-2001                           NSteps         - Number of time steps in the simulations (-)
-0.005                          TimeInterval   - TimeInterval for the simulation (sec)
-0   0   0                      TP_RefPoint    - Location (x,y,z) of the TP reference point in global coordinates (m)
-0                              SubRotateZ     - Rotation angle of the structure geometry in degrees about the global Z axis.   
+"SD_2Beam_Spring.dat"     SDInputFile    - Absolute or relative path.   
+"SD_2Beam_Spring"         OutRootName    - Basename for output files.
+2001                      NSteps         - Number of time steps in the simulations (-)
+0.005                     TimeInterval   - TimeInterval for the simulation (sec)
+1                         NTPs           - Number of transition pieces
+0                         TP_RefPoint_X  - X location of the TP reference points in global coordinates (m) {require NTPs entries}
+0                         TP_RefPoint_Y  - Y location of the TP reference points in global coordinates (m) {require NTPs entries}
+0                         TP_RefPoint_Z  - Z location of the TP reference points in global coordinates (m) {require NTPs entries}
+0                         SubRotateZ     - Rotation angle of the structure geometry in [deg] about the global Z axis.
 ---------------------- INPUTS -------------------------------------------------------------------
 0                InputsMod      - Inputs model {0: all inputs are zero for every timestep, 1: steady state inputs, 2: read inputs from a file (InputsFile)} (switch)
 "unused"         InputsFile     - Name of the inputs file if InputsMod = 2. This file has to be defined as follows: i: No header. ii: It has NSteps+1 rows and each row (i) has in the first column the time: t = (i-1)*TimeInterval. The successive columns define the displacements ([m], [rad]), velocities ([m/s], [rad/s]) and accelerations ([m/s^2], [rad/s^2]).  
