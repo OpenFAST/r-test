@@ -87,8 +87,8 @@ True          SumPrint       - Print summary data to "<RootName>.sum" (flag)
           1,          2,          3,          4,          5,          6    OutNd          - Nodes whose values will be output  (-)
           OutList        - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
 "RootFxr, RootFyr, RootFzr"  
-"RootMxr", "RootMyr", "RootMzr"  
-TipTDxr, TipTDyr, TipTDzr
+"RootMxr, RootMyr, RootMzr"  
+"TipTDxr, TipTDyr, TipTDzr"
 "TipRDxr"
 'TipRDyr'
 TipRDzr
