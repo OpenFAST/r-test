@@ -12,7 +12,8 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 6                      MaxConvIter - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
 99999.0                DT_UJac     - Time between calls to get Jacobians (s) 
 1000000.0              UJacSclFact - Scaling factor used in Jacobians (-) 
----------------------- FEATURE SWITCHES AND FLAGS ------------------------------ 
+---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
+          1   NRotors         - Number of rotors in turbine (-) 
       1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}  
       1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM} 
       2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15} 
