@@ -14,7 +14,7 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
       1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM} 
       2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15} 
       0   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
-      1   CompSeaState    - Compute sea state information (switch) {0=None; 1=SeaState} 
+      1   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState} 
       1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn} 
       0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn}  
       0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex} 
@@ -37,8 +37,8 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 ""                     BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string) 
 "InflowWind_WT1.dat"    InflowFile      - Name of file containing inflow wind input parameters (quoted string) 
 "IEA-15-240-RWT_AeroDyn.dat"  AeroFile     - Name of file containing aerodynamic input parameters (quoted string) 
-"unused"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string) 
-"SeaState.dat"                SeaStateFile    - Name of file containing sea state input parameters (quoted string)
+"unused"      ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string) 
+"SeaState.dat"   SeaStFile    - Name of file containing sea state input parameters (quoted string)
 "IEA-15-240-RWT-UMaineSemi_HydroDynT2.dat"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string) 
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string) 
 ""            MooringFile     - NamTe of file containing mooring system input parameters (quoted string) 
