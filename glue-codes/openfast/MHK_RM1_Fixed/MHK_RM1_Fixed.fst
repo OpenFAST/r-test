@@ -13,7 +13,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-          2   NRotors         - Number of rotors in turbine (-)
+          1   NRotors         - Number of rotors in turbine (-)
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
           1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
           2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
@@ -47,13 +47,6 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "unused"      MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string)
----------------------- INPUT FILES Rotor 2 -------------------------------------
-"MHK_RM1_Fixed_ElastoDyn.dat"   EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
-"unused"      BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-"unused"      BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-"unused"      BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
-"unused"      ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
-False         MirrorRotor     - Use CW rotor definition definition files for a CCW rotor (-)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           5   SttsTime        - Amount of time between screen status messages (s)
