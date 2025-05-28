@@ -8,10 +8,10 @@ True             SttcSolve   - Solve dynamics about static equilibrium point
 -------------------- FEA and CRAIG-BAMPTON PARAMETERS ---------------------------------
              3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
              6   NDiv        - Number of sub-elements per member
-             0   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
+             6   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
              1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
              1   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
-  0,      0.02   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+  0,      0.01   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
              6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
@@ -207,9 +207,9 @@ COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    
 CMJointID       JMass            JMXX             JMYY             JMZZ            JMXY        JMXZ        JMYZ        MCGX     MCGY     MCGZ
   (-)            (kg)          (kg*m^2)         (kg*m^2)         (kg*m^2)        (kg*m^2)    (kg*m^2)    (kg*m^2)      (m)      (m)      (m)
    2          19752.4675      13176774.5       13176774.5       1542647.46         0.0         0.0         0.0         0.0      0.0      0.0  ! Main column
-  17        4352946.6350     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Starboard column
-  29        4352946.6350     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Fore column
-  41        4352946.6350     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Port column
+  17        3953541.4050     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Starboard column
+  29        4552649.2500     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Fore column
+  41        3953541.4050     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Port column
 ---------------------------- OUTPUT: SUMMARY & OUTFILE --------------------------------
 False            SumPrint    - Output a Summary File (flag)
 1                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)

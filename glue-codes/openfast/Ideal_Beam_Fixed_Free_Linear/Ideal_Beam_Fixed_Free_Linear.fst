@@ -24,6 +24,7 @@ false         Echo            - Echo input data to <RootName>.ech (flag)
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
+      False   MirrorRotor     - Use CW rotor definition definition files for a CCW rotor (-)
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
           0   Gravity         - Gravitational acceleration (m/s^2)
           0   AirDens         - Air density (kg/m^3)
