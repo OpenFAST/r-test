@@ -24,7 +24,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           3   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
-      False   MirrorRotor     - Use CW rotor definition definition files for a CCW rotor (-)
+          0   RotorDir        - List of rotor rotation directions [1 to NRotors] {0=CCW, 1=CW}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
     9.80665   Gravity         - Gravitational acceleration (m/s^2)
       1.225   AirDens         - Air density (kg/m^3)
@@ -54,7 +54,6 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(2)    - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
 "../5MW_Baseline/NRELOffshrBsline5MW_BeamDyn.dat"    BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "NRELOffshrBsline5MW_OC4DeepCwindSemi_ServoDyn_R2.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
-False         MirrorRotor     - Use CW rotor definition definition files for a CCW rotor (-)
 ---------------------- OUTPUT --------------------------------------------------
 True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
