@@ -8,7 +8,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
         0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
-       1e-5   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+       1e-4   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
           6   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
@@ -24,7 +24,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           3   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
-          0   RotorDir        - List of rotor rotation directions [1 to NRotors] {0=CCW, 1=CW}
+        0 1   RotorDir        - List of rotor rotation directions [1 to NRotors] {0=CCW, 1=CW}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
     9.80665   Gravity         - Gravitational acceleration (m/s^2)
       1.225   AirDens         - Air density (kg/m^3)
