@@ -1,5 +1,6 @@
 SD_2Beam_Spring
 SD_2Beam_Cantilever
+SD_CantileverBeam_Rectangular
 SD_AnsysComp1_PinBeam
 SD_AnsysComp2_Cable
 SD_AnsysComp3_PinBeamCable

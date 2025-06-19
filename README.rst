@@ -5,7 +5,7 @@ This repository serves as a container for regression test data for system-level
 and module-level testing of OpenFAST. The repository contains:
 
 - Input files for test case execution
-- Baseline solutions for various machine and compiler combinations
+- Baseline solutions
 - Turbine models used in the regression test cases
 
 The baseline solutions serve as "gold standards" for the regression test suite
@@ -85,21 +85,21 @@ the current test names is given below.
 Baselines
 ~~~~~~~~~
 The regression test compares locally generated solutions to the baseline
-solutions generated on a series of system and compiler combinations.
-Currently, the supported system/compiler combinations for successful
-regression testing along with the toolsets use are given below.
+solutions generated with the toolsets below.
 
 ================= ======================= ========================= ==================
  System-Compiler   System Version          Compiler                  Math Library
 ================= ======================= ========================= ==================
- windows-intel     Windows 10 V 2004       Intel OneAPI 2021         Intel MKL 2021
- linux-intel       Ubuntu 20.04 (WSL)      Intel OneAPI 2021         Intel MKL 2021
- linux-gnu         Ubuntu 20.04 (WSL)      GNU Fortran 10.2 (APT)    liblapack (APT)    
- macos-gnu         macOS 10.15.7           GNU Fortran 10.2 (Brew)   `Accelerate <https://developer.apple.com/documentation/accelerate>`_
+ GitHub actions    Ubuntu 22.04 (WSL)      GNU Fortran 12.2 (APT)    liblapack (APT)    
 ================= ======================= ========================= ==================
 
 The regression test only supports double precision solutions, so all
-baseline solutions are generated with a double precision build.
+baseline solutions are generated with a double precision build. If you run local
+testing, there may be small numerical differences from the baseline solutions
+provided that may show up as a failed test. If you plot the results, the
+resulting timeseries should match closely for most compiler and hardware
+combinations (i.e. MacOS 15.5 (M4) with GNU Fortran 14.2 (Brew) will fail only
+one test).
 
 Updating the baselines
 ----------------------
@@ -120,9 +120,9 @@ Example:
     # Move into the r-test submodule
     cd openfast/reg_tests/r-test
 
-    #       updateBaselineSolutions.py  source_directory                        target_directory     system_name           compiler_id
-    #                                                                                                Darwin,Linux,Windows  Intel,GNU
-    python  updateBaselineSolutions.py  ../build/reg_tests/glue-codes/openfast  glue-codes/openfast  Linux                 GNU
+    #       updateBaselineSolutions.py  source_directory                        target_directory   
+    #                                                                                              
+    python  updateBaselineSolutions.py  ../build/reg_tests/glue-codes/openfast  glue-codes/openfast
 
 NOTE: External ServoDyn controllers for 5MW_Baseline cases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -147,7 +147,7 @@ architecture in the following command:
 
 .. code-block:: bash
 
-  cmake -G "Visual Studio 14 2015 Win64" ..
+  cmake -G "Visual Studio 17 2022" ..
 
 Ultimately, three ``.dll`` libraries should be compiled and placed in the
 ``5MW_Baseline`` parallel to the test cases that will be executed. For example,
