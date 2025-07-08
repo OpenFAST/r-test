@@ -1,0 +1,289 @@
+----------- SubDyn MultiMember Support Structure Input File ---------------------------
+SubDyn model of the OC4 DeepCwind semi with flexible pontoons and rigid columns
+-------------------------- SIMULATION CONTROL -----------------------------------------
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+"DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
+             4   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
+True             SttcSolve   - Solve dynamics about static equilibrium point
+-------------------- FEA and CRAIG-BAMPTON PARAMETERS ---------------------------------
+             3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
+             6   NDiv        - Number of sub-elements per member
+             6   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
+             1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             1   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
+  0,      0.01   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+             6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+------- INITIAL RIGID-BODY DISPLACEMENT [used only for floating structure with more than one transition pieces] -------
+RBSurge    RBSway     RBHeave    RBRoll     RBPitch    RBYaw
+  (m)        (m)        (m)      (deg)      (deg)      (deg)
+  0.0        0.0        0.0       0.0        0.0        0.0
+---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
+            59   NJoints     - Number of joints (-)
+JointID          JointXss               JointYss               JointZss      JointType    JointDirX   JointDirY    JointDirZ      JointStiff     ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
+  (-)              (m)                    (m)                    (m)             (-)         (-)         (-)          (-)          (Nm/rad)
+   1               0.0                    0.0                  -20.0              1          0.0         0.0          0.0             0.0  ! Main column joints - start
+   2               0.0                    0.0                  -16.2              1          0.0         0.0          0.0             0.0
+   3               0.0                    0.0                   -5.75987524       1          0.0         0.0          0.0             0.0  ! Main column CoG
+   4               0.0                    0.0                    9.5              1          0.0         0.0          0.0             0.0
+   5               1.62500                2.81500              -17.00000          1          0.0         0.0          0.0             0.0
+   6              -3.25000                0.00000              -17.00000          1          0.0         0.0          0.0             0.0
+   7               1.62500               -2.81500              -17.00000          1          0.0         0.0          0.0             0.0
+   8               1.62500                2.81500              -16.20000          1          0.0         0.0          0.0             0.0
+   9              -3.25000                0.00000              -16.20000          1          0.0         0.0          0.0             0.0
+  10               1.62500               -2.81500              -16.20000          1          0.0         0.0          0.0             0.0
+  11               1.62500                2.81500               10.00000          1          0.0         0.0          0.0             0.0
+  12              -3.25000                0.00000               10.00000          1          0.0         0.0          0.0             0.0
+  13               1.62500               -2.81500               10.00000          1          0.0         0.0          0.0             0.0  ! Main column joints - end
+  14              14.43375               25.0                  -20.00000          1          0.0         0.0          0.0             0.0  ! Starboard column joints - start
+  15              14.43375               25.0                  -17.00000          1          0.0         0.0          0.0             0.0
+  16              14.43375               25.0                  -14.00000          1          0.0         0.0          0.0             0.0
+  17              14.43375               25.0                  -13.77236712       1          0.0         0.0          0.0             0.0  ! Starboard column CoG
+  18              14.43375               25.0                   12.00000          1          0.0         0.0          0.0             0.0
+  19               4.04145               19.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  20               8.43376               14.60770              -17.00000          1          0.0         0.0          0.0             0.0
+  21              14.43375               13.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  22               9.23760               22.00000               10.00000          1          0.0         0.0          0.0             0.0
+  23              11.43376               19.80385               10.00000          1          0.0         0.0          0.0             0.0
+  24              14.43375               19.00000               10.00000          1          0.0         0.0          0.0             0.0
+  25              11.43376               19.80385                9.13000          1          0.0         0.0          0.0             0.0  ! Starboard column joints - end
+  26             -28.86750                0.0                  -20.00000          1          0.0         0.0          0.0             0.0  ! Fore column joints - start
+  27             -28.86750                0.0                  -17.00000          1          0.0         0.0          0.0             0.0
+  28             -28.86750                0.0                  -14.00000          1          0.0         0.0          0.0             0.0
+  29             -28.86750                0.0                  -13.77236712       1          0.0         0.0          0.0             0.0  ! Fore column CoG
+  30             -28.86750                0.0                   12.00000          1          0.0         0.0          0.0             0.0
+  31             -18.47520                6.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  32             -16.87000                0.00000              -17.00000          1          0.0         0.0          0.0             0.0 
+  33             -18.47520               -6.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  34             -23.67130                3.00000               10.00000          1          0.0         0.0          0.0             0.0
+  35             -22.87000                0.00000               10.00000          1          0.0         0.0          0.0             0.0
+  36             -23.67130               -3.00000               10.00000          1          0.0         0.0          0.0             0.0
+  37             -22.87000                0.00000                9.13000          1          0.0         0.0          0.0             0.0  ! Fore column joints - end
+  38              14.43375              -25.0                  -20.00000          1          0.0         0.0          0.0             0.0  ! Port column joints - start
+  39              14.43375              -25.0                  -17.00000          1          0.0         0.0          0.0             0.0
+  40              14.43375              -25.0                  -14.00000          1          0.0         0.0          0.0             0.0
+  41              14.43375              -25.0                  -13.77236712       1          0.0         0.0          0.0             0.0  ! Port column CoG
+  42              14.43375              -25.0                   12.00000          1          0.0         0.0          0.0             0.0
+  43               4.04145              -19.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  44               8.43376              -14.60770              -17.00000          1          0.0         0.0          0.0             0.0
+  45              14.43375              -13.00000              -17.00000          1          0.0         0.0          0.0             0.0
+  46               9.23760              -22.00000               10.00000          1          0.0         0.0          0.0             0.0
+  47              11.43376              -19.80385               10.00000          1          0.0         0.0          0.0             0.0
+  48              14.43375              -19.00000               10.00000          1          0.0         0.0          0.0             0.0
+  49              11.43376              -19.80385                9.13000          1          0.0         0.0          0.0             0.0  ! Port column joints - end
+  50               0.0                    0.0                    0.0              1          0.0         0.0          0.0             0.0  ! Main column PF body node
+  51              14.43375               25.0                    0.0              1          0.0         0.0          0.0             0.0  ! Starboard column PF body node
+  52             -28.86750                0.0                    0.0              1          0.0         0.0          0.0             0.0  ! Fore column PF body node
+  53              14.43375              -25.0                    0.0              1          0.0         0.0          0.0             0.0  ! Port column PF body node
+  54              20.434                 35.393                -14.0              1          0.0         0.0          0.0             0.0  ! Starboard column fairlead
+  55             -40.868                  0.0                  -14.0              1          0.0         0.0          0.0             0.0  ! Fore column fairlead
+  56              20.434                -35.393                -14.0              1          0.0         0.0          0.0             0.0  ! Port column fairlead
+  57               0.0                    0.0                   10.0              1          0.0         0.0          0.0             0.0  ! Tower-base/interface joint
+  58              14.43375               25.0                   10.00000          1          0.0         0.0          0.0             0.0
+  59              14.43375              -25.0                   10.00000          1          0.0         0.0          0.0             0.0
+------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
+             0   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss   SSIfile      ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)    (string)
+------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
+             3   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+IJointID   TPID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
+  (-)      (-)     (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+  50        0        1           1           1           1           1           1
+  18        1        1           1           1           1           1           1
+  42        2        1           1           1           1           1           1
+----------------------------------- MEMBERS -------------------------------------------
+            70   NMembers    - Number of members (-)
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     MType      COSMID   ![MType={1:beam circ., 2:cable, 3:rigid, 4:beam arb.}. COMSID={-1:none}]
+  (-)         (-)         (-)          (-)           (-)          (-)        (-)
+   1           1           2            1             1            3         -1 ! Main column rigid assembly - start
+   2           2           3            1             1            3         -1
+   3           3          50            3             3            1         -1
+   4          50           4            3             3            1         -1
+   5           2           8            1             1            3         -1
+   6           2           9            1             1            3         -1
+   7           2          10            1             1            3         -1
+   8           5           8            1             1            3         -1
+   9           6           9            1             1            3         -1
+  10           7          10            1             1            3         -1
+  11           4          11            1             1            3         -1
+  12           4          12            1             1            3         -1
+  13           4          13            1             1            3         -1 ! Main column rigid assembly - end
+  14          14          15            1             1            3         -1 ! Starboard column rigid assembly - start
+  15          15          16            1             1            3         -1
+  16          16          17            1             1            3         -1
+  17          17          51            1             1            3         -1
+  18          51          58            1             1            3         -1
+  19          15          19            1             1            3         -1
+  20          15          20            1             1            3         -1
+  21          15          21            1             1            3         -1
+  22          58          22            1             1            3         -1
+  23          58          23            1             1            3         -1
+  24          58          24            1             1            3         -1
+  25          58          25            1             1            3         -1 ! Starboard column rigid assembly - end
+  26          26          27            1             1            3         -1 ! Fore column rigid assembly - start
+  27          27          28            1             1            3         -1
+  28          28          29            1             1            3         -1
+  29          29          52            1             1            3         -1
+  30          52          30            1             1            3         -1
+  31          27          31            1             1            3         -1
+  32          27          32            1             1            3         -1
+  33          27          33            1             1            3         -1
+  34          30          34            1             1            3         -1
+  35          30          35            1             1            3         -1
+  36          30          36            1             1            3         -1
+  37          30          37            1             1            3         -1 ! Fore column rigid assembly - end
+  38          38          39            1             1            3         -1 ! Port column rigid assembly - start
+  39          39          40            1             1            3         -1
+  40          40          41            1             1            3         -1
+  41          41          53            1             1            3         -1
+  42          53          59            1             1            3         -1
+  43          39          43            1             1            3         -1
+  44          39          44            1             1            3         -1
+  45          39          45            1             1            3         -1
+  46          59          46            1             1            3         -1
+  47          59          47            1             1            3         -1
+  48          59          48            1             1            3         -1
+  49          59          49            1             1            3         -1 ! Port column rigid assembly - end
+  50          22          34            2             2            1         -1 ! Upper delta pontoons - starboard
+  51          36          46            2             2            1         -1 ! Upper delta pontoons - port
+  52          48          24            2             2            1         -1 ! Upper delta pontoons - aft
+  53          19          31            2             2            1         -1 ! Lower delta pontoons - starboard
+  54          33          43            2             2            1         -1 ! Lower delta pontoons - port
+  55          45          21            2             2            1         -1 ! Lower delta pontoons - aft
+  56           5          20            2             2            1         -1 ! Lower Y pontoons - starboard
+  57           6          32            2             2            1         -1 ! Lower Y pontoons - fore
+  58           7          44            2             2            1         -1 ! Lower Y pontoons - port
+  59          11          23            2             2            1         -1 ! Upper Y pontoons - starboard
+  60          12          35            2             2            1         -1 ! Upper Y pontoons - fore
+  61          13          47            2             2            1         -1 ! Upper Y pontoons - port
+  62           8          25            2             2            1         -1 ! Cross braces - starboard
+  63           9          37            2             2            1         -1 ! Cross braces - fore
+  64          10          49            2             2            1         -1 ! Cross braces - port
+  65          15          54            1             1            3         -1 ! Rigid connection to fairlead - starboard column
+  66          27          55            1             1            3         -1 ! Rigid connection to fairlead - fore column
+  67          39          56            1             1            3         -1 ! Rigid connection to fairlead - port column
+  68           4          57            3             3            1         -1 ! Transition piece
+  69          58          18            3             3            1         -1 ! Transition piece
+  70          59          42            3             3            1         -1 ! Transition piece
+------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
+             2   NPropSets   - Number of structurally unique cross-sections
+PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
+   2          210E9           80.8E9           7850             1.6             0.0175   ! All pontoons and braces
+   3          210E9           80.8E9              1             6.5             0.080    ! Transition piece - effectively rigid
+----------------- RECTANGULAR BEAM CROSS-SECTION PROPERTIES ---------------------------
+             0   NPropSets   - Number of structurally unique cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecB           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)            (m)             (m)
+----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
+             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA                  XsecAsx               XsecAsy               XsecJxx               XsecJyy                XsecJ0        XsecJt
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)                    (m2)                  (m2)                  (m4)                  (m4)                  (m4)           (m4)
+-------------------------- CABLE PROPERTIES -------------------------------------------
+             0   NCablePropSets   - Number of cable cable properties
+PropSetID     EA          MatDens        T0         CtrlChannel
+  (-)         (N)         (kg/m)        (N)             (-)
+----------------------- RIGID LINK PROPERTIES -----------------------------------------
+             1   NRigidPropSets - Number of rigid link properties
+PropSetID   MatDens   
+  (-)       (kg/m)
+   1          0.0
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
+---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
+             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
+ (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)
+------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
+             4   NCmass      - Number of joints with concentrated masses; Global Coordinate System
+CMJointID       JMass            JMXX             JMYY             JMZZ            JMXY        JMXZ        JMYZ        MCGX     MCGY     MCGZ
+  (-)            (kg)          (kg*m^2)         (kg*m^2)         (kg*m^2)        (kg*m^2)    (kg*m^2)    (kg*m^2)      (m)      (m)      (m)
+   2          19752.4675      13176774.5       13176774.5       1542647.46         0.0         0.0         0.0         0.0      0.0      0.0  ! Main column
+  17        3953541.4050     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Starboard column
+  29        4552649.2500     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Fore column
+  41        3953541.4050     328055802.6      328055802.6     258697402.30         0.0         0.0         0.0         0.0      0.0      0.0  ! Port column
+---------------------------- OUTPUT: SUMMARY & OUTFILE --------------------------------
+False            SumPrint    - Output a Summary File (flag)
+1                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
+False            OutCOSM     - Output cosine matrices with the selected output member forces (flag)
+False            OutAll      - [T/F] Output all members' end forces
+             2   OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
+True             TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
+             1   OutDec      - Decimation of output in the <rootname>.SD.out file
+"ES16.8e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+"A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
+------------------------- MEMBER OUTPUT LIST ------------------------------------------
+            15   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
+MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+  (-)        (-)        (-)
+  50          3       1  4  7    ! Upper delta pontoons - starboard
+  51          3       1  4  7    ! Upper delta pontoons - port
+  52          3       1  4  7    ! Upper delta pontoons - aft
+  53          3       1  4  7    ! Lower delta pontoons - starboard
+  54          3       1  4  7    ! Lower delta pontoons - port
+  55          3       1  4  7    ! Lower delta pontoons - aft
+  56          3       1  4  7    ! Lower Y pontoons - starboard
+  57          3       1  4  7    ! Lower Y pontoons - fore
+  58          3       1  4  7    ! Lower Y pontoons - port
+  59          3       1  4  7    ! Upper Y pontoons - starboard
+  60          3       1  4  7    ! Upper Y pontoons - fore
+  61          3       1  4  7    ! Upper Y pontoons - port
+  62          3       1  4  7    ! Cross braces - starboard
+  63          3       1  4  7    ! Cross braces - fore
+  64          3       1  4  7    ! Cross braces - port
+------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"M01N1FKxe,M01N1FKye,M01N1FKze,M01N1MKxe,M01N1MKye,M01N1MKze"
+"M01N2FKxe,M01N2FKye,M01N2FKze,M01N2MKxe,M01N2MKye,M01N2MKze"
+"M01N3FKxe,M01N3FKye,M01N3FKze,M01N3MKxe,M01N3MKye,M01N3MKze"
+"M02N1FKxe,M02N1FKye,M02N1FKze,M02N1MKxe,M02N1MKye,M02N1MKze"
+"M02N2FKxe,M02N2FKye,M02N2FKze,M02N2MKxe,M02N2MKye,M02N2MKze"
+"M02N3FKxe,M02N3FKye,M02N3FKze,M02N3MKxe,M02N3MKye,M02N3MKze"
+"M03N1FKxe,M03N1FKye,M03N1FKze,M03N1MKxe,M03N1MKye,M03N1MKze"
+"M03N2FKxe,M03N2FKye,M03N2FKze,M03N2MKxe,M03N2MKye,M03N2MKze"
+"M03N3FKxe,M03N3FKye,M03N3FKze,M03N3MKxe,M03N3MKye,M03N3MKze"
+"M04N1FKxe,M04N1FKye,M04N1FKze,M04N1MKxe,M04N1MKye,M04N1MKze"
+"M04N2FKxe,M04N2FKye,M04N2FKze,M04N2MKxe,M04N2MKye,M04N2MKze"
+"M04N3FKxe,M04N3FKye,M04N3FKze,M04N3MKxe,M04N3MKye,M04N3MKze"
+"M05N1FKxe,M05N1FKye,M05N1FKze,M05N1MKxe,M05N1MKye,M05N1MKze"
+"M05N2FKxe,M05N2FKye,M05N2FKze,M05N2MKxe,M05N2MKye,M05N2MKze"
+"M05N3FKxe,M05N3FKye,M05N3FKze,M05N3MKxe,M05N3MKye,M05N3MKze"
+"M06N1FKxe,M06N1FKye,M06N1FKze,M06N1MKxe,M06N1MKye,M06N1MKze"
+"M06N2FKxe,M06N2FKye,M06N2FKze,M06N2MKxe,M06N2MKye,M06N2MKze"
+"M06N3FKxe,M06N3FKye,M06N3FKze,M06N3MKxe,M06N3MKye,M06N3MKze"
+"M07N1FKxe,M07N1FKye,M07N1FKze,M07N1MKxe,M07N1MKye,M07N1MKze"
+"M07N2FKxe,M07N2FKye,M07N2FKze,M07N2MKxe,M07N2MKye,M07N2MKze"
+"M07N3FKxe,M07N3FKye,M07N3FKze,M07N3MKxe,M07N3MKye,M07N3MKze"
+"M08N1FKxe,M08N1FKye,M08N1FKze,M08N1MKxe,M08N1MKye,M08N1MKze"
+"M08N2FKxe,M08N2FKye,M08N2FKze,M08N2MKxe,M08N2MKye,M08N2MKze"
+"M08N3FKxe,M08N3FKye,M08N3FKze,M08N3MKxe,M08N3MKye,M08N3MKze"
+"M09N1FKxe,M09N1FKye,M09N1FKze,M09N1MKxe,M09N1MKye,M09N1MKze"
+"M09N2FKxe,M09N2FKye,M09N2FKze,M09N2MKxe,M09N2MKye,M09N2MKze"
+"M09N3FKxe,M09N3FKye,M09N3FKze,M09N3MKxe,M09N3MKye,M09N3MKze"
+"M10N1FKxe,M10N1FKye,M10N1FKze,M10N1MKxe,M10N1MKye,M10N1MKze"
+"M10N2FKxe,M10N2FKye,M10N2FKze,M10N2MKxe,M10N2MKye,M10N2MKze"
+"M10N3FKxe,M10N3FKye,M10N3FKze,M10N3MKxe,M10N3MKye,M10N3MKze"
+"M11N1FKxe,M11N1FKye,M11N1FKze,M11N1MKxe,M11N1MKye,M11N1MKze"
+"M11N2FKxe,M11N2FKye,M11N2FKze,M11N2MKxe,M11N2MKye,M11N2MKze"
+"M11N3FKxe,M11N3FKye,M11N3FKze,M11N3MKxe,M11N3MKye,M11N3MKze"
+"M12N1FKxe,M12N1FKye,M12N1FKze,M12N1MKxe,M12N1MKye,M12N1MKze"
+"M12N2FKxe,M12N2FKye,M12N2FKze,M12N2MKxe,M12N2MKye,M12N2MKze"
+"M12N3FKxe,M12N3FKye,M12N3FKze,M12N3MKxe,M12N3MKye,M12N3MKze"
+"M13N1FKxe,M13N1FKye,M13N1FKze,M13N1MKxe,M13N1MKye,M13N1MKze"
+"M13N2FKxe,M13N2FKye,M13N2FKze,M13N2MKxe,M13N2MKye,M13N2MKze"
+"M13N3FKxe,M13N3FKye,M13N3FKze,M13N3MKxe,M13N3MKye,M13N3MKze"
+"M14N1FKxe,M14N1FKye,M14N1FKze,M14N1MKxe,M14N1MKye,M14N1MKze"
+"M14N2FKxe,M14N2FKye,M14N2FKze,M14N2MKxe,M14N2MKye,M14N2MKze"
+"M14N3FKxe,M14N3FKye,M14N3FKze,M14N3MKxe,M14N3MKye,M14N3MKze"
+"M15N1FKxe,M15N1FKye,M15N1FKze,M15N1MKxe,M15N1MKye,M15N1MKze"
+"M15N2FKxe,M15N2FKye,M15N2FKze,M15N2MKxe,M15N2MKye,M15N2MKze"
+"M15N3FKxe,M15N3FKye,M15N3FKze,M15N3MKxe,M15N3MKye,M15N3MKze"
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

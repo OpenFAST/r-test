@@ -13,6 +13,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
          10   DT_UJac         - Time between calls to get Jacobians (s)
     1000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
+          1   NRotors         - Number of rotors in turbine (-)
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
           1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
           2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
@@ -23,6 +24,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           1   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
+          0   RotorDir        - List of rotor rotation directions [1 to NRotors] {0=CCW, 1=CW}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
     9.80665   Gravity         - Gravitational acceleration (m/s^2)
       1.225   AirDens         - Air density (kg/m^3)

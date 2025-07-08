@@ -1,0 +1,28 @@
+SubDyn Driver file for stand-alone applications 
+Multiple transition pieces with rigid-body degrees of freedom
+False             Echo           - Echo the input file data (flag)
+---------------------- ENVIRONMENTAL CONDITIONS -------------------------------------------------
+9.81              Gravity        - Gravity (m/s^2).
+0                 WtrDpth        - Water Depth (m) positive value.
+---------------------- SubDyn -------------------------------------------------------------------
+"SD_MultiTP.dat"  SDInputFile    - Absolute or relative path. 
+"SD_MultiTP"      OutRootName    - Basename for output files.
+4000              NSteps         - Number of time steps in the simulations (-)
+0.0005            TimeInterval   - TimeInterval for the simulation (sec)
+2                 NTPs           - Number of transition pieces
+ 0    0           TP_RefPoint_X  - X location of the TP reference points in global coordinates (m) {require NTPs entries}
+10  -10           TP_RefPoint_Y  - Y location of the TP reference points in global coordinates (m) {require NTPs entries}
+20   20           TP_RefPoint_Z  - Z location of the TP reference points in global coordinates (m) {require NTPs entries}
+0                 SubRotateZ     - Rotation angle of the structure geometry in [deg] about the global Z axis.
+---------------------- INPUTS -------------------------------------------------------------------
+2                 InputsMod      - Inputs model {0: all inputs are zero for every timestep, 1: steady state inputs, 2: read inputs from a file (InputsFile)} (switch)
+"TPMotion.dat"    InputsFile     - Name of the inputs file if InputsMod = 2. This file has to be defined as follows: i: No header. ii: It has NSteps+1 rows and each row (i) has in the first column the time: t = (i-1)*TimeInterval. The successive columns define the displacements ([m], [rad]), velocities ([m/s], [rad/s]) and accelerations ([m/s^2], [rad/s^2]).
+---------------------- STEADY INPUTS (for InputsMod = 1) ----------------------------------------
+0.0   0.0   0.0   0.0   0.0   0.0   uTPInSteady        - input displacements and rotations ([m], [rad])  
+0.0   0.0   0.0   0.0   0.0   0.0   uDotTPInSteady     - input translational and rotational velocities ([m/s], [rad/s])
+0.0   0.0   0.0   0.0   0.0   0.0   uDotDotTPInSteady  - input translational and rotational accelerations ([m/s^2], [rad/s^2])
+---------------------- LOADS --------------------------------------------------------------------
+0    nAppliedLoads  - Number of applied loads at given nodes
+ALJointID    Fx     Fy    Fz     Mx     My     Mz   UnsteadyFile
+   (-)       (N)    (N)   (N)   (Nm)   (Nm)   (Nm)     (-)  
+END of driver input file
