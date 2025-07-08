@@ -24,13 +24,26 @@ def get_library_path(module_name: str) -> str:
         "moordyn": "libmoordyn_c_binding"
     }
     basename = module_map.get(module_name.lower(), f"lib{module_name}_c_binding")
-    build_path = Path("..").joinpath(*[".."] * 4, "build")
+    build_path = Path("..").joinpath(*[".."] * 3)    # for running from testing in a build dir
 
     if sys.platform in ["linux", "linux2"]:
-        return str(build_path / "modules" / module_name / f"{basename}.so")
-
+        ext = "so"
     if sys.platform == "darwin":
-        return str(build_path / "modules" / module_name / f"{basename}.dylib")
+        ext = "dylib"
+
+    if sys.platform in ["linux","linux2","darwin"]:
+        possible_paths = [
+            build_path / "modules" / module_name /  f"{basename}.{ext}",
+            build_path / ".." / "install" / "lib" / f"{basename}.{ext}"
+        ]
+        for path in possible_paths:
+            if path.is_file():
+                print(f"Loading library from {path}")
+                return str(path)
+        sys.exit(
+            f"Cannot find lib{module_name}_c_binding at"
+            f"      {possible_paths[0]} or {possible_paths[1]}"
+        )
 
     if sys.platform == "win32":
         bit_version = "Win32" if sys.maxsize <= 2**32 else "x64"
@@ -38,9 +51,13 @@ def get_library_path(module_name: str) -> str:
             build_path / "modules" / module_name / f"{basename}.dll",
             build_path / "bin" / f"{module_name}_c_binding_{bit_version}.dll"
         ]
-        return str(next((path for path in possible_paths if path.is_file()), None)) or sys.exit(
+        for path in possible_paths:
+            if path.is_file():
+                print(f"Loading library from {path}")
+                return str(path)
+        sys.exit(
             f"Python is {bit_version} bit and cannot find {bit_version} "
-            f"bit {module_name} DLL in any expected location."
+            f"bit {module_name} DLL at {path}."
         )
 
     raise ValueError(f"Unsupported platform: {sys.platform}")
