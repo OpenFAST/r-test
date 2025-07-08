@@ -1,0 +1,16 @@
+# This is an input file for the tower top force time-series in the TMD module of ServoDyn
+#
+# it has an arbitrary number of header lines
+#
+#
+# Time,     Fx,      Fy,      Fz,      Mx,      My,      Mz
+# (s)       (N)      (N)      (N)      (N-m)    (N-m)    (N-m)
+0.0         0.0      0.0      0.0      0.0      0.0      0.0
+4.0         0.0      2.0e5    0.0      0.0      0.0      0.0
+40.0        0.0      2.0e5    0.0      0.0      0.0      0.0
+40.0001     0.0      0.0      0.0      0.0      0.0      0.0
+90.         0.0      0.0      0.0      0.0      0.0      0.0
+
+
+
+
