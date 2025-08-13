@@ -2,41 +2,46 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2022 National Renewable Energy Laboratory
- Copyright (C) 2022 Envision Energy USA LTD
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.1.0-55-gaeae69fe-dirty
+ OpenFAST--128-NOTFOUND
  Compile Info:
-  - Compiler: GCC version 10.3.0
+  - Compiler: GCC version 12.3.0
   - Architecture: 64 bit
   - Precision: double
-  - OpenMP: No
-  - Date: Mar 17 2022
-  - Time: 11:55:46
+  - OpenMP: Yes, number of threads: 1/1
+  - Date: Aug  4 2025
+  - Time: 17:52:46
  Execution Info:
-  - Date: 03/17/2022
-  - Time: 12:26:32-0600
+  - Date: 08/04/2025
+  - Time: 18:14:24+0000
 
  OpenFAST input file heading:
      FAST Certification Test #25: NREL 5.0 MW Baseline Wind Turbine with OC4-DeepCwind semi
      configuration, for use in offshore analysis
 
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running ServoDyn.
- Running StrucCtrl.
+  Running ElastoDyn.
+  Running ServoDyn.
+  Running StrucCtrl.
+
+ FAST_InitializeAll:ED_Init:ED_ReadInput:ReadBladeInputs:ReadBladeFile:The ElastoDyn Blade file,
+ /home/runner/work/openfast/openfast/build/reg_tests/glue-codes/openfast/StC_test_OC4Semi_Linear_Na
+ c/../5MW_Baseline/NRELOffshrBsline5MW_Blade.dat, DISTRIBUTED BLADE PROPERTIES table contains the
+ PitchAxis column.  This column is unused and will be removed in future releases
+
   Time: 0 of 5 seconds.
                                                                                                    Performing linearization 1 at simulation time 0 s. (RotSpeed=12 rpm, BldPitch1=0 deg)            
-                                                                                                   Time: 1 of 5 seconds.  Estimated final completion at 12:26:50.                                                                                                                                      Time: 2 of 5 seconds.  Estimated final completion at 12:26:38.                                                                                                                                      Time: 3 of 5 seconds.  Estimated final completion at 12:26:38.                                                                                                                                      Time: 4 of 5 seconds.  Estimated final completion at 12:26:38.                                                                                                                                      Time: 5 of 5 seconds.  Estimated final completion at 12:26:38.                                                                                                                                     
-  Total Real Time:       4.831 seconds
-  Total CPU Time:        4.8303 seconds
-  Simulation CPU Time:   4.8091 seconds
+                                                                                                   Time: 1 of 5 seconds.  Estimated final completion at 18:14:28 (in 0.000 days).                                                                                                                      Time: 2 of 5 seconds.  Estimated final completion at 18:14:26 (in 0.000 days).                                                                                                                      Time: 3 of 5 seconds.  Estimated final completion at 18:14:26 (in 0.000 days).                                                                                                                      Time: 4 of 5 seconds.  Estimated final completion at 18:14:26 (in 0.000 days).                                                                                                                      Time: 5 of 5 seconds.  Estimated final completion at 18:14:26 (in 0.000 days).                                                                                                                     
+  Total Real Time:       1.112 seconds
+  Total CPU Time:        1.1062 seconds
+  Simulation CPU Time:   1.085 seconds
   Simulated Time:        5 seconds
-  Time Ratio (Sim/CPU):  1.0397
+  Time Ratio (Sim/CPU):  4.6084
 
   OpenFAST terminated normally.
 

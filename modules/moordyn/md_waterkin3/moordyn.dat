@@ -1,0 +1,41 @@
+Testing the full SeaState MD coupling
+A vertical line to check the current load
+A rod to check the waves (via submergence), 0.5 submergence = still water level 
+This is the same input file as md_waterkin2 with the excpetion of the waterkinematics flag
+---------------------- LINE DICTIONARY -----------------------------------------------------
+LineType  Diam    MassDenInAir   EA     cIntDamp     EI        Cd      Ca     CdAx    CaAx 
+(-)       (m)       (kg/m)       (N)     (Pa-s)    (N-m^2)     (-)     (-)     (-)     (-)  
+main  0.333  685.00  3.27E+09  -1        0     1    0.27  1      0.20        
+---------------------- ROD TYPES ------------------------------------
+TypeName      Diam     Mass/m    Cd     Ca      CdEnd    CaEnd
+(name)        (m)      (kg/m)    (-)    (-)     (-)      (-)
+Can          10       1.0e3     0.6    1.0     1.2      1.0        
+---------------------- RODS ----------------------------------------
+ID   RodType  Attachment  Xa    Ya    Za    Xb    Yb    Zb   NumSegs  RodOutputs
+(#)  (name)    (#/key)    (m)   (m)   (m)   (m)   (m)   (m)  (-)       (-)
+1      Can      Fixed      0     0    -10    0     0     10   20        - 
+---------------------- POINTS -----------------------------------------------------
+Node      Type      X      Y         Z        M       V      CdA   Ca 
+(-)       (-)      (m)    (m)       (m)      (kg)    (m^3)   (m2)  () 
+1       Fixed      0       0      -600        0       0       0    0 
+2       Fixed      0       0         0        0       0       0    0
+---------------------- LINES -----------------------------------------------------
+Line     LineType   NodeA     NodeB   UnstrLen  NumSegs   Flags/Outputs
+(-)       (-)       (-)       (-)       (m)       (-)         (-)
+1         main      1          2       600         30          -
+---------------------- SOLVER OPTIONS ---------------------------------------- 
+0.001    dtM          - time step to use in mooring integration
+1.5e5    kb           - bottom stiffness  Senu used 1.5e6 but for MD this causes pretty bad bumps on seabed contact
+1e4      cb           - bottom damping   Senu used zero
+600      WtrDpth      - water depth
+300      TmaxIC       - threshold for IC convergence
+4        CdScaleIC    - Drag scaling factor for IC gen (intentionally large, so start of simulation shows line motion)
+5        dtIC         - Time threshold for steady tensions to be considered converged
+0.0001   threshIC     - Threshold of tension differences to be under to be considered converged
+SEASTATE WaterKin - Path to the water kinematics file  
+---------------------- OUTPUTS -----------------------------------------
+FAIRTEN1
+LINE1NBFX 
+ROD1SUB
+Line1N15PX
+------------- need this line ------------------

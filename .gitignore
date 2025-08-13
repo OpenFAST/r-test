@@ -1,6 +1,12 @@
 # system files
 .DS_Store
 .vscode
+.atom
+.fortls
+.devcontainer
+.idea
+.env
+
 
 # cmake outputs
 CMakeCache.txt
@@ -29,6 +35,13 @@ vtk*
 # build directories
 glue-codes/openfast/5MW_Baseline/ServoData/DISCON*/build
 
+# backup files
+*.asv
+~$*.xlsx
+.*.swp
 
 # temporary figures
 _*.png
+
+# temporary python directory (only happens if running test case locally)
+__pycache__
