@@ -2,6 +2,8 @@
 
 Example of a twin-rotor semisubmersible with a shared flexible substructure.
 
+<img width="1200" height="800" alt="5MW_MRSemi_DLL_WSt_WavesIrr" src="https://github.com/user-attachments/assets/cf81e7a7-b5aa-45b3-a3ac-ceb642971bfa" />
+
 The animation 5MW_MRSemi_DLL_WSt_WavesIrr.mp4 visualizes approximately the first 96 sec of the simulation. 
 
 The VTK data for the animation was generated using the following settings:
