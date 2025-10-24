@@ -231,8 +231,8 @@ CMJointID       JMass            JMXX             JMYY             JMZZ         
   34        3761224.210      279618806.5      279618806.5     258757621.4          0.0         0.0         0.0         0.0      0.0      0.0  ! Column 2B
   48        3761224.210      279618806.5      279618806.5     258757621.4          0.0         0.0         0.0         0.0      0.0      0.0  ! Column 2C
 ---------------------------- OUTPUT: SUMMARY & OUTFILE --------------------------------
-True             SumPrint    - Output a Summary File (flag)
-1                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+False            SumPrint    - Output a Summary File (flag)
+0                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
 0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
 False            OutCOSM     - Output cosine matrices with the selected output member forces (flag)
 False            OutAll      - [T/F] Output all members' end forces
@@ -242,8 +242,35 @@ True             TabDelim    - Generate a tab-delimited output in the <rootname>
 "ES16.8e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
-             0   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
+             5   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
 MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
   (-)        (-)        (-)
+  72          3         1,6,11
+  73          3         1,6,11
+  74          3         1,6,11
+  75          3         1,6,11
+  76          3         1,6,11
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"RBTDXss,RBTDYss,RBTDZss,RBRDXss,RBRDYss,RBRDZss"
+"RBTVXss,RBTVYss,RBTVZss,RBRVXss,RBRVYss,RBRVZss"
+"RBTAXss,RBTAYss,RBTAZss,RBRAXss,RBRAYss,RBRAZss"
+"Intf1TDXe,Intf1TDYe,Intf1TDZe,Intf1RDXe,Intf1RDYe,Intf1RDZe"
+"Intf2TDXe,Intf2TDYe,Intf2TDZe,Intf2RDXe,Intf2RDYe,Intf2RDZe"
+"Intf1FXss,Intf1FYss,Intf1FZss,Intf1MXss,Intf1MYss,Intf1MZss"
+"Intf2FXss,Intf2FYss,Intf2FZss,Intf2MXss,Intf2MYss,Intf2MZss"
+"M1N1FKxe,M1N1FKye,M1N1FKze,M1N1MKxe,M1N1MKye,M1N1MKze"
+"M1N2FKxe,M1N2FKye,M1N2FKze,M1N2MKxe,M1N2MKye,M1N2MKze"
+"M1N3FKxe,M1N3FKye,M1N3FKze,M1N3MKxe,M1N3MKye,M1N3MKze"
+"M2N1FKxe,M2N1FKye,M2N1FKze,M2N1MKxe,M2N1MKye,M2N1MKze"
+"M2N2FKxe,M2N2FKye,M2N2FKze,M2N2MKxe,M2N2MKye,M2N2MKze"
+"M2N3FKxe,M2N3FKye,M2N3FKze,M2N3MKxe,M2N3MKye,M2N3MKze"
+"M3N1FKxe,M3N1FKye,M3N1FKze,M3N1MKxe,M3N1MKye,M3N1MKze"
+"M3N2FKxe,M3N2FKye,M3N2FKze,M3N2MKxe,M3N2MKye,M3N2MKze"
+"M3N3FKxe,M3N3FKye,M3N3FKze,M3N3MKxe,M3N3MKye,M3N3MKze"
+"M4N1FKxe,M4N1FKye,M4N1FKze,M4N1MKxe,M4N1MKye,M4N1MKze"
+"M4N2FKxe,M4N2FKye,M4N2FKze,M4N2MKxe,M4N2MKye,M4N2MKze"
+"M4N3FKxe,M4N3FKye,M4N3FKze,M4N3MKxe,M4N3MKye,M4N3MKze"
+"M5N1FKxe,M5N1FKye,M5N1FKze,M5N1MKxe,M5N1MKye,M5N1MKze"
+"M5N2FKxe,M5N2FKye,M5N2FKze,M5N2MKxe,M5N2MKye,M5N2MKze"
+"M5N3FKxe,M5N3FKye,M5N3FKze,M5N3MKxe,M5N3MKye,M5N3MKze"
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)

@@ -28,6 +28,7 @@ SWRT_YFree_VS_WTurb
 5MW_TLP_DLL_WTurb_WavesIrr_WavesMulti
 5MW_OC3Spar_DLL_WTurb_WavesIrr
 5MW_OC4Semi_WSt_WavesWN
+5MW_MRSemi_DLL_WSt_WavesIrr
 5MW_OC4Jckt_ExtPtfm
 5MW_Land_BD_DLL_WTurb
 5MW_Land_BD_Init

@@ -36,7 +36,8 @@ ID      LineType   AttachA   AttachB   UnstrLen  NumSegs     Outputs
 2.0      dtIC      - time interval for analyzing convergence during IC gen (s)
 60.0     TmaxIC    - max time for ic gen (s)
 4.0      CdScaleIC - factor by which to scale drag coefficients during dynamic relaxation (-)
-0.01    threshIC  - threshold for IC convergence (-)
+0.01     threshIC  - threshold for IC convergence (-)
+0        OutSwitch - 0: No separate MD output file; 1: print separate MD output file (-)
 ------------------------ OUTPUTS --------------------------------------------------
 FairTen1
 FairTen2
