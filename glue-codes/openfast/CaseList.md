@@ -47,6 +47,9 @@ WP_Stationary_Linear
 5MW_OC4Semi_MD_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
+Damped_Beam_Fixed
+Damped_Beam_Rotated
+Damped_Beam_Rotating
 StC_test_OC4Semi_Linear_Nac
 StC_test_OC4Semi_Linear_Tow
 Fake5MW_AeroLin_B1_UA4_DBEMT3
