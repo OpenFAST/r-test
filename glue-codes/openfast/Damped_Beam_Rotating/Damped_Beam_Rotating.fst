@@ -5,6 +5,7 @@ false         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
      0.0015   TMax            - Total run time (s)
      0.0015   DT              - Recommended module time step (s)
+          3   ModCoupling     - Module coupling method (switch) {1=loose; 2=tight with fixed Jacobian updates (DT_UJac); 3=tight with automatic Jacobian updates}
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           1   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
         0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
@@ -24,7 +25,7 @@ false         Echo            - Echo input data to <RootName>.ech (flag)
           0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
           0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
-          0   RotorDir        - List of rotor rotation directions [1 to NRotors] {0=CCW, 1=CW}
+          F   MirrorRotor     - Flag to reverse rotor rotation direction [1 to NRotors] {F=Normal, T=Mirror}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
           0   Gravity         - Gravitational acceleration (m/s^2)
           0   AirDens         - Air density (kg/m^3)
