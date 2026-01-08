@@ -2,7 +2,7 @@
  Test Format 1
 ------ Blade Parameters --------------------------------------------------------
 2                       station_total    - Number of blade input stations (-)
-1                       damp_type        - Damping type: 0: no damping; 1: damped
+1                       damp_type        - Damping type (switch) {0: none, 1: stiffness-proportional, 2: modal}
 ------ Stiffness-Proportional Damping [used only if damp_type=1] ---------------
    mu1        mu2        mu3        mu4        mu5        mu6
    (-)        (-)        (-)        (-)        (-)        (-)
