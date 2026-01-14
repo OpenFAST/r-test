@@ -47,6 +47,7 @@ WP_Stationary_Linear
 5MW_OC4Semi_MD_Linear
 Ideal_Beam_Fixed_Free_Linear
 Ideal_Beam_Free_Free_Linear
+IEA22MW_ModalDamping
 Damped_Beam_Fixed
 Damped_Beam_Rotated
 Damped_Beam_Rotating
