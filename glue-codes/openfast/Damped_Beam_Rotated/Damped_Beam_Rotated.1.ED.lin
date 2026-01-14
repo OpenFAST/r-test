@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 02-Jan-2026 at 17:39:26 using OpenFAST, compiled on Jan  2 2026 at 15:32:12 as a 64-bit application using double precision at commit v4.1.2-884-g1317aead-dirty
+Linearized model: Predictions were generated on 14-Jan-2026 at 23:20:17 using OpenFAST, compiled on Jan  8 2026 at 20:13:41 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn
 
 Description from the FAST input file: Modal damping for beam rotated and rotating through partial cycle
@@ -20,9 +20,9 @@ Order of inputs:
      Column   Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
           1    0.000000000000E+000                                                     F               0         Blade root 1 X force, node 1, N
-          2   -1.878802491156E+009                                                     F               0         Blade root 1 Y force, node 1, N
-          3    2.053172601372E+006                                                     F               0         Blade root 1 Z force, node 1, N
-          4   -8.960310677713E+006                                                     F               0         Blade root 1 X moment, node 1, Nm
+          2   -1.878752419141E+009                                                     F               0         Blade root 1 Y force, node 1, N
+          3    4.970373116639E+005                                                     F               0         Blade root 1 Z force, node 1, N
+          4   -1.658258479783E+006                                                     F               0         Blade root 1 X moment, node 1, Nm
           5    0.000000000000E+000                                                     F               0         Blade root 1 Y moment, node 1, Nm
           6    0.000000000000E+000                                                     F               0         Blade root 1 Z moment, node 1, Nm
           7    0.000000000000E+000                                                     F               0         Platform X force, node 1, N

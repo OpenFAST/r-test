@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 02-Jan-2026 at 17:39:46 using OpenFAST, compiled on Jan  2 2026 at 15:32:12 as a 64-bit application using double precision at commit v4.1.2-884-g1317aead-dirty
+Linearized model: Predictions were generated on 14-Jan-2026 at 23:20:14 using OpenFAST, compiled on Jan  8 2026 at 20:13:41 as a 64-bit application using double precision at commit HEAD-HASH-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; BeamDyn
 
 Description from the FAST input file: Fixed-free beam with modal damping
