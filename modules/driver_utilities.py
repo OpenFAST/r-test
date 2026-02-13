@@ -35,8 +35,8 @@ def get_library_path(module_name: str) -> str:
     if sys.platform in ["linux","linux2","darwin"]:
         possible_paths = [
             build_path / "modules" / module_name /  f"{basename}.{ext}",
-            build_path / ".." / "install" / "lib" / f"{basename}.{ext}",
             build_path / "glue-codes" / "labview" / f"{basename}.{ext}",
+            build_path / ".." / "install" / "lib" / f"{basename}.{ext}",
         ]
         for path in possible_paths:
             if path.is_file():
