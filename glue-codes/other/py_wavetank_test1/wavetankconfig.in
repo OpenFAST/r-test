@@ -11,6 +11,11 @@
 !          1    DensFact         - ratio of density - Density_full/Density_model (rho_F/rho_M).  Used with Froude scaling of forces/moments (-)
           0    DebugLevel       - 0: none, 1: I/O summary, 2: +positions/orientations passed, 3:+input file, 4: +all meshes
 "FRM1Q_Floating_tank_test" OutRootName     - Root name for any summary or other files
+! -------- Feature switches (numbers match OpenFAST values) -----------
+          2    CompAero         - Compute aerodynamic loads (switch) {0=None; 2=AeroDyn}
+          1    CompServo        - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
+          1    CompSeaSt        - Compute sea state information (switch) {0=None; 1=SeaState}
+          3    CompMooring      - Compute mooring system (switch) {0=None; 3=MoorDyn}
 ! -------- Environment ----------------
     9.80665    Gravity          - Gravitational acceleration (m/s^2)
        1025    WtrDens          - Water density (kg/m^3)
@@ -20,14 +25,16 @@
        2500    Pvap             - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
          50    WtrDpth          - Water depth (m)
           0    MSL2SWL          - Offset between still-water level and mean sea level (m) [positive upward]
+! -------- AeroDyn + InflowWind -------
+"../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_AeroDyn.dat"      AD_InputFile   - AeroDyn input file
+"FRM1Q_InflowWind.dat"   IfW_InputFile  - InflowWind input file
+! -------- ServoDyn -------------------
+!"none"        SrvD_InputFile   - ServoDyn input file
 ! -------- SeaState -------------------
 "../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_SeaState.dat"                      SS_InputFile   - SeaState input file
          0     WaveTimeShift    - Shift the SeaState wavetime by this amount (for phase shifting waves to match tank) (s)
 ! -------- MoorDyn --------------------
 "../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_MoorDyn.dat"      MD_InputFile   - MoorDyn input file
-! -------- AeroDyn + InflowWind -------
-"../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_AeroDyn.dat"      AD_InputFile   - AeroDyn input file
-"FRM1Q_InflowWind.dat"   IfW_InputFile  - InflowWind input file
 ! -------- Turbine Configuration ------
           2    NumBl            - Number of blades (-)
           1    HubRad           - The distance from the rotor apex to the blade root (m)
