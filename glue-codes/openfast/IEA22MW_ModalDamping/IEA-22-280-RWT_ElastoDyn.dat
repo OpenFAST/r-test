@@ -82,6 +82,7 @@ False                  PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   BlPIner(3)  - Blade pitch inertia, blade 3 (kg m^2) [unused for 2 blades]
 120447.70224890654     HubMass     - Hub mass (kg)
 1882498.8832803261     HubIner     - Hub inertia about rotor axis [3 blades] or teeter axis [2 blades] (kg m^2)
+0                      HubIner_Teeter - Hub inertia about teeter axis (2-blades) (kg m^2)
 3117597.5395135996     GenIner     - Generator inertia about HSS (kg m^2)
 821239.8004933242      NacMass     - Nacelle mass (kg)
 52470672.30243715      NacYIner    - Nacelle inertia about yaw axis (kg m^2)
