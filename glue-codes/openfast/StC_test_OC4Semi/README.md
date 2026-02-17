@@ -1,15 +1,15 @@
 ## StC\_test\_OC4Semi
 
-This test case illustrates four different Stuctural Controls in use. This is not a realisitic scenario and is only meant as illustrative.
+This test case illustrates four different Structural Controls in use. This is not a realistic scenario and is only meant as illustrative.
 
 ### Model description
 
-OC4 semi-submersible with rigid structure, no contoller, yaw fixed, fixed rotation rate.
+OC4 semi-submersible with rigid structure, no controller, yaw fixed, fixed rotation rate.
 
 ### StC locations
 
 - StC at blades
-     Point force along blade local `x` direction.  Ramps from 0-4 seconds, steady to 40 seconds, drops to zero.  Loads are unrealisically large.
+     Point force along blade local `x` direction.  Ramps from 0-4 seconds, steady to 40 seconds, drops to zero.  Loads are unrealistically large.
 - StC at nacelle
      Omnidirectional (x-y).  This is not tuned for the structure.
 - StC at tower

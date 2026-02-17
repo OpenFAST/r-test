@@ -1,0 +1,21 @@
+MoorDyn Waves and Currents input file
+Wave and current definition for MoorDyn for the FRM1Q wave tank tests
+--------------------------- WAVES -------------------------------------
+3                    WaveKinMod  - type of wave input {0 no waves; 3 set up grid of wave data based on time series}
+"FRM1Q_Wave.Elev"    WaveKinFile - file containing wave elevation time series at 0,0,0
+0.014                dtWave      - time step to use in setting up wave kinematics grid (s)
+0                    WaveDir     - wave heading (deg)
+2                                - X wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num)
+-1.68, 1.68, 30                  - X wave grid point data
+2                                - Y wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num)
+-2.11, 2.11, 2                   - Y wave grid point data
+2                                - Z wave input type (0: not used; 1: list values in ascending order; 2: uniform specified by -xlim, xlim, num)
+-1.3, 0, 10                      - Z wave grid point data
+--------------------------- CURRENT -------------------------------------
+1                    CurrentMod  - type of current input {0 no current; 1 steady current profile described below}
+z-depth	x-current	y-current
+(m)	(m/s)	(m/s)
+0	0.276	0.000
+0.51	0.276	0.000
+0.84	0.276	0.000
+--------------------- need this line ------------------

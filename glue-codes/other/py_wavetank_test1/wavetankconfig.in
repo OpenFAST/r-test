@@ -1,0 +1,58 @@
+! Wavetank test input file for MHK turbines
+!  NOTE: this assumes a floating MHK turbine
+!  This is read by WaveTank.f90 after it is initialized from LabView
+! -------- Sim control ----------------
+        0.1    DT               - timestep (unused)
+         10    TMax             - Max sim time (unused)
+          2    MHK              - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine} -- only works for MHK floating at present
+          1    InterpOrd        - Interpolation order (unused)
+!TODO: Froude scaling is not complete.  This can be enabled after finishing that part of the code.  For now remove these lines, or leave commented out
+!          1    ScaleFact        - scaling factor for scaling full size model to wavetank scale results (Froude scaling: lambda = full_size_dimension / model_size_dimension) [>1 expected] (-)
+!          1    DensFact         - ratio of density - Density_full/Density_model (rho_F/rho_M).  Used with Froude scaling of forces/moments (-)
+          0    DebugLevel       - 0: none, 1: I/O summary, 2: +positions/orientations passed, 3:+input file, 4: +all meshes
+"FRM1Q_Floating_tank_test" OutRootName     - Root name for any summary or other files
+! -------- Environment ----------------
+    9.80665    Gravity          - Gravitational acceleration (m/s^2)
+       1025    WtrDens          - Water density (kg/m^3)
+   1.06E-06    WtrVisc          - Kinematic viscosity of working fluid (m^2/s)
+       1500    SpdSound         - Speed of sound in working fluid (m/s)
+     101325    Patm             - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+       2500    Pvap             - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+         50    WtrDpth          - Water depth (m)
+          0    MSL2SWL          - Offset between still-water level and mean sea level (m) [positive upward]
+! -------- SeaState -------------------
+"../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_SeaState.dat"                      SS_InputFile   - SeaState input file
+         0     WaveTimeShift    - Shift the SeaState wavetime by this amount (for phase shifting waves to match tank) (s)
+! -------- MoorDyn --------------------
+"../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_MoorDyn.dat"      MD_InputFile   - MoorDyn input file
+! -------- AeroDyn + InflowWind -------
+"../../openfast/MHK_RM1_Floating_Tank-scaled/FRM1Q_AeroDyn.dat"      AD_InputFile   - AeroDyn input file
+"FRM1Q_InflowWind.dat"   IfW_InputFile  - InflowWind input file
+! -------- Turbine Configuration ------
+          2    NumBl            - Number of blades (-)
+          1    HubRad           - The distance from the rotor apex to the blade root (m)
+          0    PreCone          - Blade cone angle (deg)
+      -4.91    OverHang         - Distance from yaw axis (tower centerline) to rotor apex (m)
+          0    ShftTilt         - Rotor shaft tilt angle (deg)
+       -1.2    Twr2Shft         - Vertical distance from the tower-top to the rotor shaft, center of nacelle (m)
+        -24    TowerHt          - Height of tower relative MSL, vertically aligned with TowerBsPt (sloped towers not permitted yet)
+    10,0,0     TowerBsPt        - Height of tower base relative to PtfmRefPos in x,y, and MSL in z (m)
+      0,0,0    PtfmRefPos       - Location of platform reference point, relative to MSL.  Motions and loads all connect to this point
+      0,0,0    PtfmRefOrient    - Orientation of platform reference point, Euler angle set of roll,pitch,yaw (deg)
+! -------- Turbine initial conditions -
+      11.5     RotSpeed         - Rotational speed of rotor in rotor coordinates (rpm)
+         0     NacYaw           - Initial or fixed nacelle-yaw angle (deg)
+         0     BldPitch         - Blade 1 pitch (deg)
+         0     Azimuth          - Initial rotor azimuth
+! -------- Wave Buoy------------------
+     -15,0     WaveBuoyLoc      - Location of the wave elevation measurement buoy. SeaState data returned at every timestep at this location (m)
+! -------- Output ---------------------
+     false     SendScreenToFile - send to file <OutRootName>.screen.log if true
+         3     OutFile          - 0: no output file of channels, 1: output file in text format (at default DT)
+"ES20.6E2"     OutFmt           - Format used for text tabular output, excluding the time channel. (quoted string)
+! -------- VTK output -----------------
+"vtk"          WrVTK_Dir        - output directory for visualization
+        0      WrVTK            - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation; 3=mode shapes}
+        3      WrVTK_type       - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0] [Only lines/points supported at present]
+      0.1      WrVTK_DT         - DT for writing VTK files
+-3,-.5,0,5,.5,2 VTKNacDim       - Nacelle dimension passed in for VTK surface rendering [0,y0,z0,Lx,Ly,Lz] (m)

@@ -21,7 +21,8 @@ def get_library_path(module_name: str) -> str:
         "aerodyn": "libaerodyn_inflow_c_binding",
         "hydrodyn": "libhydrodyn_c_binding",
         "inflowwind": "libifw_c_binding",
-        "moordyn": "libmoordyn_c_binding"
+        "moordyn": "libmoordyn_c_binding",
+        "wavetanktesting": "libwavetanktesting_c_binding"
     }
     basename = module_map.get(module_name.lower(), f"lib{module_name}_c_binding")
     build_path = Path("..").joinpath(*[".."] * 3)    # for running from testing in a build dir
@@ -34,7 +35,8 @@ def get_library_path(module_name: str) -> str:
     if sys.platform in ["linux","linux2","darwin"]:
         possible_paths = [
             build_path / "modules" / module_name /  f"{basename}.{ext}",
-            build_path / ".." / "install" / "lib" / f"{basename}.{ext}"
+            build_path / ".." / "install" / "lib" / f"{basename}.{ext}",
+            build_path / "glue-codes" / "labview" / f"{basename}.{ext}",
         ]
         for path in possible_paths:
             if path.is_file():

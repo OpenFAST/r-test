@@ -24,6 +24,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
           1   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
           3   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
           0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
+          0   CompSoil        - Compute soil-structural dynamics (switch) {0=None; 1=SoilDyn}
           2   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}
         F T   MirrorRotor     - Flag to reverse rotor rotation direction [1 to NRotors] {F=Normal, T=Mirror}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
@@ -49,6 +50,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "MHK_RM1_Floating_SubDyn.dat"         SubFile         - Name of file containing sub-structural input parameters (quoted string)
 "MHK_RM1_Floating_MoorDyn.dat"        MooringFile     - Name of file containing mooring system input parameters (quoted string)
 "unused"                              IceFile         - Name of file containing ice input parameters (quoted string)
+"unused"                              SoilFile        - Name of the file containing the SoilDyn input parameters (quoted string)
 ---------------------- INPUT FILES Rotor 2 -------------------------------------
 "MHK_RM1_Floating_ElastoDyn_R2.dat"   EDFile          - Name of file containing ElastoDyn input parameters (quoted string)
 "unused"                              BDBldFile(1)    - Name of file containing BeamDyn input parameters for blade 1 (quoted string)

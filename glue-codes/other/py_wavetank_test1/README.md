@@ -1,0 +1,1 @@
+This test contains duplicates of the input files from the `../../openfast/MHK_RM1_Floating_Tank-scaled` case. These are duplicated here as there isn't a good way to reuse those other files when running this case in GH actions

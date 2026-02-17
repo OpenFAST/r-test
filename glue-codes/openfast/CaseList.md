@@ -7,6 +7,8 @@ AWT_WSt_StartUpShutDown
 AOC_WSt
 AOC_YFree_WTurb
 AOC_YFix_WSt
+AOC_YFriction_Loading
+AOC_YFriction_Stiffness
 
 UAE_Dnwind_YRamp_WSt
 UAE_Upwind_Rigid_WRamp_PwrCurve
@@ -61,3 +63,5 @@ MHK_RM1_Floating
 MHK_RM1_Floating_wNacDrag
 
 Tailfin_FreeYaw1DOF_PolarBased
+
+OC6_phaseII

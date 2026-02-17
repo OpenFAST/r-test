@@ -14,7 +14,7 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 99999.0                DT_UJac     - Time between calls to get Jacobians (s) 
 1000000.0              UJacSclFact - Scaling factor used in Jacobians (-) 
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
-          1   NRotors         - Number of rotors in turbine (-) 
+      1   NRotors         - Number of rotors in turbine (-) 
       1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}  
       1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM} 
       2   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15} 
@@ -24,8 +24,9 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
       0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn}  
       0   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex} 
       0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn} 
+      0   CompSoil        - Compute soil-structural dynamics (switch) {0=None; 1=SoilDyn}
       0   MHK             - MHK turbine type (switch) {0=Not an MHK turbine; 1=Fixed MHK turbine; 2=Floating MHK turbine}      
-          F   MirrorRotor     - Flag to reverse rotor rotation direction [1 to NRotors] {F=Normal, T=Mirror}
+      F   MirrorRotor     - Flag to reverse rotor rotation direction [1 to NRotors] {F=Normal, T=Mirror}
 ---------------------- ENVIRONMENTAL CONDITIONS --------------------------------
     9.80665   Gravity         - Gravitational acceleration (m/s^2)
       1.225   AirDens         - Air density (kg/m^3)
@@ -49,6 +50,7 @@ False                  Echo        - Echo input data to <RootName>.ech (flag)
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string) 
 ""            MooringFile     - NamTe of file containing mooring system input parameters (quoted string) 
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string) 
+"unused"      SoilFile        - Name of the file containing the SoilDyn input parameters (quoted string)
 ---------------------- OUTPUT -------------------------------------------------- 
 False                   SumPrint    - Print summary data to "<RootName>.sum" (flag) 
 10.0                   SttsTime    - Amount of time between screen status messages (s) 

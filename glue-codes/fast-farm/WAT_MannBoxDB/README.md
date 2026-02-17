@@ -14,5 +14,5 @@ The filenames have the form FFDB_D150_512x512x64.u where:
 The Mann box is a zero mean turbulence that can be superimposed on a flow field.  Since the Mann box is periodic in all directions, a single Man box will be repeated across the entire wind farm to provide full coverage of all wakes.
 
 See the user guide for details on the WAT theory, usage, and the input files:
- - https://ap-openfast.readthedocs.io/en/f-ffwat/source/user/fast.farm/InputFiles.html#wake-added-turbulence-wat
- - https://ap-openfast.readthedocs.io/en/f-ffwat/source/user/fast.farm/FFarmTheory.html#wake-added-turbulence-wat
+ - https://openfast.readthedocs.io/en/main/source/user/fast.farm/InputFiles.html#wake-added-turbulence-wat
+ - https://openfast.readthedocs.io/en/main/source/user/fast.farm/FFarmTheory.html#wake-added-turbulence-wat
