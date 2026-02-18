@@ -3,14 +3,14 @@ Generated with AeroElasticSE FAST driver
 ---------------------- SIMULATION CONTROL --------------------------------------
 False                  Echo        - Echo input data to <RootName>.ech (flag)
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-25.0                    TMax        - Total run time (s)
-0.01                 DT          - Recommended module time step (s)
-          3   ModCoupling     - Module coupling method (switch) {1=loose; 2=tight with fixed Jacobian updates (DT_UJac); 3=tight with automatic Jacobian updates}
+25.0                   TMax        - Total run time (s)
+0.01                   DT          - Recommended module time step (s)
+3                      ModCoupling - Module coupling method (switch) {1=loose; 2=tight with fixed Jacobian updates (DT_UJac); 3=tight with automatic Jacobian updates}
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
-          0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
-        1.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
-       1e-4   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
-          6   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
+0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
+1.0                    RhoInf      - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
+1e-5                   ConvTol     - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+6                      MaxConvIter - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
 99999.0                DT_UJac     - Time between calls to get Jacobians (s)
 1000000.0              UJacSclFact - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
