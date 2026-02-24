@@ -4,7 +4,7 @@ FAST.Farm     input         - file, using two turbines separated by 3D downstrea
 False         Echo          - Echo input data to <RootName>.ech? (flag)
 FATAL         AbortLevel    - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
 10            TMax          - Total run time (s) [>=0.0]
-3             Mod_AmbWind   - Ambient wind model (-) (switch) {1: high-fidelity precursor in VTK format, 2: one InflowWind module, 3: multiple instances of InflowWind module}
+4             Mod_AmbWind   - Ambient wind model (-) (switch) {1: high-fidelity precursor in VTK format, 2: one InflowWind module, 3: multiple instances of InflowWind module, 4: high-fidelity precursor in AMReX format}
 2             Mod_WaveField - Wave field handling (-) (switch) {1: use individual HydroDyn inputs without adjustment, 2: adjust wave phases based on turbine offsets from farm origin}
 0             Mod_SharedMooring - Shared mooring system model (switch) {0: None, 3=MoorDyn}}
 --- SHARED MOORING SYSTEM --- [used only for Mod_SharedMoor>0]
@@ -39,12 +39,12 @@ False         ChkWndFiles   - Check all the ambient wind files for data consiste
 0.5           DT_High-AMReX - Time step for high-resolution wind data interpolation (s) [>0.0]
 --- WIND TURBINES ---
 4             NumTurbines   - Number of wind turbines (-) [>=1] [last 6 columns below used only for Mod_AmbWind=2 or 3]
-WT_X            WT_Y            WT_Z            WT_FASTInFile   X0_High         Y0_High         Z0_High         dX_High         dY_High         dZ_High        
-(m)             (m)             (m)             (string)        (m)             (m)             (m)             (m)             (m)             (m)            
-1.20200000e+02	-315	0	"FFTest_WT1.fst"	-1.00300000e+02	-540	1	4	5	5
-1.20200000e+02	315	0	"FFTest_WT2.fst"	-1.00300000e+02	90	1	4	5	5
-7.50200000e+02	-315	0	"FFTest_WT3.fst"	5.29700000e+02	-540	1	4	5	5
-7.50200000e+02	315	0	"FFTest_WT4.fst"	5.29700000e+02	90	1	4	5	5
+WT_X            WT_Y   WT_Z      WT_FASTInFile   X0_High           Y0_High    Z0_High   dX_High   dY_High  dZ_High        
+(m)             (m)    (m)       (string)        (m)               (m)        (m)       (m)       (m)      (m)            
+1.20200000e+02  -315    0     "FFTest_WT1.fst"   -1.00300000e+02   -540        1         4         5        5
+1.20200000e+02   315    0     "FFTest_WT2.fst"   -1.00300000e+02     90        1         4         5        5
+7.50200000e+02  -315    0     "FFTest_WT3.fst"    5.29700000e+02   -540        1         4         5        5
+7.50200000e+02   315    0     "FFTest_WT4.fst"    5.29700000e+02     90        1         4         5        5
 --- WAKE DYNAMICS ---
 1             Mod_Wake      - Switch between wake formulations {1:Polar, 2:Curl, 3:Cartesian} (-) (switch)
 125           RotorDiamRef       - Reference turbine rotor diameter for wake calculations (m) [>0.0]
