@@ -1,5 +1,5 @@
 
-Linearized model: Predictions were generated on 11-Oct-2025 at 13:44:19 using OpenFAST, compiled on Oct 10 2025 at 17:31:28 as a 64-bit application using double precision at commit v4.1.2-727-g39496902
+Linearized model: Predictions were generated on 11-Mar-2026 at 17:04:02 using OpenFAST, compiled on Mar 11 2026 at 16:48:05 as a 64-bit application using double precision at commit -128-NOTFOUND
  linked with  NWTC Subroutine Library; ElastoDyn; InflowWind; AeroDyn
 
 Description from the FAST input file: One blade, 4 aero-stations, Linearization with continuous-state aerodynamic modules
@@ -27,7 +27,7 @@ Order of outputs:
         Row   Operating Point                                                   Rotating Frame? Derivative Order Description
    ---------- ---------------                                                   --------------- ---------------- -----------
           1    1.300000000000E+001                                                     F               0         Wind1VelX, (m/s)
-          2    0.000000000000E+000                                                     F               0         Wind1VelY, (m/s)
+          2   -0.000000000000E+000                                                     F               0         Wind1VelY, (m/s)
           3    0.000000000000E+000                                                     F               0         Wind1VelZ, (m/s)
 
 
@@ -35,5 +35,5 @@ Linearized state matrices:
 
 D: 3 x 3
     1.000000000000E+000  0.000000000000E+000  0.000000000000E+000
-    0.000000000000E+000  0.000000000000E+000 -1.300000000000E+001
+   -0.000000000000E+000 -0.000000000000E+000 -1.300000000000E+001
     0.000000000000E+000  0.000000000000E+000  0.000000000000E+000
