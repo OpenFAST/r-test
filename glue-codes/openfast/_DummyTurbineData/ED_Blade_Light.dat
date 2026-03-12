@@ -12,11 +12,11 @@ Dummy light blade
           1   AdjFlSt     - Factor to adjust blade flap stiffness (-)
           1   AdjEdSt     - Factor to adjust blade edge stiffness (-)
 ---------------------- DISTRIBUTED BLADE PROPERTIES ----------------------------
-    BlFract      PitchAxis      StrcTwst       BMassDen        FlpStff        EdgStff
-      (-)           (-)          (deg)          (kg/m)         (Nm^2)         (Nm^2)
-0.0000000E+00  2.5000000E-01  0.0000000E+00  5.0E-6  1.8E+10      1.8E+10   
-0.5000000E+00  2.5000000E-01  0.0000000E+00  5.0E-6  1.8E+10      1.8E+10   
-1.0000000E+00  2.5000000E-01  0.0000000E+00  5.0E-6  1.8E+10      1.8E+10   
+        BlFract               StrcTwst               BMassDen               FlpStff                 EdgStff
+          (-)                   (deg)                 (kg/m)                 (Nm^2)                  (Nm^2)
+ 0.000000000000000E+00  0.000000000000000E+00  5.000000000000000E-06  1.800000000000000E+10  1.800000000000000E+10
+ 5.000000000000000E-01  0.000000000000000E+00  5.000000000000000E-06  1.800000000000000E+10  1.800000000000000E+10
+ 1.000000000000000E+00  0.000000000000000E+00  5.000000000000000E-06  1.800000000000000E+10  1.800000000000000E+10
 ---------------------- BLADE MODE SHAPES ---------------------------------------
      0.0622   BldFl1Sh(2) - Flap mode 1, coeff of x^2
      1.7254   BldFl1Sh(3) -            , coeff of x^3

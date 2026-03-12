@@ -32,6 +32,11 @@ False              ChkWndFiles        - Check all the ambient wind files for dat
 17                 NY_High            - Number  of high-resolution spatial nodes in Y direction for wind data interpolation (-) [>=2]
 17                 NZ_High            - Number  of high-resolution spatial nodes in Z direction for wind data interpolation (-) [>=2]
 "unused"           InflowFile         - Name of file containing InflowWind module input parameters (quoted string)
+--- AMBIENT WIND: AMReX MODULE --- [used only for Mod_AmbWind=4]
+"data/subvolume"   WindDirPrefix - Directory prefix of AMReX wind sub-volumes {0=low-res, 1+=high-res} (quoted string)
+24            DirStartIndex - AMReX sub-volume directory suffix to consider as time=0 (quoted string)
+4.0           DT_Low-AMReX  - Time step for low -resolution wind data interpolation; will be used as the global FAST.Farm time step (s) [>0.0]
+0.5           DT_High-AMReX - Time step for high-resolution wind data interpolation (s) [>0.0]
 --- WIND TURBINES ---
 1                  NumTurbines        - Number of wind turbines (-) [>=1]                        [last 6 columns below used only for Mod_AmbWind=2 or 3]
 WT_X   WT_Y   WT_Z   WT_FASTInFile                                                               X0_High  Y0_High  Z0_High  dX_High  dY_High  dZ_High
@@ -42,7 +47,8 @@ WT_X   WT_Y   WT_Z   WT_FASTInFile                                              
 125                RotorDiamRef       - Reference turbine rotor diameter for wake calculations (m) [>0.0]
 5.0                dr                 - Radial increment of radial finite-difference grid (m) [>0.0]
 40                 NumRadii           - Number of radii in the radial finite-difference grid (-) [>=2]
-140                NumPlanes          - Number of wake planes (-) [>=2]
+DEFAULT            NumDFull           - Distance of full wake propagation, expressed as a multiple of RotorDiamRef [>0.0] or DEFAULT [DEFAULT=15]
+DEFAULT            NumDBuff           - Length of wake propagation buffer region, expressed as a multiple of RotorDiamRef [>=0.0] or DEFAULT [DEFAULT=5]
 0.14               f_c                - Cutoff (corner) frequency of the low-pass time-filter for the wake advection, deflection, and meandering model [recommended=1.28*U0/R] (Hz) [>0.0] or DEFAULT [DEFAULT=12.5/R, R estimated from dr and NumRadii, not recommended]
 DEFAULT            C_HWkDfl_O         - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor                                               (m    ) or DEFAULT [DEFAULT= 0.0  ]
 DEFAULT            C_HWkDfl_OY        - Calibrated parameter in the correction for wake deflection defining the horizontal offset at the rotor scaled with                         yaw error (m/deg) or DEFAULT [DEFAULT= 0.0 if Mod_Wake is 2, 0.3 otherwise]
@@ -81,12 +87,12 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 1000.0             OutDisWindY        - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
 --- OUTPUT ---
-False              SumPrint           - Print summary data to <RootName>.sum? (flag)
+True               SumPrint           - Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          - Amount of time between creating checkpoint files for potential restart (s) [>0.0]
 0.0                TStart             - Time to begin tabular output (s) [>=0.0]
 1                  OutFileFmt         - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
 True               TabDelim           - Use tab delimiters in text tabular output file? (flag) {uses spaces if False}
-"ES10.3E2"         OutFmt             - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"G0"               OutFmt             - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 DEFAULT            OutAllPlanes       - Output all wake planes at all time steps. [DEFAULT=False]
 7                  NOutRadii          - Number of radial nodes         for wake output for an individual rotor (-) [0 to 20]
 0, 2, 5, 11, 17, 21, 39  OutRadii     - List of radial nodes         for wake output for an individual rotor (-) [1 to NOutRadii] [unused for NOutRadii=0]

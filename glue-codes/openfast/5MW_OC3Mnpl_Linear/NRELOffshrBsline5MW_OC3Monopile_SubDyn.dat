@@ -12,13 +12,17 @@ True             SttcSolve   - Solve dynamics about static equilibrium point
              1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
              2   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
   0.000, 0.000   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
-             6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
+             6   GuyanDampSize - Guyan damping matrix (6nTPx6nTP if fixed bottom or 6(nTP-1)-by-6(nTP-1) if floating) [only if GuyanDampMod=2]
    0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
    0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
    0.0000e+00   0.0000e+00   1.4625e+06   0.0000e+00   0.0000e+00   0.0000e+00
    0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
    0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
    0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+------- INITIAL RIGID-BODY POSITION [used only for floating structure with more than one transition pieces] -------
+RBSurge    RBSway     RBHeave    RBRoll     RBPitch    RBYaw
+  (m)        (m)        (m)      (deg)      (deg)      (deg)
+  0.0        0.0        0.0       0.0        0.0        0.0
 ---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
              4   NJoints     - Number of joints (-)
 JointID          JointXss               JointYss               JointZss     JointType JointDirX  JointDirY JointDirZ JointStiff    ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
@@ -34,9 +38,9 @@ RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss 
    1           1           1           1           1           1           1        ""
 ------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
              1   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
-IJointID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     ![Global Coordinate System]
-  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
-   4           1           1           1           1           1           1
+IJointID      TPID     ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     ![Global Coordinate System]
+  (-)         (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+   4           1          1           1           1           1           1           1
 ----------------------------------- MEMBERS -------------------------------------------
              3   NMembers    - Number of members (-)
 MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  MSpin/COSMID   ! [MType={1c:beam circ., 1r:beam rect., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
@@ -45,7 +49,7 @@ MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2  MType  MSpin/COSMI
    2           2           3            1             1          1c      0
    3           3           4            1             1          1c      0
 ------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
-             4   NPropSets   - Number of structurally unique cross-sections
+             4   NPropSetsCyl - Number of structurally unique circular cross-sections (if 0 the following table is ignored)
 PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
   (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
    1        2.10000e+11     8.08000e+10       8500.00         6.000000        0.060000
@@ -53,11 +57,11 @@ PropSetID     YoungE          ShearG          MatDens          XsecD           X
    3        2.10000e+11     8.08000e+10       8500.00         3.870000        0.019000
    4        2.10000e+14     8.08000e+14          1.00         1.000000        0.010000
 ----------------- RECTANGULAR BEAM CROSS-SECTION PROPERTIES ---------------------------
-             0   NPropSets   - Number of structurally unique cross-sections (if 0 the following table is ignored)
-PropSetID     YoungE          ShearG          MatDens          XsecA          XsecB           XsecT
+             0   NPropSetsRec - Number of structurally unique rectangular cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecSa         XsecSb          XsecT
   (-)         (N/m2)          (N/m2)          (kg/m3)           (m)            (m)             (m)
 ----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
-             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
+             0   NXPropSets   - Number of structurally unique arbitrary cross-sections (if 0 the following table is ignored)
 PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy       XsecJ0        XsecJt
   (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)          (m4)
 -------------------------- CABLE PROPERTIES -------------------------------------------
@@ -89,7 +93,7 @@ False            OutAll      - [T/F] Output all members' end forces
              2   OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
 True             TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
              1   OutDec      - Decimation of output in the <rootname>.SD.out file
-"ES11.4e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+"G0"             OutFmt      - Output format for numerical results in the <rootname>.SD.out file
 "A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
 ------------------------- MEMBER OUTPUT LIST ------------------------------------------
              2   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].

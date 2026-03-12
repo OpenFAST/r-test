@@ -1,0 +1,98 @@
+
+ **************************************************************************************************
+ OpenFAST
+
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+ OpenFAST-v3.5.5-2458-gf4be568a
+ Compile Info:
+  - Compiler: GCC version 14.2.0
+  - Architecture: 64 bit
+  - Precision: double
+  - OpenMP: No
+  - Date: Apr 24 2025
+  - Time: 09:33:39
+ Execution Info:
+  - Date: 04/25/2025
+  - Time: 20:18:10-0600
+
+ OpenFAST input file heading:
+     Floating MHK turbine, based on the RM1 tidal current rotor
+
+  Running ElastoDyn.
+  Running InflowWind.
+  Running SeaState.
+  Generating incident wave kinematics and current time history.
+  Running AeroDyn.
+    AeroDyn: projMod: 1
+    Projection: legacy (NoSweepPitchTwist), BEM: legacy (2D)
+  Running HydroDyn.
+  WARNING:  The requested output channel is invalid: Wave1Elev
+  Reading in WAMIT output with root name "MHK_RM1_Floating_wNacDrag/MHK_RM1_Floating".
+  Computing radiation impulse response functions and wave diffraction forces.
+  Running MoorDyn (v2.2.2, 2024-01-16).
+    This is MoorDyn v2, with significant input file changes from v1.
+
+ **************************************************************************************************
+ MoorDyn
+
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
+
+ This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
+ See the "LICENSE" file distributed with this software for details.
+ **************************************************************************************************
+
+    Parsing MoorDyn input file: MHK_RM1_Floating_wNacDrag/MHK_RM1_Floating_wNacDrag_MoorDyn.dat
+   Created mooring system:  4 lines, 11 points, 0 rods, 0 bodies.
+    Catenary solve of Line 1 unsuccessful. Initializing as linear.
+    Catenary solve of Line 2 unsuccessful. Initializing as linear.
+    Catenary solve of Line 3 unsuccessful. Initializing as linear.
+    Catenary solve of Line 4 unsuccessful. Initializing as linear.
+    Finalizing initial conditions using dynamic relaxation.
+
+   t=0.1  FairTen 1: 7798, 1, 2                                                                      t=0.2  FairTen 1: 10177, 7798, 1                                                                  t=0.3  FairTen 1: 12044, 10177, 7798                                                              t=0.4  FairTen 1: 13410, 12044, 10177                                                             t=0.5  FairTen 1: 14420, 13410, 12044                                                             t=0.6  FairTen 1: 15196, 14420, 13410                                                             t=0.7  FairTen 1: 15822, 15196, 14420                                                             t=0.8  FairTen 1: 16350, 15822, 15196                                                             t=0.9  FairTen 1: 16813, 16350, 15822                                                             t=1  FairTen 1: 17233, 16813, 16350                                                               t=1.1  FairTen 1: 17621, 17233, 16813                                                             t=1.2  FairTen 1: 17985, 17621, 17233                                                             t=1.3  FairTen 1: 18326, 17985, 17621                                                             t=1.4  FairTen 1: 18649, 18326, 17985                                                             t=1.5  FairTen 1: 18960, 18649, 18326                                                             t=1.6  FairTen 1: 19261, 18960, 18649                                                             t=1.7  FairTen 1: 19552, 19261, 18960                                                             t=1.8  FairTen 1: 19835, 19552, 19261                                                             t=1.9  FairTen 1: 20108, 19835, 19552                                                             t=2  FairTen 1: 23397, 20108, 19835                                                               t=2.1  FairTen 1: 22756, 23397, 20108                                                             t=2.2  FairTen 1: 37177, 22756, 23397                                                             t=2.3  FairTen 1: 25014, 37177, 22756                                                             t=2.4  FairTen 1: 25399, 25014, 37177                                                             t=2.5  FairTen 1: 26977, 25399, 25014                                                             t=2.6  FairTen 1: 27796, 26977, 25399                                                             t=2.7  FairTen 1: 28900, 27796, 26977                                                             t=2.8  FairTen 1: 30605, 28900, 27796                                                             t=2.9  FairTen 1: 35738, 30605, 28900                                                             t=3  FairTen 1: 32400, 35738, 30605                                                               t=3.1  FairTen 1: 40025, 32400, 35738                                                             t=3.2  FairTen 1: 33568, 40025, 32400                                                             t=3.3  FairTen 1: 40685, 33568, 40025                                                             t=3.4  FairTen 1: 34417, 40685, 33568                                                             t=3.5  FairTen 1: 39499, 34417, 40685                                                             t=3.6  FairTen 1: 35362, 39499, 34417                                                             t=3.7  FairTen 1: 38489, 35362, 39499                                                             t=3.8  FairTen 1: 37190, 38489, 35362                                                             t=3.9  FairTen 1: 40353, 37190, 38489                                                             t=4  FairTen 1: 39750, 40353, 37190                                                               t=4.1  FairTen 1: 42461, 39750, 40353                                                             t=4.2  FairTen 1: 42478, 42461, 39750                                                             t=4.3  FairTen 1: 43605, 42478, 42461                                                             t=4.4  FairTen 1: 47313, 43605, 42478                                                             t=4.5  FairTen 1: 43528, 47313, 43605                                                             t=4.6  FairTen 1: 53563, 43528, 47313                                                             t=4.7  FairTen 1: 44738, 53563, 43528                                                             t=4.8  FairTen 1: 49609, 44738, 53563                                                             t=4.9  FairTen 1: 47482, 49609, 44738                                                             t=5  FairTen 1: 49683, 47482, 49609                                                               t=5.1  FairTen 1: 51881, 49683, 47482                                                             t=5.2  FairTen 1: 48966, 51881, 49683                                                             t=5.3  FairTen 1: 59415, 48966, 51881                                                             t=5.4  FairTen 1: 51117, 59415, 48966                                                             t=5.5  FairTen 1: 54098, 51117, 59415                                                             t=5.6  FairTen 1: 55438, 54098, 51117                                                             t=5.7  FairTen 1: 53021, 55438, 54098                                                             t=5.8  FairTen 1: 62640, 53021, 55438                                                             t=5.9  FairTen 1: 55373, 62640, 53021                                                             t=6  FairTen 1: 56624, 55373, 62640                                                               t=6.1  FairTen 1: 62476, 56624, 55373                                                             t=6.2  FairTen 1: 57132, 62476, 56624                                                             t=6.3  FairTen 1: 59601, 57132, 62476                                                             t=6.4  FairTen 1: 63148, 59601, 57132                                                             t=6.5  FairTen 1: 58987, 63148, 59601                                                             t=6.6  FairTen 1: 60932, 58987, 63148                                                             t=6.7  FairTen 1: 65814, 60932, 58987                                                             t=6.8  FairTen 1: 61173, 65814, 60932                                                             t=6.9  FairTen 1: 62553, 61173, 65814                                                             t=7  FairTen 1: 65214, 62553, 61173                                                               t=7.1  FairTen 1: 64161, 65214, 62553                                                             t=7.2  FairTen 1: 63838, 64161, 65214                                                              Fairlead tensions converged to 10% after 7.2 seconds.
+    Fairlead tension: 63838
+    Fairlead forces: -47401, -17305, -39102
+    Fairlead tension: 63838
+    Fairlead forces: -47401, 17305, -39102
+    Fairlead tension: 63838
+    Fairlead forces: 47401, -17305, -39102
+    Fairlead tension: 63838
+    Fairlead forces: 47401, 17305, -39102
+    MoorDyn initialization completed.
+ Mapping: ED%y%BladeLn2Mesh(1) -> AD%u%rotors(1)%BladeMotion(1)                                                                           
+ Mapping: ED%y%BladeLn2Mesh(2) -> AD%u%rotors(1)%BladeMotion(2)                                                                           
+ Mapping: ED%y%BladeRootMotion(1) -> AD%u%rotors(1)%BladeRootMotion(1)                                                                    
+ Mapping: ED%y%BladeRootMotion(2) -> AD%u%rotors(1)%BladeRootMotion(2)                                                                    
+ Mapping: ED%y%TowerLn2Mesh -> AD%u%rotors(1)%TowerMotion                                                                                 
+ Mapping: ED%y%HubPtMotion -> AD%u%rotors(1)%HubMotion                                                                                    
+ Mapping: ED%y%NacelleMotion -> AD%u%rotors(1)%NacelleMotion                                                                              
+ Mapping: ED%y%PlatformPtMesh -> HD%u%PRPMesh                                                                                             
+ Mapping: ED%y%PlatformPtMesh -> HD%u%Morison%Mesh                                                                                        
+ Mapping: ED%y%PlatformPtMesh -> HD%u%WAMITMesh                                                                                           
+ Mapping: ED%y%PlatformPtMesh -> MD%u%CoupledKinematics(1)                                                                                
+ Mapping: AD%y%rotors(1)%BladeLoad(1) -> ED%u%BladePtLoads(1) [AD%u%rotors(1)%BladeMotion(1) @ ED%y%BladeLn2Mesh(1)]*                     
+ Mapping: AD%y%rotors(1)%BladeLoad(2) -> ED%u%BladePtLoads(2) [AD%u%rotors(1)%BladeMotion(2) @ ED%y%BladeLn2Mesh(2)]*                     
+ Mapping: AD%y%rotors(1)%HubLoad -> ED%u%HubPtLoad [AD%u%rotors(1)%HubMotion @ ED%y%HubPtMotion]                                          
+ Mapping: AD%y%rotors(1)%NacelleLoad -> ED%u%NacelleLoads [AD%u%rotors(1)%NacelleMotion @ ED%y%NacelleMotion]                             
+ Mapping: AD%y%rotors(1)%TowerLoad -> ED%u%TowerPtLoads [AD%u%rotors(1)%TowerMotion @ ED%y%TowerLn2Mesh]*                                 
+ Mapping: HD%y%Morison%Mesh -> ED%u%PlatformPtMesh [HD%u%Morison%Mesh @ ED%y%PlatformPtMesh]                                              
+ Mapping: HD%y%WAMITMesh -> ED%u%PlatformPtMesh [HD%u%WAMITMesh @ ED%y%PlatformPtMesh]                                                    
+ Mapping: MD%y%CoupledLoads(1) -> ED%u%PlatformPtMesh [MD%u%CoupledKinematics(1) @ ED%y%PlatformPtMesh]                                   
+ Mapping: ED -> IfW                                                                                                                       
+  Time: 0 of 6 seconds.
+                                                                                                   Time: 5 of 6 seconds.  Estimated final completion at 20:19:22.                                                                                                                                     
+  Total Real Time:       1.1696 minutes
+  Total CPU Time:        2.459 minutes
+  Simulation CPU Time:   2.3788 minutes
+  Simulated Time:        0.1 minutes
+  Time Ratio (Sim/CPU):  4.20375E-02
+
+  OpenFAST terminated normally.
+

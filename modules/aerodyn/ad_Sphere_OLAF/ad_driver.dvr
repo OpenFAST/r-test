@@ -1,0 +1,40 @@
+----- AeroDyn Driver Input File ---------------------------------------------------------
+Kite test case
+----- Input Configuration ---------------------------------------------------------------
+False           Echo         - Echo input parameters to "<rootname>.ech"?
+         0      MHK          - MHK turbine type (switch) {0: not an MHK turbine, 1: fixed MHK turbine, 2: floating MHK turbine}   
+         1      AnalysisType - {1: multiple turbines, one simulation, 2: one turbine, one time-dependent simulation, 3: one turbine, combined cases}
+         2      TMax         - Total run time [used only when AnalysisType/=3] (s)
+         1      DT           - Simulation time step [used only when AnalysisType/=3] (s)
+"AeroDyn.dat"   AeroFile     - Name of the primary AeroDyn input file
+----- Environmental Conditions ----------------------------------------------------------
+1.225          FldDens      - Density of working fluid (kg/m^3)
+1.4639E-05     KinVisc      - Kinematic viscosity of working fluid (m^2/s)
+335            SpdSound     - Speed of sound in working fluid (m/s)
+103500         Patm         - Atmospheric pressure (Pa) [used only for an MHK turbine cavitation check]
+1700           Pvap         - Vapour pressure of working fluid (Pa) [used only for an MHK turbine cavitation check]
+0              WtrDpth      - Water depth (m)
+----- Inflow Data ---------------------------------------------------------------
+          0      CompInflow  - Compute inflow wind velocities (switch) {0=Steady Wind; 1=InflowWind}
+"unused"         InflowFile - Name of the InflowWind input file  [used only when CompInflow=1]
+         1.0     HWindSpeed  - Horizontal wind speed   [used only when CompInflow=0 and AnalysisType=1] (m/s)
+         50      RefHt       - Reference height for horizontal wind speed [used only when CompInflow=0] (m)
+          0      PLExp       - Power law exponent   [used only when CompInflow=0 and AnalysisType=1] (-)
+----- SeaState Data [used only when MHK = 1 or 2] ---------------------------------------
+          0     CompSeaSt              - Compute wave velocities (switch) {0=No Waves; 1=SeaState}
+"unused"        SeaStFile              - Name of the SeaState input file [used only when CompSeaSt=1]
+----- Turbine Data ----------------------------------------------------------------------
+0               NumTurbines - Number of turbines
+----- Time-dependent Analysis [used only when AnalysisType=2, numTurbines=1] ------------
+"unused"         TimeAnalysisFileName - Filename containing time series (6 column: Time, HWndSpeed, PLExp, RotSpd, Pitch, Yaw). 
+----- Combined-Case Analysis [used only when AnalysisType=3, numTurbines=1] -------------
+          0  NumCases     - Number of cases to run
+HWndSpeed    PLExp       RotSpd        Pitch         Yaw     dT      Tmax  DOF  Amplitude Frequency  
+(m/s)        (-)          (rpm)        (deg)        (deg)   (s)     (s)    (-)  (m or rad) (Hz)
+----- Output Settings -------------------------------------------------------------------
+"ES15.8E2"  OutFmt        - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+2           OutFileFmt    - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both}
+0           WrVTK         - VTK visualization data output: (switch) {0=none; 1=init; 2=animation}
+1           WrVTK_Type    - VTK visualization data type: (switch) {1=surfaces; 2=lines; 3=both}
+0.25        VTKHubRad     - HubRadius for VTK visualization (m)
+-0.1,-0.1,-0.1,0.2,0.2,0.2  VTKNacDim     - Nacelle Dimension for VTK visualization x0,y0,z0,Lx,Ly,Lz (m)

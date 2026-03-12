@@ -25,7 +25,7 @@ BEM test cases (feature testing):
  - BAR\_SineMotion: BAR rotor, regular analysis type, sine motion of the base 
  - BAR\_SineMotion\_UA4\_DBEMT3: same as BAR\_SineMotion, but uses continuous formulations for unsteady aerodynamics and DBEMT
  - BAR\_RNAMotion: BAR rotor, regular analysis type, advanced rotor inputs, genereral motion of yaw/pitch and rotor speed, unrealistic case
- - MHK\_RM1\_Fixed: MHK RM1 rotor, regular analysis type, basic rotor inputs, no base motion, buoyancy and cavitation on
+ - MHK\_RM1\_Fixed: MHK RM1 rotor, regular analysis type, basic rotor inputs, no base motion, cavitation on
 
 
 OLAF test cases ("realistic"):

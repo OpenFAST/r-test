@@ -1,0 +1,48 @@
+------- SoilDyn v1.0 INPUT FILE ------------------------------------------------------------------------------
+Example SoilDyn input file for coupling to REDWIN DLL for model 2 (point coupling)
+--------------------------------------------------------------------------------------------------------------
+      True                 Echo           - Echo input data to <RootName>.ech (flag)
+      "default"            DT             - Communication interval (s) (or "default")
+      3                    CalcOption     - Calculation option  {1: Stiffness / Damping matrices [unavailable], 2: P-Y curves [unavailable], 3: coupled REDWIN DLL}
+================== Parameters for Stiffness / Damping matrices [used only for CalcOption = 1] ================
+   0 0 -20.001             Location (X,Y,Z)     - the location of interface point (only one point allowed)
+Stiffness matrix (6x6)
+   0.0570e+12   0.0000e+00   0.0000e+00   0.0000e+00  -0.2601e+12   0.0000e+00
+   0.0000e+00   0.0570e+12   0.0000e+00   0.2601e+12   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   1.0000e+11   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.2601e+12   0.0000e+00   2.3483e+14   0.0000e+00   0.0000e+00
+  -0.2601e+12   0.0000e+00   0.0000e+00   0.0000e+00   2.3483e+14   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   1.0000e+13
+Damping ratio matrix (6x6)
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+================== Parameters for P-Y curves [used only for CalcOption = 2] ==================================
+      1                    PY_numPts      - Number of PY input points on separate lines below (must match number of P-Y curves in PY_inputFile)
+---- Location (x,y,z) ------- Point InputFile -------------
+   0 0 0                   "UnusedFile" 
+================== REDWIN interface for DLL [used only for CalcOption = 3] ===================================
+      2                          DLL_model      - Model used in DLL {1: , 2: , 3: }
+"REDWINmodel2-2.0_x86.dll"       DLL_FileName   - Name/location of the dynamic library {.dll [Windows] or .so [Linux]} in the REDWIN-DLL format (-) [used only with DLL Interface]
+      1                          DLL_NumPoints  - Number of interface points (specify location in global coordinates -- points must correspond to SubDyn mesh points) (-) [used only with DLL Interface]
+---- Location (X,Y,Z) ------- PropsFile ------------- LDispFile ------------  NOTE: PropsFile and LDipsFile must be relative to the working directory
+   0 0 -20.001               "Props.txt"      "LoadDisplacement.txt"
+====================== OUTPUT ==================================================
+      False                SumPrint       - Print summary data to <RootName>.SlD.sum (flag)
+                           OutList        - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+"SlD1Fxg, SlD1Fyg, SlD1Fzg, SlD1Mxg, SlD1Myg, SlD1Mzg"
+"SlD1TDxg,SlD1TDyg,SlD1TDzg,SlD1RDxg,SlD1RDyg,SlD1RDzg"
+"SlD2Fxg, SlD2Fyg, SlD2Fzg, SlD2Mxg, SlD2Myg, SlD2Mzg"
+"SlD2TDxg,SlD2TDyg,SlD2TDzg,SlD2RDxg,SlD2RDyg,SlD2RDzg"
+"SlD3Fxg, SlD3Fyg, SlD3Fzg, SlD3Mxg, SlD3Myg, SlD3Mzg"
+"SlD3TDxg,SlD3TDyg,SlD3TDzg,SlD3RDxg,SlD3RDyg,SlD3RDzg"
+"SlD4Fxg, SlD4Fyg, SlD4Fzg, SlD4Mxg, SlD4Myg, SlD4Mzg"
+"SlD4TDxg,SlD4TDyg,SlD4TDzg,SlD4RDxg,SlD4RDyg,SlD4RDzg"
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+---------------------------------------------------------------------------------------
+
+
+

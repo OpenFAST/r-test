@@ -1,7 +1,7 @@
 ! ------------ AirfoilInfo v1.01.x Input File ----------------------------------
-! NACA6_1000 airfoil, data based on values used for the design of the RM1 tidal current turbine.
-! line
-! line
+! NACA6_1000, data based on values used for the design of the RM1 tidal current turbine.
+! Circular cross section with multiple Reynolds Numbers.
+! Fourth column is the minimum pressure coefficient.
 ! ------------------------------------------------------------------------------
 "default"                 InterpOrd   ! Interpolation order to use for quasi-steady table lookup {1=linear; 3=cubic spline; "default"} [default=1]
         1.0               NonDimArea  ! The non-dimensional area of the airfoil (area/chord^2) (set to 1.0 if unsure or unneeded)

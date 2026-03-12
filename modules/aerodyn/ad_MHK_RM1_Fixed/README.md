@@ -3,13 +3,13 @@
 Test of the MHK cavitation and buoyancy features
 
 - Fixed MHK RM1 turbine (MHK = 1)
-- Steady inflow
+- Turbulent inflow
 - Standard geometry inputs for aerodyn driver
 - No base motion, yaw, or blade pitch
 - Fixed rotor rotational speed
 - DBEMT
 - Steady airfoil aerodynamics
-- Cavitation and buoyancy turned on
+- Cavitation turned on
 
 MHK RM1 turbine based on the following reference:
 Neary et al., "Methodology for Design and Economic Analysis of Marine Energy 

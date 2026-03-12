@@ -5,13 +5,12 @@ Test of features for floating MHK turbines
 - Floating MHK RM1 turbine (MHK = 2)
 - ElastoDyn, InflowWind, AeroDyn, HydroDyn, MoorDyn
 - Blade, tower, drivetrain, and platform DOFs on
-- Initial platform surge displacement
 - Fixed rotor rotational speed
 - Standard HAT geometry inputs
-- Steady inflow
+- Turbulent inflow
 - DBEMT
 - Steady airfoil aerodynamics
-- Cavitation and buoyancy turned on
+- Cavitation turned on
 
 MHK RM1 turbine based on the following reference:
 Neary et al., "Methodology for Design and Economic Analysis of Marine Energy 

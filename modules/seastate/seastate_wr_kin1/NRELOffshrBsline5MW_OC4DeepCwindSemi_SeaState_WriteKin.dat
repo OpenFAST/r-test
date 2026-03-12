@@ -14,7 +14,8 @@ False            Echo           - Echo the input file data (flag)
             10   NZ             – Number of nodes in the Z direction (-) [>=2]
 ---------------------- WAVES ---------------------------------------------------
              3   WaveMod        - Incident wave kinematics model {0: none=still water, 1: regular (periodic), 1P#: regular with user-specified phase, 2: JONSWAP/Pierson-Moskowitz spectrum (irregular), 3: White noise spectrum (irregular), 4: user-defined spectrum from routine UserWaveSpctrm (irregular), 5: Externally generated wave-elevation time series, 6: Externally generated full wave-kinematics time series [option 6 is invalid for PotMod/=0], 7: User-defined wave frequency components} (switch)
-             0   WaveStMod      - Model for stretching incident wave kinematics to instantaneous free surface {0: none=no stretching, 1: vertical stretching, 2: extrapolation stretching, 3: Wheeler stretching} (switch) [unused when WaveMod=0 or when PotMod/=0]
+             0   WaveStMod      - Model for stretching incident wave kinematics to instantaneous free surface {0: none=no stretching, 1: vertical stretching, 2: extrapolation stretching, 3: Wheeler stretching} (switch)
+             0   WvCrntMod      - Combined wave-current modeling option {0: simple superposition, 1: include Doppler effect, 2: include both Doppler effect and wave amplitude/spectrum scaling} (switch) [unused when WaveMod=0 or WaveMod=6. Also unused when there is no current from SeaState (CurrMod=0) or from InflowWind if MHK.]
            600   WaveTMax       - Analysis time for incident wave calculations (sec) [unused when WaveMod=0; determines WaveDOmega=2Pi/WaveTMax in the IFFT]
            0.125 WaveDT         - Time step for incident wave calculations     (sec) [unused when WaveMod=0 or 7; 0.1<=WaveDT<=1.0 recommended; determines WaveOmegaMax=Pi/WaveDT in the IFFT]
         1.7884   WaveHs         - Significant wave height of incident waves (meters) [used only when WaveMod=1, 2, or 3]
@@ -23,7 +24,7 @@ False            Echo           - Echo the input file data (flag)
       0.314159   WvLowCOff      - Low  cut-off frequency or lower frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
       1.570796   WvHiCOff       - High cut-off frequency or upper frequency limit of the wave spectrum beyond which the wave spectrum is zeroed (rad/s) [unused when WaveMod=0, 1, or 6]
              0   WaveDir        - Incident wave propagation heading direction                         (degrees) [unused when WaveMod=0 or 6]
-             0   WaveDirMod     - Directional spreading function {0: none, 1: COS2S}                  (-)       [only used when WaveMod=2,3, or 4]
+             0   WaveDirMod     - Directional spreading function {0: none, 1: COS2S}                  (-)       [only used when WaveMod=2,3, or 4; must be 0 if WvCrntMod/=0]
              1   WaveDirSpread  - Wave direction spreading coefficient ( > 0 )                        (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1]
              1   WaveNDir       - Number of wave directions                                           (-)       [only used when WaveMod=2,3, or 4 and WaveDirMod=1; odd number only]
              0   WaveDirRange   - Range of wave directions (full range: WaveDir +/- 1/2*WaveDirRange) (degrees) [only used when WaveMod=2,3,or 4 and WaveDirMod=1]
@@ -32,8 +33,8 @@ False            Echo           - Echo the input file data (flag)
 FALSE            WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]
 "unused"         WvKinFile      - Root name of externally generated wave data file(s)        (quoted string)    [used only when WaveMod=5, 6 or 7]
 ---------------------- 2ND-ORDER WAVES ----------------------------------------- [unused with WaveMod=0 or 6]
-FALSE            WvDiffQTF      - Full difference-frequency 2nd-order wave kinematics (flag)
-FALSE            WvSumQTF       - Full summation-frequency  2nd-order wave kinematics (flag)
+FALSE            WvDiffQTF      - Full difference-frequency 2nd-order wave kinematics (flag) [Must be false if WvCrntMod/=0]
+FALSE            WvSumQTF       - Full summation-frequency  2nd-order wave kinematics (flag) [Must be false if WvCrntMod/=0]
              0   WvLowCOffD     - Low  frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
       1.256637   WvHiCOffD      - High frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
       0.618319   WvLowCOffS     - Low  frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]

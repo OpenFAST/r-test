@@ -1,0 +1,89 @@
+--------- BEAMDYN with OpenFAST INPUT FILE -------------------------------------------
+IEA 22MW Offshore Wind Turbine in Fixed Bottom Configuration blade
+---------------------- SIMULATION CONTROL --------------------------------------
+False          Echo            - Echo input data to "<RootName>.ech" (flag)
+True          QuasiStaticInit - Use quasistatic pre-conditioning with centripetal accelerations in initialization (flag) [dynamic solve only]
+ 0            rhoinf          - Numerical damping parameter for generalized-alpha integrator
+ 2            quadrature      - Quadrature method: 1=Gaussian; 2=Trapezoidal (switch)
+ 1            refine          - Refinement factor for trapezoidal quadrature (-). DEFAULT = 1 [used only when quadrature=2]
+"DEFAULT"     n_fact          - Factorization frequency (-). DEFAULT = 5
+"DEFAULT"     DTBeam          - Time step size (s).
+"DEFAULT"     load_retries    - Number of factored load retries before quitting the aimulation
+"DEFAULT"     NRMax           - Max number of iterations in Newton-Ralphson algorithm (-). DEFAULT = 10
+"DEFAULT"     stop_tol        - Tolerance for stopping criterion (-)
+"DEFAULT"     tngt_stf_fd     - Flag to use finite differenced tangent stiffness matrix (-)
+"DEFAULT"     tngt_stf_comp   - Flag to compare analytical finite differenced tangent stiffness matrix  (-)
+"DEFAULT"     tngt_stf_pert   - perturbation size for finite differencing (-)
+"DEFAULT"     tngt_stf_difftol- Maximum allowable relative difference between analytical and fd tangent stiffness (-)
+False         RotStates       - Orient states in the rotating frame during linearization? (flag) [used only when linearizing]
+---------------------- GEOMETRY PARAMETER --------------------------------------
+          1   member_total    - Total number of members (-)
+         50   kp_total        - Total number of key points (-) [must be at least 3]
+     1     50                 - Member number; Number of key points in this member
+		 kp_xr 			 kp_yr 			 kp_zr 		 initial_twist
+		  (m)  			  (m)  			  (m)  		   (deg)
+	 0.00000e+00 	 -0.00000e+00 	 -8.07794e-28 	 1.20000e+01
+	 -1.37022e-06 	 0.00000e+00 	 2.81224e+00 	 1.19989e+01
+	 -2.38509e-05 	 0.00000e+00 	 5.62449e+00 	 1.19908e+01
+	 -9.97353e-05 	 0.00000e+00 	 8.43673e+00 	 1.19697e+01
+	 -3.08447e-04 	 0.00000e+00 	 1.12490e+01 	 1.19219e+01
+	 -7.61762e-04 	 0.00000e+00 	 1.40612e+01 	 1.18307e+01
+	 -1.59023e-03 	 0.00000e+00 	 1.68735e+01 	 1.16731e+01
+	 -2.93449e-03 	 0.00000e+00 	 1.96857e+01 	 1.14106e+01
+	 -4.99407e-03 	 0.00000e+00 	 2.24980e+01 	 1.09776e+01
+	 -8.00163e-03 	 0.00000e+00 	 2.53102e+01 	 1.02456e+01
+	 -1.21681e-02 	 0.00000e+00 	 2.81224e+01 	 9.03773e+00
+	 -1.78354e-02 	 0.00000e+00 	 3.09347e+01 	 7.94575e+00
+	 -2.51904e-02 	 0.00000e+00 	 3.37469e+01 	 7.10720e+00
+	 -3.47518e-02 	 0.00000e+00 	 3.65592e+01 	 6.45653e+00
+	 -4.67321e-02 	 0.00000e+00 	 3.93714e+01 	 5.89908e+00
+	 -6.15758e-02 	 0.00000e+00 	 4.21837e+01 	 5.39829e+00
+	 -7.96788e-02 	 0.00000e+00 	 4.49959e+01 	 4.93110e+00
+	 -1.01438e-01 	 0.00000e+00 	 4.78082e+01 	 4.48360e+00
+	 -1.27572e-01 	 0.00000e+00 	 5.06204e+01 	 4.04590e+00
+	 -1.58371e-01 	 0.00000e+00 	 5.34327e+01 	 3.61159e+00
+	 -1.94394e-01 	 0.00000e+00 	 5.62449e+01 	 3.17629e+00
+	 -2.36231e-01 	 0.00000e+00 	 5.90571e+01 	 2.73753e+00
+	 -2.84438e-01 	 0.00000e+00 	 6.18694e+01 	 2.29368e+00
+	 -3.39878e-01 	 0.00000e+00 	 6.46816e+01 	 1.84397e+00
+	 -4.02878e-01 	 0.00000e+00 	 6.74939e+01 	 1.38837e+00
+	 -4.74343e-01 	 0.00000e+00 	 7.03061e+01 	 9.27319e-01
+	 -5.54888e-01 	 0.00000e+00 	 7.31184e+01 	 4.61644e-01
+	 -6.45357e-01 	 0.00000e+00 	 7.59306e+01 	 -7.58937e-03
+	 -7.46531e-01 	 0.00000e+00 	 7.87429e+01 	 -4.78690e-01
+	 -8.59017e-01 	 0.00000e+00 	 8.15551e+01 	 -9.50092e-01
+	 -9.83846e-01 	 0.00000e+00 	 8.43673e+01 	 -1.42015e+00
+	 -1.12175e+00 	 0.00000e+00 	 8.71796e+01 	 -1.88668e+00
+	 -1.27336e+00 	 0.00000e+00 	 8.99918e+01 	 -2.34750e+00
+	 -1.44043e+00 	 0.00000e+00 	 9.28041e+01 	 -2.80054e+00
+	 -1.62316e+00 	 0.00000e+00 	 9.56163e+01 	 -3.24356e+00
+	 -1.82270e+00 	 0.00000e+00 	 9.84286e+01 	 -3.67412e+00
+	 -2.03993e+00 	 0.00000e+00 	 1.01241e+02 	 -4.08987e+00
+	 -2.27615e+00 	 0.00000e+00 	 1.04053e+02 	 -4.48885e+00
+	 -2.53256e+00 	 0.00000e+00 	 1.06865e+02 	 -4.86884e+00
+	 -2.80944e+00 	 0.00000e+00 	 1.09678e+02 	 -5.22769e+00
+	 -3.10914e+00 	 0.00000e+00 	 1.12490e+02 	 -5.56333e+00
+	 -3.43186e+00 	 0.00000e+00 	 1.15302e+02 	 -5.87333e+00
+	 -3.77910e+00 	 0.00000e+00 	 1.18114e+02 	 -6.15463e+00
+	 -4.15192e+00 	 0.00000e+00 	 1.20927e+02 	 -6.39864e+00
+	 -4.55124e+00 	 0.00000e+00 	 1.23739e+02 	 -6.57872e+00
+	 -4.97977e+00 	 0.00000e+00 	 1.26551e+02 	 -6.68034e+00
+	 -5.43712e+00 	 0.00000e+00 	 1.29363e+02 	 -6.62105e+00
+	 -5.92607e+00 	 0.00000e+00 	 1.32176e+02 	 -6.41644e+00
+	 -6.44603e+00 	 0.00000e+00 	 1.34988e+02 	 -5.96767e+00
+	 -7.00000e+00 	 -0.00000e+00 	 1.37800e+02 	 -4.95261e+00
+---------------------- MESH PARAMETER ------------------------------------------
+          10   order_elem     - Order of interpolation (basis) function (-)
+---------------------- MATERIAL PARAMETER --------------------------------------
+"IEA-22-280-RWT_BeamDyn_Blade.dat"    BldFile - Name of file containing properties for blade (quoted string)
+---------------------- OUTPUTS -------------------------------------------------
+False          SumPrint       - Print summary data to "<RootName>.sum" (flag)
+"ES12.3E2"    OutFmt         - Format used for text tabular output, excluding the time channel.
+          1   NNodeOuts      - Number of nodes to output to file [0 - 9] (-)
+          1,          2,          3,          4,          5,          6    OutNd          - Nodes whose values will be output  (-)
+          OutList            - The next line(s) contains a list of output parameters. See OutListParameters.xlsx for a listing of available output channels, (-)
+"RootFxr, RootFyr, RootFzr"
+"RootMxr, RootMyr, RootMzr"
+"TipTDxr, TipTDyr, TipTDzr"
+"TipRDxr, TipRDyr, TipRDzr"
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)

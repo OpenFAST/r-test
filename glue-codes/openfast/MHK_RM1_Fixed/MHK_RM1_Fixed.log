@@ -2,41 +2,55 @@
  **************************************************************************************************
  OpenFAST
 
- Copyright (C) 2023 National Renewable Energy Laboratory
- Copyright (C) 2023 Envision Energy USA LTD
+ Copyright (C) 2025 National Renewable Energy Laboratory
+ Copyright (C) 2025 Envision Energy USA LTD
 
  This program is licensed under Apache License Version 2.0 and comes with ABSOLUTELY NO WARRANTY.
  See the "LICENSE" file distributed with this software for details.
  **************************************************************************************************
 
- OpenFAST-v3.5.1-3-gb48c9b22
+ OpenFAST-v3.5.5-2458-gf4be568a
  Compile Info:
-  - Compiler: GCC version 13.2.0
+  - Compiler: GCC version 14.2.0
   - Architecture: 64 bit
   - Precision: double
   - OpenMP: No
-  - Date: Nov 20 2023
-  - Time: 16:26:54
+  - Date: Apr 24 2025
+  - Time: 09:33:39
  Execution Info:
-  - Date: 11/20/2023
-  - Time: 17:12:04-0700
+  - Date: 04/25/2025
+  - Time: 20:12:35-0600
 
  OpenFAST input file heading:
      Fixed MHK turbine, based on the RM1 tidal current turbine
 
- Running ElastoDyn.
- Nodal outputs section of ElastoDyn input file not found or improperly formatted.
- Running AeroDyn.
- AeroDyn Nodal Outputs: Nodal output section of AeroDyn input file not found or improperly formatted.
- Skipping nodal outputs.
- Running InflowWind.
+  Running ElastoDyn.
+  Running InflowWind.
+  Running SeaState.
+  Generating incident wave kinematics and current time history.
+  Running AeroDyn.
+    AeroDyn: projMod: 1
+    Projection: legacy (NoSweepPitchTwist), BEM: legacy (2D)
+ Mapping: ED%y%BladeLn2Mesh(1) -> AD%u%rotors(1)%BladeMotion(1)                                                                           
+ Mapping: ED%y%BladeLn2Mesh(2) -> AD%u%rotors(1)%BladeMotion(2)                                                                           
+ Mapping: ED%y%BladeRootMotion(1) -> AD%u%rotors(1)%BladeRootMotion(1)                                                                    
+ Mapping: ED%y%BladeRootMotion(2) -> AD%u%rotors(1)%BladeRootMotion(2)                                                                    
+ Mapping: ED%y%TowerLn2Mesh -> AD%u%rotors(1)%TowerMotion                                                                                 
+ Mapping: ED%y%HubPtMotion -> AD%u%rotors(1)%HubMotion                                                                                    
+ Mapping: ED%y%NacelleMotion -> AD%u%rotors(1)%NacelleMotion                                                                              
+ Mapping: AD%y%rotors(1)%BladeLoad(1) -> ED%u%BladePtLoads(1) [AD%u%rotors(1)%BladeMotion(1) @ ED%y%BladeLn2Mesh(1)]*                     
+ Mapping: AD%y%rotors(1)%BladeLoad(2) -> ED%u%BladePtLoads(2) [AD%u%rotors(1)%BladeMotion(2) @ ED%y%BladeLn2Mesh(2)]*                     
+ Mapping: AD%y%rotors(1)%HubLoad -> ED%u%HubPtLoad [AD%u%rotors(1)%HubMotion @ ED%y%HubPtMotion]                                          
+ Mapping: AD%y%rotors(1)%NacelleLoad -> ED%u%NacelleLoads [AD%u%rotors(1)%NacelleMotion @ ED%y%NacelleMotion]                             
+ Mapping: AD%y%rotors(1)%TowerLoad -> ED%u%TowerPtLoads [AD%u%rotors(1)%TowerMotion @ ED%y%TowerLn2Mesh]*                                 
+ Mapping: ED -> IfW                                                                                                                       
   Time: 0 of 30 seconds.
-                                                                                                   Time: 5 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                     Time: 10 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                    Time: 15 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                    Time: 20 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                    Time: 25 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                    Time: 30 of 30 seconds.  Estimated final completion at 17:12:44.                                                                                                                                   
-  Total Real Time:       39.294 seconds
-  Total CPU Time:        39.287 seconds
-  Simulation CPU Time:   39.198 seconds
-  Simulated Time:        30 seconds
-  Time Ratio (Sim/CPU):  0.76534
+                                                                                                   Time: 5 of 30 seconds.  Estimated final completion at 20:13:44.                                                                                                                                     Time: 10 of 30 seconds.  Estimated final completion at 20:13:29.                                                                                                                                    Time: 15 of 30 seconds.  Estimated final completion at 20:13:32.                                                                                                                                    Time: 20 of 30 seconds.  Estimated final completion at 20:13:30.                                                                                                                                    Time: 25 of 30 seconds.  Estimated final completion at 20:13:36.                                                                                                                                    Time: 30 of 30 seconds.  Estimated final completion at 20:13:33.                                                                                                                                   
+  Total Real Time:       0.9482 minutes
+  Total CPU Time:        2.797 minutes
+  Simulation CPU Time:   2.733 minutes
+  Simulated Time:        0.5 minutes
+  Time Ratio (Sim/CPU):  0.18295
 
   OpenFAST terminated normally.
 

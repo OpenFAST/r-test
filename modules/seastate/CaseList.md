@@ -6,3 +6,5 @@ seastate_CNW2
 seastate_WaveMod7_WaveStMod1
 seastate_WaveMod7_WaveStMod2
 seastate_WaveMod7_WaveStMod3
+seastate_WvCrntMod1
+seastate_WvCrntMod2
