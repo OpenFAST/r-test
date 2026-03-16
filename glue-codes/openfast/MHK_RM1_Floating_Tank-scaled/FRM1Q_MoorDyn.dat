@@ -2,7 +2,7 @@
 Floating MHK turbine mooring input properties, based on the RM1 tidal current rotor with a quad-style floating platform
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES Chain studless 0.018m --------------------
-Name     Diam     MassDen     EA        BA/-zeta   EI   Cd   Ca   CdAx   CaAx
+TypeName     Diam     MassDen     EA        BA/-zeta   EI   Cd   Ca   CdAx   CaAx
 (-)      (m)      (kg/m)      (N)       (N-s/-)    (-)  (-)  (-)  (-)    (-)
 main	0.003162	0.06168	   5558	     -1	        0	2.0	  0.8  0.4	 0.25
 ---------------------- ROD TYPES --------------------------------------------
@@ -57,7 +57,7 @@ ID  RodType  		Attachment  Xa    	Ya    	Za    	Xb    	Yb    	Zb   	NumSegs  	Ro
 34	towery	Body1	0.00E+00	-4.84E-03	-4.60E-01	0.00E+00	4.84E-03	-4.60E-01	1	-
 35	nacelle	Body1	-1.00E-01	0.00E+00	-5.05E-01	1.00E-01	0.00E+00	-5.05E-01	4	-
 ---------------------- POINTS -----------------------------------------------
-Node     Type      X        Y        Z       M     V      CdA    CA
+ID     Attachment      X        Y        Z       M     V      CdA    CA
 (-)      (-)       (m)      (m)      (m)     (kg)  (m^3)  (m^2)  (-)
 1	Fixed	-7.20E+00	-2.37E+00	-1.05E+00	0	0	0	0
 2	Fixed	-7.20E+00	2.37E+00	-1.05E+00	0	0	0	0
@@ -71,7 +71,7 @@ Node     Type      X        Y        Z       M     V      CdA    CA
 10	Body1	0.00E+00	0.00E+00	0.00E+00	0	0	0	0
 11	Body1	0.00E+00	0.00E+00	-5.05E-01	0	0	0	0
 ---------------------- LINES ------------------------------------------------
-Line     LineType  AttachA  AttachB   UnstrLen   NumSegs   Outputs 
+ID     LineType  AttachA  AttachB   UnstrLen   NumSegs   LineOutputs 
 (-)      (-)       (-)      (-)       (m)        (-)       (-)
 1        main      1        5        8.713       10        -
 2        main      2        6        8.713       10        -

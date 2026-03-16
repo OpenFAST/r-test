@@ -2,7 +2,7 @@
 Mooring system for ITI Energy Barge
 False   Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+TypeName     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
 (-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
 main     0.0809    130.403     589.0E6   -0.8      0.0   1.6     1.0    0.1    0.0
 ---------------------- POINTS --------------------------------
@@ -25,7 +25,7 @@ ID     Attachment  X        Y         Z      M      V       CdA   CA
 15     vessel     20.0    -20.0       -4.0    0       0      0     0
 16     vessel     20.0    -20.0       -4.0    0       0      0     0
 ---------------------- LINES --------------------------------------
-ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
+ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   LineOutputs
 (-)       (-)        (-)       (-)       (m)      (-)       (-)
 1         main       1         9      473.312      40        -
 2         main       2         10     473.312      40        -

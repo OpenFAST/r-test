@@ -2,7 +2,7 @@
 Placeholder mooring model for the twin-rotor semisubmersible
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------------
-Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+TypeName     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
 (-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
 main     0.0766    113.35     7.536E8     -1.0      0    2.0     0.8    0.4    0.25
 ------------------------- POINTS --------------------------------------------------
@@ -21,7 +21,7 @@ ID   Attachment     X          Y         Z       M       V      CdA     CA
 11     Vessel    -72.620    -35.000    -14.0     0       0       0       0
 12     Vessel      6.000    -80.390    -14.0     0       0       0       0
 -------------------------- LINES --------------------------------------------------
-ID      LineType   AttachA   AttachB   UnstrLen  NumSegs     Outputs
+ID      LineType   AttachA   AttachB   UnstrLen  NumSegs     LineOutputs
 (-)       (-)       (-)       (-)         (m)      (-)         (-)   
  1        main       1         7        835.35      20          -
  2        main       2         8        835.35      20          -

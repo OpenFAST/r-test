@@ -6,14 +6,14 @@ LineType  Diam    MassDenInAir   EA     cIntDamp     EI       Cd      Ca    CdAx
 cable     0.175      40       751e6       -0.8      0         1.0     0.0    1.2     0.008    
 buoyancy  0.26       40       751e6       -0.8      0         1.0     0.0    1.2     0.008 
 ---------------------- POINTS -----------------------------------------------------
-Node      Type      X      Y         Z        M       V      CdA   Ca 
+ID      Attachment      X      Y         Z        M       V      CdA   Ca 
 (-)       (-)      (m)    (m)       (m)      (kg)    (m^3)   (m2)  () 
 1       Fixed    -800      0      -600        0       0       0    0
 2       Free     -300      0      -300        0       0       0    0
 3       Free     -100      0      -300        0       0       0    0
 4       Vessel     0      0         0        0       0       0    0   
 ---------------------- LINES -----------------------------------------------------
-Line     LineType   NodeA     NodeB   UnstrLen  NumSegs   Flags/Outputs
+ID     LineType   AttachA     AttachB   UnstrLen  NumSegs   LineOutputs
 (-)       (-)       (-)       (-)       (m)       (-)         (-)
 1        cable      1          2       600         30        p
 2      buoyancy     2          3       300         20        p
