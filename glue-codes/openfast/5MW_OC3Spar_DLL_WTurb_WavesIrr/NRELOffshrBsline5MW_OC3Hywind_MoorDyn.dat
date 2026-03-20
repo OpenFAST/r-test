@@ -2,7 +2,7 @@
 Mooring system for OC3-Hywind
 FALSE    Echo      - echo the input file data (flag)
 ----------------------- LINE TYPES ------------------------------------------
-Name     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
+TypeName     Diam      MassDen       EA    BA/-zeta    EI    Cd      Ca     CdAx   CaAx
 (-)       (m)      (kg/m)        (N)    (N-s/-)    (-)   (-)     (-)    (-)    (-)
 main     0.09      77.7066   384.243E6  -0.8       0.0   1.6     1.0    0.1    0.0
 ---------------------- POINTS --------------------------------
@@ -15,7 +15,7 @@ ID     Attachment  X        Y         Z      M      V    CdA   CA
 5      vessel    -2.6      4.5     -70.0    0     0      0     0
 6      vessel    -2.6     -4.5     -70.0    0     0      0     0
 ---------------------- LINES --------------------------------------
-ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   Outputs
+ID      LineType   AttachA   AttachB  UnstrLen  NumSegs   LineOutputs
 (-)       (-)        (-)       (-)       (m)       (-)      (-)
 1         main       1         4        902.2      20        -
 2         main       2         5        902.2      20        -

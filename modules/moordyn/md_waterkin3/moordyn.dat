@@ -15,12 +15,12 @@ ID   RodType  Attachment  Xa    Ya    Za    Xb    Yb    Zb   NumSegs  RodOutputs
 (#)  (name)    (#/key)    (m)   (m)   (m)   (m)   (m)   (m)  (-)       (-)
 1      Can      Fixed      0     0    -10    0     0     10   20        - 
 ---------------------- POINTS -----------------------------------------------------
-Node      Type      X      Y         Z        M       V      CdA   Ca 
+ID      Attachment      X      Y         Z        M       V      CdA   Ca 
 (-)       (-)      (m)    (m)       (m)      (kg)    (m^3)   (m2)  () 
 1       Fixed      0       0      -600        0       0       0    0 
 2       Fixed      0       0         0        0       0       0    0
 ---------------------- LINES -----------------------------------------------------
-Line     LineType   NodeA     NodeB   UnstrLen  NumSegs   Flags/Outputs
+ID     LineType   AttachA     AttachB   UnstrLen  NumSegs   LineOutputs
 (-)       (-)       (-)       (-)       (m)       (-)         (-)
 1         main      1          2       600         30          -
 ---------------------- SOLVER OPTIONS ---------------------------------------- 
