@@ -11,6 +11,8 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
         0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
        1e-2   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
          10   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
+      false   AutoRelax       - Adaptive under-relaxation for the tight-coupling iterative solver (flag) [default=true]
+        1.0   RelaxFactor     - Constant or initial (if AutoRelax) under-relaxation factor for the tight-coupling iterative solver (-) [>0 and <=1; default=0.7 if AutoRelax=false; default=0.3 if AutoRelax=true]
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     3000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
