@@ -16,7 +16,7 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
           1   NRotors         - Number of rotors in turbine (-)
           1   CompElast       - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades; 3=Simplified ElastoDyn}
-          0   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
+          1   CompInflow      - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from ExtInflow}
           0   CompAero        - Compute aerodynamic loads (switch) {0=None; 1=AeroDisk; 2=AeroDyn; 3=ExtLoads}
           0   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
           1   CompSeaSt       - Compute sea state information (switch) {0=None; 1=SeaState}
