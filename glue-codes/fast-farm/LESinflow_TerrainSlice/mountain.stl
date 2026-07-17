@@ -1,0 +1,30 @@
+solid MiniMountain
+  facet normal -0.577350 -0.577350 0.577350
+    outer loop
+      vertex 800.0  700.0  10.0
+      vertex 1200.0 700.0  10.0
+      vertex 1000.0 1000.0 100.0
+    endloop
+  endfacet
+  facet normal 0.577350 -0.577350 0.577350
+    outer loop
+      vertex 1200.0 700.0  10.0
+      vertex 1200.0 1100.0 10.0
+      vertex 1000.0 1000.0 100.0
+    endloop
+  endfacet
+  facet normal 0.577350 0.577350 0.577350
+    outer loop
+      vertex 1200.0 1100.0 10.0
+      vertex 800.0  1100.0 10.0
+      vertex 1000.0 1000.0 100.0
+    endloop
+  endfacet
+  facet normal -0.577350 0.577350 0.577350
+    outer loop
+      vertex 800.0  1100.0 10.0
+      vertex 800.0  700.0  10.0
+      vertex 1000.0 1000.0 100.0
+    endloop
+  endfacet
+endsolid MiniMountain

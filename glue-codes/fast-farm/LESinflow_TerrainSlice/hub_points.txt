@@ -1,0 +1,14 @@
+# Small hand-authored point cloud for Feature 3 reg-test.
+# Format: x y z in metres in the FAST.Farm global frame.
+# Blank/comment lines are ignored; # and ! both start comments.
+# Column widths are irrelevant; whitespace OR comma both accepted.
+x, y, z
+ 800.0,  700.0,  90.0
+1000.0,  700.0,  90.0
+1200.0,  700.0,  90.0
+ 800.0, 1000.0,  90.0
+1000.0, 1000.0,  90.0
+1200.0, 1000.0,  90.0
+ 800.0, 1100.0,  90.0
+1000.0, 1100.0,  90.0
+1200.0, 1100.0,  90.0
