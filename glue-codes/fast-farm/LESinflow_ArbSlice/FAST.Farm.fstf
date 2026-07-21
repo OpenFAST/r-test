@@ -94,6 +94,11 @@ SliceName  origin(m)      plane    extent1(m)  extent2(m)
 "hubXY"    (700 700 95)   XY       1200        600           ! 1200x600 XY plane at hub height
 "crossYZ"  (1000 700 5)   YZ       600         300           ! 600x300 YZ plane through the turbine at x=1000
 "crossXZ"  (700 1000 5)   XZ       1200        300           ! 1200x300 XZ plane through the turbine at y=1000
+--- TERRAIN-FOLLOWING SAMPLING ---
+0                  NumTerrainSlices   - Number of terrain-following point-cloud slices (-) [0 to 99]
+DEFAULT            WrTerrainDT        - Sampling period (s) or DEFAULT (=DT_Low)
+SliceName   Offsets(m)     OffsetNormal   SourceType   FileName
+(-)         (m,list)       (-,-,-|dflt)   (STL|Point)  (quoted)
 --- OUTPUT ---
 True               SumPrint           - Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          - Amount of time between creating checkpoint files for potential restart (s) [>0.0]

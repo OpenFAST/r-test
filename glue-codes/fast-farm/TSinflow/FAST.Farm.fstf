@@ -87,6 +87,16 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 0                  NOutDisWindXZ      - Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 999]
 0.0                OutDisWindY        - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
+--- AXIS-ALIGNED PLANE SLICES (extent-controlled) ---
+0                  NumPlaneSlices     - Number of axis-aligned extent-controlled planar slices (-) [0 to 99]
+DEFAULT            WrPlaneDT          - Sampling period (s) or DEFAULT (=DT_Low)
+SliceName  origin(m)      plane    extent1(m)  extent2(m)
+(-)        (m,m,m)        (-)      (m)         (m)
+--- TERRAIN-FOLLOWING SAMPLING ---
+0                  NumTerrainSlices   - Number of terrain-following point-cloud slices (-) [0 to 99]
+DEFAULT            WrTerrainDT        - Sampling period (s) or DEFAULT (=DT_Low)
+SliceName   Offsets(m)     OffsetNormal   SourceType   FileName
+(-)         (m,list)       (-,-,-|dflt)   (STL|Point)  (quoted)
 --- OUTPUT ---
 True               SumPrint           - Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          - Amount of time between creating checkpoint files for potential restart (s) [>0.0]
