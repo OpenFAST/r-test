@@ -88,7 +88,7 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
 --- AXIS-ALIGNED PLANE SLICES (extent-controlled) --- [Feature 2, Snippet 6 grammar]
 3                  NumPlaneSlices     - Number of axis-aligned extent-controlled planar slices (-) [0 to 99]
-DEFAULT            WrPlaneDT          - Feature 2 sampling period (s); DEFAULT falls back to WrDisDT
+DEFAULT            WrPlaneDT          - Feature 2 sampling period (s); DEFAULT falls back to DT_Low
 SliceName  origin(m)      normal   extent1(m)  extent2(m)
 (-)        (m,m,m)        (-)      (m)         (m)
 "hubXY"    (700 700 95)   (0 0 1)  1200        600           ! 1200x600 XY plane at hub height

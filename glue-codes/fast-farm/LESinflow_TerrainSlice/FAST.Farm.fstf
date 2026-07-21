@@ -88,7 +88,7 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
 --- TERRAIN-FOLLOWING SAMPLING --- [Feature 3, PDF §2.8 grammar with SourceType flag]
 2                  NumTerrainSlices   - Number of terrain-following point-cloud slices (-) [0 to 99]
-DEFAULT            WrTerrainDT        - Feature 3 sampling period (s); DEFAULT falls back to WrDisDT
+DEFAULT            WrTerrainDT        - Feature 3 sampling period (s); DEFAULT falls back to DT_Low
 SliceName   Offsets(m)     OffsetNormal   SourceType   FileName
 (-)         (m,list)       (-,-,-|dflt)   (STL|Point)  (quoted)
 "terr"      50 100 150     default        STL          "mountain.stl"       ! sample above the mountain surface on 3 offset sheets
