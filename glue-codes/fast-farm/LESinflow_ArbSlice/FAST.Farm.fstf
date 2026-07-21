@@ -86,14 +86,14 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 0                  NOutDisWindXZ      - Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 999]
 1000.0             OutDisWindY        - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
---- AXIS-ALIGNED PLANE SLICES (extent-controlled) --- [Feature 2, Snippet 6 grammar]
+--- AXIS-ALIGNED PLANE SLICES (extent-controlled) ---
 3                  NumPlaneSlices     - Number of axis-aligned extent-controlled planar slices (-) [0 to 99]
 DEFAULT            WrPlaneDT          - Feature 2 sampling period (s); DEFAULT falls back to DT_Low
-SliceName  origin(m)      normal   extent1(m)  extent2(m)
+SliceName  origin(m)      plane    extent1(m)  extent2(m)
 (-)        (m,m,m)        (-)      (m)         (m)
-"hubXY"    (700 700 95)   (0 0 1)  1200        600           ! 1200x600 XY plane at hub height
-"crossYZ"  (1000 700 5)   (1 0 0)  600         300           ! 600x300 YZ plane through the turbine at x=1000
-"crossXZ"  (700 1000 5)   (0 1 0)  1200        300           ! 1200x300 XZ plane through the turbine at y=1000
+"hubXY"    (700 700 95)   XY       1200        600           ! 1200x600 XY plane at hub height
+"crossYZ"  (1000 700 5)   YZ       600         300           ! 600x300 YZ plane through the turbine at x=1000
+"crossXZ"  (700 1000 5)   XZ       1200        300           ! 1200x300 XZ plane through the turbine at y=1000
 --- OUTPUT ---
 True               SumPrint           - Print summary data to <RootName>.sum? (flag)
 99999.9            ChkptTime          - Amount of time between creating checkpoint files for potential restart (s) [>0.0]

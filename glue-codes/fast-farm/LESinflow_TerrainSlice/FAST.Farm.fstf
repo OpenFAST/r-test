@@ -86,7 +86,7 @@ False              WrDisWind          - Write low- and high-resolution disturbed
 0                  NOutDisWindXZ      - Number of XZ planes for output of disturbed wind data across the low-resolution domain to <RootName>/Low.DisXZ<n_out>.t<n>.vtk (-) [0 to 999]
 1000.0             OutDisWindY        - Y coordinates of XZ planes for output of disturbed wind data across the low-resolution domain (m) [1 to NOutDisWindXZ] [unused for NOutDisWindXZ=0]
 3.0                WrDisDT            - Time step for disturbed wind visualization output (s) [>0.0] or DEFAULT [DEFAULT=DT_Low or DT_Low-VTK] [unused for WrDisWind=False and NOutDisWindXY=NOutDisWindYZ=NOutDisWindXZ=0]
---- TERRAIN-FOLLOWING SAMPLING --- [Feature 3, PDF §2.8 grammar with SourceType flag]
+--- TERRAIN-FOLLOWING SAMPLING ---
 2                  NumTerrainSlices   - Number of terrain-following point-cloud slices (-) [0 to 99]
 DEFAULT            WrTerrainDT        - Feature 3 sampling period (s); DEFAULT falls back to DT_Low
 SliceName   Offsets(m)     OffsetNormal   SourceType   FileName
