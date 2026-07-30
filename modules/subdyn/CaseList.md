@@ -15,3 +15,4 @@ SD_Spring_Case1
 SD_Spring_Case2
 SD_Spring_Case3
 SD_MultiTP
+SD_SelfWeight_FloatingSystem
