@@ -59,7 +59,7 @@
 "ES20.6E2"     OutFmt           - Format used for text tabular output, excluding the time channel. (quoted string)
 ! -------- VTK output -----------------
 "vtk"          WrVTK_Dir        - output directory for visualization
-        0      WrVTK            - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation; 3=mode shapes}
+        0      WrVTK            - VTK visualization data output: (switch) {0=none; 1=initialization data only; 2=animation}
         3      WrVTK_type       - Type of VTK visualization data: (switch) {1=surfaces; 2=basic meshes (lines/points); 3=all meshes (debug)} [unused if WrVTK=0] [Only lines/points supported at present]
       0.1      WrVTK_DT         - DT for writing VTK files
 -3,-.5,0,5,.5,2 VTKNacDim       - Nacelle dimension passed in for VTK surface rendering [0,y0,z0,Lx,Ly,Lz] (m)
