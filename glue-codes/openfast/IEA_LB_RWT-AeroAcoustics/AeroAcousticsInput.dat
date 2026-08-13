@@ -4,7 +4,7 @@ IEA task 37 RWT turbine -- https://github.com/IEAWindTask37/IEA-3.4-130-RWT
 False        Echo         - Echo the input to "<rootname>.AD.NN.ech"?  (flag)
 0.1          DT_AA        - Time interval for aeroacoustics calculations (s), must be a multiple of DT_Aero from AeroDyn  (or "default")
 0            AAStart      - Time after which the AeroAcoustics module is run (s)
-70           BldPrcnt     - Percentage of the blade span, starting from the tip, that will contribute to the overall noise levels. (float)
+70           BldPrcnt     - Percentage of the blade span, starting from the tip, that contributes to noise. The closest node from BlSpn in the AeroDyn blade input file is taken. (float)
 ======  Aeroacoustic Models  ============================================================================
 2            TIMod        - Turbulent Inflow noise model  {0: none, 1: Amiet 2: Amiet + Simplified Guidati} (switch) 
 1            TICalcMeth   - Method to estimate turbulence intensity incident to the profile {1: given table, 2: computed on the fly} (switch) [Only used if TIMod!=0]
