@@ -26,7 +26,7 @@ False           Echo         - Echo input parameters to "<rootname>.ech"?
 ----- Turbine Data ----------------------------------------------------------------------
 1               NumTurbines - Number of turbines
 ----- Turbine(1) Geometry----------------------------------------------------------------
-     False      BasicHAWTFormat(1) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+     False      BasicHAWTFormat(1) - Flag to switch between basic or generic input format {True: basic HAWT inputs BaseOriginInit to Twr2Shft, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
 False           MirrorRotor(1) - Flag indicating the rotor rotation direction is mirrored (counter-clockwise viewed from upwind)
 0,0,0           BaseOriginInit(1)      - x,y,z coordinates of base origin (m)
 0,0,0           BaseOrientationInit(1) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
@@ -67,7 +67,7 @@ True            HAWTprojection(1)      - True if turbine is a horizontal axis tu
 "unused"        BldMotionFileName(1_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 "unused"        BldMotionFileName(1_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 ----- Turbine(2) Geometry ---------------------------------------------------------------
-     False      BasicHAWTFormat(2) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+     False      BasicHAWTFormat(2) - Flag to switch between basic or generic input format {True: basic HAWT inputs BaseOriginInit to Twr2Shft, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
 False           MirrorRotor(2) - Flag indicating the rotor rotation direction is mirrored (counter-clockwise viewed from upwind)
 0,0,0           BaseOriginInit(2)      - x,y,z coordinates of base origin (m)
 0,0,0           BaseOrientationInit(2) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
@@ -108,7 +108,7 @@ True            HAWTprojection(2)      - True if turbine is a horizontal axis tu
 "unused"        BldMotionFileName(2_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 "unused"        BldMotionFileName(2_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 ----- Turbine(3) Geometry ---------------------------------------------------------------
-     False      BasicHAWTFormat(3) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+     False      BasicHAWTFormat(3) - Flag to switch between basic or generic input format {True: basic HAWT inputs BaseOriginInit to Twr2Shft, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
 False           MirrorRotor(3) - Flag indicating the rotor rotation direction is mirrored (counter-clockwise viewed from upwind)
 0,0,0           BaseOriginInit(3)      - x,y,z coordinates of base origin (m)
 0,0,0           BaseOrientationInit(3) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
@@ -149,7 +149,7 @@ True            HAWTprojection(3)      - True if turbine is a horizontal axis tu
 "unused"        BldMotionFileName(3_2)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 "unused"        BldMotionFileName(3_3)  - Filename containing blade pitch motion [used only when BldMotionType=1]
 ----- Turbine(4) Geometry ---------------------------------------------------------------
-     False      BasicHAWTFormat(4) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+     False      BasicHAWTFormat(4) - Flag to switch between basic or generic input format {True: basic HAWT inputs BaseOriginInit to Twr2Shft, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
 False           MirrorRotor(4) - Flag indicating the rotor rotation direction is mirrored (counter-clockwise viewed from upwind)
 0,0,0           BaseOriginInit(4)      - x,y,z coordinates of base origin (m)
 0,0,0           BaseOrientationInit(4) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
@@ -190,7 +190,7 @@ True            HAWTprojection(4)      - True if turbine is a horizontal axis tu
 "unused"        BldMotionFileName(4_2)  - Filename containing blade pitch motion [used only when BlMotionType=1]
 "unused"        BldMotionFileName(4_3)  - Filename containing blade pitch motion [used only when BlMotionType=1]
 ----- Turbine(5) Geometry ---------------------------------------------------------------
-     False      BasicHAWTFormat(5) - Flag to switch between basic or generic input format {True: next 7 lines are basic inputs, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
+     False      BasicHAWTFormat(5) - Flag to switch between basic or generic input format {True: basic HAWT inputs BaseOriginInit to Twr2Shft, False: Base/Twr/Nac/Hub/Bld geometry and motion must follow}
 False           MirrorRotor(5) - Flag indicating the rotor rotation direction is mirrored (counter-clockwise viewed from upwind)
 0,0,0           BaseOriginInit(5)      - x,y,z coordinates of base origin (m)
 0,0,0           BaseOrientationInit(5) - successive rotations (theta_x, theta_y, theta_z) defining initial orientation of the base frame from the global frame (e.g. roll, tilt, yaw) (deg)
