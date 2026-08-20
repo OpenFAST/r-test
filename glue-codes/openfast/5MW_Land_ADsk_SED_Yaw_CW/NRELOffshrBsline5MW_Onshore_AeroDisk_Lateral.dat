@@ -1,0 +1,50 @@
+--- AERO DISK INPUT FILE -------
+NREL 5MW actuator disk input file
+--- SIMULATION CONTROL ---------
+false         echo            - Echo input data to "<RootName>.ADsk.ech" (flag)
+  "default"   DT              - Integration time step (s)
+--- ENVIRONMENTAL CONDITIONS ---
+      1.225   AirDens         - Air density (kg/m^3) (or "default")
+--- ACTUATOR DISK PROPERTIES ---
+     63.0     RotorRad        - Rotor radius (m) (or "default")
+"TSR,  RtSpd ,   VRel,  Skew ,   Pitch" InColNames      - Input column headers (string) {may include a combination of "TSR, RtSpd, VRel, Pitch, Skew"} (up to 4 columns) [choose TSR or RtSpd,VRel; if Skew is absent, Skew is modeled as (COS(Skew))^2]
+48, 0, 0, 0, 104       InColDims       - Number of unique values in each column (-) (must have same number of columns as InColName) [each >=2]
+@CpCtCq_Lateral.csv
+--- OUTPUTS --------------------
+              OutList         - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
+"ADCp"
+"ADCq"
+"ADCt"
+"ADFx"
+"ADFxi"
+"ADFy"
+"ADFyi"
+"ADFz"
+"ADFzi"
+"ADMx"
+"ADMxi"
+"ADMy"
+"ADMyi"
+"ADMz"
+"ADMzi"
+"ADPitch"
+"ADPower"
+"ADSkew"
+"ADSpeed"
+"ADSTVx"
+"ADSTVxi"
+"ADSTVy"
+"ADSTVyi"
+"ADSTVz"
+"ADSTVzi"
+"ADTSR"
+"ADVRel"
+"ADVWindx"
+"ADVWindxi"
+"ADVWindy"
+"ADVWindyi"
+"ADVWindz"
+"ADVWindzi"
+"ADYawErr"
+END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
+--------------------------------
