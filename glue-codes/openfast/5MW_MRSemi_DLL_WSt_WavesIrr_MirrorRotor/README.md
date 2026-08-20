@@ -5,6 +5,10 @@ From 5MW_MRSemi_DLL_WSt_WavesIrr, with two changes:
   MirrorRotor   F F -> F T
   Wake_Mod      3   -> 1     (the parent runs OLAF, which cannot be mirrored yet)
 
+Set Wake_Mod back to 3 once the free wake is mirrored. The parent case exists to
+exercise OLAF on a multi-rotor floating platform, and this copy gives that up
+until then; restoring it is the point of keeping the two cases side by side.
+
 Rotor 1 turns clockwise at y = -70 and rotor 2 turns counter-clockwise at
 y = +70, so the whole machine maps onto itself under y -> -y: the substructure
 joints, the six mooring lines, the five hydrodynamic bodies and the two rotors
