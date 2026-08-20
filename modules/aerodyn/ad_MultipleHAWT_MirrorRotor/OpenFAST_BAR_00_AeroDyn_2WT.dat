@@ -186,5 +186,18 @@ ALL                    BldNd_BlOutNd   - Specify a portion of the nodes to outpu
 "Fl"                       
 "Fd"                       
 "Mm"                       
+"Cl"
+"Cd"
+"Cm"
+"Cx"
+"Cy"
+"Cn"
+"Ct"
+"Fn"
+"Ft"
+"Fx"
+"Fy"
+"Theta"
+"Phi"
 END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
 ====================================================================================================

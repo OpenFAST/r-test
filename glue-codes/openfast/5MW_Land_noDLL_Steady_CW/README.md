@@ -23,3 +23,15 @@ split — the rotor-convention names (`RotSpeed`, `RotAccel`, `Azimuth`,
 `RotTorq`, `LSShftTq`) and the physical ones (`LSSTipVxa`, `LSSTipAxa`,
 `LSSTipPxa`, `LSShftMxa`, `LSSGagMxa`) — since those agree for a clockwise rotor
 and differ for a mirrored one.
+
+The list also carries the aerodynamic coefficient and force families at three
+blade nodes, together with the per-blade aerodynamic power. These are the
+channels that take an explicit mirror sign in `AeroDyn_IO.f90` but were
+previously requested by no registered case, so their signs were inferred from
+the source rather than measured. Each is paired with its mirror-invariant
+partner — `Cy`, `Cm` and `Ct` against `Cl`, `Cd`, `Cx` and `Cn`; `Ft` and `Fy`
+against `Fl`, `Fd`, `Fn` and `Fx`; `VIndy` against `VIndx` — so that a sign
+applied to the whole group by mistake cannot pass as correct.
+
+`B2AeroPwr` and `B3AeroPwr` require the blade permutation when comparing the two
+runs: blade 1 lies on the mirror plane and blades 2 and 3 exchange.
