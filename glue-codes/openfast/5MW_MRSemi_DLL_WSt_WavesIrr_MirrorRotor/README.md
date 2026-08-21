@@ -1,13 +1,17 @@
 Twin-rotor semisubmersible with the second rotor counter-clockwise
 
-From 5MW_MRSemi_DLL_WSt_WavesIrr, with two changes:
+From 5MW_MRSemi_DLL_WSt_WavesIrr, with one change:
 
   MirrorRotor   F F -> F T
-  Wake_Mod      3   -> 1     (the parent runs OLAF, which cannot be mirrored yet)
 
-Set Wake_Mod back to 3 once the free wake is mirrored. The parent case exists to
-exercise OLAF on a multi-rotor floating platform, and this copy gives that up
-until then; restoring it is the point of keeping the two cases side by side.
+It runs OLAF, as the parent does. The free wake was mirrored after this case was
+first written, and Wake_Mod has been restored to 3.
+
+This is the case that matters most for the free wake, because OLAF holds every
+rotor's wings in one shared wake. Rotor 1 is clockwise and rotor 2 is mirrored,
+so the two rotation directions coexist in a single wake and a single Biot-Savart
+solve. A mirror implemented by reflecting the world OLAF sees could not do this;
+it works because the rotation direction is carried per wing.
 
 Rotor 1 turns clockwise at y = -70 and rotor 2 turns counter-clockwise at
 y = +70, so the whole machine maps onto itself under y -> -y: the substructure
