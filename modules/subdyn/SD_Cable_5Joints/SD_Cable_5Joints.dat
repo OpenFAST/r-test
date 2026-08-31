@@ -132,7 +132,4 @@ MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10];
 "M3N2FKxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N1FKye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 "M2N2FKye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1FMxe"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1FMye"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
-"M2N1FMze"    - Static component of action force. Note that Z is the axial direction in the local member coordinate system.
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
