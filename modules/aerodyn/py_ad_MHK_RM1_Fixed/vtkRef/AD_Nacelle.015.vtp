@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<VTKFile type="PolyData" version="0.1" byte_order="LittleEndian">
+  <PolyData>
+    <Piece NumberOfPoints="      1" NumberOfVerts="  0" NumberOfLines="      0"
+           NumberOfStrips="  0" NumberOfPolys="      0">
+      <Points>
+        <DataArray type="Float32" NumberOfComponents="3" format="ascii">
+                       0.00000                       0.00000                     -21.20000
+        </DataArray>
+      </Points>
+      <PointData>
+        <DataArray type="Float32" Name="Force" NumberOfComponents="3" format="ascii">
+                 -120812.45347                    4576.32476                -1388469.24408
+        </DataArray>
+        <DataArray type="Float32" Name="Moment" NumberOfComponents="3" format="ascii">
+                     160.57072                 -162663.08540                      -0.00871
+        </DataArray>
+        <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
+                       0.00000                       0.00000                       0.00000
+        </DataArray>
+        <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
+                       0.00000                       0.00000                       0.00000
+        </DataArray>
+        <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
+                       0.00000                       0.00000                       0.00000
+        </DataArray>
+        <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
+                       0.83242                      -0.02895                      -0.03838
+        </DataArray>
+        <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
+                       0.00178                       0.05731                       0.00000
+        </DataArray>
+        <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
+                      -0.26344                       0.01567                      -0.02123
+        </DataArray>
+        <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
+                      -0.00842                      -0.02077                       0.00000
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
+                       0.99766                       0.00010                      -0.06843
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationY" NumberOfComponents="3" format="ascii">
+                       0.00010                       1.00000                       0.00299
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationZ" NumberOfComponents="3" format="ascii">
+                       0.06843                      -0.00299                       0.99765
+        </DataArray>
+      </PointData>
+    </Piece>
+  </PolyData>
+</VTKFile>

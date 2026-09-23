@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<VTKFile type="PolyData" version="0.1" byte_order="LittleEndian">
+  <PolyData>
+    <Piece NumberOfPoints="      1" NumberOfVerts="  0" NumberOfLines="      0"
+           NumberOfStrips="  0" NumberOfPolys="      0">
+      <Points>
+        <DataArray type="Float32" NumberOfComponents="3" format="ascii">
+                      -4.61320                       0.76358                     -20.53372
+        </DataArray>
+      </Points>
+      <PointData>
+        <DataArray type="Float32" Name="TranslationalVelocity" NumberOfComponents="3" format="ascii">
+                       0.81739                       0.78641                       1.26153
+        </DataArray>
+        <DataArray type="Float32" Name="RotationalVelocity" NumberOfComponents="3" format="ascii">
+                       1.28659                       0.05591                      -0.02604
+        </DataArray>
+        <DataArray type="Float32" Name="TranslationalAcceleration" NumberOfComponents="3" format="ascii">
+                       0.79541                      -1.41751                       1.07486
+        </DataArray>
+        <DataArray type="Float32" Name="RotationalAcceleration" NumberOfComponents="3" format="ascii">
+                      -0.06782                       0.02493                      -0.06951
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationX" NumberOfComponents="3" format="ascii">
+                       0.99979                       0.00001                      -0.02026
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationY" NumberOfComponents="3" format="ascii">
+                      -0.01571                      -0.63118                      -0.77548
+        </DataArray>
+        <DataArray type="Float32" Name="OrientationZ" NumberOfComponents="3" format="ascii">
+                      -0.01280                       0.77564                      -0.63105
+        </DataArray>
+      </PointData>
+    </Piece>
+  </PolyData>
+</VTKFile>
