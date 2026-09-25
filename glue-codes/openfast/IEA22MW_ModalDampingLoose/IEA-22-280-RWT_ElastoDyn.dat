@@ -152,13 +152,11 @@ True                   TabDelim    - Use tab delimiters in text tabular output f
 "RotThrust"
 "RotTorq"
 "TwrBsFxt"
-"TwrBsFyt"
 "TwrBsFzt"
 "TwrBsMxt"
 "TwrBsMyt"
 "TwrBsMzt"
 "YawBrFxp"
-"YawBrFyp"
 "YawBrFzp"
 "YawBrMxp"
 "YawBrMyp"
@@ -167,3 +165,5 @@ True                   TabDelim    - Use tab delimiters in text tabular output f
 "YawBrTDyt"
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
+"TwrBsFyt" -- nearly zero, so removed from test
+"YawBrFyp" -- nearly zero, so removed from test

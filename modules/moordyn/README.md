@@ -68,6 +68,10 @@ Vertical sinking rod. Line is dummy just to run code
 
 Single segement viscoelastic test to check mean load dynamic stiffness. Modified version of the viscoelastic test from MD-C polyester tests
 
+**md_syrope**
+
+Single segment Syrope test. Modified version of the viscoelastic test from MD-C Syrope tests
+
 **md_waterkin2**
 
 Testing the hybrid SeaState MD coupling. A vertical line to check the current profile and a rod to check the waves (via submergence), 0.5 submergence = still water level.

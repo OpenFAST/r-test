@@ -3,14 +3,16 @@ Twin-rotor semisubmersible with two NREL 5-MW turbines
 ---------------------- SIMULATION CONTROL --------------------------------------
 False         Echo            - Echo input data to <RootName>.ech (flag)
 "FATAL"       AbortLevel      - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-          1   TMax            - Total run time (s)
-      0.005   DT              - Recommended module time step (s)
+          5   TMax            - Total run time (s)
+       0.02   DT              - Recommended module time step (s)
           3   ModCoupling     - Module coupling method (switch) {1=loose; 2=tight with fixed Jacobian updates (DT_UJac); 3=tight with automatic Jacobian updates}
           2   InterpOrder     - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
           0   NumCrctn        - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
         0.0   RhoInf          - Numerical damping parameter for tight coupling generalized-alpha integrator (-) [0.0 to 1.0]
-       1e-2   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
-         10   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
+       1e-4   ConvTol         - Convergence iteration error tolerance for tight coupling generalized alpha integrator (-)
+        100   MaxConvIter     - Maximum number of convergence iterations for tight coupling generalized alpha integrator (-)
+      false   AutoRelax       - Adaptive under-relaxation for the tight-coupling iterative solver (flag) [default=true]
+        0.5   RelaxFactor     - Constant or initial (if AutoRelax) under-relaxation factor for the tight-coupling iterative solver (-) [>0 and <=1; default=0.7 if AutoRelax=false; default=0.3 if AutoRelax=true]
       99999   DT_UJac         - Time between calls to get Jacobians (s)
     3000000   UJacSclFact     - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
@@ -58,14 +60,14 @@ False         Echo            - Echo input data to <RootName>.ech (flag)
 "5MW_OC4Semi_BeamDyn.dat"       BDBldFile(3)    - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "5MW_OC4Semi_ServoDyn_R2.dat"   ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint        - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint        - Print summary data to "<RootName>.sum" (flag)
           1   SttsTime        - Amount of time between screen status messages (s)
        1000   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
   "Default"   DT_Out          - Time step for tabular output (s) (or "default")
           0   TStart          - Time to begin tabular output (s)
           2   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
 True          TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
-"G0"          OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
+"ES14.5E3"    OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
 False         Linearize       - Linearization analysis (flag)
 False         CalcSteady      - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)

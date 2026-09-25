@@ -10,9 +10,9 @@ True          FlapDOF2    - Second flapwise blade mode DOF (flag)
 True          EdgeDOF     - First edgewise blade mode DOF (flag)
 False         PitchDOF    - Blade pitch DOF (flag)
 False         TeetDOF     - Rotor-teeter DOF (flag) [unused for 3 blades]
-True          DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
+False         DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
 True          GenDOF      - Generator DOF (flag)
-True          YawDOF      - Yaw DOF (flag)
+False         YawDOF      - Yaw DOF (flag)
 True          TwFADOF1    - First fore-aft tower bending-mode DOF (flag)
 True          TwFADOF2    - Second fore-aft tower bending-mode DOF (flag)
 True          TwSSDOF1    - First side-to-side tower bending-mode DOF (flag)
@@ -131,7 +131,7 @@ False         Furling     - Read in additional model properties for furling turb
          20   TwrNodes    - Number of tower nodes used for analysis (-)
 "5MW_OC4Semi_ElastoDyn_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint    - Print summary data to "<RootName>.sum" (flag)
           2   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
 True          TabDelim    - Use tab delimiters in text tabular output file? (flag) (currently unused)
 "G0"          OutFmt      - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
@@ -164,6 +164,12 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "RootMxc1"                - In-plane     bending moment at the root of blade 1
 "RootMyc1"                - Out-of-plane bending moment at the root of blade 1
 "RootMzc1"                - Pitching             moment at the root of blade 1
+"RootFxb1"                - Out-of-plane shear force at the root of blade 1
+"RootFyb1"                - In-plane     shear force at the root of blade 1
+"RootFzb1"                - Axial              force at the root of blade 1
+"RootMxb1"                - In-plane     bending moment at the root of blade 1
+"RootMyb1"                - Out-of-plane bending moment at the root of blade 1
+"RootMzb1"                - Pitching             moment at the root of blade 1
 "RotTorq"                 - Rotor torque
 "LSSGagMya"               - Low-speed shaft 0- rotating bending moments at the main bearing
 "LSSGagMza"               - Low-speed shaft 90-rotating bending moments at the main bearing
@@ -179,9 +185,12 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
 "TwrBsMxt"                - Side-to-side bending moment at the base of the tower (platform)
 "TwrBsMyt"                - Fore-aft     bending moment at the base of the tower (platform)
 "TwrBsMzt"                - Yaw                  moment at the base of the tower (platform)
+"NcIMUTAxs"
+"NcIMUTAys"
+"NcIMUTAzs"
 END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
 ====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
-          1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
+          0   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)
 "All"         BldNd_BlOutNd       - Future feature will allow selecting a portion of the nodes to output.  Not implemented yet. (-)
                   OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
 END (the word "END" must appear in the first 3 columns of this last OutList line in the optional nodal output section)
