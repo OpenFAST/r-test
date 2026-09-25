@@ -1,6 +1,7 @@
 ad_timeseries_shutdown
 ad_BAR_CombinedCases
 ad_BAR_OLAF
+ad_BAR_OLAF_RegFunctionPart2
 ad_BAR_RNAMotion
 ad_BAR_SineMotion
 ad_BAR_SineMotion_UA4_DBEMT3
