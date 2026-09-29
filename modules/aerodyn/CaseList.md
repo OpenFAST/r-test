@@ -1,6 +1,7 @@
 ad_timeseries_shutdown
 ad_BAR_CombinedCases
 ad_BAR_OLAF
+ad_BAR_OLAF_RegFunctionPart2
 ad_BAR_RNAMotion
 ad_BAR_SineMotion
 ad_BAR_SineMotion_UA4_DBEMT3
@@ -12,3 +13,5 @@ ad_QuadRotor_OLAF
 ad_VerticalAxis_OLAF
 ad_MHK_RM1_Fixed
 ad_MHK_RM1_Floating
+ad_5MW_GSPotent
+ad_AWT_GSShadow

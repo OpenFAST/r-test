@@ -22,7 +22,8 @@ default FWShedVorticity    - Include shed vorticity in the far wake {default: Fa
 ------------------- WAKE REGULARIZATIONS AND DIFFUSION -----------------------------------------
 default DiffusionMethod    - Diffusion method to account for viscous effects {0: None, 1: Core Spreading, "default": 0}         
 0       RegDeterMethod     - Method to determine the regularization parameters {0:  Manual, 1: Optimized, 2: Chord, 3: Span, default: 0 }          
-1       RegFunction        - Viscous diffusion function {0: None, 1: Rankine, 2: LambOseen, 3: Vatistas, 4: Denominator, "default": 3} (switch)
+1       RegFunction        - Segment regularization function {0: None, 1: Rankine, 2: LambOseen, 3: Vatistas, 4: Denominator, "default": 3} (switch)
+1       RegFunctionPart    - Particle regularization function {0: None, 1: Exponential, 2: Compact, "default": 1} [only if VelocityMethod=2,3] (switch)
 1       WakeRegMethod      - Wake regularization method {1: Constant, 2: Stretching, 3: Age, default: 3} (switch)
 0.001   WakeRegFactor      - Wake regularization factor (m or -)
 0.001   WingRegFactor      - Wing regularization factor (m or -)
