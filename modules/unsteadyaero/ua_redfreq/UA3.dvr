@@ -6,7 +6,7 @@ FALSE         Echo                - Echo the input file data (flag)
  1.464e-05    KinVisc             - Kinematic viscosity of working fluid (m^2/s)
      340.29   SpdSound            - Speed of sound of working fluid (m/s)
 ---------------------- UNSTEADYAERO -------------------------------------------
-        3     UAMod               - Unsteady Aero Model Switch (switch) {2=B-L Gonzalez, 3=B-L Minnema/Pierce, 4=B-L HGM 4-states, 5=B-L 5 states, 6=Oye, 7=Boeing-Vertol} [used only when AFAeroMod=2]
+        3     UAMod               - Unsteady Aero Model Switch (switch) {2=B-L Gonzalez, 3=B-L Minnema/Pierce, 4=B-L HGM 4-states, 5=B-L 5 states, 6=Oye, 7=Boeing-Vertol, 9=IAG} [used only when AFAeroMod=2]
 True          FLookup             - Flag to indicate whether a lookup for f' will be calculated (TRUE) or whether best-fit exponential equations will be used (FALSE); if FALSE S1-S4 must be provided in airfoil input files (flag) [used only when AFAeroMod=2]
 ------------------- AIRFOIL PROPERTIES ----------------------------------------
 "DU21_A17.dat" AirFoil            - Airfoil table (Column 1: Angle of Attack (AoA), column 2: Lift coeff, column 3: Drag coeff).
