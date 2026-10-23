@@ -13,10 +13,10 @@ False         TeetDOF     - Rotor-teeter DOF (flag) [unused for 3 blades]
 False         DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
 False         GenDOF      - Generator DOF (flag)
 False         YawDOF      - Yaw DOF (flag)
-True          TwFADOF1    - First fore-aft tower bending-mode DOF (flag)
-True          TwFADOF2    - Second fore-aft tower bending-mode DOF (flag)
-True          TwSSDOF1    - First side-to-side tower bending-mode DOF (flag)
-True          TwSSDOF2    - Second side-to-side tower bending-mode DOF (flag)
+False         TwFADOF1    - First fore-aft tower bending-mode DOF (flag)
+False         TwFADOF2    - Second fore-aft tower bending-mode DOF (flag)
+False         TwSSDOF1    - First side-to-side tower bending-mode DOF (flag)
+False         TwSSDOF2    - Second side-to-side tower bending-mode DOF (flag)
 True          PtfmSgDOF   - Platform horizontal surge translation DOF (flag)
 True          PtfmSwDOF   - Platform horizontal sway translation DOF (flag)
 True          PtfmHvDOF   - Platform vertical heave translation DOF (flag)
@@ -31,7 +31,7 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
           0   TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
           0   Azimuth     - Initial azimuth angle for blade 1 (degrees)
-       12.5   RotSpeed    - Initial or fixed rotor speed (rpm)
+       11.5   RotSpeed    - Initial or fixed rotor speed (rpm)
           0   NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
           0   TTDspFA     - Initial fore-aft tower-top displacement (meters)
           0   TTDspSS     - Initial side-to-side tower-top displacement (meters)
@@ -57,19 +57,19 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   ShftTilt    - Rotor shaft tilt angle (degrees)
        0.43   NacCMxn     - Downwind distance from the tower-top to the nacelle CM (meters)
           0   NacCMyn     - Lateral  distance from the tower-top to the nacelle CM (meters)
-       -1.2   NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
+       -1.1   NacCMzn     - Vertical distance from the tower-top to the nacelle CM (meters)
           0   NcIMUxn     - Downwind distance from the tower-top to the nacelle IMU (meters)
           0   NcIMUyn     - Lateral  distance from the tower-top to the nacelle IMU (meters)
-       -1.2   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
-       -1.2   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
-      -22.8   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
-      -10.5   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+       -1.1   NcIMUzn     - Vertical distance from the tower-top to the nacelle IMU (meters)
+       -1.1   Twr2Shft    - Vertical distance from the tower-top to the rotor shaft (meters)
+      -22.9   TowerHt     - Height of tower relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
+      -22.8   TowerBsHt   - Height of tower base relative to ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] (meters)
           0   PtfmCMxt    - Downwind distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
-          0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
-      -6.09   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+       12.0   PtfmCMyt    - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
+      -22.8   PtfmCMzt    - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform CM (meters)
           0   PtfmRefxt   - Downwind distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
        12.0   PtfmRefyt   - Lateral distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
-      -10.5   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
+      -22.8   PtfmRefzt   - Vertical distance from the ground level [onshore], MSL [offshore wind or floating MHK], or seabed [fixed MHK] to the platform reference point (meters)
 ---------------------- MASS AND INERTIA ----------------------------------------
           0   TipMass(1)  - Tip-brake mass, blade 1 (kg)
           0   TipMass(2)  - Tip-brake mass, blade 2 (kg)
@@ -81,16 +81,16 @@ True          PtfmYDOF    - Platform yaw rotation DOF (flag)
           0   BlPIner(2)  - Blade pitch inertia, blade 2 (kg m^2)
           0   BlPIner(3)  - Blade pitch inertia, blade 3 (kg m^2) [unused for 2 blades]
         140   HubMass     - Hub mass (kg)
-      72.69   HubIner     - Hub inertia about rotor axis (2 or 3-blades) (kg m^2)
+       79.6   HubIner     - Hub inertia about rotor axis (2 or 3-blades) (kg m^2)
        79.6   HubIner_Teeter - Hub inertia about teeter axis (2-blades) (kg m^2)
       139.5   GenIner     - Generator inertia about HSS (kg m^2)
-      40100   NacMass     - Nacelle mass (kg)
-     244643   NacYIner    - Nacelle inertia about yaw axis (kg m^2)
+      40000   NacMass     - Nacelle mass (kg)
+     244543   NacYIner    - Nacelle inertia about yaw axis (kg m^2)
           0   YawBrMass   - Yaw bearing mass (kg)
-          0   PtfmMass    - Platform mass (kg)
-          0   PtfmRIner   - Platform inertia for roll tilt rotation about the platform CM (kg m^2)
-          0   PtfmPIner   - Platform inertia for pitch tilt rotation about the platform CM (kg m^2)
-          0   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
+        100   PtfmMass    - Platform mass (kg)
+        100   PtfmRIner   - Platform inertia for roll tilt rotation about the platform CM (kg m^2)
+        100   PtfmPIner   - Platform inertia for pitch tilt rotation about the platform CM (kg m^2)
+        100   PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
           0   PtfmXYIner  - Platform xy moment of inertia about the platform CM (=-int(xydm)) (kg m^2)
           0   PtfmYZIner  - Platform yz moment of inertia about the platform CM (=-int(yzdm)) (kg m^2)
           0   PtfmXZIner  - Platform xz moment of inertia about the platform CM (=-int(xzdm)) (kg m^2)
@@ -129,9 +129,9 @@ False         Furling     - Read in additional model properties for furling turb
 "unused"      FurlFile    - Name of file containing furling properties (quoted string) [unused when Furling=False]
 ---------------------- TOWER ---------------------------------------------------
           2   TwrNodes    - Number of tower nodes used for analysis (-)
-"MHK_RM1_Floating_ElastoDyn_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
+"Dummy_Tower.dat"    TwrFile     - Name of file containing tower properties (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
-True          SumPrint    - Print summary data to "<RootName>.sum" (flag)
+False         SumPrint    - Print summary data to "<RootName>.sum" (flag)
           1   OutFile     - Switch to determine where output will be placed: {1: in module output file only; 2: in glue code output file only; 3: both} (currently unused)
 True          TabDelim    - Use tab delimiters in text tabular output file? (flag) (currently unused)
 "G0"          OutFmt      - Format used for text tabular output (except time).  Resulting field should be 10 characters. (quoted string) (currently unused)
@@ -142,17 +142,17 @@ True          TabDelim    - Use tab delimiters in text tabular output file? (fla
           0   NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           0   BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
               OutList     - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"PtfmSurge"                
-"PtfmSway"                 
-"PtfmHeave"                
-"PtfmRoll"                 
-"PtfmPitch"                
-"PtfmYaw"                  
-"TwrTpTDxi"                
-"TwrTpTDyi"                
-"TwrTpTDzi"                
+"PtfmSurge"
+"PtfmSway"
+"PtfmHeave"
+"PtfmRoll"
+"PtfmPitch"
+"PtfmYaw"
+"TwrTpTDxi"
+"TwrTpTDyi"
+"TwrTpTDzi"
 "OoPDefl1"
-"RotSpeed"                 
+"RotSpeed"
 END of OutList section (the word "END" must appear in the first 3 columns of the last OutList line)
 ====== Outputs for all blade stations (same ending as above for Spn1.... =========================== [optional section]
           1   BldNd_BladesOut     - Number of blades to output all node information at.  Up to number of blades on turbine. (-)

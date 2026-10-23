@@ -1,0 +1,386 @@
+----------- SubDyn MultiMember Support Structure Input File ---------------------------
+SubDyn model of a quad-column platform supporting two RM1 MHK tidal turbines
+-------------------------- SIMULATION CONTROL -----------------------------------------
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+"DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
+             4   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
+True             SttcSolve   - Solve dynamics about static equilibrium point
+-------------------- FEA and CRAIG-BAMPTON PARAMETERS ---------------------------------
+             3   FEMMod      - FEM switch: element model in the FEM. [1= Euler-Bernoulli(E-B);  2=Tapered E-B (unavailable);  3= 2-node Timoshenko;  4= 2-node tapered Timoshenko (unavailable)]
+            16   NDiv        - Number of sub-elements per member
+            48   Nmodes      - Number of internal modes to retain (ignored if CBMod=False). If Nmodes=0 --> Guyan Reduction.
+             1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             1   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified 6x6 matrix}
+  0,      0.01   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+             6   GuyanDampSize - Guyan damping matrix (6x6) [only if GuyanDampMod=2]
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+  0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00,   0.000000E+00
+------- INITIAL RIGID-BODY DISPLACEMENT [used only for floating structure with more than one transition pieces] -------
+RBSurge    RBSway     RBHeave    RBRoll     RBPitch    RBYaw
+  (m)        (m)        (m)      (deg)      (deg)      (deg)
+  0.0        0.0        0.0       0.0        0.0        0.0
+---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
+             55   NJoints     - Number of joints (-)
+JointID  JointXss   JointYss    JointZss      JointType    JointDirX   JointDirY    JointDirZ    JointStiff     ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
+  (-)      (m)        (m)          (m)           (-)         (-)         (-)          (-)         (Nm/rad)
+   1     28.0000     0.0000     -10.5000          1           0           0            0             0          ! +x Column
+   2     28.0000     0.0000     -10.0000          1           0           0            0             0
+   3     28.0000     0.0000      -8.5000          1           0           0            0             0
+   4     28.0000     0.0000      -6.5916          1           0           0            0             0
+   5     28.0000     0.0000       0.0000          1           0           0            0             0
+   6     28.0000     0.0000       4.5000          1           0           0            0             0
+   7     28.0000     0.0000       6.0000          1           0           0            0             0
+   8      0.0000    12.0000     -10.5000          1           0           0            0             0          ! +y Column
+   9      0.0000    12.0000     -10.0000          1           0           0            0             0
+  10      0.0000    12.0000      -8.5000          1           0           0            0             0
+  11      0.0000    12.0000      -6.5916          1           0           0            0             0
+  12      0.0000    12.0000       0.0000          1           0           0            0             0
+  13      0.0000    12.0000       4.5000          1           0           0            0             0
+  14      0.0000    12.0000       6.0000          1           0           0            0             0
+  15    -28.0000     0.0000     -10.5000          1           0           0            0             0          ! -x Column
+  16    -28.0000     0.0000     -10.0000          1           0           0            0             0
+  17    -28.0000     0.0000      -8.5000          1           0           0            0             0
+  18    -28.0000     0.0000      -6.5916          1           0           0            0             0
+  19    -28.0000     0.0000       0.0000          1           0           0            0             0
+  20    -28.0000     0.0000       4.5000          1           0           0            0             0
+  21    -28.0000     0.0000       6.0000          1           0           0            0             0
+  22      0.0000   -12.0000     -10.5000          1           0           0            0             0          ! -y Column
+  23      0.0000   -12.0000     -10.0000          1           0           0            0             0
+  24      0.0000   -12.0000      -8.5000          1           0           0            0             0
+  25      0.0000   -12.0000      -6.5916          1           0           0            0             0
+  26      0.0000   -12.0000       0.0000          1           0           0            0             0
+  27      0.0000   -12.0000       4.5000          1           0           0            0             0
+  28      0.0000   -12.0000       6.0000          1           0           0            0             0
+  29      3.67658   10.42430     -8.5000          1           0           0            0             0          ! Lower brace connections
+  30     24.32340    1.57568     -8.5000          1           0           0            0             0
+  31      3.67658  -10.42430     -8.5000          1           0           0            0             0
+  32     24.32340   -1.57568     -8.5000          1           0           0            0             0
+  33     -3.67658   10.42430     -8.5000          1           0           0            0             0
+  34    -24.32340    1.57568     -8.5000          1           0           0            0             0
+  35     -3.67658  -10.42430     -8.5000          1           0           0            0             0
+  36    -24.32340   -1.57568     -8.5000          1           0           0            0             0
+  37      3.67658   10.42430      4.5000          1           0           0            0             0          ! Upper brace connections
+  38     24.32340    1.57568      4.5000          1           0           0            0             0
+  39      3.67658  -10.42430      4.5000          1           0           0            0             0
+  40     24.32340   -1.57568      4.5000          1           0           0            0             0
+  41     -3.67658   10.42430      4.5000          1           0           0            0             0
+  42    -24.32340    1.57568      4.5000          1           0           0            0             0
+  43     -3.67658  -10.42430      4.5000          1           0           0            0             0
+  44    -24.32340   -1.57568      4.5000          1           0           0            0             0
+  45      0.0000    -8.0000      -8.5000          1           0           0            0             0          ! Center brace connections
+  46      0.0000     0.0000      -8.5000          1           0           0            0             0
+  47      0.0000     8.0000      -8.5000          1           0           0            0             0
+  48      0.0000    -8.0000       4.5000          1           0           0            0             0
+  49      0.0000     8.0000       4.5000          1           0           0            0             0
+  50      0.0000    12.0000     -22.8000          1           0           0            0             0          ! Interface points
+  51      0.0000   -12.0000     -22.8000          1           0           0            0             0
+  52    -34.0000     0.0000     -10.0000          1           0           0            0             0          ! Fairleads
+  53     34.0000     0.0000     -10.0000          1           0           0            0             0
+  54      0.0000    -0.49450     -7.69650         1           0           0            0             0          ! Additional joints for the mid-ship braces
+  55      0.0000     0.49450     -7.69650         1           0           0            0             0
+------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
+             0   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss   SSIfile      ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)    (string)
+------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
+             3   NInterf     - Number of interface joints locked to the Transition Piece (TP):  be sure to remove all rigid motion dofs
+IJointID   TPID   ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss
+  (-)      (-)     (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+   46       0        1           1           1           1           1           1
+   50       1        1           1           1           1           1           1
+   51       2        1           1           1           1           1           1
+----------------------------------- MEMBERS -------------------------------------------
+            63   NMembers    - Number of members (-)
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2     MType   COSMID/MSpin   ![MType={1:beam circ., 2:cable, 3:rigid, 4:beam arb.}. COMSID={-1:none}]
+  (-)         (-)         (-)          (-)           (-)          (-)      (-)/(deg)
+   1           1           2            1             1            3          0      ! +x-column rigid assembly
+   2           2           3            1             1            3          0
+   3           3           4            1             1            3          0
+   4           4           5            1             1            3          0
+   5           5           6            1             1            3          0
+   6           6           7            1             1            3          0
+   7           3          30            1             1            3          0
+   8           3          32            1             1            3          0
+   9           6          38            1             1            3          0
+  10           6          40            1             1            3          0
+  11           8           9            1             1            3          0      ! +y-column rigid assembly
+  12           9          10            1             1            3          0
+  13          10          11            1             1            3          0
+  14          11          12            1             1            3          0
+  15          12          13            1             1            3          0
+  16          13          14            1             1            3          0
+  17          10          29            1             1            3          0
+  18          10          33            1             1            3          0
+  19          10          47            1             1            3          0
+  20          13          37            1             1            3          0
+  21          13          41            1             1            3          0
+  22          13          49            1             1            3          0
+  23          15          16            1             1            3          0      ! -x-column rigid assembly
+  24          16          17            1             1            3          0
+  25          17          18            1             1            3          0
+  26          18          19            1             1            3          0
+  27          19          20            1             1            3          0
+  28          20          21            1             1            3          0
+  29          17          34            1             1            3          0
+  30          17          36            1             1            3          0
+  31          20          42            1             1            3          0
+  32          20          44            1             1            3          0
+  33          22          23            1             1            3          0      ! -y-column rigid assembly
+  34          23          24            1             1            3          0
+  35          24          25            1             1            3          0
+  36          25          26            1             1            3          0
+  37          26          27            1             1            3          0
+  38          27          28            1             1            3          0
+  39          24          31            1             1            3          0
+  40          24          35            1             1            3          0
+  41          24          45            1             1            3          0
+  42          27          39            1             1            3          0
+  43          27          43            1             1            3          0
+  44          27          48            1             1            3          0
+  45          29          30            3             3            1c         0     ! Lower diamond braces
+  46          31          32            3             3            1c         0
+  47          33          34            3             3            1c         0
+  48          35          36            3             3            1c         0
+  49          37          38            2             2            1c         0     ! Upper diamond braces
+  50          39          40            2             2            1c         0
+  51          41          42            2             2            1c         0
+  52          43          44            2             2            1c         0
+  53          45          46            3             3            1c         0     ! Midship braces
+  54          46          47            3             3            1c         0
+  55          54          48            2             2            1c         0
+  56          55          49            2             2            1c         0
+  57          48          49            2             2            1c         0
+  58           8          50            4             4            1r         0     ! "Towers"
+  59          22          51            4             4            1r         0
+  60          16          52            1             1            3          0     ! Column connection to fairleads
+  61           2          53            1             1            3          0
+  62          46          54            5             5            3          0     ! Additional rigid members for the mid-ship braces
+  63          46          55            5             5            3          0
+------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
+             2   NPropSets   - Number of structurally unique cross-sections
+PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
+   2          200e9            79e9            7850             2.0             0.025     ! Empty braces
+   3          200e9            79e9         2.7584e+04          2.0             0.025     ! Ballasted braces
+----------------- RECTANGULAR BEAM CROSS-SECTION PROPERTIES ---------------------------
+             1   NPropSets   - Number of structurally unique cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecB           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)            (m)             (m)
+   4          200e9            79e9         2.0072e+03          1.0            0.325           0.0    ! "Towers"
+----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
+             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx               XsecAsy               XsecJxx               XsecJyy                XsecJ0        XsecJt
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)                  (m2)                  (m4)                  (m4)                  (m4)           (m4)
+-------------------------- CABLE PROPERTIES -------------------------------------------
+             0   NCablePropSets   - Number of cable cable properties
+PropSetID     EA          MatDens        T0         CtrlChannel
+  (-)         (N)         (kg/m)        (N)             (-)
+----------------------- RIGID LINK PROPERTIES -----------------------------------------
+             2   NRigidPropSets - Number of rigid link properties
+PropSetID   MatDens   
+  (-)       (kg/m)
+   1          0.0
+   5       1217.6617
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
+---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
+             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
+ (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)
+------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
+             4   NCmass      - Number of joints with concentrated masses; Global Coordinate System
+CMJointID       JMass            JMXX             JMYY             JMZZ            JMXY        JMXZ        JMYZ        MCGX     MCGY     MCGZ
+  (-)            (kg)          (kg*m^2)         (kg*m^2)         (kg*m^2)        (kg*m^2)    (kg*m^2)    (kg*m^2)      (m)      (m)      (m)
+   4            500013.88     13297083.52      13297083.52      6541819.766        0.00        0.00        0.00        0.0      0.0      0.0
+  11            500013.88     13297083.52      13297083.52      6541819.766        0.00        0.00        0.00        0.0      0.0      0.0
+  18            500013.88     13297083.52      13297083.52      6541819.766        0.00        0.00        0.00        0.0      0.0      0.0
+  25            500013.88     13297083.52      13297083.52      6541819.766        0.00        0.00        0.00        0.0      0.0      0.0
+---------------------------- OUTPUT: SUMMARY & OUTFILE --------------------------------
+False            SumPrint    - Output a Summary File (flag)
+0                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
+False            OutCOSM     - Output cosine matrices with the selected output member forces (flag)
+False            OutAll      - [T/F] Output all members' end forces
+             2   OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
+True             TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
+             1   OutDec      - Decimation of output in the <rootname>.SD.out file
+"ES16.8e2"       OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+"A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
+------------------------- MEMBER OUTPUT LIST ------------------------------------------
+           15   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
+MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+  (-)        (-)        (-)
+   45         5      1 5 9 13 17   ! Lower diamond braces: +y to +x
+   46         5      1 5 9 13 17   !                       -y to +x
+   47         5      1 5 9 13 17   !                       +y to -x
+   48         5      1 5 9 13 17   !                       -y to -x
+   49         5      1 5 9 13 17   ! Upper diamond braces: +y to +x
+   50         5      1 5 9 13 17   !                       -y to +x
+   51         5      1 5 9 13 17   !                       +y to -x
+   52         5      1 5 9 13 17   !                       -y to -x
+   53         5      1 5 9 13 17   ! Lower midship braces: -y to CL
+   54         5      1 5 9 13 17   !                       CL to +y
+   55         5      1 5 9 13 17   ! Diagonal midship braces: to -y
+   56         5      1 5 9 13 17   !                          to +y
+   57         5      1 5 9 13 17   ! Upper midship braces: -y to +y
+   58         5      1 5 9 13 17   ! Towers: +y base to interface
+   59         5      1 5 9 13 17   !         -y base to interface
+------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"RBTDXss,RBTDYss,RBTDZss,RBRDXss,RBRDYss,RBRDZss"
+"M1N1TDXss,M1N1TDYss,M1N1TDZss,M1N1RDXe,M1N1RDYe,M1N1RDZe"
+"M1N2TDXss,M1N2TDYss,M1N2TDZss,M1N2RDXe,M1N2RDYe,M1N2RDZe"
+"M1N3TDXss,M1N3TDYss,M1N3TDZss,M1N3RDXe,M1N3RDYe,M1N3RDZe"
+"M1N4TDXss,M1N4TDYss,M1N4TDZss,M1N4RDXe,M1N4RDYe,M1N4RDZe"
+"M1N5TDXss,M1N5TDYss,M1N5TDZss,M1N5RDXe,M1N5RDYe,M1N5RDZe"
+"M2N1TDXss,M2N1TDYss,M2N1TDZss,M2N1RDXe,M2N1RDYe,M2N1RDZe"
+"M2N2TDXss,M2N2TDYss,M2N2TDZss,M2N2RDXe,M2N2RDYe,M2N2RDZe"
+"M2N3TDXss,M2N3TDYss,M2N3TDZss,M2N3RDXe,M2N3RDYe,M2N3RDZe"
+"M2N4TDXss,M2N4TDYss,M2N4TDZss,M2N4RDXe,M2N4RDYe,M2N4RDZe"
+"M2N5TDXss,M2N5TDYss,M2N5TDZss,M2N5RDXe,M2N5RDYe,M2N5RDZe"
+"M3N1TDXss,M3N1TDYss,M3N1TDZss,M3N1RDXe,M3N1RDYe,M3N1RDZe"
+"M3N2TDXss,M3N2TDYss,M3N2TDZss,M3N2RDXe,M3N2RDYe,M3N2RDZe"
+"M3N3TDXss,M3N3TDYss,M3N3TDZss,M3N3RDXe,M3N3RDYe,M3N3RDZe"
+"M3N4TDXss,M3N4TDYss,M3N4TDZss,M3N4RDXe,M3N4RDYe,M3N4RDZe"
+"M3N5TDXss,M3N5TDYss,M3N5TDZss,M3N5RDXe,M3N5RDYe,M3N5RDZe"
+"M4N1TDXss,M4N1TDYss,M4N1TDZss,M4N1RDXe,M4N1RDYe,M4N1RDZe"
+"M4N2TDXss,M4N2TDYss,M4N2TDZss,M4N2RDXe,M4N2RDYe,M4N2RDZe"
+"M4N3TDXss,M4N3TDYss,M4N3TDZss,M4N3RDXe,M4N3RDYe,M4N3RDZe"
+"M4N4TDXss,M4N4TDYss,M4N4TDZss,M4N4RDXe,M4N4RDYe,M4N4RDZe"
+"M4N5TDXss,M4N5TDYss,M4N5TDZss,M4N5RDXe,M4N5RDYe,M4N5RDZe"
+"M5N1TDXss,M5N1TDYss,M5N1TDZss,M5N1RDXe,M5N1RDYe,M5N1RDZe"
+"M5N2TDXss,M5N2TDYss,M5N2TDZss,M5N2RDXe,M5N2RDYe,M5N2RDZe"
+"M5N3TDXss,M5N3TDYss,M5N3TDZss,M5N3RDXe,M5N3RDYe,M5N3RDZe"
+"M5N4TDXss,M5N4TDYss,M5N4TDZss,M5N4RDXe,M5N4RDYe,M5N4RDZe"
+"M5N5TDXss,M5N5TDYss,M5N5TDZss,M5N5RDXe,M5N5RDYe,M5N5RDZe"
+"M6N1TDXss,M6N1TDYss,M6N1TDZss,M6N1RDXe,M6N1RDYe,M6N1RDZe"
+"M6N2TDXss,M6N2TDYss,M6N2TDZss,M6N2RDXe,M6N2RDYe,M6N2RDZe"
+"M6N3TDXss,M6N3TDYss,M6N3TDZss,M6N3RDXe,M6N3RDYe,M6N3RDZe"
+"M6N4TDXss,M6N4TDYss,M6N4TDZss,M6N4RDXe,M6N4RDYe,M6N4RDZe"
+"M6N5TDXss,M6N5TDYss,M6N5TDZss,M6N5RDXe,M6N5RDYe,M6N5RDZe"
+"M7N1TDXss,M7N1TDYss,M7N1TDZss,M7N1RDXe,M7N1RDYe,M7N1RDZe"
+"M7N2TDXss,M7N2TDYss,M7N2TDZss,M7N2RDXe,M7N2RDYe,M7N2RDZe"
+"M7N3TDXss,M7N3TDYss,M7N3TDZss,M7N3RDXe,M7N3RDYe,M7N3RDZe"
+"M7N4TDXss,M7N4TDYss,M7N4TDZss,M7N4RDXe,M7N4RDYe,M7N4RDZe"
+"M7N5TDXss,M7N5TDYss,M7N5TDZss,M7N5RDXe,M7N5RDYe,M7N5RDZe"
+"M8N1TDXss,M8N1TDYss,M8N1TDZss,M8N1RDXe,M8N1RDYe,M8N1RDZe"
+"M8N2TDXss,M8N2TDYss,M8N2TDZss,M8N2RDXe,M8N2RDYe,M8N2RDZe"
+"M8N3TDXss,M8N3TDYss,M8N3TDZss,M8N3RDXe,M8N3RDYe,M8N3RDZe"
+"M8N4TDXss,M8N4TDYss,M8N4TDZss,M8N4RDXe,M8N4RDYe,M8N4RDZe"
+"M8N5TDXss,M8N5TDYss,M8N5TDZss,M8N5RDXe,M8N5RDYe,M8N5RDZe"
+"M9N1TDXss,M9N1TDYss,M9N1TDZss,M9N1RDXe,M9N1RDYe,M9N1RDZe"
+"M9N2TDXss,M9N2TDYss,M9N2TDZss,M9N2RDXe,M9N2RDYe,M9N2RDZe"
+"M9N3TDXss,M9N3TDYss,M9N3TDZss,M9N3RDXe,M9N3RDYe,M9N3RDZe"
+"M9N4TDXss,M9N4TDYss,M9N4TDZss,M9N4RDXe,M9N4RDYe,M9N4RDZe"
+"M9N5TDXss,M9N5TDYss,M9N5TDZss,M9N5RDXe,M9N5RDYe,M9N5RDZe"
+"M10N1TDXss,M10N1TDYss,M10N1TDZss,M10N1RDXe,M10N1RDYe,M10N1RDZe"
+"M10N2TDXss,M10N2TDYss,M10N2TDZss,M10N2RDXe,M10N2RDYe,M10N2RDZe"
+"M10N3TDXss,M10N3TDYss,M10N3TDZss,M10N3RDXe,M10N3RDYe,M10N3RDZe"
+"M10N4TDXss,M10N4TDYss,M10N4TDZss,M10N4RDXe,M10N4RDYe,M10N4RDZe"
+"M10N5TDXss,M10N5TDYss,M10N5TDZss,M10N5RDXe,M10N5RDYe,M10N5RDZe"
+"M11N1TDXss,M11N1TDYss,M11N1TDZss,M11N1RDXe,M11N1RDYe,M11N1RDZe"
+"M11N2TDXss,M11N2TDYss,M11N2TDZss,M11N2RDXe,M11N2RDYe,M11N2RDZe"
+"M11N3TDXss,M11N3TDYss,M11N3TDZss,M11N3RDXe,M11N3RDYe,M11N3RDZe"
+"M11N4TDXss,M11N4TDYss,M11N4TDZss,M11N4RDXe,M11N4RDYe,M11N4RDZe"
+"M11N5TDXss,M11N5TDYss,M11N5TDZss,M11N5RDXe,M11N5RDYe,M11N5RDZe"
+"M12N1TDXss,M12N1TDYss,M12N1TDZss,M12N1RDXe,M12N1RDYe,M12N1RDZe"
+"M12N2TDXss,M12N2TDYss,M12N2TDZss,M12N2RDXe,M12N2RDYe,M12N2RDZe"
+"M12N3TDXss,M12N3TDYss,M12N3TDZss,M12N3RDXe,M12N3RDYe,M12N3RDZe"
+"M12N4TDXss,M12N4TDYss,M12N4TDZss,M12N4RDXe,M12N4RDYe,M12N4RDZe"
+"M12N5TDXss,M12N5TDYss,M12N5TDZss,M12N5RDXe,M12N5RDYe,M12N5RDZe"
+"M13N1TDXss,M13N1TDYss,M13N1TDZss,M13N1RDXe,M13N1RDYe,M13N1RDZe"
+"M13N2TDXss,M13N2TDYss,M13N2TDZss,M13N2RDXe,M13N2RDYe,M13N2RDZe"
+"M13N3TDXss,M13N3TDYss,M13N3TDZss,M13N3RDXe,M13N3RDYe,M13N3RDZe"
+"M13N4TDXss,M13N4TDYss,M13N4TDZss,M13N4RDXe,M13N4RDYe,M13N4RDZe"
+"M13N5TDXss,M13N5TDYss,M13N5TDZss,M13N5RDXe,M13N5RDYe,M13N5RDZe"
+"M14N1TDXss,M14N1TDYss,M14N1TDZss,M14N1RDXe,M14N1RDYe,M14N1RDZe"
+"M14N2TDXss,M14N2TDYss,M14N2TDZss,M14N2RDXe,M14N2RDYe,M14N2RDZe"
+"M14N3TDXss,M14N3TDYss,M14N3TDZss,M14N3RDXe,M14N3RDYe,M14N3RDZe"
+"M14N4TDXss,M14N4TDYss,M14N4TDZss,M14N4RDXe,M14N4RDYe,M14N4RDZe"
+"M14N5TDXss,M14N5TDYss,M14N5TDZss,M14N5RDXe,M14N5RDYe,M14N5RDZe"
+"M15N1TDXss,M15N1TDYss,M15N1TDZss,M15N1RDXe,M15N1RDYe,M15N1RDZe"
+"M15N2TDXss,M15N2TDYss,M15N2TDZss,M15N2RDXe,M15N2RDYe,M15N2RDZe"
+"M15N3TDXss,M15N3TDYss,M15N3TDZss,M15N3RDXe,M15N3RDYe,M15N3RDZe"
+"M15N4TDXss,M15N4TDYss,M15N4TDZss,M15N4RDXe,M15N4RDYe,M15N4RDZe"
+"M15N5TDXss,M15N5TDYss,M15N5TDZss,M15N5RDXe,M15N5RDYe,M15N5RDZe"
+"M1N1FKxe,M1N1FKye,M1N1FKze,M1N1MKxe,M1N1MKye,M1N1MKze"
+"M1N2FKxe,M1N2FKye,M1N2FKze,M1N2MKxe,M1N2MKye,M1N2MKze"
+"M1N3FKxe,M1N3FKye,M1N3FKze,M1N3MKxe,M1N3MKye,M1N3MKze"
+"M1N4FKxe,M1N4FKye,M1N4FKze,M1N4MKxe,M1N4MKye,M1N4MKze"
+"M1N5FKxe,M1N5FKye,M1N5FKze,M1N5MKxe,M1N5MKye,M1N5MKze"
+"M2N1FKxe,M2N1FKye,M2N1FKze,M2N1MKxe,M2N1MKye,M2N1MKze"
+"M2N2FKxe,M2N2FKye,M2N2FKze,M2N2MKxe,M2N2MKye,M2N2MKze"
+"M2N3FKxe,M2N3FKye,M2N3FKze,M2N3MKxe,M2N3MKye,M2N3MKze"
+"M2N4FKxe,M2N4FKye,M2N4FKze,M2N4MKxe,M2N4MKye,M2N4MKze"
+"M2N5FKxe,M2N5FKye,M2N5FKze,M2N5MKxe,M2N5MKye,M2N5MKze"
+"M3N1FKxe,M3N1FKye,M3N1FKze,M3N1MKxe,M3N1MKye,M3N1MKze"
+"M3N2FKxe,M3N2FKye,M3N2FKze,M3N2MKxe,M3N2MKye,M3N2MKze"
+"M3N3FKxe,M3N3FKye,M3N3FKze,M3N3MKxe,M3N3MKye,M3N3MKze"
+"M3N4FKxe,M3N4FKye,M3N4FKze,M3N4MKxe,M3N4MKye,M3N4MKze"
+"M3N5FKxe,M3N5FKye,M3N5FKze,M3N5MKxe,M3N5MKye,M3N5MKze"
+"M4N1FKxe,M4N1FKye,M4N1FKze,M4N1MKxe,M4N1MKye,M4N1MKze"
+"M4N2FKxe,M4N2FKye,M4N2FKze,M4N2MKxe,M4N2MKye,M4N2MKze"
+"M4N3FKxe,M4N3FKye,M4N3FKze,M4N3MKxe,M4N3MKye,M4N3MKze"
+"M4N4FKxe,M4N4FKye,M4N4FKze,M4N4MKxe,M4N4MKye,M4N4MKze"
+"M4N5FKxe,M4N5FKye,M4N5FKze,M4N5MKxe,M4N5MKye,M4N5MKze"
+"M5N1FKxe,M5N1FKye,M5N1FKze,M5N1MKxe,M5N1MKye,M5N1MKze"
+"M5N2FKxe,M5N2FKye,M5N2FKze,M5N2MKxe,M5N2MKye,M5N2MKze"
+"M5N3FKxe,M5N3FKye,M5N3FKze,M5N3MKxe,M5N3MKye,M5N3MKze"
+"M5N4FKxe,M5N4FKye,M5N4FKze,M5N4MKxe,M5N4MKye,M5N4MKze"
+"M5N5FKxe,M5N5FKye,M5N5FKze,M5N5MKxe,M5N5MKye,M5N5MKze"
+"M6N1FKxe,M6N1FKye,M6N1FKze,M6N1MKxe,M6N1MKye,M6N1MKze"
+"M6N2FKxe,M6N2FKye,M6N2FKze,M6N2MKxe,M6N2MKye,M6N2MKze"
+"M6N3FKxe,M6N3FKye,M6N3FKze,M6N3MKxe,M6N3MKye,M6N3MKze"
+"M6N4FKxe,M6N4FKye,M6N4FKze,M6N4MKxe,M6N4MKye,M6N4MKze"
+"M6N5FKxe,M6N5FKye,M6N5FKze,M6N5MKxe,M6N5MKye,M6N5MKze"
+"M7N1FKxe,M7N1FKye,M7N1FKze,M7N1MKxe,M7N1MKye,M7N1MKze"
+"M7N2FKxe,M7N2FKye,M7N2FKze,M7N2MKxe,M7N2MKye,M7N2MKze"
+"M7N3FKxe,M7N3FKye,M7N3FKze,M7N3MKxe,M7N3MKye,M7N3MKze"
+"M7N4FKxe,M7N4FKye,M7N4FKze,M7N4MKxe,M7N4MKye,M7N4MKze"
+"M7N5FKxe,M7N5FKye,M7N5FKze,M7N5MKxe,M7N5MKye,M7N5MKze"
+"M8N1FKxe,M8N1FKye,M8N1FKze,M8N1MKxe,M8N1MKye,M8N1MKze"
+"M8N2FKxe,M8N2FKye,M8N2FKze,M8N2MKxe,M8N2MKye,M8N2MKze"
+"M8N3FKxe,M8N3FKye,M8N3FKze,M8N3MKxe,M8N3MKye,M8N3MKze"
+"M8N4FKxe,M8N4FKye,M8N4FKze,M8N4MKxe,M8N4MKye,M8N4MKze"
+"M8N5FKxe,M8N5FKye,M8N5FKze,M8N5MKxe,M8N5MKye,M8N5MKze"
+"M9N1FKxe,M9N1FKye,M9N1FKze,M9N1MKxe,M9N1MKye,M9N1MKze"
+"M9N2FKxe,M9N2FKye,M9N2FKze,M9N2MKxe,M9N2MKye,M9N2MKze"
+"M9N3FKxe,M9N3FKye,M9N3FKze,M9N3MKxe,M9N3MKye,M9N3MKze"
+"M9N4FKxe,M9N4FKye,M9N4FKze,M9N4MKxe,M9N4MKye,M9N4MKze"
+"M9N5FKxe,M9N5FKye,M9N5FKze,M9N5MKxe,M9N5MKye,M9N5MKze"
+"M10N1FKxe,M10N1FKye,M10N1FKze,M10N1MKxe,M10N1MKye,M10N1MKze"
+"M10N2FKxe,M10N2FKye,M10N2FKze,M10N2MKxe,M10N2MKye,M10N2MKze"
+"M10N3FKxe,M10N3FKye,M10N3FKze,M10N3MKxe,M10N3MKye,M10N3MKze"
+"M10N4FKxe,M10N4FKye,M10N4FKze,M10N4MKxe,M10N4MKye,M10N4MKze"
+"M10N5FKxe,M10N5FKye,M10N5FKze,M10N5MKxe,M10N5MKye,M10N5MKze"
+"M11N1FKxe,M11N1FKye,M11N1FKze,M11N1MKxe,M11N1MKye,M11N1MKze"
+"M11N2FKxe,M11N2FKye,M11N2FKze,M11N2MKxe,M11N2MKye,M11N2MKze"
+"M11N3FKxe,M11N3FKye,M11N3FKze,M11N3MKxe,M11N3MKye,M11N3MKze"
+"M11N4FKxe,M11N4FKye,M11N4FKze,M11N4MKxe,M11N4MKye,M11N4MKze"
+"M11N5FKxe,M11N5FKye,M11N5FKze,M11N5MKxe,M11N5MKye,M11N5MKze"
+"M12N1FKxe,M12N1FKye,M12N1FKze,M12N1MKxe,M12N1MKye,M12N1MKze"
+"M12N2FKxe,M12N2FKye,M12N2FKze,M12N2MKxe,M12N2MKye,M12N2MKze"
+"M12N3FKxe,M12N3FKye,M12N3FKze,M12N3MKxe,M12N3MKye,M12N3MKze"
+"M12N4FKxe,M12N4FKye,M12N4FKze,M12N4MKxe,M12N4MKye,M12N4MKze"
+"M12N5FKxe,M12N5FKye,M12N5FKze,M12N5MKxe,M12N5MKye,M12N5MKze"
+"M13N1FKxe,M13N1FKye,M13N1FKze,M13N1MKxe,M13N1MKye,M13N1MKze"
+"M13N2FKxe,M13N2FKye,M13N2FKze,M13N2MKxe,M13N2MKye,M13N2MKze"
+"M13N3FKxe,M13N3FKye,M13N3FKze,M13N3MKxe,M13N3MKye,M13N3MKze"
+"M13N4FKxe,M13N4FKye,M13N4FKze,M13N4MKxe,M13N4MKye,M13N4MKze"
+"M13N5FKxe,M13N5FKye,M13N5FKze,M13N5MKxe,M13N5MKye,M13N5MKze"
+"M14N1FKxe,M14N1FKye,M14N1FKze,M14N1MKxe,M14N1MKye,M14N1MKze"
+"M14N2FKxe,M14N2FKye,M14N2FKze,M14N2MKxe,M14N2MKye,M14N2MKze"
+"M14N3FKxe,M14N3FKye,M14N3FKze,M14N3MKxe,M14N3MKye,M14N3MKze"
+"M14N4FKxe,M14N4FKye,M14N4FKze,M14N4MKxe,M14N4MKye,M14N4MKze"
+"M14N5FKxe,M14N5FKye,M14N5FKze,M14N5MKxe,M14N5MKye,M14N5MKze"
+"M15N1FKxe,M15N1FKye,M15N1FKze,M15N1MKxe,M15N1MKye,M15N1MKze"
+"M15N2FKxe,M15N2FKye,M15N2FKze,M15N2MKxe,M15N2MKye,M15N2MKze"
+"M15N3FKxe,M15N3FKye,M15N3FKze,M15N3MKxe,M15N3MKye,M15N3MKze"
+"M15N4FKxe,M15N4FKye,M15N4FKze,M15N4MKxe,M15N4MKye,M15N4MKze"
+"M15N5FKxe,M15N5FKye,M15N5FKze,M15N5MKxe,M15N5MKye,M15N5MKze"
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
