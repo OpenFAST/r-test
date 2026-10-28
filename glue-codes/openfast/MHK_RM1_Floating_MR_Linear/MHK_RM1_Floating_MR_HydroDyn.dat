@@ -1,27 +1,27 @@
 ------- HydroDyn Input File ----------------------------------------------------
-Floating MHK turbine hydrodynamic support structure input properties, based on the RM1 tidal current rotor with a quad-style floating platform
+Floating MHK turbine hydrodynamic support structure input properties, based on the RM1 tidal current rotor with a quad-column floating platform
 False            Echo           - Echo the input file data (flag)
 ---------------------- FLOATING PLATFORM --------------------------------------- [only ExctnDisp, ExctnCutOff, PtfmYMod, PtfmRefY, and PtfmYCutOff used with WaveMod=6]
-             1   PotMod         - Potential-flow model {0: none=no potential flow, 1: frequency-to-time-domain transforms based on WAMIT output, 2: fluid-impulse theory (FIT)} (switch)
-             0   ExctnMod       - Wave-excitation model {0: no wave-excitation calculation, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]
+             0   PotMod         - Potential-flow model {0: none=no potential flow, 1: frequency-to-time-domain transforms based on WAMIT output, 2: fluid-impulse theory (FIT)} (switch)
+             1   ExctnMod       - Wave-excitation model {0: no wave-excitation calculation, 1: DFT, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ssexctn INPUT FILE]
              0   ExctnDisp      - Method of computing Wave Excitation {0: use undisplaced position, 1: use displaced position, 2: use low-pass filtered displaced position} [used by potential flow when PotMod=1, ExctnMod>0, and SeaState's WaveMod>0; also used by strip theory when WaveDisp=0] (switch)
-             0   ExctnCutOff    - Cutoff (corner) frequency of the low-pass time-filtered displaced position (Hz) [>0.0; only used when ExctnDisp=2]
+          0.01   ExctnCutOff    - Cutoff (corner) frequency of the low-pass time-filtered displaced position (Hz) [>0.0; only used when ExctnDisp=2]
              0   PtfmYMod       - Model for large platform yaw offset {0: Static reference yaw offset based on PtfmRefY, 1: dynamic reference yaw offset based on low-pass filtering the PRP yaw motion with cutoff frequency PtfmYCutOff} (switch)
              0   PtfmRefY       - Constant (if PtfmYMod=0) or initial (if PtfmYMod=1) platform reference yaw offset (deg)
           0.01   PtfmYCutOff    - Cutoff frequency for the low-pass filtering of PRP yaw motion when PtfmYMod=1 [unused when PtfmYMod=0] (Hz)
             36   NExctnHdg      - Number of evenly distributed platform yaw/heading angles over the range of [-180, 180) deg for which the wave excitation shall be computed [only used when PtfmYMod=1] (-)
-             0   RdtnMod        - Radiation memory-effect model {0: no memory-effect calculation, 1: convolution, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ss INPUT FILE]
+             1   RdtnMod        - Radiation memory-effect model {0: no memory-effect calculation, 1: convolution, 2: state-space} (switch) [only used when PotMod=1; STATE-SPACE REQUIRES *.ss INPUT FILE]
             60   RdtnTMax       - Analysis time for wave radiation kernel calculations (sec) [only used when PotMod=1 and RdtnMod>0; determines RdtnDOmega=Pi/RdtnTMax in the cosine transform; MAKE SURE THIS IS LONG ENOUGH FOR THE RADIATION IMPULSE RESPONSE FUNCTIONS TO DECAY TO NEAR-ZERO FOR THE GIVEN PLATFORM!]
      "DEFAULT"   RdtnDT         - Time step for wave radiation kernel calculations (sec) [only used when PotMod=1 and ExctnMod>0 or RdtnMod>0; DT<=RdtnDT<=0.1 recommended; determines RdtnOmegaMax=Pi/RdtnDT in the cosine transform]
              1   NBody          - Number of WAMIT bodies to be used (-) [>=1; only used when PotMod=1. If NBodyMod=1, the WAMIT data contains a vector of size 6*NBody x 1 and matrices of size 6*NBody x 6*NBody; if NBodyMod>1, there are NBody sets of WAMIT data each with a vector of size 6 x 1 and matrices of size 6 x 6]
-             2   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
-"MHK_RM1_Floating"    PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3 if FKMod=0 and .3sc if FKMod=1) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
+             1   NBodyMod       - Body coupling model {1: include coupling terms between each body and NBody in HydroDyn equals NBODY in WAMIT, 2: neglect coupling terms between each body and NBODY=1 with XBODY=0 in WAMIT, 3: Neglect coupling terms between each body and NBODY=1 with XBODY=/0 in WAMIT} (switch) [only used when PotMod=1]
+      "unused"   PotFile       - Root name of potential-flow model data; WAMIT output files containing the linear, nondimensionalized, hydrostatic restoring matrix (.hst), frequency-dependent hydrodynamic added mass matrix and damping matrix (.1), and frequency- and direction-dependent wave excitation force vector per unit wave amplitude (.3) (quoted string) [1 to NBody if NBodyMod>1] [MAKE SURE THE FREQUENCIES INHERENT IN THESE WAMIT FILES SPAN THE PHYSICALLY-SIGNIFICANT RANGE OF FREQUENCIES FOR THE GIVEN PLATFORM; THEY MUST CONTAIN THE ZERO- AND INFINITE-FREQUENCY LIMITS!]
              1   WAMITULEN      - Characteristic body length scale used to redimensionalize WAMIT output (meters) [1 to NBody if NBodyMod>1] [only used when PotMod=1]
              0   PtfmRefxt      - The xt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
              0   PtfmRefyt      - The yt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1]
              0   PtfmRefzt      - The zt offset of the body reference point(s) from (0,0,0) (meters) [1 to NBody] [only used when PotMod=1. If NBodyMod=2,PtfmRefzt=0.0]
              0   PtfmRefztRot   - The rotation about zt of the body reference frame(s) from xt/yt (degrees) [1 to NBody] [only used when PotMod=1]
-       2671.85   PtfmVol0       - Displaced volume of water when the body is in its undisplaced position (m^3) [1 to NBody] [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!]
+             0   PtfmVol0       - Displaced volume of water when the body is in its undisplaced position (m^3) [1 to NBody] [only used when PotMod=1; USE THE SAME VALUE COMPUTED BY WAMIT AS OUTPUT IN THE .OUT FILE!]
              0   PtfmCOBxt      - The xt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
              0   PtfmCOByt      - The yt offset of the center of buoyancy (COB) from (0,0) (meters) [1 to NBody] [only used when PotMod=1]
              0   NAddDOF        - Number of additional generalized DOF of each WAMIT body (-) [1 to NBody] [>=0; =0 if NBody>1; only used when PotMod=1]
@@ -58,111 +58,136 @@ False            Echo           - Echo the input file data (flag)
              0             0             0             0             0             0
              0             0             0             0             0             0
 ---------------------- STRIP THEORY OPTIONS --------------------------------------
-             0   WaveDisp       - Method of displacing strip-theory members and joints {0: use potential-flow consistent displacement, 1: use exact instantaneous displacement} (switch)
+             1   WaveDisp       - Method of displacing strip-theory members and joints {0: use potential-flow consistent displacement, 1: use exact instantaneous displacement} (switch)
              1   HstMod         - Method of computing hydrostatic loads. (0: Up to the still water level. 1: Up to the instantaneous free surface) [overwrite to 0 when WaveStMod = 0 in SeaState]
 ---------------------- AXIAL COEFFICIENTS --------------------------------------
-             2   NAxCoef        - Number of axial coefficients (-)
+             4   NAxCoef        - Number of axial coefficients (-)
 AxCoefID  AxCd     AxCa     AxCp    AxFDMod   AxVnCOff  AxFDLoFSc
-   (-)    (-)      (-)      (-)     (switch)   (Hz)       (-)
-    1     0.00     0.00     0.00      0       -1.00      1.00	  ! Columns / Braces (no exposed member ends)
-    2     1.00     1.00     1.00      0       -1.00      1.00	  ! Heave Plates
+   (-)    (-)      (-)      (-)      (-)       (-)        (-)
+    1     0.00     0.000    0.000     0       -1.00      1.00     ! Unloaded joints
+    2     0.00     0.000    1.000     0       -1.00      1.00     ! Brace/tower (no exposed member ends)
+    3     8.00     0.942    0.445     0       -1.00      1.00     ! Heave Plates (applied on one face only)
+    4     0.10     0.509    1.000     0       -1.00      1.00     ! Nacelle ends
 ---------------------- MEMBER JOINTS -------------------------------------------
-            33   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2]
+            40   NJoints        - Number of joints (-)   [must be exactly 0 or at least 2]
 JointID   Jointxi     Jointyi     Jointzi  JointAxID   JointOvrlp   [JointOvrlp= 0: do nothing at joint, 1: eliminate overlaps by calculating super member]
    (-)     (m)         (m)         (m)        (-)       (switch)
-    0    28.00000     0.00000   -10.00000      1            0		    ! Downstream Column
+    0    28.00000     0.00000   -10.00000      1            0    ! Downstream Column
     1    28.00000     0.00000     6.00000      1            0
-    2   -28.00000     0.00000   -10.00000      1            0		    ! Upstream Column
+    2   -28.00000     0.00000   -10.00000      1            0    ! Upstream Column
     3   -28.00000     0.00000     6.00000      1            0
-    4     0.00000   -12.00000   -10.00000      1            0		    ! Starboard Column
-    5     0.00000   -12.00000     6.00000      1            0    
-    6     0.00000    12.00000   -10.00000      1            0		    ! Port Column
-    7     0.00000    12.00000     6.00000      1            0    
-    8     3.67658    10.42430     4.50000      1            0		    ! Upper Braces
-    9    24.32340     1.57568     4.50000      1            0
-   10     3.67658   -10.42430     4.50000      1            0
-   11    24.32340    -1.57568     4.50000      1            0
-   12    -3.67658    10.42430     4.50000      1            0
-   13   -24.32340     1.57568     4.50000      1            0
-   14    -3.67658   -10.42430     4.50000      1            0
-   15   -24.32340    -1.57568     4.50000      1            0
-   16     3.67658    10.42430    -8.50000      1            0		    ! Lower Braces
-   17    24.32340     1.57568    -8.50000      1            0
-   18     3.67658   -10.42430    -8.50000      1            0
-   19    24.32340    -1.57568    -8.50000      1            0
-   20    -3.67658    10.42430    -8.50000      1            0
-   21   -24.32340     1.57568    -8.50000      1            0
-   22    -3.67658   -10.42430    -8.50000      1            0
-   23   -24.32340    -1.57568    -8.50000      1            0
-   24     0.00000    -8.00000     4.50000      1            0		    ! Tower Braces
-   25     0.00000     8.00000     4.50000      1            0    
-   26     0.00000    -8.00000    -8.50000      1            0    
-   27     0.00000     8.00000    -8.50000      1            0    
-   28     0.00000     0.00000    -8.50000      1            0    
-   29    28.00000     0.00000   -10.50000      2            0		    ! Heave Plates
-   30   -28.00000     0.00000   -10.50000      2            0
-   31     0.00000   -12.00000   -10.50000      2            0
-   32     0.00000    12.00000   -10.50000      2            0	 
+    4     0.00000   -12.00000   -10.00000      1            0    ! Starboard Column
+    5     0.00000   -12.00000     6.00000      1            0
+    6     0.00000    12.00000   -10.00000      1            0    ! Port Column
+    7     0.00000    12.00000     6.00000      1            0
+    8     3.67658    10.42430     4.50000      2            0    ! Upper Braces
+    9    24.32340     1.57568     4.50000      2            0
+   10     3.67658   -10.42430     4.50000      2            0
+   11    24.32340    -1.57568     4.50000      2            0
+   12    -3.67658    10.42430     4.50000      2            0
+   13   -24.32340     1.57568     4.50000      2            0
+   14    -3.67658   -10.42430     4.50000      2            0
+   15   -24.32340    -1.57568     4.50000      2            0
+   16     3.67658    10.42430    -8.50000      2            0    ! Lower Braces
+   17    24.32340     1.57568    -8.50000      2            0
+   18     3.67658   -10.42430    -8.50000      2            0
+   19    24.32340    -1.57568    -8.50000      2            0
+   20    -3.67658    10.42430    -8.50000      2            0
+   21   -24.32340     1.57568    -8.50000      2            0
+   22    -3.67658   -10.42430    -8.50000      2            0
+   23   -24.32340    -1.57568    -8.50000      2            0
+   24     0.00000    -8.00000     4.50000      2            0    ! Midship Braces
+   25     0.00000     8.00000     4.50000      2            0
+   26     0.00000    -8.00000    -8.50000      2            0
+   27     0.00000     8.00000    -8.50000      2            0
+   28     0.00000    -0.49450    -7.69650      2            0
+   29     0.00000     0.49450    -7.69650      2            0
+   30    28.00000     0.00000   -10.50000      3            0    ! Heave Plates
+   31   -28.00000     0.00000   -10.50000      3            0
+   32     0.00000   -12.00000   -10.50000      3            0
+   33     0.00000    12.00000   -10.50000      3            0
+   34     0.00000   -12.00000   -22.80000      2            0    ! Tower ends
+   35     0.00000    12.00000   -22.80000      2            0
+   36    -4.88910   -12.00000   -24.00000      4            0    ! Nacelles
+   37     4.40310   -12.00000   -24.00000      4            0
+   38    -4.88910    12.00000   -24.00000      4            0
+   39     4.40310    12.00000   -24.00000      4            0
 ---------------- CYLINDRICAL MEMBER CROSS-SECTION PROPERTIES -------------------
-             4   NPropSetsCyl    - Number of cylindrical member property sets (-)
+             5   NPropSetsCyl    - Number of cylindrical member property sets (-)
 PropSetID    PropD         PropThck
    (-)        (m)            (m)
-    0        8.00000        0.02000		! Columns
-    1        2.00000        0.02000		! Braces
-    2        2.00000        0.08100		! Flooded Braces (not flooded in hydrodyn)
-    3       12.00000        0.39250	! Flooded Heave Plates (not flooded in hydrodyn)
+    0        8.00000        0.02000        ! Columns
+    1        2.00000        0.02000        ! Braces
+    2        2.00000        0.08100        ! Flooded Braces (not flooded in hydrodyn)
+    3       12.00000        0.39250        ! Flooded Heave Plates (not flooded in hydrodyn)
+    4        2.30000        0.40000        ! Nacelles
 ---------------- RECTANGULAR MEMBER CROSS-SECTION PROPERTIES -------------------
-             0   NPropSetsRec    - Number of rectangular member property sets (-)
+             1   NPropSetsRec    - Number of rectangular member property sets (-)
 MPropSetID   PropA      PropB    PropThck
    (-)        (m)        (m)       (m)
+    1       1.6229     0.4500      0.01   ! Tower
 -------- SIMPLE CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
      SimplCd    SimplCdMG    SimplCa    SimplCaMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG    SimplCb    SimplCbMG
        (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)         (-)            (-)         (-)
-       1.20        0.00        1.00        0.00        1.00        1.00        0.00        0.00        0.00        0.00        1.00        1.00           1.00        1.00
+       0.65        0.65        1.00        1.00        1.00        1.00        0.00        0.00        0.00        0.00        0.00        0.00           1.00        1.00
 -------- SIMPLE RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 1) ---------
      SimplCdA    SimplCdAMG    SimplCdB    SimplCdBMG    SimplCaA    SimplCaAMG    SimplCaB    SimplCaBMG    SimplCp    SimplCpMG   SimplAxCd  SimplAxCdMG   SimplAxCa  SimplAxCaMG  SimplAxCp   SimplAxCpMG  SimplCb  SimplCbMG
        (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)           (-)         (-)         (-)         (-)          (-)         (-)         (-)         (-)          (-)       (-)
-       0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0           0.0         0.0         0.0         0.0          0.0         0.0         0.0         0.0          1.0       1.0
+       2.0         2.0           0.1         0.1           1.44        1.44          1.26        1.26          1.0         1.0         0.0         0.0          0.0         0.0         0.0         0.0          1.0       1.0
 ------ DEPTH-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
-             0   NCoefDpthCyl    - Number of depth-dependent cylindrical member coefficients (-)
-Dpth      DpthCd   DpthCdMG   DpthCa   DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
-(m)       (-)      (-)        (-)      (-)            (-)      (-)        (-)        (-)          (-)        (-)          (-)        (-)           (-)      (-)
+             4   NCoefDpthCyl    - Number of depth-dependent cylindrical member coefficients (-)
+Dpth      DpthCd   DpthCdMG   DpthCa       DpthCaMG       DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
+(m)       (-)      (-)        (-)          (-)            (-)      (-)        (-)        (-)          (-)        (-)          (-)        (-)           (-)      (-)
+ 9999     1.50     1.50       0.872        0.872          0.969    0.969      0.0        0.0          0.0        0.0          0.0        0.0           1.0      1.0
+ -1.0     1.50     1.50       0.872        0.872          0.969    0.969      0.0        0.0          0.0        0.0          0.0        0.0           1.0      1.0
+ -1.5     0.65     0.65       0.872        0.872          0.969    0.969      0.0        0.0          0.0        0.0          0.0        0.0           1.0      1.0
+-9999     0.65     0.65       0.872        0.872          0.969    0.969      0.0        0.0          0.0        0.0          0.0        0.0           1.0      1.0
 ------ DEPTH-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 2) -------
              0   NCoefDpthRec    - Number of depth-dependent rectangular member coefficients (-)
 Dpth    DpthCdA   DpthCdAMG    DpthCdB   DpthCdBMG   DpthCaA   DpthCaAMG   DpthCaB   DpthCaBMG     DpthCp   DpthCpMG   DpthAxCd   DpthAxCdMG   DpthAxCa   DpthAxCaMG   DpthAxCp   DpthAxCpMG   DpthCb   DpthCbMG
 (m)       (-)       (-)          (-)       (-)         (-)       (-)        (-)        (-)          (-)        (-)       (-)        (-)          (-)        (-)          (-)        (-)          (-)      (-)
 ------ MEMBER-BASED CYLINDRICAL-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
-             0   NCoefMembersCyl - Number of member-based cylindrical member coefficients (-)
+             6   NCoefMembersCyl - Number of member-based cylindrical member coefficients (-)
 MemberID    MemberCd1     MemberCd2    MemberCdMG1   MemberCdMG2    MemberCa1     MemberCa2    MemberCaMG1   MemberCaMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2    MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)           (-)              (-)           (-)           (-)           (-)
+   16          1.0           1.0           1.0           1.0           0.257         0.257         0.257         0.257         0.985         0.985         0.985         0.985         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
+   17          1.0           1.0           1.0           1.0           0.257         0.257         0.257         0.257         0.985         0.985         0.985         0.985         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
+   18          1.0           1.0           1.0           1.0           0.257         0.257         0.257         0.257         0.985         0.985         0.985         0.985         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
+   19          1.0           1.0           1.0           1.0           0.257         0.257         0.257         0.257         0.985         0.985         0.985         0.985         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
+   22          0.65          0.65          0.65          0.65          0.869         0.869         0.869         0.869         1.000         1.000         1.000         1.000         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
+   23          0.65          0.65          0.65          0.65          0.869         0.869         0.869         0.869         1.000         1.000         1.000         1.000         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0              1.0           1.0           1.0           1.0
 ------ MEMBER-BASED RECTANGULAR-MEMBER HYDRODYNAMIC COEFFICIENTS (model 3) ------
             0   NCoefMembersRec - Number of member-based rectangular member coefficients (-)
 MemberID    MemberCdA1     MemberCdA2    MemberCdAMG1   MemberCdAMG2    MemberCdB1     MemberCdB2    MemberCdBMG1   MemberCdBMG2    MemberCaA1     MemberCaA2    MemberCaAMG1   MemberCaAMG2    MemberCaB1     MemberCaB2    MemberCaBMG1   MemberCaBMG2    MemberCp1     MemberCp2    MemberCpMG1   MemberCpMG2   MemberAxCd1   MemberAxCd2  MemberAxCdMG1 MemberAxCdMG2  MemberAxCa1   MemberAxCa2  MemberAxCaMG1 MemberAxCaMG2  MemberAxCp1  MemberAxCp2   MemberAxCpMG1   MemberAxCpMG2   MemberCb1     MemberCb2    MemberCbMG1   MemberCbMG2
    (-)         (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)            (-)           (-)            (-)             (-)           (-)          (-)           (-)           (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)              (-)           (-)          (-)           (-)            (-)           (-)          (-)           (-)
 -------------------- MEMBERS -------------------------------------------------
-            20   NMembers       - Number of members (-)
+            24   NMembers       - Number of members (-)
 MemberID  MJointID1  MJointID2  MPropSetID1  MPropSetID2  MSecGeom    MSpinOrient   MDivSize   MCoefMod  MHstLMod  PropPot   [MCoefMod=1: use simple coeff table, 2: use depth-based coeff table, 3: use member-based coeff table] [ PropPot/=0 if member is modeled with potential-flow theory]
   (-)        (-)        (-)         (-)          (-)      (switch)       (deg)        (m)      (switch)  (switch)  (flag)
-   0          0          1           0            0           1            0         2.0000        1         1      TRUE           ! Columns
-   1          2          3           0            0           1            0         2.0000        1         1      TRUE
-   2          4          5           0            0           1            0         2.0000        1         1      TRUE
-   3          6          7           0            0           1            0         2.0000        1         1      TRUE
-   4          8          9           1            1           1            0         2.0000        1         1      TRUE           ! Upper Braces
-   5         10         11           1            1           1            0         2.0000        1         1      TRUE
-   6         12         13           1            1           1            0         2.0000        1         1      TRUE
-   7         14         15           1            1           1            0         2.0000        1         1      TRUE
-   8         16         17           2            2           1            0         2.0000        1         1      TRUE           ! Lower Braces
-   9         18         19           2            2           1            0         2.0000        1         1      TRUE
-  10         20         21           2            2           1            0         2.0000        1         1      TRUE
-  11         22         23           2            2           1            0         2.0000        1         1      TRUE
-  12         24         25           1            1           1            0         2.0000        1         1      TRUE           ! Tower Braces
-  13         26         27           1            1           1            0         2.0000        1         1      TRUE
-  14         24         28           1            1           1            0         2.0000        1         1      TRUE
-  15         25         28           1            1           1            0         2.0000        1         1      TRUE
-  16          0         29           3            3           1            0         2.0000        1         1      TRUE           ! Heave Plates
-  17          2         30           3            3           1            0         2.0000        1         1      TRUE
-  18          4         31           3            3           1            0         2.0000        1         1      TRUE
-  19          6         32           3            3           1            0         2.0000        1         1      TRUE
+   0          0          1           0            0           1            0         1.0000        2         1      FALSE    ! Columns
+   1          2          3           0            0           1            0         1.0000        2         1      FALSE
+   2          4          5           0            0           1            0         1.0000        2         1      FALSE
+   3          6          7           0            0           1            0         1.0000        2         1      FALSE
+   4          8          9           1            1           1            0         3.0000        1         2      FALSE    ! Upper Braces
+   5         10         11           1            1           1            0         3.0000        1         2      FALSE
+   6         12         13           1            1           1            0         3.0000        1         2      FALSE
+   7         14         15           1            1           1            0         3.0000        1         2      FALSE
+   8         16         17           2            2           1            0         1.4500        1         1      FALSE    ! Lower Braces
+   9         18         19           2            2           1            0         1.4500        1         1      FALSE
+  10         20         21           2            2           1            0         1.4500        1         1      FALSE
+  11         22         23           2            2           1            0         1.4500        1         1      FALSE
+  12         24         25           1            1           1            0         4.0000        1         1      FALSE    ! Midship Braces
+  13         26         27           1            1           1            0         0.5100        1         1      FALSE
+  14         24         28           1            1           1            0         0.9000        1         2      FALSE
+  15         25         29           1            1           1            0         0.9000        1         2      FALSE
+  16         30          0           3            3           1            0         1.0000        3         1      FALSE    ! Heave Plates
+  17         31          2           3            3           1            0         1.0000        3         1      FALSE
+  18         32          4           3            3           1            0         1.0000        3         1      FALSE
+  19         33          6           3            3           1            0         1.0000        3         1      FALSE
+  20         34         32           1            1           2            0         3.1000        1         2      FALSE    ! "Towers"
+  21         35         33           1            1           2            0         3.1000        1         2      FALSE
+  22         36         37           4            4           1            0         2.4000        3         1      FALSE    ! Nacelles
+  23         38         39           4            4           1            0         2.4000        3         1      FALSE
 ---------------------- FILLED MEMBERS ------------------------------------------
              0   NFillGroups     - Number of filled member groups (-) [If FillDens = DEFAULT, then FillDens = WtrDens; FillFSLoc is related to MSL2SWL]
 FillNumM FillMList             FillFSLoc     FillDens
@@ -179,14 +204,16 @@ MemberID   NOutLoc    NodeLocs [NOutLoc < 10; node locations are normalized dist
              0   NJOutputs      - Number of joint outputs [Must be < 10]
              0   JOutLst        - List of JointIDs which are to be output (-)[unused if NJOutputs=0]
 ---------------------- OUTPUT --------------------------------------------------
-True             HDSum          - Output a summary file [flag]
+False            HDSum          - Output a summary file [flag]
 False            OutAll         - Output all user-specified member and joint loads (only at each member end, not interior locations) [flag]
              2   OutSwtch       - Output requested channels to: [1=Hydrodyn.out, 2=GlueCode.out, 3=both files]
 "G0"             OutFmt         - Output format for numerical results (quoted string) [not checked for validity!]
 "A11"            OutSFmt        - Output format for header strings (quoted string) [not checked for validity!]
 ---------------------- OUTPUT CHANNELS -----------------------------------------
-Wave1Elev                 - Wave elevation at the platform reference point (0,  0)
-HydroFxi                  - Buoyancy force [N] in the X direction.
-HydroFyi                  - Buoyancy force [N] in the Y direction.
-HydroFzi                  - Buoyancy force [N] in the vertical direction (Z).
+HydroFxi
+HydroFyi
+HydroFzi
+HydroMxi
+HydroMyi
+HydroMzi
 END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
