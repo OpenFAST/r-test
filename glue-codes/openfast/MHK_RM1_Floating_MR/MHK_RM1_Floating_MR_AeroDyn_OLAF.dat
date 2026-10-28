@@ -1,8 +1,8 @@
 --------------------------- FREE WAKE INPUT FILE ---------------------------------------------- 
-Free wake input file for the BAR turbine
+Floating MHK turbine hydrodynamic input properties, based on the RM1 tidal current rotor, twin-rotor system
 --------------------------- GENERAL OPTIONS ---------------------------------------------------
 default  IntMethod         - Integration method {1: RK4, 5: Forward Euler 1st order, default: 5} (switch) 
-0.08     DTfvw             - Time interval for wake propagation. {default: dtaero} (s)
+0.1      DTfvw             - Time interval for wake propagation. {default: dtaero} (s)
 default  FreeWakeStart     - Time when wake is free. (-) value = always free. {default: 0.0} (s)
 default  FullCircStart     - Time at which full circulation is reached. {default: 0.0} (s)
 -------------------------- CIRCULATION SPECIFICATIONS ----------------------------------------
@@ -14,25 +14,25 @@ default CircSolvMaxIter    - Maximum number of iterations for circulation solvin
 ===============================================================================================
 --------------------------- WAKE OPTIONS ------------------------------------------------------
 ------------------- WAKE EXTENT AND DISCRETIZATION --------------------------------------------
-918     nNWPanels           !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of near-wake panels (-)
-229     nNWPanelsFree      - Number of free near-wake panels (-) {default: nNWPanels}
-0       nFWPanels           !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of far-wake panels (-) {default: 0}
-default nFWPanelsFree       !NOTE: INCREASE THIS NUMBER, VALUE FOR UNIT TEST ONLY - Number of free far-wake panels (-) {default: nFWPanels}
+500     nNWPanels          - Number of near-wake panels (-)
+default nNWPanelsFree      - Number of free near-wake panels (-) {default: nNWPanels}
+0       nFWPanels          - Number of far-wake panels (-) {default: 0}
+default nFWPanelsFree      - Number of free far-wake panels (-) {default: nFWPanels}
 default FWShedVorticity    - Include shed vorticity in the far wake {default: False}
 ------------------- WAKE REGULARIZATIONS AND DIFFUSION -----------------------------------------
 default DiffusionMethod    - Diffusion method to account for viscous effects {0: None, 1: Core Spreading, "default": 0}         
 3       RegDeterMethod     - Method to determine the regularization parameters {0:  Manual, 1: Optimized, 2: Chord, 3: Span, default: 0 }          
 default RegFunction        - Segment regularization function {0: None, 1: Rankine, 2: LambOseen, 3: Vatistas, 4: Denominator, "default": 3} (switch)
-1       RegFunctionPart    - Particle regularization function {0: None, 1: Exponential, 2: Compact, "default": 1} [only if VelocityMethod=2,3] (switch)
+2       RegFunctionPart    - Particle regularization function {0: None, 1: Exponential, 2: Compact, "default": 2} [only if VelocityMethod=2,3] (switch)
 default WakeRegMethod      - Wake regularization method {1: Constant, 2: Stretching, 3: Age, default: 3} (switch)
 0.15    WakeRegFactor      - Wake regularization factor (m or -)
 0.15    WingRegFactor      - Wing regularization factor (m or -)
 100     CoreSpreadEddyVisc - Eddy viscosity in core spreading methods, typical values 1-1000 
 ------------------- WAKE TREATMENT OPTIONS ---------------------------------------------------
-True    TwrShadowOnWake    - Include tower flow disturbance effects on wake convection {default:false} [only if TwrPotent or TwrShadow]
+False   TwrShadowOnWake    - Include tower flow disturbance effects on wake convection {default:false} [only if TwrPotent or TwrShadow]
 default ShearModel         - Shear Model {0: No treatment, 1: Mirrored vorticity, default: 0}
 ------------------- SPEEDUP OPTIONS -----------------------------------------------------------
-default VelocityMethod     - Method to determine the velocity {1:Segment N^2, 2:Particle tree, 3:Particle N^2, 4:Segment tree, default: 2}
+2       VelocityMethod     - Method to determine the velocity {1:Segment N^2, 2:Particle tree, 3:Particle N^2, 4:Segment tree, default: 2}
 default TreeBranchFactor   - Branch radius fraction above which a multipole calculation is used {default: 1.5} [only if VelocityMethod=2,4]
 default PartPerSegment     - Number of particles per segment {default: 1} [only if VelocityMethod=2,3]
 ===============================================================================================
