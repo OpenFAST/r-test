@@ -1,0 +1,34 @@
+------- ELASTODYN V1.00.* INDIVIDUAL BLADE INPUT FILE --------------------------
+Dummy ElastoDyn blade input file for an effectively massless blade
+---------------------- BLADE PARAMETERS ----------------------------------------
+          2   NBlInpSt    - Number of blade input stations (-)
+        0.1   BldFlDmp(1) - Blade flap mode #1 structural damping in percent of critical (%)
+        0.1   BldFlDmp(2) - Blade flap mode #2 structural damping in percent of critical (%)
+        0.1   BldEdDmp(1) - Blade edge mode #1 structural damping in percent of critical (%)
+---------------------- BLADE ADJUSTMENT FACTORS --------------------------------
+          1   FlStTunr(1) - Blade flapwise modal stiffness tuner, 1st mode (-)
+          1   FlStTunr(2) - Blade flapwise modal stiffness tuner, 2nd mode (-)
+          1   AdjBlMs     - Factor to adjust blade mass density (-)
+          1   AdjFlSt     - Factor to adjust blade flap stiffness (-)
+          1   AdjEdSt     - Factor to adjust blade edge stiffness (-)
+---------------------- DISTRIBUTED BLADE PROPERTIES ----------------------------
+    BlFract      PitchAxis      StrcTwst       BMassDen        FlpStff        EdgStff
+      (-)           (-)          (deg)          (kg/m)         (Nm^2)         (Nm^2)
+     0.000         0.000         0.000         1.00E-06        1.00E+12      1.00E+12
+     1.000         0.000         0.000         1.00E-06        1.00E+12      1.00E+12
+---------------------- BLADE MODE SHAPES ---------------------------------------
+     1.0000   BldFl1Sh(2) - Flap mode 1, coeff of x^2
+     0.0000   BldFl1Sh(3) -            , coeff of x^3
+     0.0000   BldFl1Sh(4) -            , coeff of x^4
+     0.0000   BldFl1Sh(5) -            , coeff of x^5
+     0.0000   BldFl1Sh(6) -            , coeff of x^6
+     1.0000   BldFl2Sh(2) - Flap mode 2, coeff of x^2
+     0.0000   BldFl2Sh(3) -            , coeff of x^3
+     0.0000   BldFl2Sh(4) -            , coeff of x^4
+     0.0000   BldFl2Sh(5) -            , coeff of x^5
+     0.0000   BldFl2Sh(6) -            , coeff of x^6
+     1.0000   BldEdgSh(2) - Edge mode 1, coeff of x^2
+     0.0000   BldEdgSh(3) -            , coeff of x^3
+     0.0000   BldEdgSh(4) -            , coeff of x^4
+     0.0000   BldEdgSh(5) -            , coeff of x^5
+     0.0000   BldEdgSh(6) -            , coeff of x^6
