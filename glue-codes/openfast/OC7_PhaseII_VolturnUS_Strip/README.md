@@ -23,7 +23,7 @@ The model is set up for Load Case 4.3, with the following irregular-wave conditi
 | Wave type                  | -      | Irregular (JONSWAP) | - |
 | Significant wave height    | Hs     | 8.1   | m    |
 | Peak spectral period       | Tp     | 12.8  | s    |
-| Peak enhancement factor    | ?      | 2.75  | -    |
+| Peak enhancement factor    | γ      | 2.75  | -    |
 | Full time-series duration  | t      | 9,754 | s    |
 
 To reproduce the complete load case, set `TMax` in the main input file (`.fst`) and `WaveTMax` in the SeaState input file to 9754.
