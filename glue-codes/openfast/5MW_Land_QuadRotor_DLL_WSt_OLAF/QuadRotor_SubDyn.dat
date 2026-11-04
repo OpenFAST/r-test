@@ -1,0 +1,184 @@
+----------- SubDyn MultiMember Support Structure Input File ---------------------------
+Multiple-member support structure for a land-based quadrotor system with four NREL 5-MW turbines
+-------------------------- SIMULATION CONTROL -----------------------------------------
+False            Echo        - Echo input data to "<rootname>.SD.ech" (flag)
+"DEFAULT"        SDdeltaT    - Local Integration Step. If "default", the glue-code integration step will be used.
+             4   IntMethod   - Integration Method [1/2/3/4 = RK4/AB4/ABM4/AM2].
+True             SttcSolve   - Solve dynamics about static equilibrium point
+-------------------- FEA and CRAIG-BAMPTON PARAMETERS ---------------------------------
+             3   FEMMod      - FEM switch: element model in the FEM. [1=Euler-Bernoulli(E-B); 2=Tapered E-B (unavailable); 3=2-node Timoshenko; 4=2-node tapered Timoshenko (unavailable)]
+            20   NDiv        - Number of sub-elements per member
+            50   Nmodes      - Number of internal modes to retain. If Nmodes=0 --> Guyan Reduction. If Nmodes<0 --> retain all modes.
+             1   JDampings   - Damping Ratios for each retained mode (% of critical) If Nmodes>0, list Nmodes structural damping ratios for each retained mode (% of critical), or a single damping ratio to be applied to all retained modes. (last entered value will be used for all remaining modes).
+             1   GuyanDampMod - Guyan damping {0=none, 1=Rayleigh Damping, 2=user specified matrix}
+ 0.000, 0.0002   RayleighDamp - Mass and stiffness proportional damping coefficients (Rayleigh Damping) [only if GuyanDampMod=1]
+             6   GuyanDampSize - Guyan damping matrix (6nTPx6nTP if fixed bottom or 6(nTP-1)-by-6(nTP-1) if floating) [only if GuyanDampMod=2]
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00   0.0000e+00
+------- INITIAL RIGID-BODY POSITION [used only for floating structure with more than one transition pieces] -------
+RBSurge    RBSway     RBHeave    RBRoll     RBPitch    RBYaw
+  (m)        (m)        (m)      (deg)      (deg)      (deg)
+  0.0        0.0        0.0       0.0        0.0        0.0
+---- STRUCTURE JOINTS: joints connect structure members (~Hydrodyn Input File) --------
+             9   NJoints     - Number of joints (-)
+JointID   JointXss   JointYss   JointZss   JointType JointDirX  JointDirY JointDirZ JointStiff    ![Coordinates of Member joints in SS-Coordinate System][JointType={1:cantilever, 2:universal joint, 3:revolute joint, 4:spherical joint}]
+  (-)       (m)        (m)        (m)         (-)       (-)        (-)       (-)     (Nm/rad)
+   1       0.00000    0.00000    0.00000       1        0.0        0.0       0.0       0.0
+   2       0.00000    0.00000   27.75000       1        0.0        0.0       0.0       0.0
+   3       0.00000    0.00000   62.25000       1        0.0        0.0       0.0       0.0
+   4       0.00000    0.00000  157.75000       1        0.0        0.0       0.0       0.0
+   5       0.00000    0.00000  192.50000       1        0.0        0.0       0.0       0.0
+   6       0.00000  -65.00000   90.00000       1        0.0        0.0       0.0       0.0
+   7       0.00000   65.00000   90.00000       1        0.0        0.0       0.0       0.0
+   8       0.00000  -65.00000  220.25000       1        0.0        0.0       0.0       0.0
+   9       0.00000   65.00000  220.25000       1        0.0        0.0       0.0       0.0
+------------------- BASE REACTION JOINTS: 1/0 for Locked/Free DOF @ each Reaction Node ---------------------
+             1   NReact      - Number of Joints with reaction forces; be sure to remove all rigid motion DOFs of the structure  (else det([K])=[0])
+RJointID   RctTDXss    RctTDYss    RctTDZss    RctRDXss    RctRDYss    RctRDZss     SSIfile  ![Global Coordinate System]
+  (-)       (flag)      (flag)      (flag)      (flag)      (flag)      (flag)      (string)
+   1           1           1           1           1           1           1
+------- INTERFACE JOINTS: 1/0 for Locked (to the TP)/Free DOF @each Interface Joint (only Locked-to-TP implemented thus far (=rigid TP)) ---------
+             4   NInterf     - Number of interface joints locked to the Transition Pieces (TP):  be sure to remove all rigid motion dofs
+IJointID    TPID    ItfTDXss    ItfTDYss    ItfTDZss    ItfRDXss    ItfRDYss    ItfRDZss     ![Global Coordinate System]
+  (-)       (-)      (flag)      (flag)      (flag)      (flag)      (flag)      (flag)
+   6         1         1           1           1           1           1           1      ! 1st actual transition piece
+   7         2         1           1           1           1           1           1      ! 2nd actual transition piece
+   8         3         1           1           1           1           1           1      ! 3rd actual transition piece
+   9         4         1           1           1           1           1           1      ! 4th actual transition piece
+----------------------------------- MEMBERS -------------------------------------------
+            12   NMembers    - Number of members (-)
+MemberID   MJointID1   MJointID2   MPropSetID1   MPropSetID2   MType  MSpin/COSMID   MDivSize   ! [MType={1c:beam circ., 1r:beam rect., 2:cable, 3:rigid, 4:beam arb., 5:spring}. COMSID={-1:none}]
+  (-)         (-)         (-)          (-)           (-)        (-)    (deg/-)         (m)
+   1           1           2            1             1          1c        0            5
+   2           2           3            1             2          1c        0            5
+   3           3           4            2             3          1c        0            5
+   4           4           5            3             4          1c        0            5
+   5           2           6            5             6          1c        0            5
+   6           3           6            5             6          1c        0            5
+   7           2           7            5             6          1c        0            5
+   8           3           7            5             6          1c        0            5
+   9           4           8            7             8          1c        0            5
+  10           5           8            7             8          1c        0            5
+  11           4           9            7             8          1c        0            5
+  12           5           9            7             8          1c        0            5
+------------------ CIRCULAR BEAM CROSS-SECTION PROPERTIES -----------------------------
+             8   NPropSets   - Number of structurally unique cross-sections
+PropSetID     YoungE          ShearG          MatDens          XsecD           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)             (m)
+   1        2.00000e+11     8.00000e+10       7850.00          15.0000         0.1200
+   2        2.00000e+11     8.00000e+10       7850.00          15.0000         0.1200
+   3        2.00000e+11     8.00000e+10       7850.00           9.8676         0.0494
+   4        2.00000e+11     8.00000e+10       7850.00           8.0000         0.0380
+   5        2.00000e+11     8.00000e+10       7850.00           4.0000         0.0270
+   6        2.00000e+11     8.00000e+10       7850.00           3.8700         0.0190
+   7        2.00000e+11     8.00000e+10       7850.00           4.0000         0.0270
+   8        2.00000e+11     8.00000e+10       7850.00           3.8700         0.0190
+----------------- RECTANGULAR BEAM CROSS-SECTION PROPERTIES ---------------------------
+             0   NPropSets   - Number of structurally unique cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecB           XsecT
+  (-)         (N/m2)          (N/m2)          (kg/m3)           (m)            (m)             (m)
+----------------- ARBITRARY BEAM CROSS-SECTION PROPERTIES -----------------------------
+             0   NXPropSets  - Number of structurally unique non-circular cross-sections (if 0 the following table is ignored)
+PropSetID     YoungE          ShearG          MatDens          XsecA          XsecAsx       XsecAsy       XsecJxx       XsecJyy       XsecJ0        XsecJt
+  (-)         (N/m2)          (N/m2)          (kg/m3)          (m2)            (m2)          (m2)          (m4)          (m4)          (m4)          (m4)
+-------------------------- CABLE PROPERTIES -------------------------------------------
+             0   NCablePropSets   - Number of cable properties
+PropSetID     EA          MatDens      T0<0   CtrlChannel
+  (-)         (N)         (kg/m)        (N)        (-)
+----------------------- RIGID LINK PROPERTIES -----------------------------------------
+             0   NRigidPropSets - Number of rigid link properties
+PropSetID   MatDens
+  (-)       (kg/m)
+----------------------- SPRING ELEMENT PROPERTIES -------------------------------------
+             0   NSpringPropSets - Number of spring properties
+PropSetID   k11     k12     k13     k14     k15     k16     k22     k23     k24     k25     k26     k33     k34     k35     k36     k44      k45      k46      k55      k56      k66
+  (-)      (N/m)   (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)   (N/m)  (N/rad) (N/rad) (N/rad)  (N/m)  (N/rad) (N/rad) (N/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad) (Nm/rad)
+---------------------- MEMBER COSINE MATRICES COSM(i,j) -------------------------------
+             0   NCOSMs      - Number of unique cosine matrices (i.e., of unique member alignments including principal axis rotations); ignored if NXPropSets=0   or 9999 in any element below
+COSMID    COSM11    COSM12    COSM13    COSM21    COSM22    COSM23    COSM31    COSM32    COSM33
+ (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)       (-)
+------------------------ JOINT ADDITIONAL CONCENTRATED MASSES--------------------------
+             0   NCmass      - Number of joints with concentrated masses; Global Coordinate System
+CMJointID       JMass            JMXX             JMYY             JMZZ          JMXY        JMXZ         JMYZ        MCGX      MCGY        MCGZ
+  (-)            (kg)          (kg*m^2)         (kg*m^2)         (kg*m^2)      (kg*m^2)    (kg*m^2)     (kg*m^2)       (m)      (m)          (m)
+---------------------------- OUTPUT: SUMMARY & OUTFILE --------------------------------
+False            SumPrint    - Output a Summary File (flag)
+0                OutCBModes  - Output Guyan and Craig-Bampton modes {0: No output, 1: JSON output}, (flag)
+0                OutFEMModes - Output first 30 FEM modes {0: No output, 1: JSON output} (flag)
+False            OutCOSM     - Output cosine matrices with the selected output member forces (flag)
+False            OutAll      - [T/F] Output all members' end forces
+             2   OutSwtch    - [1/2/3] Output requested channels to: 1=<rootname>.SD.out;  2=<rootname>.out (generated by FAST);  3=both files.
+True             TabDelim    - Generate a tab-delimited output in the <rootname>.SD.out file
+             1   OutDec      - Decimation of output in the <rootname>.SD.out file
+"ES25.15E2"      OutFmt      - Output format for numerical results in the <rootname>.SD.out file
+"A11"            OutSFmt     - Output format for header strings in the <rootname>.SD.out file
+------------------------- MEMBER OUTPUT LIST ------------------------------------------
+            12   NMOutputs   - Number of members whose forces/displacements/velocities/accelerations will be output (-) [Must be <= 99].
+MemberID   NOutCnt    NodeCnt ![NOutCnt=how many nodes to get output for [< 10]; NodeCnt are local ordinal numbers from the start of the member, and must be >=1 and <= NDiv+1] If NMOutputs=0 leave blank as well.
+  (-)        (-)        (-)
+   1          2         1  7
+   2          2         1  8
+   3          2         1 21
+   4          2         1  8
+   5          2         1 20
+   6          2         1 16
+   7          2         1 20
+   8          2         1 16
+   9          2         1 20
+  10          2         1 16
+  11          2         1 20
+  12          2         1 16
+------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+"M1N1TDXss,M1N1TDYss,M1N1TDZss,M1N1RDXe,M1N1RDYe,M1N1RDZe"
+"M1N2TDXss,M1N2TDYss,M1N2TDZss,M1N2RDXe,M1N2RDYe,M1N2RDZe"
+"M2N1TDXss,M2N1TDYss,M2N1TDZss,M2N1RDXe,M2N1RDYe,M2N1RDZe"
+"M2N2TDXss,M2N2TDYss,M2N2TDZss,M2N2RDXe,M2N2RDYe,M2N2RDZe"
+"M3N1TDXss,M3N1TDYss,M3N1TDZss,M3N1RDXe,M3N1RDYe,M3N1RDZe"
+"M3N2TDXss,M3N2TDYss,M3N2TDZss,M3N2RDXe,M3N2RDYe,M3N2RDZe"
+"M4N1TDXss,M4N1TDYss,M4N1TDZss,M4N1RDXe,M4N1RDYe,M4N1RDZe"
+"M4N2TDXss,M4N2TDYss,M4N2TDZss,M4N2RDXe,M4N2RDYe,M4N2RDZe"
+"M5N1TDXss,M5N1TDYss,M5N1TDZss,M5N1RDXe,M5N1RDYe,M5N1RDZe"
+"M5N2TDXss,M5N2TDYss,M5N2TDZss,M5N2RDXe,M5N2RDYe,M5N2RDZe"
+"M6N1TDXss,M6N1TDYss,M6N1TDZss,M6N1RDXe,M6N1RDYe,M6N1RDZe"
+"M6N2TDXss,M6N2TDYss,M6N2TDZss,M6N2RDXe,M6N2RDYe,M6N2RDZe"
+"M7N1TDXss,M7N1TDYss,M7N1TDZss,M7N1RDXe,M7N1RDYe,M7N1RDZe"
+"M7N2TDXss,M7N2TDYss,M7N2TDZss,M7N2RDXe,M7N2RDYe,M7N2RDZe"
+"M8N1TDXss,M8N1TDYss,M8N1TDZss,M8N1RDXe,M8N1RDYe,M8N1RDZe"
+"M8N2TDXss,M8N2TDYss,M8N2TDZss,M8N2RDXe,M8N2RDYe,M8N2RDZe"
+"M9N1TDXss,M9N1TDYss,M9N1TDZss,M9N1RDXe,M9N1RDYe,M9N1RDZe"
+"M9N2TDXss,M9N2TDYss,M9N2TDZss,M9N2RDXe,M9N2RDYe,M9N2RDZe"
+"M10N1TDXss,M10N1TDYss,M10N1TDZss,M10N1RDXe,M10N1RDYe,M10N1RDZe"
+"M10N2TDXss,M10N2TDYss,M10N2TDZss,M10N2RDXe,M10N2RDYe,M10N2RDZe"
+"M11N1TDXss,M11N1TDYss,M11N1TDZss,M11N1RDXe,M11N1RDYe,M11N1RDZe"
+"M11N2TDXss,M11N2TDYss,M11N2TDZss,M11N2RDXe,M11N2RDYe,M11N2RDZe"
+"M12N1TDXss,M12N1TDYss,M12N1TDZss,M12N1RDXe,M12N1RDYe,M12N1RDZe"
+"M12N2TDXss,M12N2TDYss,M12N2TDZss,M12N2RDXe,M12N2RDYe,M12N2RDZe"
+"M1N1FKxe,M1N1FKye,M1N1FKze,M1N1MKxe,M1N1MKye,M1N1MKze"
+"M1N2FKxe,M1N2FKye,M1N2FKze,M1N2MKxe,M1N2MKye,M1N2MKze"
+"M2N1FKxe,M2N1FKye,M2N1FKze,M2N1MKxe,M2N1MKye,M2N1MKze"
+"M2N2FKxe,M2N2FKye,M2N2FKze,M2N2MKxe,M2N2MKye,M2N2MKze"
+"M3N1FKxe,M3N1FKye,M3N1FKze,M3N1MKxe,M3N1MKye,M3N1MKze"
+"M3N2FKxe,M3N2FKye,M3N2FKze,M3N2MKxe,M3N2MKye,M3N2MKze"
+"M4N1FKxe,M4N1FKye,M4N1FKze,M4N1MKxe,M4N1MKye,M4N1MKze"
+"M4N2FKxe,M4N2FKye,M4N2FKze,M4N2MKxe,M4N2MKye,M4N2MKze"
+"M5N1FKxe,M5N1FKye,M5N1FKze,M5N1MKxe,M5N1MKye,M5N1MKze"
+"M5N2FKxe,M5N2FKye,M5N2FKze,M5N2MKxe,M5N2MKye,M5N2MKze"
+"M6N1FKxe,M6N1FKye,M6N1FKze,M6N1MKxe,M6N1MKye,M6N1MKze"
+"M6N2FKxe,M6N2FKye,M6N2FKze,M6N2MKxe,M6N2MKye,M6N2MKze"
+"M7N1FKxe,M7N1FKye,M7N1FKze,M7N1MKxe,M7N1MKye,M7N1MKze"
+"M7N2FKxe,M7N2FKye,M7N2FKze,M7N2MKxe,M7N2MKye,M7N2MKze"
+"M8N1FKxe,M8N1FKye,M8N1FKze,M8N1MKxe,M8N1MKye,M8N1MKze"
+"M8N2FKxe,M8N2FKye,M8N2FKze,M8N2MKxe,M8N2MKye,M8N2MKze"
+"M9N1FKxe,M9N1FKye,M9N1FKze,M9N1MKxe,M9N1MKye,M9N1MKze"
+"M9N2FKxe,M9N2FKye,M9N2FKze,M9N2MKxe,M9N2MKye,M9N2MKze"
+"M10N1FKxe,M10N1FKye,M10N1FKze,M10N1MKxe,M10N1MKye,M10N1MKze"
+"M10N2FKxe,M10N2FKye,M10N2FKze,M10N2MKxe,M10N2MKye,M10N2MKze"
+"M11N1FKxe,M11N1FKye,M11N1FKze,M11N1MKxe,M11N1MKye,M11N1MKze"
+"M11N2FKxe,M11N2FKye,M11N2FKze,M11N2MKxe,M11N2MKye,M11N2MKze"
+"M12N1FKxe,M12N1FKye,M12N1FKze,M12N1MKxe,M12N1MKye,M12N1MKze"
+"M12N2FKxe,M12N2FKye,M12N2FKze,M12N2MKxe,M12N2MKye,M12N2MKze"
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
