@@ -57,7 +57,7 @@ OpenFAST input file from OC7 Phase II (WP 2.1) project: NLR1 model (strip theory
       99999   ChkptTime       - Amount of time between creating checkpoint files for potential restart (s)
        0.05   DT_Out          - Time step for tabular output (s) (or "default")
           0   TStart          - Time to begin tabular output (s)
-          1   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
+          2   OutFileFmt      - Format for tabular (time-marching) output file (switch) {1: text file [<RootName>.out], 2: binary file [<RootName>.outb], 3: both 1 and 2, 4: uncompressed binary [<RootName>.outb, 5: both 1 and 4}
        True   TabDelim        - Use tab delimiters in text tabular output file? (flag) {uses spaces if false}
  "ES15.7E2"   OutFmt          - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string)
 ---------------------- LINEARIZATION -------------------------------------------
