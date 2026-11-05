@@ -31,7 +31,7 @@ SeaState input file for Load Case 4.3 (1-year extreme irregular wave conditions)
      123456789   WaveSeed(1)    - First  random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
         RANLUX   WaveSeed(2)    - Second random seed of incident waves [-2147483648 to 2147483647]    (-)       [unused when WaveMod=0, 5, or 6]
          FALSE   WaveNDAmp      - Flag for normally distributed amplitudes                            (flag)    [only used when WaveMod=2, 3, or 4]
-"HydroData\LC43_resampled"         WvKinFile      - Root name of externally generated wave data file(s)        (quoted string)    [only used when WaveMod=5 or 6]
+"HydroData/LC43_resampled"         WvKinFile      - Root name of externally generated wave data file(s)        (quoted string)    [only used when WaveMod=5 or 6]
 ---------------------- 2ND-ORDER WAVES ----------------------------------------- [unused with WaveMod=0 or 6]
          False   WvDiffQTF      - Full difference-frequency 2nd-order wave kinematics (flag)
          False   WvSumQTF       - Full  summation-frequency 2nd-order wave kinematics (flag)
