@@ -219,11 +219,6 @@ class BeamDynDriver:
             print(f"Cannot load BeamDyn library: {e}")
             sys.exit(1)
 
-        # Set library parameters
-        bdlib.dt = self.dt                      # time interval
-        bdlib.total_time = self.time[-1]        # total or end time
-        bdlib.numTimeSteps = len(self.time)     # number of time steps
-
         # Load the primary input file.  Its contents are passed to the library; the blade
         # file named in it is read by BeamDyn from the working directory.
         bd_input_string_array = read_lines_from_file(self.dvr.primary_file)
@@ -242,6 +237,7 @@ class BeamDynDriver:
                 self.dvr.root_orientation,
                 root_velocity,
                 self.dvr.gravity,
+                self.dt,
                 interp_order=self.lib_config.interpolation_order,
                 dynamic_solve=self.dvr.dynamic_solve,
                 write_outputs=False,
@@ -257,32 +253,31 @@ class BeamDynDriver:
                   f"distributed load nodes: {bdlib.num_distr_load_nodes}")
 
         # Loads: constant distributed load on every distributed load node and a constant
-        # load at the tip (the point load node farthest from the root)
+        # load at the tip (the last point load node, as in the Fortran driver)
         self.distr_loads = np.tile(self.dvr.distr_load, (bdlib.num_distr_load_nodes, 1))
         self.point_loads = np.zeros((bdlib.num_point_load_nodes, 6))
-        i_tip = int(np.argmax(np.linalg.norm(pl_pos - out_pos[0], axis=1)))
-        self.point_loads[i_tip, :] = self.dvr.tip_load
+        self.point_loads[-1, :] = self.dvr.tip_load
 
         # Set up the output channels listed in the BD input file (kept when the library is initialized again for a restart)
         if not hasattr(self, "output_channel_array"):
             self.output_channel_names = bdlib.output_channel_names
             self.output_channel_units = bdlib.output_channel_units
             self.output_channel_values = np.zeros(len(self.output_channel_names))
-            self.output_channel_array = np.zeros((bdlib.numTimeSteps, len(self.output_channel_names) + 1)) # includes time
+            self.output_channel_array = np.zeros((len(self.time), len(self.output_channel_names) + 1)) # includes time
 
         return bdlib
 
     def run_simulation(self) -> None:
         """Run the main simulation loop."""
         try:
-            # Outputs at the initial time
+            # Inputs and outputs at the initial time (required before the first bd_updateStates)
             self._set_inputs(self.time[0])
             self._calc_output(0)
 
             # Time stepping loop
             for i in range(len(self.time) - 1):
                 # Print progress
-                if (i % round(1.0/self.dt)) == 0:
+                if (i % max(1, round(1.0/self.dt))) == 0:
                     print(f"Time: {self.time[i]}")
 
                 # Checkpoint and restart at the requested time
