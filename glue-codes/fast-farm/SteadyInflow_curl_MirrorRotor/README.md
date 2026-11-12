@@ -13,7 +13,7 @@ The whole farm maps onto itself under y -> -y, so beyond the regression
 comparison this case asserts a symmetry: every turbine-2 quantity must be the
 mirror image of its turbine-1 partner under the measured sign map (even
 channels equal, odd channels opposite, the skew azimuth supplementary, the
-wake swirl reversed). `reg_tests/otherTests/farm_mirror_pair.py --twin <run>`
+wake swirl reversed). `reg_tests/development_testing/mirror_rotor_checks/farm_mirror_pair.py --twin <run>`
 performs that check and is run by `run_guards.sh`.
 
 Measured floors when the case was created (2026-11-03, see
