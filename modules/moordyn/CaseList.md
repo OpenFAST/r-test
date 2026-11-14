@@ -12,3 +12,4 @@ md_lineFail
 md_Single_Line_Quasi_Static_Test
 md_SlipSupport_LuGre
 md_BdyExtLdDmpg
+md_attachment
