@@ -28,6 +28,10 @@ Compares MoorDyn and MoorPy against eachother for simple single line case. Unuse
 
 Catenary riser in a uniform steady flow from validation paper. Frequency of FairTen should be 2.08 Hz
 
+**md_attachment**
+
+A rod on a massless body, hanging from point 3 on the mooring through a gear line. The attachment event withholds that line's load and mass from the mooring until t = 60 s, then ramps it in over 5 s with a sigmoid; the body takes a thrust read from thrust.dat, ramping to -5.0e4 N between t = 40 s and t = 45 s; and the gear parts at t = 80 s.
+
 **md_bodyDrag**
 
 A simple test to ensure that body drag coefficients don't go negative in certain orientations

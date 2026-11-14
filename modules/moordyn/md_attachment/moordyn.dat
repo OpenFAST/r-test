@@ -1,0 +1,67 @@
+--------------------- MoorDyn Input File ------------------------------------
+Rod with thrust in negative x direction.The
+attachment event withholds that line's load from the mooring until the trigger
+time, then ramps it in, so the mooring runs undisturbed first and the
+attachment loads it smoothly. The gear then parts at t = 80 s.
+---------------------- LINE TYPES -----------------------------------
+TypeName   Diam    Mass/m     EA     BA/-zeta    EI         Cd     Ca     CdAx    CaAx
+(name)     (m)     (kg/m)     (N)    (N-s/-)     (N-m^2)    (-)    (-)    (-)     (-)
+Chain      0.085      100.0     9e6    -1          0          2.3     0     1.0     0.5
+Rope       0.08       10.0      1e6    -1          0          2.0     0     1.0     0.5
+Gear       0.05        2.0      5e5    -1          0          2.0     0     1.0     0.5
+---------------------- ROD TYPES -----------------------------------------------
+TypeName      Diam      Mass/m     Cd     Ca      CdEnd    CaEnd
+(name)        (m)       (kg/m)     (-)    (-)     (-)      (-)
+animal        1.624     2142.86    1.0    1.0     0.2     0.1
+---------------------- BODIES ---------------------------------------
+ID   Attachment  X0     Y0    Z0     r0      p0     y0     Mass   CG*   I*         Volume   CdA*      Ca*
+(#)   (word)     (m)    (m)   (m)   (deg)   (deg)  (deg)   (kg)   (m)  (kg-m^2)    (m^3)    (m^2)     (-)
+1     Free      -150     0   -150     0       0      0       0     0    0           0        0         0
+---------------------- RODS ----------------------------------------------------
+ID   RodType   Attachment  Xa    Ya    Za    Xb    Yb    Zb   NumSegs RodOutputs
+(#)  (name)     (#/key)    (m)   (m)   (m)   (m)   (m)   (m)  (-)     (-)
+1    animal    Body1       -7    0     0     7     0     0    10      -
+---------------------- POINTS  -----------------------------------------------------
+ID      Attachment    X      Y     Z            Mass   Volume     CdA     CA
+(#)     (word/ID)    (m)    (m)   (m)           (kg)   (m^3)      (m^2)   (-)
+1         Fixed     -400    0     -200           0       0          0      0
+2         Fixed      -20    0      -20           0       0          0      0
+3         Free      -150    0     -120           0       0          0      0
+4         Body1        0    0        0           0       0          0      0
+---------------------- LINES -----------------------------------------------------
+ID     LineType  AttachA  AttachB  UnstrLen     NumSegs   LineOutputs
+(#)      (-)       (#)      (#)       (m)         (-)       (-)
+1        Chain      1        3        270.0        20        -
+2        Rope       3        2        164.0        12        -
+3        Gear       4        3         30.0         5        -
+---------------------- FAILURE ----------------------
+FailureID  Point    Line(s)   FailTime   FailTen
+()           ()       (,)      (s or 0)   (N or 0)
+1            3         3          80         0
+---------------------- EXTERNAL LOADS ------------------------------------------
+ID    Object  Fext                 Blin    Bquad   CSys
+(#)   (name)  (N)                  (Ns/m)  (Ns^2/m^2) (-)
+1     Body1   thrust.dat           0       0       G
+---------------------- ATTACHMENT EVENTS ---------------------------------------
+ID  Point  Line  AttachTime  RampTime  RampFcn   RampCoef
+(#)  (-)    (-)      (s)        (s)       (-)       (-)
+ 1    3      3        60          5      Sigmoid     5
+---------------------- OPTIONS-----------------------------------------
+0.001                                                    dtM             - time step to use in mooring integration (s)
+200                                                      WtrDpth         - water depth
+20.0                                                     dtIC            - time interval for analyzing convergence during IC gen
+300.0                                                    TmaxIC          - max time for ic gen (s)
+0.001                                                    threshIC        - threshold for IC convergence (-)
+3.0                                                      CdScaleIC       - factor by which to scale drag coefficients during dynamic relaxation (-)
+3.0E+06                                                  kbot            - bottom stiffness (Pa/m)
+3.0E+05                                                  cbot            - bottom damping (Pa-s/m)
+0.1                                                      dtOut           - time step size to be written to output files (s)
+1                                                        disableOutTime
+RK4                                                      tScheme
+-------------------------- OUTPUTS --------------------------------
+POINT3PX
+POINT3PZ
+BODY1PX
+BODY1PZ
+FAIRTEN2
+--------------------- need this line ------------------
