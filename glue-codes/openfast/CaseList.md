@@ -69,3 +69,5 @@ Tailfin_FreeYaw1DOF_PolarBased
 
 OC6_phaseII
 Floating_Cylinder_Guide_Ropes
+OC7_PhaseII_VolturnUS_Strip
+OC7_PhaseII_VolturnUS_PotFlow
