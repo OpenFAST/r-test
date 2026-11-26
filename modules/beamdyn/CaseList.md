@@ -6,3 +6,14 @@ bd_curved_beam
 bd_isotropic_rollup
 bd_static_cantilever_beam
 bd_static_twisted_with_k1
+py_bd_5MW_dynamic
+py_bd_5MW_dynamic_restart
+c_bd_5MW_dynamic
+c_bd_curved_beam
+c_bd_isotropic_rollup
+c_bd_static_twisted_with_k1
+c_bd_static_cantilever_distr
+py_bd_curved_beam
+py_bd_isotropic_rollup
+py_bd_static_cantilever_distr
+py_bd_curved_beam_restart
